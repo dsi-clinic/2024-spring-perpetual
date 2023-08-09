@@ -7,7 +7,7 @@
 An example command is: `python GetDistanceMatrix.py data/indoor_outdoor.csv` 
 
 
-**Note: ** I have updated the indoor_outdoor.csv file to include Moody Gardens as the starting location. Moreover, the coordinates have been rounded to 5 decimal places. 
+Note: I have updated the indoor_outdoor.csv file to include Moody Gardens as the starting location. Moreover, the coordinates have been rounded to 5 decimal places. 
 
 ### Setup Instructions
 
