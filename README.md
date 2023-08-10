@@ -28,17 +28,26 @@ Note: I have updated the indoor_outdoor.csv file to include Moody Gardens as the
 
 ### "code" folder
 **arcgis_layers_processing:** contains the data cleaning .ipynb files used to reformat the data in a way that can be used for later routing, etc. after downloading a map layer from ArcGIS web apps/online maps.
+
 **manual_data_pipeline:** contains the jupyter notebooks used to gather all data for a city. It currently has Ann Arbor as a sample but future users can change the city and reuse it.
+
 **routing:** contains all files used for routing (MORE ON THIS LATER IN THE SUMMER).
+
 **automated_pipeline:** contains py files that can automatically gather and output all data for a city. Input is parcel shapefile and city name, coordinates, etc.
 
 ### "data" folder
 **distance_matrix:** distance matrix between all bins in a city. Used to feed into the routing algorithm.
+
 **Galv_Bins_July_Version:** all bins (indoors and outdoors) data manually marked by Marty Miles as if July 2023. PLEASE NOTE THAT THIS IS THE MOST UP-TO-DATE DATA about collection+distribution bins and supplemental-collection bins.
+
 **FUE_only_data_files:** clean data tables containing only FUEs info for each city.
+
 **Non-FUE_only_data_files:** clean data tables containing non-FUE info for each city.
+
 **ann_arbor_parcel_data:** parcel data of Ann Arbor, MI. 
+
 **galv_parcel_data:** parcel data of Galveston, TX.
+
 **hilo_parcel_data:** parcel data of Hilo, HI.
 
 
