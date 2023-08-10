@@ -27,11 +27,11 @@ Note: I have updated the indoor_outdoor.csv file to include Moody Gardens as the
 ## File Documentation
 
 ### "code" folder
-**arcgis_layers_processing:** contains the data cleaning .ipynb files used to reformat the data in a way that can be used for later routing, etc. after downloading a map layer from ArcGIS web apps/online maps.
+**arcgis_layers_processing:** contains the data cleaning .ipynb files used to reformat the data in a way that can be used for later routing, etc. after downloading a map layer from ArcGIS web apps/online maps.<br>
 
-**manual_data_pipeline:** contains the jupyter notebooks used to gather all data for a city. It currently has Ann Arbor as a sample but future users can change the city and reuse it.
+**manual_data_pipeline:** contains the jupyter notebooks used to gather all data for a city. It currently has Ann Arbor as a sample but future users can change the city and reuse it.<br>
 
-**routing:** contains all files used for routing (MORE ON THIS LATER IN THE SUMMER).
+**routing:** contains all files used for routing (MORE ON THIS LATER IN THE SUMMER).<br>
 
 **automated_pipeline:** contains py files that can automatically gather and output all data for a city. Input is parcel shapefile and city name, coordinates, etc.
 
