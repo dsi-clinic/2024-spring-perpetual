@@ -1,0 +1,141 @@
+,Name,place_id,Address,Coordinates,business_status,types,category
+0,602 Seawolf Pkwy Parking,ChIJGyMXOfudP4YRDOB7F3SyWzo,"602 Seawolf Pkwy, Galveston","{'lat': 29.3206562, 'lng': -94.8172833}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+1,200 Seawolf Pkwy Parking,ChIJtdCk4uSdP4YRhpk5DmlvLFU,"200 Seawolf Pkwy, Galveston","{'lat': 29.3175257, 'lng': -94.81833019999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+2,3018 Texas Clipper Rd Parking,ChIJEd4jQuSdP4YRc9jMxtmw4z0,"3018 Texas Clipper Road, Galveston","{'lat': 29.3157226, 'lng': -94.81716879999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+3,Parking lot,ChIJEejTyYd1P4YRfGsq41f6gms,Galveston,"{'lat': 29.3353876, 'lng': -94.77805839999999}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+4,Parking utmb,ChIJAdzz9keeP4YRzUtgHz_IYYU,"365-379 11th Street, Galveston","{'lat': 29.3091755, 'lng': -94.7820206}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+5,1011 Harborside Dr Garage,ChIJHW1MKTieP4YR9Zd0iokUNis,"1011 Harborside Drive, Galveston","{'lat': 29.3119026, 'lng': -94.7798238}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+6,1005 Harborside Dr Garage,ChIJidg3KTieP4YR0VTB7C5SfhQ,"1005 Harborside Drive, Galveston","{'lat': 29.3118769, 'lng': -94.779805}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+7,UTMB 17E,ChIJC3UVRDieP4YR6lA00QCtO50,"113-191 11th Street, Galveston","{'lat': 29.3118539, 'lng': -94.78024889999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+8,Premium Covered Parking,ChIJn5sAMVifP4YR5UtWIcrT8Yw,"1152 Royal Caribbean Way, Galveston","{'lat': 29.3143198, 'lng': -94.78208099999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+9,"UTMB - Public Parking, Galveston Hospitals",ChIJW7wWaDaeP4YREaeEQlUeh4I,"200 University Boulevard, Galveston","{'lat': 29.3118965, 'lng': -94.7761922}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+10,1201 Harborside Drive Parking,ChIJfwLFVzieP4YRJPp_QxgsePE,"1201 Harborside Drive, Galveston","{'lat': 29.3116497, 'lng': -94.78205550000001}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+11,Port of Galveston Cruise Parking Terminal 10 North Lot,ChIJgRbx5yefP4YRusJ2EH7TYfU,"1152 Royal Caribbean Circle, Galveston","{'lat': 29.3136789, 'lng': -94.78322759999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+12,Parking Lot P,ChIJHXJh-aifP4YRytdiL4Ba2zc,"Unnamed Road, Galveston","{'lat': 29.3134791, 'lng': -94.7749516}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+13,Port of Galveston South Lot Cruise Parking Lot,ChIJVZ5hNnifP4YR13z_PxZj7A4,"028 13th Street, Galveston","{'lat': 29.31189359999999, 'lng': -94.7836379}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+14,UTMB Parking Garage 3,ChIJLQpNRbmfP4YR3C25fcfJ9lc,"410 9th Street, Galveston","{'lat': 29.309174, 'lng': -94.7783749}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+15,"Park 2 Cruise Galveston, LLC",ChIJn324TXCfP4YRR3iD6Lq0Ouo,"101 13th Street, Galveston","{'lat': 29.3105049, 'lng': -94.7837887}",OPERATIONAL,"['travel_agency', 'parking', 'point_of_interest', 'establishment']",travel_agency
+16,Port of Galveston Pier 14 Parking Lot,ChIJPdHFfV6fP4YRlB7WB3TDI5c,"8677+9W, Galveston","{'lat': 29.3134375, 'lng': -94.78518749999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+17,Contract Parking,ChIJYaqd3TWeP4YR1emHg7MSDWg,"339 5th Street, Galveston","{'lat': 29.3111501, 'lng': -94.7738605}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+18,1301-1399 Mechanic St Parking,ChIJ49fBZkeeP4YRDCrPv38ok9w,"1301-1399 Mechanic Street, Galveston","{'lat': 29.30937500000001, 'lng': -94.7828452}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+19,Parking lot,ChIJh6OkejeeP4YRZslws7e4IMg,Galveston,"{'lat': 29.3130409, 'lng': -94.778908}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+20,Parking lot,ChIJ6U-wGTeeP4YRqyq0y_61Vz8,Galveston,"{'lat': 29.3136828, 'lng': -94.7774111}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+21,Parking lot,ChIJQY_g3TaeP4YROy5flRaVic8,Galveston,"{'lat': 29.3142549, 'lng': -94.776602}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+22,Parking lot,ChIJ25nGVzieP4YR1YxupzPMXWs,Galveston,"{'lat': 29.3116607, 'lng': -94.78206379999999}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+23,Hospital Parking Garage 8,ChIJM-XyQjaeP4YR4mkUQxmwix0,Galveston,"{'lat': 29.3116784, 'lng': -94.77560109999999}",,"['parking', 'premise', 'point_of_interest', 'establishment']",parking
+24,Galv Park Holiday & Seawall Lot,ChIJvR8QprefP4YRqN4tNKU3Q2w,"706 Holiday Drive, Galveston","{'lat': 29.3086699, 'lng': -94.77015279999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+25,Parking lot,ChIJYXZA-0meP4YR-jDImLx3f1g,Galveston,"{'lat': 29.30915469999999, 'lng': -94.77490279999999}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+26,Parking lot,ChIJc2Ax5TWeP4YRNy6EopqGnho,Galveston,"{'lat': 29.3102879, 'lng': -94.7739359}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+27,Parking lot,ChIJ3X8z20meP4YRqsrtvpDhVF8,Galveston,"{'lat': 29.3087521, 'lng': -94.7760356}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+28,Parking lot,ChIJTSBvADaeP4YRbJxsjyxiEmw,Galveston,"{'lat': 29.3097619, 'lng': -94.7743769}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+29,Parking lot,ChIJ7bvw3TWeP4YRK1VkDD_58_A,Galveston,"{'lat': 29.31127459999999, 'lng': -94.773851}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+30,Parking lot,ChIJFf3ZvTWeP4YRiXdERwpzsXc,Galveston,"{'lat': 29.3112158, 'lng': -94.772961}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+31,Parking lot,ChIJ-WFd00meP4YRsAUtjA90R2o,Galveston,"{'lat': 29.3090329, 'lng': -94.777047}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+32,Parking lot,ChIJd8vJzTWeP4YRL_pE-MN_AsA,Galveston,"{'lat': 29.3122354, 'lng': -94.7735678}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+33,2100 Market St. Parking Garage,ChIJaye2WGqeP4YRu3MOyYQugOw,"2100 Market Street, Galveston","{'lat': 29.3061658, 'lng': -94.79185009999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+34,Port parking,ChIJRSPsxj6fP4YRDHneDq0MVqU,"111 18th Street, Galveston","{'lat': 29.3089947, 'lng': -94.7892794}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+35,Tremont hotel,ChIJCx9IFiOfP4YRmN3rRHwjQMU,"Mechanic Street, Galveston","{'lat': 29.307483, 'lng': -94.789504}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+36,Galv Park,ChIJ____VhWeP4YR8TrYJ5mrngw,"1902 Harborside Drive, Galveston","{'lat': 29.3095157, 'lng': -94.7901916}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+37,Strand parking,ChIJBd-e_gSfP4YRouBxley70iU,"109 20th Street, Galveston","{'lat': 29.30860830000001, 'lng': -94.7914609}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+38,Ez parking harborside,ChIJ6SOBAvOfP4YRbn5ROEyW8G8,"2002 Harborside Drive, Galveston","{'lat': 29.3088172, 'lng': -94.79172659999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+39,2083 Mechanic St Parking,ChIJOYMx72qeP4YRbrm2vTGoeq8,"2083 Mechanic Street, Galveston","{'lat': 29.3071712, 'lng': -94.7917033}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+40,2019-2099 Mechanic Street Parking,ChIJdzuRjGqeP4YRZbS0ZBXIw_s,"2019-2099 Mechanic Street, Galveston","{'lat': 29.3065551, 'lng': -94.79106329999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+41,SP+ Parking,ChIJofob016fP4YRKFLv7jQvXL4,"2083 Ship Mechanic Row Street, Galveston","{'lat': 29.3065367, 'lng': -94.79106630000001}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+42,1909 Market St Parking,ChIJpfOmLECeP4YR9c4-GSzOIf4,"1909 Market Street, Galveston","{'lat': 29.306246, 'lng': -94.789535}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+43,2028 Mechanic St. Lot,ChIJm_8t72qeP4YRWn19mPtpfik,"2028 Mechanic Street, Galveston","{'lat': 29.3067625, 'lng': -94.79162009999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+44,2011 Market St Parking,ChIJRXTPY2qeP4YReOtDPYjhF4w,"2011 Market Street, Galveston","{'lat': 29.3059209, 'lng': -94.7907929}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+45,1918 Avenue E Parking,ChIJw-4a1kGeP4YRKrbSBpPzTq0,"1918 Postoffice St, Galveston","{'lat': 29.3057618, 'lng': -94.78983939999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+46,Parking,ChIJf07hEdOfP4YRXT4uy9X5dD4,"51 21st Street, Galveston","{'lat': 29.30870509999999, 'lng': -94.792904}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+47,SP+ Parking,ChIJAcTwTXKfP4YR0mmN8fdo-Iw,"50 21st Street, Galveston","{'lat': 29.3092445, 'lng': -94.79281720000002}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+48,102 Kempner St. Lot,ChIJ-_FkJWueP4YRW5D7ASuIVPs,"102 Kempner Street, Galveston","{'lat': 29.3082068, 'lng': -94.7929968}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+49,144 22nd St Parking,ChIJTTxvJWueP4YRkgNzs9FXHGw,"144 22nd Street, Galveston","{'lat': 29.3081835, 'lng': -94.7930049}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+50,ParkPostOffice.com,ChIJWd-I91mfP4YR0_4et3Ks9hQ,"1913 Postoffice Street, Galveston","{'lat': 29.305386, 'lng': -94.789312}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+51,1819 Avenue E Parking,ChIJvwp0t0GeP4YRwZ7uJ2L6ZFA,"1819 Postoffice St, Galveston","{'lat': 29.3055771, 'lng': -94.7883964}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+52,SP+ Parking,ChIJAfWuWJafP4YRYRiSEupp7eU,"375 21st Street, Galveston","{'lat': 29.30600179999999, 'lng': -94.79210379999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+53,Ampco System Parking,ChIJ8Sa2WGqeP4YRFwsoLim_wgk,"Parking lot, 2200 Harborside Drive, Galveston","{'lat': 29.3090517, 'lng': -94.7935826}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+54,208 22nd St Parking,ChIJVaBSEWueP4YRIb_iZ3N6Jas,"208 22nd Street, Galveston","{'lat': 29.3071309, 'lng': -94.7933944}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+55,SP+ Parking,ChIJOyIvIdmfP4YR6yJC98uSUSw,"101 Kempner Street, Galveston","{'lat': 29.3080382, 'lng': -94.7937566}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+56,The Strand,ChIJt3J8R2ueP4YRhFJ1NIrlYjM,"101 Kempner Street, Galveston","{'lat': 29.3079993, 'lng': -94.79377600000001}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+57,2027 Post Office St Parking,ChIJ6XmKa2qeP4YRSAZKZs5TMt8,"540 Moody Avenue, Galveston","{'lat': 29.30494959999999, 'lng': -94.79084530000002}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+58,SP+ Parking,ChIJBYL9d26fP4YRR4qU5Ukt_DQ,"144 22nd Street, Galveston","{'lat': 29.3088556, 'lng': -94.79394289999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+59,SP+ Parking,ChIJJZc7omyeP4YRkriDhUFIqYw,"53 22nd Street, Galveston","{'lat': 29.3088175, 'lng': -94.79415859999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+60,Pier 21 - Lot 4,ChIJaaUqUGueP4YRkLV3F9AiJ94,"Parking lot, 65 22nd Street, Galveston","{'lat': 29.3083642, 'lng': -94.7944077}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+61,Port of Galveston Pier 25 Cruise Parking,ChIJyQbTgzufP4YRRwcmkBOzGLQ,"2502 Harborside Drive, Galveston","{'lat': 29.308206, 'lng': -94.7949089}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+62,Pier 21 Lot 5,ChIJp1QbWGueP4YRCiyujXrIFtw,"2300 Harborside Drive, Galveston","{'lat': 29.3081405, 'lng': -94.7950123}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+63,Parking lot,ChIJccZCp2ueP4YRs8AObq7PblI,Galveston,"{'lat': 29.3058727, 'lng': -94.79327239999999}",,"['parking', 'premise', 'point_of_interest', 'establishment']",parking
+64,Parking lot,ChIJdwXcpmqeP4YRnLsczrsJwTc,Galveston,"{'lat': 29.30811479999999, 'lng': -94.7900755}",,"['parking', 'premise', 'point_of_interest', 'establishment']",parking
+65,Parking lot,ChIJlSHNH0CeP4YRzQwmoUOE3UA,Galveston,"{'lat': 29.3077847, 'lng': -94.7898124}",,"['parking', 'premise', 'point_of_interest', 'establishment']",parking
+66,Parking lot,ChIJQd6Eo2qeP4YRjhW6xNqvz40,Galveston,"{'lat': 29.3079922, 'lng': -94.79033849999999}",,"['parking', 'premise', 'point_of_interest', 'establishment']",parking
+67,Parking lot,ChIJT9ZTvGqeP4YR9br2Zlz8eMk,Galveston,"{'lat': 29.3078229, 'lng': -94.79064199999999}",,"['parking', 'premise', 'point_of_interest', 'establishment']",parking
+68,Parking lot,ChIJ4Y6USRWeP4YRKeJw6uOqBOA,Galveston,"{'lat': 29.309482, 'lng': -94.7910871}",,"['parking', 'premise', 'point_of_interest', 'establishment']",parking
+69,Parking lot,ChIJBcBXyWqeP4YRzOLE9jQ-tjM,Galveston,"{'lat': 29.308565, 'lng': -94.7914109}",,"['parking', 'premise', 'point_of_interest', 'establishment']",parking
+70,Parking lot,ChIJE1b9LBWeP4YRs4bbHHABTlo,Galveston,"{'lat': 29.3090909, 'lng': -94.7918965}",,"['parking', 'premise', 'point_of_interest', 'establishment']",parking
+71,Parking lot,ChIJTx3PjGqeP4YRMAiQI8LcmMM,Galveston,"{'lat': 29.30668309999999, 'lng': -94.7910094}",,"['parking', 'premise', 'point_of_interest', 'establishment']",parking
+72,Parking lot,ChIJ5xnf0WqeP4YRDUfpala9baQ,Galveston,"{'lat': 29.3085944, 'lng': -94.791856}",,"['parking', 'premise', 'point_of_interest', 'establishment']",parking
+73,Suderman Stevedores,ChIJVTHl1WqeP4YR-T-PNxIdEGo,"37 Pier 21, Galveston","{'lat': 29.3096285, 'lng': -94.7927457}",OPERATIONAL,"['transit_station', 'point_of_interest', 'establishment']",transit_station
+74,Parking lot,ChIJHXYQZ0eeP4YR-6Oc6XkYDd8,Galveston,"{'lat': 29.3088601, 'lng': -94.7831562}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+75,Parking lot,ChIJmxJPgEeeP4YRj8VqZP89qlQ,Galveston,"{'lat': 29.3092685, 'lng': -94.78186149999999}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+76,Port Of Galveston Parking & Cruise Terminals,ChIJq6Ry72yeP4YR2Dndmacf3c0,"123 Rosenberg Street, Galveston","{'lat': 29.3065514, 'lng': -94.79707649999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+77,EZ Cruise Parking,ChIJyfsXmm2eP4YRgIdWU9o7Eiw,"2727 Santa Fe Place, Galveston","{'lat': 29.3055923, 'lng': -94.7982536}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+78,81st Dolphin Parking,ChIJDYwv-W2eP4YRVw8XDEJt-Rc,"2801 Market Street, Galveston","{'lat': 29.3036021, 'lng': -94.7997881}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+79,Cruise Park,ChIJcRP8SmyeP4YRomXqEqBKhtQ,"2815 Harborside Drive, Galveston","{'lat': 29.3060306, 'lng': -94.8009659}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+80,Galveston Cruise Parking - Lighthouse Cruise Parking,ChIJvXZMvtudP4YRYCpj19029Z4,"325 29th Street, Galveston","{'lat': 29.3039505, 'lng': -94.80134749999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+81,Galveston Park N Cruise,ChIJi-Rw4WyeP4YRY_jFFguDAkU,"2514 New Strand Street, Galveston","{'lat': 29.3070454, 'lng': -94.797454}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+82,P4003,ChIJa4bdfmueP4YRF71thrCoBmA,"2300 Ship Mechanic Row Street, Galveston","{'lat': 29.3062136, 'lng': -94.7948085}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+83,Official Port of Galveston - Lot B,ChIJ0ce-EnSeP4YRBe-gw-KGnIY,"224 33rd Street, Galveston","{'lat': 29.3034288, 'lng': -94.80549330000001}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+84,Lighthouse Parking,ChIJoW2MDNufP4YR_QqDw9yfzdk,"2901 Mechanic Street, Galveston","{'lat': 29.3044274, 'lng': -94.8012591}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+85,Parking,ChIJM-vZEDOfP4YRn5qTcwK2Rqk,"2901 Mechanic Street, Galveston","{'lat': 29.3042995, 'lng': -94.8012117}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+86,Lighthouse parking Lot 3,ChIJ-wKq8q2fP4YRsOb7wkFIRIU,"2801 Market Street, Galveston","{'lat': 29.3036021, 'lng': -94.7997881}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+87,Cruise Parking Express Lot,ChIJbVt2vXKeP4YRYHaTATxOFQc,"106 28th Street, Galveston","{'lat': 29.3072849, 'lng': -94.8010348}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+88,Galveston wharfs,ChIJh52DxQyfP4YR8gjTV0in3u0,"303 31st Street, Galveston","{'lat': 29.3044129, 'lng': -94.8032672}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+89,Port of Galveston Express Lot Cruise Parking,ChIJo9RSeWSfP4YRgHa9wjU2HPw,"2702 Harborside Drive, Galveston","{'lat': 29.3074851, 'lng': -94.8003865}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+90,225 25th St Parking,ChIJF0BDWGyeP4YR6QMPgGxHwXI,"225 25th Street, Galveston","{'lat': 29.3058168, 'lng': -94.79687899999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+91,Galv Park,ChIJTxD4ijSfP4YRkZ5JNXh0PUc,"201 Rosenberg Street, Galveston","{'lat': 29.305824, 'lng': -94.79682}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+92,Lot А - Port Of Galveston Cruise Parking,ChIJC2xgonOeP4YRfOjItcpNF1o,"150 33rd Street, Galveston","{'lat': 29.3051314, 'lng': -94.8040417}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+93,Galveston VIP Cruise Parking,ChIJhZ_r5myeP4YR_-0yuhWIOow,"111 Rosenberg Street, Galveston","{'lat': 29.3071013, 'lng': -94.7972231}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+94,600 26th St Parking,ChIJ-az9jm6eP4YRn7--ZjWSOp8,"600 26th Street, Galveston","{'lat': 29.3021002, 'lng': -94.797186}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+95,Official Port of Galveston SMP Cruise Parking Garage,ChIJDw_EmuOfP4YR-budokSzT5U,"150 Rosenberg Street, Galveston","{'lat': 29.30724489999999, 'lng': -94.79675999999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+97,Rosenberg Library Parking,ChIJre2YEmmeP4YRdPM8gyXCxWU,"2315 Avenue H, Galveston","{'lat': 29.30144699999999, 'lng': -94.793363}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+98,The Strand,ChIJ4wDp7mueP4YRu1X7sOtpI3Y,"2327 Postoffice St, Galveston","{'lat': 29.3040871, 'lng': -94.79417339999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+99,2608 Sealy Ave Parking,ChIJ9SGp326eP4YRsL2hNdLjqz4,"2608 Sealy Avenue, Galveston","{'lat': 29.3003026, 'lng': -94.7962016}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+100,Galv Park,ChIJ08QjgdyfP4YRvnPFH0pa55Q,"2401 Postoffice Street, Galveston","{'lat': 29.30403159999999, 'lng': -94.7947495}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+101,Premium Parking - P4002,ChIJ3UIVPVyeP4YRxuKo0YK3ZVU,"2024 Seawall Boulevard, Galveston","{'lat': 29.2926587, 'lng': -94.7860973}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+102,SP+ Parking,ChIJT44h8HmfP4YRBSNbQq2Dj_k,"1925 21st Street, Galveston","{'lat': 29.29205979999999, 'lng': -94.787345}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+103,Hotel Galvez Parking Garage,ChIJvU3r3QqfP4YRs1soxXRdj6o,"1921 21st Street, Galveston","{'lat': 29.2921951, 'lng': -94.7869676}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+104,2024 Seawall Blvd Parking,ChIJ-UIVPVyeP4YR7dJg3xcHy70,"2024 Seawall Boulevard, Galveston","{'lat': 29.292642, 'lng': -94.786074}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+105,Parking Lot,ChIJJdW2URKfP4YRM0CA98ryvv8,"3510-0116-2000, #001, Galveston","{'lat': 29.2880608, 'lng': -94.79106469999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+106,Parking lot,ChIJLaPgPF6eP4YRwBTlZJET_UY,Galveston,"{'lat': 29.2900868, 'lng': -94.7890638}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+107,Parking lot,ChIJY7WjDlyeP4YRLJF6a_o4fs0,Galveston,"{'lat': 29.2930356, 'lng': -94.7850984}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+108,Indoor Cruise Parking,ChIJBW3b_XWeP4YRvvqGo0EPcYk,"202 37th Street, Galveston","{'lat': 29.3027331, 'lng': -94.8101226}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+109,Port Parking,ChIJW3m34XWeP4YR1g2RqlFuMcQ,"202 37th Street, Galveston","{'lat': 29.302697, 'lng': -94.809512}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+110,Glaveston Cruise Terminal,ChIJDUWIyaqfP4YRfBIJMf5njA8,"3300 Harborside Drive, Galveston","{'lat': 29.3041619, 'lng': -94.8061477}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+111,"Falstaff Cruise Parking, Drive In & Cruise Out",ChIJVZAn6HaeP4YRQPdXE89epxM,"3402 Church Street, Galveston","{'lat': 29.3004531, 'lng': -94.80594579999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+112,Parking Area,ChIJtVbqb3SeP4YR5cQ0OCu4MXc,"224 33rd Street, Galveston","{'lat': 29.3034356, 'lng': -94.8054947}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+113,Discount Cruise Parking,ChIJ8zHXbzydP4YR0ZRwysjtgm4,"433 33rd Street, Galveston","{'lat': 29.3019206, 'lng': -94.80540810000001}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+114,Parking,ChIJTZjCXCafP4YRQgrwah9umws,"533 33rd Street, Galveston","{'lat': 29.3018621, 'lng': -94.80524229999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+115,Parking lot,ChIJl8Gno3OeP4YRIkGXlUSuFLQ,Galveston,"{'lat': 29.3053378, 'lng': -94.8031475}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+116,Parking lot,ChIJox8duHOeP4YROP6esjXYYcg,Galveston,"{'lat': 29.3044382, 'lng': -94.8029856}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+117,Port of Galveston West Entrance,ChIJBe1V6N6dP4YRy2vmLbXt0PQ,"4002 Port Industrial Road, Galveston","{'lat': 29.30404, 'lng': -94.8139803}",OPERATIONAL,"['transit_station', 'point_of_interest', 'establishment']",transit_station
+118,3502 Seawall Blvd Parking,ChIJx8rFQIaeP4YRyGG-pUkOsXA,"3502 Seawall Boulevard, Galveston","{'lat': 29.28151149999999, 'lng': -94.8019011}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+119,4523 Seawall Blvd Parking,ChIJpxIjXSicP4YRb0mrtzXy4s0,"4523 Seawall Boulevard, Galveston","{'lat': 29.2750797, 'lng': -94.8126046}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+120,Freymiller Galveston Dropyard,ChIJOwzinqidP4YRT0iC0scmVUs,"5700 Harborside Drive, Galveston","{'lat': 29.2980668, 'lng': -94.83406320000002}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+121,6303 Broadway St. Parking,ChIJeRLcQbKdP4YRsGnmiVpwfoI,"6303 Broadway Street, Galveston","{'lat': 29.28783, 'lng': -94.8405191}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+122,Marlin Cruise Parking,ChIJoWd93cudP4YRQyRrIW9W_N0,"8115 Harborside Drive, Galveston","{'lat': 29.2875693, 'lng': -94.86271909999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+123,8701 Teichman Rd Parking,ChIJ0WUIc-KcP4YRVZGz08vjLL8,"8701 Teichman Road, Galveston","{'lat': 29.282649, 'lng': -94.8661714}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+124,Sand Dollar Autoplex,ChIJS4rEDwOdP4YRyUJKa1obLyA,"8020 Broadway Street, Galveston","{'lat': 29.2866847, 'lng': -94.8608958}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+125,"The San Luis Resort, Spa and Conference Center parking",ChIJ2T54gzedP4YRsyYWwXF8uMs,"3104 53rd Street, Galveston","{'lat': 29.2734016, 'lng': -94.8188721}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+126,5400 Seawall Boulevard Parking,ChIJYSOtGiWcP4YRjz4FB3sUb5c,"5400 Seawall Boulevard, Galveston","{'lat': 29.27130469999999, 'lng': -94.8186599}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+127,Burnet Elementary Parking Lot,ChIJSz46OAKdP4YRLBH3k4oTzEo,"5511 Avenue S, Galveston","{'lat': 29.27637, 'lng': -94.824815}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+128,2190 Terminal Dr Parking,ChIJFfXvb_acP4YRVrIRw8E7saQ,"2190 Terminal Drive, Galveston","{'lat': 29.2669691, 'lng': -94.8539629}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+129,Parking,ChIJbfgbcPacP4YRgVyvxgMmUmI,"2215-2299 83rd St, Galveston","{'lat': 29.26690110000001, 'lng': -94.85394959999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+130,Parking lot,ChIJsbwaAPicP4YR-xR-gJ3Khqg,Galveston,"{'lat': 29.2722388, 'lng': -94.8522256}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+131,Parking lot,ChIJAQ3E3lecP4YRFPumfq04aNw,Galveston,"{'lat': 29.2736877, 'lng': -94.8522256}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+132,Parking lot,ChIJ144JpvmcP4YRRiYYJ89NTUI,Galveston,"{'lat': 29.27446999999999, 'lng': -94.8556287}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+133,Galveston Island Brewing Parking Lot,ChIJVet7g4ydP4YRA18lniSyRWg,"3515 85th Street, Galveston","{'lat': 29.2557574, 'lng': -94.85009640000001}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+134,Parking lot,ChIJr9S4pImcP4YRJmKWnPce72g,Galveston,"{'lat': 29.2526183, 'lng': -94.8538461}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+135,Parking lot,ChIJuXTrNIicP4YRjhC2oopooG4,Galveston,"{'lat': 29.2514831, 'lng': -94.85314009999999}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+136,Parking lot,ChIJS1RBIF6cP4YRxy7ZCPwHof4,Galveston,"{'lat': 29.2607, 'lng': -94.8482556}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+137,Parking lot,ChIJy0MrBUmEP4YROwbzdrqcYWo,Galveston,"{'lat': 29.1952893, 'lng': -94.95270389999999}",,"['premise', 'parking', 'point_of_interest', 'establishment']",premise
+138,Beach Access Point #24,ChIJLzHBYQyHP4YR4kk3ZBt9lvQ,"21055 West Sand Hill Drive, Galveston","{'lat': 29.1465546, 'lng': -95.0315102}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+139,Water Tower - Isla Del Sol,ChIJwRSZKXKJP4YR_uFYo5oEPjo,"22426 Termini-San Luis Pass Road, Galveston","{'lat': 29.1334302, 'lng': -95.05307359999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
+140,Parking,ChIJIbI_Ibt3QIYR7Mv7JVzrm8E,"23201 Termini-San Luis Pass Road, Galveston","{'lat': 29.1258428, 'lng': -95.06329919999999}",OPERATIONAL,"['parking', 'point_of_interest', 'establishment']",parking
