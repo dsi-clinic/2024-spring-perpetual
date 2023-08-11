@@ -14,7 +14,7 @@ MULTIPLIER = 10
 
 from ortools.constraint_solver import routing_enums_pb2
 from ortools.constraint_solver import pywrapcp
-import data_creator
+import utils.data_creator as data_creator
 import pickle
 import sys
 import datetime
