@@ -2,18 +2,19 @@
 
 ### Setup Instructions
 
-#### Create a Virtual Environment
+### Create a Virtual Environment
 `python3 -m venv perpetual_env`
 
-#### Activate the Virtual Environment
+### Activate the Virtual Environment
 - On Windows
 `perpetual_env\Scripts\activate`
 
 - On Unix or MacOS
 `source perpetual_env/bin/activate`
 
-#### Install Dependencies
+### Install Dependencies
 `pip install -r requirements.txt`
+
 
 ---
 
@@ -27,3 +28,36 @@ An example command is: `python vrp.py data/distance_matrix_20230809_150310.csv`
 
 
 Note: I have updated the indoor_outdoor.csv file to include Moody Gardens as the starting location. Moreover, the coordinates have been rounded to 5 decimal places. 
+
+---
+
+## File Documentation
+
+### "code" folder
+**arcgis_layers_processing:** contains the data cleaning .ipynb files used to reformat the data in a way that can be used for later routing, etc. after downloading a map layer from ArcGIS web apps/online maps.<br>
+
+**manual_data_pipeline:** contains the jupyter notebooks used to gather all data for a city. It currently has Ann Arbor as a sample but future users can change the city and reuse it.<br>
+
+**routing:** contains all files used for routing (MORE ON THIS LATER IN THE SUMMER).<br>
+
+**automated_pipeline:** contains py files that can automatically gather and output all data for a city. Input is parcel shapefile and city name, coordinates, etc.
+
+### "data" folder
+**distance_matrix:** distance matrix between all bins in a city. Used to feed into the routing algorithm.
+
+**Galv_Bins_July_Version:** all bins (indoors and outdoors) data manually marked by Marty Miles as if July 2023. PLEASE NOTE THAT THIS IS THE MOST UP-TO-DATE DATA about collection+distribution bins and supplemental-collection bins.
+
+**FUE_only_data_files:** clean data tables containing only FUEs info for each city.
+
+**Non-FUE_only_data_files:** clean data tables containing non-FUE info for each city.
+
+**ann_arbor_parcel_data:** parcel data of Ann Arbor, MI. 
+
+**galv_parcel_data:** parcel data of Galveston, TX.
+
+**hilo_parcel_data:** parcel data of Hilo, HI.
+
+
+### "archive_23AY" folder
+This is archive files from Winter 2023 (Data Clinic I) and Spring 2023 (Data Clinic II). 
+
