@@ -14,13 +14,24 @@ MULTIPLIER = 10
 
 from ortools.constraint_solver import routing_enums_pb2
 from ortools.constraint_solver import pywrapcp
-import utils.data_creator as data_creator
 import pickle
 import sys
 import datetime
+import numpy as np
+
+def create_data_model(matrix_file):
+    """Stores the data for the problem."""
+
+    data = {}
+    # The matrix is divided by 10 for ease of calculation.
+    # Multiplier is set to 10
+    data['distance_matrix'] = (np.load(matrix_file)/MULTIPLIER).astype(int)
+    data['num_vehicles'] = int(TOTAL_VEHICLES)
+    data['depot'] = 0
+    return data
 
 # Function added to save the routes as a list
-def save_to_table(data, manager, routing, solution):
+def save_to_table(manager, routing, solution):
     """Saves as a list."""
     routes = []
     distances = []
@@ -71,10 +82,8 @@ def main():
     filename = sys.argv[1]
 
     # Instantiate the data problem.
-    data = data_creator.create_data_model(filename, number_of_vehicles=TOTAL_VEHICLES)
+    data = create_data_model(filename)
     data['distance_matrix'] = data['distance_matrix'].tolist()
-
-    #data = example_data.create_data_model()
 
     # Create the routing index manager.
     manager = pywrapcp.RoutingIndexManager(len(data['distance_matrix']),
@@ -114,7 +123,6 @@ def main():
 
     search_parameters.local_search_metaheuristic = (routing_enums_pb2.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH)
     search_parameters.log_search = True
-    #search_parameters.time_limit.seconds = 30
 
     # Solve the problem.
     solution = routing.SolveWithParameters(search_parameters)
@@ -128,8 +136,8 @@ def main():
         print_solution(data, manager, routing, solution)
         route_list, distance_list = save_to_table(data, manager, routing, solution)
         print(route_list, distance_list)
-        route_output = f"data/route_list_{timestamp_str}.pkl"
-        distance_output = f"data/distance_list_{timestamp_str}.pkl"
+        route_output = f"data/generated_route_list/route_list_{timestamp_str}.pkl"
+        distance_output = f"data/generated_distance_list/distance_list_{timestamp_str}.pkl"
         with open(route_output, 'wb') as f:
             pickle.dump(route_list, f)
         with open(distance_output, 'wb') as f:
