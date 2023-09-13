@@ -6,6 +6,8 @@ import tqdm
 import time
 import datetime
 import sys
+import pickle
+
 
 def get_matrix_data(coordinates, access_token):
     """
@@ -35,6 +37,18 @@ def get_matrix_data(coordinates, access_token):
     response = requests.get(url, params=params)
     # Return the JSON response
     return response.json()
+
+def generate_capacity_list(df, timestamp_str):
+    """
+    Generate a list of capacities from the dataframe.
+
+    :param df: Dataframe
+    :param timestamp_str: Timestamp string
+    """
+    # save list as pkl file
+    capacity_file = f"data/capacity_list_{timestamp_str}.pkl"
+    with open(capacity_file, 'wb') as f:
+        pickle.dump(list(map(int, df['Daily_Pickup_Totes'].tolist())), f)
 
 
 def initialize_data():
@@ -90,6 +104,9 @@ def main():
     # Save the matrix to a file
     filename = f"data/generated_distance_matrices/distance_matrix_{timestamp_str}.npy"
     np.save(filename, full_matrix)
+
+    # Save the capacity list to a file
+    generate_capacity_list(df, timestamp_str)
 
     print('Complete!')
 
