@@ -61,3 +61,23 @@ Note: I have updated the indoor_outdoor.csv file to include Moody Gardens as the
 ### "archive_23AY" folder
 This is archive files from Winter 2023 (Data Clinic I) and Spring 2023 (Data Clinic II). 
 
+-----
+
+![The interactive map can be found in the output directory](images/galveston_map.png)
+
+
+1. Run GenerateDistMatrix.py
+    a. Needs data/Galveston_data/indoor_outdoor_pts.csv
+    b. Returns data/generated_distance_matrices/distance_matrix_{timestamp_str}.npy
+2. Run GenerateDistMatrix.py
+    a. Needs data/Galveston_data/indoor_outdoor_pts.csv
+    b. Returns data/capacity_lists/capacity_list_{timestamp_str}.pkl
+3. Run CapacityRouting.py
+    a. Needs data/generated_distance_matrices/distance_matrix_{timestamp_str}.npy
+    b. Needs data/capacity_lists/capacity_list_{timestamp_str}.pkl
+    c. Returns data/generated_route_list/route_list_{timestamp_str}.pkl
+    d. Returns data/generated_distance_list/distance_list_{timestamp_str}.pkl
+4. Run BuildCapacityMap.py
+    a. Needs data/Galveston_data/indoor_outdoor_pts_galv.csv
+    b. Needs data/generated_route_list/route_list_{timestamp_str}.pkl
+    c. Returns data/generated_capacity_map/capacity_map.html
