@@ -131,6 +131,8 @@ def main():
 
     # Get file paths
     matrix_file, capacity_file = get_file_paths()
+    matrix_file = os.path.join(data_dir, matrix_file)
+    capacity_file = os.path.join(data_dir, capacity_file)
 
     # Get routing configuration
     try:

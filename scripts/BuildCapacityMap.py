@@ -91,7 +91,7 @@ def parse_supplemental_data(datafile):
 
     return name_dict, category_dict, pickup_capacity_dict, lat_long_dict
 
-def create_map(route_dict, name_dict, category_dict, pickup_capacity_dict, lat_long_dict, mapbox_token, central_coordinates):
+def create_map(route_dict, name_dict, category_dict, pickup_capacity_dict, lat_long_dict, mapbox_token, central_coordinates, html):
     '''
     :param route_dict: dictionary of route name as key and route list as value
     :param name_dict: dictionary of index as key and name as value
@@ -170,17 +170,18 @@ def create_map(route_dict, name_dict, category_dict, pickup_capacity_dict, lat_l
             route = folium.PolyLine(locations=coords, color=route_color, weight=1)
             route.add_to(m)
     
-    html_path = 'code/legend.html'
+    html_path = html
     with open(html_path, 'r') as file:
         legend_html = file.read()
     m.get_root().html.add_child(folium.Element(legend_html))
 
     return m
 
-def get_file_paths():
+def get_file_paths(data_dir):
     """
     Retrieves file paths from command line arguments.
 
+    :param data_dir: Path to the data directory.
     :return: A tuple containing the matrix file path and the capacity file path.
     :raises IndexError: If the required arguments are not provided.
     """
@@ -189,6 +190,9 @@ def get_file_paths():
 
     data_file = sys.argv[1]
     route_list = sys.argv[2]
+
+    data_file = os.path.join(data_dir, data_file)
+    route_list = os.path.join(data_dir, route_list)
 
     return data_file, route_list
 
@@ -210,18 +214,20 @@ def main():
     except FileNotFoundError:
         raise FileNotFoundError("Config file not found.")
 
-    route_data = fetch_data(route_list)
+    route_data = fetch_data(route_list, data_dir)
     route_dict = parse_route_data(route_data)
 
     # parse supplemental data
     name_dict, category_dict, pickup_capacity_dict, \
         lat_long_dict = parse_supplemental_data(data_file)
 
+    html = os.path.join(root_dir, 'scripts', 'legend.html')
     map = create_map(route_dict, name_dict, category_dict, \
-                   pickup_capacity_dict, lat_long_dict, mapbox_token, central_coordinates)
+                   pickup_capacity_dict, lat_long_dict, mapbox_token, central_coordinates, html)
 
     # save map
-    map.save('capacity_map.html')  
+    map_path = os.path.join(root_dir, 'outputs', 'capacity_map.html')
+    map.save(map_path)  
 
 if __name__ == '__main__':
     main()

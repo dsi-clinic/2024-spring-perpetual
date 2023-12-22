@@ -19,7 +19,7 @@ Planning a feasible centralized reuse system comes with a lot of challenges. Thi
 
 This program can be used to create a centralized reuse system for any city. The minimal input required for this simulation is a table of locations with coordinates and expected volume of foodware use. 
 
-This program requires a [Mapbox Access Token](https://docs.mapbox.com/help/getting-started/access-tokens/) to use Maobix API for creting the distance matrix and visualizing routes. After cloning the repository, place the API key in the `config.ini` file inside the placeholder. The config file also requires total number of vehicles for the routing simulation, the vehicle capacities, the time limit (in seconds) for the routing solver and the central coordinates for the map. 
+This program requires a [Mapbox Access Token](https://docs.mapbox.com/help/getting-started/access-tokens/) to use Maobix API for creting the distance matrix and visualizing routes. After cloning the repository, place the API key in the `config.ini` file inside the placeholder. The config file also requires total number of vehicles for the routing simulation, the vehicle capacities, the time limit (in seconds) for the routing solver, the central coordinates for the map and file paths. 
 
 The entire project has been divided into 3 stages. The `run_scripts.sh` file has to be run to specify which stage to execute. The 3 stages of the project include:
 
@@ -31,7 +31,7 @@ The entire project has been divided into 3 stages. The `run_scripts.sh` file has
 
 After cloning the repository, create a virtual environment and install the packages in the requirements.txt. Replace the placeholders in the `config.ini` file with your mapbox token. Modify other paramters in the config if required. To run the simulation with another city, place the dataset in the `data` directory.
 
-On your terminal, run the command `sh run_simulation.sh`. The simulation script will require the user to specify the stage of the process to execute and the input required for each stage.
+On your terminal, run the command `sh run_simulation.sh`. The simulation script will require the user to specify the stage of the process to execute and the input required for each stage in the config.ini file.
 
 ##### Note:
 Stage 1 requires an input dataset of participating locations and will save a distance matrix and capacity list in the `data` directory. Stage 2 requires the generated distance matrix and capacity list to produce the route list and corresponding distance list for each route. Stage 3 requires the route list and location dataset to build the capacity map in form of an html file saved in the `outputs` directory.
