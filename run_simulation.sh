@@ -1,27 +1,74 @@
 #!/bin/bash
 
-# Define file paths
-indoor_outdoor_pts_csv="Galveston_data/indoor_outdoor_pts.csv"
-# distance_matrix_npy="data/generated_distance_matrices/distance_matrix_${timestamp}.npy"
-# capacity_list_pkl="data/capacity_lists/capacity_list_${timestamp}.pkl"
-# route_list_pkl="data/generated_route_list/route_list_${timestamp}.pkl"
-# distance_list_pkl="data/generated_distance_list/distance_list_${timestamp}.pkl"
-# capacity_map_html="data/generated_capacity_map/${timestamp}_capacity_map.html"
+# Load config file
+config_file="config.ini"
 
-# Run GenerateDistMatrix.py to generate distance matrix
-echo "Running GenerateDistMatrix.py for distance matrix..."
-python scripts/GenerateDistMatrix.py "$indoor_outdoor_pts_csv"
+# Check if the config file exists
+if [ ! -f "$config_file" ]; then
+    echo "Error: Config file not found!"
+    exit 1
 
-# Run GetCapacityList.py to generate capacity list
-echo "Running GetCapacityList.py for capacity list..."
-python GetCapacityList.py "$indoor_outdoor_pts_csv"
+# Read file paths from the config file
+location_data=$(grep '^location_data=' "$config_file" | cut -d'=' -f2)
+distance_matrix=$(grep '^distance_matrix=' "$config_file" | cut -d'=' -f2)
+capacity_list=$(grep '^capacity_list=' "$config_file" | cut -d'=' -f2)
+route_list=$(grep '^route_list=' "$config_file" | cut -d'=' -f2)
 
-# Run CapacityRouting.py
-echo "Running CapacityRouting.py..."
-python CapacityRouting.py "$distance_matrix_npy" "$capacity_list_pkl"
+# Verify the paths (Optional)
+if [ ! -f "$location_data" ]; then
+    echo "Warning: File at location_data not found"
+fi
+if [ ! -f "$distance_matrix" ]; then
+    echo "Warning: File at distance_matrix not found"
+fi
+if [ ! -f "$capacity_list" ]; then
+    echo "Warning: File at capacity_list not found"
+fi
+if [ ! -f "$route_list" ]; then
+    echo "Warning: File at route_list not found"
+fi
 
-# Run BuildCapacityMap.py
-echo "Running BuildCapacityMap.py..."
-python BuildCapacityMap.py "$indoor_outdoor_pts_csv" "$route_list_pkl" 
+# Print the list of tasks
+echo "Before selecting the stage ahead, please make sure that the correct file paths have been specified in config.ini."
+echo "Select a stage to run:"
+echo "1. Stage 1: Generate input parameters for routing"
+echo "2. Stage 2: Run routing algorithm"
+echo "3. Stage 3: Build capacity map"
 
-echo "Scripts executed successfully."
+# Get user input
+read -p "Enter the number of the task you want to run: " task
+
+# Execute the chosen task
+case $task in
+    1)
+        echo "Running Stage 1..."
+        filepath="Galveston_data/location_data.csv"
+        # Run GenerateDistMatrix.py to generate distance matrix
+        echo "Generating Distance Matrix..."
+        python scripts/GenerateDistMatrix.py "$location_data"
+        # Run GetCapacityList.py to generate capacity list
+        echo "Generating Capacity List..."
+        python GetCapacityList.py "$location_data"
+        echo "The distance matrix and capacity list have been generated."
+        ;;
+    2)
+        echo "Running Stage 2..."
+        # Run CapacityRouting.py
+        echo "Running CapacityRouting.py..."
+        python CapacityRouting.py "$distance_matrix" "$capacity_list"
+        echo "The route and distance lists have been generated and saved in the /data directory."
+
+
+        ;;
+    3)
+        echo "Running Stage 3..."
+        # Run BuildCapacityMap.py
+        echo "Running BuildCapacityMap.py..."
+        python BuildCapacityMap.py "$location_data" "$route_list" 
+        echo "The capacity map has been generated and saved in the /outputs directory."
+        ;;
+    *)
+        echo "Invalid selection. Please choose 1, 2, or 3."
+        ;;
+esac
+

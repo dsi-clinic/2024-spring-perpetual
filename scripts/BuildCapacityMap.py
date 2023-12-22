@@ -29,8 +29,10 @@ def read_config(root_dir):
     config_path = os.path.join(root_dir, 'config.ini')    
     config.read(config_path)
     mapbox_token = config['mapbox']['token']
+    import ast
+    central_coordinates = ast.literal_eval(config['mapping']['map_center'])
 
-    return mapbox_token
+    return mapbox_token, central_coordinates
 
 def fetch_data(filename, data_dir):
     '''
@@ -89,7 +91,7 @@ def parse_supplemental_data(datafile):
 
     return name_dict, category_dict, pickup_capacity_dict, lat_long_dict
 
-def create_map(route_dict, name_dict, category_dict, pickup_capacity_dict, lat_long_dict, mapbox_token):
+def create_map(route_dict, name_dict, category_dict, pickup_capacity_dict, lat_long_dict, mapbox_token, central_coordinates):
     '''
     :param route_dict: dictionary of route name as key and route list as value
     :param name_dict: dictionary of index as key and name as value
@@ -97,6 +99,7 @@ def create_map(route_dict, name_dict, category_dict, pickup_capacity_dict, lat_l
     :param pickup_capacity_dict: dictionary of index as key and pickup_capacity as value
     :param lat_long_dict: dictionary of index as key and latitude and longitude as value
     :param mapbox_token: mapbox token
+    :param central_coordinates: central coordinates of the map
     :return: folium map
     '''
 
@@ -104,7 +107,7 @@ def create_map(route_dict, name_dict, category_dict, pickup_capacity_dict, lat_l
     params = {'access_token': mapbox_token, 'overview': 'full'}
 
     # Create a folium map centered at the mean of the locations
-    m = folium.Map(location=[29.3013, -94.7977], zoom_start=12)
+    m = folium.Map(location=central_coordinates, zoom_start=12)
 
     total_duration = 0   
     # create a list of 6 colors
@@ -203,7 +206,7 @@ def main():
 
     # Get routing configuration
     try:
-        mapbox_token = read_config('config.ini')
+        mapbox_token, central_coordinates = read_config(root_dir)
     except FileNotFoundError:
         raise FileNotFoundError("Config file not found.")
 
@@ -215,7 +218,7 @@ def main():
         lat_long_dict = parse_supplemental_data(data_file)
 
     map = create_map(route_dict, name_dict, category_dict, \
-                   pickup_capacity_dict, lat_long_dict, mapbox_token)
+                   pickup_capacity_dict, lat_long_dict, mapbox_token, central_coordinates)
 
     # save map
     map.save('capacity_map.html')  

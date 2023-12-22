@@ -31,7 +31,7 @@ The entire project has been divided into 3 stages. The `run_scripts.sh` file has
 
 After cloning the repository, create a virtual environment and install the packages in the requirements.txt. Replace the placeholders in the `config.ini` file with your mapbox token. Modify other paramters in the config if required. To run the simulation with another city, place the dataset in the `data` directory.
 
-On your terminal, run the command `sh run_simulation.sh`. The simulation script will require the user to specify the stage to run the input each stage requires.
+On your terminal, run the command `sh run_simulation.sh`. The simulation script will require the user to specify the stage of the process to execute and the input required for each stage.
 
 ##### Note:
 Stage 1 requires an input dataset of participating locations and will save a distance matrix and capacity list in the `data` directory. Stage 2 requires the generated distance matrix and capacity list to produce the route list and corresponding distance list for each route. Stage 3 requires the route list and location dataset to build the capacity map in form of an html file saved in the `outputs` directory.
