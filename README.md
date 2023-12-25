@@ -1,63 +1,41 @@
 # Perpetual
 
-### Setup Instructions
+### Background:
 
-### Create a Virtual Environment
-`python3 -m venv perpetual_env`
+Perpetual is a non-profit organization that aims to reduce the use of single-use foodware. This repository contains a model that can help Perpetual simulate a centralized foodware reuse system in a city.
 
-### Activate the Virtual Environment
-- On Windows
-`perpetual_env\Scripts\activate`
+Perpetual provided data for the city of Galveston, one of it's first partners for this project. This repository contains the dataset and an example on how to create a simulation of a centralized foodware reuse system for Galveston, TX. However, this repository can work for any city given that the relevant data is provided.
 
-- On Unix or MacOS
-`source perpetual_env/bin/activate`
+### Goal:
 
-### Install Dependencies
-`pip install -r requirements.txt`
+A centralized reuse system consists of multiple articipating Foodware-service Entities (FSEs) which consists of all locations that provide food or drinks in disposable containers. Additionally, multiple collection bins are installed throughout the city to make it convenient for people to deposit reusable containers. These containers are then washed in a centralized washing facility and redistributed back to the participating FSEs.
 
+Planning a feasible centralized reuse system comes with a lot of challenges. This repository uses a set of techniques to find the most optimal way of approaching this problem. The map below shows how a dataset of particiating locations and their expected volume of use can be turned into a map of optimal routes to serve the city of Galveston, TX in the most feasible manner.
 
----
-
-### Steps to take:
-
-1. Follow the setup instructions below and ensure that the config.ini file is available in the root directory.
-2. Run the file 'GetDistanceMatrix.py' using the command `python GetDistanceMatrix.py <filepath>`. This will generate a distance matrix as a .npy file with a timestamp in the data folder. 
-An example command is: `python GetDistanceMatrix.py data/indoor_outdoor.csv` 
-3. Run the file 'vrp.py' using the command `python vrp.py <filepath>`. This will generate a distance_list and a route_list file with a timestamp in the data folder. Modify the value TOTAL_VEHICLES and TOTAL_DISTANCE to get various combinations of routes.
-An example command is: `python vrp.py data/distance_matrix_20230809_150310.csv` 
+![The interactive map can be found in the output directory](images/galveston_map.png)
 
 
-Note: I have updated the indoor_outdoor.csv file to include Moody Gardens as the starting location. Moreover, the coordinates have been rounded to 5 decimal places. 
+### How to use this repository:
 
----
+This program can be used to create a centralized reuse system for any city. The minimal input required for this simulation is a table of locations with coordinates and expected volume of foodware use. 
 
-## File Documentation
+This program requires a [Mapbox Access Token](https://docs.mapbox.com/help/getting-started/access-tokens/) to use Maobix API for creting the distance matrix and visualizing routes. After cloning the repository, place the API key in the `config.ini` file inside the placeholder. The config file also requires total number of vehicles for the routing simulation, the vehicle capacities, the time limit (in seconds) for the routing solver, the central coordinates for the map and file paths. 
 
-### "code" folder
-**arcgis_layers_processing:** contains the data cleaning .ipynb files used to reformat the data in a way that can be used for later routing, etc. after downloading a map layer from ArcGIS web apps/online maps.<br>
+The entire project has been divided into 3 stages. The `run_scripts.sh` file has to be run to specify which stage to execute. The 3 stages of the project include:
 
-**manual_data_pipeline:** contains the jupyter notebooks used to gather all data for a city. It currently has Ann Arbor as a sample but future users can change the city and reuse it.<br>
+1. Generating inputs for route optimization
+2. Running the route optimizer
+3. Building the route map
 
-**routing:** contains all files used for routing (MORE ON THIS LATER IN THE SUMMER).<br>
+### Running the simulation:
 
-**automated_pipeline:** contains py files that can automatically gather and output all data for a city. Input is parcel shapefile and city name, coordinates, etc.
+After cloning the repository, create a virtual environment and install the packages in the requirements.txt. Replace the placeholders in the `config.ini` file with your mapbox token. Modify other paramters in the config if required. To run the simulation with another city, place the dataset in the `data` directory.
 
-### "data" folder
-**distance_matrix:** distance matrix between all bins in a city. Used to feed into the routing algorithm.
+On your terminal, run the command `sh run_simulation.sh`. The simulation script will require the user to specify the stage of the process to execute and the input required for each stage in the config.ini file.
 
-**Galv_Bins_July_Version:** all bins (indoors and outdoors) data manually marked by Marty Miles as if July 2023. PLEASE NOTE THAT THIS IS THE MOST UP-TO-DATE DATA about collection+distribution bins and supplemental-collection bins.
-
-**FUE_only_data_files:** clean data tables containing only FUEs info for each city.
-
-**Non-FUE_only_data_files:** clean data tables containing non-FUE info for each city.
-
-**ann_arbor_parcel_data:** parcel data of Ann Arbor, MI. 
-
-**galv_parcel_data:** parcel data of Galveston, TX.
-
-**hilo_parcel_data:** parcel data of Hilo, HI.
+##### Note:
+Stage 1 requires an input dataset of participating locations and will save a distance matrix and capacity list in the `data` directory. Stage 2 requires the generated distance matrix and capacity list to produce the route list and corresponding distance list for each route. Stage 3 requires the route list and location dataset to build the capacity map in form of an html file saved in the `outputs` directory.
 
 
-### "archive_23AY" folder
-This is archive files from Winter 2023 (Data Clinic I) and Spring 2023 (Data Clinic II). 
+-----
 
