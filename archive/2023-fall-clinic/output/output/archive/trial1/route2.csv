@@ -1,0 +1,48 @@
+Original_Index,Name,Weekly_Dropoff_Totes,Daily_Pickup_Totes,Address,Latitude,Longitude,Cumulative_Distance,Truck_Load
+0,Moody Gardens,0.0,0.0,"1 Hope Blvd, Galveston",29.2736,-94.8523,0,0
+138,Aquarium Pyramid,1.0,2.0,"1 Hope Blvd Galveston, TX 77554",29.2724,-94.8542,656,2
+57,Schlitterbahn Waterpark Galveston,6.0,8.0,"2109 Gene Lucas Blvd, Galveston",29.2704,-94.8517,1178,10
+122,Galveston Primetime,2.0,2.0,"8902 Seawall Boulevard, Galveston Movie theatre)",29.253,-94.8542,3802,12
+120,Dolphin World Inc No 2,1.0,1.0,"718 41st Str Galveston, TX 77550",29.2517,-94.8532,4137,13
+125,Jimmy's Curbside Restaurant and Grocery,1.0,2.0,"9001 Seawall Boulevard, Galveston",29.2507,-94.8532,4230,15
+124,SEA BEAN Coffee Cafe,1.0,2.0,"9001 Seawall Blvd Galveston, TX 77551 (Jimmies)",29.2506,-94.8532,4236,17
+157,Seahorse Grill,1.0,1.0,"3802 Cove View Blvd Ste C Galveston, TX 77554",29.2445,-94.868,5957,18
+168,Seawall Coffee Company,1.0,2.0,,29.2446,-94.8678,5978,20
+33,Cooper's Landing,1.0,1.0,"11150 Termini-San Luis Pass Road, Galveston",29.2407,-94.878,7117,21
+133,Hummel's General Store & Deli,1.0,2.0,,29.2082,-94.9375,14018,23
+141,Mario's Pizza,1.0,1.0,"13708 Termini-san Luis Pass Rd Galveston, TX 77554",29.2083,-94.9374,14044,24
+45,Nate's Westend Seafood & Steaks,1.0,1.0,"17515 Termini-San Luis Pass Road, Galveston",29.1752,-94.9851,20028,25
+60,The West End Marina and Restaurants,1.0,1.0,"21706 Burnet Drive, Galveston",29.145,-95.047,27573,26
+149,The Sandbar Grille,1.0,1.0,"21706 Burnet Drive, Galveston",29.145,-95.0471,27575,27
+129,Galveston Food Truck Park,1.0,1.0,"Nest to the Wet Whistle Bar in Sea Isle, 21510 Termini-San Luis Pass Road, Galveston",29.1415,-95.0405,28558,28
+143,Waterman's Restaurant,1.0,1.0,"14302 Stewart Rd Galveston, TX 77554",29.2074,-94.9492,40616,29
+1,Sugar Bean,1.0,1.0,"11 Evia Main, Galveston",29.261,-94.8704,51763,30
+39,Lil’ Buffalo Grille,1.0,1.0,"13 Evia Main, Galveston",29.2611,-94.8706,51988,31
+126,Tin Cup's Caddy Shack,1.0,1.0,"9020 Stewart Road, Galveston",29.2539,-94.8556,54435,32
+31,Sapori,1.0,1.0,"7611 Stewart Road, Galveston",29.2593,-94.8413,55986,33
+113,Golden Corral Buffet & Grill,1.0,1.0,"6200 Seawall Boulevard, Galveston",29.2661,-94.8283,57684,34
+136,Tortuga Mexican Kitchen,1.0,1.0,,29.2675,-94.8256,58120,35
+111,Landry's Prime Seafood & Steaks,1.0,1.0,"5310 Seawall Blvd Galveston, TX 77551",29.2707,-94.8202,58889,36
+135,Rainforest Cafe,1.0,1.0,,29.2708,-94.8202,58935,37
+134,Grotto (under San Luis),1.0,1.0,,29.2726,-94.8184,59447,38
+130,Blake's Bistro (under San Luis),1.0,1.0,San Luis Hotel,29.2725,-94.8183,59452,39
+110,The Cove,1.0,1.0,"5222 Seawall Boulevard, Galveston",29.2725,-94.8183,59452,40
+109,H2O Pool + Bar,8.0,11.0,"5222 Seawall Blvd Inside the San Luis Resort Galveston, TX 77551",29.2724,-94.8174,59642,51
+132,B. Jiggers Lounge,1.0,1.0,,29.2725,-94.8167,59732,52
+128,Jetty,1.0,1.0,HI seawall,29.2728,-94.8166,59810,53
+105,KritiKos Olympia Grill,1.0,1.0,"4908 Seawall Boulevard suite B, Galveston",29.2734,-94.8157,59948,54
+161,Salsas,1.0,1.0,"4604 Seawall Boulevard, Galveston",29.2755,-94.8118,60560,55
+104,Seawall Bar,1.0,2.0,"4302 Seawall Boulevard, Galveston (Tru Hotel)",29.2769,-94.8087,60931,57
+159,Papa's Pizza,4.0,5.0,"4400 Seawall Blvd Galveston, TX 77550",29.2765,-94.8095,61041,62
+98,Mr Taco & Limon Paradise,1.0,2.0,"4112 Seawall Boulevard, Galveston",29.2778,-94.8073,61360,64
+78,Taco Cabana,1.0,2.0,"2729 61st St. Galveston, TX 77551",29.2708,-94.829,63914,66
+165,Café Canela,1.0,1.0,"6105 Stewart Road Suite C, Galveston",29.2744,-94.8308,64467,67
+164,Gypsy Joynt,1.0,2.0,"6105 Stewart Rd Galveston, TX 77551",29.2742,-94.8316,64546,69
+166,Gino's Italian Restaurant and Pizzeria,1.0,1.0,"6124 Stewart Road, Galveston",29.2753,-94.8322,64657,70
+35,Panda Express,1.0,2.0,"11745 San Luis Pass Rd Galveston, TX 77554",29.2755,-94.8306,64806,72
+114,Tremont House Hotel,1.0,1.0,"2300 Mechanic st Galveston, TX 77550",29.2722,-94.8408,65994,73
+123,Palm Beach At Moody Gardens,6.0,8.0,"8928, 1 Hope Boulevard, Galveston",29.2757,-94.851,67975,81
+139,Moody Gardens Restaurant (shown under other restaurant),1.0,1.0,"1 Hope Boulevard, Galveston",29.2757,-94.852,68004,82
+137,Rainforest Pyramid,1.0,2.0,"1 Hope Blvd Galveston, TX 77554",29.2755,-94.8526,68178,84
+115,Cafe in the Park,3.0,3.0,"7 Hope Blvd Galveston, TX 77554",29.2731,-94.8509,68536,87
+0,Moody Gardens,0.0,0.0,"1 Hope Blvd, Galveston",29.2736,-94.8523,68680,87

@@ -1,0 +1,53 @@
+,Name,Longitude,Latitude,Daily_Pickup_Totes,Weekly_Dropoff_Totes,user_ratings_total,category,rating,weekly_high,weekly_low,best_weekly_estimate,Address,geometry,Adoption,Adoption Guess,Visited ,Influence,location_type,pickup_type,id,Bike Aggregation Point
+72,La Estacion Restaurant,-94.794797,29.3015187,58,1,442.0,restaurant,4.3,175,25,175,"2428 Avenue H, Galveston",POINT (-94.794797 29.3015187),Skeptical,Med,No,Low,indoor,Bike_Aggregate,,
+5,Coastal Grill,-94.789455,29.308158,1,1,814.0,restaurant,4.6,500,100,500,"1827 The Strand, Galveston",POINT (-94.789455 29.308158),Skeptical,High,No,Med,indoor,Bike_Converted,,72.0
+8,Vargas Cut and Catch (listed above),-94.7913854,29.3052268,1,1,297.0,bar,4.8,35,49,35,"2102 Postoffice Street, Galveston",POINT (-94.7913854 29.3052268),Curious,High,No,High,indoor,Bike_Converted,,72.0
+9,MarMo Cafe & Lounge,-94.792103,29.3056002,1,1,19.0,bar,4.8,140,35,140,"2121 Market Street suite 101, Galveston",POINT (-94.792103 29.3056002),High,High,No,Med,indoor,Bike_Converted,,72.0
+10,Toujouse (listed under Tremont House),-94.7948312,29.3062632,1,1,6.0,cafe,5.0,0,0,625,"2300 Ship Mechanic Row Street, Galveston",POINT (-94.7948312 29.3062632),Curious,High,No,High,indoor,Bike_Converted,,72.0
+11,The Pink Foyer Sweets Boutique,-94.7945911,29.3060402,1,1,1.0,bakery,5.0,0,0,112.5,"2315 Mechanic Street, Galveston",POINT (-94.7945911 29.3060402),Curious,High,No,Low,indoor,Bike_Converted,,72.0
+12,Riondo's Ristorante,-94.795454,29.3070258,1,1,758.0,restaurant,4.5,70,70,70,"2328 The Strand, Galveston",POINT (-94.795454 29.3070258),Fan,High,No,Med,indoor,Bike_Converted,,72.0
+13,Sugar & Rye,-94.7944536,29.3031184,1,1,128.0,restaurant,4.8,35,70,35,"2401 Church Street, Galveston",POINT (-94.7944536 29.3031184),Curious,High,No,Low,indoor,Bike_Converted,,72.0
+16,Galveston College,-94.8084945,29.2840785,1,1,65.0,university,4.4,20,20,20,"4015 Avenue Q, Galveston",POINT (-94.8084945 29.2840785),Curious,High,No,High,indoor,Bike_Converted,,72.0
+19,Mr. C's Dugout @Galveston College,-94.807822,29.284711,1,1,2.0,restaurant,3.0,,,93.75,"Student Center, 4015 Avenue Q, Galveston",POINT (-94.807822 29.284711),Curious,High,No,High,indoor,Bike_Converted,,72.0
+34,Cruise Plaza,-94.7897517,29.3090318,1,1,82.0,restaurant,4.2,140,70,140,"112 19th Street, Galveston",POINT (-94.7897517 29.3090318),Skeptical,Med,No,Low,indoor,Bike_Converted,,72.0
+36,Mr. Taco,-94.7909307,29.308418,1,1,,restaurant,,0,0,93.75,"120 20th Street, Galveston",POINT (-94.7909307 29.308418),Curious,Med,No,Low,indoor,Bike_Converted,,72.0
+47,Katie's Seafood House,-94.7912952,29.3100166,1,1,3045.0,restaurant,4.6,210,35,210,"2000 Wharf Road, Galveston",POINT (-94.7912952 29.3100166),Curious,Med,No,High,indoor,Bike_Converted,,72.0
+49,Drunken Monkeyz,-94.790723,29.3079594,2,2,324.0,bar,4.3,0,0,1125,"202 20th Street, Galveston",POINT (-94.790723 29.3079594),Skeptical,Med,No,Low,indoor,Bike_Converted,,72.0
+50,Hubcap Grill,-94.791623,29.3076238,1,1,1268.0,bar,4.3,420,140,420,"2021 The Strand #3, Galveston",POINT (-94.791623 29.3076238),Skeptical,Med,No,Med,indoor,Bike_Converted,,72.0
+53,Willie G's Seafood & Steaks,-94.792803,29.309303,1,1,3060.0,restaurant,4.3,3500,500,3500,"2100 Harborside Drive, Galveston",POINT (-94.792803 29.309303),Skeptical,Med,No,High,indoor,Bike_Converted,,72.0
+59,Vintage Crown Michelada Bar & Taqueria,-94.7944665,29.3065367,1,1,207.0,bar,4.6,,,140.625,"215 23rd Street, Galveston",POINT (-94.7944665 29.3065367),Skeptical,Med,No,Low,indoor,Bike_Converted,,72.0
+61,Fisherman's Wharf,-94.7936367,29.3089314,1,1,5747.0,restaurant,4.4,700,140,700,"2200 Harborside Drive, Galveston",POINT (-94.7936367 29.3089314),Skeptical,Med,No,High,indoor,Bike_Converted,,72.0
+62,Axecade,-94.7941601,29.3070637,1,1,113.0,restaurant,4.8,2100,300,2100,"2217 Strand St Second Floor 217, 2217 The Strand Suite 217, Galveston",POINT (-94.7941601 29.3070637),Skeptical,Med,No,Low,indoor,Bike_Converted,,72.0
+64,Tsunami Tequila Emporium,-94.7951202,29.3072052,1,1,165.0,bar,4.1,0,0,140.625,"2314 The Strand, Galveston",POINT (-94.7951202 29.3072052),Skeptical,Med,No,High,indoor,Bike_Converted,,72.0
+65,Playground Patio Bar & Grill,-94.795242,29.30667,1,1,216.0,bar,4.4,,,140.625,"2325 The Strand, Galveston",POINT (-94.795242 29.30667),Skeptical,Med,No,Low,indoor,Bike_Converted,,72.0
+67,Shark Shack,-94.7957083,29.3069439,1,1,1607.0,bar,4.6,210,30,210,"2402 The Strand, Galveston",POINT (-94.7957083 29.3069439),Skeptical,Med,No,Med,indoor,Bike_Converted,,72.0
+69,Hearsay On The Strand,-94.796027,29.3068691,1,1,1103.0,restaurant,4.4,35,5,35,"2410 The Strand, Galveston",POINT (-94.796027 29.3068691),Skeptical,Med,No,Low,indoor,Bike_Converted,,72.0
+70,Patrick’s Bar,-94.7959472,29.3066379,1,1,174.0,bar,4.3,350,50,350,"2411 The Strand B, Galveston",POINT (-94.7959472 29.3066379),Skeptical,Med,No,Low,indoor,Bike_Converted,,72.0
+76,Shrimp 'N Stuff Downtown,-94.7958306,29.3013951,2,1,1785.0,restaurant,4.5,1400,200,1400,"2506 Avenue H, Galveston",POINT (-94.7958306 29.3013951),Skeptical,Med,No,Low,indoor,Bike_Converted,,72.0
+89,Black Pearl Oyster Bar,-94.7940474,29.3054649,1,1,2224.0,restaurant,4.4,105,15,105,"327 23rd Street, Galveston",POINT (-94.7940474 29.3054649),Skeptical,Med,No,Low,indoor,Bike_Converted,,72.0
+101,Trattoria La Vigna,-94.7901585,29.306202,1,1,563.0,restaurant,4.6,0,0,93.75,"412 20th Street, Galveston",POINT (-94.7901585 29.306202),Skeptical,Med,No,Low,indoor,Bike_Converted,,72.0
+102,Shucks Tavern,-94.7912194,29.3055721,1,1,97.0,restaurant,4.7,35,0,35,"414 21st Street, Galveston",POINT (-94.7912194 29.3055721),Curious,Med,No,Low,indoor,Bike_Converted,,72.0
+104,Mama Teresa's Flying Pizza,-94.7911778,29.3055494,2,1,1875.0,restaurant,4.6,175,25,175,"416 21st Street, Galveston",POINT (-94.7911778 29.3055494),Skeptical,Med,No,Low,indoor,Bike_Converted,,72.0
+105,The Wine Next Door,-94.7911713,29.3054682,1,1,3.0,bar,5.0,0,0,140.625,"418 21st Street, Galveston",POINT (-94.7911713 29.3054682),Curious,Med,No,Low,indoor,Bike_Converted,,72.0
+142,Stuttgarden Tavern,-94.7947919,29.3077483,1,1,2179.0,bar,4.2,,,468.75,"111 23rd Street, Galveston",POINT (-94.7947919 29.3077483),Skeptical,Med,Yes,High,indoor,Bike_Converted,,72.0
+147,Brewchachos Tacos & Cantina,-94.7925997,29.3078756,1,1,1043.0,bar,4.2,2800,400,2800,"2110 The Strand, Galveston",POINT (-94.7925997 29.3078756),Skeptical,Med,Yes,Med,indoor,Bike_Converted,,72.0
+148,Rosario`s flying pizza and pub,-94.7928341,29.3073255,1,1,34.0,restaurant,4.6,280,40,280,"2121 The Strand, Galveston",POINT (-94.7928341 29.3073255),Curious,Med,Yes,Low,indoor,Bike_Converted,,72.0
+150,The Garden Thai Cuisine,-94.7940546,29.3065697,1,1,146.0,restaurant,4.5,210,30,210,"216 23rd Street, Galveston",POINT (-94.7940546 29.3065697),Skeptical,Med,Yes,Low,indoor,Bike_Converted,,72.0
+153,Yaga's Cafe,-94.7949518,29.3071481,1,1,1708.0,bar,4.4,250,150,250,"2314 The Strand, Galveston",POINT (-94.7949518 29.3071481),Skeptical,Med,Yes,High,indoor,Bike_Converted,,72.0
+154,Brews Brothers,-94.7958692,29.3069004,2,2,672.0,bar,4.3,,,1125,"2404 The Strand, Galveston",POINT (-94.7958692 29.3069004),Skeptical,Med,Yes,Low,indoor,Bike_Converted,,72.0
+155,Bubba's on The Strand,-94.7959158,29.3065268,2,2,113.0,bar,4.3,,,1125,"2411 The Strand, Galveston",POINT (-94.7959158 29.3065268),Skeptical,Med,Yes,Low,indoor,Bike_Converted,,72.0
+157,Huli Huli Hut,-94.7892355,29.3071699,2,1,1766.0,restaurant,4.3,175,25,175,"312 19th Street, Galveston",POINT (-94.7892355 29.3071699),Skeptical,Med,Yes,Low,indoor,Bike_Converted,,72.0
+172,,-94.79652426820594,29.30682933975252,1,0,,,,,,,,,,,,,outdoor,Bike,1001.0,72.0
+173,,-94.79468452427888,29.30753393564195,1,0,,,,,,,,,,,,,outdoor,Bike,1002.0,72.0
+176,,-94.79850319363544,29.308164157460592,1,0,,,,,,,,,,,,,outdoor,Bike,1005.0,72.0
+178,,-94.79578217640906,29.30090513320724,1,0,,,,,,,,,,,,,outdoor,Bike,1007.0,72.0
+179,,-94.7932658871674,29.301064005835528,1,0,,,,,,,,,,,,,outdoor,Bike,1008.0,72.0
+180,,-94.78891769107824,29.303192407402246,1,0,,,,,,,,,,,,,outdoor,Bike,1009.0,72.0
+183,,-94.79567444799896,29.30696419276517,1,0,,,,,,,,,,,,,outdoor,Bike,1012.0,72.0
+184,,-94.79338136883872,29.30760607604601,1,0,,,,,,,,,,,,,outdoor,Bike,1013.0,72.0
+185,,-94.79216796262608,29.30762661449017,1,0,,,,,,,,,,,,,outdoor,Bike,1014.0,72.0
+186,,-94.79104994247152,29.308214480020617,1,0,,,,,,,,,,,,,outdoor,Bike,1015.0,72.0
+187,,-94.79448543312456,29.30708461014236,1,0,,,,,,,,,,,,,outdoor,Bike,1016.0,72.0
+199,,-94.7898969706002,29.306879649441004,1,0,,,,,,,,,,,,,outdoor,Bike,2007.0,72.0
+202,,-94.8070897627476,29.284031380957845,1,0,,,,,,,,,,,,,outdoor,Bike,2010.0,72.0
+208,,-94.79228185255494,29.30149614872541,1,0,,,,,,,,,,,,,outdoor,Bike_Converted,2016.0,72.0

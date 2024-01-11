@@ -1,0 +1,126 @@
+Original_Index,Name,Weekly_Dropoff_Totes,Daily_Pickup_Totes,Address,Cumulative_Distance,Truck_Load,Coordinates,duration
+0,Moody Gardens,0.0,0.0,"1 Hope Blvd, Galveston",0,0,"[-94.8523, 29.2736]",300
+116,Shearn's Seafood and Prime Steaks,1.0,1.0,"7 Hope Blvd Galveston, TX 77554",471,1,"[-94.8505, 29.2708]",693
+22,Cajun Greek,1.0,1.0,"2226 61st St Galveston, TX 77551",2969,2,"[-94.8316, 29.2769]",1320
+150,Mario's Ristorante,1.0,1.0,"2202 61st St Galveston, TX 77551",3049,3,"[-94.8315, 29.2771]",1633
+144,Yamato,1.0,1.0,"2104 61st Street, Galveston",3250,4,"[-94.8316, 29.2781]",1992
+112,Hooters,1.0,1.0,"6028 Heards Ln Galveston, TX 77551",3541,5,"[-94.8324, 29.2797]",2423
+17,Galveston College Charlie Thomas Family Applied Technology Center,2.0,3.0,"7626 Broadway Street, Galveston",6778,8,"[-94.8568, 29.2876]",3026
+18,Galveston Country club,1.0,1.0,"14888 Stewart rd Galveston, TX 77554",7873,9,"[-94.8627, 29.289]",3448
+121,Number 13 Prime Steak and Seafood,1.0,1.0,"7809 Broadway Street, Galveston",8969,10,"[-94.8575, 29.2851]",3920
+6,Texas A&M University at Galveston,1.0,1.0,"200 Seawolf Parkway, Galveston",16423,11,"[-94.8183, 29.3155]",4902
+63,Britton's Bistro (Murdocks),1.0,2.0,"2226 71st St Galveston, TX 77551",17956,13,"[-94.8189, 29.3132]",5518
+106,Bronco Burritos,1.0,1.0,"4917 Broadway St Galveston, TX 77551",21381,14,"[-94.8224, 29.2918]",6198
+160,Koop's BBQ Kitchen,1.0,2.0,"4501 Broadway Avenue J, Galveston",21931,16,"[-94.8173, 29.2932]",6551
+96,Cordray Drug Store,1.0,2.0,"3827 Ave L Galveston, TX 77550",22860,18,"[-94.8096, 29.2933]",6954
+41,Chef Mary Bass,1.0,1.0,"1510 39th Street, Galveston",23174,19,"[-94.8086, 29.2906]",7299
+3,Good Dough,1.0,1.0,"1508 39th Street, Galveston",23220,20,"[-94.8085, 29.2906]",7638
+42,Nick's,1.0,1.0,"1613 39th Street, Galveston",23358,21,"[-94.8085, 29.2894]",8002
+19,Mr. C's Dugout @Galveston College,1.0,1.0,"Student Center, 4015 Avenue Q, Galveston",24019,22,"[-94.8078, 29.2847]",8446
+95,Nick's Kitchen and Beach Bar,1.0,1.0,"3802 Seawall Boulevard, Galveston",24798,23,"[-94.804, 29.2798]",8909
+25,Gaido's,1.0,1.0,"3828 Seawall Boulevard, Galveston",25283,24,"[-94.8045, 29.2796]",9357
+94,Redfish Pool Bar,1.0,1.0,"3788 Seawall Boulevard, Galveston",25357,25,"[-94.8038, 29.2799]",9669
+93,The Gumbo Diner,1.0,1.0,"3602 Seawall Boulevard, Galveston",25668,26,"[-94.8019, 29.2812]",10037
+92,Joe's Crab Shack,1.0,1.0,"3502 Seawall Boulevard, Galveston",25746,27,"[-94.8015, 29.2816]",10390
+91,Queen's Bar-B-Que,1.0,2.0,"3428 Avenue S, Galveston",25981,29,"[-94.8012, 29.2835]",10791
+83,Under the Bun,1.0,1.0,"3202 Seawall Boulevard, Galveston (SPOT)",26304,30,"[-94.7982, 29.2837]",11168
+88,Drip,1.0,1.0,"3204 Seawall Boulevard, Galveston",26304,31,"[-94.7982, 29.2837]",11468
+84,Squeeze,1.0,1.0,"3204 Seawall Boulevard c, Galveston (spot)",26334,32,"[-94.798, 29.2838]",11784
+86,SideYard,1.0,1.0,"3204 Seawall Boulevard Suite D, Galveston",26344,33,"[-94.798, 29.2837]",12089
+156,The Spot,1.0,1.0,"3204 Seawall Boulevard, Galveston",26354,34,"[-94.798, 29.2836]",12394
+85,Tiki Bar,2.0,2.0,"3204 Seawall Boulevard Suite B, Galveston",26354,36,"[-94.798, 29.2836]",12694
+87,Rum Shack,1.0,1.0,"3204 Seawall Boulevard Suite E, Galveston",26354,37,"[-94.798, 29.2836]",12994
+81,Island time beach bar,2.0,2.0,"3102 Seawall Boulevard, Galveston",26475,39,"[-94.7971, 29.2842]",13317
+80,The Poop Deck,1.0,1.0,"2928 Seawall Boulevard, Galveston",26692,40,"[-94.7956, 29.2852]",13671
+79,Float Pool & Patio Bar,1.0,1.0,"2828 Seawall Boulevard, Galveston",26836,41,"[-94.7944, 29.2859]",14016
+15,BLVD Seafood (all of Yagas Entertainment),1.0,1.0,"2804 Avenue R 1/2, Galveston",27001,42,"[-94.794, 29.2866]",14365
+154,Beerfoot Beach Bar,1.0,1.0,"2816 Avenue R 1/2, Galveston",27136,43,"[-94.7942, 29.2863]",14720
+75,Fish Tales,1.0,1.0,"2502 Seawall Boulevard, Galveston",27586,44,"[-94.7909, 29.2883]",15239
+74,Bubba Gump Shrimp Co.,1.0,1.0,"2501 Seawall Boulevard, Galveston",27644,45,"[-94.7902, 29.2878]",15599
+73,Robert's Lafitte,1.0,1.0,"2501 Avenue Q, Galveston",27867,46,"[-94.7912, 29.2896]",15947
+46,Fish Company Taco,1.0,1.0,"1914 23rd Street, Galveston",28474,47,"[-94.7889, 29.2918]",16401
+52,Galvez Bar & Grill,1.0,1.0,"2024 Seawall Boulevard, Galveston",28843,48,"[-94.7863, 29.2928]",16796
+51,Monarch Restaurant,1.0,1.0,"2024 Seawall Boulevard, Galveston",29310,49,"[-94.7864, 29.2926]",17240
+43,Longboard Pool Bar,1.0,1.0,"1702 Seawall Boulevard, Galveston",29793,50,"[-94.7829, 29.2945]",17663
+40,Saltgrass Steak House,1.0,1.0,"1502 Seawall Boulevard, Galveston",30109,51,"[-94.7809, 29.296]",18023
+37,Benno's Cajun Seafood Restaurant,1.0,1.0,"1212 Seawall Boulevard, Galveston",30582,52,"[-94.7782, 29.2982]",18563
+127,Lone Star Rally-Bar Hq,1.0,1.0,"910 Avenue M, Galveston",31084,53,"[-94.7755, 29.3016]",18999
+101,Gonzalo’s American Bistro,1.0,1.0,"415 9th Street, Galveston",32139,54,"[-94.7778, 29.3091]",19620
+117,Rice & Curry Indo-Pak Cuisine,1.0,1.0,"712 7th Street, Galveston",32655,55,"[-94.7744, 29.3075]",20057
+162,Russo's New York Pizzeria & Italian Kitchen - Galveston,1.0,1.0,"500 Seawall Boulevard #300, Galveston",33181,56,"[-94.7717, 29.307]",20521
+4,Porch Cafe,1.0,1.0,"1625 East Beach Drive #2A, Galveston",36111,57,"[-94.7502, 29.3196]",21245
+158,Suki Poke by the Sea,1.0,1.0,"427 Market Street, Galveston",39121,58,"[-94.7726, 29.3106]",21933
+119,Marina Bar & Grill,1.0,1.0,"715 North Holiday Drive, Galveston",40493,59,"[-94.7774, 29.3175]",22560
+107,America's Kitchen,1.0,1.0,"500 Harborside Drive, Galveston",41476,60,"[-94.7756, 29.3141]",23145
+118,PJ’s coffee,1.0,1.0,"712 Texas Avenue, Galveston (UTMB)",41907,61,"[-94.7781, 29.3115]",23529
+142,The Original Mexican Cafe,1.0,1.0,"1401 Market Street, Galveston",42953,62,"[-94.7836, 29.3079]",24006
+28,The Sunflower Bakery & Cafe,1.0,1.0,"512 14th Street, Galveston",43065,63,"[-94.783, 29.307]",24318
+29,Mosquito Cafe,1.0,1.0,"628 14th Street, Galveston",43216,64,"[-94.7825, 29.3057]",24632
+30,PattyCakes Bakery,1.0,1.0,"704 14th Street, Galveston",43251,65,"[-94.7824, 29.3054]",24944
+21,Shykatz,1.0,2.0,"1528 Avenue L, Galveston",44004,67,"[-94.7832, 29.3006]",25400
+38,Bambú,1.0,1.0,"1220 23rd Street, Galveston",44907,68,"[-94.791, 29.2977]",25994
+20,Galveston Bagel Company,1.0,1.0,"1110 23rd Street, Galveston",45045,69,"[-94.7914, 29.2989]",26350
+2,MAC-IES,1.0,1.0,"1110 23rd Street, Galveston",45045,70,"[-94.7914, 29.2989]",26650
+32,galveston vfw hall,1.0,1.0,"1014 24th Street Rear, Galveston",45163,71,"[-94.7926, 29.2991]",26990
+76,Shrimp 'N Stuff Downtown,1.0,2.0,"2506 Avenue H, Galveston",45855,73,"[-94.7958, 29.3014]",27614
+167,Vida Agave,1.0,1.0,"711 25th Street, Galveston",45895,74,"[-94.7955, 29.3018]",28060
+72,La Estacion Restaurant,1.0,1.0,"2428 Avenue H, Galveston",45999,75,"[-94.7948, 29.3015]",28494
+13,Sugar & Rye,1.0,1.0,"2401 Church Street, Galveston",46276,76,"[-94.7945, 29.3031]",28873
+108,Sharky's Tavern,2.0,2.0,"504 25th Street, Galveston",46425,78,"[-94.7953, 29.3038]",29287
+71,Trini Mike's Island Time Kitchen (Food Truck),1.0,1.0,"2424 Post Office, Galveston (Sharkeys)",46551,79,"[-94.7955, 29.3042]",29655
+66,Press Box,2.0,2.0,"2401 Postoffice Street, Galveston",46610,81,"[-94.7948, 29.304]",29968
+163,Lolo Kai Smoothies and Wraps,1.0,2.0,"528 23rd Street, Galveston",46818,83,"[-94.7931, 29.304]",30354
+27,Star Drug Store,1.0,2.0,"510 23rd Street, Galveston",46820,85,"[-94.7932, 29.3042]",30659
+89,Black Pearl Oyster Bar,1.0,1.0,"327 23rd Street, Galveston",47003,86,"[-94.794, 29.3055]",31050
+9,MarMo Cafe & Lounge,1.0,1.0,"2121 Market Street suite 101, Galveston",47232,87,"[-94.7921, 29.3056]",31394
+147,MOD Coffeehouse,2.0,3.0,"2126 Postoffice St, Galveston",47360,90,"[-94.7921, 29.305]",31780
+58,Hey Mikey's Ice Cream,1.0,1.0,"2120 Postoffice St, Galveston",47381,91,"[-94.7919, 29.3051]",32088
+56,Little Daddy’s Gumbo Bar - Galveston,1.0,1.0,"2107 Postoffice Street, Galveston",47411,92,"[-94.7915, 29.3049]",32399
+54,Taquilo's Tex-Mex,1.0,2.0,"2101 Postoffice St, Galveston",47420,94,"[-94.7914, 29.3049]",32702
+55,Sky Bar,1.0,1.0,"2105 Postoffice St, Galveston",47420,95,"[-94.7914, 29.3049]",33002
+8,Vargas Cut and Catch,1.0,1.0,"2102 Postoffice Street, Galveston",47429,96,"[-94.7914, 29.3052]",33306
+103,The Wine Next Door,1.0,1.0,"418 21st Street, Galveston",47483,97,"[-94.7912, 29.3055]",33632
+100,Shucks Tavern,1.0,1.0,"414 21st Street, Galveston",47511,98,"[-94.7912, 29.3056]",33949
+102,Mama Teresa's Flying Pizza,1.0,2.0,"416 21st Street, Galveston",47539,100,"[-94.7912, 29.3055]",34269
+7,Rudy & Paco Restaurant and Bar,1.0,1.0,"2028 Postoffice St, Galveston",47593,101,"[-94.7911, 29.3053]",34594
+48,Saltwater Grill,1.0,1.0,"2017 Postoffice Street, Galveston",47632,102,"[-94.7906, 29.3051]",34906
+99,Trattoria La Vigna,1.0,1.0,"412 20th Street, Galveston",47779,103,"[-94.7902, 29.3062]",35254
+155,Huli Huli Hut,1.0,2.0,"312 19th Street, Galveston",47978,105,"[-94.7892, 29.3072]",35618
+5,Coastal Grill,1.0,1.0,"1827 The Strand, Galveston",48122,106,"[-94.7895, 29.3082]",35951
+34,Cruise Plaza,1.0,1.0,"112 19th Street, Galveston",48215,107,"[-94.7898, 29.309]",36286
+47,Katie's Seafood House,1.0,1.0,"2000 Wharf Road, Galveston",48491,108,"[-94.7913, 29.31]",36685
+36,Mr. Taco,1.0,1.0,"120 20th Street, Galveston",48682,109,"[-94.7909, 29.3084]",37051
+49,Drunken Monkeyz,2.0,2.0,"202 20th Street, Galveston",48739,111,"[-94.7907, 29.308]",37385
+50,Hubcap Grill,1.0,1.0,"2021 The Strand #3, Galveston",48880,112,"[-94.7916, 29.3076]",37748
+146,Rosario`s flying pizza and pub,1.0,1.0,"2121 The Strand, Galveston",49001,113,"[-94.7928, 29.3073]",38163
+145,Brewchachos Tacos & Cantina,1.0,1.0,"2110 The Strand, Galveston",49227,114,"[-94.7926, 29.3079]",38658
+53,Willie G's Seafood & Steaks,1.0,1.0,"2100 Harborside Drive, Galveston",49378,115,"[-94.7928, 29.3093]",39062
+61,Fisherman's Wharf,1.0,1.0,"2200 Harborside Drive, Galveston",49601,116,"[-94.7936, 29.3089]",39419
+140,Stuttgarden Tavern,1.0,1.0,"111 23rd Street, Galveston",49833,117,"[-94.7948, 29.3077]",39876
+62,Axecade,1.0,1.0,"2217 Strand St Second Floor 217, 2217 The Strand Suite 217, Galveston",49922,118,"[-94.7942, 29.3071]",40290
+151,Yaga's Cafe,1.0,1.0,"2314 The Strand, Galveston",49996,119,"[-94.795, 29.3071]",40621
+64,Tsunami Tequila Emporium,1.0,1.0,"2314 The Strand, Galveston",50002,120,"[-94.7951, 29.3072]",40924
+67,Shark Shack,1.0,1.0,"2402 The Strand, Galveston",50067,121,"[-94.7957, 29.3069]",41246
+152,Brews Brothers,2.0,2.0,"2404 The Strand, Galveston",50085,123,"[-94.7959, 29.3069]",41549
+70,Patrick’s Bar,1.0,1.0,"2411 The Strand B, Galveston",50094,124,"[-94.7959, 29.3066]",41850
+69,Hearsay On The Strand,1.0,1.0,"2410 The Strand, Galveston",50094,125,"[-94.796, 29.3069]",42160
+12,Riondo's Ristorante,1.0,1.0,"2328 The Strand, Galveston",50149,126,"[-94.7955, 29.307]",42497
+153,Bubba's on The Strand,2.0,2.0,"2411 The Strand, Galveston",50259,128,"[-94.7959, 29.3065]",42842
+65,Playground Patio Bar & Grill,1.0,1.0,"2325 The Strand, Galveston",50330,129,"[-94.7952, 29.3067]",43193
+59,Vintage Crown Michelada Bar & Taqueria,1.0,1.0,"215 23rd Street, Galveston",50388,130,"[-94.7945, 29.3065]",43563
+148,The Garden Thai Cuisine,1.0,1.0,"216 23rd Street, Galveston",50436,131,"[-94.7941, 29.3066]",43910
+11,The Pink Foyer Sweets Boutique,1.0,1.0,"2315 Mechanic Street, Galveston",50526,132,"[-94.7946, 29.306]",44247
+10,Toujouse (listed under Tremont House),1.0,1.0,"2300 Ship Mechanic Row Street, Galveston",50534,133,"[-94.7948, 29.3063]",44550
+68,Jack's Pub On Post Office,2.0,2.0,"2406 Postoffice St, Galveston",50772,135,"[-94.7951, 29.3044]",44933
+26,Eatcetera,1.0,1.0,"408 25th Street, Galveston",50833,136,"[-94.7958, 29.3045]",45261
+14,Maceo Spice & Import Company,1.0,1.0,"2706 Market Street, Galveston",51171,137,"[-94.7988, 29.3042]",45634
+23,Leeland House Galveston,1.0,1.0,"2711 Market Street, Galveston",51189,138,"[-94.7989, 29.3039]",45952
+24,Red Light Coffee Roasters,1.0,1.0,"2728 Market Street, Galveston",51241,139,"[-94.7995, 29.304]",46273
+77,Freckleberry Teahouse,1.0,1.0,"2724 Market Street, Galveston",51335,140,"[-94.7994, 29.3042]",46611
+82,Taqueria Flores,1.0,2.0,"3202 Broadway Avenue J #4228, Galveston",52513,142,"[-94.8026, 29.2976]",47186
+90,La Michoacana Meat Market,1.0,2.0,"3301 Broadway Avenue J, Galveston",52902,144,"[-94.8036, 29.2966]",47630
+44,Pennies Tex Mex Take Out,1.0,2.0,"1713 37th Street, Galveston",54230,146,"[-94.806, 29.2891]",48118
+97,Shrimp N Stuff,1.0,2.0,"3901 Ave O Galveston, TX 77550",54466,148,"[-94.8084, 29.2887]",48589
+16,Galveston College,1.0,1.0,"4015 Avenue Q, Galveston",55139,149,"[-94.8085, 29.2841]",49054
+131,Bar 43,1.0,1.0,,55684,150,"[-94.8108, 29.281]",49436
+0,Moody Gardens,0.0,0.0,"1 Hope Blvd, Galveston",60624,150,"[-94.8523, 29.2736]",50324

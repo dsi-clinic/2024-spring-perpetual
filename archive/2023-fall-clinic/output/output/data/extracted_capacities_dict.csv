@@ -1,0 +1,346 @@
+Moody Gardens,Sugar Bean,MAC-IES,Good Dough,Porch Cafe,Coastal Grill,Texas A&M University at Galveston,Rudy & Paco Restaurant and Bar,Vargas Cut and Catch (listed above),MarMo Cafe & Lounge,Toujouse (listed under Tremont House),The Pink Foyer Sweets Boutique,Riondo's Ristorante,Sugar & Rye,Maceo Spice & Import Company,BLVD Seafood (all of Yagas Entertainment),Galveston College,Galveston College Charlie Thomas Family Applied Technology Center,Galveston Country club,Mr. C's Dugout @Galveston College,Galveston Bagel Company,Shykatz,Cajun Greek,Leeland House Galveston,Red Light Coffee Roasters,Gaido's,Eatcetera,Star Drug Store,The Sunflower Bakery & Cafe,Mosquito Cafe,PattyCakes Bakery,Sapori,galveston vfw hall,Cooper's Landing,Cruise Plaza,Panda Express,Mr. Taco,Benno's Cajun Seafood Restaurant,Bambú,Lil’ Buffalo Grille,Saltgrass Steak House,Chef Mary Bass,Nick's,Longboard Pool Bar,Pennies Tex Mex Take Out,Nate's Westend Seafood & Steaks,Fish Company Taco,Katie's Seafood House,Saltwater Grill,Drunken Monkeyz,Hubcap Grill,Monarch Restaurant,Galvez Bar & Grill,Willie G's Seafood & Steaks,Taquilo's Tex-Mex,Sky Bar,Little Daddy’s Gumbo Bar - Galveston,Schlitterbahn Waterpark Galveston,Hey Mikey's Ice Cream,Vintage Crown Michelada Bar & Taqueria,The West End Marina and Restaurants,Fisherman's Wharf,Axecade,Britton's Bistro (Murdocks),Tsunami Tequila Emporium,Playground Patio Bar & Grill,Press Box,Shark Shack,Jack's Pub On Post Office,Hearsay On The Strand,Patrick’s Bar,Trini Mike's Island Time Kitchen (Food Truck),La Estacion Restaurant,Robert's Lafitte,Bubba Gump Shrimp Co.,Fish Tales,Shrimp 'N Stuff Downtown,Freckleberry Teahouse,Taco Cabana,Float Pool & Patio Bar,The Poop Deck,Island time beach bar,Taqueria Flores,Under the Bun,Squeeze,Tiki Bar,SideYard,Rum Shack,Drip,Black Pearl Oyster Bar,La Michoacana Meat Market,Queen's Bar-B-Que,Joe's Crab Shack,The Gumbo Diner,Rail Road Museum,Redfish Pool Bar,Nick's Kitchen and Beach Bar,Cordray Drug Store,Shrimp N Stuff,Whitecaps,Mr Taco & Limon Paradise,Trattoria La Vigna,Shucks Tavern,Gonzalo’s American Bistro,Mama Teresa's Flying Pizza,The Wine Next Door,Seawall Bar,KritiKos Olympia Grill,Bronco Burritos,America's Kitchen,Sharky's Tavern,H2O Pool + Bar,The Cove,Landry's Prime Seafood & Steaks,Hooters,Golden Corral Buffet & Grill,Tremont House Hotel,Cafe in the Park,Shearn's Seafood and Prime Steaks,Rice & Curry Indo-Pak Cuisine,PJ’s coffee,Marina Bar & Grill,Dolphin World Inc No 2,Number 13 Prime Steak and Seafood,Galveston Primetime,Palm Beach At Moody Gardens,SEA BEAN Coffee Cafe,Jimmy's Curbside Restaurant and Grocery,Tin Cup's Caddy Shack,Lone Star Rally-Bar Hq,Jetty,Galveston Food Truck Park,Blake's Bistro (under San Luis),Bar 43,B. Jiggers Lounge,Hummel's General Store & Deli,Grotto (under San Luis),Rainforest Cafe,Tortuga Mexican Kitchen,Rainforest Pyramid,Aquarium Pyramid,Moody Gardens Restaurant (shown under other restaurant),Stuttgarden Tavern,Mario's Pizza,The Original Mexican Cafe,Waterman's Restaurant,Yamato,Brewchachos Tacos & Cantina,Rosario`s flying pizza and pub,MOD Coffeehouse,The Garden Thai Cuisine,The Sandbar Grille,Mario's Ristorante,Yaga's Cafe,Brews Brothers,Bubba's on The Strand,Beerfoot Beach Bar,Huli Huli Hut,The Spot,Seahorse Grill,Suki Poke by the Sea,Papa's Pizza,Koop's BBQ Kitchen,Salsas,Russo's New York Pizzeria & Italian Kitchen - Galveston,Lolo Kai Smoothies and Wraps,Gypsy Joynt,Café Canela,Gino's Italian Restaurant and Pizzeria,Vida Agave,Seawall Coffee Company,nan
+"Daily_Pickup_Totes      0
+Weekly_Dropoff_Totes    0
+Name: 0, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 1, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 2, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 3, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 4, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 5, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 6, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 7, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 8, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 9, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 10, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 11, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 12, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 13, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 14, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 15, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 16, dtype: int64","Daily_Pickup_Totes      3
+Weekly_Dropoff_Totes    2
+Name: 17, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 18, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 19, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 20, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 21, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 22, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 23, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 24, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 25, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 26, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 27, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 28, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 29, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 30, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 31, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 32, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 33, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 34, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 35, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 36, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 37, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 38, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 39, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 40, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 41, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 42, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 43, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 44, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 45, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 46, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 47, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 48, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    2
+Name: 49, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 50, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 51, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 52, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 53, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 54, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 55, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 56, dtype: int64","Daily_Pickup_Totes      8
+Weekly_Dropoff_Totes    6
+Name: 57, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 58, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 59, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 60, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 61, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 62, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 63, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 64, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 65, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    2
+Name: 66, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 67, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    2
+Name: 68, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 69, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 70, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 71, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 72, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 73, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 74, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 75, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 76, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 77, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 78, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 79, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 80, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    2
+Name: 81, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 82, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 83, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 84, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    2
+Name: 85, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 86, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 87, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 88, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 89, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 90, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 91, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 92, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 93, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 94, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 95, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 96, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 97, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 98, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 99, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 100, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 101, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 102, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 103, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 104, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 105, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 106, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 107, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 108, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 109, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    2
+Name: 110, dtype: int64","Daily_Pickup_Totes      11
+Weekly_Dropoff_Totes     8
+Name: 111, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 112, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 113, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 114, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 115, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 116, dtype: int64","Daily_Pickup_Totes      3
+Weekly_Dropoff_Totes    3
+Name: 117, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 118, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 119, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 120, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 121, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 122, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 123, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    2
+Name: 124, dtype: int64","Daily_Pickup_Totes      8
+Weekly_Dropoff_Totes    6
+Name: 125, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 126, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 127, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 128, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 129, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 130, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 131, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 132, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 133, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 134, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 135, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 136, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 137, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 138, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 139, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 140, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 141, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 142, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 143, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 144, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 145, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 146, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 147, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 148, dtype: int64","Daily_Pickup_Totes      3
+Weekly_Dropoff_Totes    2
+Name: 149, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 150, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 151, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 152, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 153, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    2
+Name: 154, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    2
+Name: 155, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 156, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 157, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 158, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 159, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 160, dtype: int64","Daily_Pickup_Totes      5
+Weekly_Dropoff_Totes    4
+Name: 161, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 162, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 163, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 164, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 165, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 166, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 167, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 168, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    1
+Name: 169, dtype: int64","Daily_Pickup_Totes      2
+Weekly_Dropoff_Totes    1
+Name: 170, dtype: int64","Daily_Pickup_Totes      1
+Weekly_Dropoff_Totes    0
+Name: 255, dtype: int64"

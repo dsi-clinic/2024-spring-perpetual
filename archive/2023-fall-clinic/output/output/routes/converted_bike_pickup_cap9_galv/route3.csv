@@ -1,0 +1,10 @@
+Original_Index,Unnamed: 0,Name,Longitude,Latitude,Daily_Pickup_Totes,Weekly_Dropoff_Totes,user_ratings_total,category,rating,weekly_high,weekly_low,best_weekly_estimate,Address,geometry,Adoption,Adoption Guess,Visited ,Influence,location_type,pickup_type,id,Bike Aggregation Point,Cumulative_Distance,Truck_Load
+23,72,La Estacion Restaurant,-94.794797,29.3015187,0,1,442.0,restaurant,4.3,175.0,25.0,175.0,"2428 Avenue H, Galveston",POINT (-94.794797 29.3015187),Skeptical,Med,No,Low,indoor,Bike_Aggregate,,,0,0
+21,69,Hearsay On The Strand,-94.796027,29.3068691,1,1,1103.0,restaurant,4.4,35.0,5.0,35.0,"2410 The Strand, Galveston",POINT (-94.796027 29.3068691),Skeptical,Med,No,Low,indoor,Bike_Converted,,72.0,660,1
+36,155,Bubba's on The Strand,-94.7959158,29.3065268,2,2,113.0,bar,4.3,,,1125.0,"2411 The Strand, Galveston",POINT (-94.7959158 29.3065268),Skeptical,Med,Yes,Low,indoor,Bike_Converted,,72.0,683,3
+22,70,Patrick’s Bar,-94.7959472,29.3066379,1,1,174.0,bar,4.3,350.0,50.0,350.0,"2411 The Strand B, Galveston",POINT (-94.7959472 29.3066379),Skeptical,Med,No,Low,indoor,Bike_Converted,,72.0,683,4
+35,154,Brews Brothers,-94.7958692,29.3069004,2,2,672.0,bar,4.3,,,1125.0,"2404 The Strand, Galveston",POINT (-94.7958692 29.3069004),Skeptical,Med,Yes,Low,indoor,Bike_Converted,,72.0,698,6
+5,12,Riondo's Ristorante,-94.795454,29.3070258,1,1,758.0,restaurant,4.5,70.0,70.0,70.0,"2328 The Strand, Galveston",POINT (-94.795454 29.3070258),Fan,High,No,Med,indoor,Bike_Converted,,72.0,742,7
+44,183,,-94.79567444799896,29.30696419276517,1,0,,,,,,,,,,,,,outdoor,Bike,1012.0,72.0,742,8
+19,65,Playground Patio Bar & Grill,-94.795242,29.30667,1,1,216.0,bar,4.4,,,140.625,"2325 The Strand, Galveston",POINT (-94.795242 29.30667),Skeptical,Med,No,Low,indoor,Bike_Converted,,72.0,785,9
+23,72,La Estacion Restaurant,-94.794797,29.3015187,0,1,442.0,restaurant,4.3,175.0,25.0,175.0,"2428 Avenue H, Galveston",POINT (-94.794797 29.3015187),Skeptical,Med,No,Low,indoor,Bike_Aggregate,,,1492,9

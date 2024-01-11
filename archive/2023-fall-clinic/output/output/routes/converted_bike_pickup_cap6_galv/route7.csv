@@ -1,0 +1,9 @@
+Original_Index,Unnamed: 0,Name,Longitude,Latitude,Daily_Pickup_Totes,Weekly_Dropoff_Totes,user_ratings_total,category,rating,weekly_high,weekly_low,best_weekly_estimate,Address,geometry,Adoption,Adoption Guess,Visited ,Influence,location_type,pickup_type,id,Bike Aggregation Point,Cumulative_Distance,Truck_Load
+23,72,La Estacion Restaurant,-94.794797,29.3015187,0,1,442.0,restaurant,4.3,175.0,25.0,175.0,"2428 Avenue H, Galveston",POINT (-94.794797 29.3015187),Skeptical,Med,No,Low,indoor,Bike_Aggregate,,,0,0
+38,172,,-94.79652426820594,29.30682933975252,1,0,,,,,,,,,,,,,outdoor,Bike,1001.0,72.0,644,1
+5,12,Riondo's Ristorante,-94.795454,29.3070258,1,1,758.0,restaurant,4.5,70.0,70.0,70.0,"2328 The Strand, Galveston",POINT (-94.795454 29.3070258),Fan,High,No,Med,indoor,Bike_Converted,,72.0,926,2
+44,183,,-94.79567444799896,29.30696419276517,1,0,,,,,,,,,,,,,outdoor,Bike,1012.0,72.0,926,3
+19,65,Playground Patio Bar & Grill,-94.795242,29.30667,1,1,216.0,bar,4.4,,,140.625,"2325 The Strand, Galveston",POINT (-94.795242 29.30667),Skeptical,Med,No,Low,indoor,Bike_Converted,,72.0,969,4
+4,11,The Pink Foyer Sweets Boutique,-94.7945911,29.3060402,1,1,1.0,bakery,5.0,0.0,0.0,112.5,"2315 Mechanic Street, Galveston",POINT (-94.7945911 29.3060402),Curious,High,No,Low,indoor,Bike_Converted,,72.0,1103,5
+3,10,Toujouse (listed under Tremont House),-94.7948312,29.3062632,1,1,6.0,cafe,5.0,0.0,0.0,625.0,"2300 Ship Mechanic Row Street, Galveston",POINT (-94.7948312 29.3062632),Curious,High,No,High,indoor,Bike_Converted,,72.0,1118,6
+23,72,La Estacion Restaurant,-94.794797,29.3015187,0,1,442.0,restaurant,4.3,175.0,25.0,175.0,"2428 Avenue H, Galveston",POINT (-94.794797 29.3015187),Skeptical,Med,No,Low,indoor,Bike_Aggregate,,,1798,6

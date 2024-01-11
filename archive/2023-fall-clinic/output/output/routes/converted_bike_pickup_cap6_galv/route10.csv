@@ -1,0 +1,8 @@
+Original_Index,Unnamed: 0,Name,Longitude,Latitude,Daily_Pickup_Totes,Weekly_Dropoff_Totes,user_ratings_total,category,rating,weekly_high,weekly_low,best_weekly_estimate,Address,geometry,Adoption,Adoption Guess,Visited ,Influence,location_type,pickup_type,id,Bike Aggregation Point,Cumulative_Distance,Truck_Load
+23,72,La Estacion Restaurant,-94.794797,29.3015187,0,1,442.0,restaurant,4.3,175.0,25.0,175.0,"2428 Avenue H, Galveston",POINT (-94.794797 29.3015187),Skeptical,Med,No,Low,indoor,Bike_Aggregate,,,0,0
+0,5,Coastal Grill,-94.789455,29.308158,1,1,814.0,restaurant,4.6,500.0,100.0,500.0,"1827 The Strand, Galveston",POINT (-94.789455 29.308158),Skeptical,High,No,Med,indoor,Bike_Converted,,72.0,1251,1
+9,34,Cruise Plaza,-94.7897517,29.3090318,1,1,82.0,restaurant,4.2,140.0,70.0,140.0,"112 19th Street, Galveston",POINT (-94.7897517 29.3090318),Skeptical,Med,No,Low,indoor,Bike_Converted,,72.0,1352,2
+37,157,Huli Huli Hut,-94.7892355,29.3071699,2,1,1766.0,restaurant,4.3,175.0,25.0,175.0,"312 19th Street, Galveston",POINT (-94.7892355 29.3071699),Skeptical,Med,Yes,Low,indoor,Bike_Converted,,72.0,1588,4
+49,199,,-94.7898969706002,29.306879649441004,1,0,,,,,,,,,,,,,outdoor,Bike,2007.0,72.0,1708,5
+2,9,MarMo Cafe & Lounge,-94.792103,29.3056002,1,1,19.0,bar,4.8,140.0,35.0,140.0,"2121 Market Street suite 101, Galveston",POINT (-94.792103 29.3056002),High,High,No,Med,indoor,Bike_Converted,,72.0,1965,6
+23,72,La Estacion Restaurant,-94.794797,29.3015187,0,1,442.0,restaurant,4.3,175.0,25.0,175.0,"2428 Avenue H, Galveston",POINT (-94.794797 29.3015187),Skeptical,Med,No,Low,indoor,Bike_Aggregate,,,2777,6

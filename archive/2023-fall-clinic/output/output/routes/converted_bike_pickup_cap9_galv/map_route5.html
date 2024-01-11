@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_3862be307705777da03563ce3b207b15 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_3862be307705777da03563ce3b207b15" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_3862be307705777da03563ce3b207b15 = L.map(
+                "map_3862be307705777da03563ce3b207b15",
+                {
+                    center: [29.30135, -94.7977],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 11,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_ac53519bc49c25cd64ed038b9a094ba9 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_3862be307705777da03563ce3b207b15);
+        
+    
+            var marker_1557655e155afe08eeabe10bc0940378 = L.marker(
+                [29.3015187, -94.794797],
+                {"parseHtml": true}
+            ).addTo(map_3862be307705777da03563ce3b207b15);
+        
+    
+            var icon_d916116ef29725548da1c79f3a5a1b24 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1557655e155afe08eeabe10bc0940378.setIcon(icon_d916116ef29725548da1c79f3a5a1b24);
+        
+    
+        var popup_ddd3e28ad854c424bf8cd7bdc90c822f = L.popup({"maxWidth": 700});
+
+        
+            
+                var html_a58e01f5545c392c508876fc6faca5e1 = $(`<div id="html_a58e01f5545c392c508876fc6faca5e1" style="width: 100.0%; height: 100.0%;">                 Index: 0                 <br>                 Name: La Estacion Restaurant                 <br>                 Address: 2428 Avenue H, Galveston                 <br>                 Dropoff (weekly): 1                 <br>                 Pickup (daily): 0                 <br>                 Pickup Type: Bike_Aggregate                 <br>                 Aggregation Point: nan                 </div>`)[0];
+                popup_ddd3e28ad854c424bf8cd7bdc90c822f.setContent(html_a58e01f5545c392c508876fc6faca5e1);
+            
+        
+
+        marker_1557655e155afe08eeabe10bc0940378.bindPopup(popup_ddd3e28ad854c424bf8cd7bdc90c822f)
+        ;
+
+        
+    
+    
+            var marker_78317785abc921d9aef2dc6232abd7b6 = L.marker(
+                [29.30090513320724, -94.79578217640906],
+                {"parseHtml": true}
+            ).addTo(map_3862be307705777da03563ce3b207b15);
+        
+    
+            var icon_5e88ccfed997ab65b39e7c536410f0db = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_78317785abc921d9aef2dc6232abd7b6.setIcon(icon_5e88ccfed997ab65b39e7c536410f0db);
+        
+    
+        var popup_362eec783c61e5127f7370447d508b2b = L.popup({"maxWidth": 700});
+
+        
+            
+                var html_98243b807548090db12753f626da9bdb = $(`<div id="html_98243b807548090db12753f626da9bdb" style="width: 100.0%; height: 100.0%;">                 Index: 1                 <br>                 Name: nan                 <br>                 Address: nan                 <br>                 Dropoff (weekly): 0                 <br>                 Pickup (daily): 1                 <br>                 Pickup Type: Bike                 <br>                 Aggregation Point: 72.0                 </div>`)[0];
+                popup_362eec783c61e5127f7370447d508b2b.setContent(html_98243b807548090db12753f626da9bdb);
+            
+        
+
+        marker_78317785abc921d9aef2dc6232abd7b6.bindPopup(popup_362eec783c61e5127f7370447d508b2b)
+        ;
+
+        
+    
+    
+            var marker_c3f9180badf7a91767b4ed6bdf479597 = L.marker(
+                [29.3013951, -94.7958306],
+                {"parseHtml": true}
+            ).addTo(map_3862be307705777da03563ce3b207b15);
+        
+    
+            var icon_3a323084921a3eefbd445d9dcfeb7a17 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c3f9180badf7a91767b4ed6bdf479597.setIcon(icon_3a323084921a3eefbd445d9dcfeb7a17);
+        
+    
+        var popup_843cc5110a27636951e81dba9c7feaec = L.popup({"maxWidth": 700});
+
+        
+            
+                var html_c889bbda3924c3c122bd12f81de2a215 = $(`<div id="html_c889bbda3924c3c122bd12f81de2a215" style="width: 100.0%; height: 100.0%;">                 Index: 2                 <br>                 Name: Shrimp 'N Stuff Downtown                 <br>                 Address: 2506 Avenue H, Galveston                 <br>                 Dropoff (weekly): 1                 <br>                 Pickup (daily): 2                 <br>                 Pickup Type: Bike_Converted                 <br>                 Aggregation Point: 72.0                 </div>`)[0];
+                popup_843cc5110a27636951e81dba9c7feaec.setContent(html_c889bbda3924c3c122bd12f81de2a215);
+            
+        
+
+        marker_c3f9180badf7a91767b4ed6bdf479597.bindPopup(popup_843cc5110a27636951e81dba9c7feaec)
+        ;
+
+        
+    
+    
+            var marker_958de93e664b6c1c341b8ca6f0576c29 = L.marker(
+                [29.3015187, -94.794797],
+                {"parseHtml": true}
+            ).addTo(map_3862be307705777da03563ce3b207b15);
+        
+    
+            var icon_85bf4aea17d802c8e85b63ed8a314044 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_958de93e664b6c1c341b8ca6f0576c29.setIcon(icon_85bf4aea17d802c8e85b63ed8a314044);
+        
+    
+        var popup_891cd45d13bc89c94f1c6e2a055e3f23 = L.popup({"maxWidth": 700});
+
+        
+            
+                var html_822308d6e194cdd0afb0cbee3eb38aec = $(`<div id="html_822308d6e194cdd0afb0cbee3eb38aec" style="width: 100.0%; height: 100.0%;">                 Index: 3                 <br>                 Name: La Estacion Restaurant                 <br>                 Address: 2428 Avenue H, Galveston                 <br>                 Dropoff (weekly): 1                 <br>                 Pickup (daily): 0                 <br>                 Pickup Type: Bike_Aggregate                 <br>                 Aggregation Point: nan                 </div>`)[0];
+                popup_891cd45d13bc89c94f1c6e2a055e3f23.setContent(html_822308d6e194cdd0afb0cbee3eb38aec);
+            
+        
+
+        marker_958de93e664b6c1c341b8ca6f0576c29.bindPopup(popup_891cd45d13bc89c94f1c6e2a055e3f23)
+        ;
+
+        
+    
+    
+            var poly_line_5f46cc0c9a659c468669afbf108f97fa = L.polyline(
+                [[29.301337, -94.7948948], [29.3013071, -94.7950182], [29.301008, -94.796156], [29.301008, -94.796156], [29.301008, -94.796156], [29.3013071, -94.7950182], [29.301337, -94.7948948]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_3862be307705777da03563ce3b207b15);
+        
+    
+            var circle_marker_da0edd77bd90b72d2251ed2ead0f7f1a = L.circleMarker(
+                [29.301337, -94.7948948],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "yellow", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 5}
+            ).addTo(map_3862be307705777da03563ce3b207b15);
+        
+    
+            var circle_marker_96430604a8445f3b03d7d0776aeb3773 = L.circleMarker(
+                [29.3013071, -94.7950182],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "yellow", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 5}
+            ).addTo(map_3862be307705777da03563ce3b207b15);
+        
+    
+            var circle_marker_fd71e684a98f79d0669d1fb027438e21 = L.circleMarker(
+                [29.301008, -94.796156],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "yellow", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 5}
+            ).addTo(map_3862be307705777da03563ce3b207b15);
+        
+    
+            var circle_marker_f99a614dcd150869b3ad36de7ab59bb4 = L.circleMarker(
+                [29.301008, -94.796156],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "yellow", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 5}
+            ).addTo(map_3862be307705777da03563ce3b207b15);
+        
+    
+            var circle_marker_1d0fbec90a7611ae7d102560a85c7e7f = L.circleMarker(
+                [29.301008, -94.796156],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "yellow", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 5}
+            ).addTo(map_3862be307705777da03563ce3b207b15);
+        
+    
+            var circle_marker_191a3ea7889cf0405e855aa1ac898cfc = L.circleMarker(
+                [29.3013071, -94.7950182],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "yellow", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 5}
+            ).addTo(map_3862be307705777da03563ce3b207b15);
+        
+    
+            var circle_marker_4f533b13459a1390666ca78354da96d0 = L.circleMarker(
+                [29.301337, -94.7948948],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "yellow", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 5}
+            ).addTo(map_3862be307705777da03563ce3b207b15);
+        
+</script>
+</html>
