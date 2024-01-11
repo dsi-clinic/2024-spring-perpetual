@@ -46,10 +46,6 @@
             ]
         }
     },
-	// Add the IDs of extensions you want installed when the container is created.
-	"features": {
-		"github-cli": "latest"
-	},
 	"runArgs": [
 		"--shm-size=16gb"
 	],
