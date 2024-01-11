@@ -47,7 +47,9 @@
         }
     },
 	"runArgs": [
-		"--shm-size=16gb"
+		"--shm-size=16gb",
+        "--env-file",
+        ".env"
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [9000],
