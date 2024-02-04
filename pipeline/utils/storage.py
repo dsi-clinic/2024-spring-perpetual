@@ -4,16 +4,15 @@
 import io
 import os
 import tempfile
-
 from abc import ABC, abstractmethod
 from contextlib import contextmanager
-from constants import DATA_DIR
 from typing import Iterator, Optional
+
+from constants import DATA_DIR
 
 
 class IDataReader(ABC):
-    """Abstract class for reading files from a data store.
-    """
+    """Abstract class for reading files from a data store."""
 
     @abstractmethod
     @contextmanager
@@ -33,8 +32,7 @@ class IDataReader(ABC):
 
 
 class LocalDataReader(IDataReader):
-    """Class for reading files from a local directory.
-    """
+    """Class for reading files from a local directory."""
 
     @contextmanager
     def read_file(self, name: str) -> Iterator[io.IOBase]:
@@ -55,9 +53,9 @@ class LocalDataReader(IDataReader):
         # Read first few bytes
         with open(fpath, "rb") as f:
             first_bytes = f.read(3)
-        
+
         # Detect UTF-8 BOM encoding from bytes
-        encoding = "utf-8-sig" if first_bytes == b'\xef\xbb\xbf' else None
+        encoding = "utf-8-sig" if first_bytes == b"\xef\xbb\xbf" else None
 
         # Yield file object
         f = open(fpath, encoding=encoding)
@@ -74,7 +72,7 @@ class GoogleCloudStorageReader(IDataReader):
         """Initializes a new instance of a `GoogleCloudStorageHelper`.
 
         Raises:
-            `RuntimeError` if an environment variable, 
+            `RuntimeError` if an environment variable,
                 `GOOGLE_CLOUD_STORAGE_BUCKET`, is not found.
 
         Args:
@@ -89,14 +87,14 @@ class GoogleCloudStorageReader(IDataReader):
         except KeyError as e:
             raise RuntimeError(
                 "Failed to initialize GoogleCloudStorageHelper."
-                f"Missing expected environment variable \"{e}\"."
+                f'Missing expected environment variable "{e}".'
             ) from None
-        
+
         # Set up reference to Cloud Storage bucket
         from google.cloud import storage
+
         self.storage_client = storage.Client()
         self.bucket = self.storage_client.bucket(bucket_name)
-
 
     @contextmanager
     def open_file(self, filename: str) -> Iterator[io.IOBase]:
@@ -126,8 +124,8 @@ class GoogleCloudStorageReader(IDataReader):
             first_bytes = f.read(3)
 
         # Detect UTF-8 BOM encoding from bytes
-        encoding = "utf-8-sig" if first_bytes == b'\xef\xbb\xbf' else None
-        
+        encoding = "utf-8-sig" if first_bytes == b"\xef\xbb\xbf" else None
+
         # Yield file object
         f = open(temp_filename, encoding=encoding)
         try:

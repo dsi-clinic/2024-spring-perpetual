@@ -11,16 +11,15 @@ from typing import Dict, List, Union
 
 # Third-party imports
 import requests
-from shapely import MultiPolygon, Polygon
-
 # Application imports
 from pipeline.scrape.common import IPlacesProvider
 from pipeline.utils.geometry import create_bbox_subdivisions
+from shapely import MultiPolygon, Polygon
 
 
 class TomTomPOICategories(Enum):
-    """Enumerates all relevant categories for points of interest.
-    """
+    """Enumerates all relevant categories for points of interest."""
+
     # Potential Indoor Points
     CAFE_PUB = 9376
     RESTAURANT = 7315
@@ -47,13 +46,12 @@ class TomTomPOICategories(Enum):
 
 
 class TomTomSearchClient(IPlacesProvider):
-    """A simple wrapper for the TomTom Search API.
-    """
+    """A simple wrapper for the TomTom Search API."""
 
     MAX_NUM_ASYNC_BATCH_REQUESTS = 10_000
     """The maximum number of API requests that can be sent
-    at once using TomTom's asynchronous batch feature. 
-    """ 
+    at once using TomTom's asynchronous batch feature.
+    """
 
     MAX_NUM_RESULTS = 100
     """The maximum number of results that can be returned from a query.
@@ -67,9 +65,9 @@ class TomTomSearchClient(IPlacesProvider):
                 standard logger.
 
         Raises:
-            `RuntimeError` if an environment variable, 
+            `RuntimeError` if an environment variable,
                 `TOMTOM_API_KEY`, is not found.
-        
+
         Returns:
             `None`
         """
@@ -79,7 +77,7 @@ class TomTomSearchClient(IPlacesProvider):
         except KeyError as e:
             raise RuntimeError(
                 "Failed to initialize TomTomSearchClient."
-                f"Missing expected environment variable \"{e}\"."
+                f'Missing expected environment variable "{e}".'
             ) from None
 
     def submit_async_batch(self, batch_items: List[Dict]) -> str:
@@ -93,13 +91,13 @@ class TomTomSearchClient(IPlacesProvider):
 
         Documentation:
         - ["Asynchronous Batch Submission"](https://developer.tomtom.com/batch-search-api/documentation/asynchronous-batch-submission)
-        
+
         Returns:
             (`str`): The download URL.
         """
         # Compose URL and request body
         url = f"https://api.tomtom.com/search/2/batch.json?key={self._api_key}"
-        body = { "batchItems": batch_items }
+        body = {"batchItems": batch_items}
 
         # Send HTTP POST request
         r = requests.post(url, json=body)
@@ -107,22 +105,22 @@ class TomTomSearchClient(IPlacesProvider):
             error = r.json()["error"]
             raise RuntimeError(
                 "Failed to submit an asynchronous geometry search query "
-                f"to the TomTom API. Received a \"{r.status_code}-{r.reason}\" "
+                f'to the TomTom API. Received a "{r.status_code}-{r.reason}" '
                 f"status code with the text: {error['description']}\"."
             )
-        
+
         # Return batch id from response headers
         batch_id = r.headers.get("Location")
         if not batch_id:
             raise RuntimeError(
                 "An unexpected error occurred. Could not parse download "
                 "location from HTTP response headers."
-        )
+            )
 
         return batch_id
 
     def download_async_batch(self, url: str) -> Dict:
-        """Waits until asynchronous batch processing has 
+        """Waits until asynchronous batch processing has
         completed using a blocking, long poll request and
         then downloads the results.
 
@@ -149,23 +147,23 @@ class TomTomSearchClient(IPlacesProvider):
                 raise RuntimeError(
                     "Failed to download the results of an asynchronous "
                     f"geometry search query to the TomTom API. Received a "
-                    f"\"{r.status_code}-{r.reason}\" status code with the text:"
+                    f'"{r.status_code}-{r.reason}" status code with the text:'
                     f"\"{error['code']} - {error['details']['message']}\"."
                 )
-            
+
             # Raise exception if unanticipated success status occurs
             if r.status_code not in (200, 201):
                 raise RuntimeError(
                     "Failed to download the results of an asynchronous "
                     f"geometry search query to the TomTom API. Received a "
-                    f"\"{r.status_code}-{r.reason}\" status code unexpectedly."
+                    f'"{r.status_code}-{r.reason}" status code unexpectedly.'
                 )
 
             # Decompress result and load as JSON if request succeeded
             if r.status_code == 200:
                 self._logger.info("Data ready for download.")
                 return json.load(gzip.decompress(r.text))
-            
+
             # Otherwise, parse new batch id from location headers
             batch_id = r.headers.get("Location")
 
@@ -174,10 +172,10 @@ class TomTomSearchClient(IPlacesProvider):
                 "https://api.tomtom.com/search/2/batch/"
                 f"{batch_id}?key={self._api_key}"
             )
-                          
+
     def find_places_in_geography(
-        self, 
-        geo: Union[Polygon, MultiPolygon]) -> List[Dict]:
+        self, geo: Union[Polygon, MultiPolygon]
+    ) -> List[Dict]:
         """Queries the TomTom Points of Interest Search API for
         locations within a geography boundary. To accomplish this,
         a bounding box for the geography is calculated and then
@@ -190,7 +188,7 @@ class TomTomSearchClient(IPlacesProvider):
         Documentation:
         - ["Asynchronous Batch Submission | POST Body Fields | Query"](https://developer.tomtom.com/batch-search-api/documentation/asynchronous-batch-submission#post-body-fields)
         - ["Points of Interest Search"](https://developer.tomtom.com/search-api/documentation/search-service/points-of-interest-search)
-        
+
         Args:
             geo (`Polygon` or `MultiPolygon`): The boundary.
 
@@ -206,7 +204,7 @@ class TomTomSearchClient(IPlacesProvider):
             raise RuntimeError(
                 "Failed to query TomTom API for points of interest. "
                 "An unexpected error occurred while dividing the given "
-                f"geography into smaller boxes. \"{e}\""
+                f'geography into smaller boxes. "{e}"'
             ) from e
 
         # Construct query for each box
@@ -214,16 +212,18 @@ class TomTomSearchClient(IPlacesProvider):
         batch_items = []
         categories = ",".join(e.value for e in TomTomPOICategories)
         for bbox in bboxes:
-            batch_items.append({
-                "query": (
-                    "/poiSearch/.json"
-                    f"limit={TomTomSearchClient.MAX_NUM_RESULTS}"
-                    f"&categorySet={categories}"
-                    f"&openingHours=nextSevenDays"
-                    f"&topLeft={bbox.top_left.to_list(use_lat_lon=False)}"
-                    f"&btmRight={bbox.bottom_right.to_list(use_lat_lon=False)}"
-                )
-            })
+            batch_items.append(
+                {
+                    "query": (
+                        "/poiSearch/.json"
+                        f"limit={TomTomSearchClient.MAX_NUM_RESULTS}"
+                        f"&categorySet={categories}"
+                        f"&openingHours=nextSevenDays"
+                        f"&topLeft={bbox.top_left.to_list(use_lat_lon=False)}"
+                        f"&btmRight={bbox.bottom_right.to_list(use_lat_lon=False)}"
+                    )
+                }
+            )
 
         # Submit queries to API in batch
         try:
@@ -233,9 +233,9 @@ class TomTomSearchClient(IPlacesProvider):
             raise RuntimeError(
                 "Failed to query TomTom API for points of interest. "
                 "An unexpected error occurred while submitting "
-                f"queries in batch. \"{e}\""
+                f'queries in batch. "{e}"'
             ) from e
-        
+
         # Download results
         try:
             self._logger.info("Downloading results of batch search.")
@@ -244,7 +244,7 @@ class TomTomSearchClient(IPlacesProvider):
         except Exception as e:
             raise RuntimeError(
                 "Failed to download results of TomTom API Asynchronous "
-                f"Batch Search for points of interest. \"{e}\""
+                f'Batch Search for points of interest. "{e}"'
             ) from e
 
         # Log outcome
@@ -266,5 +266,5 @@ class TomTomSearchClient(IPlacesProvider):
 
         # TODO: Handle errors
         # TODO: Clip results to original boundary
-        
+
         return data

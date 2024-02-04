@@ -5,19 +5,18 @@
 import json
 from typing import List
 
-# Third-party imports
-from shapely.geometry import shape
-
 # Application imports
 from pipeline.scrape import (
-    IPlacesProvider,
     BingMapsClient,
     GooglePlacesClient,
+    IPlacesProvider,
     TomTomSearchClient,
-    YelpClient
+    YelpClient,
 )
-from pipeline.utils.logger import logging, LoggerFactory
+from pipeline.utils.logger import LoggerFactory, logging
 from pipeline.utils.storage import IDataReaderFactory
+# Third-party imports
+from shapely.geometry import shape
 
 
 def main(logger: logging.Logger) -> None:
@@ -39,7 +38,7 @@ def main(logger: logging.Logger) -> None:
     logger.info("Loading geography from file.")
     with storage.read_file("boundaries/galveston.geojson") as f:
         data = json.load(f)
-        
+
     # Parse geography for GeoJSON and convert to Shapely object,
     # assumed to be a Polygon or Multipolygon
     geojson = data["features"][0]["geometry"]
@@ -51,7 +50,7 @@ def main(logger: logging.Logger) -> None:
         BingMapsClient,
         GooglePlacesClient,
         # TomTomSearchClient,
-        YelpClient
+        YelpClient,
     ]
     for locator_cls in locators:
         locator: IPlacesProvider = locator_cls(logger)
@@ -64,10 +63,9 @@ def main(logger: logging.Logger) -> None:
         json.dump(places, f, indent=2)
 
 
-
 if __name__ == "__main__":
     try:
-        # TODO - Could read in configuration files or 
+        # TODO - Could read in configuration files or
         # parse command line arguments here if need be
         logger = LoggerFactory.get("PIPELINE")
         main(logger)

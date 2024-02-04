@@ -2,7 +2,7 @@
 """
 
 # Standard library imports
-from decimal import Context, Decimal, ROUND_HALF_UP
+from decimal import ROUND_HALF_UP, Context, Decimal
 from typing import List, Union
 
 # Third-party imports
@@ -10,10 +10,8 @@ from pydantic import BaseModel, Field, model_validator
 from shapely import MultiPolygon, Polygon
 
 
-
 class Coordinate(BaseModel):
-    """Simple data struture for latitude-longitude coordinates in EPSG:3857.
-    """
+    """Simple data struture for latitude-longitude coordinates in EPSG:3857."""
 
     lat: Decimal = Field(ge=-90, le=90)
     """The latitude (i.e., y-coordinate).
@@ -22,7 +20,7 @@ class Coordinate(BaseModel):
     """The longitude (i.e., x-coordinate).
     """
 
-    def to_list(self, use_lat_lon: bool=True) -> List[Decimal]:
+    def to_list(self, use_lat_lon: bool = True) -> List[Decimal]:
         """Converts the coordinate to a two-item list of decimals.
 
         Args:
@@ -31,14 +29,13 @@ class Coordinate(BaseModel):
                 order. Defaults to `True`.
 
         Returns:
-            (`list` of `float`): The x- and y- coordinates. 
+            (`list` of `float`): The x- and y- coordinates.
         """
         return [self.lat, self.lon] if use_lat_lon else [self.lon, self.lat]
 
 
 class BoundingBox(BaseModel):
-    """Simple data struture for a bounding box based on EPSG:3857 coordinates.
-    """
+    """Simple data struture for a bounding box based on EPSG:3857 coordinates."""
 
     min_x: Decimal = Field(ge=-180, le=180)
     """The minimum longitude (i.e., x-coordinate).
@@ -58,40 +55,34 @@ class BoundingBox(BaseModel):
 
     @property
     def top_left(self) -> Coordinate:
-        """The top-left coordinate.
-        """
+        """The top-left coordinate."""
         return Coordinate(lat=self.max_y, lon=self.min_x)
 
     @property
     def top_right(self) -> Coordinate:
-        """The top-right coordinate.
-        """
+        """The top-right coordinate."""
         return Coordinate(lat=self.max_y, lon=self.max_x)
 
     @property
     def bottom_left(self) -> Coordinate:
-        """The bottom-left coordinate.
-        """
+        """The bottom-left coordinate."""
         return Coordinate(lat=self.min_y, lon=self.min_x)
 
     @property
     def bottom_right(self) -> Coordinate:
-        """The bottom-right coordinate.
-        """
+        """The bottom-right coordinate."""
         return Coordinate(lat=self.min_y, lon=self.max_x)
-    
+
     @property
     def width(self) -> float:
-        """The width of the bounding box.
-        """
+        """The width of the bounding box."""
         return self.max_x - self.min_x
-    
+
     @property
     def height(self) -> float:
-        """The height of the bounding box.
-        """
+        """The height of the bounding box."""
         return self.max_y - self.min_y
-    
+
     @model_validator(mode="after")
     def validate_coords(self) -> None:
         """Validates the set of coordinates to confirm
@@ -99,7 +90,7 @@ class BoundingBox(BaseModel):
 
         Args:
             `None`
-        
+
         Returns:
             `None`
         """
@@ -116,8 +107,8 @@ class BoundingBox(BaseModel):
 
 
 def create_bbox_subdivisions(
-    geo: Union[Polygon, MultiPolygon], 
-    num_bbox: int) -> List[BoundingBox]:
+    geo: Union[Polygon, MultiPolygon], num_bbox: int
+) -> List[BoundingBox]:
     """Divides the bounding box of the given geometry
     into a list of smaller bounding boxes.
 
@@ -130,15 +121,14 @@ def create_bbox_subdivisions(
         (`list` of `BoundingBox`): The bounding boxes.
     """
     # Validate geography
-    if (
-        geo is None or 
-        (not isinstance(geo, MultiPolygon) and not isinstance(geo, Polygon))
+    if geo is None or (
+        not isinstance(geo, MultiPolygon) and not isinstance(geo, Polygon)
     ):
         raise ValueError("Expected a Shapely Polygon or Multipolygon.")
-    
+
     # Initialize rounding
     context = Context(rounding=ROUND_HALF_UP)
-    
+
     # Define dimensions of "global" bounding box for geography
     min_x, min_y, max_x, max_y = geo.bounds
     global_width = max_x - min_x
@@ -149,11 +139,13 @@ def create_bbox_subdivisions(
     for i in range(num_bbox):
         slice_min_x = min_x + (i * global_length)
         slice_max_x = slice_min_x + global_length
-        slices.append(BoundingBox(
-            min_x=round(Decimal(slice_min_x, context), 6), 
-            max_x=round(Decimal(slice_max_x, context), 6), 
-            min_y=round(Decimal(min_y, context), 6), 
-            max_y=round(Decimal(max_y, context), 6)
-        ))
+        slices.append(
+            BoundingBox(
+                min_x=round(Decimal(slice_min_x, context), 6),
+                max_x=round(Decimal(slice_max_x, context), 6),
+                min_y=round(Decimal(min_y, context), 6),
+                max_y=round(Decimal(max_y, context), 6),
+            )
+        )
 
     return slices
