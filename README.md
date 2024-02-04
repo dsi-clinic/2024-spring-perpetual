@@ -13,3 +13,14 @@ A centralized reuse system consists of multiple articipating Foodware-service En
 Planning a feasible centralized reuse system comes with a lot of challenges. This repository uses a set of techniques to find the most optimal way of approaching this problem. The map below shows how a dataset of particiating locations and their expected volume of use can be turned into a map of optimal routes to serve the city of Galveston, Texas, in the most feasible manner.
 
 ![The interactive map can be found in the output directory](archive/mentor/images/galveston_map.png)
+
+
+
+
+
+
+
+
+
+### Development Log
+(1/24/24) ArcGIS
