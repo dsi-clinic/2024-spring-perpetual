@@ -18,30 +18,27 @@ if __name__ == 'main':
     df = pd.read_csv(df_path)
     dists_df = pd.read_csv(dist_path)
 
-    # set up for 
+    # set up distance matrix's indices for duplication
     dists_df.columns = [i for i in range(len(dists_df.columns))]
 
+    # duplicate columns + fill in capacity column (combined pickup/dropoffs)
     res_df, res_dists = df, dists_df
 
+    capacities = list(df['Daily_Pickup_Totes'])
     for i, row in df.iterrows():
         if row['Weekly_Dropoff_Totes'] != 0:
+            capacities.append(-1 * row['Weekly_Dropoff_Totes'])
             row_copy = pd.DataFrame(row).T
-            row_copy['Daily_Pickup_Totes'] = -1 * row_copy['Weekly_Dropoff_Totes']
             res_df = pd.concat([res_df, row_copy])
     
             dist_copy = pd.DataFrame(res_dists.iloc[i]).T
-            res_dists = pd.concat([res_dists, dist_copy]) 
-            if res_dists.isnull().values.any():
-                print(f"NaN detected while duplicating rows in res_dists on iteration {i}")
-                print(res_dists)
-                break
-            res_dists[i+.1] = res_dists[i]
-
+            res_dists = pd.concat([res_dists, dist_copy])
     
-    res_df = res_df.drop("Weekly_Dropoff_Totes", axis = 1).rename(columns={"Daily_Pickup_Totes": "Capacity"})
+            res_dists[i+.1] = res_dists[i]
+    res_df['Capacity'] = capacities
     res_dists.columns = res_dists.index
-        
 
+    # save outputs
     res_df.to_csv(output_res_df_path)
     res_dists.to_csv(output_res_dist_path)
     
