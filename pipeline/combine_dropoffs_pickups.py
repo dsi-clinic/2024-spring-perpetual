@@ -6,8 +6,7 @@ if __name__ == 'main':
 
     # read config for combining dropoffs and pickups
     config = configparser.ConfigParser()
-    config.read("../pipeline/utils/config_inputs.ini")
-    cfg = config["combine.dropoffs_pickups"]
+    cfg = config.read("../pipeline/utils/config_inputs.ini", "combine.dropoffs_pickups")
 
     # parse config
     df_path = cfg["toy_example_df_path"]
