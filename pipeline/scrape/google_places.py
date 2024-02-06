@@ -139,19 +139,4 @@ class GooglePlacesClient(IPlacesProvider):
 
         # Return the list of all POIs found in all API requests
         return all_pois
-    
-
-if __name__ == "__main__":
-
-    gplaces_scrape = GooglePlacesClient(IPlacesProvider)
-    #path determined from config input 
-    path = "../../data/boundaries/hilo.geojson"
-    #place_type determined from config input 
-    place_type = "Restaurants"
-
-    with open(path) as f:
-        gf = geojson.load(f)
-    geo = gf['coordinates']
-    
-    gplaces_scrape.find_places_in_geography(geo, place_type)
 
