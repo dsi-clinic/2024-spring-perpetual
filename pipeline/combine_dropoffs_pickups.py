@@ -2,17 +2,20 @@ import pandas as pd
 import configparser
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
 
     # read config for combining dropoffs and pickups
     config = configparser.ConfigParser()
-    cfg = config.read("../pipeline/utils/config_inputs.ini", "combine.dropoffs_pickups")
+    config.read("../pipeline/utils/config_inputs.ini")
+    cfg = config["combine.dropoffs_pickups"]
 
     # parse config
-    df_path = cfg["toy_example_df_path"]
-    dist_path = cfg["toy_example_dist_path"]
+    df_path = cfg["df_path"]
+    dist_path = cfg["dist_path"]
     output_res_df_path = cfg["output_res_df_path"]
     output_res_dist_path = cfg["output_res_dist_path"]
+
+    print(f"combine_dropoffs_pickups :: working on {df_path}")
 
     # read input dataframes
     df = pd.read_csv(df_path)
@@ -30,15 +33,15 @@ if __name__ == 'main':
             capacities.append(-1 * row['Weekly_Dropoff_Totes'])
             row_copy = pd.DataFrame(row).T
             res_df = pd.concat([res_df, row_copy])
-    
+
             dist_copy = pd.DataFrame(res_dists.iloc[i]).T
             res_dists = pd.concat([res_dists, dist_copy])
-    
-            res_dists[i+.1] = res_dists[i]
+
+            res_dists[len(res_dists.columns)] = res_dists[i]
     res_df['Capacity'] = capacities
-    res_dists.columns = res_dists.index
+    res_dists = res_dists.reset_index(drop = True)
 
     # save outputs
-    res_df.to_csv(output_res_df_path)
-    res_dists.to_csv(output_res_dist_path)
-    
+    res_df.to_csv(output_res_df_path, index = False)
+    res_dists.to_csv(output_res_dist_path, index = False)
+        

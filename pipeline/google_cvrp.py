@@ -235,7 +235,8 @@ def solve_and_save(
 
 if __name__ == '__main__':
     config = configparser.ConfigParser()
-    cfg = config.read("../pipeline/utils/config_inputs.ini", "solve.google_cvrp")
+    config.read("../pipeline/utils/config_inputs.ini")
+    cfg = config["solve.google_cvrp"]
     solve_and_save(
         path_locations_df=cfg["path_to_dataframe"],
         path_distance_matrix=cfg["path_to_distance_matrix"],
