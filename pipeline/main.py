@@ -3,7 +3,7 @@
 
 # Standard library imports
 import json
-from typing import List
+from typing import Dict, List
 
 # Third-party imports
 from shapely.geometry import shape
@@ -20,7 +20,7 @@ from pipeline.utils.logger import logging, LoggerFactory
 from pipeline.utils.storage import IDataReaderFactory
 
 
-def main(logger: logging.Logger) -> None:
+def main(config: Dict, logger: logging.Logger) -> None:
     """Fetches points of interest to use as indoor and outdoor
     points of collection and distribution.
 
@@ -69,6 +69,9 @@ if __name__ == "__main__":
     try:
         # TODO - Could read in configuration files or 
         # parse command line arguments here if need be
+        # Read in YAML file and parse as dictionary
+
+
         logger = LoggerFactory.get("PIPELINE")
         main(logger)
     except Exception as e:
