@@ -37,13 +37,16 @@ def main(config: Dict, logger: logging.Logger) -> None:
     # Load geography from file
     # TODO: Use configuration for file paths
     logger.info("Loading geography from file.")
-    with storage.read_file("boundaries/galveston.geojson") as f:
+    with storage.read_file("boundaries/hilo.geojson") as f:
         data = json.load(f)
         
     # Parse geography for GeoJSON and convert to Shapely object,
     # assumed to be a Polygon or Multipolygon
     geojson = data["features"][0]["geometry"]
     polygon = shape(geojson)
+
+     # Define the type of places you're interested in
+    place_type = 'restaurant'  # for example
 
     # Call clients and aggregate results
     places = []
@@ -55,7 +58,7 @@ def main(config: Dict, logger: logging.Logger) -> None:
     ]
     for locator_cls in locators:
         locator: IPlacesProvider = locator_cls(logger)
-        api_places = locator.find_places_in_geography(polygon) or []
+        api_places = locator.find_places_in_geography(polygon, place_type) or []
         places.extend(api_places)
 
     # Write results to file
