@@ -204,10 +204,11 @@ def get_geojson_centerpoints(geojson_file, n_lon, n_lat):
             '''calculates center point'''
             center_lon = (quad_min_lon + quad_max_lon) / 2
             center_lat = (quad_min_lat + quad_max_lat) / 2
-            center_point = [center_lon, center_lat]
+            center_point = (center_lon, center_lat)  # Changed to tuple
             center_points.append(center_point)
-
+    '''center points are in a list as tuples for each point format'''
     return center_points
+
 
 
 
