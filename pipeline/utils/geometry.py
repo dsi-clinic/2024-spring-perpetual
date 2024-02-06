@@ -160,22 +160,18 @@ def create_bbox_subdivisions(
     return slices
 
 
-'''adding the functions needed to divide the given geojson file'''
+'''adding the function needed to divide the given geojson filepath and number of divisions
+for lat and long area'''
 
 
 
-'''the input to the get_bounding_box functin is the path to the
-geojson file you're using for the API, the output is the max bounds of the
-geo area, which will be used to make subdivisions'''
-
-def get_bounding_box(geojson_file):
+def get_geojson_centerpoints(geojson_file, n_lon, n_lat):
     '''Load GeoJSON file into GeoDataFrame to get the bounds'''
     gdf = gpd.read_file(geojson_file)
 
     '''Get the total bounding box of all features in the GeoDataFrame;
     The total bounding box is the area that encompasses all of the given 
     geographical area in the geojson file'''
-    
     geojson_bbox = gdf.total_bounds
 
     '''Initialize min_lon, min_lat, max_lon, max_lat using 
@@ -188,23 +184,8 @@ def get_bounding_box(geojson_file):
     total_bbox = (max(min_lon, geojson_bbox[0]), max(min_lat, geojson_bbox[1]),
                   min(max_lon, geojson_bbox[2]), min(max_lat, geojson_bbox[3]))
 
-    return total_bbox
+    center_points = []
 
-
-'''the second function of this set is using the output of get_bounding_box,
-it takes in the bounds of the total area and divides them based on a given n_lon
-and n_lat, 
-
-n_long and n_lat are the number of divisions you want across the long and lat 
-axes, for example if you want 18 square quadrants, you would do n_long,n_lat=9
-
-
-the min_long...etc values can be saved into one variable and input like this
-total_bbox=get_bounding_area(file) generate_quadrants(*total_bbox,9,9)'''
-
-def generate_quadrants(min_lon, min_lat, max_lon, max_lat, n_lon, n_lat):
-    midpoints = []
-    quadrants = []
     '''creating quadrants using midpoints'''
     for i in range(n_lon):
         for j in range(n_lat):
@@ -213,10 +194,6 @@ def generate_quadrants(min_lon, min_lat, max_lon, max_lat, n_lon, n_lat):
             quad_min_lat = min_lat + j * (max_lat - min_lat) / n_lat
             quad_max_lat = min_lat + (j + 1) * (max_lat - min_lat) / n_lat
 
-            midpoint_lon = (quad_min_lon + quad_max_lon) / 2
-            midpoint_lat = (quad_min_lat + quad_max_lat) / 2
-            midpoints.append((midpoint_lon, midpoint_lat))
-
             '''corrects the bounds to make sure they're not outside the
             range of total bounds'''
             quad_min_lon = max(min_lon, min(quad_min_lon, max_lon))
@@ -224,43 +201,13 @@ def generate_quadrants(min_lon, min_lat, max_lon, max_lat, n_lon, n_lat):
             quad_min_lat = max(min_lat, min(quad_min_lat, max_lat))
             quad_max_lat = min(max_lat, max(quad_max_lat, min_lat))
 
-            quadrant = (quad_min_lon, quad_max_lon, quad_min_lat, quad_max_lat)
-            quadrants.append(quadrant)
-    '''function returns quadrants and midpoints, midpoint coords
-    needed to find centerpoints'''
-    return midpoints, quadrants
-
-
-
-'''next set of functions work together to calculate center point
-of each quadrant
-
-the input of the functions is the quadrants which we get from
-generate_quadrants'''
-
-def calculate_quadrant_center(quadrant):
-
-    '''takes bounds of each quadrant'''
-
-    min_lon, max_lon, min_lat, max_lat = quadrant
-    center_lon = (min_lon + max_lon) / 2
-    center_lat = (min_lat + max_lat) / 2
-
-    '''calculates center point'''
-
-    return Point(center_lon, center_lat)
-
-def calculate_center_points(quadrants):
-
-    '''iterates through all quadrants 
-    and saves center points into a list'''
-
-    center_points = []
-    for quadrant in quadrants:
-        center_point = calculate_quadrant_center(quadrant)
-        center_points.append(center_point)
-    
-    '''output is put into given API'''
+            '''calculates center point'''
+            center_lon = (quad_min_lon + quad_max_lon) / 2
+            center_lat = (quad_min_lat + quad_max_lat) / 2
+            center_point = [center_lon, center_lat]
+            center_points.append(center_point)
 
     return center_points
+
+
 

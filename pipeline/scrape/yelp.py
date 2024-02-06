@@ -32,6 +32,10 @@ class YelpClient(IPlacesProvider):
         Returns:
             `None`
         """
+
+    '''use api key to make call, make config file with key
+    give any parameters that yelp might need, '''
+
         try:
             self._api_key = os.environ["YELP_API_KEY"]
             self._logger = logger
