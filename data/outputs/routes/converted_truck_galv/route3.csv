@@ -1,0 +1,9 @@
+Original_Index,Name,Longitude,Latitude,Daily_Pickup_Totes,Weekly_Dropoff_Totes,user_ratings_total,category,rating,weekly_high,weekly_low,best_weekly_estimate,Address,geometry,Adoption,Adoption Guess,Visited ,Influence,location_type,pickup_type,id,Capacity,Cumulative_Distance,Truck_Load
+0,Moody Gardens,-94.8523,29.2736,0,0,,,,,,,,,,,,,depot,Truck,,0,0,0
+139,Rainforest Pyramid,-94.85260158,29.27548471,2,1,26.0,restaurant,4.0,,,750,"1 Hope Blvd Galveston, TX 77554",POINT (-94.8526015753142 29.2754847110984),Curious,Med,Yes,High,indoor,Truck,,2,559,2
+394,Rainforest Pyramid,-94.85260158,29.27548471,2,1,26.0,restaurant,4.0,,,750,"1 Hope Blvd Galveston, TX 77554",POINT (-94.8526015753142 29.2754847110984),Curious,Med,Yes,High,indoor,Truck,,-1,559,1
+141,Moody Gardens Restaurant (shown under other restaurant),-94.8520363,29.2757299,1,1,2.0,restaurant,3.0,0,0,93.75,"1 Hope Boulevard, Galveston",POINT (-94.8520363 29.2757299),Skeptical,Med,Yes,High,indoor,Truck,,1,770,2
+125,Palm Beach At Moody Gardens,-94.850972,29.275732,8,6,958.0,amusement_park,4.5,,,5500,"8928, 1 Hope Boulevard, Galveston",POINT (-94.850972 29.275732),Hesitant,Med,No,High,indoor,Truck,,8,799,10
+380,Palm Beach At Moody Gardens,-94.850972,29.275732,8,6,958.0,amusement_park,4.5,,,5500,"8928, 1 Hope Boulevard, Galveston",POINT (-94.850972 29.275732),Hesitant,Med,No,High,indoor,Truck,,-6,799,4
+396,Moody Gardens Restaurant (shown under other restaurant),-94.8520363,29.2757299,1,1,2.0,restaurant,3.0,0,0,93.75,"1 Hope Boulevard, Galveston",POINT (-94.8520363 29.2757299),Skeptical,Med,Yes,High,indoor,Truck,,-1,828,3
+0,Moody Gardens,-94.8523,29.2736,0,0,,,,,,,,,,,,,depot,Truck,,0,1281,3
