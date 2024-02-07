@@ -37,13 +37,14 @@ def main(logger: logging.Logger) -> None:
     # Load geography from file
     # TODO: Use configuration for file paths
     logger.info("Loading geography from file.")
-    with storage.read_file("boundaries/galveston.geojson") as f:
+    with storage.read_file("boundaries/hilo.geojson") as f:
         data = json.load(f)
-        
     # Parse geography for GeoJSON and convert to Shapely object,
     # assumed to be a Polygon or Multipolygon
     geojson = data["features"][0]["geometry"]
     polygon = shape(geojson)
+
+    
 
     # Call clients and aggregate results
     places = []
