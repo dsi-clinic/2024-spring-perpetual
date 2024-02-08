@@ -7,7 +7,7 @@ import networkx as nx
 import osmnx as ox
 import pandas as pd
 
-from pipeline.utils.utils import read_config
+from pipeline.utils.utils import read_cfg
 
 
 def find_bbox(coords):
@@ -142,7 +142,7 @@ def add_markers(f_map, points, color):
 
 if __name__ == '__main__':
     
-    cfg = read_config("../pipeline/utils/config_inputs.ini", "viz.route")
+    cfg = read_cfg("../pipeline/utils/config_inputs.ini", "viz.route")
 
     place = cfg["place"]
     route_dir = cfg["route_dir"]
@@ -184,8 +184,8 @@ if __name__ == '__main__':
                     min_num=3,
                 )
     
-                # route = calc_routes(galv_graph, coords)
-                route = calc_routes(graph, coords)
+                route = calc_routes(galv_graph, coords)
+                # route = calc_routes(graph, coords)
                 # route_2 = calc_routes(galv_graph2, coords2)
     
                 color = colors[(i % len(colors))]
