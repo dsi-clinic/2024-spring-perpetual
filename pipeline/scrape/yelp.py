@@ -8,15 +8,13 @@ from typing import Dict, List, Union
 
 # Third-party imports
 import requests
-from shapely import MultiPolygon, Polygon
-
 # Application imports
 from pipeline.scrape.common import IPlacesProvider
+from shapely import MultiPolygon, Polygon
 
 
 class YelpClient(IPlacesProvider):
-    """A simple wrapper for the Yelp Businesses API.
-    """
+    """A simple wrapper for the Yelp Businesses API."""
 
     def __init__(self, logger: logging.Logger) -> None:
         """Initializes a new instance of a `YelpClient`.
@@ -26,9 +24,9 @@ class YelpClient(IPlacesProvider):
                 standard logger.
 
         Raises:
-            `RuntimeError` if an environment variable, 
+            `RuntimeError` if an environment variable,
                 `YELP_API_KEY`, is not found.
-        
+
         Returns:
             `None`
         """
@@ -38,13 +36,12 @@ class YelpClient(IPlacesProvider):
         except KeyError as e:
             raise RuntimeError(
                 "Failed to initialize GooglePlacesClient."
-                f"Missing expected environment variable \"{e}\"."
+                f'Missing expected environment variable "{e}".'
             ) from None
-        
-        
+
     def find_places_in_geography(
-        self, 
-        geo: Union[Polygon, MultiPolygon]) -> List[Dict]:
+        self, geo: Union[Polygon, MultiPolygon]
+    ) -> List[Dict]:
         """Locates all POIs within the given geography.
 
         Documentation: # TODO: Cite whatever resources you use here:
