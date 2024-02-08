@@ -41,7 +41,13 @@ def main(logger: logging.Logger) -> None:
         data = json.load(f)
     # Parse geography for GeoJSON and convert to Shapely object,
     # assumed to be a Polygon or Multipolygon
-    geojson = data["features"][0]["geometry"]
+        
+    # for galveston geojson we need:
+    # geojson = data["features"][0]["geometry"]
+
+    # for hilo geojson we need:
+    geojson = data
+
     polygon = shape(geojson)
 
     
@@ -61,7 +67,10 @@ def main(logger: logging.Logger) -> None:
 
     # Write results to file
     # TODO - Implement storage writer
-    with open("../data/output_poi.json", "w") as f:
+    #with open("../data/output_poi.json", "w") as f:
+    #fixing filepath bc the file is being run from a different directory
+    # AKA access point is different, so filepath needed to be changed
+    with open("data/output_poi.json", "w") as f:    
         json.dump(places, f, indent=2)
 
 
@@ -71,6 +80,7 @@ if __name__ == "__main__":
         # TODO - Could read in configuration files or 
         # parse command line arguments here if need be
         logger = LoggerFactory.get("PIPELINE")
+
         main(logger)
     except Exception as e:
         logger.error(f"An error occurred during pipeline execution. {e}")

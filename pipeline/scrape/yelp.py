@@ -65,7 +65,10 @@ class YelpClient(IPlacesProvider):
         category_list = ['restaurant', 'bar', 'pharmacy', 'grocery']
 
         '''input for getting centerpoints'''
-        filepath = '../../data/boundaries/hilo.geojson'
+        # filepath = '../../data/boundaries/hilo.geojson'
+        #fixing filepath bc the file is being run from a different directory
+        # AKA access point is different, so filepath needed to be changed
+        filepath = 'data/boundaries/hilo.geojson'
 
         '''running the function to get center points'''
         center_points  = get_geojson_centerpoints(filepath,2,2)
@@ -98,5 +101,5 @@ class YelpClient(IPlacesProvider):
             else:
                 '''error if request didn't work'''
                 print(f"Failed to retrieve data. Status code: {response.status_code}")
-
+        
         return POIs

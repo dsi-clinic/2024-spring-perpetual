@@ -1,1 +1,227 @@
-[]
+[
+  {
+    "name": "Foodland",
+    "coordinates": {
+      "latitude": 19.6223430633545,
+      "longitude": -155.040420532227
+    },
+    "location": {
+      "address1": "16-586 Old Volcano Rd",
+      "address2": "Ste 102",
+      "address3": "Keaau Shopping Ctr",
+      "city": "Keaau",
+      "zip_code": "96749",
+      "country": "US",
+      "state": "HI",
+      "display_address": [
+        "16-586 Old Volcano Rd",
+        "Ste 102",
+        "Keaau Shopping Ctr",
+        "Keaau, HI 96749"
+      ]
+    }
+  },
+  {
+    "name": "Keaau Shell Food Mart",
+    "coordinates": {
+      "latitude": 19.6233,
+      "longitude": -155.0387299
+    },
+    "location": {
+      "address1": "16-0573 Old Volcano Rd",
+      "address2": null,
+      "address3": null,
+      "city": "Keaau",
+      "zip_code": "96749",
+      "country": "US",
+      "state": "HI",
+      "display_address": [
+        "16-0573 Old Volcano Rd",
+        "Keaau, HI 96749"
+      ]
+    }
+  },
+  {
+    "name": "CVS Pharmacy",
+    "coordinates": {
+      "latitude": 19.623430627949062,
+      "longitude": -155.0391048339474
+    },
+    "location": {
+      "address1": "16-529 Keaau-Pahoa Rd",
+      "address2": null,
+      "address3": "Kea'au Shopping Center",
+      "city": "Keaau",
+      "zip_code": "96749",
+      "country": "US",
+      "state": "HI",
+      "display_address": [
+        "16-529 Keaau-Pahoa Rd",
+        "Kea'au Shopping Center",
+        "Keaau, HI 96749"
+      ]
+    }
+  },
+  {
+    "name": "Puna Fresh Foods",
+    "coordinates": {
+      "latitude": 19.6162,
+      "longitude": -155.03279
+    },
+    "location": {
+      "address1": "Keaau Shopping Ctr",
+      "address2": null,
+      "address3": null,
+      "city": "Keaau",
+      "zip_code": "96749",
+      "country": "US",
+      "state": "HI",
+      "display_address": [
+        "Keaau Shopping Ctr",
+        "Keaau, HI 96749"
+      ]
+    }
+  },
+  {
+    "name": "Island Naturals Market & Deli",
+    "coordinates": {
+      "latitude": 19.710908711970063,
+      "longitude": -155.07591361372147
+    },
+    "location": {
+      "address1": "1221 Kilauea Ave",
+      "address2": "",
+      "address3": "",
+      "city": "Hilo",
+      "zip_code": "96720",
+      "country": "US",
+      "state": "HI",
+      "display_address": [
+        "1221 Kilauea Ave",
+        "Hilo, HI 96720"
+      ]
+    }
+  },
+  {
+    "name": "The Locavore Store",
+    "coordinates": {
+      "latitude": 19.72703904453347,
+      "longitude": -155.08711549644488
+    },
+    "location": {
+      "address1": "333 Kilauea Ave",
+      "address2": "Ste 103",
+      "address3": "",
+      "city": "Hilo",
+      "zip_code": "96720",
+      "country": "US",
+      "state": "HI",
+      "display_address": [
+        "333 Kilauea Ave",
+        "Ste 103",
+        "Hilo, HI 96720"
+      ]
+    }
+  },
+  {
+    "name": "Kimura General Store",
+    "coordinates": {
+      "latitude": 19.782697,
+      "longitude": -155.0923717
+    },
+    "location": {
+      "address1": "27-289 Mill Rd",
+      "address2": "",
+      "address3": null,
+      "city": "Papaikou",
+      "zip_code": "96781",
+      "country": "US",
+      "state": "HI",
+      "display_address": [
+        "27-289 Mill Rd",
+        "Papaikou, HI 96781"
+      ]
+    }
+  },
+  {
+    "name": "KTA Super Stores - Downtown",
+    "coordinates": {
+      "latitude": 19.72317,
+      "longitude": -155.08582
+    },
+    "location": {
+      "address1": "321 Keawe St",
+      "address2": null,
+      "address3": null,
+      "city": "Hilo",
+      "zip_code": "96720",
+      "country": "US",
+      "state": "HI",
+      "display_address": [
+        "321 Keawe St",
+        "Hilo, HI 96720"
+      ]
+    }
+  },
+  {
+    "name": "Longs Drugs",
+    "coordinates": {
+      "latitude": 19.719,
+      "longitude": -155.081
+    },
+    "location": {
+      "address1": "555 Kilauea Ave",
+      "address2": "",
+      "address3": "",
+      "city": "Hilo",
+      "zip_code": "96720",
+      "country": "US",
+      "state": "HI",
+      "display_address": [
+        "555 Kilauea Ave",
+        "Hilo, HI 96720"
+      ]
+    }
+  },
+  {
+    "name": "Sack N Save",
+    "coordinates": {
+      "latitude": 19.722844745218524,
+      "longitude": -155.088367669248
+    },
+    "location": {
+      "address1": "250 Kinoole St",
+      "address2": "",
+      "address3": "",
+      "city": "Hilo",
+      "zip_code": "96720",
+      "country": "US",
+      "state": "HI",
+      "display_address": [
+        "250 Kinoole St",
+        "Hilo, HI 96720"
+      ]
+    }
+  },
+  {
+    "name": "CVS Pharmacy",
+    "coordinates": {
+      "latitude": 19.71451,
+      "longitude": -155.09669
+    },
+    "location": {
+      "address1": "670 Ponahawai St",
+      "address2": "Ste 213",
+      "address3": "",
+      "city": "Hilo",
+      "zip_code": "96720",
+      "country": "US",
+      "state": "HI",
+      "display_address": [
+        "670 Ponahawai St",
+        "Ste 213",
+        "Hilo, HI 96720"
+      ]
+    }
+  }
+]
