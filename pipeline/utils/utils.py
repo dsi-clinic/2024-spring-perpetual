@@ -1,7 +1,7 @@
-import configparser
+from configparser import ConfigParser, ExtendedInterpolation
 
 
-def read_config(path, section):
+def read_cfg(path, section):
     """
     Read in a config
 
@@ -10,7 +10,7 @@ def read_config(path, section):
         section : string, section of config to read
     """
 
-    config = configparser.ConfigParser()
+    config = ConfigParser(interpolation=ExtendedInterpolation())
     config.read(path)
     return config[section]
 
