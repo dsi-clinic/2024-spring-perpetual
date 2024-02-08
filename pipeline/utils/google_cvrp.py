@@ -12,7 +12,6 @@ cd code
 python google_cvrp.py
 """
 
-import configparser
 import pandas as pd
 from ortools.constraint_solver import pywrapcp, routing_enums_pb2
 
@@ -44,8 +43,8 @@ def create_data_model(
 ):
     """Stores the data for the problem."""
     data = {}
-    locations_df = pd.read_csv(path_locations_df)
-    distance_matrix = pd.read_csv(path_distance_matrix)
+    locations_df = pd.read_csv(path_locations_df, encoding='utf8')
+    distance_matrix = pd.read_csv(path_distance_matrix, encoding='utf8')
 
     data["distance_matrix"] = distance_matrix.to_numpy().astype(int)
     data["demands"] = get_demands(locations_df, capacity)
@@ -139,7 +138,7 @@ def make_dataframe(
 ):
     """use the output of save_to_table to save the dataframe as a
     csv file in the data folder"""
-    locations_df = pd.read_csv(path_locations_df)
+    locations_df = pd.read_csv(path_locations_df, encoding='utf8')
     routes, distances, loads = save_to_table(data, manager, routing, solution)
     for i in range(len(routes)):
         route_df = locations_df.loc[routes[i], :]
@@ -228,22 +227,9 @@ def solve_and_save(
 
     # Return solution.
     if solution:
-        # print_solution(data, manager, routing, solution)
+        print_solution(data, manager, routing, solution)
         make_dataframe(
             path_locations_df, output_path, data, manager, routing, solution
         )
-
-if __name__ == '__main__':
-    config = configparser.ConfigParser()
-    config.read("../pipeline/utils/config_inputs.ini")
-    cfg = config["solve.google_cvrp"]
-    solve_and_save(
-        path_locations_df=cfg["path_to_dataframe"],
-        path_distance_matrix=cfg["path_to_distance_matrix"],
-        num_vehicles=int(cfg["num_vehicles"]),
-        vehicle_capacity=int(cfg["vehicle_capacity"]),
-        num_seconds=int(cfg["num_seconds_simulation"]),
-        capacity=cfg["capacity"],
-        depot_index=int(cfg["depot_index"]),
-        output_path=cfg["output_path"],
-    )
+    else:
+        print("google_cvrp :: no solution was found")
