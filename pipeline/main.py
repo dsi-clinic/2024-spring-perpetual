@@ -68,7 +68,7 @@ def main(config: Dict, logger: logging.Logger) -> None:
 
     # Write results to file
     # TODO - Implement storage writer
-    with open("../data/output_poi.json", "w") as f:
+    with open("data/output_poi.json", "w") as f:
         json.dump(places, f, indent=2)
 
 
