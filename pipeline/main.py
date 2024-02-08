@@ -39,10 +39,15 @@ def main(config: Dict, logger: logging.Logger) -> None:
     logger.info("Loading geography from file.")
     with storage.read_file("boundaries/hilo.geojson") as f:
         data = json.load(f)
-        
+    
     # Parse geography for GeoJSON and convert to Shapely object,
     # assumed to be a Polygon or Multipolygon
-    geojson = data["features"][0]["geometry"]
+    
+    #for galveston geojson we need:
+    #geojson = data["features"][0]["geometry"]
+    
+    #for hilo geojson we need:
+    geojson = data
     polygon = shape(geojson)
 
      # Define the type of places you're interested in
@@ -51,10 +56,10 @@ def main(config: Dict, logger: logging.Logger) -> None:
     # Call clients and aggregate results
     places = []
     locators = [
-        BingMapsClient,
+        #BingMapsClient,
         GooglePlacesClient,
         # TomTomSearchClient,
-        YelpClient
+        #YelpClient
     ]
     for locator_cls in locators:
         locator: IPlacesProvider = locator_cls(logger)
@@ -73,10 +78,11 @@ if __name__ == "__main__":
         # TODO - Could read in configuration files or 
         # parse command line arguments here if need be
         # Read in YAML file and parse as dictionary
+        config_inputs = {}
 
 
         logger = LoggerFactory.get("PIPELINE")
-        main(logger)
+        main(config_inputs, logger)
     except Exception as e:
         logger.error(f"An error occurred during pipeline execution. {e}")
         exit(1)

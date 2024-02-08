@@ -265,7 +265,7 @@ def calculate_center_points(quadrants):
     return center_points
 
 
-def get_bounding_box_from_geometry(self, geo: Union[Polygon, MultiPolygon]):
+def get_bounding_box_from_geometry(geo: Union[Polygon, MultiPolygon]):
         """Converts a Polygon or MultiPolygon to a bounding box."""
         if isinstance(geo, Polygon):
             min_lon, min_lat, max_lon, max_lat = geo.bounds
