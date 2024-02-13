@@ -104,8 +104,12 @@ class GooglePlacesClient(IPlacesProvider):
                     # Ensure the pagetoken paramter is removed if not needed
                     params.pop('pagetoken', None) # Remove the pagetoken from params if it exists
 
+                headers = {
+                    "X-Goog-FieldMask: places.displayName,places.formattedAddress,places.types"
+                }
+
                 # Make a request to the Google PLaces API with the current set of parameters
-                response = requests.get(api_url, params=params)
+                response = requests.get(api_url, headers=headers, params=params)
 
                 if response.status_code != 200:
                     # If the API response is not successful log the error and stop processing

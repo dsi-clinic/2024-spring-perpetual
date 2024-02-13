@@ -42,7 +42,10 @@ def main(config: Dict, logger: logging.Logger) -> None:
         
     # Parse geography for GeoJSON and convert to Shapely object,
     # assumed to be a Polygon or Multipolygon
-    geojson = data["features"][0]["geometry"]
+        
+    # Commented out for Galveston
+    # geojson = data["features"][0]["geometry"]
+    geojson = data
     polygon = shape(geojson)
 
      # Define the type of places you're interested in
@@ -51,7 +54,7 @@ def main(config: Dict, logger: logging.Logger) -> None:
     # Call clients and aggregate results
     places = []
     locators = [
-        BingMapsClient,
+        # BingMapsClient,
         GooglePlacesClient,
         # TomTomSearchClient,
         YelpClient
@@ -63,7 +66,7 @@ def main(config: Dict, logger: logging.Logger) -> None:
 
     # Write results to file
     # TODO - Implement storage writer
-    with open("../data/output_poi.json", "w") as f:
+    with open("data/output_poi.json", "w") as f:
         json.dump(places, f, indent=2)
 
 
@@ -74,9 +77,9 @@ if __name__ == "__main__":
         # parse command line arguments here if need be
         # Read in YAML file and parse as dictionary
 
-
+        config = {}
         logger = LoggerFactory.get("PIPELINE")
-        main(logger)
+        main(config, logger)
     except Exception as e:
         logger.error(f"An error occurred during pipeline execution. {e}")
         exit(1)
