@@ -1,14 +1,12 @@
 """
-This notebook is a port of Fall 2023's implementation of 
-Google ORTools' Capacited Vehicles Routing Problem
-(CVRP). The script was used to determine the optimal routing scheme for
-our problem.
+This script is an implementation of Google ORTools' Capacited Vehicles Routing
+Problem (CVRP) solver.
 
+How to use:
 1. set your arguments in the ../pipeline/utils/config_inputs.ini file
-under [optimize google cvrp]
+under one of the [solve.???] sections
 
-2. Run this script in the terminal using:
-cd code
+2. Run this script from the /pipeline/ directory in the terminal using:
 python google_cvrp.py
 """
 
