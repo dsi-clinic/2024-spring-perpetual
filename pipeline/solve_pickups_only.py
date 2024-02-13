@@ -1,4 +1,4 @@
-from pipeline.utils.utils import read_cfg
+from pipeline.utils.cfgparser import read_cfg
 from pipeline.utils.google_cvrp import solve_and_save
 
 if __name__ == '__main__':

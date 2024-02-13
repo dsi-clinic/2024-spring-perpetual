@@ -7,7 +7,7 @@ import networkx as nx
 import osmnx as ox
 import pandas as pd
 
-from pipeline.utils.utils import read_cfg
+from pipeline.utils.cfgparser import read_cfg
 
 
 def find_bbox(coords):

@@ -1,6 +1,5 @@
 import pandas as pd
-from configparser import ConfigParser, ExtendedInterpolation
-from pipeline.utils.utils import read_cfg
+from pipeline.utils.cfgparser import read_cfg
 
 if __name__ == '__main__':
 
