@@ -2,7 +2,7 @@ from configparser import ConfigParser, ExtendedInterpolation
 
 def read_cfg(path, section):
     """
-    Read in a config
+    Read a config file and return a config object
 
     Parameters:
         path : string, relative path to config file
