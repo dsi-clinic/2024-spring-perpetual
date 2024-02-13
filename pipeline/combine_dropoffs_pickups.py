@@ -1,5 +1,5 @@
 import pandas as pd
-from pipeline.utils.cfgparser import read_cfg
+from pipeline.utils.cfg_parser import read_cfg
 
 if __name__ == '__main__':
 

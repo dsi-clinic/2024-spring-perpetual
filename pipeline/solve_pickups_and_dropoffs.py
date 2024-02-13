@@ -1,5 +1,5 @@
 import pandas as pd
-from pipeline.utils.cfgparser import read_cfg
+from pipeline.utils.cfg_parser import read_cfg
 from pipeline.utils.google_cvrp import solve_and_save
 
 if __name__ == '__main__':
