@@ -19,10 +19,11 @@ if __name__ == '__main__':
     df = pd.read_csv(pickups_df_path)
     dists_df = pd.read_csv(pickups_dist_path)
 
-    # create new "Capacity" column = "Pickups" - "Dropoffs"
+    # set up res dataframes for output
     res_df, res_dists = df, dists_df
     res_dists.columns = [i for i in range(len(res_dists.columns))]
 
+    # create new "Capacity" column (<= 0 for dropoff, >= 0 for pickup)
     capacities = list(df['Daily_Pickup_Totes'])
     for i, row in df.iterrows():
         if row['Weekly_Dropoff_Totes'] != 0:

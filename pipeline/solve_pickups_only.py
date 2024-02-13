@@ -3,8 +3,10 @@ from pipeline.utils.google_cvrp import solve_and_save
 
 if __name__ == '__main__':
     
+    # read cfg
     cfg = read_cfg("../pipeline/utils/config_inputs.ini", "solve.pickups_only")
 
+    # solve cvrp for pickups only
     solve_and_save(
         path_locations_df=cfg["truth_df_path"],
         path_distance_matrix=cfg["truth_dist_path"],

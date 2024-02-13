@@ -142,8 +142,10 @@ def add_markers(f_map, points, color):
 
 if __name__ == '__main__':
     
+    # read cfg
     cfg = read_cfg("../pipeline/utils/config_inputs.ini", "viz.route")
 
+    # parse cfg variables
     place = cfg["place"]
     route_dir = cfg["route_dir"]
     latitude = float(cfg["latitude"])
@@ -151,12 +153,14 @@ if __name__ == '__main__':
     location = [latitude, longitude]
     colors = ast.literal_eval(cfg["colors"])
 
+    # create graphs and maps for points to be plotted on
     graph = ox.graph_from_place(place, network_type="drive")
     
     all_fmap = folium.Map(
         location=location, tiles="OpenStreetMap", zoom_start=11
     )
 
+    # for each route, graph it on a big map and create a map for itself
     i = 0
     for root, _, files in os.walk(route_dir):
         for filename in fnmatch.filter(files, "*.csv"):
@@ -206,7 +210,11 @@ if __name__ == '__main__':
     
                 fmap.save(route_dir + "/" "map_" + name + ".html")
                 i += 1
+
+    # save the map with all routes mapped on it
     all_fmap.save(route_dir + "/" + "map_all_routes.html")
+
+    # announce completion
     print("visualize_routes :: finished visualizing all routes!")
 
     
