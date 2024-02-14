@@ -5,19 +5,18 @@
 import json
 from typing import Dict, List
 
-# Third-party imports
-from shapely.geometry import shape
-
 # Application imports
 from pipeline.scrape import (
-    IPlacesProvider,
     BingMapsClient,
     GooglePlacesClient,
+    IPlacesProvider,
     TomTomSearchClient,
-    YelpClient
+    YelpClient,
 )
-from pipeline.utils.logger import logging, LoggerFactory
+from pipeline.utils.logger import LoggerFactory, logging
 from pipeline.utils.storage import IDataReaderFactory
+# Third-party imports
+from shapely.geometry import shape
 
 
 def main(config: Dict, logger: logging.Logger) -> None:
@@ -39,17 +38,22 @@ def main(config: Dict, logger: logging.Logger) -> None:
     logger.info("Loading geography from file.")
     with storage.read_file("boundaries/hilo.geojson") as f:
         data = json.load(f)
-        
+
     # Parse geography for GeoJSON and convert to Shapely object,
     # assumed to be a Polygon or Multipolygon
         
     # Commented out for Galveston
     # geojson = data["features"][0]["geometry"]
+
+    # for galveston geojson we need:
+    # geojson = data["features"][0]["geometry"]
+
+    # for hilo geojson we need:
     geojson = data
     polygon = shape(geojson)
 
-     # Define the type of places you're interested in
-    place_type = 'restaurant'  # for example
+    # Define the type of places you're interested in
+    place_type = "restaurant"  # for example
 
     # Call clients and aggregate results
     places = []
@@ -57,7 +61,7 @@ def main(config: Dict, logger: logging.Logger) -> None:
         # BingMapsClient,
         GooglePlacesClient,
         # TomTomSearchClient,
-        YelpClient
+       # YelpClient
     ]
     for locator_cls in locators:
         locator: IPlacesProvider = locator_cls(logger)
@@ -70,13 +74,11 @@ def main(config: Dict, logger: logging.Logger) -> None:
         json.dump(places, f, indent=2)
 
 
-
 if __name__ == "__main__":
     try:
-        # TODO - Could read in configuration files or 
+        # TODO - Could read in configuration files or
         # parse command line arguments here if need be
         # Read in YAML file and parse as dictionary
-
         config = {}
         logger = LoggerFactory.get("PIPELINE")
         main(config, logger)

@@ -4,21 +4,24 @@
 # Standard library imports
 import logging
 import os
+import time
 from typing import Dict, List, Union
 
+import geopandas as gpd
 # Third-party imports
 import requests
-import time
-from shapely.geometry import MultiPolygon, Polygon
-import geopandas as gpd
-
 # Application imports
 from pipeline.scrape.common import IPlacesProvider
-from pipeline.utils.geometry import generate_quadrants, calculate_center_points, get_bounding_box_from_geometry
+from pipeline.utils.geometry import (
+    calculate_center_points,
+    generate_quadrants,
+    get_bounding_box_from_geometry,
+)
+from shapely.geometry import MultiPolygon, Polygon
+
 
 class GooglePlacesClient(IPlacesProvider):
-    """A simple wrapper for the Google Places API.
-    """
+    """A simple wrapper for the Google Places API."""
 
     def __init__(self, logger: logging.Logger) -> None:
         """Initializes a new instance of a `GooglePlacesClient`.
@@ -28,9 +31,9 @@ class GooglePlacesClient(IPlacesProvider):
                 standard logger.
 
         Raises:
-            `RuntimeError` if an environment variable, 
+            `RuntimeError` if an environment variable,
                 `GOOGLE_MAPS_API_KEY`, is not found.
-        
+
         Returns:
             `None`
         """
@@ -40,15 +43,17 @@ class GooglePlacesClient(IPlacesProvider):
         except KeyError as e:
             raise RuntimeError(
                 "Failed to initialize GooglePlacesClient."
-                f"Missing expected environment variable \"{e}\"."
+                f'Missing expected environment variable "{e}".'
             ) from None
-        
-        
-    def find_places_in_geography(self, geo: Union[Polygon, MultiPolygon], place_type: str) -> List[Dict]:
+
+    def find_places_in_geography(
+        self, geo: Union[Polygon, MultiPolygon], place_type: str
+    ) -> List[Dict]:
         """Locates all POIs within the given geography.
 
-        Uses the Google Places API to find places of a specific type within a geographic area. 
-        The area is divided into a grid of quadrants to manage the scope of each API call.
+        Uses the Google Places API to find places of a specific 
+        type within a geographic area.The area is divided into a 
+        grid of quadrants to manage the scope of each API call.
 
         Documentation: # TODO: Cite whatever resources you use here:
             - ["Overview | Places API"](https://developers.google.com/maps/documentation/places/web-service/overview)
@@ -64,12 +69,14 @@ class GooglePlacesClient(IPlacesProvider):
         min_lon, min_lat, max_lon, max_lat = get_bounding_box_from_geometry(geo)
 
         # Generates quadrants to divide the bounding box into.
-        n_lon, n_lat = 9, 9 # 9x9 grid
-        _, quadrants = generate_quadrants(min_lon, min_lat, max_lon, max_lat, n_lon, n_lat)
+        n_lon, n_lat = 9, 9  # 9x9 grid
+        _, quadrants = generate_quadrants(
+            min_lon, min_lat, max_lon, max_lat, n_lon, n_lat
+        )
 
         # Calculate center points for each quadrant
         center_points = calculate_center_points(quadrants)
-     
+        
         # Initialize API base URL and parameters
         api_url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
         # Initialize a list to store all found POIs
@@ -79,30 +86,32 @@ class GooglePlacesClient(IPlacesProvider):
         for center_point in center_points:
             # Initialize parameters for the new center point, effectively resetting the pagetoken
             params = {
-            'location': f'{center_point.y},{center_point.x}',  # Latitude,longitude
-            'radius': 1000,  # In meters
-            'type': place_type, # Type of place you are looking for (category filtering)
-            'key': self._api_key
+                "location": f"{center_point.y},{center_point.x}",  # Latitude,longitude
+                "radius": 1000,  # In meters
+                "type": place_type,  # Type of place you are looking for (category filtering)
+                "key": self._api_key,
             }
 
             # Initialize or reset pagination token
             page_token = None
             # Initialize a counter for the number of pages fetched
             pages_fetched = 0
-            max_pages = 3 # Maximum number of pages to fetch
+            max_pages = 3  # Maximum number of pages to fetch
 
             # Initialize a counter for consecutive errors
             consecutive_errors = 0
-            max_errors_allowed = 5 # Max number of consecutive errors allowed
-        
+            max_errors_allowed = 5  # Max number of consecutive errors allowed
+
             # Loop to handle pagination in the API response
             while True:
                 if page_token:
                     # If there's a page token from a previous request, add it to the parameters
-                    params['pagetoken'] = page_token
+                    params["pagetoken"] = page_token
                 else:
                     # Ensure the pagetoken paramter is removed if not needed
-                    params.pop('pagetoken', None) # Remove the pagetoken from params if it exists
+                    params.pop(
+                        "pagetoken", None
+                    )  # Remove the pagetoken from params if it exists
 
                 headers = {
                     "X-Goog-FieldMask: places.displayName,places.formattedAddress,places.types"
@@ -113,25 +122,30 @@ class GooglePlacesClient(IPlacesProvider):
 
                 if response.status_code != 200:
                     # If the API response is not successful log the error and stop processing
-                    self._logger.error(f"Error from Google Places API: {response.status_code} - {response.reason}")
+                    self._logger.error(
+                        f"Error from Google Places API: {response.status_code} - {response.reason}"
+                    )
                     consecutive_errors += 1
                     if consecutive_errors > max_errors_allowed:
                         break  # Optionally, could raise an exception here
-                else: 
-                    consecutive_errors = 0 # Reset the error counter on successful response     
-                
+                else:
+                    consecutive_errors = (
+                        0  # Reset the error counter on successful response
+                    )
+
                 # Parse the response data from JSON format
                 data = response.json()
+                
                 # Extend the all_pois list with the places found in the current request
-                all_pois.extend(data.get('results', []))
+                all_pois.extend(data.get("results", []))
 
                 # Increment the pages_fetched counter and check against max_pages
                 pages_fetched += 1
                 if pages_fetched >= max_pages:
-                    break # Break if maximum number of pages is reached
+                    break  # Break if maximum number of pages is reached
 
                 # Check for the 'next_page_token' for pagination
-                page_token = data.get('next_page_token')
+                page_token = data.get("next_page_token")
                 if not page_token:
                     # If there's no next_page_token, it means there are no more pages of results
                     # Break from the loop and proceed to the next center point
@@ -141,5 +155,5 @@ class GooglePlacesClient(IPlacesProvider):
                 time.sleep(2)
 
         # Return the list of all POIs found in all API requests
+        
         return all_pois
-
