@@ -145,7 +145,7 @@ def add_markers(f_map, points, color):
 
     return None
 
- 
+
 def main():
     place = "Galveston, TX"
     route_dir = "route_vis/"
@@ -157,14 +157,13 @@ def main():
               'lightgray', 'gray', 'lightred', 'black', 'cadetblue',
               'darkgreen', 'beige', 'darkpurple', 'lightblue', ]
 
-
     graph = ox.graph_from_place(place, network_type="drive")
 
     # directory = 'files'
 
     all_fmap = folium.Map(
         location=location, tiles="OpenStreetMap", zoom_start=11
-        )
+    )
     i = 0
     for root, _, files in os.walk(route_dir):
         for filename in fnmatch.filter(files, "*.csv"):
@@ -174,12 +173,12 @@ def main():
                 print(f"mapping {name}")
                 route_data = pd.read_csv(filepath)
                 coords = route_data[["Longitude", "Latitude"]]
-            
+
                 n, s, e, w = find_bbox(coords)
                 if (n-s) == 0 or (e-w) == 0:
                     print(f"map {name} has 0 length or width; skipping")
                     continue
-            
+
                 galv_graph = ox.truncate.truncate_graph_bbox(
                     graph,
                     n,
@@ -190,7 +189,7 @@ def main():
                     retain_all=False,
                     quadrat_width=0.05,
                     min_num=3,
-                    )
+                )
 
                 # route = calc_routes(galv_graph, coords)
                 route = calc_routes(graph, coords)
@@ -200,7 +199,7 @@ def main():
 
                 fmap = folium.Map(
                     location=location, tiles="OpenStreetMap", zoom_start=11
-                    )
+                )
                 add_markers(fmap, route_data, "blue")
                 add_markers(all_fmap, route_data, color)
 
@@ -210,7 +209,7 @@ def main():
                 for y, x in route:
                     folium.CircleMarker(
                         location=[y, x], radius=2, weight=5, color="yellow"
-                        ).add_to(fmap)
+                    ).add_to(fmap)
 
                 fmap.save(route_dir + "/" "map_" + name + ".html")
                 i += 1
@@ -220,7 +219,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-

@@ -13,6 +13,38 @@ import os
 
 
 def gurobi_cvrp(Q, A, N, c, V, q, running_time):
+    """
+    building a cvrp model for gurobi
+
+    Parameters
+    ----------
+    Q : TYPE int
+        DESCRIPTION: Total truck capacity for each truck
+    A : TYPE list of tuples
+        DESCRIPTION: Arcs, set of paired two locations
+    N : TYPE list of int
+        DESCRIPTION: All locations the truck needs to hit, not including the 
+        depot
+    c : TYPE dict
+        DESCRIPTION: distance for each arc stored in the dictionary, the key
+        is a set of two locations as a tuple, and the value is an integer
+        represents the distance
+    V : TYPE list of int
+        DESCRIPTION: All locations the truck needs to hit, including the depot
+    q : TYPE dict
+        DESCRIPTION: pickup/drop-off locations for each loation, key is the
+        location index, value is the number of totes needs to operate
+    running_time : int
+        DESCRIPTION: time constraints inputs, which is the total seconds you 
+        allow the model to optimzer the route soluction
+
+    Returns
+    -------
+    active_arcs : list
+        DESCRIPTION: list of arcs(location pairs), this is the optimized
+        solution returned by gurobi
+
+    """
     mdl = Model('CVRP')
     # adding variable of location index
     x = mdl.addVars(A, vtype=GRB.BINARY)
@@ -40,6 +72,27 @@ def gurobi_cvrp(Q, A, N, c, V, q, running_time):
 
 
 def trace_route(route, start, selected_arcs):
+    '''
+    extract routes (remain the sequence of location visiting) from 
+    gurobi's return value
+
+    Parameters
+    ----------
+    route : list of int
+        DESCRIPTION: list of integer representing the sequence of locations
+        that the trucks should be visting one by one
+    start : int
+        DESCRIPTION: starting location index
+    selected_arcs : list of tuple
+        DESCRIPTION: list of paired location indexes represneting each acrs 
+        between two location selected by gurobi optimizer
+
+    Returns
+    -------
+    route : list of integer
+        DESCRIPTION: list of location index
+
+    '''
     route.append(start)
     while True:
         found_next = False
@@ -55,6 +108,35 @@ def trace_route(route, start, selected_arcs):
 
 
 def get_model_figure(data, distance):
+    '''
+    this function will extract important argument for building the cvrp model
+
+    Parameters
+    ----------
+    data : dataframe
+        DESCRIPTION: the master dataframe contains the index of each location,
+        longitude, latitude, pickup capacity, and other information
+    distance : 2d array
+        DESCRIPTION: distance matrix
+
+    Returns
+    -------
+    N : TYPE list of int
+        DESCRIPTION: All locations the truck needs to hit, not including the 
+        depot
+    V : TYPE list of int
+        DESCRIPTION: All locations the truck needs to hit, including the depot
+    A : TYPE list of tuples
+        DESCRIPTION: Arcs, set of paired two locations
+    q : TYPE dict
+        DESCRIPTION: pickup/drop-off locations for each loation, key is the
+        location index, value is the number of totes needs to operate
+    c : TYPE dict
+        DESCRIPTION: distance for each arc stored in the dictionary, the key
+        is a set of two locations as a tuple, and the value is an integer
+        represents the distance
+
+    '''
     # number of location includes depot
     n = data.shape[0]
 
@@ -74,6 +156,15 @@ def get_model_figure(data, distance):
 
 
 def print_save_route(active_arcs):
+    '''
+    this function prints out and save each routes into different csv file
+
+    Parameters
+    ----------
+    active_arcs : list of tuples
+        DESCRIPTION list of paired indexes representing each location
+
+    '''
     pairs_starting_with_0 = [(i, j) for i, j in active_arcs if i == 0]
 
     for start in pairs_starting_with_0:
@@ -98,10 +189,24 @@ def print_save_route(active_arcs):
 
         route_num += 1
 
-    return routes_dataframes
+#    return routes_dataframes
 
 
 def clear_routes_csv(directory_path='routes'):
+    '''
+    utility functions that cleans last round routes before current run
+
+    Parameters
+    ----------
+    directory_path : string, optional
+        DESCRIPTION. The default is 'routes'. if it's not routes, change it to
+        file dirctory for routes csv file'
+
+    Returns
+    -------
+    None.
+
+    '''
     # Check if the directory exists
     if not os.path.exists(directory_path):
         print(f"The directory {directory_path} does not exist.")
