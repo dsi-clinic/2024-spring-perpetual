@@ -70,7 +70,10 @@ def main(config: Dict, logger: logging.Logger) -> None:
 
     # Write results to file
     # TODO - Implement storage writer
-    with open("data/output_poi.json", "w") as f:
+    #with open("../data/output_poi.json", "w") as f:
+    #fixing filepath bc the file is being run from a different directory
+    # AKA access point is different, so filepath needed to be changed
+    with open("data/output_poi.json", "w") as f:    
         json.dump(places, f, indent=2)
 
 

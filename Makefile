@@ -30,10 +30,3 @@ run-notebooks:
 		-p 8888:8888 -t $(project_name) \
 		jupyter lab --port=8888 --ip='*' --NotebookApp.token='' \
 		--NotebookApp.password='' --no-browser --allow-root
-
-run-main:
-	docker build -t $(project_name) -f Dockerfile "$(current_abs_path)"
-	docker run -v "$(current_abs_path)":/$(project_name) \
-        --env-file ".env" \
-        -t $(project_name) \
-        python3 /$(project_name)/pipeline/main.py

@@ -11,6 +11,7 @@ import requests
 # Application imports
 from pipeline.scrape.common import IPlacesProvider
 from shapely import MultiPolygon, Polygon
+from pipeline.utils.geometry import get_geojson_centerpoints
 
 
 class YelpClient(IPlacesProvider):
@@ -53,4 +54,49 @@ class YelpClient(IPlacesProvider):
         Returns:
             (`list` of `dict`): The list of places.
         """
-        pass
+
+        ''' api link '''
+        url = "https://api.yelp.com/v3/businesses/search"
+        
+        '''categories to exlpore'''
+        category_list = ['restaurant', 'bar', 'pharmacy', 'grocery']
+
+        '''input for getting centerpoints'''
+        # filepath = '../../data/boundaries/hilo.geojson'
+        #fixing filepath bc the file is being run from a different directory
+        # AKA access point is different, so filepath needed to be changed
+        filepath = 'data/boundaries/hilo.geojson'
+
+        '''running the function to get center points'''
+        center_points  = get_geojson_centerpoints(filepath,2,2)
+        
+        ''' getting all businesses from center points'''
+        POIs = []
+        for point in center_points:
+            point_lat, point_long = point[1], point[0]  # Extract latitude and longitude from the tuple
+            params = {
+                    'radius': 10000,
+                    'categories': ','.join(category_list),
+                    'longitude': point_long,
+                    'latitude': point_lat}
+            
+            headers = {
+                'Authorization': f'Bearer {self._api_key}',}
+            response = requests.get(url, headers=headers, params=params)
+            
+            ''' making sure the scrape worked'''
+            if response.status_code == 200:
+                data = response.json()
+                '''extracting information from json file'''
+                businesses = data.get('businesses', [])
+                for business in businesses:
+                    place_info = {
+                        'name': business.get('name'),
+                        'coordinates': business.get('coordinates'),
+                        'location': business.get('location'),}
+                    POIs.append(place_info)
+            else:
+                '''error if request didn't work'''
+                print(f"Failed to retrieve data. Status code: {response.status_code}")
+        
+        return POIs
