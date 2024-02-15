@@ -13,6 +13,7 @@ python google_cvrp.py
 import pandas as pd
 from ortools.constraint_solver import pywrapcp, routing_enums_pb2
 
+
 def get_demands(location_df, capacity):
     """
     This function will get the daily number of totes to be
@@ -41,8 +42,8 @@ def create_data_model(
 ):
     """Stores the data for the problem."""
     data = {}
-    locations_df = pd.read_csv(path_locations_df, encoding='utf8')
-    distance_matrix = pd.read_csv(path_distance_matrix, encoding='utf8')
+    locations_df = pd.read_csv(path_locations_df, encoding="utf8")
+    distance_matrix = pd.read_csv(path_distance_matrix, encoding="utf8")
 
     data["distance_matrix"] = distance_matrix.to_numpy().astype(int)
     data["demands"] = get_demands(locations_df, capacity)
@@ -136,7 +137,7 @@ def make_dataframe(
 ):
     """use the output of save_to_table to save the dataframe as a
     csv file in the data folder"""
-    locations_df = pd.read_csv(path_locations_df, encoding='utf8')
+    locations_df = pd.read_csv(path_locations_df, encoding="utf8")
     routes, distances, loads = save_to_table(data, manager, routing, solution)
     for i in range(len(routes)):
         route_df = locations_df.loc[routes[i], :]

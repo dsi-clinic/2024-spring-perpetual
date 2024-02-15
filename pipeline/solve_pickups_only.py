@@ -1,8 +1,8 @@
 from pipeline.utils.cfg_parser import read_cfg
 from pipeline.utils.google_cvrp import solve_and_save
 
-if __name__ == '__main__':
-    
+if __name__ == "__main__":
+
     # read cfg
     cfg = read_cfg("../pipeline/utils/config_inputs.ini", "solve.pickups_only")
 

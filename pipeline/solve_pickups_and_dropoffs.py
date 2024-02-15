@@ -1,18 +1,25 @@
+import numpy as np
 import pandas as pd
+
 from pipeline.utils.cfg_parser import read_cfg
 from pipeline.utils.google_cvrp import solve_and_save
 
-if __name__ == '__main__':
-    
+if __name__ == "__main__":
+
     # read config for combining dropoffs and pickups
-    cfg = read_cfg("../pipeline/utils/config_inputs.ini",
-                   "solve.pickups_and_dropoffs")
-    
+    cfg = read_cfg(
+        "../pipeline/utils/config_inputs.ini", "solve.pickups_and_dropoffs"
+    )
+
     # read df to symbolically fill truck up with clean bins for dropoff
     df = pd.read_csv(cfg["combined_df_path"])
-    df.at[0, 'Capacity'] = np.sum(df["Weekly_Dropoff_Totes"])
-    df.to_csv(cfg["combined_df_path"], index = False)
+    df.at[0, "Capacity"] = -1 * np.sum(df[df["Capacity"] < 0]["Capacity"])
+    df.to_csv(cfg["combined_df_path"], index=False)
 
+    print(
+        f"""solve_pickups_and_dropoffs :: running on
+          {cfg["combined_df_path"]} for {cfg["combined_sim_duration"]}s"""
+    )
     # solve the intra-route pickup/dropoff problem
     solve_and_save(
         path_locations_df=cfg["combined_df_path"],

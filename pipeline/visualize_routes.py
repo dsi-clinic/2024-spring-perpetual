@@ -128,9 +128,9 @@ def add_markers(f_map, points, color):
                 <br>
                 Pickup Type: {pickup_type}
                 """
-                # <br>
-                # Aggregation Point: {agg_point}
-                # """
+        # <br>
+        # Aggregation Point: {agg_point}
+        # """
         popup = folium.Popup(popup_html, max_width=700)
 
         folium.Marker(
@@ -140,8 +140,8 @@ def add_markers(f_map, points, color):
     return None
 
 
-if __name__ == '__main__':
-    
+if __name__ == "__main__":
+
     # read cfg
     cfg = read_cfg("../pipeline/utils/config_inputs.ini", "viz.route")
 
@@ -155,7 +155,7 @@ if __name__ == '__main__':
 
     # create graphs and maps for points to be plotted on
     graph = ox.graph_from_place(place, network_type="drive")
-    
+
     all_fmap = folium.Map(
         location=location, tiles="OpenStreetMap", zoom_start=11
     )
@@ -170,12 +170,15 @@ if __name__ == '__main__':
                 print(f"visualize_routes :: mapping {name}")
                 route_data = pd.read_csv(filepath)
                 coords = route_data[["Longitude", "Latitude"]]
-                
+
                 n, s, e, w = find_bbox(coords)
-                if (n-s) == 0 or (e-w) == 0:
-                    print(f"visualize_routes :: map {name} has 0 as a dimension; skipping")
+                if (n - s) == 0 or (e - w) == 0:
+                    print(
+                        f"""visualize_routes :: map {name} has
+                         0 as a dimension; skipping"""
+                    )
                     continue
-                
+
                 galv_graph = ox.truncate.truncate_graph_bbox(
                     graph,
                     n,
@@ -187,27 +190,27 @@ if __name__ == '__main__':
                     quadrat_width=0.05,
                     min_num=3,
                 )
-    
+
                 route = calc_routes(galv_graph, coords)
                 # route = calc_routes(graph, coords)
                 # route_2 = calc_routes(galv_graph2, coords2)
-    
+
                 color = colors[(i % len(colors))]
-    
+
                 fmap = folium.Map(
                     location=location, tiles="OpenStreetMap", zoom_start=11
                 )
                 add_markers(fmap, route_data, "blue")
                 add_markers(all_fmap, route_data, color)
-    
+
                 folium.PolyLine(locations=route, color="blue").add_to(fmap)
                 folium.PolyLine(locations=route, color=color).add_to(all_fmap)
-    
+
                 for y, x in route:
                     folium.CircleMarker(
                         location=[y, x], radius=2, weight=5, color="yellow"
                     ).add_to(fmap)
-    
+
                 fmap.save(route_dir + "/" "map_" + name + ".html")
                 i += 1
 
@@ -216,5 +219,3 @@ if __name__ == '__main__':
 
     # announce completion
     print("visualize_routes :: finished visualizing all routes!")
-
-    
