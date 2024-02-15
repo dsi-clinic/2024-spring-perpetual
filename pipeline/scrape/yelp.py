@@ -62,7 +62,7 @@ class YelpClient(IPlacesProvider):
         url = "https://api.yelp.com/v3/businesses/search"
         
         '''categories to exlpore'''
-        term_list = ['restaurant', 'pharmacy', 'park', 'cafe', 'school', 'drugstore', 'dentist',
+        category_list = ['restaurant', 'pharmacy', 'park', 'cafe', 'school', 'drugstore', 'dentist',
                         'hospital', 'university', 'gym', 'doctor', 'bakery', 'bar', 'amusement park', 
                         'aquarium', 'museum', 'hotel', 'grocery']
 
@@ -80,7 +80,7 @@ class YelpClient(IPlacesProvider):
             point_lat, point_long = point[1], point[0]  # Extract latitude and longitude from the tuple
             params = {
                     'radius': 20000,
-                    'term': ','.join(term_list),
+                    'category': ','.join(category_list),
                     'longitude': point_long,
                     'latitude': point_lat}
             
