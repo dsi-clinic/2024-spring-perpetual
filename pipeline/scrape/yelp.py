@@ -8,7 +8,7 @@ from typing import Dict, List, Union
 
 # Third-party imports
 import requests
-from shapely import MultiPolygon, Polygon
+from shapely import MultiPolygon, Polygon, Point
 
 # Application imports
 from pipeline.scrape.common import IPlacesProvider
@@ -62,7 +62,9 @@ class YelpClient(IPlacesProvider):
         url = "https://api.yelp.com/v3/businesses/search"
         
         '''categories to exlpore'''
-        category_list = ['restaurant', 'bar', 'pharmacy', 'grocery']
+        term_list = ['restaurant', 'pharmacy', 'park', 'cafe', 'school', 'drugstore', 'dentist',
+                        'hospital', 'university', 'gym', 'doctor', 'bakery', 'bar', 'amusement park', 
+                        'aquarium', 'museum', 'hotel', 'grocery']
 
         '''input for getting centerpoints'''
         # filepath = '../../data/boundaries/hilo.geojson'
@@ -71,15 +73,14 @@ class YelpClient(IPlacesProvider):
         filepath = 'data/boundaries/hilo.geojson'
 
         '''running the function to get center points'''
-        center_points  = get_geojson_centerpoints(filepath,2,2)
-        
+        center_points  = get_geojson_centerpoints(filepath,10,10)
         ''' getting all businesses from center points'''
         POIs = []
         for point in center_points:
             point_lat, point_long = point[1], point[0]  # Extract latitude and longitude from the tuple
             params = {
-                    'radius': 10000,
-                    'categories': ','.join(category_list),
+                    'radius': 20000,
+                    'term': ','.join(term_list),
                     'longitude': point_long,
                     'latitude': point_lat}
             
@@ -96,8 +97,20 @@ class YelpClient(IPlacesProvider):
                     place_info = {
                         'name': business.get('name'),
                         'coordinates': business.get('coordinates'),
-                        'location': business.get('location'),}
-                    POIs.append(place_info)
+                        'location': business.get('location'),
+                        'address':business.get('display_address'),
+                        'category':business.get('categories'),}
+                    
+                    '''checking that scraped locations are inside hilo'''
+                    business_coordinates = business.get('coordinates')
+                    if business_coordinates:
+                        point = Point(business_coordinates['longitude'], business_coordinates['latitude'])
+                        if geo.contains(point):
+                            POIs.append(place_info) #only appending points inside given geo 
+                        else:
+                            print(f"Business {place_info['name']} is outside the specified polygon.")
+                    else:
+                        print(f"No coordinates found for business {place_info['name']}.")
             else:
                 '''error if request didn't work'''
                 print(f"Failed to retrieve data. Status code: {response.status_code}")

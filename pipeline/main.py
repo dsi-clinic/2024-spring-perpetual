@@ -55,8 +55,8 @@ def main(logger: logging.Logger) -> None:
     # Call clients and aggregate results
     places = []
     locators = [
-        BingMapsClient,
-        GooglePlacesClient,
+        # BingMapsClient,
+        # GooglePlacesClient,
         # TomTomSearchClient,
         YelpClient
     ]
