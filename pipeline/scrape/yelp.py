@@ -76,8 +76,11 @@ class YelpClient(IPlacesProvider):
         center_points  = get_geojson_centerpoints(filepath,10,10)
         ''' getting all businesses from center points'''
         POIs = []
+
+        '''save unique coordinates'''
+        unique_coordinates = set()
         for point in center_points:
-            point_lat, point_long = point[1], point[0]  # Extract latitude and longitude from the tuple
+            point_lat, point_long = point[1], point[0]  #extract latitude and longitude from the tuple
             params = {
                     'radius': 20000,
                     'category': ','.join(category_list),
@@ -93,24 +96,29 @@ class YelpClient(IPlacesProvider):
                 data = response.json()
                 '''extracting information from json file'''
                 businesses = data.get('businesses', [])
+
                 for business in businesses:
-                    place_info = {
-                        'name': business.get('name'),
-                        'coordinates': business.get('coordinates'),
-                        'location': business.get('location'),
-                        'address':business.get('display_address'),
-                        'category':business.get('categories'),}
-                    
-                    '''checking that scraped locations are inside hilo'''
+                #extract POI coordinates
                     business_coordinates = business.get('coordinates')
-                    if business_coordinates:
+                
+                #check if coordinates are not None and not duplicates
+                    if business_coordinates and tuple(business_coordinates.values()) not in unique_coordinates:
+                        unique_coordinates.add(tuple(business_coordinates.values()))
+                    
+                    #check if the business coordinates are inside the given polygon
                         point = Point(business_coordinates['longitude'], business_coordinates['latitude'])
                         if geo.contains(point):
-                            POIs.append(place_info) #only appending points inside given geo 
+                            place_info = {
+                                'name': business.get('name'),
+                                'coordinates': business_coordinates,
+                                'location': business.get('location'),
+                                'address': business.get('display_address'),
+                                'category': business.get('categories'),}
+                            POIs.append(place_info) #appending if they're unique coordinates
                         else:
-                            print(f"Business {place_info['name']} is outside the specified polygon.")
+                            print(f"Business {business.get('name')} is outside the specified polygon.")
                     else:
-                        print(f"No coordinates found for business {place_info['name']}.")
+                        print(f"Duplicate coordinates or no coordinates found for business {business.get('name')}.")
             else:
                 '''error if request didn't work'''
                 print(f"Failed to retrieve data. Status code: {response.status_code}")
