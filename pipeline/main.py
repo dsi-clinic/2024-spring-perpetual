@@ -45,15 +45,11 @@ def main(config: Dict, logger: logging.Logger) -> None:
     # Commented out for Galveston
     # geojson = data["features"][0]["geometry"]
 
-    # for galveston geojson we need:
-    # geojson = data["features"][0]["geometry"]
-
     # for hilo geojson we need:
     geojson = data
     polygon = shape(geojson)
 
-    # Define the type of places you're interested in
-    place_type = "restaurant"  # for example
+    place_type = 'restaurant'
 
     # Call clients and aggregate results
     places = []
@@ -61,7 +57,7 @@ def main(config: Dict, logger: logging.Logger) -> None:
         # BingMapsClient,
         GooglePlacesClient,
         # TomTomSearchClient,
-       # YelpClient
+        # YelpClient
     ]
     for locator_cls in locators:
         locator: IPlacesProvider = locator_cls(logger)
@@ -84,6 +80,7 @@ if __name__ == "__main__":
         # Read in YAML file and parse as dictionary
         config = {}
         logger = LoggerFactory.get("PIPELINE")
+        logger.info("Beginning pipeline execution.")
         main(config, logger)
     except Exception as e:
         logger.error(f"An error occurred during pipeline execution. {e}")

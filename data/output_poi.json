@@ -1,227 +1,381 @@
 [
   {
-    "name": "Foodland",
+    "name": "Kurtistown Cafe",
     "coordinates": {
-      "latitude": 19.6223430633545,
-      "longitude": -155.040420532227
+      "lat": 19.592983,
+      "lng": -155.05727
     },
-    "location": {
-      "address1": "16-586 Old Volcano Rd",
-      "address2": "Ste 102",
-      "address3": "Keaau Shopping Ctr",
-      "city": "Keaau",
-      "zip_code": "96749",
-      "country": "US",
-      "state": "HI",
-      "display_address": [
-        "16-586 Old Volcano Rd",
-        "Ste 102",
-        "Keaau Shopping Ctr",
-        "Keaau, HI 96749"
-      ]
-    }
+    "location": "17-353 Volcano Road, Kurtistown",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
   },
   {
-    "name": "Keaau Shell Food Mart",
+    "name": "Saucy Mama's LLC",
     "coordinates": {
-      "latitude": 19.6233,
-      "longitude": -155.0387299
+      "lat": 19.5508398,
+      "lng": -155.1075733
     },
-    "location": {
-      "address1": "16-0573 Old Volcano Rd",
-      "address2": null,
-      "address3": null,
-      "city": "Keaau",
-      "zip_code": "96749",
-      "country": "US",
-      "state": "HI",
-      "display_address": [
-        "16-0573 Old Volcano Rd",
-        "Keaau, HI 96749"
-      ]
-    }
+    "location": "18-1325 Old Volcano Road, Mountain View",
+    "types": [
+      "restaurant",
+      "meal_takeaway",
+      "park",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
   },
   {
-    "name": "CVS Pharmacy",
+    "name": "Frankie's Pizza",
     "coordinates": {
-      "latitude": 19.623430627949062,
-      "longitude": -155.0391048339474
+      "lat": 19.5515221,
+      "lng": -155.106907
     },
-    "location": {
-      "address1": "16-529 Keaau-Pahoa Rd",
-      "address2": null,
-      "address3": "Kea'au Shopping Center",
-      "city": "Keaau",
-      "zip_code": "96749",
-      "country": "US",
-      "state": "HI",
-      "display_address": [
-        "16-529 Keaau-Pahoa Rd",
-        "Kea'au Shopping Center",
-        "Keaau, HI 96749"
-      ]
-    }
+    "location": "18-1314 Volcano Road, Mountain View",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
   },
   {
-    "name": "Puna Fresh Foods",
+    "name": "Da Beans Green Coffee Caf\u00e9",
     "coordinates": {
-      "latitude": 19.6162,
-      "longitude": -155.03279
+      "lat": 19.5664117,
+      "lng": -155.0850941
     },
-    "location": {
-      "address1": "Keaau Shopping Ctr",
-      "address2": null,
-      "address3": null,
-      "city": "Keaau",
-      "zip_code": "96749",
-      "country": "US",
-      "state": "HI",
-      "display_address": [
-        "Keaau Shopping Ctr",
-        "Keaau, HI 96749"
-      ]
-    }
+    "location": "Attached to Pele's Hana 'Ana Hostel, 17-937 Volcano Road, Mountain View",
+    "types": [
+      "store",
+      "restaurant",
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
   },
   {
-    "name": "Island Naturals Market & Deli",
+    "name": "Dimple Cheek Cafe & Local Market",
     "coordinates": {
-      "latitude": 19.710908711970063,
-      "longitude": -155.07591361372147
+      "lat": 19.5692522,
+      "lng": -155.0818399
     },
-    "location": {
-      "address1": "1221 Kilauea Ave",
-      "address2": "",
-      "address3": "",
-      "city": "Hilo",
-      "zip_code": "96720",
-      "country": "US",
-      "state": "HI",
-      "display_address": [
-        "1221 Kilauea Ave",
-        "Hilo, HI 96720"
-      ]
-    }
+    "location": "17-4003 Ahuahu Place, Mountain View",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
   },
   {
-    "name": "The Locavore Store",
+    "name": "The Guyz Kustomz LLC",
     "coordinates": {
-      "latitude": 19.72703904453347,
-      "longitude": -155.08711549644488
+      "lat": 19.4777891,
+      "lng": -155.1408389
     },
-    "location": {
-      "address1": "333 Kilauea Ave",
-      "address2": "Ste 103",
-      "address3": "",
-      "city": "Hilo",
-      "zip_code": "96720",
-      "country": "US",
-      "state": "HI",
-      "display_address": [
-        "333 Kilauea Ave",
-        "Ste 103",
-        "Hilo, HI 96720"
-      ]
-    }
+    "location": "FVH5+4M, Mountain View",
+    "types": [
+      "meal_takeaway",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
   },
   {
-    "name": "Kimura General Store",
+    "name": "Cafe Pesto Hilo Bay",
     "coordinates": {
-      "latitude": 19.782697,
-      "longitude": -155.0923717
+      "lat": 19.723735,
+      "lng": -155.0850148
     },
-    "location": {
-      "address1": "27-289 Mill Rd",
-      "address2": "",
-      "address3": null,
-      "city": "Papaikou",
-      "zip_code": "96781",
-      "country": "US",
-      "state": "HI",
-      "display_address": [
-        "27-289 Mill Rd",
-        "Papaikou, HI 96781"
-      ]
-    }
+    "location": "308 Kamehameha Avenue #101, Hilo",
+    "types": [
+      "restaurant",
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
   },
   {
-    "name": "KTA Super Stores - Downtown",
+    "name": "What's Shakin'",
     "coordinates": {
-      "latitude": 19.72317,
-      "longitude": -155.08582
+      "lat": 19.82426689999999,
+      "lng": -155.0952253
     },
-    "location": {
-      "address1": "321 Keawe St",
-      "address2": null,
-      "address3": null,
-      "city": "Hilo",
-      "zip_code": "96720",
-      "country": "US",
-      "state": "HI",
-      "display_address": [
-        "321 Keawe St",
-        "Hilo, HI 96720"
-      ]
-    }
+    "location": "27-999 Mamalahoa Highway, Pepeekeo",
+    "types": [
+      "cafe",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
   },
   {
-    "name": "Longs Drugs",
+    "name": "Moon and Turtle",
     "coordinates": {
-      "latitude": 19.719,
-      "longitude": -155.081
+      "lat": 19.7254179,
+      "lng": -155.0871554
     },
-    "location": {
-      "address1": "555 Kilauea Ave",
-      "address2": "",
-      "address3": "",
-      "city": "Hilo",
-      "zip_code": "96720",
-      "country": "US",
-      "state": "HI",
-      "display_address": [
-        "555 Kilauea Ave",
-        "Hilo, HI 96720"
-      ]
-    }
+    "location": "51 Kalakaua Street, Hilo",
+    "types": [
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
   },
   {
-    "name": "Sack N Save",
+    "name": "Jackie Rey's Ohana Grill Hilo",
     "coordinates": {
-      "latitude": 19.722844745218524,
-      "longitude": -155.088367669248
+      "lat": 19.7260007,
+      "lng": -155.0882358
     },
-    "location": {
-      "address1": "250 Kinoole St",
-      "address2": "",
-      "address3": "",
-      "city": "Hilo",
-      "zip_code": "96720",
-      "country": "US",
-      "state": "HI",
-      "display_address": [
-        "250 Kinoole St",
-        "Hilo, HI 96720"
-      ]
-    }
+    "location": "64 Keawe Street, Hilo",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
   },
   {
-    "name": "CVS Pharmacy",
+    "name": "Makani\u2019s Magic Pineapple Shack",
     "coordinates": {
-      "latitude": 19.71451,
-      "longitude": -155.09669
+      "lat": 19.72630179999999,
+      "lng": -155.0876089
     },
-    "location": {
-      "address1": "670 Ponahawai St",
-      "address2": "Ste 213",
-      "address3": "",
-      "city": "Hilo",
-      "zip_code": "96720",
-      "country": "US",
-      "state": "HI",
-      "display_address": [
-        "670 Ponahawai St",
-        "Ste 213",
-        "Hilo, HI 96720"
-      ]
-    }
+    "location": "54 Waianuenue Avenue, Hilo",
+    "types": [
+      "store",
+      "restaurant",
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "name": "Bangkok Villa Hilo",
+    "coordinates": {
+      "lat": 19.7253593,
+      "lng": -155.0872242
+    },
+    "location": "59 Kalakaua Street, Hilo",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "name": "Amigos Taqueria",
+    "coordinates": {
+      "lat": 19.7237878,
+      "lng": -155.0867954
+    },
+    "location": "250 Keawe Street Suite C, Hilo",
+    "types": [
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "name": "Saucy Dogs",
+    "coordinates": {
+      "lat": 19.724094,
+      "lng": -155.085744
+    },
+    "location": "14 Furneaux Lane, Hilo",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "name": "Loved by the Sun",
+    "coordinates": {
+      "lat": 19.7240868,
+      "lng": -155.0856894
+    },
+    "location": "12 Furneaux Lane, Hilo",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "name": "Pete's Belly Bustazs",
+    "coordinates": {
+      "lat": 19.7170111,
+      "lng": -155.0980825
+    },
+    "location": "82 Puuhonu Way # 104, Hilo",
+    "types": [
+      "restaurant",
+      "meal_delivery",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "name": "Pineapples Island Fresh Cuisine",
+    "coordinates": {
+      "lat": 19.7227609,
+      "lng": -155.0861269
+    },
+    "location": "332 Keawe Street, Hilo",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "name": "Hilo Farmers Market Kitchen",
+    "coordinates": {
+      "lat": 19.7231195,
+      "lng": -155.0849503
+    },
+    "location": "57 Mamo Street, Hilo",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "name": "Poke N Sides @ the Hilo Farmers Market",
+    "coordinates": {
+      "lat": 19.7230285,
+      "lng": -155.0850465
+    },
+    "location": "57 Mamo Street, Hilo",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "name": "Puka Puka Kitchen",
+    "coordinates": {
+      "lat": 19.72419,
+      "lng": -155.0856508
+    },
+    "location": "270 Kamehameha Avenue, Hilo",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "name": "Island Organic Cuisine LLC",
+    "coordinates": {
+      "lat": 19.753227,
+      "lng": -155.1397859
+    },
+    "location": "2427 Kaiwiki Road, Hilo",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "name": "Big Island Birria Boss",
+    "coordinates": {
+      "lat": 19.8703927,
+      "lng": -155.1142221
+    },
+    "location": "28-1692 Old Mamalahoa Highway, Honomu",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "name": "Cronies Bar & Grill",
+    "coordinates": {
+      "lat": 19.7264366,
+      "lng": -155.0868843
+    },
+    "location": "11 Waianuenue Avenue, Hilo",
+    "types": [
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "name": "New Chiang Mai Thai Cuisine",
+    "coordinates": {
+      "lat": 19.7253005,
+      "lng": -155.0879644
+    },
+    "location": "2870, 110 Kalakaua Street, Hilo",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "name": "McDonald's",
+    "coordinates": {
+      "lat": 19.7232037,
+      "lng": -155.087408
+    },
+    "location": "255 Kinoole Street, Hilo",
+    "types": [
+      "store",
+      "restaurant",
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "name": "Yen's Cafe",
+    "coordinates": {
+      "lat": 19.7247082,
+      "lng": -155.0896926
+    },
+    "location": "235 Waianuenue Avenue #101, Hilo",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ]
   }
 ]

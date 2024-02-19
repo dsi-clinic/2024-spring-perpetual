@@ -199,12 +199,63 @@ def get_geojson_centerpoints(geojson_file, n_lon, n_lat):
             quad_max_lat = min(max_lat, max(quad_max_lat, min_lat))
 
             '''calculates center point'''
-            center_lon = (quad_min_lon + quad_max_lon) / 2
             center_lat = (quad_min_lat + quad_max_lat) / 2
+            center_lon = (quad_min_lon + quad_max_lon) / 2
             center_point = (center_lon, center_lat)  # Changed to tuple
             center_points.append(center_point)
     '''center points are in a list as tuples for each point format'''
     return center_points
+
+# Google places needs a (lat,long) formatted ouput
+def gplaces_get_geojson_centerpoints(geojson_file, n_lon, n_lat):
+    '''Load GeoJSON file into GeoDataFrame to get the bounds'''
+    gdf = gpd.read_file(geojson_file)
+
+    '''Get the total bounding box of all features in the GeoDataFrame;
+    The total bounding box is the area that encompasses all of the given 
+    geographical area in the geojson file'''
+    geojson_bbox = gdf.total_bounds
+
+    """Initialize min_lon, min_lat, max_lon, max_lat using
+    the bounding box of the GeoDataFrame, this will be used to
+    create a large box which we will make sub-divisions from"""
+    min_lon, min_lat, max_lon, max_lat = geojson_bbox
+
+    """maxing the values so that we make sure to stay as close to the
+    the given geographical area"""
+    total_bbox = (
+        max(min_lon, geojson_bbox[0]),
+        max(min_lat, geojson_bbox[1]),
+        min(max_lon, geojson_bbox[2]),
+        min(max_lat, geojson_bbox[3]),
+    )
+
+    center_points = []
+
+    '''creating quadrants using midpoints'''
+    for i in range(n_lon):
+        for j in range(n_lat):
+            quad_min_lon = min_lon + i * (max_lon - min_lon) / n_lon
+            quad_max_lon = min_lon + (i + 1) * (max_lon - min_lon) / n_lon
+            quad_min_lat = min_lat + j * (max_lat - min_lat) / n_lat
+            quad_max_lat = min_lat + (j + 1) * (max_lat - min_lat) / n_lat
+
+            '''corrects the bounds to make sure they're not outside the
+            range of total bounds'''
+            quad_min_lon = max(min_lon, min(quad_min_lon, max_lon))
+            quad_max_lon = min(max_lon, max(quad_max_lon, min_lon))
+            quad_min_lat = max(min_lat, min(quad_min_lat, max_lat))
+            quad_max_lat = min(max_lat, max(quad_max_lat, min_lat))
+
+            '''calculates center point'''
+            center_lat = (quad_min_lat + quad_max_lat) / 2
+            center_lon = (quad_min_lon + quad_max_lon) / 2
+            center_point = (center_lat, center_lon)  # Changed to tuple
+            center_points.append(center_point)
+    '''center points are in a list as tuples for each point format'''
+    return center_points
+
+
 
 
 

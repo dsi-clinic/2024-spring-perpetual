@@ -7,16 +7,12 @@ import os
 import time
 from typing import Dict, List, Union
 
-import geopandas as gpd
 # Third-party imports
 import requests
 # Application imports
 from pipeline.scrape.common import IPlacesProvider
-from pipeline.utils.geometry import (
-    calculate_center_points,
-    generate_quadrants,
-    get_bounding_box_from_geometry,
-)
+from pipeline.utils.geometry import gplaces_get_geojson_centerpoints
+
 from shapely.geometry import MultiPolygon, Polygon
 
 
@@ -48,11 +44,11 @@ class GooglePlacesClient(IPlacesProvider):
 
     def find_places_in_geography(
         self, geo: Union[Polygon, MultiPolygon], place_type: str
-    ) -> List[Dict]:
+        ) -> List[Dict]:
         """Locates all POIs within the given geography.
 
         Uses the Google Places API to find places of a specific 
-        type within a geographic area.The area is divided into a 
+        type within a geographic area. The area is divided into a 
         grid of quadrants to manage the scope of each API call.
 
         Documentation: # TODO: Cite whatever resources you use here:
@@ -65,95 +61,55 @@ class GooglePlacesClient(IPlacesProvider):
         Returns:
             (`list` of `dict`): The list of places.
         """
-        # Get the bounding box from the input geometry
-        min_lon, min_lat, max_lon, max_lat = get_bounding_box_from_geometry(geo)
 
-        # Generates quadrants to divide the bounding box into.
-        n_lon, n_lat = 9, 9  # 9x9 grid
-        _, quadrants = generate_quadrants(
-            min_lon, min_lat, max_lon, max_lat, n_lon, n_lat
-        )
-
-        # Calculate center points for each quadrant
-        center_points = calculate_center_points(quadrants)
-        
         # Initialize API base URL and parameters
         api_url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
-        # Initialize a list to store all found POIs
-        all_pois = []
 
-        # For each center point, interact with the Google Places API
-        for center_point in center_points:
-            # Initialize parameters for the new center point, effectively resetting the pagetoken
+        # Input for getting centerpoints
+        filepath = 'data/boundaries/hilo.geojson'
+
+        all_pois = []
+        
+        # Calculate center points
+        center_points = gplaces_get_geojson_centerpoints(filepath,2,2)
+        
+        # Iterate over each center point
+        for point in center_points:
+            point_lat, point_long = point # Extract latitude and longitude
+            
+            # Iterate over each type in place_types list - removed for now
+                # Prepare paramaters for API call
             params = {
-                "location": f"{center_point.y},{center_point.x}",  # Latitude,longitude
-                "radius": 1000,  # In meters
+                "location": f"{point_lat},{point_long}",  # Latitude,longitude
+                "radius": 10000,  # In meters
                 "type": place_type,  # Type of place you are looking for (category filtering)
                 "key": self._api_key,
             }
+                 
+            # Make a request to the Google PLaces API with the current set of parameters
+            response = requests.get(api_url, params=params)
 
-            # Initialize or reset pagination token
-            page_token = None
-            # Initialize a counter for the number of pages fetched
-            pages_fetched = 0
-            max_pages = 3  # Maximum number of pages to fetch
-
-            # Initialize a counter for consecutive errors
-            consecutive_errors = 0
-            max_errors_allowed = 5  # Max number of consecutive errors allowed
-
-            # Loop to handle pagination in the API response
-            while True:
-                if page_token:
-                    # If there's a page token from a previous request, add it to the parameters
-                    params["pagetoken"] = page_token
-                else:
-                    # Ensure the pagetoken paramter is removed if not needed
-                    params.pop(
-                        "pagetoken", None
-                    )  # Remove the pagetoken from params if it exists
-
-                headers = {
-                    "X-Goog-FieldMask: places.displayName,places.formattedAddress,places.types"
-                }
-
-                # Make a request to the Google PLaces API with the current set of parameters
-                response = requests.get(api_url, headers=headers, params=params)
-
-                if response.status_code != 200:
-                    # If the API response is not successful log the error and stop processing
-                    self._logger.error(
-                        f"Error from Google Places API: {response.status_code} - {response.reason}"
-                    )
-                    consecutive_errors += 1
-                    if consecutive_errors > max_errors_allowed:
-                        break  # Optionally, could raise an exception here
-                else:
-                    consecutive_errors = (
-                        0  # Reset the error counter on successful response
-                    )
-
+            # Check that the scrape worked
+            if response.status_code == 200:
+                #print("Request successful.")
                 # Parse the response data from JSON format
                 data = response.json()
-                
-                # Extend the all_pois list with the places found in the current request
-                all_pois.extend(data.get("results", []))
-
-                # Increment the pages_fetched counter and check against max_pages
-                pages_fetched += 1
-                if pages_fetched >= max_pages:
-                    break  # Break if maximum number of pages is reached
-
-                # Check for the 'next_page_token' for pagination
-                page_token = data.get("next_page_token")
-                if not page_token:
-                    # If there's no next_page_token, it means there are no more pages of results
-                    # Break from the loop and proceed to the next center point
-                    break
-
-                # Google requires a short delay before fetching the next page
-                time.sleep(2)
+                #print(data)
+                    
+                # Google uses results to list places
+                places = data.get("results", [])
+                for place in places:
+                    place_info = {
+                        'name': place.get('name'),
+                        'coordinates': place.get('geometry', {}).get('location', {}), 
+                        'location': place.get('vicinity'),
+                        'types': place.get('types'),
+                    }
+                    all_pois.append(place_info)
+            else:
+                # Log the error or handle it according to your needs
+                    self._logger.error(f"Error from Google Places API: {response.status_code} - {response.reason}")
+                    break  # Exit the loop on error
 
         # Return the list of all POIs found in all API requests
-        
         return all_pois
