@@ -56,7 +56,7 @@ def create_data_model(
 
 def print_solution(data, manager, routing, solution):
     """Prints solution on console."""
-    print(f"Objective: {solution.ObjectiveValue()}")
+    
     total_distance = 0
     total_load = 0
     for vehicle_id in range(data["num_vehicles"]):
@@ -226,9 +226,10 @@ def solve_and_save(
 
     # Return solution.
     if solution:
-        print_solution(data, manager, routing, solution)
+        # print_solution(data, manager, routing, solution)
         make_dataframe(
             path_locations_df, output_path, data, manager, routing, solution
         )
+        print("google_cvrp :: solution was found; saving!")
     else:
         print("google_cvrp :: no solution was found")
