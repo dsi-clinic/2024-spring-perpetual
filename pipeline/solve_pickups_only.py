@@ -9,11 +9,11 @@ if __name__ == "__main__":
     # solve cvrp for pickups only
     solve_and_save(
         path_locations_df=cfg["truth_df_path"],
-        path_distance_matrix=cfg["truth_dist_path"],
-        num_vehicles=int(cfg["truth_num_vehicles"]),
+        path_distance_matrix=cfg["truth_dists_path"],
+        num_vehicles=int(cfg["num_vehicles"]),
         vehicle_capacity=int(cfg["vehicle_capacity"]),
-        num_seconds=int(cfg["truth_sim_duration"]),
-        capacity=cfg["capacity_pickup"],
+        num_seconds=int(cfg["sim_duration"]),
+        capacity=cfg["capacity_col"],
         depot_index=int(cfg["depot_index"]),
         output_path=cfg["cvrp_pickups_dir"],
     )
