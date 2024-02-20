@@ -1,0 +1,4 @@
+Original_Index,Name,Longitude,Latitude,Daily_Pickup_Totes,Weekly_Dropoff_Totes,user_ratings_total,category,rating,weekly_high,weekly_low,best_weekly_estimate,Address,geometry,Adoption,Adoption Guess,Visited ,Influence,location_type,pickup_type,id,Capacity,Cumulative_Distance,Truck_Load
+0,Moody Gardens,-94.8523,29.2736,0,0,,,,,,,,,,,,,depot,Truck,,0,0,0
+1,,-94.84864400281596,29.2601984620952,1,0,,,,,,,,,,,,,outdoor,Truck,3028.0,1,0,1
+0,Moody Gardens,-94.8523,29.2736,0,0,,,,,,,,,,,,,depot,Truck,,0,0,1
