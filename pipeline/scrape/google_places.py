@@ -8,6 +8,8 @@ import time
 from typing import Dict, List, Union
 
 # Third-party imports
+from shapely import MultiPolygon, Polygon
+
 import requests
 # Application imports
 from pipeline.scrape.common import IPlacesProvider
@@ -28,7 +30,9 @@ class GooglePlacesClient(IPlacesProvider):
 
         Raises:
             `RuntimeError` if an environment variable,
+            `RuntimeError` if an environment variable,
                 `GOOGLE_MAPS_API_KEY`, is not found.
+
 
         Returns:
             `None`
@@ -51,7 +55,7 @@ class GooglePlacesClient(IPlacesProvider):
         type within a geographic area. The area is divided into a 
         grid of quadrants to manage the scope of each API call.
 
-        Documentation: # TODO: Cite whatever resources you use here:
+        Documentation:
             - ["Overview | Places API"](https://developers.google.com/maps/documentation/places/web-service/overview)
             - ["Nearby Search"](https://developers.google.com/maps/documentation/places/web-service/search-nearby)
 

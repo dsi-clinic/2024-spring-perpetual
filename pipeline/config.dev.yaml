@@ -1,0 +1,5 @@
+---
+stages:
+  places:
+    use_cached: true
+...
