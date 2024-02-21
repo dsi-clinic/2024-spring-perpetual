@@ -6,6 +6,11 @@ if __name__ == "__main__":
     # read cfg
     cfg = read_cfg("../pipeline/utils/config_inputs.ini", "solve.pickups_only")
 
+    print(
+        f"""solve_pickups_only :: running on
+        {cfg["truth_df_path"]} for {cfg["sim_duration"]}s"""
+    )
+
     # solve cvrp for pickups only
     solve_and_save(
         path_locations_df=cfg["truth_df_path"],
@@ -16,4 +21,5 @@ if __name__ == "__main__":
         capacity=cfg["capacity_col"],
         depot_index=int(cfg["depot_index"]),
         output_path=cfg["cvrp_pickups_dir"],
+        num_preceding_routes=0
     )

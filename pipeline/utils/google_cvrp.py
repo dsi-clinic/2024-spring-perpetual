@@ -31,7 +31,6 @@ def get_demands(location_df, capacity):
 
     return demands_list
 
-
 def create_data_model(
     path_locations_df,
     path_distance_matrix,
@@ -54,34 +53,34 @@ def create_data_model(
     return data
 
 
-def print_solution(data, manager, routing, solution):
-    """Prints solution on console."""
+# def print_solution(data, manager, routing, solution):
+#     """Prints solution on console."""
     
-    total_distance = 0
-    total_load = 0
-    for vehicle_id in range(data["num_vehicles"]):
-        index = routing.Start(vehicle_id)
-        plan_output = f"Route for vehicle {vehicle_id}:\n"
-        route_distance = 0
-        route_load = 0
-        while not routing.IsEnd(index):
-            node_index = manager.IndexToNode(index)
-            route_load += data["demands"][node_index]
-            plan_output += f" {node_index} Load({route_load}) -> "
-            previous_index = index
-            index = solution.Value(routing.NextVar(index))
-            route_distance += routing.GetArcCostForVehicle(
-                previous_index, index, vehicle_id
-            )
-        plan_output += f" {manager.IndexToNode(index)} \
-            Load({route_load})\n"
-        plan_output += f"Distance of the route: {route_distance}m\n"
-        plan_output += f"Load of the route: {route_load}\n"
-        print(plan_output)
-        total_distance += route_distance
-        total_load += route_load
-    print(f"Total distance of all routes: {total_distance}m")
-    print(f"Total load of all routes: {total_load}")
+#     total_distance = 0
+#     total_load = 0
+#     for vehicle_id in range(data["num_vehicles"]):
+#         index = routing.Start(vehicle_id)
+#         plan_output = f"Route for vehicle {vehicle_id}:\n"
+#         route_distance = 0
+#         route_load = 0
+#         while not routing.IsEnd(index):
+#             node_index = manager.IndexToNode(index)
+#             route_load += data["demands"][node_index]
+#             plan_output += f" {node_index} Load({route_load}) -> "
+#             previous_index = index
+#             index = solution.Value(routing.NextVar(index))
+#             route_distance += routing.GetArcCostForVehicle(
+#                 previous_index, index, vehicle_id
+#             )
+#         plan_output += f" {manager.IndexToNode(index)} \
+#             Load({route_load})\n"
+#         plan_output += f"Distance of the route: {route_distance}m\n"
+#         plan_output += f"Load of the route: {route_load}\n"
+#         print(plan_output)
+#         total_distance += route_distance
+#         total_load += route_load
+#     print(f"Total distance of all routes: {total_distance}m")
+#     print(f"Total load of all routes: {total_load}")
 
 
 def save_to_table(data, manager, routing, solution):
@@ -133,7 +132,8 @@ def save_to_table(data, manager, routing, solution):
 
 
 def make_dataframe(
-    path_locations_df, output_path, data, manager, routing, solution
+    path_locations_df, output_path, data, manager, routing, solution,
+    num_preceding_routes
 ):
     """use the output of save_to_table to save the dataframe as a
     csv file in the data folder"""
@@ -146,8 +146,9 @@ def make_dataframe(
         route_df = route_df.reset_index()
         route_df = route_df.rename(columns={"index": "Original_Index"})
 
-        path = output_path + "/route" + str(i + 1) + ".csv"
+        path = output_path + "/route" + str(num_preceding_routes + i + 1) + ".csv"
         route_df.to_csv(path, index=False)
+    return len(routes)
 
 
 def solve_and_save(
@@ -159,6 +160,7 @@ def solve_and_save(
     capacity,
     depot_index,
     output_path,
+    num_preceding_routes
 ):
     """Solve the CVRP problem."""
     # Instantiate the data problem.
@@ -219,17 +221,31 @@ def solve_and_save(
         routing_enums_pb2.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH
     )
     search_parameters.time_limit.FromSeconds(num_seconds)
-    # search_parameters.time_limit.seconds = 7200
 
     # Solve the problem.
     solution = routing.SolveWithParameters(search_parameters)
 
     # Return solution.
     if solution:
-        # print_solution(data, manager, routing, solution)
-        make_dataframe(
-            path_locations_df, output_path, data, manager, routing, solution
+
+        # locations_df = pd.read_csv(path_locations_df, encoding="utf8")
+
+        # routes, distances, loads = save_to_table(data, manager, routing, solution)
+        # for i in range(len(routes)):
+        #     route_df = locations_df.loc[routes[i], :]
+        #     route_df["Cumulative_Distance"] = distances[i]
+        #     route_df["Truck_Load"] = loads[i]
+        #     route_df = route_df.reset_index()
+        #     route_df = route_df.rename(columns={"index": "Original_Index"})
+
+        #     path = output_path + "/route" + str(num_preceding_routes + i + 1) + ".csv"
+        #     route_df.to_csv(path, index=False)
+
+        num_routes = make_dataframe(
+            path_locations_df, output_path, data, manager, routing, solution,
+            num_preceding_routes
         )
         print("google_cvrp :: solution was found; saving!")
+        return num_routes
     else:
         print("google_cvrp :: no solution was found")
