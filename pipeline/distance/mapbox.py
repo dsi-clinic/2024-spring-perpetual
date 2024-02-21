@@ -13,7 +13,7 @@ import tqdm
 from pydantic import BaseModel
 
 # Application imports
-from pipeline.utils.geometry import Coordinate
+from pipeline.utils.geometry import WGS84Coordinate
 
 
 class MapboxRouteEnum(Enum):
@@ -71,7 +71,7 @@ class MapboxApiClient:
             ) from None
 
     def make_distance_matrix(
-        self, coords: List[Coordinate], profile: MapboxRoutingProfile
+        self, coords: List[WGS84Coordinate], profile: MapboxRoutingProfile
     ) -> List[List[float]]:
         """Calculates the fastest route between each unique pair of coordinates
         given the routing profile (e.g., driving, walking, cycling) and then
