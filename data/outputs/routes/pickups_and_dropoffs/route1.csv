@@ -1,169 +1,151 @@
 Original_Index,Name,Longitude,Latitude,Daily_Pickup_Totes,Weekly_Dropoff_Totes,user_ratings_total,category,rating,weekly_high,weekly_low,best_weekly_estimate,Address,geometry,Adoption,Adoption Guess,Visited ,Influence,location_type,pickup_type,id,Capacity,Cumulative_Distance,Truck_Load
-0,Moody Gardens,-94.8523,29.2736,0,0,,,,,,,,,,,,,depot,Truck,,77,0,77
-1,,-94.85524271265918,29.267539716885995,1,0,,,,,,,,,,,,,outdoor,Truck,1020.0,1,869,78
-31,,-94.8585634701748,29.25802666551796,1,0,,,,,,,,,,,,,outdoor,Truck,2023.0,1,3436,79
-30,Tin Cup's Caddy Shack,-94.8556317,29.2539288,1,1,197.0,bar,4.6,,,140.625,"9020 Stewart Road, Galveston",POINT (-94.8556317 29.2539288),Skeptical,Med,No,Low,indoor,Truck,,1,3472,80
-113,Tin Cup's Caddy Shack,-94.8556317,29.2539288,1,1,197.0,bar,4.6,,,140.625,"9020 Stewart Road, Galveston",POINT (-94.8556317 29.2539288),Skeptical,Med,No,Low,indoor,Truck,,-1,3472,79
-27,,-94.86949678276189,29.26546777295611,1,0,,,,,,,,,,,,,outdoor,Truck,2022.0,1,6206,80
-111,Lil’ Buffalo Grille,-94.8706411,29.2610884,1,1,216.0,restaurant,4.8,350.0,35.0,350.0,"13 Evia Main, Galveston",POINT (-94.8706411 29.2610884),Curious,Med,No,Low,indoor,Truck,,-1,8299,79
-28,Lil’ Buffalo Grille,-94.8706411,29.2610884,1,1,216.0,restaurant,4.8,350.0,35.0,350.0,"13 Evia Main, Galveston",POINT (-94.8706411 29.2610884),Curious,Med,No,Low,indoor,Truck,,1,8299,80
-112,Sugar Bean,-94.8704183,29.2610286,1,1,476.0,cafe,4.7,200.0,50.0,200.0,"11 Evia Main, Galveston",POINT (-94.8704183 29.2610286),Curious,High,No,High,indoor,Truck,,-1,8358,79
-29,Sugar Bean,-94.8704183,29.2610286,1,1,476.0,cafe,4.7,200.0,50.0,200.0,"11 Evia Main, Galveston",POINT (-94.8704183 29.2610286),Curious,High,No,High,indoor,Truck,,1,8358,80
-9,Cooper's Landing,-94.8780445,29.2407199,1,1,219.0,restaurant,4.3,700.0,280.0,700.0,"11150 Termini-San Luis Pass Road, Galveston",POINT (-94.8780445 29.2407199),Skeptical,Med,No,Low,indoor,Truck,,1,11933,81
-103,Cooper's Landing,-94.8780445,29.2407199,1,1,219.0,restaurant,4.3,700.0,280.0,700.0,"11150 Termini-San Luis Pass Road, Galveston",POINT (-94.8780445 29.2407199),Skeptical,Med,No,Low,indoor,Truck,,-1,11933,80
-105,Hummel's General Store & Deli,-94.9374899,29.20822,2,1,22.0,convenience store,4.5,700.0,100.0,700.0,,POINT (-94.9374899 29.20822),Skeptical,Med,No,Med,indoor,Truck,,-1,18833,79
-11,,-94.93739816125932,29.2085240573132,1,0,,,,,,,,,,,,,outdoor,Truck,2026.0,1,18884,80
-104,Mario's Pizza,-94.9373606,29.2082758,1,1,219.0,restaurant,3.5,0.0,0.0,93.75,"13708 Termini-san Luis Pass Rd Galveston, TX 77554",POINT (-94.9373606 29.2082758),Skeptical,Med,Yes,Low,indoor,Truck,,-1,18908,79
-10,Mario's Pizza,-94.9373606,29.2082758,1,1,219.0,restaurant,3.5,0.0,0.0,93.75,"13708 Termini-san Luis Pass Rd Galveston, TX 77554",POINT (-94.9373606 29.2082758),Skeptical,Med,Yes,Low,indoor,Truck,,1,18908,80
-12,Hummel's General Store & Deli,-94.9374899,29.20822,2,1,22.0,convenience store,4.5,700.0,100.0,700.0,,POINT (-94.9374899 29.20822),Skeptical,Med,No,Med,indoor,Truck,,2,18935,82
-13,,-94.94920025811072,29.200509132181256,1,0,,,,,,,,,,,,,outdoor,Truck,2025.0,1,20382,83
-14,,-94.95608616231785,29.196347559108165,1,0,,,,,,,,,,,,,outdoor,Truck,3034.0,1,21269,84
-106,Nate's Westend Seafood & Steaks,-94.9850694,29.1752194,1,1,1470.0,restaurant,4.0,,,93.75,"17515 Termini-San Luis Pass Road, Galveston",POINT (-94.9850694 29.1752194),Skeptical,Med,No,Low,indoor,Truck,,-1,24991,83
-15,Nate's Westend Seafood & Steaks,-94.9850694,29.1752194,1,1,1470.0,restaurant,4.0,,,93.75,"17515 Termini-San Luis Pass Road, Galveston",POINT (-94.9850694 29.1752194),Skeptical,Med,No,Low,indoor,Truck,,1,24991,84
-107,Galveston Food Truck Park,-95.0404814,29.1415146,1,1,6.0,food,5.0,,,0.0,"Nest to the Wet Whistle Bar in Sea Isle, 21510 Termini-San Luis Pass Road, Galveston",POINT (-95.0404814 29.1415146),Skeptical,Med,No,Low,indoor,Truck,,-1,31557,83
-16,Galveston Food Truck Park,-95.0404814,29.1415146,1,1,6.0,food,5.0,,,0.0,"Nest to the Wet Whistle Bar in Sea Isle, 21510 Termini-San Luis Pass Road, Galveston",POINT (-95.0404814 29.1415146),Skeptical,Med,No,Low,indoor,Truck,,1,31557,84
-17,,-95.0468334206239,29.144976394730858,1,0,,,,,,,,,,,,,outdoor,Truck,2027.0,1,32528,85
-109,The West End Marina and Restaurants,-95.0470457,29.1449947,1,1,803.0,bar,4.1,300.0,150.0,300.0,"21706 Burnet Drive, Galveston",POINT (-95.0470457 29.1449947),Skeptical,Med,No,Med,indoor,Truck,,-1,32540,84
-108,The Sandbar Grille,-95.0470522,29.1449775,1,1,292.0,bar,4.0,2000.0,1400.0,2000.0,"21706 Burnet Drive, Galveston",POINT (-95.0470522 29.1449775),Skeptical,Med,Yes,Med,indoor,Truck,,-1,32540,83
-19,The West End Marina and Restaurants,-95.0470457,29.1449947,1,1,803.0,bar,4.1,300.0,150.0,300.0,"21706 Burnet Drive, Galveston",POINT (-95.0470457 29.1449947),Skeptical,Med,No,Med,indoor,Truck,,1,32540,84
-18,The Sandbar Grille,-95.0470522,29.1449775,1,1,292.0,bar,4.0,2000.0,1400.0,2000.0,"21706 Burnet Drive, Galveston",POINT (-95.0470522 29.1449775),Skeptical,Med,Yes,Med,indoor,Truck,,1,32540,85
-20,,-95.11776778416598,29.085700851392566,1,0,,,,,,,,,,,,,outdoor,Truck,2028.0,1,43513,86
-21,,-94.95403603262106,29.19352527673134,1,0,,,,,,,,,,,,,outdoor,Truck,3033.0,1,63767,87
-22,Waterman's Restaurant,-94.94924164,29.2073822,1,1,350.0,restaurant,3.0,,,93.75,"14302 Stewart Rd Galveston, TX 77554",POINT (-94.9492416381836 29.2073822021484),Skeptical,Med,Yes,Med,indoor,Truck,,1,65680,88
-110,Waterman's Restaurant,-94.94924164,29.2073822,1,1,350.0,restaurant,3.0,,,93.75,"14302 Stewart Rd Galveston, TX 77554",POINT (-94.9492416381836 29.2073822021484),Skeptical,Med,Yes,Med,indoor,Truck,,-1,65680,87
-23,,-94.9278228922708,29.210431153328607,1,0,,,,,,,,,,,,,outdoor,Truck,3032.0,1,68207,88
-24,,-94.89604294830498,29.2277225320811,1,0,,,,,,,,,,,,,outdoor,Truck,3031.0,1,72100,89
-25,,-94.87811761972976,29.23872499917516,1,0,,,,,,,,,,,,,outdoor,Truck,3030.0,1,74613,90
-26,,-94.8738468189325,29.2405914297026,1,0,,,,,,,,,,,,,outdoor,Truck,3025.0,1,75722,91
-8,,-94.86778062999728,29.243452340388263,1,0,,,,,,,,,,,,,outdoor,Truck,2024.0,1,76514,92
-7,Seawall Coffee Company,-94.86782336,29.24463873,2,1,47.0,restaurant,4.5,1050.0,350.0,1050.0,,POINT (-94.8678233612548 29.244638725096),Curious,Med,Yes,Low,indoor,Truck,,2,76648,94
-102,Seawall Coffee Company,-94.86782336,29.24463873,2,1,47.0,restaurant,4.5,1050.0,350.0,1050.0,,POINT (-94.8678233612548 29.244638725096),Curious,Med,Yes,Low,indoor,Truck,,-1,76648,93
-6,Seahorse Grill,-94.86803806,29.24448719,1,1,237.0,restaurant,4.5,105.0,15.0,105.0,"3802 Cove View Blvd Ste C Galveston, TX 77554",POINT (-94.868038059798 29.244487190776),Curious,Med,Yes,Low,indoor,Truck,,1,76673,94
-101,Seahorse Grill,-94.86803806,29.24448719,1,1,237.0,restaurant,4.5,105.0,15.0,105.0,"3802 Cove View Blvd Ste C Galveston, TX 77554",POINT (-94.868038059798 29.244487190776),Curious,Med,Yes,Low,indoor,Truck,,-1,76673,93
-5,SEA BEAN Coffee Cafe,-94.8532271,29.2506218,2,1,7.0,cafe,4.5,,,750.0,"9001 Seawall Blvd Galveston, TX 77551 (Jimmies)",POINT (-94.8532271 29.2506218),Skeptical,Med,No,High,indoor,Truck,,2,78437,95
-100,SEA BEAN Coffee Cafe,-94.8532271,29.2506218,2,1,7.0,cafe,4.5,,,750.0,"9001 Seawall Blvd Galveston, TX 77551 (Jimmies)",POINT (-94.8532271 29.2506218),Skeptical,Med,No,High,indoor,Truck,,-1,78437,94
-4,Jimmy's Curbside Restaurant and Grocery,-94.8531793,29.2506985,2,1,8.0,restaurant,4.5,,,750.0,"9001 Seawall Boulevard, Galveston",POINT (-94.8531793 29.2506985),Curious,Med,No,Med,indoor,Truck,,2,78446,96
-99,Jimmy's Curbside Restaurant and Grocery,-94.8531793,29.2506985,2,1,8.0,restaurant,4.5,,,750.0,"9001 Seawall Boulevard, Galveston",POINT (-94.8531793 29.2506985),Curious,Med,No,Med,indoor,Truck,,-1,78446,95
-3,Dolphin World Inc No 2,-94.85317,29.25173,1,1,5.0,restaurant,2.0,210.0,30.0,210.0,"718 41st Str Galveston, TX 77550",POINT (-94.85317 29.25173),Skeptical,Med,No,Low,indoor,Truck,,1,78579,96
-98,Dolphin World Inc No 2,-94.85317,29.25173,1,1,5.0,restaurant,2.0,210.0,30.0,210.0,"718 41st Str Galveston, TX 77550",POINT (-94.85317 29.25173),Skeptical,Med,No,Low,indoor,Truck,,-1,78579,95
-2,Galveston Primetime,-94.8542107,29.2530127,2,2,1321.0,movie_theater,4.2,4200.0,600.0,4200.0,"8902 Seawall Boulevard, Galveston Movie theatre)",POINT (-94.8542107 29.2530127),Skeptical,Med,No,Low,indoor,Truck,,2,78910,97
-97,Galveston Primetime,-94.8542107,29.2530127,2,2,1321.0,movie_theater,4.2,4200.0,600.0,4200.0,"8902 Seawall Boulevard, Galveston Movie theatre)",POINT (-94.8542107 29.2530127),Skeptical,Med,No,Low,indoor,Truck,,-2,78910,95
-32,Sapori,-94.8412938,29.2592634,1,1,365.0,restaurant,4.5,0.0,0.0,93.75,"7611 Stewart Road, Galveston",POINT (-94.8412938 29.2592634),Curious,High,Yes,Low,indoor,Truck,,1,80521,96
-114,Sapori,-94.8412938,29.2592634,1,1,365.0,restaurant,4.5,0.0,0.0,93.75,"7611 Stewart Road, Galveston",POINT (-94.8412938 29.2592634),Curious,High,Yes,Low,indoor,Truck,,-1,80521,95
-115,Gino's Italian Restaurant and Pizzeria,-94.832217,29.2753139,1,1,1056.0,restaurant,4.3,35.0,5.0,35.0,"6124 Stewart Road, Galveston",POINT (-94.832217 29.2753139),Skeptical,Med,Yes,Low,indoor,Truck,,-1,82869,94
-33,Gino's Italian Restaurant and Pizzeria,-94.832217,29.2753139,1,1,1056.0,restaurant,4.3,35.0,5.0,35.0,"6124 Stewart Road, Galveston",POINT (-94.832217 29.2753139),Skeptical,Med,Yes,Low,indoor,Truck,,1,82869,95
-116,Cajun Greek,-94.8316408,29.2769392,1,1,999.0,restaurant,4.0,50.0,25.0,50.0,"2226 61st St Galveston, TX 77551",POINT (-94.8316408 29.2769392),Curious,High,Yes,Med,indoor,Truck,,-1,83140,94
-34,Cajun Greek,-94.8316408,29.2769392,1,1,999.0,restaurant,4.0,50.0,25.0,50.0,"2226 61st St Galveston, TX 77551",POINT (-94.8316408 29.2769392),Curious,High,Yes,Med,indoor,Truck,,1,83140,95
-117,Mario's Ristorante,-94.8315,29.27708,1,1,215.0,restaurant,3.5,210.0,175.0,210.0,"2202 61st St Galveston, TX 77551",POINT (-94.8315 29.27708),skeptical,Med,Yes,Med,indoor,Truck,,-1,83213,94
-35,Mario's Ristorante,-94.8315,29.27708,1,1,215.0,restaurant,3.5,210.0,175.0,210.0,"2202 61st St Galveston, TX 77551",POINT (-94.8315 29.27708),skeptical,Med,Yes,Med,indoor,Truck,,1,83213,95
-118,Yamato,-94.8316258,29.2780918,1,1,936.0,restaurant,4.4,,,93.75,"2104 61st Street, Galveston",POINT (-94.8316258 29.2780918),Skeptical,Med,Yes,Low,indoor,Truck,,-1,83414,94
-36,Yamato,-94.8316258,29.2780918,1,1,936.0,restaurant,4.4,,,93.75,"2104 61st Street, Galveston",POINT (-94.8316258 29.2780918),Skeptical,Med,Yes,Low,indoor,Truck,,1,83414,95
-119,Hooters,-94.83244,29.2797,1,1,175.0,restaurant,2.0,280.0,40.0,280.0,"6028 Heards Ln Galveston, TX 77551",POINT (-94.83244 29.2797),Skeptical,Med,No,Low,indoor,Truck,,-1,83707,94
-37,Hooters,-94.83244,29.2797,1,1,175.0,restaurant,2.0,280.0,40.0,280.0,"6028 Heards Ln Galveston, TX 77551",POINT (-94.83244 29.2797),Skeptical,Med,No,Low,indoor,Truck,,1,83707,95
-38,,-94.83901023515826,29.29108366340304,1,0,,,,,,,,,,,,,outdoor,Truck,1018.0,1,85345,96
-39,,-94.83971047446586,29.29032253864521,1,0,,,,,,,,,,,,,outdoor,Truck,2017.0,1,85537,97
-120,Bronco Burritos,-94.82237832,29.29176564,1,1,289.0,restaurant,4.5,7000.0,1000.0,7000.0,"4917 Broadway St Galveston, TX 77551",POINT (-94.822378320166 29.2917656429058),Skeptical,Med,No,Med,indoor,Truck,,-1,87433,96
-40,Bronco Burritos,-94.82237832,29.29176564,1,1,289.0,restaurant,4.5,7000.0,1000.0,7000.0,"4917 Broadway St Galveston, TX 77551",POINT (-94.822378320166 29.2917656429058),Skeptical,Med,No,Med,indoor,Truck,,1,87433,97
-121,Koop's BBQ Kitchen,-94.8173499,29.2931568,2,1,211.0,restaurant,4.8,0.0,0.0,750.0,"4501 Broadway Avenue J, Galveston",POINT (-94.8173499 29.2931568),Skeptical,Med,Yes,Low,indoor,Truck,,-1,87946,96
-41,Koop's BBQ Kitchen,-94.8173499,29.2931568,2,1,211.0,restaurant,4.8,0.0,0.0,750.0,"4501 Broadway Avenue J, Galveston",POINT (-94.8173499 29.2931568),Skeptical,Med,Yes,Low,indoor,Truck,,2,87946,98
-122,Rail Road Museum,-94.8091242,29.2983795,1,1,408.0,restaurant,4.6,400.0,100.0,400.0,"2602 Santa Fe Pl, Galveston",POINT (-94.8091242 29.2983795),Curious,med,Yes,Low,indoor,Truck,,-1,89200,97
-42,Rail Road Museum,-94.8091242,29.2983795,1,1,408.0,restaurant,4.6,400.0,100.0,400.0,"2602 Santa Fe Pl, Galveston",POINT (-94.8091242 29.2983795),Curious,med,Yes,Low,indoor,Truck,,1,89200,98
-155,Red Light Coffee Roasters,-94.7995497,29.3040468,1,1,305.0,cafe,4.6,150.0,100.0,150.0,"2728 Market Street, Galveston",POINT (-94.7995497 29.3040468),Curious,High,Yes,Med,indoor,Truck,,-1,90579,97
-82,Red Light Coffee Roasters,-94.7995497,29.3040468,1,1,305.0,cafe,4.6,150.0,100.0,150.0,"2728 Market Street, Galveston",POINT (-94.7995497 29.3040468),Curious,High,Yes,Med,indoor,Truck,,1,90579,98
-156,Freckleberry Teahouse,-94.79937,29.3041968,1,1,78.0,cafe,4.9,,,625.0,"2724 Market Street, Galveston",POINT (-94.79937 29.3041968),Curious,Med,No,Med,indoor,Truck,,-1,90646,97
-83,Freckleberry Teahouse,-94.79937,29.3041968,1,1,78.0,cafe,4.9,,,625.0,"2724 Market Street, Galveston",POINT (-94.79937 29.3041968),Curious,Med,No,Med,indoor,Truck,,1,90646,98
-80,Maceo Spice & Import Company,-94.7988412,29.3042052,1,1,564.0,restaurant,4.7,1050.0,420.0,1050.0,"2706 Market Street, Galveston",POINT (-94.7988412 29.3042052),Fan,High,No,Med,indoor,Truck,,1,90809,99
-154,Leeland House Galveston,-94.7988738,29.3038963,1,1,51.0,bar,4.6,140.0,70.0,140.0,"2711 Market Street, Galveston",POINT (-94.7988738 29.3038963),Skeptical,High,Yes,Med,indoor,Truck,,-1,90851,98
-81,Leeland House Galveston,-94.7988738,29.3038963,1,1,51.0,bar,4.6,140.0,70.0,140.0,"2711 Market Street, Galveston",POINT (-94.7988738 29.3038963),Skeptical,High,Yes,Med,indoor,Truck,,1,90851,99
-153,Maceo Spice & Import Company,-94.7988412,29.3042052,1,1,564.0,restaurant,4.7,1050.0,420.0,1050.0,"2706 Market Street, Galveston",POINT (-94.7988412 29.3042052),Fan,High,No,Med,indoor,Truck,,-1,90893,98
-46,Eatcetera,-94.795793,29.3044994,1,1,299.0,restaurant,4.5,42.0,42.0,42.0,"408 25th Street, Galveston",POINT (-94.795793 29.3044994),Raving Fan,High,Yes,Med,indoor,Truck,,1,91336,99
-125,Eatcetera,-94.795793,29.3044994,1,1,299.0,restaurant,4.5,42.0,42.0,42.0,"408 25th Street, Galveston",POINT (-94.795793 29.3044994),Raving Fan,High,Yes,Med,indoor,Truck,,-1,91336,98
-47,Jack's Pub On Post Office,-94.7951116,29.3043679,2,2,316.0,bar,4.6,210.0,30.0,210.0,"2406 Postoffice St, Galveston",POINT (-94.7951116 29.3043679),Hesitant,Med,No,Low,indoor,Truck,,2,91395,100
-126,Jack's Pub On Post Office,-94.7951116,29.3043679,2,2,316.0,bar,4.6,210.0,30.0,210.0,"2406 Postoffice St, Galveston",POINT (-94.7951116 29.3043679),Hesitant,Med,No,Low,indoor,Truck,,-2,91395,98
-127,Black Pearl Oyster Bar,-94.7940474,29.3054649,1,1,2224.0,restaurant,4.4,105.0,15.0,105.0,"327 23rd Street, Galveston",POINT (-94.7940474 29.3054649),Skeptical,Med,No,Low,indoor,Truck,,-1,91577,97
-48,Black Pearl Oyster Bar,-94.7940474,29.3054649,1,1,2224.0,restaurant,4.4,105.0,15.0,105.0,"327 23rd Street, Galveston",POINT (-94.7940474 29.3054649),Skeptical,Med,No,Low,indoor,Truck,,1,91577,98
-49,Vintage Crown Michelada Bar & Taqueria,-94.7944665,29.3065367,1,1,207.0,bar,4.6,,,140.625,"215 23rd Street, Galveston",POINT (-94.7944665 29.3065367),Skeptical,Med,No,Low,indoor,Truck,,1,91776,99
-128,Vintage Crown Michelada Bar & Taqueria,-94.7944665,29.3065367,1,1,207.0,bar,4.6,,,140.625,"215 23rd Street, Galveston",POINT (-94.7944665 29.3065367),Skeptical,Med,No,Low,indoor,Truck,,-1,91776,98
-129,The Garden Thai Cuisine,-94.7940546,29.3065697,1,1,146.0,restaurant,4.5,210.0,30.0,210.0,"216 23rd Street, Galveston",POINT (-94.7940546 29.3065697),Skeptical,Med,Yes,Low,indoor,Truck,,-1,91824,97
-50,The Garden Thai Cuisine,-94.7940546,29.3065697,1,1,146.0,restaurant,4.5,210.0,30.0,210.0,"216 23rd Street, Galveston",POINT (-94.7940546 29.3065697),Skeptical,Med,Yes,Low,indoor,Truck,,1,91824,98
-51,The Pink Foyer Sweets Boutique,-94.7945911,29.3060402,1,1,1.0,bakery,5.0,0.0,0.0,112.5,"2315 Mechanic Street, Galveston",POINT (-94.7945911 29.3060402),Curious,High,No,Low,indoor,Truck,,1,91908,99
-130,The Pink Foyer Sweets Boutique,-94.7945911,29.3060402,1,1,1.0,bakery,5.0,0.0,0.0,112.5,"2315 Mechanic Street, Galveston",POINT (-94.7945911 29.3060402),Curious,High,No,Low,indoor,Truck,,-1,91908,98
-52,Toujouse (listed under Tremont House),-94.7948312,29.3062632,1,1,6.0,cafe,5.0,0.0,0.0,625.0,"2300 Ship Mechanic Row Street, Galveston",POINT (-94.7948312 29.3062632),Curious,High,No,High,indoor,Truck,,1,91923,99
-131,Toujouse (listed under Tremont House),-94.7948312,29.3062632,1,1,6.0,cafe,5.0,0.0,0.0,625.0,"2300 Ship Mechanic Row Street, Galveston",POINT (-94.7948312 29.3062632),Curious,High,No,High,indoor,Truck,,-1,91923,98
-53,Playground Patio Bar & Grill,-94.795242,29.30667,1,1,216.0,bar,4.4,,,140.625,"2325 The Strand, Galveston",POINT (-94.795242 29.30667),Skeptical,Med,No,Low,indoor,Truck,,1,92042,99
-132,Playground Patio Bar & Grill,-94.795242,29.30667,1,1,216.0,bar,4.4,,,140.625,"2325 The Strand, Galveston",POINT (-94.795242 29.30667),Skeptical,Med,No,Low,indoor,Truck,,-1,92042,98
-55,,-94.79567444799896,29.30696419276517,1,0,,,,,,,,,,,,,outdoor,Bike,1012.0,1,92085,99
-133,Riondo's Ristorante,-94.795454,29.3070258,1,1,758.0,restaurant,4.5,70.0,70.0,70.0,"2328 The Strand, Galveston",POINT (-94.795454 29.3070258),Fan,High,No,Med,indoor,Truck,,-1,92085,98
-54,Riondo's Ristorante,-94.795454,29.3070258,1,1,758.0,restaurant,4.5,70.0,70.0,70.0,"2328 The Strand, Galveston",POINT (-94.795454 29.3070258),Fan,High,No,Med,indoor,Truck,,1,92085,99
-147,Tsunami Tequila Emporium,-94.7951202,29.3072052,1,1,165.0,bar,4.1,0.0,0.0,140.625,"2314 The Strand, Galveston",POINT (-94.7951202 29.3072052),Skeptical,Med,No,High,indoor,Truck,,-1,92148,98
-134,Yaga's Cafe,-94.7949518,29.3071481,1,1,1708.0,bar,4.4,250.0,150.0,250.0,"2314 The Strand, Galveston",POINT (-94.7949518 29.3071481),Skeptical,Med,Yes,High,indoor,Truck,,-1,92161,97
-57,,-94.79448543312456,29.30708461014235,1,0,,,,,,,,,,,,,outdoor,Bike,1016.0,1,92202,98
-61,,-94.79338136883872,29.30760607604601,1,0,,,,,,,,,,,,,outdoor,Bike,1013.0,1,92346,99
-137,Rosario`s flying pizza and pub,-94.7928341,29.3073255,1,1,34.0,restaurant,4.6,280.0,40.0,280.0,"2121 The Strand, Galveston",POINT (-94.7928341 29.3073255),Curious,Med,Yes,Low,indoor,Truck,,-1,92450,98
-62,Rosario`s flying pizza and pub,-94.7928341,29.3073255,1,1,34.0,restaurant,4.6,280.0,40.0,280.0,"2121 The Strand, Galveston",POINT (-94.7928341 29.3073255),Curious,Med,Yes,Low,indoor,Truck,,1,92450,99
-138,MarMo Cafe & Lounge,-94.792103,29.3056002,1,1,19.0,bar,4.8,140.0,35.0,140.0,"2121 Market Street suite 101, Galveston",POINT (-94.792103 29.3056002),High,High,No,Med,indoor,Truck,,-1,92729,98
-63,MarMo Cafe & Lounge,-94.792103,29.3056002,1,1,19.0,bar,4.8,140.0,35.0,140.0,"2121 Market Street suite 101, Galveston",POINT (-94.792103 29.3056002),High,High,No,Med,indoor,Truck,,1,92729,99
-139,Shucks Tavern,-94.7912194,29.3055721,1,1,97.0,restaurant,4.7,35.0,0.0,35.0,"414 21st Street, Galveston",POINT (-94.7912194 29.3055721),Curious,Med,No,Low,indoor,Truck,,-1,92873,98
-64,Shucks Tavern,-94.7912194,29.3055721,1,1,97.0,restaurant,4.7,35.0,0.0,35.0,"414 21st Street, Galveston",POINT (-94.7912194 29.3055721),Curious,Med,No,Low,indoor,Truck,,1,92873,99
-140,Mama Teresa's Flying Pizza,-94.7911778,29.3055494,2,1,1875.0,restaurant,4.6,175.0,25.0,175.0,"416 21st Street, Galveston",POINT (-94.7911778 29.3055494),Skeptical,Med,No,Low,indoor,Truck,,-1,92876,98
-65,Mama Teresa's Flying Pizza,-94.7911778,29.3055494,2,1,1875.0,restaurant,4.6,175.0,25.0,175.0,"416 21st Street, Galveston",POINT (-94.7911778 29.3055494),Skeptical,Med,No,Low,indoor,Truck,,2,92876,100
-141,The Wine Next Door,-94.7911713,29.3054682,1,1,3.0,bar,5.0,0.0,0.0,140.625,"418 21st Street, Galveston",POINT (-94.7911713 29.3054682),Curious,Med,No,Low,indoor,Truck,,-1,92909,99
-66,The Wine Next Door,-94.7911713,29.3054682,1,1,3.0,bar,5.0,0.0,0.0,140.625,"418 21st Street, Galveston",POINT (-94.7911713 29.3054682),Curious,Med,No,Low,indoor,Truck,,1,92909,100
-142,Rudy & Paco Restaurant and Bar,-94.791081,29.3053363,1,1,892.0,bar,4.7,100.0,75.0,100.0,"2028 Postoffice St, Galveston",POINT (-94.791081 29.3053363),Hesitant,High,No,High,indoor,Truck,,-1,92961,99
-67,Rudy & Paco Restaurant and Bar,-94.791081,29.3053363,1,1,892.0,bar,4.7,100.0,75.0,100.0,"2028 Postoffice St, Galveston",POINT (-94.791081 29.3053363),Hesitant,High,No,High,indoor,Truck,,1,92961,100
-143,Saltwater Grill,-94.790643,29.3050765,1,1,653.0,restaurant,4.4,280.0,70.0,280.0,"2017 Postoffice Street, Galveston",POINT (-94.790643 29.3050765),Skeptical,Med,No,High,indoor,Truck,,-1,92993,99
-68,Saltwater Grill,-94.790643,29.3050765,1,1,653.0,restaurant,4.4,280.0,70.0,280.0,"2017 Postoffice Street, Galveston",POINT (-94.790643 29.3050765),Skeptical,Med,No,High,indoor,Truck,,1,92993,100
-144,Trattoria La Vigna,-94.7901585,29.306202,1,1,563.0,restaurant,4.6,0.0,0.0,93.75,"412 20th Street, Galveston",POINT (-94.7901585 29.306202),Skeptical,Med,No,Low,indoor,Truck,,-1,93144,99
-69,Trattoria La Vigna,-94.7901585,29.306202,1,1,563.0,restaurant,4.6,0.0,0.0,93.75,"412 20th Street, Galveston",POINT (-94.7901585 29.306202),Skeptical,Med,No,Low,indoor,Truck,,1,93144,100
-70,,-94.7898969706002,29.306879649441004,1,0,,,,,,,,,,,,,outdoor,Bike,2007.0,1,93218,101
-145,Drunken Monkeyz,-94.790723,29.3079594,2,2,324.0,bar,4.3,0.0,0.0,1125.0,"202 20th Street, Galveston",POINT (-94.790723 29.3079594),Skeptical,Med,No,Low,indoor,Truck,,-2,93484,99
-71,Drunken Monkeyz,-94.790723,29.3079594,2,2,324.0,bar,4.3,0.0,0.0,1125.0,"202 20th Street, Galveston",POINT (-94.790723 29.3079594),Skeptical,Med,No,Low,indoor,Truck,,2,93484,101
-72,Brewchachos Tacos & Cantina,-94.7925997,29.3078756,1,1,1043.0,bar,4.2,2800.0,400.0,2800.0,"2110 The Strand, Galveston",POINT (-94.7925997 29.3078756),Skeptical,Med,Yes,Med,indoor,Truck,,1,93695,102
-146,Brewchachos Tacos & Cantina,-94.7925997,29.3078756,1,1,1043.0,bar,4.2,2800.0,400.0,2800.0,"2110 The Strand, Galveston",POINT (-94.7925997 29.3078756),Skeptical,Med,Yes,Med,indoor,Truck,,-1,93695,101
-58,Axecade,-94.7941601,29.3070637,1,1,113.0,restaurant,4.8,2100.0,300.0,2100.0,"2217 Strand St Second Floor 217, 2217 The Strand Suite 217, Galveston",POINT (-94.7941601 29.3070637),Skeptical,Med,No,Low,indoor,Truck,,1,93901,102
-135,Axecade,-94.7941601,29.3070637,1,1,113.0,restaurant,4.8,2100.0,300.0,2100.0,"2217 Strand St Second Floor 217, 2217 The Strand Suite 217, Galveston",POINT (-94.7941601 29.3070637),Skeptical,Med,No,Low,indoor,Truck,,-1,93901,101
-60,,-94.79468452427888,29.30753393564195,1,0,,,,,,,,,,,,,outdoor,Bike,1002.0,1,93987,102
-136,Stuttgarden Tavern,-94.7947919,29.3077483,1,1,2179.0,bar,4.2,,,468.75,"111 23rd Street, Galveston",POINT (-94.7947919 29.3077483),Skeptical,Med,Yes,High,indoor,Truck,,-1,94023,101
-59,Stuttgarden Tavern,-94.7947919,29.3077483,1,1,2179.0,bar,4.2,,,468.75,"111 23rd Street, Galveston",POINT (-94.7947919 29.3077483),Skeptical,Med,Yes,High,indoor,Truck,,1,94023,102
-56,Yaga's Cafe,-94.7949518,29.3071481,1,1,1708.0,bar,4.4,250.0,150.0,250.0,"2314 The Strand, Galveston",POINT (-94.7949518 29.3071481),Skeptical,Med,Yes,High,indoor,Truck,,1,94148,103
-73,Tsunami Tequila Emporium,-94.7951202,29.3072052,1,1,165.0,bar,4.1,0.0,0.0,140.625,"2314 The Strand, Galveston",POINT (-94.7951202 29.3072052),Skeptical,Med,No,High,indoor,Truck,,1,94161,104
-74,Shark Shack,-94.7957083,29.3069439,1,1,1607.0,bar,4.6,210.0,30.0,210.0,"2402 The Strand, Galveston",POINT (-94.7957083 29.3069439),Skeptical,Med,No,Med,indoor,Truck,,1,94223,105
-148,Shark Shack,-94.7957083,29.3069439,1,1,1607.0,bar,4.6,210.0,30.0,210.0,"2402 The Strand, Galveston",POINT (-94.7957083 29.3069439),Skeptical,Med,No,Med,indoor,Truck,,-1,94223,104
-75,Brews Brothers,-94.7958692,29.3069004,2,2,672.0,bar,4.3,,,1125.0,"2404 The Strand, Galveston",POINT (-94.7958692 29.3069004),Skeptical,Med,Yes,Low,indoor,Truck,,2,94239,106
-149,Brews Brothers,-94.7958692,29.3069004,2,2,672.0,bar,4.3,,,1125.0,"2404 The Strand, Galveston",POINT (-94.7958692 29.3069004),Skeptical,Med,Yes,Low,indoor,Truck,,-2,94239,104
-150,Patrick’s Bar,-94.7959472,29.3066379,1,1,174.0,bar,4.3,350.0,50.0,350.0,"2411 The Strand B, Galveston",POINT (-94.7959472 29.3066379),Skeptical,Med,No,Low,indoor,Truck,,-1,94254,103
-77,Bubba's on The Strand,-94.7959158,29.3065268,2,2,113.0,bar,4.3,,,1125.0,"2411 The Strand, Galveston",POINT (-94.7959158 29.3065268),Skeptical,Med,Yes,Low,indoor,Truck,,2,94254,105
-76,Patrick’s Bar,-94.7959472,29.3066379,1,1,174.0,bar,4.3,350.0,50.0,350.0,"2411 The Strand B, Galveston",POINT (-94.7959472 29.3066379),Skeptical,Med,No,Low,indoor,Truck,,1,94254,106
-151,Bubba's on The Strand,-94.7959158,29.3065268,2,2,113.0,bar,4.3,,,1125.0,"2411 The Strand, Galveston",POINT (-94.7959158 29.3065268),Skeptical,Med,Yes,Low,indoor,Truck,,-2,94254,104
-152,Hearsay On The Strand,-94.796027,29.3068691,1,1,1103.0,restaurant,4.4,35.0,5.0,35.0,"2410 The Strand, Galveston",POINT (-94.796027 29.3068691),Skeptical,Med,No,Low,indoor,Truck,,-1,94277,103
-78,Hearsay On The Strand,-94.796027,29.3068691,1,1,1103.0,restaurant,4.4,35.0,5.0,35.0,"2410 The Strand, Galveston",POINT (-94.796027 29.3068691),Skeptical,Med,No,Low,indoor,Truck,,1,94277,104
-79,,-94.79652426820594,29.30682933975252,1,0,,,,,,,,,,,,,outdoor,Bike,1001.0,1,94402,105
-84,Trini Mike's Island Time Kitchen (Food Truck),-94.7954706,29.3041632,1,1,5.0,restaurant,4.2,,,93.75,"2424 Post Office, Galveston (Sharkeys)",POINT (-94.7954706 29.3041632),Skeptical,Med,No,Low,indoor,Truck,,1,94841,106
-157,Trini Mike's Island Time Kitchen (Food Truck),-94.7954706,29.3041632,1,1,5.0,restaurant,4.2,,,93.75,"2424 Post Office, Galveston (Sharkeys)",POINT (-94.7954706 29.3041632),Skeptical,Med,No,Low,indoor,Truck,,-1,94841,105
-158,Press Box,-94.7948097,29.3040367,2,2,320.0,bar,4.4,70.0,10.0,70.0,"2401 Postoffice Street, Galveston",POINT (-94.7948097 29.3040367),Hesitant,Med,No,Med,indoor,Truck,,-2,94898,103
-85,Press Box,-94.7948097,29.3040367,2,2,320.0,bar,4.4,70.0,10.0,70.0,"2401 Postoffice Street, Galveston",POINT (-94.7948097 29.3040367),Hesitant,Med,No,Med,indoor,Truck,,2,94898,105
-86,Star Drug Store,-94.7931581,29.304249,2,1,1247.0,restaurant,4.5,140.0,35.0,140.0,"510 23rd Street, Galveston",POINT (-94.7931581 29.304249),Curious,High,Yes,Low,indoor,Truck,,2,95108,107
-159,Star Drug Store,-94.7931581,29.304249,2,1,1247.0,restaurant,4.5,140.0,35.0,140.0,"510 23rd Street, Galveston",POINT (-94.7931581 29.304249),Curious,High,Yes,Low,indoor,Truck,,-1,95108,106
-87,Lolo Kai Smoothies and Wraps,-94.7931018,29.3039878,2,1,338.0,restaurant,4.8,,,750.0,"528 23rd Street, Galveston",POINT (-94.7931018 29.3039878),Curious,Med,Yes,Low,indoor,Truck,,2,95111,108
-160,Lolo Kai Smoothies and Wraps,-94.7931018,29.3039878,2,1,338.0,restaurant,4.8,,,750.0,"528 23rd Street, Galveston",POINT (-94.7931018 29.3039878),Curious,Med,Yes,Low,indoor,Truck,,-1,95111,107
-45,Sharky's Tavern,-94.7953346,29.3037598,2,2,757.0,restaurant,4.4,,,1250.0,"504 25th Street, Galveston",POINT (-94.7953346 29.3037598),Skeptical,Med,No,High,indoor,Truck,,2,95325,109
-124,Sharky's Tavern,-94.7953346,29.3037598,2,2,757.0,restaurant,4.4,,,1250.0,"504 25th Street, Galveston",POINT (-94.7953346 29.3037598),Skeptical,Med,No,High,indoor,Truck,,-2,95325,107
-88,Sugar & Rye,-94.7944536,29.3031184,1,1,128.0,restaurant,4.8,35.0,70.0,35.0,"2401 Church Street, Galveston",POINT (-94.7944536 29.3031184),Curious,High,No,Low,indoor,Truck,,1,95478,108
-161,Sugar & Rye,-94.7944536,29.3031184,1,1,128.0,restaurant,4.8,35.0,70.0,35.0,"2401 Church Street, Galveston",POINT (-94.7944536 29.3031184),Curious,High,No,Low,indoor,Truck,,-1,95478,107
-123,La Estacion Restaurant,-94.794797,29.3015187,1,1,442.0,restaurant,4.3,175.0,25.0,175.0,"2428 Avenue H, Galveston",POINT (-94.794797 29.3015187),Skeptical,Med,No,Low,indoor,Truck,,-1,95786,106
-44,La Estacion Restaurant,-94.794797,29.3015187,1,1,442.0,restaurant,4.3,175.0,25.0,175.0,"2428 Avenue H, Galveston",POINT (-94.794797 29.3015187),Skeptical,Med,No,Low,indoor,Truck,,1,95786,107
-43,,-94.79578217640906,29.30090513320724,1,0,,,,,,,,,,,,,outdoor,Bike,1007.0,1,96068,108
-89,,-94.79551215028134,29.292771721098887,1,0,,,,,,,,,,,,,outdoor,Truck,3026.0,1,97231,109
-90,,-94.80141651349544,29.290079781803342,1,0,,,,,,,,,,,,,outdoor,Truck,2012.0,1,97965,110
-162,Whitecaps,-94.8077385,29.285577,1,1,,university,,0.0,0.0,1875.0,"3916 Avenue Q, Galveston",POINT (-94.8077385 29.285577),Curious,med,No,low,indoor,Truck,,-1,99050,109
-91,Whitecaps,-94.8077385,29.285577,1,1,,university,,0.0,0.0,1875.0,"3916 Avenue Q, Galveston",POINT (-94.8077385 29.285577),Curious,med,No,low,indoor,Truck,,1,99050,110
-163,Mr. C's Dugout @Galveston College,-94.807822,29.284711,1,1,2.0,restaurant,3.0,,,93.75,"Student Center, 4015 Avenue Q, Galveston",POINT (-94.807822 29.284711),Curious,High,No,High,indoor,Truck,,-1,99308,109
-92,Mr. C's Dugout @Galveston College,-94.807822,29.284711,1,1,2.0,restaurant,3.0,,,93.75,"Student Center, 4015 Avenue Q, Galveston",POINT (-94.807822 29.284711),Curious,High,No,High,indoor,Truck,,1,99308,110
-93,,-94.8070897627476,29.284031380957845,1,0,,,,,,,,,,,,,outdoor,Bike,2010.0,1,99556,111
-164,Galveston College,-94.8084945,29.2840785,1,1,65.0,university,4.4,20.0,20.0,20.0,"4015 Avenue Q, Galveston",POINT (-94.8084945 29.2840785),Curious,High,No,High,indoor,Truck,,-1,99815,110
-94,Galveston College,-94.8084945,29.2840785,1,1,65.0,university,4.4,20.0,20.0,20.0,"4015 Avenue Q, Galveston",POINT (-94.8084945 29.2840785),Curious,High,No,High,indoor,Truck,,1,99815,111
-165,Bar 43,-94.8108363,29.2809684,1,1,1.0,restaurant,1.0,,,93.75,,POINT (-94.8108363 29.2809684),Currious,Med,No,Low,indoor,Truck,,-1,100361,110
-95,Bar 43,-94.8108363,29.2809684,1,1,1.0,restaurant,1.0,,,93.75,,POINT (-94.8108363 29.2809684),Currious,Med,No,Low,indoor,Truck,,1,100361,111
-166,Panda Express,-94.83056,29.2755,2,1,10.0,restaurant,2.0,3360.0,3360.0,3360.0,"11745 San Luis Pass Rd Galveston, TX 77554",POINT (-94.83056 29.2755),Skeptical,Med,No,Low,indoor,Truck,,-1,102452,110
-96,Panda Express,-94.83056,29.2755,2,1,10.0,restaurant,2.0,3360.0,3360.0,3360.0,"11745 San Luis Pass Rd Galveston, TX 77554",POINT (-94.83056 29.2755),Skeptical,Med,No,Low,indoor,Truck,,2,102452,112
-0,Moody Gardens,-94.8523,29.2736,0,0,,,,,,,,,,,,,depot,Truck,,77,105429,112
+0,Moody Gardens,-94.8523,29.2736,0,0,,,,,,,,,,,,,depot,Truck,,75,0,75
+1,Gino's Italian Restaurant and Pizzeria,-94.832217,29.2753139,1,1,1056.0,restaurant,4.3,35,5,35.0,"6124 Stewart Road, Galveston",POINT (-94.832217 29.2753139),Skeptical,Med,Yes,Low,indoor,Truck,,1,2704,76
+2,Gypsy Joynt,-94.83164758,29.27417239,2,1,622.0,restaurant,4.5,2000,1400,2000.0,"6105 Stewart Rd Galveston, TX 77551",POINT (-94.8316475822502 29.2741723877485),TBD,Med,Yes,Med,indoor,Truck,,2,2857,78
+86,Gypsy Joynt,-94.83164758,29.27417239,2,1,622.0,restaurant,4.5,2000,1400,2000.0,"6105 Stewart Rd Galveston, TX 77551",POINT (-94.8316475822502 29.2741723877485),TBD,Med,Yes,Med,indoor,Truck,,-1,2857,77
+3,,-94.8308675247102,29.27466850361676,1,0,,,,,,,,,,,,,outdoor,Truck,2019.0,1,2959,78
+87,Café Canela,-94.8308258,29.2744235,1,1,412.0,restaurant,4.6,350,50,350.0,"6105 Stewart Road Suite C, Galveston",POINT (-94.8308258 29.2744235),Skeptical,Med,Yes,Low,indoor,Truck,,-1,2977,77
+4,Café Canela,-94.8308258,29.2744235,1,1,412.0,restaurant,4.6,350,50,350.0,"6105 Stewart Road Suite C, Galveston",POINT (-94.8308258 29.2744235),Skeptical,Med,Yes,Low,indoor,Truck,,1,2977,78
+88,Taco Cabana,-94.82903,29.27079,2,1,109.0,restaurant,2.0,2800,400,2800.0,"2729 61st St. Galveston, TX 77551",POINT (-94.82903 29.27079),Opp,Med,No,Low,indoor,Truck,,-1,3571,77
+5,Taco Cabana,-94.82903,29.27079,2,1,109.0,restaurant,2.0,2800,400,2800.0,"2729 61st St. Galveston, TX 77551",POINT (-94.82903 29.27079),Opp,Med,No,Low,indoor,Truck,,2,3571,79
+6,,-94.82860688351526,29.27008306635599,1,0,,,,,,,,,,,,,outdoor,Truck,2018.0,1,3681,80
+7,,-94.82198101001254,29.275166318239137,1,0,,,,,,,,,,,,,outdoor,Truck,2009.0,1,4914,81
+8,,-94.81271795927027,29.27510482953612,1,0,,,,,,,,,,,,,outdoor,Truck,2011.0,1,5973,82
+9,,-94.80526213325668,29.278482396580216,1,0,,,,,,,,,,,,,outdoor,Truck,3010.0,1,6839,83
+89,Nick's Kitchen and Beach Bar,-94.8040028,29.2797917,1,1,3609.0,restaurant,4.2,,,656.25,"3802 Seawall Boulevard, Galveston",POINT (-94.8040028 29.2797917),Skeptical,Med,No,High,indoor,Truck,,-1,7257,82
+10,Nick's Kitchen and Beach Bar,-94.8040028,29.2797917,1,1,3609.0,restaurant,4.2,,,656.25,"3802 Seawall Boulevard, Galveston",POINT (-94.8040028 29.2797917),Skeptical,Med,No,High,indoor,Truck,,1,7257,83
+11,Queen's Bar-B-Que,-94.8011997,29.2834997,2,1,1311.0,restaurant,4.3,700,100,700.0,"3428 Avenue S, Galveston",POINT (-94.8011997 29.2834997),Skeptical,Med,No,Low,indoor,Truck,,2,7928,85
+90,Queen's Bar-B-Que,-94.8011997,29.2834997,2,1,1311.0,restaurant,4.3,700,100,700.0,"3428 Avenue S, Galveston",POINT (-94.8011997 29.2834997),Skeptical,Med,No,Low,indoor,Truck,,-1,7928,84
+91,Island time beach bar,-94.7971187,29.2842203,2,2,12.0,bar,4.7,,,1125.0,"3102 Seawall Boulevard, Galveston",POINT (-94.7971187 29.2842203),Curious,Med,No,Low,indoor,Truck,,-2,8331,82
+12,Island time beach bar,-94.7971187,29.2842203,2,2,12.0,bar,4.7,,,1125.0,"3102 Seawall Boulevard, Galveston",POINT (-94.7971187 29.2842203),Curious,Med,No,Low,indoor,Truck,,2,8331,84
+13,The Poop Deck,-94.7955743,29.2852319,1,1,235.0,bar,4.5,10000,500,10000.0,"2928 Seawall Boulevard, Galveston",POINT (-94.7955743 29.2852319),Skeptical,Med,No,Low,indoor,Truck,,1,8658,85
+92,The Poop Deck,-94.7955743,29.2852319,1,1,235.0,bar,4.5,10000,500,10000.0,"2928 Seawall Boulevard, Galveston",POINT (-94.7955743 29.2852319),Skeptical,Med,No,Low,indoor,Truck,,-1,8658,84
+14,,-94.79493642483013,29.285061699147057,1,0,,,,,,,,,,,,,outdoor,Truck,3013.0,1,8770,85
+93,Float Pool & Patio Bar,-94.7944124,29.2859177,1,1,1433.0,bar,4.2,?,?,,"2828 Seawall Boulevard, Galveston",POINT (-94.7944124 29.2859177),Skeptical,Med,No,Med,indoor,Truck,,-1,8909,84
+15,Float Pool & Patio Bar,-94.7944124,29.2859177,1,1,1433.0,bar,4.2,?,?,,"2828 Seawall Boulevard, Galveston",POINT (-94.7944124 29.2859177),Skeptical,Med,No,Med,indoor,Truck,,1,8909,85
+94,Beerfoot Beach Bar,-94.7942047,29.2863254,1,1,184.0,bar,4.4,0,0,140.625,"2816 Avenue R 1/2, Galveston",POINT (-94.7942047 29.2863254),Skeptical,Med,Yes,High,indoor,Truck,,-1,8941,84
+16,Beerfoot Beach Bar,-94.7942047,29.2863254,1,1,184.0,bar,4.4,0,0,140.625,"2816 Avenue R 1/2, Galveston",POINT (-94.7942047 29.2863254),Skeptical,Med,Yes,High,indoor,Truck,,1,8941,85
+95,BLVD Seafood (all of Yagas Entertainment),-94.7939604,29.2865539,1,1,2158.0,restaurant,4.5,400,105,400.0,"2804 Avenue R 1/2, Galveston",POINT (-94.7939604 29.2865539),Skeptical,High,No,High,indoor,Truck,,-1,9073,84
+17,BLVD Seafood (all of Yagas Entertainment),-94.7939604,29.2865539,1,1,2158.0,restaurant,4.5,400,105,400.0,"2804 Avenue R 1/2, Galveston",POINT (-94.7939604 29.2865539),Skeptical,High,No,High,indoor,Truck,,1,9073,85
+18,,-94.79283633899044,29.28645386043989,1,0,,,,,,,,,,,,,outdoor,Truck,3014.0,1,9225,86
+19,,-94.7902187937728,29.28713138145065,1,0,,,,,,,,,,,,,outdoor,Truck,2013.0,1,9474,87
+98,Bubba Gump Shrimp Co.,-94.790157,29.28785,1,1,6587.0,restaurant,4.0,140,20,140.0,"2501 Seawall Boulevard, Galveston",POINT (-94.790157 29.28785),Skeptical,Med,No,High,indoor,Truck,,-1,9523,86
+96,Robert's Lafitte,-94.7911531,29.2896039,1,1,122.0,bar,4.5,600,400,600.0,"2501 Avenue Q, Galveston",POINT (-94.7911531 29.2896039),Currious,Med,No,Med,indoor,Truck,,-1,9743,85
+20,Robert's Lafitte,-94.7911531,29.2896039,1,1,122.0,bar,4.5,600,400,600.0,"2501 Avenue Q, Galveston",POINT (-94.7911531 29.2896039),Currious,Med,No,Med,indoor,Truck,,1,9743,86
+97,Fish Tales,-94.7908591,29.2882774,1,1,5546.0,restaurant,4.0,280,40,280.0,"2502 Seawall Boulevard, Galveston",POINT (-94.7908591 29.2882774),Skeptical,Med,No,High,indoor,Truck,,-1,9902,85
+21,Fish Tales,-94.7908591,29.2882774,1,1,5546.0,restaurant,4.0,280,40,280.0,"2502 Seawall Boulevard, Galveston",POINT (-94.7908591 29.2882774),Skeptical,Med,No,High,indoor,Truck,,1,9902,86
+22,Bubba Gump Shrimp Co.,-94.790157,29.28785,1,1,6587.0,restaurant,4.0,140,20,140.0,"2501 Seawall Boulevard, Galveston",POINT (-94.790157 29.28785),Skeptical,Med,No,High,indoor,Truck,,1,9960,87
+23,,-94.78918032046477,29.289013989903104,1,0,,,,,,,,,,,,,outdoor,Truck,3015.0,1,10116,88
+99,Fish Company Taco,-94.7889025,29.2918404,1,1,368.0,restaurant,4.8,100,50,100.0,"1914 23rd Street, Galveston",POINT (-94.7889025 29.2918404),Skeptical,Med,No,Low,indoor,Truck,,-1,10473,87
+24,Fish Company Taco,-94.7889025,29.2918404,1,1,368.0,restaurant,4.8,100,50,100.0,"1914 23rd Street, Galveston",POINT (-94.7889025 29.2918404),Skeptical,Med,No,Low,indoor,Truck,,1,10473,88
+100,Galvez Bar & Grill,-94.7863059,29.2928214,1,1,505.0,restaurant,4.3,415,210,415.0,"2024 Seawall Boulevard, Galveston",POINT (-94.7863059 29.2928214),Skeptical,Med,No,Med,indoor,Truck,,-1,10844,87
+25,Galvez Bar & Grill,-94.7863059,29.2928214,1,1,505.0,restaurant,4.3,415,210,415.0,"2024 Seawall Boulevard, Galveston",POINT (-94.7863059 29.2928214),Skeptical,Med,No,Med,indoor,Truck,,1,10844,88
+26,,-94.7855794129526,29.291804838061307,1,0,,,,,,,,,,,,,outdoor,Truck,3016.0,1,11222,89
+101,Monarch Restaurant,-94.7863581,29.2925893,1,1,5.0,restaurant,3.2,0,0,93.75,"2024 Seawall Boulevard, Galveston",POINT (-94.7863581 29.2925893),Cuirous,Med,No,Not open yet,indoor,Truck,,-1,11310,88
+27,Monarch Restaurant,-94.7863581,29.2925893,1,1,5.0,restaurant,3.2,0,0,93.75,"2024 Seawall Boulevard, Galveston",POINT (-94.7863581 29.2925893),Cuirous,Med,No,Not open yet,indoor,Truck,,1,11310,89
+102,Longboard Pool Bar,-94.7828729,29.2944602,1,1,292.0,bar,4.1,,,140.625,"1702 Seawall Boulevard, Galveston",POINT (-94.7828729 29.2944602),Skeptical,Med,No,High,indoor,Truck,,-1,11792,88
+28,Longboard Pool Bar,-94.7828729,29.2944602,1,1,292.0,bar,4.1,,,140.625,"1702 Seawall Boulevard, Galveston",POINT (-94.7828729 29.2944602),Skeptical,Med,No,High,indoor,Truck,,1,11792,89
+29,,-94.78168618656736,29.29478947063417,1,0,,,,,,,,,,,,,outdoor,Truck,3017.0,1,11902,90
+103,Saltgrass Steak House,-94.7808646,29.296032,1,1,3775.0,restaurant,4.4,,,656.25,"1502 Seawall Boulevard, Galveston",POINT (-94.7808646 29.296032),Skeptical,Med,No,High,indoor,Truck,,-1,12054,89
+30,Saltgrass Steak House,-94.7808646,29.296032,1,1,3775.0,restaurant,4.4,,,656.25,"1502 Seawall Boulevard, Galveston",POINT (-94.7808646 29.296032),Skeptical,Med,No,High,indoor,Truck,,1,12054,90
+104,Shykatz,-94.7832253,29.3005619,2,1,930.0,cafe,4.6,800,500,800.0,"1528 Avenue L, Galveston",POINT (-94.7832253 29.3005619),Curious,High,Yes,Med,indoor,Truck,,-1,12673,89
+31,Shykatz,-94.7832253,29.3005619,2,1,930.0,cafe,4.6,800,500,800.0,"1528 Avenue L, Galveston",POINT (-94.7832253 29.3005619),Curious,High,Yes,Med,indoor,Truck,,2,12673,91
+32,,-94.79125240816202,29.296987170079213,1,0,,,,,,,,,,,,,outdoor,Truck,2006.0,1,13640,92
+33,Bambú,-94.7909648,29.2976696,1,1,780.0,restaurant,4.5,1050,150,1050.0,"1220 23rd Street, Galveston",POINT (-94.7909648 29.2976696),Skeptical,Med,No,Low,indoor,Truck,,1,13704,93
+105,Bambú,-94.7909648,29.2976696,1,1,780.0,restaurant,4.5,1050,150,1050.0,"1220 23rd Street, Galveston",POINT (-94.7909648 29.2976696),Skeptical,Med,No,Low,indoor,Truck,,-1,13704,92
+107,Galveston Bagel Company,-94.7913851,29.2989118,1,1,140.0,bakery,4.7,2100,1750,2100.0,"1110 23rd Street, Galveston",POINT (-94.7913851 29.2989118),Curious,High,Yes,Low,indoor,Truck,,-1,13847,91
+106,MAC-IES,-94.7913851,29.2989118,1,1,73.0,restaurant,5.0,1500,1050,1500.0,"1110 23rd Street, Galveston",POINT (-94.7913851 29.2989118),Curious,High,No,Low,indoor,Truck,,-1,13847,90
+35,Galveston Bagel Company,-94.7913851,29.2989118,1,1,140.0,bakery,4.7,2100,1750,2100.0,"1110 23rd Street, Galveston",POINT (-94.7913851 29.2989118),Curious,High,Yes,Low,indoor,Truck,,1,13847,91
+34,MAC-IES,-94.7913851,29.2989118,1,1,73.0,restaurant,5.0,1500,1050,1500.0,"1110 23rd Street, Galveston",POINT (-94.7913851 29.2989118),Curious,High,No,Low,indoor,Truck,,1,13847,92
+108,galveston vfw hall,-94.7925989,29.2990826,1,1,18.0,restaurant,4.8,,,93.75,"1014 24th Street Rear, Galveston",POINT (-94.7925989 29.2990826),Skeptical,Med,No,Low,indoor,Truck,,-1,13965,91
+36,galveston vfw hall,-94.7925989,29.2990826,1,1,18.0,restaurant,4.8,,,93.75,"1014 24th Street Rear, Galveston",POINT (-94.7925989 29.2990826),Skeptical,Med,No,Low,indoor,Truck,,1,13965,92
+137,Sugar & Rye,-94.7944536,29.3031184,1,1,128.0,restaurant,4.8,35,70,35.0,"2401 Church Street, Galveston",POINT (-94.7944536 29.3031184),Curious,High,No,Low,indoor,Truck,,-1,14496,91
+69,Sugar & Rye,-94.7944536,29.3031184,1,1,128.0,restaurant,4.8,35,70,35.0,"2401 Church Street, Galveston",POINT (-94.7944536 29.3031184),Curious,High,No,Low,indoor,Truck,,1,14496,92
+110,Sharky's Tavern,-94.7953346,29.3037598,2,2,757.0,restaurant,4.4,,,1250.0,"504 25th Street, Galveston",POINT (-94.7953346 29.3037598),Skeptical,Med,No,High,indoor,Truck,,-2,14649,90
+38,Sharky's Tavern,-94.7953346,29.3037598,2,2,757.0,restaurant,4.4,,,1250.0,"504 25th Street, Galveston",POINT (-94.7953346 29.3037598),Skeptical,Med,No,High,indoor,Truck,,2,14649,92
+65,Trini Mike's Island Time Kitchen (Food Truck),-94.7954706,29.3041632,1,1,5.0,restaurant,4.2,,,93.75,"2424 Post Office, Galveston (Sharkeys)",POINT (-94.7954706 29.3041632),Skeptical,Med,No,Low,indoor,Truck,,1,14772,93
+133,Trini Mike's Island Time Kitchen (Food Truck),-94.7954706,29.3041632,1,1,5.0,restaurant,4.2,,,93.75,"2424 Post Office, Galveston (Sharkeys)",POINT (-94.7954706 29.3041632),Skeptical,Med,No,Low,indoor,Truck,,-1,14772,92
+39,Eatcetera,-94.795793,29.3044994,1,1,299.0,restaurant,4.5,42,42,42.0,"408 25th Street, Galveston",POINT (-94.795793 29.3044994),Raving Fan,High,Yes,Med,indoor,Truck,,1,14875,93
+111,Eatcetera,-94.795793,29.3044994,1,1,299.0,restaurant,4.5,42,42,42.0,"408 25th Street, Galveston",POINT (-94.795793 29.3044994),Raving Fan,High,Yes,Med,indoor,Truck,,-1,14875,92
+40,Jack's Pub On Post Office,-94.7951116,29.3043679,2,2,316.0,bar,4.6,210,30,210.0,"2406 Postoffice St, Galveston",POINT (-94.7951116 29.3043679),Hesitant,Med,No,Low,indoor,Truck,,2,14934,94
+112,Jack's Pub On Post Office,-94.7951116,29.3043679,2,2,316.0,bar,4.6,210,30,210.0,"2406 Postoffice St, Galveston",POINT (-94.7951116 29.3043679),Hesitant,Med,No,Low,indoor,Truck,,-2,14934,92
+66,Press Box,-94.7948097,29.3040367,2,2,320.0,bar,4.4,70,10,70.0,"2401 Postoffice Street, Galveston",POINT (-94.7948097 29.3040367),Hesitant,Med,No,Med,indoor,Truck,,2,15047,94
+134,Press Box,-94.7948097,29.3040367,2,2,320.0,bar,4.4,70,10,70.0,"2401 Postoffice Street, Galveston",POINT (-94.7948097 29.3040367),Hesitant,Med,No,Med,indoor,Truck,,-2,15047,92
+136,Lolo Kai Smoothies and Wraps,-94.7931018,29.3039878,2,1,338.0,restaurant,4.8,,,750.0,"528 23rd Street, Galveston",POINT (-94.7931018 29.3039878),Curious,Med,Yes,Low,indoor,Truck,,-1,15254,91
+68,Lolo Kai Smoothies and Wraps,-94.7931018,29.3039878,2,1,338.0,restaurant,4.8,,,750.0,"528 23rd Street, Galveston",POINT (-94.7931018 29.3039878),Curious,Med,Yes,Low,indoor,Truck,,2,15254,93
+135,Star Drug Store,-94.7931581,29.304249,2,1,1247.0,restaurant,4.5,140,35,140.0,"510 23rd Street, Galveston",POINT (-94.7931581 29.304249),Curious,High,Yes,Low,indoor,Truck,,-1,15257,92
+67,Star Drug Store,-94.7931581,29.304249,2,1,1247.0,restaurant,4.5,140,35,140.0,"510 23rd Street, Galveston",POINT (-94.7931581 29.304249),Curious,High,Yes,Low,indoor,Truck,,2,15257,94
+113,Black Pearl Oyster Bar,-94.7940474,29.3054649,1,1,2224.0,restaurant,4.4,105,15,105.0,"327 23rd Street, Galveston",POINT (-94.7940474 29.3054649),Skeptical,Med,No,Low,indoor,Truck,,-1,15451,93
+41,Black Pearl Oyster Bar,-94.7940474,29.3054649,1,1,2224.0,restaurant,4.4,105,15,105.0,"327 23rd Street, Galveston",POINT (-94.7940474 29.3054649),Skeptical,Med,No,Low,indoor,Truck,,1,15451,94
+117,Toujouse (listed under Tremont House),-94.7948312,29.3062632,1,1,6.0,cafe,5.0,0,0,625.0,"2300 Ship Mechanic Row Street, Galveston",POINT (-94.7948312 29.3062632),Curious,High,No,High,indoor,Truck,,-1,15693,93
+45,Toujouse (listed under Tremont House),-94.7948312,29.3062632,1,1,6.0,cafe,5.0,0,0,625.0,"2300 Ship Mechanic Row Street, Galveston",POINT (-94.7948312 29.3062632),Curious,High,No,High,indoor,Truck,,1,15693,94
+116,The Pink Foyer Sweets Boutique,-94.7945911,29.3060402,1,1,1.0,bakery,5.0,0,0,112.5,"2315 Mechanic Street, Galveston",POINT (-94.7945911 29.3060402),Curious,High,No,Low,indoor,Truck,,-1,15708,93
+44,The Pink Foyer Sweets Boutique,-94.7945911,29.3060402,1,1,1.0,bakery,5.0,0,0,112.5,"2315 Mechanic Street, Galveston",POINT (-94.7945911 29.3060402),Curious,High,No,Low,indoor,Truck,,1,15708,94
+43,The Garden Thai Cuisine,-94.7940546,29.3065697,1,1,146.0,restaurant,4.5,210,30,210.0,"216 23rd Street, Galveston",POINT (-94.7940546 29.3065697),Skeptical,Med,Yes,Low,indoor,Truck,,1,15792,95
+115,The Garden Thai Cuisine,-94.7940546,29.3065697,1,1,146.0,restaurant,4.5,210,30,210.0,"216 23rd Street, Galveston",POINT (-94.7940546 29.3065697),Skeptical,Med,Yes,Low,indoor,Truck,,-1,15792,94
+42,Vintage Crown Michelada Bar & Taqueria,-94.7944665,29.3065367,1,1,207.0,bar,4.6,,,140.625,"215 23rd Street, Galveston",POINT (-94.7944665 29.3065367),Skeptical,Med,No,Low,indoor,Truck,,1,15840,95
+114,Vintage Crown Michelada Bar & Taqueria,-94.7944665,29.3065367,1,1,207.0,bar,4.6,,,140.625,"215 23rd Street, Galveston",POINT (-94.7944665 29.3065367),Skeptical,Med,No,Low,indoor,Truck,,-1,15840,94
+51,Axecade,-94.7941601,29.3070637,1,1,113.0,restaurant,4.8,2100,300,2100.0,"2217 Strand St Second Floor 217, 2217 The Strand Suite 217, Galveston",POINT (-94.7941601 29.3070637),Skeptical,Med,No,Low,indoor,Truck,,1,15902,95
+121,Axecade,-94.7941601,29.3070637,1,1,113.0,restaurant,4.8,2100,300,2100.0,"2217 Strand St Second Floor 217, 2217 The Strand Suite 217, Galveston",POINT (-94.7941601 29.3070637),Skeptical,Med,No,Low,indoor,Truck,,-1,15902,94
+53,Stuttgarden Tavern,-94.7947919,29.3077483,1,1,2179.0,bar,4.2,,,468.75,"111 23rd Street, Galveston",POINT (-94.7947919 29.3077483),Skeptical,Med,Yes,High,indoor,Truck,,1,15992,95
+122,Stuttgarden Tavern,-94.7947919,29.3077483,1,1,2179.0,bar,4.2,,,468.75,"111 23rd Street, Galveston",POINT (-94.7947919 29.3077483),Skeptical,Med,Yes,High,indoor,Truck,,-1,15992,94
+52,,-94.79468452427888,29.30753393564195,1,0,,,,,,,,,,,,,outdoor,Bike,1002.0,1,16028,95
+50,,-94.79448543312456,29.30708461014235,1,0,,,,,,,,,,,,,outdoor,Bike,1016.0,1,16108,96
+120,Yaga's Cafe,-94.7949518,29.3071481,1,1,1708.0,bar,4.4,250,150,250.0,"2314 The Strand, Galveston",POINT (-94.7949518 29.3071481),Skeptical,Med,Yes,High,indoor,Truck,,-1,16149,95
+49,Yaga's Cafe,-94.7949518,29.3071481,1,1,1708.0,bar,4.4,250,150,250.0,"2314 The Strand, Galveston",POINT (-94.7949518 29.3071481),Skeptical,Med,Yes,High,indoor,Truck,,1,16149,96
+123,Tsunami Tequila Emporium,-94.7951202,29.3072052,1,1,165.0,bar,4.1,0,0,140.625,"2314 The Strand, Galveston",POINT (-94.7951202 29.3072052),Skeptical,Med,No,High,indoor,Truck,,-1,16162,95
+54,Tsunami Tequila Emporium,-94.7951202,29.3072052,1,1,165.0,bar,4.1,0,0,140.625,"2314 The Strand, Galveston",POINT (-94.7951202 29.3072052),Skeptical,Med,No,High,indoor,Truck,,1,16162,96
+46,Playground Patio Bar & Grill,-94.795242,29.30667,1,1,216.0,bar,4.4,,,140.625,"2325 The Strand, Galveston",POINT (-94.795242 29.30667),Skeptical,Med,No,Low,indoor,Truck,,1,16240,97
+118,Playground Patio Bar & Grill,-94.795242,29.30667,1,1,216.0,bar,4.4,,,140.625,"2325 The Strand, Galveston",POINT (-94.795242 29.30667),Skeptical,Med,No,Low,indoor,Truck,,-1,16240,96
+47,Riondo's Ristorante,-94.795454,29.3070258,1,1,758.0,restaurant,4.5,70,70,70.0,"2328 The Strand, Galveston",POINT (-94.795454 29.3070258),Fan,High,No,Med,indoor,Truck,,1,16283,97
+119,Riondo's Ristorante,-94.795454,29.3070258,1,1,758.0,restaurant,4.5,70,70,70.0,"2328 The Strand, Galveston",POINT (-94.795454 29.3070258),Fan,High,No,Med,indoor,Truck,,-1,16283,96
+48,,-94.79567444799896,29.30696419276517,1,0,,,,,,,,,,,,,outdoor,Bike,1012.0,1,16283,97
+124,Shark Shack,-94.7957083,29.3069439,1,1,1607.0,bar,4.6,210,30,210.0,"2402 The Strand, Galveston",POINT (-94.7957083 29.3069439),Skeptical,Med,No,Med,indoor,Truck,,-1,16310,96
+55,Shark Shack,-94.7957083,29.3069439,1,1,1607.0,bar,4.6,210,30,210.0,"2402 The Strand, Galveston",POINT (-94.7957083 29.3069439),Skeptical,Med,No,Med,indoor,Truck,,1,16310,97
+125,Brews Brothers,-94.7958692,29.3069004,2,2,672.0,bar,4.3,,,1125.0,"2404 The Strand, Galveston",POINT (-94.7958692 29.3069004),Skeptical,Med,Yes,Low,indoor,Truck,,-2,16326,95
+56,Brews Brothers,-94.7958692,29.3069004,2,2,672.0,bar,4.3,,,1125.0,"2404 The Strand, Galveston",POINT (-94.7958692 29.3069004),Skeptical,Med,Yes,Low,indoor,Truck,,2,16326,97
+126,Patrick’s Bar,-94.7959472,29.3066379,1,1,174.0,bar,4.3,350,50,350.0,"2411 The Strand B, Galveston",POINT (-94.7959472 29.3066379),Skeptical,Med,No,Low,indoor,Truck,,-1,16341,96
+57,Patrick’s Bar,-94.7959472,29.3066379,1,1,174.0,bar,4.3,350,50,350.0,"2411 The Strand B, Galveston",POINT (-94.7959472 29.3066379),Skeptical,Med,No,Low,indoor,Truck,,1,16341,97
+58,Bubba's on The Strand,-94.7959158,29.3065268,2,2,113.0,bar,4.3,,,1125.0,"2411 The Strand, Galveston",POINT (-94.7959158 29.3065268),Skeptical,Med,Yes,Low,indoor,Truck,,2,16341,99
+127,Bubba's on The Strand,-94.7959158,29.3065268,2,2,113.0,bar,4.3,,,1125.0,"2411 The Strand, Galveston",POINT (-94.7959158 29.3065268),Skeptical,Med,Yes,Low,indoor,Truck,,-2,16341,97
+128,Hearsay On The Strand,-94.796027,29.3068691,1,1,1103.0,restaurant,4.4,35,5,35.0,"2410 The Strand, Galveston",POINT (-94.796027 29.3068691),Skeptical,Med,No,Low,indoor,Truck,,-1,16364,96
+59,Hearsay On The Strand,-94.796027,29.3068691,1,1,1103.0,restaurant,4.4,35,5,35.0,"2410 The Strand, Galveston",POINT (-94.796027 29.3068691),Skeptical,Med,No,Low,indoor,Truck,,1,16364,97
+60,,-94.79652426820594,29.30682933975252,1,0,,,,,,,,,,,,,outdoor,Bike,1001.0,1,16489,98
+129,Maceo Spice & Import Company,-94.7988412,29.3042052,1,1,564.0,restaurant,4.7,1050,420,1050.0,"2706 Market Street, Galveston",POINT (-94.7988412 29.3042052),Fan,High,No,Med,indoor,Truck,,-1,17041,97
+61,Maceo Spice & Import Company,-94.7988412,29.3042052,1,1,564.0,restaurant,4.7,1050,420,1050.0,"2706 Market Street, Galveston",POINT (-94.7988412 29.3042052),Fan,High,No,Med,indoor,Truck,,1,17041,98
+130,Leeland House Galveston,-94.7988738,29.3038963,1,1,51.0,bar,4.6,140,70,140.0,"2711 Market Street, Galveston",POINT (-94.7988738 29.3038963),Skeptical,High,Yes,Med,indoor,Truck,,-1,17083,97
+62,Leeland House Galveston,-94.7988738,29.3038963,1,1,51.0,bar,4.6,140,70,140.0,"2711 Market Street, Galveston",POINT (-94.7988738 29.3038963),Skeptical,High,Yes,Med,indoor,Truck,,1,17083,98
+131,Red Light Coffee Roasters,-94.7995497,29.3040468,1,1,305.0,cafe,4.6,150,100,150.0,"2728 Market Street, Galveston",POINT (-94.7995497 29.3040468),Curious,High,Yes,Med,indoor,Truck,,-1,17178,97
+63,Red Light Coffee Roasters,-94.7995497,29.3040468,1,1,305.0,cafe,4.6,150,100,150.0,"2728 Market Street, Galveston",POINT (-94.7995497 29.3040468),Curious,High,Yes,Med,indoor,Truck,,1,17178,98
+132,Freckleberry Teahouse,-94.79937,29.3041968,1,1,78.0,cafe,4.9,,,625.0,"2724 Market Street, Galveston",POINT (-94.79937 29.3041968),Curious,Med,No,Med,indoor,Truck,,-1,17245,97
+64,Freckleberry Teahouse,-94.79937,29.3041968,1,1,78.0,cafe,4.9,,,625.0,"2724 Market Street, Galveston",POINT (-94.79937 29.3041968),Curious,Med,No,Med,indoor,Truck,,1,17245,98
+139,Shrimp 'N Stuff Downtown,-94.7958306,29.3013951,2,1,1785.0,restaurant,4.5,1400,200,1400.0,"2506 Avenue H, Galveston",POINT (-94.7958306 29.3013951),Skeptical,Med,No,Low,indoor,Truck,,-1,17887,97
+71,Shrimp 'N Stuff Downtown,-94.7958306,29.3013951,2,1,1785.0,restaurant,4.5,1400,200,1400.0,"2506 Avenue H, Galveston",POINT (-94.7958306 29.3013951),Skeptical,Med,No,Low,indoor,Truck,,2,17887,99
+70,Vida Agave,-94.795515,29.30184,1,1,155.0,restaurant,4.7,70,10,70.0,"711 25th Street, Galveston",POINT (-94.795515 29.30184),Skeptical,Med,Yes,Low,indoor,Truck,,1,17930,100
+138,Vida Agave,-94.795515,29.30184,1,1,155.0,restaurant,4.7,70,10,70.0,"711 25th Street, Galveston",POINT (-94.795515 29.30184),Skeptical,Med,Yes,Low,indoor,Truck,,-1,17930,99
+37,La Estacion Restaurant,-94.794797,29.3015187,1,1,442.0,restaurant,4.3,175,25,175.0,"2428 Avenue H, Galveston",POINT (-94.794797 29.3015187),Skeptical,Med,No,Low,indoor,Truck,,1,18036,100
+109,La Estacion Restaurant,-94.794797,29.3015187,1,1,442.0,restaurant,4.3,175,25,175.0,"2428 Avenue H, Galveston",POINT (-94.794797 29.3015187),Skeptical,Med,No,Low,indoor,Truck,,-1,18036,99
+72,,-94.79578217640906,29.30090513320724,1,0,,,,,,,,,,,,,outdoor,Bike,1007.0,1,18318,100
+73,,-94.79551215028134,29.292771721098887,1,0,,,,,,,,,,,,,outdoor,Truck,3026.0,1,19481,101
+74,,-94.80141651349544,29.290079781803342,1,0,,,,,,,,,,,,,outdoor,Truck,2012.0,1,20215,102
+75,Whitecaps,-94.8077385,29.285577,1,1,,university,,0,0,1875.0,"3916 Avenue Q, Galveston",POINT (-94.8077385 29.285577),Curious,med,No,low,indoor,Truck,,1,21300,103
+140,Whitecaps,-94.8077385,29.285577,1,1,,university,,0,0,1875.0,"3916 Avenue Q, Galveston",POINT (-94.8077385 29.285577),Curious,med,No,low,indoor,Truck,,-1,21300,102
+76,Mr. C's Dugout @Galveston College,-94.807822,29.284711,1,1,2.0,restaurant,3.0,,,93.75,"Student Center, 4015 Avenue Q, Galveston",POINT (-94.807822 29.284711),Curious,High,No,High,indoor,Truck,,1,21558,103
+141,Mr. C's Dugout @Galveston College,-94.807822,29.284711,1,1,2.0,restaurant,3.0,,,93.75,"Student Center, 4015 Avenue Q, Galveston",POINT (-94.807822 29.284711),Curious,High,No,High,indoor,Truck,,-1,21558,102
+77,,-94.8070897627476,29.284031380957845,1,0,,,,,,,,,,,,,outdoor,Bike,2010.0,1,21806,103
+78,Galveston College,-94.8084945,29.2840785,1,1,65.0,university,4.4,20,20,20.0,"4015 Avenue Q, Galveston",POINT (-94.8084945 29.2840785),Curious,High,No,High,indoor,Truck,,1,22065,104
+142,Galveston College,-94.8084945,29.2840785,1,1,65.0,university,4.4,20,20,20.0,"4015 Avenue Q, Galveston",POINT (-94.8084945 29.2840785),Curious,High,No,High,indoor,Truck,,-1,22065,103
+143,Bar 43,-94.8108363,29.2809684,1,1,1.0,restaurant,1.0,,,93.75,,POINT (-94.8108363 29.2809684),Currious,Med,No,Low,indoor,Truck,,-1,22611,102
+79,Bar 43,-94.8108363,29.2809684,1,1,1.0,restaurant,1.0,,,93.75,,POINT (-94.8108363 29.2809684),Currious,Med,No,Low,indoor,Truck,,1,22611,103
+80,Panda Express,-94.83056,29.2755,2,1,10.0,restaurant,2.0,3360,3360,3360.0,"11745 San Luis Pass Rd Galveston, TX 77554",POINT (-94.83056 29.2755),Skeptical,Med,No,Low,indoor,Truck,,2,24702,105
+144,Panda Express,-94.83056,29.2755,2,1,10.0,restaurant,2.0,3360,3360,3360.0,"11745 San Luis Pass Rd Galveston, TX 77554",POINT (-94.83056 29.2755),Skeptical,Med,No,Low,indoor,Truck,,-1,24702,104
+85,Gino's Italian Restaurant and Pizzeria,-94.832217,29.2753139,1,1,1056.0,restaurant,4.3,35,5,35.0,"6124 Stewart Road, Galveston",POINT (-94.832217 29.2753139),Skeptical,Med,Yes,Low,indoor,Truck,,-1,24928,103
+81,Tremont House Hotel,-94.84080613,29.27219042,1,1,1.0,restaurant,2.0,300,200,300.0,"2300 Mechanic st Galveston, TX 77550",POINT (-94.8408061274375 29.2721904155014),Curious,Med,Yes,High,indoor,Truck,,1,25965,104
+145,Tremont House Hotel,-94.84080613,29.27219042,1,1,1.0,restaurant,2.0,300,200,300.0,"2300 Mechanic st Galveston, TX 77550",POINT (-94.8408061274375 29.2721904155014),Curious,Med,Yes,High,indoor,Truck,,-1,25965,103
+83,Moody Gardens Restaurant (shown under other restaurant),-94.8520363,29.2757299,1,1,2.0,restaurant,3.0,0,0,93.75,"1 Hope Boulevard, Galveston",POINT (-94.8520363 29.2757299),Skeptical,Med,Yes,High,indoor,Truck,,1,27916,104
+82,Palm Beach At Moody Gardens,-94.850972,29.275732,8,6,958.0,amusement_park,4.5,,,5500.0,"8928, 1 Hope Boulevard, Galveston",POINT (-94.850972 29.275732),Hesitant,Med,No,High,indoor,Truck,,8,27945,112
+146,Palm Beach At Moody Gardens,-94.850972,29.275732,8,6,958.0,amusement_park,4.5,,,5500.0,"8928, 1 Hope Boulevard, Galveston",POINT (-94.850972 29.275732),Hesitant,Med,No,High,indoor,Truck,,-6,27945,106
+147,Moody Gardens Restaurant (shown under other restaurant),-94.8520363,29.2757299,1,1,2.0,restaurant,3.0,0,0,93.75,"1 Hope Boulevard, Galveston",POINT (-94.8520363 29.2757299),Skeptical,Med,Yes,High,indoor,Truck,,-1,27974,105
+148,Rainforest Pyramid,-94.85260158,29.27548471,2,1,26.0,restaurant,4.0,,,750.0,"1 Hope Blvd Galveston, TX 77554",POINT (-94.8526015753142 29.2754847110984),Curious,Med,Yes,High,indoor,Truck,,-1,28148,104
+84,Rainforest Pyramid,-94.85260158,29.27548471,2,1,26.0,restaurant,4.0,,,750.0,"1 Hope Blvd Galveston, TX 77554",POINT (-94.8526015753142 29.2754847110984),Curious,Med,Yes,High,indoor,Truck,,2,28148,106
+0,Moody Gardens,-94.8523,29.2736,0,0,,,,,,,,,,,,,depot,Truck,,75,28604,106
