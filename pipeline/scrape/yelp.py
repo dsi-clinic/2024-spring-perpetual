@@ -237,4 +237,18 @@ class YelpClient(IPlacesProvider):
                 pois.extend(cell_pois)
                 errors.extend(cell_errs)
 
-        return pois, errors
+        # Drop duplicate records
+        unique_ids = set()
+        unique_pois = []
+        errors = []
+
+        for poi in pois:
+            id = poi.get('id') 
+            if id not in unique_ids:
+                unique_ids.add(id)
+                unique_pois.append(poi)
+            else:
+                errors.append("Duplicate ID found: {}".format(id))
+
+        return unique_pois, errors
+    
