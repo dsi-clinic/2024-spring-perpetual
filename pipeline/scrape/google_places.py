@@ -13,7 +13,6 @@ from typing import Dict, List, Tuple, Union
 import requests
 from shapely import MultiPolygon, Polygon
 
-import requests
 # Application imports
 from pipeline.scrape.common import IPlacesProvider
 from pipeline.utils.geometry import (
@@ -30,51 +29,66 @@ class GooglePOITypes(Enum):
     RESTAURANT = "restaurant"
 
     # Potential Outdoor Points
+    AIRPORT = "airport"
     BUS_STATION = "bus_station"
-    CHURCH = "church"
-    CITY_HALL = "city hall"
     COFFEE_SHOP = "cafe"
+    COMMUNITY_CENTER = "community_center"
     CONVENIENCE_STORE = "convenience_store"
     DRUGSTORE = "drugstore"
-    FIRE_STATION = "fire_station"
     LIBRARY = "library"
+    HOSPITAL = "hospital"
+    HOTEL = "hotel"
     LIGHT_RAIL_STATION = "light_rail_station"
     LODGING = "lodging"
     MALL = "shopping_mall"
+    MARKET = "market"
+    MUSEUM = "museum"
     PARK = "park"
     PARKING = "parking"
     PHARMACY = "pharmacy"
     POST_OFFICE = "post_office"
-    PRIMARY_SCHOOL = "primary_school"
-    SECONDARY_SCHOOL = "secondary_school"
     SCHOOL = "school"
-    STORE = "store"
     SUBWAY_STATION = "subway_station"
     SUPERMARKET = "supermarket"
     TRAIN_STATION = "train_station"
     TRANSIT_STATION = "transit_station"
     UNIVERSITY = "university"
+    ZOO = "zoo"
+
+
+class GooglePlacesBasicSKUFields(Enum):
+    """Enumerates the place fields available under the Basic SKU."""
+
+    ADDRESS_COMPONENTS = "places.addressComponents"
+    BUSINESS_STATUS = "places.businessStatus"
+    DISPLAY_NAME = "places.displayName"
+    FORMATTED_ADDRESS = "places.formattedAddress"
+    ID = "places.id"
+    LOCATION = "places.location"
+    PRIMARY_TYPE = "places.primaryType"
+    PRIMARY_TYPE_DISPLAY_NAME = "places.primaryTypeDisplayName"
+    SHORT_FORMATTED_ADDRESS = "places.shortFormattedAddress"
+    SUB_DESTINATIONS = "places.subDestinations"
+    TYPES = "places.types"
 
 
 class GooglePlacesClient(IPlacesProvider):
-    """A simple wrapper for the Google Places API."""
+    """A simple wrapper for the Google Places API (New)."""
 
-    MAX_NUM_PAGE_RESULTS: int = 20
-    """The maximum number of results that can be returned on a single page of
-    search results. The inclusive upper bound of the "limit" query parameter.
-    """
-
-    MAX_NUM_QUERY_RESULTS: int = 60
-    """The maximum number of results that can be returned from a single query.
-    """
-
-    MAX_SEARCH_RADIUS_IN_METERS: int = 50_000
-    """The maximum size of the suggested search radius in meters.
-    Approximately equal to 31 miles.
-    """
-
-    MAX_NUM_CATEGORIES_PER_REQUEST: int = 10
+    MAX_NUM_CATEGORIES_PER_REQUEST: int = 50
     """The maximum number of category filters permitted per request.
+    """
+
+    MAX_NUM_RESULTS_PER_REQUEST: int = 20
+    """The maximum number of records that can be returned in a single query.
+    """
+
+    MAX_SEARCH_RADIUS_IN_METERS: float = 50_000
+    """The maximum size of the search radius in meters. Approximately equal to 31 miles.
+    """
+
+    SECONDS_DELAY_PER_REQUEST: float = 0.5
+    """The number of seconds to wait after each HTTP request.
     """
 
     def __init__(self, logger: logging.Logger) -> None:
@@ -100,84 +114,86 @@ class GooglePlacesClient(IPlacesProvider):
                 f'Missing expected environment variable "{e}".'
             ) from None
 
-    def find_places_in_bounding_box(self, box: BoundingBox) -> Tuple[Dict, Dict]:
-        """Locates all POIs within the given geography.
-
-        Uses the Google Places API to find places of a specific 
-        type within a geographic area. The area is divided into a 
-        grid of quadrants to manage the scope of each API call.
+    def find_places_in_bounding_box(
+        self, box: BoundingBox, categories: List[str], search_radius: float
+    ) -> Tuple[Dict, Dict]:
+        """Locates all POIs within the given area and categories.
+        The area is further divided into a grid of quadrants if
+        more results are available within the area than can be
+        returned due to API limits.
 
         Args:
-            geo (`Polygon` or `MultiPolygon`): The boundary.
+            box (`BoundingBox`): The bounding box.
+
+            categories (`list` of `str`): The categories to search by.
+
+            search_radius (`float`): The search radius, converted from
+                meters to the larger of degrees longitude and latitude.
 
         Returns:
-            (`list` of `dict`): The list of places.
+            (`dict`, `dict`): A two-item tuple consisting of the POIs and errors.
         """
-        url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
-        place_types = ",".join(e.value for e in GooglePOITypes)
-        limit = GooglePlacesClient.MAX_NUM_PAGE_RESULTS
+        # Initialize request URL
+        url = "https://places.googleapis.com/v1/places:searchNearby"
 
-        # Issue POI query for minimum bounding circle circumscribing each box
-        # NOTE: Only integers are accepted for the radius.
-        pois = []
-        errors = []
-        page_idx = 0
-        while True:
-            # Build request parameters and headers
-            params = {
-                "radius": GooglePlacesClient.MAX_SEARCH_RADIUS_IN_METERS,
-                "type": place_types,
-                "latitude": float(box.center.lat),
-                "longitude": float(box.center.lon),
-                "limit": limit,
-                "offset": page_idx * limit,
-            }
-            headers = {
-                "Authorization": f"Bearer {self._api_key}",
-            }
-                 
-            # Make a request to the Google PLaces API with the current set of parameters
-            # Send request and parse JSON response
-            r = requests.get(url, headers=headers, params=params)
-            data = r.json()
+        # Build request params, body, and headers
+        body = {
+            "includedTypes": categories,
+            "maxResultCount": GooglePlacesClient.MAX_NUM_RESULTS_PER_REQUEST,
+            "locationRestriction": {
+                "circle": {
+                    "center": {
+                        "latitude": float(box.center.lat),
+                        "longitude": float(box.center.lon),
+                    },
+                    "radius": search_radius,
+                }
+            },
+        }
+        params = {"key": self._api_key}
+        headers = {
+            "X-Goog-FieldMask": ",".join(
+                str(e.value) for e in GooglePlacesBasicSKUFields
+            ),
+        }
 
-            # If error occurred, store information and exit processing for cell
-            if not r.ok:
-                self._logger.error(
-                    "Failed to retrieve POI data through the Yelp API. "
-                    f'Received a "{r.status_code}-{r.reason}" status code '
-                    f'with the message "{r.text}".'
-                )
-                errors.append({"params": params, "error": data})
-                return pois, errors
-                    
-            # Otherwise, if number of POIs returned exceeds max, split
-            # box and recursively issue HTTP requests
-            if data["total"] > GooglePlacesClient.MAX_NUM_QUERY_RESULTS:
-                sub_cells = box.split_along_axes(x_into=2, y_into=2)
-                for sub in sub_cells:
-                    sub_pois, sub_errs = self.find_places_in_bounding_box(sub)
-                    pois.extend(sub_pois)
-                    errors.extend(sub_errs)
-                    return pois, errors
+        # Send POST request to the Google Places API
+        r = requests.post(url, params=params, headers=headers, json=body)
 
-            # Otherwise, extract business data from response body JSON
-            page_pois = data.get("businesses", [])
-            for poi in page_pois:
-                pois.append(poi)
+        # Sleep and then parse JSON from response body
+        time.sleep(GooglePlacesClient.SECONDS_DELAY_PER_REQUEST)
+        data = r.json()
 
-            # Determine total number of pages of data for query
-            num_pages = (data["total"] // limit) + (
-                1 if data["total"] % limit > 0 else 0
+        # If error occurred, store information and exit processing for cell
+        if not r.ok or "error" in data:
+            self._logger.error(
+                "Failed to retrieve POI data through the Yelp API. "
+                f'Received a "{r.status_code}-{r.reason}" status code '
+                f'with the message "{r.text}".'
             )
+            return [], [{"body": body, "error": data}]
 
-            # Return POIs and errors if on last page
-            if page_idx == num_pages - 1:
-                return pois, errors
+        # Otherwise, if no data returned, return empty lists of POIs and errors
+        if not data:
+            self._logger.warning("No data found in response body.")
+            return [], []
 
-            # Otherwise, iterate page index and add delay before next request
-            page_idx += 1
-            time.sleep(0.5)
+        # Otherwise, if number of POIs returned equals max,
+        # split box and recursively issue HTTP requests
+        if len(data["places"]) == GooglePlacesClient.MAX_NUM_RESULTS_PER_REQUEST:
+            pois = []
+            errors = []
+            sub_cells = box.split_along_axes(x_into=2, y_into=2)
+            for sub in sub_cells:
+                sub_pois, sub_errs = self.find_places_in_bounding_box(
+                    sub, categories, search_radius / 2
+                )
+                pois.extend(sub_pois)
+                errors.extend(sub_errs)
+            return pois, errors
+
+        # Otherwise, extract business data from response body JSON
+        return data["places"], []
 
     def find_places_in_geography(self, geo: Union[Polygon, MultiPolygon]) -> List[Dict]:
         """Locates all POIs with a review within the given geography.
@@ -211,10 +227,10 @@ class GooglePlacesClient(IPlacesProvider):
         min_num_splits = ceil(bounding_box_length / max_side)
         ```
 
-        Finally, only 60 records may be fetched from a single query, with
-        a maximum limit of 20 records per page of data, even if more businesses
-        are available. Therefore, it is important to confirm that less than
-        60 records are returned with a query to avoid missing data.
+        Finally, at the time of writing, only 20 records are returned per
+        search query, even if more businesses are available. Therefore, it
+        is important to confirm that less than 20 records are returned
+        in the response to avoid missing data.
 
         Documentation:
             - ["Overview | Places API"](https://developers.google.com/maps/documentation/places/web-service/overview)
@@ -235,8 +251,8 @@ class GooglePlacesClient(IPlacesProvider):
         # Use heuristic to convert length from meters to degrees at box's lower latitude
         deg_lat, deg_lon = convert_meters_to_degrees(max_side_meters, bbox.bottom_left)
 
-        # Take minimum value as side length (meters convert differently to lat and lon,
-        # and we want to avoid going over max radius)
+        # Take minimum value as side length (meters convert differently to
+        # lat and lon, and we want to avoid going over max radius)
         max_side_degrees = min(deg_lat, deg_lon)
 
         # Divide box into grid of cells of approximately equal length and width
@@ -245,6 +261,7 @@ class GooglePlacesClient(IPlacesProvider):
             size_in_degrees=Decimal(str(max_side_degrees))
         )
 
+        # Batch categories to filter POIs in request
         categories = [str(e.value) for e in GooglePOITypes]
         batch_size = GooglePlacesClient.MAX_NUM_CATEGORIES_PER_REQUEST
         category_batches = (
@@ -259,7 +276,9 @@ class GooglePlacesClient(IPlacesProvider):
             for cell in cells:
                 if cell.intersects_with(geo):
                     cell_pois, cell_errors = self.find_places_in_bounding_box(
-                        box=cell, categories=",".join(batch)
+                        box=cell,
+                        categories=batch,
+                        search_radius=GooglePlacesClient.MAX_SEARCH_RADIUS_IN_METERS,
                     )
                     pois.extend(cell_pois)
                     errors.extend(cell_errors)

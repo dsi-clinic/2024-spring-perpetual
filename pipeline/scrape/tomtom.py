@@ -2,8 +2,6 @@
 """
 
 # Standard library imports
-import gzip
-import json
 import logging
 import os
 import time
@@ -64,8 +62,8 @@ class TomTomSearchClient(IPlacesProvider):
     """The maximum number of results that can be returned from a single HTTP request.
     """
 
-    MAX_NUM_QUERIES_PER_SECOND: int = 5
-    """The maximum number of queries that can be executed per second.
+    SECONDS_DELAY_PER_REQUEST: float = 0.2
+    """The number of seconds to wait after each HTTP request.
     """
 
     def __init__(self, logger: logging.Logger) -> None:
@@ -131,7 +129,7 @@ class TomTomSearchClient(IPlacesProvider):
             # Send request, parse JSON response, and wait to abide by rate limit
             r = requests.get(url, headers=headers, params=params)
             data = r.json()
-            time.sleep(1 / TomTomSearchClient.MAX_NUM_QUERIES_PER_SECOND)
+            time.sleep(TomTomSearchClient.SECONDS_DELAY_PER_REQUEST)
 
             # If error occurred, store information and exit processing for cell
             if not r.ok:
