@@ -88,11 +88,16 @@ class YelpClient(IPlacesProvider):
                 f'Missing expected environment variable "{e}".'
             ) from None
 
-    def find_places_in_bounding_box(self, box: BoundingBox) -> Tuple[Dict, Dict]:
+    def find_places_in_bounding_box(
+        self, box: BoundingBox, search_radius: float
+    ) -> Tuple[Dict, Dict]:
         """Locates all POIs within the bounding box.
 
         Args:
             box (`BoundingBox`): The bounding box.
+
+            search_radius (`float`): The search radius, converted from
+                meters to the larger of degrees longitude and latitude.
 
         Returns:
             (`dict`, `dict`): A two-item tuple consisting of the POIs and errors.
@@ -110,7 +115,7 @@ class YelpClient(IPlacesProvider):
         while True:
             # Build request parameters and headers
             params = {
-                "radius": YelpClient.MAX_SEARCH_RADIUS_IN_METERS,
+                "radius": search_radius,
                 "categories": categories,
                 "longitude": float(box.center.lon),
                 "latitude": float(box.center.lat),
@@ -140,10 +145,12 @@ class YelpClient(IPlacesProvider):
             if data["total"] > YelpClient.MAX_NUM_QUERY_RESULTS:
                 sub_cells = box.split_along_axes(x_into=2, y_into=2)
                 for sub in sub_cells:
-                    sub_pois, sub_errs = self.find_places_in_bounding_box(sub)
+                    sub_pois, sub_errs = self.find_places_in_bounding_box(
+                        sub, search_radius / 2
+                    )
                     pois.extend(sub_pois)
                     errors.extend(sub_errs)
-                    return pois, errors
+                return pois, errors
 
             # Otherwise, extract business data from response body JSON
             page_pois = data.get("businesses", [])
@@ -233,7 +240,9 @@ class YelpClient(IPlacesProvider):
         errors = []
         for cell in cells:
             if cell.intersects_with(geo):
-                cell_pois, cell_errs = self.find_places_in_bounding_box(cell)
+                cell_pois, cell_errs = self.find_places_in_bounding_box(
+                    box=cell, search_radius=YelpClient.MAX_SEARCH_RADIUS_IN_METERS
+                )
                 pois.extend(cell_pois)
                 errors.extend(cell_errs)
 
