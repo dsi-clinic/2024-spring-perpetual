@@ -18,10 +18,11 @@ This directory contains files with various functions used across multiple files.
 `storage.py`: ???
 
 ### CVRP Solver
-These files in `pipeline/` are involved with solving the CVRP.
-- `combine_dropoffs.py`
-- `solve_pickups_and_dropoffs.py`
+These files in `pipeline/`, in order of execution, are involved with solving the CVRP.
 - `solve_pickups_only.py`
+- `segment_pickup_loops.py`
+- `combine_dropoffs_pickups.py`
+- `solve_pickups_and_dropoffs.py`
 - `visualize_routes.py`
 
 To run the CVRP portion, run the following from command line.
@@ -32,10 +33,11 @@ To run the CVRP portion, run the following from command line.
 ??python extract_capacity_demands.py  
 ??python extract_supplementary_info.py
 ??python bike_conversion.py  
-python solve_pickups_only.py
-python combine_dropoffs_pickups.py
-python solve_pickups_and_dropoffs.py
-python visualize_routes.py   
+python3 solve_pickups_only.py
+python3 segment_pickup_loops.py
+python3 combine_dropoffs_pickups.py
+python3 solve_pickups_and_dropoffs.py
+python3 visualize_routes.py   
 ??python complete_feasibility_report.py
 ```
 
