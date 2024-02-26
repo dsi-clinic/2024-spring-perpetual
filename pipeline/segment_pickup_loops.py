@@ -7,7 +7,7 @@ import numpy as np
 
 from pipeline.utils.cfg_parser import read_cfg
 
-def main():
+def segment_pickup_loops():
 
      # read config for finding intra-route distances
     cfg = read_cfg(
@@ -39,6 +39,6 @@ def main():
             res_dists.to_csv(dists_path, index = False)
 
 if __name__ == "__main__":
-    main()
+    segment_pickup_loops()
 
 

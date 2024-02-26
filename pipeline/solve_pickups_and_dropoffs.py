@@ -7,7 +7,7 @@ import pandas as pd
 from pipeline.utils.cfg_parser import read_cfg
 from pipeline.utils.google_cvrp import solve_and_save
 
-def main():
+def solve_pickups_and_dropoffs():
     # read config for combining dropoffs and pickups
     cfg = read_cfg(
         "../pipeline/utils/config_inputs.ini", "solve.pickups_and_dropoffs"
@@ -48,4 +48,4 @@ def main():
             )
 
 if __name__ == "__main__":
-    main()
+    solve_pickups_and_dropoffs()

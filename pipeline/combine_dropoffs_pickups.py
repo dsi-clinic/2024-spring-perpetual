@@ -3,7 +3,7 @@ import os
 import pandas as pd
 from pipeline.utils.cfg_parser import read_cfg
 
-if __name__ == "__main__":
+def combine_dropoffs_pickups():
 
     # read config for combining dropoffs and pickups
     cfg = read_cfg(
@@ -59,3 +59,6 @@ if __name__ == "__main__":
             res_df.to_csv(os.path.join(comb_dir, filename), index=False)
             res_dists.to_csv(os.path.join(comb_dir, name + "_dists.csv"), index=False)
     print("combine_dropoffs_pickups :: done!")
+
+if __name__ == "__main__":
+    combine_dropoffs_pickups()
