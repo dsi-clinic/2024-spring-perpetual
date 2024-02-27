@@ -13,9 +13,7 @@ class IPlacesProvider(ABC):
     """An abstract class for identifying points of interest (POI)."""
 
     @abstractmethod
-    def find_places_in_geography(
-        self, geo: Union[Polygon, MultiPolygon]
-    ) -> List[Dict]:
+    def find_places_in_geography(self, geo: Union[Polygon, MultiPolygon]) -> List[Dict]:
         """Locates all POIs within the given geography.
 
         Args:

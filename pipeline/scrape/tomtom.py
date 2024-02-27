@@ -2,19 +2,17 @@
 """
 
 # Standard library imports
-import gzip
-import json
 import logging
 import os
+import time
 from enum import Enum
-from typing import Dict, List, Union
+from typing import Dict, List, Tuple, Union
 
 # Third-party imports
 import requests
 # Application imports
 from pipeline.scrape.common import IPlacesProvider
-from pipeline.utils.geometry import create_bbox_subdivisions
-from shapely import MultiPolygon, Polygon
+from pipeline.utils.geometry import BoundingBox
 
 
 class TomTomPOICategories(Enum):
@@ -23,38 +21,47 @@ class TomTomPOICategories(Enum):
     # Potential Indoor Points
     CAFE_PUB = 9376
     RESTAURANT = 7315
+    NIGHTLIFE = 9379
 
     # Potential Outdoor Points
-    AMUSEMENT_PARK = 9902
-    COLLEGE_OR_UNIVERSITY = 7377
-    CLUB_OR_ASSOCIAION = 9937
-    HOTEL_OR_MOTEL = 7314
-    LEISURE_CENTER = 9378
-    MARKET = 7332
-    MOVIE_THEATER = 7342
-    NIGHTLIFE = 9379
-    PARK = 9362
+    DRUG_STORE = 9361051
+    HIGH_SCHOOL = 7372006
+    HOTEL = 7314003
+    GROCERY_STORE = 9361023
+    MIDDLE_SCHOOL = 7372014
+    MOTEL = 7314006
     PHARMACY = 7326
-    PUBLIC_AMENITY = 9932
+    ELEMENTARY_OR_JUNIOR_HIGH_SCHOOL = 7372005
+    PARK = 9362008
+    PUBLIC_MARKET = 7332003
     PUBLIC_TRANSIT_STOP = 9942
-    SCHOOL = 7372
-    SHOP = 9361
+    RESIDENTIAL_ACCOMMODATIONS = 7303
+    RESORT = 7314005
+    SENIOR_HIGH_SCHOOL = 7372007
     SHOPPING_CENTER = 7373
-    THEATER = 7318
-    TOURIST_ATTRACTION = 7376
-    WORSHIP = 7339
+    SUPERMARKET_OR_HYPERMARKET = 7332005
 
 
 class TomTomSearchClient(IPlacesProvider):
     """A simple wrapper for the TomTom Search API."""
 
-    MAX_NUM_ASYNC_BATCH_REQUESTS = 10_000
-    """The maximum number of API requests that can be sent
-    at once using TomTom's asynchronous batch feature.
+    DEFAULT_SEARCH_GRID: Tuple[int, int] = (
+        2,
+        2,
+    )
+    """The default number of cells to generate in a bounding box used for POI search.
     """
 
-    MAX_NUM_RESULTS = 100
-    """The maximum number of results that can be returned from a query.
+    MAX_NUM_CATEGORIES_PER_REQUEST: int = 10
+    """The maximum number of category filters permitted per request.
+    """
+
+    MAX_NUM_PAGE_RESULTS: int = 100
+    """The maximum number of results that can be returned from a single HTTP request.
+    """
+
+    SECONDS_DELAY_PER_REQUEST: float = 0.2
+    """The number of seconds to wait after each HTTP request.
     """
 
     def __init__(self, logger: logging.Logger) -> None:
@@ -80,102 +87,76 @@ class TomTomSearchClient(IPlacesProvider):
                 f'Missing expected environment variable "{e}".'
             ) from None
 
-    def submit_async_batch(self, batch_items: List[Dict]) -> str:
-        """Submits a new batch for asynchronous processing. Responds
-        with a redirect to the location where the batch results
-        can be obtained when the batch processing has completed.
+    def find_places_in_bounding_box(
+        self, box: BoundingBox, categories: List[str]
+    ) -> Tuple[Dict, Dict]:
+        """Locates all POIs within the bounding box.
 
         Args:
-            batch_items (`list` of `dict`): The queries to send to
-                other Search API endpoints.
+            box (`BoundingBox`): The bounding box.
 
-        Documentation:
-        - ["Asynchronous Batch Submission"](https://developer.tomtom.com/batch-search-api/documentation/asynchronous-batch-submission)
+            categories (`list` of `str`): The categories to search by.
 
         Returns:
-            (`str`): The download URL.
+            (`dict`, `dict`): A two-item tuple consisting of the POIs and errors.
         """
-        # Compose URL and request body
-        url = f"https://api.tomtom.com/search/2/batch.json?key={self._api_key}"
-        body = {"batchItems": batch_items}
+        # Initialize request URL and static params
+        url = "https://api.tomtom.com/search/2/poiSearch/.json"
+        limit = TomTomSearchClient.MAX_NUM_PAGE_RESULTS
 
-        # Send HTTP POST request
-        r = requests.post(url, json=body)
-        if not r.ok:
-            error = r.json()["error"]
-            raise RuntimeError(
-                "Failed to submit an asynchronous geometry search query "
-                f'to the TomTom API. Received a "{r.status_code}-{r.reason}" '
-                f"status code with the text: {error['description']}\"."
-            )
-
-        # Return batch id from response headers
-        batch_id = r.headers.get("Location")
-        if not batch_id:
-            raise RuntimeError(
-                "An unexpected error occurred. Could not parse download "
-                "location from HTTP response headers."
-            )
-
-        return batch_id
-
-    def download_async_batch(self, url: str) -> Dict:
-        """Waits until asynchronous batch processing has
-        completed using a blocking, long poll request and
-        then downloads the results.
-
-        Documentation:
-        - ["Asynchronous Batch Download"](https://developer.tomtom.com/batch-search-api/documentation/asynchronous-batch-download)
-
-        Args:
-            url (`str`): The URL to the download location.
-
-        Returns:
-            (`dict`): The response body.
-        """
+        # Issue POI query for bounding box
+        pois = []
+        errors = []
+        page_idx = 0
         while True:
-            # Attempt to download results
-            self._logger.info(
-                "Calling TomTom Asynchronous Batch API to download results."
-            )
+            # Build request parameters and headers
+            params = {
+                "key": self._api_key,
+                "limit": limit,
+                "ofs": page_idx * limit,
+                "categorySet": categories,
+                "topLeft": ",".join(
+                    str(float(d)) for d in box.top_left.to_list(as_lat_lon=True)
+                ),
+                "btmRight": ",".join(
+                    str(float(d)) for d in box.bottom_right.to_list(as_lat_lon=True)
+                ),
+            }
             headers = {"Accept": "application/json", "Accept-Encoding": "gzip"}
-            r = requests.get(url, headers=headers)
 
-            # Raise exception if batch download request failed
+            # Send request, parse JSON response, and wait to abide by rate limit
+            r = requests.get(url, headers=headers, params=params)
+            data = r.json()
+            time.sleep(TomTomSearchClient.SECONDS_DELAY_PER_REQUEST)
+
+            # If error occurred, store information and exit processing for cell
             if not r.ok:
-                error = r.json()["detailedError"]
-                raise RuntimeError(
-                    "Failed to download the results of an asynchronous "
-                    f"geometry search query to the TomTom API. Received a "
-                    f'"{r.status_code}-{r.reason}" status code with the text:'
-                    f"\"{error['code']} - {error['details']['message']}\"."
+                self._logger.error(
+                    "Failed to retrieve POI data through the TomTom API. "
+                    f'Received a "{r.status_code}-{r.reason}" status code '
+                    f'with the message "{r.text}".'
                 )
+                errors.append({"params": params, "error": data})
+                return pois, errors
 
-            # Raise exception if unanticipated success status occurs
-            if r.status_code not in (200, 201):
-                raise RuntimeError(
-                    "Failed to download the results of an asynchronous "
-                    f"geometry search query to the TomTom API. Received a "
-                    f'"{r.status_code}-{r.reason}" status code unexpectedly.'
-                )
+            # Otherwise, extract business data from response body JSON
+            page_pois = data.get("results", [])
+            for poi in page_pois:
+                pois.append(poi)
 
-            # Decompress result and load as JSON if request succeeded
-            if r.status_code == 200:
-                self._logger.info("Data ready for download.")
-                return json.load(gzip.decompress(r.text))
-
-            # Otherwise, parse new batch id from location headers
-            batch_id = r.headers.get("Location")
-
-            # Rebuild URL
-            url = (
-                "https://api.tomtom.com/search/2/batch/"
-                f"{batch_id}?key={self._api_key}"
+            # Determine total number of pages of data for query
+            num_pages = (data["summary"]["totalResults"] // limit) + (
+                1 if data["summary"]["totalResults"] % limit > 0 else 0
             )
 
-    def find_places_in_geography(
-        self, geo: Union[Polygon, MultiPolygon]
-    ) -> List[Dict]:
+            # Return POIs and errors if on last page
+            if (not num_pages) or (page_idx == num_pages - 1):
+                return pois, errors
+
+            # Otherwise, iterate page index and add delay before next request
+            page_idx += 1
+
+    def find_places_in_geography(self, geo: Union[Polygon, MultiPolygon]) -> List[Dict]:
         """Queries the TomTom Points of Interest Search API for
         locations within a geography boundary. To accomplish this,
         a bounding box for the geography is calculated and then
@@ -195,76 +176,31 @@ class TomTomSearchClient(IPlacesProvider):
         Returns:
             (`list` of `dict`): The places.
         """
-        # Divide geography into boxes corresponding to separate POI queries
-        try:
-            num_bboxes = TomTomSearchClient.MAX_NUM_ASYNC_BATCH_REQUESTS
-            self._logger.info(f"Subdiving geography into {num_bboxes} box(es).")
-            bboxes = create_bbox_subdivisions(geo, num_bboxes)
-        except Exception as e:
-            raise RuntimeError(
-                "Failed to query TomTom API for points of interest. "
-                "An unexpected error occurred while dividing the given "
-                f'geography into smaller boxes. "{e}"'
-            ) from e
+        # Calculate bounding box for geography
+        bbox: BoundingBox = BoundingBox.from_polygon(geo)
 
-        # Construct query for each box
-        self._logger.info("Creating POI search queries for each box.")
-        batch_items = []
-        categories = ",".join(e.value for e in TomTomPOICategories)
-        for bbox in bboxes:
-            batch_items.append(
-                {
-                    "query": (
-                        "/poiSearch/.json"
-                        f"limit={TomTomSearchClient.MAX_NUM_RESULTS}"
-                        f"&categorySet={categories}"
-                        f"&openingHours=nextSevenDays"
-                        f"&topLeft={bbox.top_left.to_list(use_lat_lon=False)}"
-                        f"&btmRight={bbox.bottom_right.to_list(use_lat_lon=False)}"
-                    )
-                }
-            )
+        # Divide geography into grid of cells corresponding to separate POI queries
+        num_x, num_y = TomTomSearchClient.DEFAULT_SEARCH_GRID
+        cells = bbox.split_along_axes(x_into=num_x, y_into=num_y)
 
-        # Submit queries to API in batch
-        try:
-            self._logger.info("Submitting POI queries in batch to API.")
-            url = self.submit_async_batch(batch_items)
-        except Exception as e:
-            raise RuntimeError(
-                "Failed to query TomTom API for points of interest. "
-                "An unexpected error occurred while submitting "
-                f'queries in batch. "{e}"'
-            ) from e
-
-        # Download results
-        try:
-            self._logger.info("Downloading results of batch search.")
-            results = self.download_async_batch(url)
-            self._logger.info("Download complete.")
-        except Exception as e:
-            raise RuntimeError(
-                "Failed to download results of TomTom API Asynchronous "
-                f'Batch Search for points of interest. "{e}"'
-            ) from e
-
-        # Log outcome
-        total = results["summary"]["totalRequests"]
-        num_successes = results["summary"]["successfulRequests"]
-        self._logger.info(
-            f"Of {total} total request(s), {num_successes} "
-            f"succeeded and {total - num_successes} failed."
+        # Batch categories to filter POIs in request
+        categories = [str(e.value) for e in TomTomPOICategories]
+        batch_size = TomTomSearchClient.MAX_NUM_CATEGORIES_PER_REQUEST
+        category_batches = (
+            categories[i : i + batch_size]
+            for i in range(0, len(TomTomPOICategories), batch_size)
         )
 
-        # Parse results
-        data = []
+        # Locate POIs within each cell if it contains any part of geography
+        pois = []
         errors = []
-        for item in results["batchItems"]:
-            if item["statusCode"] == 200:
-                data.extend(item["results"])
-            else:
-                errors.append(item)
+        for batch in category_batches:
+            for cell in cells:
+                if cell.intersects_with(geo):
+                    cell_pois, cell_errors = self.find_places_in_bounding_box(
+                        box=cell, categories=",".join(batch)
+                    )
+                    pois.extend(cell_pois)
+                    errors.extend(cell_errors)
 
-        # TODO: Handle errors
-        # TODO: Clip results to original boundary
-
-        return data
+        return pois, errors
