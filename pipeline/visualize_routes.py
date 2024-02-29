@@ -139,7 +139,7 @@ def add_markers(f_map, points, color):
     return None
 
 
-if __name__ == "__main__":
+def visualize_routes():
 
     # read cfg
     cfg = read_ini("../pipeline/utils/config_inputs.ini", "viz.route")
@@ -218,3 +218,6 @@ if __name__ == "__main__":
 
     # announce completion
     print("visualize_routes :: finished visualizing all routes!")
+
+if __name__ == "__main__":
+    visualize_routes()
