@@ -1,8 +1,10 @@
-import pickle
-import pandas as pd
-import os
-import sys
 import datetime
+import os
+import pickle
+import sys
+
+import pandas as pd
+
 
 def get_data(data_dir):
     """
@@ -18,7 +20,7 @@ def get_data(data_dir):
         file_name = sys.argv[1]
     else:
         raise ValueError("File name must be provided.")
-    
+
     csv_path = os.path.join(data_dir, file_name)
 
     # Load the CSV file
@@ -29,6 +31,7 @@ def get_data(data_dir):
 
     return df
 
+
 def save_capacity_list(df, data_dir):
     """
     Generate a list of capacities from the dataframe and save it.
@@ -38,19 +41,22 @@ def save_capacity_list(df, data_dir):
     """
     # Get timestamp string
     current_datetime = datetime.datetime.now()
-    timestamp_str = current_datetime.strftime('%Y-%m-%d_%H:%M')
+    timestamp_str = current_datetime.strftime("%Y-%m-%d_%H:%M")
 
     # save list as pkl file
-    capacity_file = f"{data_dir}/capacity_lists/capacity_list_{timestamp_str}.pkl"
-    with open(capacity_file, 'wb') as f:
-        pickle.dump(list(map(int, df['Daily_Pickup_Totes'].tolist())), f)
+    capacity_file = (
+        f"{data_dir}/capacity_lists/capacity_list_{timestamp_str}.pkl"
+    )
+    with open(capacity_file, "wb") as f:
+        pickle.dump(list(map(int, df["Daily_Pickup_Totes"].tolist())), f)
+
 
 def main():
 
     # Construct the path to the required directories
     current_dir = os.path.dirname(__file__)
-    data_dir = os.path.join(current_dir, '..', 'data')
-    
+    data_dir = os.path.join(current_dir, "..", "data")
+
     # Initialize the dataframe
     df = get_data(data_dir)
 
@@ -58,5 +64,5 @@ def main():
     save_capacity_list(df, data_dir)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

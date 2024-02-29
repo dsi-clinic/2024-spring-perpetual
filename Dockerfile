@@ -14,7 +14,9 @@ WORKDIR /perpetual
 
 # Install Python packages
 COPY requirements.txt .
+# COPY requirements_arcgis.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+# RUN pip install --no-cache-dir -r requirements_arcgis.txt
 
 # Install project as an editable package
 COPY pipeline ./pipeline

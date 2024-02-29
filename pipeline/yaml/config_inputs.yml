@@ -1,0 +1,50 @@
+pipeline: # variables shared through the entire pipeline
+    truth_df_path: *truthPath
+    truth_dist_path: *truthDist
+    cvrp_pickups_dir: *cvrpPickupsdir
+    # combined_df_path =
+    # combined_dist_path =
+    cvrp_dropoffs_dir: *cvrpDropoffsdir
+
+solve.pickups_only: # 1. solve cvrp for pickups only
+# first round: pickups only routing
+    truth_df_path: *truthPath
+    truth_dist_path: *truthDist
+    depot_index: &solvePickupsonlydepotIndex 0
+    truth_num_vehicles: 3
+    vehicle_capacity: &solvePickupsonlyVehicleCapacity 120
+    truth_sim_duration: 3600
+    capacity_pickup: Daily_Pickup_Totes
+    cvrp_pickups_dir: *cvrpPickupsdir
+
+
+combine.dropoffs_pickups: # 2. combine dropoffs and pickups into one column
+    pickups_df_path: ../data/outputs/routes/pickups_and_dropoffs/2/2.csv
+    pickups_dist_path: ../data/outputs/routes/pickups_and_dropoffs/2/2_dists.csv
+    # combined_df_path = ../data/outputs/combined_loops/loop1.csv
+    # combined_dist_path = ../data/outputs/combined_loops/loop1_dists.csv
+    # pickups_dir = ../data/outputs/routes/pickups_and_dropoffs/1/1.csv
+    # pickups_dist_path = ../data/outputs/routes/pickups_and_dropoffs/1/1_dists.csv
+    combined_df_path: &combineDropoffsPickupsCombinedPath "../data/outputs/routes/pickups_and_dropoffs/2/2_combined.csv"
+    combined_dist_path: &combineDropoffspickupsCombinedDistPath "../data/outputs/routes/pickups_and_dropoffs/2/2_dists_combined.csv"
+
+solve.pickups_and_dropoffs: # 3. run intra-route dropoffs and pickups
+    combined_df_path: *combineDropoffsPickupsCombinedPath
+    combined_dist_path: *combineDropoffspickupsCombinedDistPath
+    combined_num_vehicles: 1
+    vehicle_capacity: *solvePickupsonlyVehicleCapacity
+    combined_sim_duration: 600
+    depot_index: *solvePickupsonlydepotIndex
+    capacity_combined: Capacity
+    combined_route_dir: *cvrpDropoffsdir
+
+viz.route:
+    place: Galveston, TX
+    # route_dir = ../data/outputs/routes/pickups_only/
+    route_dir: *cvrpDropoffsdir
+    latitude: 29.30135
+    longitude: -94.7977
+    colors: ['blue', 'red', 'green', 'orange', 'purple',
+        'darkblue', 'pink', 'white',  'darkred', 'lightgreen',
+        'lightgray', 'gray', 'lightred', 'black', 'cadetblue',
+        'darkgreen', 'beige', 'darkpurple', 'lightblue', ]

@@ -15,23 +15,22 @@ def save_to_table(data, manager, routing, solution):
             node_index = manager.IndexToNode(index)
             route_load += data["demands"][node_index]
             plan_output += f" {node_index} Load({route_load}) -> "
-            route.append({node_index:route_load})
+            route.append({node_index: route_load})
             previous_index = index
             index = solution.Value(routing.NextVar(index))
             route_distance += routing.GetArcCostForVehicle(
                 previous_index, index, vehicle_id
             )
         plan_output += f" {manager.IndexToNode(index)} Load({route_load})\n"
-        route.append({manager.IndexToNode(index):route_load})
+        route.append({manager.IndexToNode(index): route_load})
         plan_output += f"Distance of the route: {route_distance}m\n"
         plan_output += f"Load of the route: {route_load}\n"
-        #print(plan_output)
+        # print(plan_output)
         total_distance += route_distance
         total_load += route_load
         routes.append(route)
         distances.append(route_distance)
     return routes, distances
-
 
 
 def print_solution(data, manager, routing, solution):
