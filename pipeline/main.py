@@ -9,13 +9,12 @@ from typing import Dict, List
 
 # Third-party imports
 import yaml
-from shapely.geometry import shape
-
 # Application imports
 from pipeline.constants import CITY_BOUNDARIES_DIR, PIPELINE_DIR, POI_DIR
 from pipeline.scrape import IPlacesProviderFactory
-from pipeline.utils.logger import logging, LoggerFactory
+from pipeline.utils.logger import LoggerFactory, logging
 from pipeline.utils.storage import IDataStore, IDataStoreFactory
+from shapely.geometry import shape
 
 
 def fetch_poi(
@@ -87,7 +86,9 @@ def fetch_poi(
                 logger.info("Attempting to load places from cached file.")
                 with storage.open_file(provider_poi_fpath, "r") as f:
                     provider_places = json.load(f)
-                logger.info(f"{len(provider_places)} place(s) from {provider} found.")
+                logger.info(
+                    f"{len(provider_places)} place(s) from {provider} found."
+                )
                 places.extend(provider_places)
                 continue
             except FileNotFoundError:
@@ -97,7 +98,9 @@ def fetch_poi(
         # Find places using provider
         logger.info(f"Requesting POI data from {provider}.")
         client = IPlacesProviderFactory.create(provider, logger)
-        provider_places, provider_errors = client.find_places_in_geography(polygon)
+        provider_places, provider_errors = client.find_places_in_geography(
+            polygon
+        )
         logger.info(
             f"{len(provider_places)} place(s) from {provider} "
             f"found and {len(provider_errors)} error(s) encountered."
@@ -122,7 +125,10 @@ def fetch_poi(
 
 
 def main(
-    args: argparse.Namespace, config: Dict, storage: IDataStore, logger: logging.Logger
+    args: argparse.Namespace,
+    config: Dict,
+    storage: IDataStore,
+    logger: logging.Logger,
 ) -> None:
     """Fetches points of interest to use as indoor and outdoor
     points of collection and distribution.
@@ -151,6 +157,7 @@ def main(
         f"{len(args.providers)} third-party geolocation provider(s)."
     )
 
+
 if __name__ == "__main__":
     try:
         # Initialize logger
@@ -167,7 +174,10 @@ if __name__ == "__main__":
             "city", choices=["ann_arbor", "galveston", "hilo", "savannah"]
         )
         parser.add_argument(
-            "-p", "--providers", nargs="+", choices=["bing", "google", "tomtom", "yelp"]
+            "-p",
+            "--providers",
+            nargs="+",
+            choices=["bing", "google", "tomtom", "yelp"],
         )
         args = parser.parse_args()
 

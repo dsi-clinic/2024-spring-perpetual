@@ -6,8 +6,7 @@ import folium
 import networkx as nx
 import osmnx as ox
 import pandas as pd
-
-from pipeline.utils.cfg_parser import read_cfg
+from pipeline.utils.cfg_parser import read_ini
 
 
 def find_bbox(coords):
@@ -143,7 +142,7 @@ def add_markers(f_map, points, color):
 if __name__ == "__main__":
 
     # read cfg
-    cfg = read_cfg("../pipeline/utils/config_inputs.ini", "viz.route")
+    cfg = read_ini("../pipeline/utils/config_inputs.ini", "viz.route")
 
     # parse cfg variables
     place = cfg["place"]

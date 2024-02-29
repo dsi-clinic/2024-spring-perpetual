@@ -1,8 +1,8 @@
 from pipeline.scrape.factory import (
-    IPlacesProviderFactory,
-    IPlacesProvider,
     BingMapsClient,
     GooglePlacesClient,
+    IPlacesProvider,
+    IPlacesProviderFactory,
     TomTomSearchClient,
     YelpClient,
 )

@@ -9,10 +9,9 @@ from contextlib import contextmanager
 from pathlib import Path
 from typing import Iterator, Optional, Union
 
+from constants import DATA_DIR
 # Application imports
 from pipeline.constants import DATA_DIR
-
-from constants import DATA_DIR
 
 
 class IDataStore(ABC):
@@ -21,7 +20,10 @@ class IDataStore(ABC):
     @abstractmethod
     @contextmanager
     def open_file(
-        self, file_name: str, mode: str = "r", root_dir: Union[Path, str] = DATA_DIR
+        self,
+        file_name: str,
+        mode: str = "r",
+        root_dir: Union[Path, str] = DATA_DIR,
     ) -> Iterator[io.IOBase]:
         """Opens a file with the given name and mode.
 
@@ -48,7 +50,10 @@ class LocalDataStore(IDataStore):
 
     @contextmanager
     def open_file(
-        self, file_name: str, mode: str = "r", root_dir: Union[Path, str] = DATA_DIR
+        self,
+        file_name: str,
+        mode: str = "r",
+        root_dir: Union[Path, str] = DATA_DIR,
     ) -> Iterator[io.IOBase]:
         """Opens a file with the given name and mode.
 

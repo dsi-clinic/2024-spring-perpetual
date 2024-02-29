@@ -1,10 +1,11 @@
-from pipeline.utils.cfg_parser import read_cfg
+from pipeline.utils.cfg_parser import read_ini
 from pipeline.utils.google_cvrp import solve_and_save
 
+
 def solve_pickups_only():
-    
+
     # read cfg
-    cfg = read_cfg("../pipeline/utils/config_inputs.ini", "solve.pickups_only")
+    cfg = read_ini("../pipeline/utils/config_inputs.ini", "solve.pickups_only")
 
     print(
         f"""solve_pickups_only :: running on
@@ -21,7 +22,7 @@ def solve_pickups_only():
         capacity=cfg["capacity_col"],
         depot_index=int(cfg["depot_index"]),
         output_path=cfg["cvrp_pickups_dir"],
-        num_preceding_routes=0
+        num_preceding_routes=0,
     )
 
 

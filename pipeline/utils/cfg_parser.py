@@ -1,7 +1,7 @@
 from configparser import ConfigParser, ExtendedInterpolation
 
 
-def read_cfg(path, section):
+def read_ini(path, section):
     """
     Read a config file and return a config object
 
@@ -13,3 +13,7 @@ def read_cfg(path, section):
     config = ConfigParser(interpolation=ExtendedInterpolation())
     config.read(path)
     return config[section]
+
+
+def read_yml(path):
+    

@@ -13,10 +13,7 @@ from typing import Dict, List, Tuple, Union
 import requests
 # Application imports
 from pipeline.scrape.common import IPlacesProvider
-from pipeline.utils.geometry import (
-    BoundingBox,
-    convert_meters_to_degrees,
-)
+from pipeline.utils.geometry import BoundingBox, convert_meters_to_degrees
 
 
 class GooglePOITypes(Enum):
@@ -178,7 +175,10 @@ class GooglePlacesClient(IPlacesProvider):
 
         # Otherwise, if number of POIs returned equals max,
         # split box and recursively issue HTTP requests
-        if len(data["places"]) == GooglePlacesClient.MAX_NUM_RESULTS_PER_REQUEST:
+        if (
+            len(data["places"])
+            == GooglePlacesClient.MAX_NUM_RESULTS_PER_REQUEST
+        ):
             pois = []
             errors = []
             sub_cells = box.split_along_axes(x_into=2, y_into=2)
@@ -193,7 +193,9 @@ class GooglePlacesClient(IPlacesProvider):
         # Otherwise, extract business data from response body JSON
         return data["places"], []
 
-    def find_places_in_geography(self, geo: Union[Polygon, MultiPolygon]) -> List[Dict]:
+    def find_places_in_geography(
+        self, geo: Union[Polygon, MultiPolygon]
+    ) -> List[Dict]:
         """Locates all POIs with a review within the given geography.
         The Google Places API permits searching for POIs within a radius around
         a given point. Therefore, data is extracted by dividing the
@@ -244,10 +246,14 @@ class GooglePlacesClient(IPlacesProvider):
         bbox: BoundingBox = BoundingBox.from_polygon(geo)
 
         # Calculate length of square circumscribed by circle with the max search radius
-        max_side_meters = (2**0.5) * GooglePlacesClient.MAX_SEARCH_RADIUS_IN_METERS
+        max_side_meters = (
+            2**0.5
+        ) * GooglePlacesClient.MAX_SEARCH_RADIUS_IN_METERS
 
         # Use heuristic to convert length from meters to degrees at box's lower latitude
-        deg_lat, deg_lon = convert_meters_to_degrees(max_side_meters, bbox.bottom_left)
+        deg_lat, deg_lon = convert_meters_to_degrees(
+            max_side_meters, bbox.bottom_left
+        )
 
         # Take minimum value as side length (meters convert differently to
         # lat and lon, and we want to avoid going over max radius)
