@@ -16,4 +16,4 @@ def read_ini(path, section):
 
 
 def read_yml(path):
-    
+    raise ValueError("read_yml not yet implemented")

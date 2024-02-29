@@ -191,8 +191,7 @@ def visualize_routes():
                 )
 
                 route = calc_routes(galv_graph, coords)
-                # route = calc_routes(graph, coords)
-                # route_2 = calc_routes(galv_graph2, coords2)
+                # route = calc_routes(graph, coords) #  for expedient graphing
 
                 color = colors[(i % len(colors))]
 
@@ -218,6 +217,7 @@ def visualize_routes():
 
     # announce completion
     print("visualize_routes :: finished visualizing all routes!")
+
 
 if __name__ == "__main__":
     visualize_routes()
