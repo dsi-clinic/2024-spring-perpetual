@@ -229,26 +229,31 @@ class YelpClient(IPlacesProvider):
         )
 
         # Locate POIs within each cell if it contains any part of geography
-        pois = []
-        errors = []
-        for cell in cells:
-            if cell.intersects_with(geo):
-                cell_pois, cell_errs = self.find_places_in_bounding_box(cell)
-                pois.extend(cell_pois)
-                errors.extend(cell_errs)
-
-        # Drop duplicate records
         unique_ids = set()
         unique_pois = []
         errors = []
+        cleaned_pois = []
 
         for poi in pois:
-            id = poi.get('id') 
+            id = poi.get('id')
             if id not in unique_ids:
                 unique_ids.add(id)
                 unique_pois.append(poi)
             else:
                 errors.append("Duplicate ID found: {}".format(id))
 
-        return unique_pois, errors
+        for poi in unique_pois:
+            cleaned_poi = {}
+            closed = poi.get('is_closed')
+            if closed == 'False':
+                cleaned_poi['id'] = poi.get('id')
+                cleaned_poi['name'] = poi.get('name')
+                cleaned_poi['categories'] = ','.join(poi['categories'])
+                cleaned_poi['latitude'] = poi.get('coordinates')['latitude']
+                cleaned_poi['longitude'] = poi.get('coordinates')['longitude']
+                cleaned_poi['display_address'] = poi.get('location')['display_address']
+                cleaned_pois.append(cleaned_poi)
+
+        return cleaned_pois, errors
+
     
