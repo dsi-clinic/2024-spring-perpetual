@@ -1,8 +1,0 @@
-Original_Index,Unnamed: 0,Name,Longitude,Latitude,Daily_Pickup_Totes,Weekly_Dropoff_Totes,user_ratings_total,category,rating,weekly_high,weekly_low,best_weekly_estimate,Address,geometry,Adoption,Adoption Guess,Visited ,Influence,location_type,pickup_type,id,Bike Aggregation Point,Cumulative_Distance,Truck_Load
-23,72,La Estacion Restaurant,-94.794797,29.3015187,0,1,442.0,restaurant,4.3,175.0,25.0,175.0,"2428 Avenue H, Galveston",POINT (-94.794797 29.3015187),Skeptical,Med,No,Low,indoor,Bike_Aggregate,,,0,0
-45,184,,-94.79338136883872,29.30760607604601,1,0,,,,,,,,,,,,,outdoor,Bike,1013.0,72.0,955,1
-31,147,Brewchachos Tacos & Cantina,-94.7925997,29.3078756,1,1,1043.0,bar,4.2,2800.0,400.0,2800.0,"2110 The Strand, Galveston",POINT (-94.7925997 29.3078756),Skeptical,Med,Yes,Med,indoor,Bike_Converted,,72.0,1046,2
-12,49,Drunken Monkeyz,-94.790723,29.3079594,2,2,324.0,bar,4.3,0.0,0.0,1125.0,"202 20th Street, Galveston",POINT (-94.790723 29.3079594),Skeptical,Med,No,Low,indoor,Bike_Converted,,72.0,1257,4
-13,50,Hubcap Grill,-94.791623,29.3076238,1,1,1268.0,bar,4.3,420.0,140.0,420.0,"2021 The Strand #3, Galveston",POINT (-94.791623 29.3076238),Skeptical,Med,No,Med,indoor,Bike_Converted,,72.0,1430,5
-32,148,Rosario`s flying pizza and pub,-94.7928341,29.3073255,1,1,34.0,restaurant,4.6,280.0,40.0,280.0,"2121 The Strand, Galveston",POINT (-94.7928341 29.3073255),Curious,Med,Yes,Low,indoor,Bike_Converted,,72.0,1552,6
-23,72,La Estacion Restaurant,-94.794797,29.3015187,0,1,442.0,restaurant,4.3,175.0,25.0,175.0,"2428 Avenue H, Galveston",POINT (-94.794797 29.3015187),Skeptical,Med,No,Low,indoor,Bike_Aggregate,,,2504,6

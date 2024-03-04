@@ -11,6 +11,8 @@ from typing import Dict, List, Tuple, Union
 
 # Third-party imports
 import requests
+from shapely import MultiPolygon, Polygon
+
 # Application imports
 from pipeline.scrape.common import IPlacesProvider
 from pipeline.utils.geometry import BoundingBox, convert_meters_to_degrees
@@ -165,9 +167,7 @@ class YelpClient(IPlacesProvider):
             page_idx += 1
             time.sleep(0.5)
 
-    def find_places_in_geography(
-        self, geo: Union[Polygon, MultiPolygon]
-    ) -> List[Dict]:
+    def find_places_in_geography(self, geo: Union[Polygon, MultiPolygon]) -> List[Dict]:
         """Locates all POIs with a review within the given geography.
         The Fusion API permits searching for POIs within a radius around
         a given point. Therefore, data is extracted by dividing the
@@ -220,9 +220,7 @@ class YelpClient(IPlacesProvider):
         max_side_meters = (2**0.5) * YelpClient.MAX_SEARCH_RADIUS_IN_METERS
 
         # Use heuristic to convert length from meters to degrees at box's lower latitude
-        deg_lat, deg_lon = convert_meters_to_degrees(
-            max_side_meters, bbox.bottom_left
-        )
+        deg_lat, deg_lon = convert_meters_to_degrees(max_side_meters, bbox.bottom_left)
 
         # Take minimum value as side length (meters convert differently to lat and lon,
         # and we want to avoid going over max radius)

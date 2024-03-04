@@ -1,8 +1,0 @@
-Original_Index,Unnamed: 0,Name,Longitude,Latitude,Daily_Pickup_Totes,Weekly_Dropoff_Totes,user_ratings_total,category,rating,weekly_high,weekly_low,best_weekly_estimate,Address,geometry,Adoption,Adoption Guess,Visited ,Influence,location_type,pickup_type,id,Bike Aggregation Point,Cumulative_Distance,Truck_Load
-23,72,La Estacion Restaurant,-94.794797,29.3015187,0,1,442.0,restaurant,4.3,175.0,25.0,175.0,"2428 Avenue H, Galveston",POINT (-94.794797 29.3015187),Skeptical,Med,No,Low,indoor,Bike_Aggregate,,,0,0
-1,8,Vargas Cut and Catch (listed above),-94.7913854,29.3052268,1,1,297.0,bar,4.8,35.0,49.0,35.0,"2102 Postoffice Street, Galveston",POINT (-94.7913854 29.3052268),Curious,High,No,High,indoor,Bike_Converted,,72.0,764,1
-29,105,The Wine Next Door,-94.7911713,29.3054682,1,1,3.0,bar,5.0,0.0,0.0,140.625,"418 21st Street, Galveston",POINT (-94.7911713 29.3054682),Curious,Med,No,Low,indoor,Bike_Converted,,72.0,783,2
-27,102,Shucks Tavern,-94.7912194,29.3055721,1,1,97.0,restaurant,4.7,35.0,0.0,35.0,"414 21st Street, Galveston",POINT (-94.7912194 29.3055721),Curious,Med,No,Low,indoor,Bike_Converted,,72.0,813,3
-28,104,Mama Teresa's Flying Pizza,-94.7911778,29.3055494,2,1,1875.0,restaurant,4.6,175.0,25.0,175.0,"416 21st Street, Galveston",POINT (-94.7911778 29.3055494),Skeptical,Med,No,Low,indoor,Bike_Converted,,72.0,816,5
-43,180,,-94.78891769107824,29.303192407402246,1,0,,,,,,,,,,,,,outdoor,Bike,1009.0,72.0,1301,6
-23,72,La Estacion Restaurant,-94.794797,29.3015187,0,1,442.0,restaurant,4.3,175.0,25.0,175.0,"2428 Avenue H, Galveston",POINT (-94.794797 29.3015187),Skeptical,Med,No,Low,indoor,Bike_Aggregate,,,1896,6

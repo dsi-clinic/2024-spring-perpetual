@@ -10,6 +10,8 @@ from typing import Dict, List, Tuple, Union
 
 # Third-party imports
 import requests
+from shapely import MultiPolygon, Polygon
+
 # Application imports
 from pipeline.scrape.common import IPlacesProvider
 from pipeline.utils.geometry import BoundingBox
@@ -119,8 +121,7 @@ class TomTomSearchClient(IPlacesProvider):
                     str(float(d)) for d in box.top_left.to_list(as_lat_lon=True)
                 ),
                 "btmRight": ",".join(
-                    str(float(d))
-                    for d in box.bottom_right.to_list(as_lat_lon=True)
+                    str(float(d)) for d in box.bottom_right.to_list(as_lat_lon=True)
                 ),
             }
             headers = {"Accept": "application/json", "Accept-Encoding": "gzip"}
@@ -157,9 +158,7 @@ class TomTomSearchClient(IPlacesProvider):
             # Otherwise, iterate page index and add delay before next request
             page_idx += 1
 
-    def find_places_in_geography(
-        self, geo: Union[Polygon, MultiPolygon]
-    ) -> List[Dict]:
+    def find_places_in_geography(self, geo: Union[Polygon, MultiPolygon]) -> List[Dict]:
         """Queries the TomTom Points of Interest Search API for
         locations within a geography boundary. To accomplish this,
         a bounding box for the geography is calculated and then

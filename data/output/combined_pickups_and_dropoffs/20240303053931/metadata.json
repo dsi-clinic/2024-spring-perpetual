@@ -1,0 +1,19 @@
+{
+  "Name": "Combined Pickups and Dropoffs",
+  "Type": "Multi-Stage Simulation",
+  "Start Time (UTC)": "2024-03-03T05:39:31.868807",
+  "End Time (UTC)": "2024-03-03T05:43:32.035405",
+  "Solver": "google",
+  "City": "galveston",
+  "Num Routes Generated": 3,
+  "Pickup Only Parameters": {
+    "Number of Vehicles": 3,
+    "Vehicle Capacity": 120,
+    "Simulation Runtime (Seconds)": 60
+  },
+  "Combined Pickup-Dropoff Parameters": {
+    "Number of Vehicles": 1,
+    "Vehicle Capacity": 120,
+    "Simulation Runtime (Seconds)": 60
+  }
+}
