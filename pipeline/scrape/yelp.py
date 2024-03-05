@@ -240,7 +240,7 @@ class YelpClient(IPlacesProvider):
         errors = []
         for cell in cells:
             if cell.intersects_with(geo):
-                # get the pois and errors list created by the 
+                # get the pois and errors list created by the
                 # find_places_in_bounding_box function
                 cell_pois, cell_errs = self.find_places_in_bounding_box(
                     box=cell, search_radius=YelpClient.MAX_SEARCH_RADIUS_IN_METERS
@@ -252,7 +252,7 @@ class YelpClient(IPlacesProvider):
                 # I removed the new errors list and use the cell_errs list made by find_places_in_bounding_box
                 cleaned_pois = []
                 for poi in cell_pois:
-                    id = poi.get('id')
+                    id = poi.get("id")
                     if id not in unique_ids:
                         unique_ids.add(id)
                         unique_pois.append(poi)
@@ -261,14 +261,18 @@ class YelpClient(IPlacesProvider):
 
                 for poi in unique_pois:
                     cleaned_poi = {}
-                    closed = poi.get('is_closed')
-                    if closed == 'False':
-                        cleaned_poi['id'] = poi.get('id')
-                        cleaned_poi['name'] = poi.get('name')
-                        cleaned_poi['categories'] = ','.join(poi['categories'])
-                        cleaned_poi['latitude'] = poi.get('coordinates')['latitude']
-                        cleaned_poi['longitude'] = poi.get('coordinates')['longitude']
-                        cleaned_poi['display_address'] = poi.get('location')['display_address']
+                    closed = poi.get("is_closed")
+                    if not closed:
+                        cleaned_poi["id"] = poi.get("id")
+                        cleaned_poi["name"] = poi.get("name")
+                        cleaned_poi["categories"] = ", ".join(
+                            [category["title"] for category in poi["categories"]]
+                        )
+                        cleaned_poi["latitude"] = poi.get("coordinates")["latitude"]
+                        cleaned_poi["longitude"] = poi.get("coordinates")["longitude"]
+                        cleaned_poi["display_address"] = poi.get("location")[
+                            "display_address"
+                        ]
                         cleaned_pois.append(cleaned_poi)
 
                 # back to original code in dev, except instead of adding the cell_pois returned
@@ -277,39 +281,5 @@ class YelpClient(IPlacesProvider):
                 errors.extend(cell_errs)
 
         return pois, errors
+
     
-    
-    def clean_and_get_unique_pois(self, list_of_pois):
-        '''
-        Need to write this
-        '''
-        #Jess's code for de-duping and restructuring POI dictionary
-        unique_ids = set()
-        unique_pois = []
-        errors = []
-        cleaned_pois = []
-
-        for poi in list_of_pois:
-            id = poi.get('id')
-            if id not in unique_ids:
-                unique_ids.add(id)
-                unique_pois.append(poi)
-            else:
-                errors.append("Duplicate ID found: {}".format(id))
-
-        for poi in unique_pois:
-            cleaned_poi = {}
-            closed = poi.get('is_closed')
-            if closed == 'False':
-                cleaned_poi['id'] = poi.get('id')
-                cleaned_poi['name'] = poi.get('name')
-                cleaned_poi['categories'] = ','.join(poi['categories'])
-                cleaned_poi['latitude'] = poi.get('coordinates')['latitude']
-                cleaned_poi['longitude'] = poi.get('coordinates')['longitude']
-                cleaned_poi['display_address'] = poi.get('location')['display_address']
-                cleaned_pois.append(cleaned_poi)
-
-        return cleaned_pois, errors
-
-
-
