@@ -246,7 +246,7 @@ class YelpClient(IPlacesProvider):
                     box=cell, search_radius=YelpClient.MAX_SEARCH_RADIUS_IN_METERS
                 )
 
-                # Jess's code for de-duping and restructuring POI dictionary
+                # Code for de-duping and restructuring POI dictionary
                 unique_ids = set()
                 unique_pois = []
                 # I removed the new errors list and use the cell_errs list made by find_places_in_bounding_box
@@ -258,7 +258,7 @@ class YelpClient(IPlacesProvider):
                         unique_pois.append(poi)
                     else:
                         cell_errs.append("Duplicate ID found: {}".format(id))
-
+                # Renaming varoables in original json for easy integration with other scrape files in clean.py
                 for poi in unique_pois:
                     cleaned_poi = {}
                     closed = poi.get("is_closed")
