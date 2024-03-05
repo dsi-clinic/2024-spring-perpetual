@@ -1,4 +1,4 @@
-"""
+"""Defines interfaces and common classes for computing and analyzing routes.
 """
 
 # Standard library imports
@@ -7,16 +7,29 @@ from abc import ABC
 from dataclasses import dataclass
 from typing import Dict, Iterable, List
 
+# Appliation imports
+from pipeline.utils.logger import logging
+
 
 class IRoutingClient(ABC):
-    """ """
+    """An abstract class for solving routing optimization problems."""
 
-    pass
+    def __init__(self, logger: logging.Logger) -> None:
+        """Initializes a new instance of an `IRoutingClient`.
+
+        Args:
+            logger (`logging.Logger`): An instance of a Python
+                standard logger.
+
+        Returns:
+            `None`
+        """
+        self._logger = logger
 
 
 @dataclass
 class Range:
-    """"""
+    """Represents an inclusive integer range."""
 
     min: int
     max: int

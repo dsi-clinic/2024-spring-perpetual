@@ -26,6 +26,7 @@ class YelpPOICategories(Enum):
     RESTAURANT = "restaurants"
 
     # Potential Outdoor Points
+    AIRPORTS = "airports"
     APARTMENTS = "apartments"
     BIKE_SHARING_HUB = "bikesharing"
     BUS_STATION = "busstations"
@@ -35,14 +36,18 @@ class YelpPOICategories(Enum):
     GROCERY = "grocery"
     HOTELS = "hotels"
     JUNIOR_OR_SENIOR_HIGH_SCHOOL = "highschools"
+    LIBRARIES = "libraries"
+    MEDICAL_CENTERS = "medcenters"
     METRO_STATION = "metrostations"
     OFFICE = "sharedofficespaces"
     PARK = "parks"
+    POST_OFFICES = "postoffices"
     PHARMACY = "pharmacy"
     PRESCHOOL = "preschools"
     RECYCLING_CENTER = "recyclingcenter"
     SHARED_LIVING = "housingcooperatives"
     TRAIN_STATIONS = "trainstations"
+    ZOOS = "zoos"
 
 
 class YelpClient(IPlacesProvider):

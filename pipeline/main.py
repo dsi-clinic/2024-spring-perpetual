@@ -153,7 +153,7 @@ def compute_routes(
                 "City": city,
                 "Num Routes Generated": num_routes,
                 "Pickup Only Parameters": {
-                    "Number of Vehicles": pickup_params.num_vehicles,
+                    "Number of Vehicles": num_routes,
                     "Vehicle Capacity": pickup_params.vehicle_capacity,
                     "Simulation Runtime (Seconds)": pickup_params.runtime,
                 },
