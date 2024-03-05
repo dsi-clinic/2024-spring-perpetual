@@ -1,48 +1,23 @@
 import pandas as pd
 import json
 
-# Load JSON data from file
-with open('data/poi/hilo_yelp_original.json', 'r') as file:
-    hilo_data_list = json.load(file)
+# Function to load JSON data from file and convert it to a DataFrame
+def json_to_dataframe(json_path):
+    with open(json_path, 'r') as file:
+        data_list = json.load(file)
+    return pd.DataFrame(data_list)
 
-# Initialize lists to store extracted fields
-ids = []
-names = []
-categories_list = []
-longitudes = []
-latitudes = []
-display_addresses_list = []
+# Load JSON data from files
+gplaces_json_path = 'data/poi/hilo_google.json'
+yelp_json_path = 'data/poi/hilo_yelp.json'
 
-# Iterate over each JSON object in the list
-for hilo_data in hilo_data_list:
-    # Extract fields from the current JSON object
-    id = hilo_data['id']
-    name = hilo_data['name']
-    categories = ', '.join([category['title'] for category in hilo_data['categories']])
-    longitude = hilo_data['coordinates']['longitude']
-    latitude = hilo_data['coordinates']['latitude']
-    display_address = ', '.join(hilo_data['location']['display_address'])
-    
-    # Append extracted fields to the respective lists
-    ids.append(id)
-    names.append(name)
-    categories_list.append(categories)
-    longitudes.append(longitude)
-    latitudes.append(latitude)
-    display_addresses_list.append(display_address)
+# Applying the function to convert JSON to DateFrame
+gplaces_df = json_to_dataframe(gplaces_json_path)
+yelp_df = json_to_dataframe(yelp_json_path)
 
-# Create DataFrame
-hilo_yelp_locations = pd.DataFrame({
-    'id': ids,
-    'name': names,
-    'categories': categories_list,
-    'longitude': longitudes,
-    'latitude': latitudes,
-    'display_address': display_addresses_list
-})
+# Combine the DataFrames
+combined_df = pd.merge(gplaces_df, yelp_df, how='outer')
 
-# Assuming you have already created the DataFrame 'hilo_yelp_locations'
-
-# Save DataFrame as CSV
-hilo_yelp_locations.to_csv('data/poi/hilo_yelp_locations.csv', index=False)
-
+# Save the combined DataFrame to a CSV file
+combined_csv_path = 'data/poi/hilo_google_yelp_combined.csv'
+combined_df.to_csv(combined_csv_path, index=False)
