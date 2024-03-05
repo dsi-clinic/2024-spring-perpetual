@@ -11,7 +11,7 @@ from typing import Dict, List, Tuple, Union
 
 # Third-party imports
 import requests
-from shapely import MultiPolygon, Polygon, Point
+from shapely import MultiPolygon, Polygon
 
 # Application imports
 from pipeline.scrape.common import IPlacesProvider
@@ -88,11 +88,16 @@ class YelpClient(IPlacesProvider):
                 f'Missing expected environment variable "{e}".'
             ) from None
 
-    def find_places_in_bounding_box(self, box: BoundingBox) -> Tuple[Dict, Dict]:
+    def find_places_in_bounding_box(
+        self, box: BoundingBox, search_radius: float
+    ) -> Tuple[Dict, Dict]:
         """Locates all POIs within the bounding box.
 
         Args:
             box (`BoundingBox`): The bounding box.
+
+            search_radius (`float`): The search radius, converted from
+                meters to the larger of degrees longitude and latitude.
 
         Returns:
             (`dict`, `dict`): A two-item tuple consisting of the POIs and errors.
@@ -110,7 +115,7 @@ class YelpClient(IPlacesProvider):
         while True:
             # Build request parameters and headers
             params = {
-                "radius": YelpClient.MAX_SEARCH_RADIUS_IN_METERS,
+                "radius": search_radius,
                 "categories": categories,
                 "longitude": float(box.center.lon),
                 "latitude": float(box.center.lat),
@@ -140,10 +145,12 @@ class YelpClient(IPlacesProvider):
             if data["total"] > YelpClient.MAX_NUM_QUERY_RESULTS:
                 sub_cells = box.split_along_axes(x_into=2, y_into=2)
                 for sub in sub_cells:
-                    sub_pois, sub_errs = self.find_places_in_bounding_box(sub)
+                    sub_pois, sub_errs = self.find_places_in_bounding_box(
+                        sub, search_radius / 2
+                    )
                     pois.extend(sub_pois)
                     errors.extend(sub_errs)
-                    return pois, errors
+                return pois, errors
 
             # Otherwise, extract business data from response body JSON
             page_pois = data.get("businesses", [])
@@ -229,12 +236,60 @@ class YelpClient(IPlacesProvider):
         )
 
         # Locate POIs within each cell if it contains any part of geography
+        pois = []
+        errors = []
+        for cell in cells:
+            if cell.intersects_with(geo):
+                # get the pois and errors list created by the 
+                # find_places_in_bounding_box function
+                cell_pois, cell_errs = self.find_places_in_bounding_box(
+                    box=cell, search_radius=YelpClient.MAX_SEARCH_RADIUS_IN_METERS
+                )
+
+                # Jess's code for de-duping and restructuring POI dictionary
+                unique_ids = set()
+                unique_pois = []
+                # I removed the new errors list and use the cell_errs list made by find_places_in_bounding_box
+                cleaned_pois = []
+                for poi in cell_pois:
+                    id = poi.get('id')
+                    if id not in unique_ids:
+                        unique_ids.add(id)
+                        unique_pois.append(poi)
+                    else:
+                        cell_errs.append("Duplicate ID found: {}".format(id))
+
+                for poi in unique_pois:
+                    cleaned_poi = {}
+                    closed = poi.get('is_closed')
+                    if closed == 'False':
+                        cleaned_poi['id'] = poi.get('id')
+                        cleaned_poi['name'] = poi.get('name')
+                        cleaned_poi['categories'] = ','.join(poi['categories'])
+                        cleaned_poi['latitude'] = poi.get('coordinates')['latitude']
+                        cleaned_poi['longitude'] = poi.get('coordinates')['longitude']
+                        cleaned_poi['display_address'] = poi.get('location')['display_address']
+                        cleaned_pois.append(cleaned_poi)
+
+                # back to original code in dev, except instead of adding the cell_pois returned
+                # by the find_places_in_bounding_box, I add the newly cleaned pois
+                pois.extend(cleaned_pois)
+                errors.extend(cell_errs)
+
+        return pois, errors
+    
+    
+    def clean_and_get_unique_pois(self, list_of_pois):
+        '''
+        Need to write this
+        '''
+        #Jess's code for de-duping and restructuring POI dictionary
         unique_ids = set()
         unique_pois = []
         errors = []
         cleaned_pois = []
 
-        for poi in pois:
+        for poi in list_of_pois:
             id = poi.get('id')
             if id not in unique_ids:
                 unique_ids.add(id)
@@ -256,4 +311,5 @@ class YelpClient(IPlacesProvider):
 
         return cleaned_pois, errors
 
-    
+
+
