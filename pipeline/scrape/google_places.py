@@ -272,6 +272,8 @@ class GooglePlacesClient(IPlacesProvider):
         # Locate POIs within each cell if it contains any part of geography
         pois = []
         errors = []
+        seen_ids = set() # To track and avoid duplicates
+
         for batch in category_batches:
             for cell in cells:
                 if cell.intersects_with(geo):
@@ -280,7 +282,25 @@ class GooglePlacesClient(IPlacesProvider):
                         categories=batch,
                         search_radius=GooglePlacesClient.MAX_SEARCH_RADIUS_IN_METERS,
                     )
-                    pois.extend(cell_pois)
+
+                    # Process and filter POIs before adding to output
+                    for poi in cell_pois:
+                        poi_id = poi['id']
+
+                        # Check if POI ID is a duplicate
+                        if poi_id not in seen_ids:
+                            seen_ids.add(poi_id)
+                            clean_poi = {
+                                'id': poi_id,
+                                'name': poi['displayName']['text'],
+                                'categories': ', '.join(poi['types']),
+                                'longitude': poi['location']['longitude'],
+                                'latitude': poi['location']['latitude'],
+                                'display_address': poi['formattedAddress']
+                            }
+                            pois.append(clean_poi)
+
+
                     errors.extend(cell_errors)
 
         return pois, errors
