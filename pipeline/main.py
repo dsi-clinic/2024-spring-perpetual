@@ -287,15 +287,19 @@ def compute_routes(
             for key in grouped.groups:
                 grp_df = grouped.get_group(key)
                 route_strs.append(route_to_plain_text(key, grp_df))
+
+                pickup_demands = int(grp_df["Daily_Pickup_Totes"].sum())
+                dropoff_demands = int(grp_df["Weekly_Dropoff_Totes"].sum())
+                cum_distances = int(grp_df.iloc[-1]["Cumulative_Distance"])
                 sim_results.append(
                     {
                         "Route Name": key,
-                        "Pickup Demands": grp_df["Daily_Pickup_Totes"].sum(),
-                        "Dropoff Demands": grp_df["Weekly_Dropoff_Totes"].sum(),
-                        "Cumulative Distances": grp_df.iloc[-1]["Cumulative_Distance"],
+                        "Pickup Demands": pickup_demands,
+                        "Dropoff Demands": dropoff_demands,
+                        "Cumulative Distances": cum_distances,
                     }
                 )
-            stats.append({"Simulation": metadata, "Results": sim_started_utc})
+            stats.append({"Simulation": metadata, "Results": sim_results})
 
             # Write visualization to text file
             logger.info("Writing route visualization to text file.")
@@ -394,7 +398,7 @@ def main(
     logger.info(f"{len(bins_df)} bins identified.")
 
     # Create distance matrix for every unique pair of locations
-    logger.info("Computing distances between each pair of indoor and outdoor bins.")
+    logger.info("Computing distances between each pair of bins.")
     distance_stage = config["stages"]["distances"]
     distances_df = compute_distance_matrix(
         bins_df, distance_stage["output_fpath"], distance_stage["use_cached"], logger

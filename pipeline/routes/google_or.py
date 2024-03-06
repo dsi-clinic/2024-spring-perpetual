@@ -276,7 +276,7 @@ class GoogleORToolsClient(IRoutingClient):
             ] + pickup_locs_df["Daily_Pickup_Totes"].tolist()[1:]
 
             # Add locations with dropoffs as new dropoff sites and set capacities
-            dropoff_locs_df = pickup_locs_df.query("`Weekly_Dropoff_Totes` > 0")
+            dropoff_locs_df = pickup_locs_df.copy().query("`Weekly_Dropoff_Totes` > 0")
             dropoff_locs_df["Capacity"] = dropoff_locs_df["Weekly_Dropoff_Totes"] * -1
 
             # Combine pickup and dropoff locations into final DataFrame
