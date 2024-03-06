@@ -389,14 +389,14 @@ def main(
     logger.info("Classifying points of interest as indoor and outdoor bins.")
     classify_stage = config["stages"]["classifications"]
     bins_df = classify_poi(
-        places, classify_poi["output_fpath"], classify_stage["use_cached"], logger
+        places, classify_stage["output_fpath"], classify_stage["use_cached"], logger
     )
     logger.info(f"{len(bins_df)} bins identified.")
 
     # Create distance matrix for every unique pair of locations
     logger.info("Computing distances between each pair of indoor and outdoor bins.")
     distance_stage = config["stages"]["distances"]
-    distances_df = classify_poi(
+    distances_df = compute_distance_matrix(
         bins_df, distance_stage["output_fpath"], distance_stage["use_cached"], logger
     )
     logger.info("Distance matrix created successfully.")

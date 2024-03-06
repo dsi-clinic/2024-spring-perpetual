@@ -11,52 +11,7 @@ from typing import Dict, Iterable, List
 import pandas as pd
 
 # Appliation imports
-from pipeline.routes.common import SimulationParams
 from pipeline.utils.logger import logging
-
-
-class IRoutingClient(ABC):
-    """An abstract class for solving routing optimization problems."""
-
-    def __init__(self, logger: logging.Logger) -> None:
-        """Initializes a new instance of an `IRoutingClient`.
-
-        Args:
-            logger (`logging.Logger`): An instance of a Python
-                standard logger.
-
-        Returns:
-            `None`
-        """
-        self._logger = logger
-
-    @abstractmethod
-    def solve_bidirectional_cvrp(
-        self,
-        locations_df: pd.DataFrame,
-        distances_df: pd.DataFrame,
-        pickup_params: SimulationParams,
-        combo_params: SimulationParams,
-    ) -> pd.DataFrame:
-        """Solves a subcase of the Capacitated Vehicle Routing Problem (CVRP)
-        in which trucks can pick up and drop off items at the same locations.
-
-        Args:
-            locations_df (`pd.DataFrame`): The locations to use for routing.
-
-            distance_df (`pd.DataFrame`): A matrix of distances computed between
-                every unique location in `locations_df`. Units are expressed in meters.
-
-            pickup_params (`SimulationParams`): Configuration for the pickup route
-                simulation.
-
-            combo_params (`SimulationParams`): Configuration for the combined
-                pickup/drop off route simulation.
-
-        Returns:
-            (`pd.DataFrame`): A DataFrame containing the optimal routes.
-        """
-        raise NotImplementedError
 
 
 @dataclass
@@ -173,3 +128,47 @@ class ParameterSweep:
                     self.demand_column, vehicle_count, vehicle_capacity, runtime
                 )
             )
+
+
+class IRoutingClient(ABC):
+    """An abstract class for solving routing optimization problems."""
+
+    def __init__(self, logger: logging.Logger) -> None:
+        """Initializes a new instance of an `IRoutingClient`.
+
+        Args:
+            logger (`logging.Logger`): An instance of a Python
+                standard logger.
+
+        Returns:
+            `None`
+        """
+        self._logger = logger
+
+    @abstractmethod
+    def solve_bidirectional_cvrp(
+        self,
+        locations_df: pd.DataFrame,
+        distances_df: pd.DataFrame,
+        pickup_params: SimulationParams,
+        combo_params: SimulationParams,
+    ) -> pd.DataFrame:
+        """Solves a subcase of the Capacitated Vehicle Routing Problem (CVRP)
+        in which trucks can pick up and drop off items at the same locations.
+
+        Args:
+            locations_df (`pd.DataFrame`): The locations to use for routing.
+
+            distance_df (`pd.DataFrame`): A matrix of distances computed between
+                every unique location in `locations_df`. Units are expressed in meters.
+
+            pickup_params (`SimulationParams`): Configuration for the pickup route
+                simulation.
+
+            combo_params (`SimulationParams`): Configuration for the combined
+                pickup/drop off route simulation.
+
+        Returns:
+            (`pd.DataFrame`): A DataFrame containing the optimal routes.
+        """
+        raise NotImplementedError()
