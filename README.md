@@ -14,3 +14,13 @@ Planning a feasible centralized reuse system comes with a lot of challenges. Thi
 
 ![The interactive map can be found in the output directory](archive/mentor/images/galveston_map.png)
 
+### Contributors
+#### Mentor
+Launa Greer
+#### TA
+Sarah Walker
+#### Students
+Jessica Cibrian
+Huanlin Dai
+Lydia Lo
+Yifan Wu
