@@ -1,5 +1,4 @@
 # pipeline
-
 This folder contains python scripts (executable from command-line).
 
 ### Running the Pipeline
@@ -11,6 +10,8 @@ Create an input folder or place input files (.csv dataframes and distance matric
 Edit `pipeline/yaml/config_inputs.yml` (in older versions,`pipeline/utils/config_inputs.ini`) to include file paths for your data, desired output locations/filenames, and CVRP solver parameters.
 After the container has started, open a new terminal and run the command `python3 pipeline/main.py -h` to find out how to the command-line options for running the pipeline.
 Then, run `python3 pipeline/main.py -p [provider name] -s [solver name] [city name]` to execute the pipeline.
+For the sensitivity analysis, edit `pipeline/sensitivity_analysis.py` to point to a directory of interest.
+Run `python3 pipeline/sensitivity_analysis`.
 
 ### pipeline/utils/
 This directory contains files with various functions used across multiple files.
