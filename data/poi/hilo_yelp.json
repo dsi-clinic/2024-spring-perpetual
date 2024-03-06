@@ -5,11 +5,7 @@
     "categories": "Food Trucks, Tacos, Hawaiian",
     "latitude": 19.55084145722916,
     "longitude": -155.1076067224073,
-    "display_address": [
-      "18-1325 Old Volcano Rd",
-      "Inside Garden",
-      "Mountain View, HI 96771"
-    ]
+    "display_address": "18-1325 Old Volcano Rd, Inside Garden, Mountain View, HI 96771"
   },
   {
     "id": "_TurvdX1s0A0Nlbslr62Bg",
@@ -17,9 +13,7 @@
     "categories": "Food Trucks, American, Sandwiches",
     "latitude": 19.673052809354292,
     "longitude": -155.2227874111058,
-    "display_address": [
-      "Hilo, HI 96720"
-    ]
+    "display_address": "Hilo, HI 96720"
   },
   {
     "id": "eGwHTtxc6xZlhtQXpMYN-w",
@@ -27,9 +21,7 @@
     "categories": "Tacos, Food Trucks",
     "latitude": 19.673052809354292,
     "longitude": -155.2227874111058,
-    "display_address": [
-      "Hilo, HI 96720"
-    ]
+    "display_address": "Hilo, HI 96720"
   },
   {
     "id": "-uvGU-X14pVVIJhAbk5A3Q",
@@ -37,10 +29,7 @@
     "categories": "Recycling Center",
     "latitude": 19.637246939187506,
     "longitude": -155.04942397316916,
-    "display_address": [
-      "16-630 Kipimana St",
-      "Keaau, HI 96749"
-    ]
+    "display_address": "16-630 Kipimana St, Keaau, HI 96749"
   },
   {
     "id": "7MlWid3PRl_3vy_DYSiYYA",
@@ -48,20 +37,7 @@
     "categories": "Food Trucks, Sandwiches, Tacos",
     "latitude": 19.673052809354292,
     "longitude": -155.2227874111058,
-    "display_address": [
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "WP2ZjFW41wUK0qeilF--dA",
-    "name": "Pineapples Island Fresh Cuisine",
-    "categories": "New American, Cocktail Bars, Hawaiian",
-    "latitude": 19.72274,
-    "longitude": -155.08616,
-    "display_address": [
-      "332 Keawe St",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "Hilo, HI 96720"
   },
   {
     "id": "tsUTHQj6ZBriKPQZf10DvQ",
@@ -69,33 +45,15 @@
     "categories": "Seafood, New American, Hawaiian",
     "latitude": 19.72598,
     "longitude": -155.08826,
-    "display_address": [
-      "64 Keawe St",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "64 Keawe St, Hilo, HI 96720"
   },
   {
-    "id": "9qV9988-I90odzitG-G61w",
-    "name": "Cafe Pesto Hilo Bay",
-    "categories": "Pizza, Italian, Seafood",
-    "latitude": 19.723753,
-    "longitude": -155.085017,
-    "display_address": [
-      "308 Kamehameha Ave",
-      "Ste 101",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "RDAgAM6lK9JLBXLgAisLWQ",
-    "name": "Hilo Bay Cafe",
-    "categories": "New American, Hawaiian, Sushi Bars",
-    "latitude": 19.725,
-    "longitude": -155.070454,
-    "display_address": [
-      "123 Lihiwai St",
-      "Hilo, HI 96720"
-    ]
+    "id": "WP2ZjFW41wUK0qeilF--dA",
+    "name": "Pineapples Island Fresh Cuisine",
+    "categories": "New American, Cocktail Bars, Hawaiian",
+    "latitude": 19.72274,
+    "longitude": -155.08616,
+    "display_address": "332 Keawe St, Hilo, HI 96720"
   },
   {
     "id": "XFxvTsGbRGmQeNqvzRHskw",
@@ -103,78 +61,23 @@
     "categories": "Wine Bars, Beer Bar, Tapas/Small Plates",
     "latitude": 19.726321708135565,
     "longitude": -155.0882123753573,
-    "display_address": [
-      "64 Keawe St",
-      "Ste 102",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "64 Keawe St, Ste 102, Hilo, HI 96720"
   },
   {
-    "id": "OCtBAGJ1OJT2NTTvwEw84A",
-    "name": "Hawaiian Style Cafe - Hilo",
-    "categories": "Hawaiian, Poke, Breakfast & Brunch",
-    "latitude": 19.71287,
-    "longitude": -155.06934,
-    "display_address": [
-      "681 Manono St",
-      "Ste 101",
-      "Hilo, HI 96720"
-    ]
+    "id": "9qV9988-I90odzitG-G61w",
+    "name": "Cafe Pesto Hilo Bay",
+    "categories": "Pizza, Italian, Seafood",
+    "latitude": 19.723753,
+    "longitude": -155.085017,
+    "display_address": "308 Kamehameha Ave, Ste 101, Hilo, HI 96720"
   },
   {
-    "id": "2UPgIdTnV578wCbvBWD_Wg",
-    "name": "The Seaside Restaurant and Aqua Farm",
-    "categories": "Seafood, Hawaiian, Japanese",
-    "latitude": 19.732615354489692,
-    "longitude": -155.02864345560997,
-    "display_address": [
-      "1790 Kalanianaole Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "112Hk6sKC-IeVuARSdziZg",
-    "name": "Suisan Fish Market",
-    "categories": "Seafood Markets, Seafood, Poke",
-    "latitude": 19.7242201,
-    "longitude": -155.0701728,
-    "display_address": [
-      "93 Lihiwai St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "InChSt3S4kV75GGp-h1Nqw",
-    "name": "The Booch Bar",
-    "categories": "Breakfast & Brunch, New American, Coffee & Tea",
-    "latitude": 19.725517165391487,
-    "longitude": -155.08780630395222,
-    "display_address": [
-      "110 Keawe St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "01AxjQvL2CMrl5dql8K0qA",
-    "name": "Kaleo's Bar and Grill",
-    "categories": "Hawaiian, Burgers",
-    "latitude": 19.49422,
-    "longitude": -154.94452,
-    "display_address": [
-      "15-2969 Pahoa Village Rd",
-      "Pahoa, HI 96778"
-    ]
-  },
-  {
-    "id": "93hox2tnmGYqvWuOKmqJfg",
-    "name": "Puka Puka Kitchen",
-    "categories": "Asian Fusion, Mediterranean",
-    "latitude": 19.724236,
-    "longitude": -155.0856824,
-    "display_address": [
-      "270 Kamehameha Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "RDAgAM6lK9JLBXLgAisLWQ",
+    "name": "Hilo Bay Cafe",
+    "categories": "New American, Hawaiian, Sushi Bars",
+    "latitude": 19.725,
+    "longitude": -155.070454,
+    "display_address": "123 Lihiwai St, Hilo, HI 96720"
   },
   {
     "id": "En05unhZUZOr3QXAxL2EMw",
@@ -182,88 +85,23 @@
     "categories": "Thai, New American",
     "latitude": 19.7254413001025,
     "longitude": -155.086286114896,
-    "display_address": [
-      "168 Kamehameha Ave",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "168 Kamehameha Ave, Hilo, HI 96720"
   },
   {
-    "id": "4SVrrM9LW7TXrQdBGRSb7Q",
-    "name": "Antics Pizza",
-    "categories": "Pizza",
-    "latitude": 19.720587,
-    "longitude": -155.085942,
-    "display_address": [
-      "475 Kinoole St",
-      "Hilo, HI 96720"
-    ]
+    "id": "OCtBAGJ1OJT2NTTvwEw84A",
+    "name": "Hawaiian Style Cafe - Hilo",
+    "categories": "Hawaiian, Poke, Breakfast & Brunch",
+    "latitude": 19.71287,
+    "longitude": -155.06934,
+    "display_address": "681 Manono St, Ste 101, Hilo, HI 96720"
   },
   {
-    "id": "FNvHczaqHmSVIkRWkOH8pw",
-    "name": "Popover",
-    "categories": "Bakeries, Coffee & Tea, Cafes",
-    "latitude": 19.706178,
-    "longitude": -155.065444,
-    "display_address": [
-      "399 E Kawili St",
-      "Ste 102",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "xihViAqiP3xFQ9HCM0xs7A",
-    "name": "Kawamoto Store",
-    "categories": "Japanese, Hawaiian, Sushi Bars",
-    "latitude": 19.71636259372185,
-    "longitude": -155.0789752,
-    "display_address": [
-      "784 Kilauea Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "woTmVDFKON5mEizpCCsZoA",
-    "name": "Ken's House Of Pancakes",
-    "categories": "Diners, Pancakes",
-    "latitude": 19.722272,
-    "longitude": -155.064721,
-    "display_address": [
-      "1730 Kamehameha Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "xYubLEHun5RWq588kUfM0g",
-    "name": "Sweet Cane Cafe",
-    "categories": "Sandwiches, Acai Bowls, Cafes",
-    "latitude": 19.710195,
-    "longitude": -155.078019,
-    "display_address": [
-      "48 Kamana St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "-0t4y8yxk_fGwsaickfQvQ",
-    "name": "Just Cruisin Coffee",
-    "categories": "Coffee & Tea, Breakfast & Brunch, Sandwiches",
-    "latitude": 19.716162,
-    "longitude": -155.078149,
-    "display_address": [
-      "835 Kilauea Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "5PGyWhg-MNORHg7hsz3A4w",
-    "name": "Ola Brew - Hilo",
-    "categories": "Brewpubs, New American, American",
-    "latitude": 19.71218,
-    "longitude": -155.07635,
-    "display_address": [
-      "1177 Kilauea Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "2UPgIdTnV578wCbvBWD_Wg",
+    "name": "The Seaside Restaurant and Aqua Farm",
+    "categories": "Seafood, Hawaiian, Japanese",
+    "latitude": 19.732615354489692,
+    "longitude": -155.02864345560997,
+    "display_address": "1790 Kalanianaole Ave, Hilo, HI 96720"
   },
   {
     "id": "pRN1FFixO2RgWmPn7Qf94w",
@@ -271,88 +109,55 @@
     "categories": "Thai",
     "latitude": 19.494080996651,
     "longitude": -154.94505,
-    "display_address": [
-      "15-2955 Pahoa Village Rd",
-      "Pahoa, HI 96778"
-    ]
+    "display_address": "15-2955 Pahoa Village Rd, Pahoa, HI 96778"
   },
   {
-    "id": "qT6WDrbGdVIFMgqm0RXxDg",
-    "name": "Pele's Kitchen",
-    "categories": "Breakfast & Brunch, American, Hawaiian",
-    "latitude": 19.49399261301141,
-    "longitude": -154.9459704460327,
-    "display_address": [
-      "15-2929 Pahoa Village Rd",
-      "Pahoa, HI 96778"
-    ]
+    "id": "4SVrrM9LW7TXrQdBGRSb7Q",
+    "name": "Antics Pizza",
+    "categories": "Pizza",
+    "latitude": 19.720587,
+    "longitude": -155.085942,
+    "display_address": "475 Kinoole St, Hilo, HI 96720"
   },
   {
-    "id": "4J5mcch0dpVQXjQ0un-_cg",
-    "name": "Moon & Turtle",
-    "categories": "Seafood, Asian Fusion, Cocktail Bars",
-    "latitude": 19.72525,
-    "longitude": -155.08712,
-    "display_address": [
-      "51 Kalakaua St",
-      "Hilo, HI 96720"
-    ]
+    "id": "01AxjQvL2CMrl5dql8K0qA",
+    "name": "Kaleo's Bar and Grill",
+    "categories": "Hawaiian, Burgers",
+    "latitude": 19.49422,
+    "longitude": -154.94452,
+    "display_address": "15-2969 Pahoa Village Rd, Pahoa, HI 96778"
   },
   {
-    "id": "966Pq0W0kJhWMq2vkeYzpA",
-    "name": "Saucy Mama's",
-    "categories": "Food Trucks, Tacos, Hawaiian",
-    "latitude": 19.55084145722916,
-    "longitude": -155.1076067224073,
-    "display_address": [
-      "18-1325 Old Volcano Rd",
-      "Inside Garden",
-      "Mountain View, HI 96771"
-    ]
+    "id": "InChSt3S4kV75GGp-h1Nqw",
+    "name": "The Booch Bar",
+    "categories": "Breakfast & Brunch, New American, Coffee & Tea",
+    "latitude": 19.725517165391487,
+    "longitude": -155.08780630395222,
+    "display_address": "110 Keawe St, Hilo, HI 96720"
   },
   {
-    "id": "2LggrGknJRCI-kmUPxAQmg",
-    "name": "Akaka Falls State Park",
-    "categories": "Parks",
-    "latitude": 19.8538409556301,
-    "longitude": -155.152272242078,
-    "display_address": [
-      "Akaka Falls Rd",
-      "Honomu, HI 96728"
-    ]
+    "id": "112Hk6sKC-IeVuARSdziZg",
+    "name": "Suisan Fish Market",
+    "categories": "Seafood Markets, Seafood, Poke",
+    "latitude": 19.7242201,
+    "longitude": -155.0701728,
+    "display_address": "93 Lihiwai St, Hilo, HI 96720"
   },
   {
-    "id": "lvkvRcNQBg-p0hShvq5JPw",
-    "name": "What's Shakin'",
-    "categories": "Breakfast & Brunch, American",
-    "latitude": 19.824328,
-    "longitude": -155.095225,
-    "display_address": [
-      "27-999 Old Mamalahoa Hwy",
-      "Pepeekeo, HI 96783"
-    ]
+    "id": "woTmVDFKON5mEizpCCsZoA",
+    "name": "Ken's House Of Pancakes",
+    "categories": "Diners, Pancakes",
+    "latitude": 19.722272,
+    "longitude": -155.064721,
+    "display_address": "1730 Kamehameha Ave, Hilo, HI 96720"
   },
   {
-    "id": "M5EuSiE5wL3MkJFwY_UlBg",
-    "name": "Mohala\u2019s Bayfront Fish & Chips",
-    "categories": "Fish & Chips",
-    "latitude": 19.7262744088841,
-    "longitude": -155.087487845641,
-    "display_address": [
-      "50 Waianuenue Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "X9V69KOVcDJPMlFv2R4L4Q",
-    "name": "Tin Shack Bakery",
-    "categories": "Coffee & Tea, Bakeries, Sandwiches",
-    "latitude": 19.4942503,
-    "longitude": -154.9437281,
-    "display_address": [
-      "15-1500 Akeakamai Lp",
-      "P\u0101hoa, HI 96778"
-    ]
+    "id": "5PGyWhg-MNORHg7hsz3A4w",
+    "name": "Ola Brew - Hilo",
+    "categories": "Brewpubs, New American, American",
+    "latitude": 19.71218,
+    "longitude": -155.07635,
+    "display_address": "1177 Kilauea Ave, Hilo, HI 96720"
   },
   {
     "id": "VFnjI9z5eoQtSk-Adr4fyA",
@@ -360,111 +165,7 @@
     "categories": "Burgers, Pubs, American",
     "latitude": 19.716491997242,
     "longitude": -155.078912749887,
-    "display_address": [
-      "776 Kilauea Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "m7P7_44_awlR6XvAg31ctg",
-    "name": "Paul's Place",
-    "categories": "Breakfast & Brunch, Coffee & Tea",
-    "latitude": 19.7226009368896,
-    "longitude": -155.084259033203,
-    "display_address": [
-      "132 Punahoa St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "Tv_r4BLyn9iqQFZv_oj4eg",
-    "name": "Restaurant Kenichi",
-    "categories": "Asian Fusion, Japanese, Korean",
-    "latitude": 19.717235,
-    "longitude": -155.08006,
-    "display_address": [
-      "684 Kilauea Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "uOXn2PwtoSzWL-yga6hU8g",
-    "name": "Tetsumen Ramen",
-    "categories": "Ramen, Japanese Curry",
-    "latitude": 19.71272,
-    "longitude": -155.06965,
-    "display_address": [
-      "697 Manono St",
-      "Ste 103",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "JXZviTF8RNFicsTjFI9uYA",
-    "name": "Big Island Top Dogs",
-    "categories": "Burgers, Hot Dogs",
-    "latitude": 19.7068837182555,
-    "longitude": -155.067029220193,
-    "display_address": [
-      "811 Laukapu St",
-      "Ste 6",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "GYIw7VuVIe7tvUVWl5Dlsw",
-    "name": "Da Beans Green Cafe & Kava Lounge",
-    "categories": "Coffee & Tea, Cafes, Breakfast & Brunch",
-    "latitude": 19.52819,
-    "longitude": -155.13381,
-    "display_address": [
-      "17-937 Volcano Rd",
-      "Mountain View, HI 96771"
-    ]
-  },
-  {
-    "id": "d5N6OWofKBlng9Rf_OTa9w",
-    "name": "Hilo Town Tavern",
-    "categories": "Music Venues, American",
-    "latitude": 19.724778,
-    "longitude": -155.087535,
-    "display_address": [
-      "168 Keawe St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "8FCdWyHsgom16-62If_wiQ",
-    "name": "Pahoa Fresh Fish",
-    "categories": "Fish & Chips, Seafood",
-    "latitude": 19.5049859270427,
-    "longitude": -154.957336932421,
-    "display_address": [
-      "15-2670 Pahoa Village Rd",
-      "Pahoa, HI 96778"
-    ]
-  },
-  {
-    "id": "p_FBPdQYXSZZc0JXvNoUvg",
-    "name": "Tacos Jalisco",
-    "categories": "Food Trucks, Mexican",
-    "latitude": 19.71195814005112,
-    "longitude": -155.0745291535396,
-    "display_address": [
-      "277 Kekuanaoa St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "rmsQo7FTTKjHs3eQ_1-s4Q",
-    "name": "5-Spice",
-    "categories": "Specialty Food, Hawaiian, Breakfast & Brunch",
-    "latitude": 19.691641,
-    "longitude": -155.0669464,
-    "display_address": [
-      "2064 Kilauea Ave",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "776 Kilauea Ave, Hilo, HI 96720"
   },
   {
     "id": "C7wMDYdWEdPuQ35xJ5HlYg",
@@ -472,112 +173,39 @@
     "categories": "Vietnamese, Chinese",
     "latitude": 19.7221113380498,
     "longitude": -155.085543880924,
-    "display_address": [
-      "172 Kilauea Ave",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "172 Kilauea Ave, Hilo, HI 96720"
   },
   {
-    "id": "leHeObOxvWOL9ZyeRJf7NA",
-    "name": "Kamana Kitchen",
-    "categories": "Indian",
-    "latitude": 19.7107785686731,
-    "longitude": -155.075672920707,
-    "display_address": [
-      "1235 Kilauea Ave",
-      "Ste 180",
-      "Hilo, HI 96720"
-    ]
+    "id": "d5N6OWofKBlng9Rf_OTa9w",
+    "name": "Hilo Town Tavern",
+    "categories": "Music Venues, American",
+    "latitude": 19.724778,
+    "longitude": -155.087535,
+    "display_address": "168 Keawe St, Hilo, HI 96720"
   },
   {
-    "id": "XfzE-DEyCOAXNosgfK76Iw",
-    "name": "Millie's Deli & Snack Shop",
-    "categories": "Delis, Sandwiches",
-    "latitude": 19.7231927,
-    "longitude": -155.0626218,
-    "display_address": [
-      "94 Kalanianaole Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "FNvHczaqHmSVIkRWkOH8pw",
+    "name": "Popover",
+    "categories": "Bakeries, Coffee & Tea, Cafes",
+    "latitude": 19.706178,
+    "longitude": -155.065444,
+    "display_address": "399 E Kawili St, Ste 102, Hilo, HI 96720"
   },
   {
-    "id": "vyNiHr7sczqpjU8QgDf8PQ",
-    "name": "Vibe",
-    "categories": "Cafes",
-    "latitude": 19.70785,
-    "longitude": -155.06469,
-    "display_address": [
-      "750 Kanoelehua Ave",
-      "Ste 101",
-      "Hilo, HI 96720"
-    ]
+    "id": "4J5mcch0dpVQXjQ0un-_cg",
+    "name": "Moon & Turtle",
+    "categories": "Seafood, Asian Fusion, Cocktail Bars",
+    "latitude": 19.72525,
+    "longitude": -155.08712,
+    "display_address": "51 Kalakaua St, Hilo, HI 96720"
   },
   {
-    "id": "y7H7DReVAYaXA8fa0OWfbQ",
-    "name": "Onomea Country Market & Cafe",
-    "categories": "Fruits & Veggies, Cafes, Shaved Ice",
-    "latitude": 19.83072044528586,
-    "longitude": -155.0971922,
-    "display_address": [
-      "28-1099 Old Mamalahoa Hwy",
-      "Pepeekeo, HI 96783"
-    ]
-  },
-  {
-    "id": "rOm1WE4UTP8qlni1R5VHIw",
-    "name": "Hilo Lunch Shop",
-    "categories": "Japanese, Delis, Hawaiian",
-    "latitude": 19.7201,
-    "longitude": -155.06652,
-    "display_address": [
-      "421 Kalanikoa St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "xNeqZRPYSRu5A-_Zc8h6jw",
-    "name": "Takenoko Sushi",
-    "categories": "Japanese, Sushi Bars",
-    "latitude": 19.712757812177024,
-    "longitude": -155.06875185244402,
-    "display_address": [
-      "578 Hinano St",
-      "Manono Street Marketplace",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "0_-y333YTUX_gzyMIHNn7A",
-    "name": "Liliuokalani Gardens",
-    "categories": "Parks",
-    "latitude": 19.7272704541683,
-    "longitude": -155.067476481199,
-    "display_address": [
-      "191 Lihiwai St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "7RusJO6qjOsJ6lqTUoyu4Q",
-    "name": "Panchos Tacos",
-    "categories": "Tacos, Food Trucks",
-    "latitude": 19.4937404,
-    "longitude": -154.9454773,
-    "display_address": [
-      "15-2942 Pahoa Village Rd",
-      "Pahoa, HI 96778"
-    ]
-  },
-  {
-    "id": "552xKCBRjbWUYg7KjNGKyQ",
-    "name": "Ponds Hilo",
-    "categories": "Hawaiian, American",
-    "latitude": 19.72388,
-    "longitude": -155.06179,
-    "display_address": [
-      "135 Kalanianaole Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "-0t4y8yxk_fGwsaickfQvQ",
+    "name": "Just Cruisin Coffee",
+    "categories": "Coffee & Tea, Breakfast & Brunch, Sandwiches",
+    "latitude": 19.716162,
+    "longitude": -155.078149,
+    "display_address": "835 Kilauea Ave, Hilo, HI 96720"
   },
   {
     "id": "Ww3gGByN9JoXbRgppqni_w",
@@ -585,22 +213,31 @@
     "categories": "Thai",
     "latitude": 19.72537,
     "longitude": -155.0879799,
-    "display_address": [
-      "110 Kalakaua St",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "110 Kalakaua St, Hilo, HI 96720"
   },
   {
-    "id": "E2XOkS3lYY6-FnVhC-Pi4w",
-    "name": "Lehua Restaurant",
-    "categories": "Hawaiian",
-    "latitude": 19.701044991383387,
-    "longitude": -155.088612657496,
-    "display_address": [
-      "600 Imiloa Pl",
-      "Imiloa Astronomy Center",
-      "Hilo, HI 96720"
-    ]
+    "id": "uOXn2PwtoSzWL-yga6hU8g",
+    "name": "Tetsumen Ramen",
+    "categories": "Ramen, Japanese Curry",
+    "latitude": 19.71272,
+    "longitude": -155.06965,
+    "display_address": "697 Manono St, Ste 103, Hilo, HI 96720"
+  },
+  {
+    "id": "p_FBPdQYXSZZc0JXvNoUvg",
+    "name": "Tacos Jalisco",
+    "categories": "Food Trucks, Mexican",
+    "latitude": 19.71195814005112,
+    "longitude": -155.0745291535396,
+    "display_address": "277 Kekuanaoa St, Hilo, HI 96720"
+  },
+  {
+    "id": "M5EuSiE5wL3MkJFwY_UlBg",
+    "name": "Mohala\u2019s Bayfront Fish & Chips",
+    "categories": "Fish & Chips",
+    "latitude": 19.7262744088841,
+    "longitude": -155.087487845641,
+    "display_address": "50 Waianuenue Ave, Hilo, HI 96720"
   },
   {
     "id": "7g70rskPnbsr9ZqKoWHYIA",
@@ -608,55 +245,63 @@
     "categories": "American",
     "latitude": 19.71534,
     "longitude": -155.06825,
-    "display_address": [
-      "485 Hinano St",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "485 Hinano St, Hilo, HI 96720"
   },
   {
-    "id": "4iKcHN-jubfp2OsbsmgJhg",
-    "name": "The Hidden Nene",
-    "categories": "Cocktail Bars, Tapas/Small Plates, Beer Bar",
-    "latitude": 19.72366164099325,
-    "longitude": -155.0862397,
-    "display_address": [
-      "58 Furneaux Ln",
-      "Hilo, HI 96720"
-    ]
+    "id": "966Pq0W0kJhWMq2vkeYzpA",
+    "name": "Saucy Mama's",
+    "categories": "Food Trucks, Tacos, Hawaiian",
+    "latitude": 19.55084145722916,
+    "longitude": -155.1076067224073,
+    "display_address": "18-1325 Old Volcano Rd, Inside Garden, Mountain View, HI 96771"
   },
   {
-    "id": "7y8ig0LkdfDKz8gtaAtUSg",
-    "name": "Naung Mai Thai Kitchen",
-    "categories": "Thai, Vegetarian, Gluten-Free",
-    "latitude": 19.72271,
-    "longitude": -155.08672,
-    "display_address": [
-      "86 Kilauea Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "Tv_r4BLyn9iqQFZv_oj4eg",
+    "name": "Restaurant Kenichi",
+    "categories": "Asian Fusion, Japanese, Korean",
+    "latitude": 19.717235,
+    "longitude": -155.08006,
+    "display_address": "684 Kilauea Ave, Hilo, HI 96720"
   },
   {
-    "id": "UOP0yoQjTlfOQgJWg2aDGQ",
-    "name": "Vegan Shop",
-    "categories": "Vegan",
-    "latitude": 19.71973,
-    "longitude": -155.08585,
-    "display_address": [
-      "516 Kinoole St",
-      "Hilo, HI 96720"
-    ]
+    "id": "xihViAqiP3xFQ9HCM0xs7A",
+    "name": "Kawamoto Store",
+    "categories": "Japanese, Hawaiian, Sushi Bars",
+    "latitude": 19.71636259372185,
+    "longitude": -155.0789752,
+    "display_address": "784 Kilauea Ave, Hilo, HI 96720"
   },
   {
-    "id": "ErVxMKIWspnupaKyI2Tagw",
-    "name": "Coco Cantina",
-    "categories": "Mexican, Cocktail Bars, Burgers",
-    "latitude": 19.503319930245443,
-    "longitude": -154.95597595276112,
-    "display_address": [
-      "15-2714 Pahoa Village Rd",
-      "Ste I-3",
-      "P\u0101hoa, HI 96778"
-    ]
+    "id": "leHeObOxvWOL9ZyeRJf7NA",
+    "name": "Kamana Kitchen",
+    "categories": "Indian",
+    "latitude": 19.7107785686731,
+    "longitude": -155.075672920707,
+    "display_address": "1235 Kilauea Ave, Ste 180, Hilo, HI 96720"
+  },
+  {
+    "id": "93hox2tnmGYqvWuOKmqJfg",
+    "name": "Puka Puka Kitchen",
+    "categories": "Asian Fusion, Mediterranean",
+    "latitude": 19.724236,
+    "longitude": -155.0856824,
+    "display_address": "270 Kamehameha Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "8FCdWyHsgom16-62If_wiQ",
+    "name": "Pahoa Fresh Fish",
+    "categories": "Fish & Chips, Seafood",
+    "latitude": 19.5049859270427,
+    "longitude": -154.957336932421,
+    "display_address": "15-2670 Pahoa Village Rd, Pahoa, HI 96778"
+  },
+  {
+    "id": "lvkvRcNQBg-p0hShvq5JPw",
+    "name": "What's Shakin'",
+    "categories": "Breakfast & Brunch, American",
+    "latitude": 19.824328,
+    "longitude": -155.095225,
+    "display_address": "27-999 Old Mamalahoa Hwy, Pepeekeo, HI 96783"
   },
   {
     "id": "4xrjl8x-H5yWyXy_8-C50Q",
@@ -664,112 +309,63 @@
     "categories": "New American",
     "latitude": 19.72609,
     "longitude": -155.0868,
-    "display_address": [
-      "116 Kamehameha Ave",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "116 Kamehameha Ave, Hilo, HI 96720"
   },
   {
-    "id": "S276sdN5gBOqHGXlJfRQnw",
-    "name": "Poke N Sides @ the Hilo Farmers Market",
-    "categories": "Poke, Hawaiian, Burgers",
-    "latitude": 19.72264,
-    "longitude": -155.08487,
-    "display_address": [
-      "57 Mamo St",
-      "Hilo, HI 96720"
-    ]
+    "id": "y7H7DReVAYaXA8fa0OWfbQ",
+    "name": "Onomea Country Market & Cafe",
+    "categories": "Fruits & Veggies, Cafes, Shaved Ice",
+    "latitude": 19.83072044528586,
+    "longitude": -155.0971922,
+    "display_address": "28-1099 Old Mamalahoa Hwy, Pepeekeo, HI 96783"
   },
   {
-    "id": "h3OVnnr_e4HRFI4hD7DmGQ",
-    "name": "Coffee Girl",
-    "categories": "Coffee & Tea, Cafes",
-    "latitude": 19.692103686736772,
-    "longitude": -155.0669396716724,
-    "display_address": [
-      "2100 Kanoelehua Ave",
-      "Ste A6",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "e-w7uMMO0LlY_-7ISOlQEg",
-    "name": "Liko Lehua Cafe",
-    "categories": "Hawaiian",
-    "latitude": 19.71326,
-    "longitude": -155.10633,
-    "display_address": [
-      "177 Kaumana Dr",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "EVW8HP17PNiHr8Z0iaj5sg",
-    "name": "Van Vietnamese Cuisine",
-    "categories": "Vietnamese",
-    "latitude": 19.720312244236048,
-    "longitude": -155.0824403,
-    "display_address": [
-      "419 Kilauea Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "ISlWwFghK-OE_k-KFq_2bw",
-    "name": "Rainbow Falls",
+    "id": "2LggrGknJRCI-kmUPxAQmg",
+    "name": "Akaka Falls State Park",
     "categories": "Parks",
-    "latitude": 19.71915380173882,
-    "longitude": -155.10860837045746,
-    "display_address": [
-      "967 Waianuenue Ave",
-      "Hilo, HI 96720"
-    ]
+    "latitude": 19.8538409556301,
+    "longitude": -155.152272242078,
+    "display_address": "Akaka Falls Rd, Honomu, HI 96728"
   },
   {
-    "id": "iez1hr1GAD80OiIfZjWkaA",
-    "name": "Cafe 100",
-    "categories": "Hawaiian, Burgers, Fast Food",
-    "latitude": 19.71427,
-    "longitude": -155.0772299,
-    "display_address": [
-      "969 Kilauea Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "xNeqZRPYSRu5A-_Zc8h6jw",
+    "name": "Takenoko Sushi",
+    "categories": "Japanese, Sushi Bars",
+    "latitude": 19.712757812177024,
+    "longitude": -155.06875185244402,
+    "display_address": "578 Hinano St, Manono Street Marketplace, Hilo, HI 96720"
   },
   {
-    "id": "i6105ZeRHPxpWwKdFlk0ZQ",
-    "name": "Moms",
-    "categories": "Japanese, Salad, Sushi Bars",
-    "latitude": 19.724564,
-    "longitude": -155.087565,
-    "display_address": [
-      "190 Keawe St",
-      "Ste 10",
-      "Hilo, HI 96720"
-    ]
+    "id": "7y8ig0LkdfDKz8gtaAtUSg",
+    "name": "Naung Mai Thai Kitchen",
+    "categories": "Thai, Vegetarian, Gluten-Free",
+    "latitude": 19.72271,
+    "longitude": -155.08672,
+    "display_address": "86 Kilauea Ave, Hilo, HI 96720"
   },
   {
-    "id": "RGXRgtakimPAU4bTEFTVkQ",
-    "name": "Dragon Kitchen Brown Rice Sushi",
-    "categories": "Japanese, Poke, Sushi Bars",
-    "latitude": 19.7235774993896,
-    "longitude": -155.085052490234,
-    "display_address": [
-      "330 Kamehameha Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "4iKcHN-jubfp2OsbsmgJhg",
+    "name": "The Hidden Nene",
+    "categories": "Cocktail Bars, Tapas/Small Plates, Beer Bar",
+    "latitude": 19.72366164099325,
+    "longitude": -155.0862397,
+    "display_address": "58 Furneaux Ln, Hilo, HI 96720"
   },
   {
-    "id": "InHzfw4JsmuHhpqgJ5BnkA",
-    "name": "Hilo Pizza Company",
-    "categories": "Pizza, Salad",
-    "latitude": 19.69111019902378,
-    "longitude": -155.0668768630894,
-    "display_address": [
-      "2100 Kanoelehua Ave",
-      "Ste B-11",
-      "Hilo, HI 96720"
-    ]
+    "id": "552xKCBRjbWUYg7KjNGKyQ",
+    "name": "Ponds Hilo",
+    "categories": "Hawaiian, American",
+    "latitude": 19.72388,
+    "longitude": -155.06179,
+    "display_address": "135 Kalanianaole Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "ErVxMKIWspnupaKyI2Tagw",
+    "name": "Coco Cantina",
+    "categories": "Mexican, Cocktail Bars, Burgers",
+    "latitude": 19.503319930245443,
+    "longitude": -154.95597595276112,
+    "display_address": "15-2714 Pahoa Village Rd, Ste I-3, P\u0101hoa, HI 96778"
   },
   {
     "id": "LmMzDQfggxhDHf9fziBHYQ",
@@ -777,121 +373,103 @@
     "categories": "Vietnamese",
     "latitude": 19.7241193,
     "longitude": -155.085764,
-    "display_address": [
-      "18 Furneaux Ln",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "18 Furneaux Ln, Hilo, HI 96720"
   },
   {
-    "id": "vFOEU8j3XfecprJG4YGWIQ",
-    "name": "Saucy Dogs",
-    "categories": "Hot Dogs",
-    "latitude": 19.7240907147264,
-    "longitude": -155.08564987254,
-    "display_address": [
-      "14 Furneaux Ln",
-      "Hilo, HI 96720"
-    ]
+    "id": "m7P7_44_awlR6XvAg31ctg",
+    "name": "Paul's Place",
+    "categories": "Breakfast & Brunch, Coffee & Tea",
+    "latitude": 19.7226009368896,
+    "longitude": -155.084259033203,
+    "display_address": "132 Punahoa St, Hilo, HI 96720"
   },
   {
-    "id": "lPd1Q9gGWIGDuB7C8U14dg",
-    "name": "Dolphin Bay Hotel",
-    "categories": "Hotels",
-    "latitude": 19.7291030883789,
-    "longitude": -155.090270996094,
-    "display_address": [
-      "333 Iliahi St",
-      "Hilo, HI 96720"
-    ]
+    "id": "xYubLEHun5RWq588kUfM0g",
+    "name": "Sweet Cane Cafe",
+    "categories": "Sandwiches, Acai Bowls, Cafes",
+    "latitude": 19.710195,
+    "longitude": -155.078019,
+    "display_address": "48 Kamana St, Hilo, HI 96720"
   },
   {
-    "id": "xONN8qTO6mZ3mpoyTsoEuA",
-    "name": "Nector Cafe",
-    "categories": "Cafes, Coffee & Tea, Ice Cream & Frozen Yogurt",
-    "latitude": 19.724783,
-    "longitude": -155.086181,
-    "display_address": [
-      "216 Kamehameha Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "i6105ZeRHPxpWwKdFlk0ZQ",
+    "name": "Moms",
+    "categories": "Japanese, Salad, Sushi Bars",
+    "latitude": 19.724564,
+    "longitude": -155.087565,
+    "display_address": "190 Keawe St, Ste 10, Hilo, HI 96720"
   },
   {
-    "id": "HGWnSu51KrTpMFh7IEZkww",
-    "name": "KTA Super Stores - Puainako",
-    "categories": "Grocery",
-    "latitude": 19.693748,
-    "longitude": -155.0666781,
-    "display_address": [
-      "50 E Puainako St",
-      "Hilo, HI 96720"
-    ]
+    "id": "E2XOkS3lYY6-FnVhC-Pi4w",
+    "name": "Lehua Restaurant",
+    "categories": "Hawaiian",
+    "latitude": 19.701044991383387,
+    "longitude": -155.088612657496,
+    "display_address": "600 Imiloa Pl, Imiloa Astronomy Center, Hilo, HI 96720"
   },
   {
-    "id": "lxqYUz7VFL5s2Pc-xybwxg",
-    "name": "Kaleo's Bar and Grill",
-    "categories": "Hawaiian, Bars, Breakfast & Brunch",
-    "latitude": 19.560196947365977,
-    "longitude": -154.99309960441687,
-    "display_address": [
-      "16-110 Orchid Land Dr",
-      "Keaau, HI 96749"
-    ]
+    "id": "vyNiHr7sczqpjU8QgDf8PQ",
+    "name": "Vibe",
+    "categories": "Cafes",
+    "latitude": 19.70785,
+    "longitude": -155.06469,
+    "display_address": "750 Kanoelehua Ave, Ste 101, Hilo, HI 96720"
   },
   {
-    "id": "lnOxop2IS-P6fbVa2UdRSQ",
-    "name": "Kitchen Umeko",
-    "categories": "Sushi Bars, Japanese",
-    "latitude": 19.70705,
-    "longitude": -155.07554,
-    "display_address": [
-      "14 W Lanikaula St",
-      "Ste 104",
-      "Hilo, HI 96720"
-    ]
+    "id": "qT6WDrbGdVIFMgqm0RXxDg",
+    "name": "Pele's Kitchen",
+    "categories": "Breakfast & Brunch, American, Hawaiian",
+    "latitude": 19.49399261301141,
+    "longitude": -154.9459704460327,
+    "display_address": "15-2929 Pahoa Village Rd, Pahoa, HI 96778"
   },
   {
-    "id": "P5uuvNqgGjLRCBa1UQXQXA",
-    "name": "Loved by the Sun",
-    "categories": "Juice Bars & Smoothies, Vegetarian, Vegan",
-    "latitude": 19.7240496317265,
-    "longitude": -155.085634599574,
-    "display_address": [
-      "12 Furneaux Ln",
-      "Hilo, HI 96720"
-    ]
+    "id": "7RusJO6qjOsJ6lqTUoyu4Q",
+    "name": "Panchos Tacos",
+    "categories": "Tacos, Food Trucks",
+    "latitude": 19.4937404,
+    "longitude": -154.9454773,
+    "display_address": "15-2942 Pahoa Village Rd, Pahoa, HI 96778"
   },
   {
-    "id": "UOGzckX_5HvLfOYKjcrvQw",
-    "name": "Big Island Birria Boss",
-    "categories": "Food Stands, Mexican",
-    "latitude": 19.87026,
-    "longitude": -155.113983,
-    "display_address": [
-      "28 1692 Old Mamalahoa Hwy 3",
-      "Honomu, HI 96728"
-    ]
+    "id": "InHzfw4JsmuHhpqgJ5BnkA",
+    "name": "Hilo Pizza Company",
+    "categories": "Pizza, Salad",
+    "latitude": 19.69111019902378,
+    "longitude": -155.0668768630894,
+    "display_address": "2100 Kanoelehua Ave, Ste B-11, Hilo, HI 96720"
   },
   {
-    "id": "O59G5OCQ5y3BbzpTPvM7Gg",
-    "name": "Izakaya Miyo",
-    "categories": "Izakaya, Cocktail Bars, Tapas Bars",
-    "latitude": 19.71304,
-    "longitude": -155.06892,
-    "display_address": [
-      "564 Hinano St",
-      "Hilo, HI 96720"
-    ]
+    "id": "e-w7uMMO0LlY_-7ISOlQEg",
+    "name": "Liko Lehua Cafe",
+    "categories": "Hawaiian",
+    "latitude": 19.71326,
+    "longitude": -155.10633,
+    "display_address": "177 Kaumana Dr, Hilo, HI 96720"
   },
   {
-    "id": "tgdg4b-HGulOToi7zCtJNA",
-    "name": "Short n Sweet Bakery & Cafe",
-    "categories": "Bakeries, Desserts, Cafes",
-    "latitude": 19.71024574328779,
-    "longitude": -155.0759721,
-    "display_address": [
-      "1263 Kilauea Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "GYIw7VuVIe7tvUVWl5Dlsw",
+    "name": "Da Beans Green Cafe & Kava Lounge",
+    "categories": "Coffee & Tea, Cafes, Breakfast & Brunch",
+    "latitude": 19.52819,
+    "longitude": -155.13381,
+    "display_address": "17-937 Volcano Rd, Mountain View, HI 96771"
+  },
+  {
+    "id": "EVW8HP17PNiHr8Z0iaj5sg",
+    "name": "Van Vietnamese Cuisine",
+    "categories": "Vietnamese",
+    "latitude": 19.720312244236048,
+    "longitude": -155.0824403,
+    "display_address": "419 Kilauea Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "XfzE-DEyCOAXNosgfK76Iw",
+    "name": "Millie's Deli & Snack Shop",
+    "categories": "Delis, Sandwiches",
+    "latitude": 19.7231927,
+    "longitude": -155.0626218,
+    "display_address": "94 Kalanianaole Ave, Hilo, HI 96720"
   },
   {
     "id": "vghn0ZO2QTpVuQRVKvo5pQ",
@@ -899,53 +477,39 @@
     "categories": "Burgers, Cafes, Hawaiian",
     "latitude": 19.694386979481635,
     "longitude": -155.0663731117025,
-    "display_address": [
-      "54 E Puainako St",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "54 E Puainako St, Hilo, HI 96720"
   },
   {
-    "id": "iqqxV0Lr-UUfUqkUpTX2aw",
-    "name": "King\u2019s Vietnamese Cuisine",
-    "categories": "Vietnamese, Food Trucks",
-    "latitude": 19.710823072181373,
-    "longitude": -155.06984976271545,
-    "display_address": [
-      "839 Manono St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "BAF2AA2cTWSU23R-VkMIZQ",
-    "name": "Miyo's Restaurant",
-    "categories": "Japanese, Seafood",
-    "latitude": 19.713009,
-    "longitude": -155.0687349,
-    "display_address": [
-      "564 Hinano St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "iOaMSB9Y4hvK-xXerV3KGQ",
-    "name": "Ma'ona Lunch Counter",
-    "categories": "Burgers, Hawaiian",
-    "latitude": 19.6378098609769,
-    "longitude": -155.044449860711,
-    "display_address": [
-      "16-203 Wiliama Pl",
-      "Keaau, HI 96749"
-    ]
-  },
-  {
-    "id": "CowXyOudqFhWxR3Bm9-Flw",
-    "name": "Kaumana Caves",
+    "id": "0_-y333YTUX_gzyMIHNn7A",
+    "name": "Liliuokalani Gardens",
     "categories": "Parks",
-    "latitude": 19.6868513668558,
-    "longitude": -155.130405187617,
-    "display_address": [
-      "Hilo, HI 96720"
-    ]
+    "latitude": 19.7272704541683,
+    "longitude": -155.067476481199,
+    "display_address": "191 Lihiwai St, Hilo, HI 96720"
+  },
+  {
+    "id": "iez1hr1GAD80OiIfZjWkaA",
+    "name": "Cafe 100",
+    "categories": "Hawaiian, Burgers, Fast Food",
+    "latitude": 19.71427,
+    "longitude": -155.0772299,
+    "display_address": "969 Kilauea Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "X9V69KOVcDJPMlFv2R4L4Q",
+    "name": "Tin Shack Bakery",
+    "categories": "Coffee & Tea, Bakeries, Sandwiches",
+    "latitude": 19.4942503,
+    "longitude": -154.9437281,
+    "display_address": "15-1500 Akeakamai Lp, P\u0101hoa, HI 96778"
+  },
+  {
+    "id": "h3OVnnr_e4HRFI4hD7DmGQ",
+    "name": "Coffee Girl",
+    "categories": "Coffee & Tea, Cafes",
+    "latitude": 19.692103686736772,
+    "longitude": -155.0669396716724,
+    "display_address": "2100 Kanoelehua Ave, Ste A6, Hilo, HI 96720"
   },
   {
     "id": "PhsC3C66mRdZdQpovbgdxw",
@@ -953,120 +517,7 @@
     "categories": "Japanese, Sushi Bars",
     "latitude": 19.72237,
     "longitude": -155.08532,
-    "display_address": [
-      "179 Kilauea Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "J4WViWLfWCb_VDMULc4t0A",
-    "name": "WSW Steakhouse",
-    "categories": "Steakhouses, Whiskey Bars, Venues & Event Spaces",
-    "latitude": 19.728168,
-    "longitude": -155.066693,
-    "display_address": [
-      "71 Banyan Dr",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "fg-VrIbi3uaYMOaM43I4sg",
-    "name": "Island Naturals Market & Deli",
-    "categories": "Grocery, Health Markets, Delis",
-    "latitude": 19.710908711970063,
-    "longitude": -155.07591361372147,
-    "display_address": [
-      "1221 Kilauea Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "XdwYUAlxR9iSuTc9hCuMkQ",
-    "name": "Carlsmith Beach Park",
-    "categories": "Parks",
-    "latitude": 19.7330791088927,
-    "longitude": -155.027970678621,
-    "display_address": [
-      "1827 Kalanianaole Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "e_sNwvFeuWJ9OEvSuXe31A",
-    "name": "Cajun Hideaway",
-    "categories": "Cajun/Creole",
-    "latitude": 19.49407865251213,
-    "longitude": -154.9451761,
-    "display_address": [
-      "15-2945 Pahoa Village Rd",
-      "Pahoa, HI 96778"
-    ]
-  },
-  {
-    "id": "MeYsBjSc4CTMasdkxMc_4w",
-    "name": "Bangkok Villa Hilo",
-    "categories": "Thai, Noodles, Soup",
-    "latitude": 19.7253971,
-    "longitude": -155.0871003,
-    "display_address": [
-      "59 Kalakaua St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "4iiV_vl_T4yPEGTGccOIig",
-    "name": "Haneul Cafe",
-    "categories": "Korean, Cafes",
-    "latitude": 19.71696008025059,
-    "longitude": -155.0655095,
-    "display_address": [
-      "417 Kalanikoa St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "nGh_8FzSq8PHtFFXQ8ydSA",
-    "name": "Le Yellow Sub",
-    "categories": "Vietnamese, Food Trucks",
-    "latitude": 19.72450621464298,
-    "longitude": -155.0608779117465,
-    "display_address": [
-      "213 Kalanianaole Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "DT0F-ofsVUfA4pWt8JVTAQ",
-    "name": "Tenkatori Hilo",
-    "categories": "Japanese, Chicken Wings",
-    "latitude": 19.706804301034374,
-    "longitude": -155.066761,
-    "display_address": [
-      "811 Laukapu St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "Gdw9ouYsToWRFl5X4-_Hig",
-    "name": "The Inn At Kulaniapia Falls",
-    "categories": "Bed & Breakfast, Hotels",
-    "latitude": 19.7238475472603,
-    "longitude": -155.134463310242,
-    "display_address": [
-      "100 Kulaniapia Dr",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "V2WIWMY4nFMehVS6yN4STQ",
-    "name": "Hula Hulas",
-    "categories": "Breakfast & Brunch, New American, Burgers",
-    "latitude": 19.729616,
-    "longitude": -155.064893,
-    "display_address": [
-      "93 Banyan Dr",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "179 Kilauea Ave, Hilo, HI 96720"
   },
   {
     "id": "Qek-U19wg32nxgwwHZFJtQ",
@@ -1074,133 +525,87 @@
     "categories": "Thai, Salad, Japanese",
     "latitude": 19.721902,
     "longitude": -155.085009,
-    "display_address": [
-      "211 Kilauea Ave",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "211 Kilauea Ave, Hilo, HI 96720"
   },
   {
-    "id": "u59x-vfjEJ2NCANL7JKhSw",
-    "name": "Countryside Cafe",
-    "categories": "Breakfast & Brunch, Caterers, Dinner Theater",
-    "latitude": 19.621841761624392,
-    "longitude": -155.0409898,
-    "display_address": [
-      "16-586 Old Volcano Rd",
-      "Keaau, HI 96749"
-    ]
+    "id": "JXZviTF8RNFicsTjFI9uYA",
+    "name": "Big Island Top Dogs",
+    "categories": "Burgers, Hot Dogs",
+    "latitude": 19.7068837182555,
+    "longitude": -155.067029220193,
+    "display_address": "811 Laukapu St, Ste 6, Hilo, HI 96720"
   },
   {
-    "id": "g2lsKtBuGcvDt78TUzRtdA",
-    "name": "Cham Cham Korean BBQ",
-    "categories": "Korean",
-    "latitude": 19.71672,
-    "longitude": -155.06544,
-    "display_address": [
-      "421 Kalanikoa St",
-      "Ste 102",
-      "Hilo, HI 96720"
-    ]
+    "id": "rmsQo7FTTKjHs3eQ_1-s4Q",
+    "name": "5-Spice",
+    "categories": "Specialty Food, Hawaiian, Breakfast & Brunch",
+    "latitude": 19.691641,
+    "longitude": -155.0669464,
+    "display_address": "2064 Kilauea Ave, Hilo, HI 96720"
   },
   {
-    "id": "ct2aY3Hkj5bwK5m-rhXttQ",
-    "name": "Coconut Grill",
-    "categories": "American, Salad, Burgers",
-    "latitude": 19.723620934733695,
-    "longitude": -155.06265429250664,
-    "display_address": [
-      "136 Banyan Way",
-      "Hilo Seaside Hotel",
-      "Hilo, HI 96720"
-    ]
+    "id": "S276sdN5gBOqHGXlJfRQnw",
+    "name": "Poke N Sides @ the Hilo Farmers Market",
+    "categories": "Poke, Hawaiian, Burgers",
+    "latitude": 19.72264,
+    "longitude": -155.08487,
+    "display_address": "57 Mamo St, Hilo, HI 96720"
   },
   {
-    "id": "r0RsyvT7cigz5RMOYpaoeA",
-    "name": "Onekahakaha Beach Park",
-    "categories": "Beaches, Parks",
-    "latitude": 19.738193,
-    "longitude": -155.039601,
-    "display_address": [
-      "74 Onekahakaha Rd",
-      "Hilo, HI 96720"
-    ]
+    "id": "UOP0yoQjTlfOQgJWg2aDGQ",
+    "name": "Vegan Shop",
+    "categories": "Vegan",
+    "latitude": 19.71973,
+    "longitude": -155.08585,
+    "display_address": "516 Kinoole St, Hilo, HI 96720"
   },
   {
-    "id": "ocAwpQeosV_yUGZdio4F1g",
-    "name": "Low International Food",
-    "categories": "Bakeries, Hawaiian",
-    "latitude": 19.72152,
-    "longitude": -155.08519,
-    "display_address": [
-      "222 Kilauea Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "RGXRgtakimPAU4bTEFTVkQ",
+    "name": "Dragon Kitchen Brown Rice Sushi",
+    "categories": "Japanese, Poke, Sushi Bars",
+    "latitude": 19.7235774993896,
+    "longitude": -155.085052490234,
+    "display_address": "330 Kamehameha Ave, Hilo, HI 96720"
   },
   {
-    "id": "4hFoOx07JqGNtAvKH2TkWQ",
-    "name": "Tamari Japanese Lunch Shop",
-    "categories": "Japanese, Sushi Bars",
-    "latitude": 19.7238580137491,
-    "longitude": -155.085955560207,
-    "display_address": [
-      "22 Furneaux Ln",
-      "Hilo, HI 96720"
-    ]
+    "id": "lxqYUz7VFL5s2Pc-xybwxg",
+    "name": "Kaleo's Bar and Grill",
+    "categories": "Hawaiian, Bars, Breakfast & Brunch",
+    "latitude": 19.560196947365977,
+    "longitude": -154.99309960441687,
+    "display_address": "16-110 Orchid Land Dr, Keaau, HI 96749"
   },
   {
-    "id": "cjDbxDEPed0lxh-FjcTJ-Q",
-    "name": "Kuhio Grille",
-    "categories": "Hawaiian, Sandwiches, Burgers",
-    "latitude": 19.720328,
-    "longitude": -155.079563,
-    "display_address": [
-      "80 Pauahi St",
-      "Hilo, HI 96720"
-    ]
+    "id": "MeYsBjSc4CTMasdkxMc_4w",
+    "name": "Bangkok Villa Hilo",
+    "categories": "Thai, Noodles, Soup",
+    "latitude": 19.7253971,
+    "longitude": -155.0871003,
+    "display_address": "59 Kalakaua St, Hilo, HI 96720"
   },
   {
-    "id": "E1OGkFW23SAhaEPgfoE3pQ",
-    "name": "Ohana Foods",
-    "categories": "Delis, Grocery, Convenience Stores",
-    "latitude": 19.683428,
-    "longitude": -155.082296,
-    "display_address": [
-      "511 W Kawailani St",
-      "Hilo, HI 96720"
-    ]
+    "id": "ISlWwFghK-OE_k-KFq_2bw",
+    "name": "Rainbow Falls",
+    "categories": "Parks",
+    "latitude": 19.71915380173882,
+    "longitude": -155.10860837045746,
+    "display_address": "967 Waianuenue Ave, Hilo, HI 96720"
   },
   {
-    "id": "wVQOlBtlz1IW8-s0sEIOsg",
-    "name": "Peppercorn Spice House",
-    "categories": "Noodles, Asian Fusion",
-    "latitude": 19.621399,
-    "longitude": -155.039419,
-    "display_address": [
-      "16-569 Old Volcano Rd",
-      "Keaau, HI 96749"
-    ]
+    "id": "lPd1Q9gGWIGDuB7C8U14dg",
+    "name": "Dolphin Bay Hotel",
+    "categories": "Hotels",
+    "latitude": 19.7291030883789,
+    "longitude": -155.090270996094,
+    "display_address": "333 Iliahi St, Hilo, HI 96720"
   },
   {
-    "id": "4n4CO3lirWrMRs8rwXGEeA",
-    "name": "Asami's Kitchen",
-    "categories": "Sushi Bars, Fast Food",
-    "latitude": 19.720944,
-    "longitude": -155.084113,
-    "display_address": [
-      "308 Kilauea Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "UuYOiTi6tfvH7NT78Ox5xw",
-    "name": "Hale Hookah",
-    "categories": "Hookah Bars, Head Shops",
-    "latitude": 19.7262907,
-    "longitude": -155.0876187,
-    "display_address": [
-      "60 Waianuenue Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "BAF2AA2cTWSU23R-VkMIZQ",
+    "name": "Miyo's Restaurant",
+    "categories": "Japanese, Seafood",
+    "latitude": 19.713009,
+    "longitude": -155.0687349,
+    "display_address": "564 Hinano St, Hilo, HI 96720"
   },
   {
     "id": "VP9N1fbAmVz7GX1BkoU_Eg",
@@ -1208,21 +613,191 @@
     "categories": "Vietnamese",
     "latitude": 19.7227748,
     "longitude": -155.0865827,
-    "display_address": [
-      "80 Kilauea Ave",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "80 Kilauea Ave, Hilo, HI 96720"
   },
   {
-    "id": "5HFkmsvgjlPPnL-k-4An2g",
-    "name": "So Juicy Hawaii - Hilo",
-    "categories": "Juice Bars & Smoothies, Hawaiian, Desserts",
-    "latitude": 19.72609,
-    "longitude": -155.0868,
-    "display_address": [
-      "116 Kamehameha Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "O59G5OCQ5y3BbzpTPvM7Gg",
+    "name": "Izakaya Miyo",
+    "categories": "Izakaya, Cocktail Bars, Tapas Bars",
+    "latitude": 19.71304,
+    "longitude": -155.06892,
+    "display_address": "564 Hinano St, Hilo, HI 96720"
+  },
+  {
+    "id": "P5uuvNqgGjLRCBa1UQXQXA",
+    "name": "Loved by the Sun",
+    "categories": "Juice Bars & Smoothies, Vegetarian, Vegan",
+    "latitude": 19.7240496317265,
+    "longitude": -155.085634599574,
+    "display_address": "12 Furneaux Ln, Hilo, HI 96720"
+  },
+  {
+    "id": "HGWnSu51KrTpMFh7IEZkww",
+    "name": "KTA Super Stores - Puainako",
+    "categories": "Grocery",
+    "latitude": 19.693748,
+    "longitude": -155.0666781,
+    "display_address": "50 E Puainako St, Hilo, HI 96720"
+  },
+  {
+    "id": "wVQOlBtlz1IW8-s0sEIOsg",
+    "name": "Peppercorn Spice House",
+    "categories": "Noodles, Asian Fusion",
+    "latitude": 19.621399,
+    "longitude": -155.039419,
+    "display_address": "16-569 Old Volcano Rd, Keaau, HI 96749"
+  },
+  {
+    "id": "J4WViWLfWCb_VDMULc4t0A",
+    "name": "WSW Steakhouse",
+    "categories": "Steakhouses, Whiskey Bars, Venues & Event Spaces",
+    "latitude": 19.728168,
+    "longitude": -155.066693,
+    "display_address": "71 Banyan Dr, Hilo, HI 96720"
+  },
+  {
+    "id": "rOm1WE4UTP8qlni1R5VHIw",
+    "name": "Hilo Lunch Shop",
+    "categories": "Japanese, Delis, Hawaiian",
+    "latitude": 19.7201,
+    "longitude": -155.06652,
+    "display_address": "421 Kalanikoa St, Hilo, HI 96720"
+  },
+  {
+    "id": "lnOxop2IS-P6fbVa2UdRSQ",
+    "name": "Kitchen Umeko",
+    "categories": "Sushi Bars, Japanese",
+    "latitude": 19.70705,
+    "longitude": -155.07554,
+    "display_address": "14 W Lanikaula St, Ste 104, Hilo, HI 96720"
+  },
+  {
+    "id": "UOGzckX_5HvLfOYKjcrvQw",
+    "name": "Big Island Birria Boss",
+    "categories": "Food Stands, Mexican",
+    "latitude": 19.87026,
+    "longitude": -155.113983,
+    "display_address": "28 1692 Old Mamalahoa Hwy 3, Honomu, HI 96728"
+  },
+  {
+    "id": "vFOEU8j3XfecprJG4YGWIQ",
+    "name": "Saucy Dogs",
+    "categories": "Hot Dogs",
+    "latitude": 19.7240907147264,
+    "longitude": -155.08564987254,
+    "display_address": "14 Furneaux Ln, Hilo, HI 96720"
+  },
+  {
+    "id": "xONN8qTO6mZ3mpoyTsoEuA",
+    "name": "Nector Cafe",
+    "categories": "Cafes, Coffee & Tea, Ice Cream & Frozen Yogurt",
+    "latitude": 19.724783,
+    "longitude": -155.086181,
+    "display_address": "216 Kamehameha Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "V2WIWMY4nFMehVS6yN4STQ",
+    "name": "Hula Hulas",
+    "categories": "Breakfast & Brunch, New American, Burgers",
+    "latitude": 19.729616,
+    "longitude": -155.064893,
+    "display_address": "93 Banyan Dr, Hilo, HI 96720"
+  },
+  {
+    "id": "iOaMSB9Y4hvK-xXerV3KGQ",
+    "name": "Ma'ona Lunch Counter",
+    "categories": "Burgers, Hawaiian",
+    "latitude": 19.6378098609769,
+    "longitude": -155.044449860711,
+    "display_address": "16-203 Wiliama Pl, Keaau, HI 96749"
+  },
+  {
+    "id": "g2lsKtBuGcvDt78TUzRtdA",
+    "name": "Cham Cham Korean BBQ",
+    "categories": "Korean",
+    "latitude": 19.71672,
+    "longitude": -155.06544,
+    "display_address": "421 Kalanikoa St, Ste 102, Hilo, HI 96720"
+  },
+  {
+    "id": "ct2aY3Hkj5bwK5m-rhXttQ",
+    "name": "Coconut Grill",
+    "categories": "American, Salad, Burgers",
+    "latitude": 19.723620934733695,
+    "longitude": -155.06265429250664,
+    "display_address": "136 Banyan Way, Hilo Seaside Hotel, Hilo, HI 96720"
+  },
+  {
+    "id": "DT0F-ofsVUfA4pWt8JVTAQ",
+    "name": "Tenkatori Hilo",
+    "categories": "Japanese, Chicken Wings",
+    "latitude": 19.706804301034374,
+    "longitude": -155.066761,
+    "display_address": "811 Laukapu St, Hilo, HI 96720"
+  },
+  {
+    "id": "fg-VrIbi3uaYMOaM43I4sg",
+    "name": "Island Naturals Market & Deli",
+    "categories": "Grocery, Health Markets, Delis",
+    "latitude": 19.710908711970063,
+    "longitude": -155.07591361372147,
+    "display_address": "1221 Kilauea Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "Gdw9ouYsToWRFl5X4-_Hig",
+    "name": "The Inn At Kulaniapia Falls",
+    "categories": "Bed & Breakfast, Hotels",
+    "latitude": 19.7238475472603,
+    "longitude": -155.134463310242,
+    "display_address": "100 Kulaniapia Dr, Hilo, HI 96720"
+  },
+  {
+    "id": "CowXyOudqFhWxR3Bm9-Flw",
+    "name": "Kaumana Caves",
+    "categories": "Parks",
+    "latitude": 19.6868513668558,
+    "longitude": -155.130405187617,
+    "display_address": "Hilo, HI 96720"
+  },
+  {
+    "id": "UuYOiTi6tfvH7NT78Ox5xw",
+    "name": "Hale Hookah",
+    "categories": "Hookah Bars, Head Shops",
+    "latitude": 19.7262907,
+    "longitude": -155.0876187,
+    "display_address": "60 Waianuenue Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "tgdg4b-HGulOToi7zCtJNA",
+    "name": "Short n Sweet Bakery & Cafe",
+    "categories": "Bakeries, Desserts, Cafes",
+    "latitude": 19.71024574328779,
+    "longitude": -155.0759721,
+    "display_address": "1263 Kilauea Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "XdwYUAlxR9iSuTc9hCuMkQ",
+    "name": "Carlsmith Beach Park",
+    "categories": "Parks",
+    "latitude": 19.7330791088927,
+    "longitude": -155.027970678621,
+    "display_address": "1827 Kalanianaole Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "4iiV_vl_T4yPEGTGccOIig",
+    "name": "Haneul Cafe",
+    "categories": "Korean, Cafes",
+    "latitude": 19.71696008025059,
+    "longitude": -155.0655095,
+    "display_address": "417 Kalanikoa St, Hilo, HI 96720"
+  },
+  {
+    "id": "r0RsyvT7cigz5RMOYpaoeA",
+    "name": "Onekahakaha Beach Park",
+    "categories": "Beaches, Parks",
+    "latitude": 19.738193,
+    "longitude": -155.039601,
+    "display_address": "74 Onekahakaha Rd, Hilo, HI 96720"
   },
   {
     "id": "2zENwe1b6X1oTAUmvP0wuw",
@@ -1230,33 +805,15 @@
     "categories": "Mexican, Salad, Soup",
     "latitude": 19.50447831040302,
     "longitude": -154.95423068132354,
-    "display_address": [
-      "15-1448 Kahakai Blvd",
-      "P\u0101hoa, HI 96778"
-    ]
+    "display_address": "15-1448 Kahakai Blvd, P\u0101hoa, HI 96778"
   },
   {
-    "id": "gdQhxGAG_2qYLGg7eiTZyQ",
-    "name": "The Locavore Store",
-    "categories": "Grocery, Fruits & Veggies",
-    "latitude": 19.72703904453347,
-    "longitude": -155.08711549644488,
-    "display_address": [
-      "333 Kilauea Ave",
-      "Ste 103",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "6yg1VGlvnkoIOttIkFu2xQ",
-    "name": "Liquid Life",
-    "categories": "Vegan, Vegetarian, Juice Bars & Smoothies",
-    "latitude": 19.712759,
-    "longitude": -155.069726,
-    "display_address": [
-      "697 Manono St",
-      "Hilo, HI 96720"
-    ]
+    "id": "nGh_8FzSq8PHtFFXQ8ydSA",
+    "name": "Le Yellow Sub",
+    "categories": "Vietnamese, Food Trucks",
+    "latitude": 19.72450621464298,
+    "longitude": -155.0608779117465,
+    "display_address": "213 Kalanianaole Ave, Hilo, HI 96720"
   },
   {
     "id": "45VdMaN9PRfmskCGxu0Vhg",
@@ -1264,55 +821,39 @@
     "categories": "Hawaiian, New American, Sports Bars",
     "latitude": 19.7266042,
     "longitude": -155.0868397,
-    "display_address": [
-      "11 Waianuenue Ave",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "11 Waianuenue Ave, Hilo, HI 96720"
   },
   {
-    "id": "BF772tnQ0QsQb6mdlwycyw",
-    "name": "H & K Lunch Shop",
-    "categories": "Korean",
-    "latitude": 19.7070579528809,
-    "longitude": -155.075546264648,
-    "display_address": [
-      "14 W Lanikaula St",
-      "Ste 102",
-      "Hilo, HI 96720"
-    ]
+    "id": "iqqxV0Lr-UUfUqkUpTX2aw",
+    "name": "King\u2019s Vietnamese Cuisine",
+    "categories": "Vietnamese, Food Trucks",
+    "latitude": 19.710823072181373,
+    "longitude": -155.06984976271545,
+    "display_address": "839 Manono St, Hilo, HI 96720"
   },
   {
-    "id": "bFJyxodr6cRuJVBTDhwT1w",
-    "name": "Grand Naniloa Hotel Hilo - a DoubleTree by Hilton",
-    "categories": "Hotels",
-    "latitude": 19.72959449435792,
-    "longitude": -155.06489297747407,
-    "display_address": [
-      "93 Banyan Dr",
-      "Hilo, HI 96720"
-    ]
+    "id": "E1OGkFW23SAhaEPgfoE3pQ",
+    "name": "Ohana Foods",
+    "categories": "Delis, Grocery, Convenience Stores",
+    "latitude": 19.683428,
+    "longitude": -155.082296,
+    "display_address": "511 W Kawailani St, Hilo, HI 96720"
   },
   {
-    "id": "1-aWqoAWFmu3Bs1YtA7AXg",
-    "name": "Pakalana Inn",
-    "categories": "Hotels",
-    "latitude": 19.7225984,
-    "longitude": -155.084296,
-    "display_address": [
-      "132 Punahoa St",
-      "Hilo, HI 96720"
-    ]
+    "id": "cjDbxDEPed0lxh-FjcTJ-Q",
+    "name": "Kuhio Grille",
+    "categories": "Hawaiian, Sandwiches, Burgers",
+    "latitude": 19.720328,
+    "longitude": -155.079563,
+    "display_address": "80 Pauahi St, Hilo, HI 96720"
   },
   {
-    "id": "xDNQXoLs5TPk2DMxqMYM3A",
-    "name": "K's Drive-In",
-    "categories": "American, Hawaiian, Fast Food",
-    "latitude": 19.7168253816891,
-    "longitude": -155.083082346933,
-    "display_address": [
-      "194 Hualalai St",
-      "Hilo, HI 96720"
-    ]
+    "id": "gdQhxGAG_2qYLGg7eiTZyQ",
+    "name": "The Locavore Store",
+    "categories": "Grocery, Fruits & Veggies",
+    "latitude": 19.72703904453347,
+    "longitude": -155.08711549644488,
+    "display_address": "333 Kilauea Ave, Ste 103, Hilo, HI 96720"
   },
   {
     "id": "LObRF_NK4-XtTF6oZsK1IQ",
@@ -1320,122 +861,39 @@
     "categories": "Sushi Bars, Japanese",
     "latitude": 19.72082430989023,
     "longitude": -155.06454144432738,
-    "display_address": [
-      "200 Kanoelehua Ave",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "200 Kanoelehua Ave, Hilo, HI 96720"
   },
   {
-    "id": "effKkJ-HgYQXufml9BURAg",
-    "name": "Hilo Yacht Club",
-    "categories": "Swimming Pools, Seafood, Tennis",
-    "latitude": 19.736476832529,
-    "longitude": -155.03362345317,
-    "display_address": [
-      "77 Laehala St",
-      "Hilo, HI 96720"
-    ]
+    "id": "4hFoOx07JqGNtAvKH2TkWQ",
+    "name": "Tamari Japanese Lunch Shop",
+    "categories": "Japanese, Sushi Bars",
+    "latitude": 19.7238580137491,
+    "longitude": -155.085955560207,
+    "display_address": "22 Furneaux Ln, Hilo, HI 96720"
   },
   {
-    "id": "Zr_ZaSa8DMMQ_AsovtaHyA",
-    "name": "Arirang Korean Kitchen",
+    "id": "BF772tnQ0QsQb6mdlwycyw",
+    "name": "H & K Lunch Shop",
     "categories": "Korean",
-    "latitude": 19.706894212925533,
-    "longitude": -155.06662253290415,
-    "display_address": [
-      "811 Laukapu St",
-      "Hilo, HI 96720"
-    ]
+    "latitude": 19.7070579528809,
+    "longitude": -155.075546264648,
+    "display_address": "14 W Lanikaula St, Ste 102, Hilo, HI 96720"
   },
   {
-    "id": "an0kMzAbqPxoBtAuvgwqiA",
-    "name": "Nori's Saimin & Snacks",
-    "categories": "Japanese, Hawaiian, Asian Fusion",
-    "latitude": 19.71774,
-    "longitude": -155.08446,
-    "display_address": [
-      "688 Kinoole St",
-      "Ste 124",
-      "Hilo, HI 96720"
-    ]
+    "id": "ocAwpQeosV_yUGZdio4F1g",
+    "name": "Low International Food",
+    "categories": "Bakeries, Hawaiian",
+    "latitude": 19.72152,
+    "longitude": -155.08519,
+    "display_address": "222 Kilauea Ave, Hilo, HI 96720"
   },
   {
-    "id": "o-37aZwXirMYnnS3Q2FD7A",
-    "name": "Wai Oli iCafe & Lounge",
-    "categories": "Bars, New American",
-    "latitude": 19.7280488328395,
-    "longitude": -155.066871643066,
-    "display_address": [
-      "71 Banyan Dr",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "vJgZCs94xqyz8sjriRgBJA",
-    "name": "Restaurant Osaka",
-    "categories": "Japanese, Korean",
-    "latitude": 19.7074432373047,
-    "longitude": -155.064529418945,
-    "display_address": [
-      "762 Kanoelehua Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "xsSuVORP7rJVuNHfXvo7Ig",
-    "name": "Nim\u2019s Chiang Mai Thai Cuisine",
-    "categories": "Thai",
-    "latitude": 19.721543,
-    "longitude": -155.064739,
-    "display_address": [
-      "88 Kanoelehua Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "Lsqb_PYYujCvD9YeTVD7Zw",
-    "name": "Kalo Bombs Hawaii",
-    "categories": "Hawaiian",
-    "latitude": 19.49462,
-    "longitude": -154.94828,
-    "display_address": [
-      "15-2874 Pahoa Village Rd",
-      "P\u0101hoa, HI 96778"
-    ]
-  },
-  {
-    "id": "ewXFQyQxlOsAtJ0jVXUTTg",
-    "name": "Hilo Hawaiian Hotel",
-    "categories": "Hotels, Venues & Event Spaces",
-    "latitude": 19.7280864715576,
-    "longitude": -155.06672668457,
-    "display_address": [
-      "71 Banyan Dr",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "SETOIi9X7CslDpKJAQI_Bw",
-    "name": "IHOP",
-    "categories": "Breakfast & Brunch, American, Burgers",
-    "latitude": 19.6954,
-    "longitude": -155.06387,
-    "display_address": [
-      "111 E Puainako St",
-      "Prince Kuhio Plaza",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "UcLiXn5trc4WsT6v9juj0w",
-    "name": "Orchidland General Store",
-    "categories": "Hardware Stores, Delis",
-    "latitude": 19.5524427,
-    "longitude": -155.0048389,
-    "display_address": [
-      "16-125 Orchidland Dr",
-      "Keaau, HI 96749"
-    ]
+    "id": "u59x-vfjEJ2NCANL7JKhSw",
+    "name": "Countryside Cafe",
+    "categories": "Breakfast & Brunch, Caterers, Dinner Theater",
+    "latitude": 19.621841761624392,
+    "longitude": -155.0409898,
+    "display_address": "16-586 Old Volcano Rd, Keaau, HI 96749"
   },
   {
     "id": "coESEKkKDGDTAUIvk3cvqQ",
@@ -1443,97 +901,79 @@
     "categories": "Lebanese, Food Trucks, Sandwiches",
     "latitude": 19.7246596,
     "longitude": -155.0902291,
-    "display_address": [
-      "272 Waianuenue Ave",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "272 Waianuenue Ave, Hilo, HI 96720"
   },
   {
-    "id": "PkvfLN8WvHT84TrKWLQPQg",
-    "name": "Kozmic Cones",
-    "categories": "Ice Cream & Frozen Yogurt, Fast Food, Burgers",
-    "latitude": 19.72389,
-    "longitude": -155.09058,
-    "display_address": [
-      "317 Waianuenue Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "5HFkmsvgjlPPnL-k-4An2g",
+    "name": "So Juicy Hawaii - Hilo",
+    "categories": "Juice Bars & Smoothies, Hawaiian, Desserts",
+    "latitude": 19.72609,
+    "longitude": -155.0868,
+    "display_address": "116 Kamehameha Ave, Hilo, HI 96720"
   },
   {
-    "id": "_QKgg3iOEuS6jwEOeXt2GA",
-    "name": "Hale Kai Hawaii Bed & Breakfast",
-    "categories": "Hotels, Bed & Breakfast",
-    "latitude": 19.7575378417969,
-    "longitude": -155.090621948242,
-    "display_address": [
-      "111 Honolii Pl",
-      "Hilo, HI 96720"
-    ]
+    "id": "bFJyxodr6cRuJVBTDhwT1w",
+    "name": "Grand Naniloa Hotel Hilo - a DoubleTree by Hilton",
+    "categories": "Hotels",
+    "latitude": 19.72959449435792,
+    "longitude": -155.06489297747407,
+    "display_address": "93 Banyan Dr, Hilo, HI 96720"
   },
   {
-    "id": "no3RbZFCD6xm4LJcp337MQ",
-    "name": "Lee's Chop Suey",
-    "categories": "Hawaiian",
-    "latitude": 19.70605,
-    "longitude": -155.07642,
-    "display_address": [
-      "53 W Lanikaula St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "5ncV75q76aaSh8CO2YkICA",
-    "name": "Lava Thai Food",
-    "categories": "Food Stands, Noodles, Thai",
-    "latitude": 19.615565780776446,
-    "longitude": -155.03719116624282,
-    "display_address": [
-      "Keaau, HI 96749"
-    ]
-  },
-  {
-    "id": "kv_OfQb3BQIYB0qxYhE7Sw",
-    "name": "Manas Aloha Farm",
-    "categories": "Food Stands, Fruits & Veggies",
-    "latitude": 19.8491816458642,
-    "longitude": -155.145892711642,
-    "display_address": [
-      "Aloaka Falls Rd",
-      "Pepeekeo, HI 96783"
-    ]
-  },
-  {
-    "id": "yuxAH1C9BGtXJgLhD6nzmg",
-    "name": "Daiichi Ramen",
-    "categories": "Ramen, Asian Fusion, Japanese Curry",
-    "latitude": 19.69553876412153,
-    "longitude": -155.06450436078072,
-    "display_address": [
-      "111 E Puainako St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "TG7niYnBeDdek2FRSm1Qwg",
-    "name": "Hilo Siam Thai Restaurant",
+    "id": "xsSuVORP7rJVuNHfXvo7Ig",
+    "name": "Nim\u2019s Chiang Mai Thai Cuisine",
     "categories": "Thai",
-    "latitude": 19.7230911,
-    "longitude": -155.0855408,
-    "display_address": [
-      "70 Mamo St",
-      "Hilo, HI 96720"
-    ]
+    "latitude": 19.721543,
+    "longitude": -155.064739,
+    "display_address": "88 Kanoelehua Ave, Hilo, HI 96720"
   },
   {
-    "id": "hk7sGoYlhJffjtrit92JOg",
-    "name": "Mr Cow",
-    "categories": "Korean, Hot Dogs",
-    "latitude": 19.70124,
-    "longitude": -155.0636,
-    "display_address": [
-      "315 Makaala St",
-      "Hilo, HI 96720"
-    ]
+    "id": "effKkJ-HgYQXufml9BURAg",
+    "name": "Hilo Yacht Club",
+    "categories": "Swimming Pools, Seafood, Tennis",
+    "latitude": 19.736476832529,
+    "longitude": -155.03362345317,
+    "display_address": "77 Laehala St, Hilo, HI 96720"
+  },
+  {
+    "id": "4n4CO3lirWrMRs8rwXGEeA",
+    "name": "Asami's Kitchen",
+    "categories": "Sushi Bars, Fast Food",
+    "latitude": 19.720944,
+    "longitude": -155.084113,
+    "display_address": "308 Kilauea Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "1-aWqoAWFmu3Bs1YtA7AXg",
+    "name": "Pakalana Inn",
+    "categories": "Hotels",
+    "latitude": 19.7225984,
+    "longitude": -155.084296,
+    "display_address": "132 Punahoa St, Hilo, HI 96720"
+  },
+  {
+    "id": "o-37aZwXirMYnnS3Q2FD7A",
+    "name": "Wai Oli iCafe & Lounge",
+    "categories": "Bars, New American",
+    "latitude": 19.7280488328395,
+    "longitude": -155.066871643066,
+    "display_address": "71 Banyan Dr, Hilo, HI 96720"
+  },
+  {
+    "id": "an0kMzAbqPxoBtAuvgwqiA",
+    "name": "Nori's Saimin & Snacks",
+    "categories": "Japanese, Hawaiian, Asian Fusion",
+    "latitude": 19.71774,
+    "longitude": -155.08446,
+    "display_address": "688 Kinoole St, Ste 124, Hilo, HI 96720"
+  },
+  {
+    "id": "SETOIi9X7CslDpKJAQI_Bw",
+    "name": "IHOP",
+    "categories": "Breakfast & Brunch, American, Burgers",
+    "latitude": 19.6954,
+    "longitude": -155.06387,
+    "display_address": "111 E Puainako St, Prince Kuhio Plaza, Hilo, HI 96720"
   },
   {
     "id": "BBxOQ4pkgiAYubA_UKXFZg",
@@ -1541,44 +981,55 @@
     "categories": "Mexican",
     "latitude": 19.723556,
     "longitude": -155.084948,
-    "display_address": [
-      "336 Kamehameha Ave",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "336 Kamehameha Ave, Hilo, HI 96720"
   },
   {
-    "id": "MMNxLPMUSaSvslBhFzjxfA",
-    "name": "Lions Den",
-    "categories": "Diners, Bakeries, Farmers Market",
-    "latitude": 19.51045,
-    "longitude": -154.95995,
-    "display_address": [
-      "15-2579 Keaau-Pahoa Rd",
-      "P\u0101hoa, HI 96778"
-    ]
+    "id": "Zr_ZaSa8DMMQ_AsovtaHyA",
+    "name": "Arirang Korean Kitchen",
+    "categories": "Korean",
+    "latitude": 19.706894212925533,
+    "longitude": -155.06662253290415,
+    "display_address": "811 Laukapu St, Hilo, HI 96720"
   },
   {
-    "id": "ual2csnAt02ciuTJ_iOmEQ",
-    "name": "Restaurant Miwa",
-    "categories": "Japanese, Sushi Bars",
-    "latitude": 19.7105421047085,
-    "longitude": -155.075502215939,
-    "display_address": [
-      "1261 Kilauea Ave",
-      "Ste 230",
-      "Hilo, HI 96720"
-    ]
+    "id": "xDNQXoLs5TPk2DMxqMYM3A",
+    "name": "K's Drive-In",
+    "categories": "American, Hawaiian, Fast Food",
+    "latitude": 19.7168253816891,
+    "longitude": -155.083082346933,
+    "display_address": "194 Hualalai St, Hilo, HI 96720"
   },
   {
-    "id": "srChYntN8tYPH5rc4uteIw",
-    "name": "Aloydee's Thai Food",
-    "categories": "Thai",
-    "latitude": 19.723577,
-    "longitude": -155.085052,
-    "display_address": [
-      "330 Kamehameha Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "vJgZCs94xqyz8sjriRgBJA",
+    "name": "Restaurant Osaka",
+    "categories": "Japanese, Korean",
+    "latitude": 19.7074432373047,
+    "longitude": -155.064529418945,
+    "display_address": "762 Kanoelehua Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "yuxAH1C9BGtXJgLhD6nzmg",
+    "name": "Daiichi Ramen",
+    "categories": "Ramen, Asian Fusion, Japanese Curry",
+    "latitude": 19.69553876412153,
+    "longitude": -155.06450436078072,
+    "display_address": "111 E Puainako St, Hilo, HI 96720"
+  },
+  {
+    "id": "6yg1VGlvnkoIOttIkFu2xQ",
+    "name": "Liquid Life",
+    "categories": "Vegan, Vegetarian, Juice Bars & Smoothies",
+    "latitude": 19.712759,
+    "longitude": -155.069726,
+    "display_address": "697 Manono St, Hilo, HI 96720"
+  },
+  {
+    "id": "Lsqb_PYYujCvD9YeTVD7Zw",
+    "name": "Kalo Bombs Hawaii",
+    "categories": "Hawaiian",
+    "latitude": 19.49462,
+    "longitude": -154.94828,
+    "display_address": "15-2874 Pahoa Village Rd, P\u0101hoa, HI 96778"
   },
   {
     "id": "SeetMaAJ68LFvF-q98ijqg",
@@ -1586,156 +1037,23 @@
     "categories": "Vietnamese, Chinese",
     "latitude": 19.7245502,
     "longitude": -155.0896149,
-    "display_address": [
-      "235 Waianuenue Ave",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "235 Waianuenue Ave, Hilo, HI 96720"
   },
   {
-    "id": "DEzDQfbUx5W8Mr-sufkGaQ",
-    "name": "Hilo Rice Noodle Soup Restaurant",
-    "categories": "Vietnamese, Chinese, Noodles",
-    "latitude": 19.6900343,
-    "longitude": -155.0696407,
-    "display_address": [
-      "1990 Kinoole St",
-      "Hilo, HI 96720"
-    ]
+    "id": "ewXFQyQxlOsAtJ0jVXUTTg",
+    "name": "Hilo Hawaiian Hotel",
+    "categories": "Hotels, Venues & Event Spaces",
+    "latitude": 19.7280864715576,
+    "longitude": -155.06672668457,
+    "display_address": "71 Banyan Dr, Hilo, HI 96720"
   },
   {
-    "id": "4w-86z58wrv_HR_VM5rnXQ",
-    "name": "Kandi's Drive Inn",
-    "categories": "Japanese, Hawaiian",
-    "latitude": 19.6847426,
-    "longitude": -155.0693995,
-    "display_address": [
-      "56 W Kawailani St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "ojM5HEnrHG4O6W_SpvbUAQ",
-    "name": "Kum Yo's Okazuya",
-    "categories": "Korean, Hawaiian",
-    "latitude": 19.7060317993164,
-    "longitude": -155.065475463867,
-    "display_address": [
-      "399 E Kawili St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "ODNKOqBG3nRkhKgrUpyUqQ",
-    "name": "Coconut Island",
-    "categories": "Parks",
-    "latitude": 19.729465,
-    "longitude": -155.068565,
-    "display_address": [
-      "77 Keliipio Pl",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "jGW4vroPGj3ZvQgUL9nS1g",
-    "name": "SCP Hilo Hotel",
-    "categories": "Hotels",
-    "latitude": 19.72356,
-    "longitude": -155.06264,
-    "display_address": [
-      "126 Banyan Way",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "Nz26Gg1GZYrkmXfawAOqiA",
-    "name": "Black Rock Cafe",
-    "categories": "Cafes",
-    "latitude": 19.49493,
-    "longitude": -154.948651,
-    "display_address": [
-      "15-2872 Pahoa Village Rd",
-      "Pahoa, HI 96778"
-    ]
-  },
-  {
-    "id": "rRJOVcBdIIao5kybYtaeGg",
-    "name": "Happy Valley Seafood Restaurant",
-    "categories": "Chinese",
-    "latitude": 19.710168838501,
-    "longitude": -155.07600402832,
-    "display_address": [
-      "1263 Kilauea Ave",
-      "Ste 320",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "4TWT2ZnlkVYRaIxNrb_dfA",
-    "name": "Lava Tree Tropic Inn",
-    "categories": "Hotels",
-    "latitude": 19.5120973,
-    "longitude": -154.9026895,
-    "display_address": [
-      "14-3555 Puna Rd",
-      "Pahoa, HI 96778"
-    ]
-  },
-  {
-    "id": "kBFNGd3GihBNORO3-ZG7Ig",
-    "name": "Sum Leung Chinese Kitchen",
-    "categories": "Chinese",
-    "latitude": 19.693594379666575,
-    "longitude": -155.06675369101822,
-    "display_address": [
-      "50 E Puainako St",
-      "Ste 106",
-      "Kta Puainako Shopping Ctr",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "RgDUO5xFi7wMrK3Y1n2TVQ",
-    "name": "Island Naturals Market",
-    "categories": "Grocery",
-    "latitude": 19.4947571164229,
-    "longitude": -154.946436099708,
-    "display_address": [
-      "15-1850 Akeakamai Lp",
-      "Pahoa, HI 96778"
-    ]
-  },
-  {
-    "id": "EKsXsI9eFdr_NvG-iyGunQ",
-    "name": "Ocean Front Kitchen",
-    "categories": "Chinese",
-    "latitude": 19.726839,
-    "longitude": -155.056191,
-    "display_address": [
-      "555 Kalanianaole Ave",
-      "Ste A",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "_TurvdX1s0A0Nlbslr62Bg",
-    "name": "Duck Fat Food Truck",
-    "categories": "Food Trucks, American, Sandwiches",
-    "latitude": 19.673052809354292,
-    "longitude": -155.2227874111058,
-    "display_address": [
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "fgUyDoDEQQHlL8BIYP5tKQ",
-    "name": "Si Si\u2019s Tacos",
-    "categories": "Tacos, Food Stands",
-    "latitude": 19.56085761879172,
-    "longitude": -154.9930356336244,
-    "display_address": [
-      "16-1664 Keaau-Pahoa Rd",
-      "Keaau, HI 96749"
-    ]
+    "id": "UcLiXn5trc4WsT6v9juj0w",
+    "name": "Orchidland General Store",
+    "categories": "Hardware Stores, Delis",
+    "latitude": 19.5524427,
+    "longitude": -155.0048389,
+    "display_address": "16-125 Orchidland Dr, Keaau, HI 96749"
   },
   {
     "id": "lAHP6j_Ex_LTwB_7k0wiAQ",
@@ -1743,21 +1061,23 @@
     "categories": "Pizza",
     "latitude": 19.4939888827912,
     "longitude": -154.945601427,
-    "display_address": [
-      "15-2937 Pahoa Village Rd",
-      "Pahoa, HI 96778"
-    ]
+    "display_address": "15-2937 Pahoa Village Rd, Pahoa, HI 96778"
   },
   {
-    "id": "oeA-m1gCny5on-R_DQoBhg",
-    "name": "Luquins 454",
-    "categories": "Mexican",
-    "latitude": 19.716009,
-    "longitude": -155.070666,
-    "display_address": [
-      "454 Manono St",
-      "Hilo, HI 96720"
-    ]
+    "id": "rRJOVcBdIIao5kybYtaeGg",
+    "name": "Happy Valley Seafood Restaurant",
+    "categories": "Chinese",
+    "latitude": 19.710168838501,
+    "longitude": -155.07600402832,
+    "display_address": "1263 Kilauea Ave, Ste 320, Hilo, HI 96720"
+  },
+  {
+    "id": "kv_OfQb3BQIYB0qxYhE7Sw",
+    "name": "Manas Aloha Farm",
+    "categories": "Food Stands, Fruits & Veggies",
+    "latitude": 19.8491816458642,
+    "longitude": -155.145892711642,
+    "display_address": "Aloaka Falls Rd, Pepeekeo, HI 96783"
   },
   {
     "id": "dV9wpVUaZ7sqjYtfEOrCsw",
@@ -1765,44 +1085,95 @@
     "categories": "Vietnamese, Chinese, Thai",
     "latitude": 19.7232557404499,
     "longitude": -155.06210131175618,
-    "display_address": [
-      "96 Kalanianaole Ave",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "96 Kalanianaole Ave, Hilo, HI 96720"
   },
   {
-    "id": "fv1O-wKWYQhk5A1A69HFXQ",
-    "name": "Wailuku River State Park",
-    "categories": "Parks",
-    "latitude": 19.717954,
-    "longitude": -155.110627,
-    "display_address": [
-      "2-198 Rainbow Dr",
-      "Hilo, HI 96720"
-    ]
+    "id": "_QKgg3iOEuS6jwEOeXt2GA",
+    "name": "Hale Kai Hawaii Bed & Breakfast",
+    "categories": "Hotels, Bed & Breakfast",
+    "latitude": 19.7575378417969,
+    "longitude": -155.090621948242,
+    "display_address": "111 Honolii Pl, Hilo, HI 96720"
   },
   {
-    "id": "SiDYHRTBAFsMJtG9fjwsOw",
-    "name": "Pete's Belly Bustazs",
-    "categories": "Burgers, Fast Food, Breakfast & Brunch",
-    "latitude": 19.71708,
-    "longitude": -155.09819,
-    "display_address": [
-      "82 Puuhonu Pl",
-      "Ste 104",
-      "Hilo, HI 96720"
-    ]
+    "id": "hk7sGoYlhJffjtrit92JOg",
+    "name": "Mr Cow",
+    "categories": "Korean, Hot Dogs",
+    "latitude": 19.70124,
+    "longitude": -155.0636,
+    "display_address": "315 Makaala St, Hilo, HI 96720"
   },
   {
-    "id": "n3m3AsvOcduu0cgdkF9EMg",
-    "name": "Lotus Garden Hilo",
-    "categories": "Hotels",
-    "latitude": 19.7223653,
-    "longitude": -155.0859654,
-    "display_address": [
-      "140 Kilauea Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "PkvfLN8WvHT84TrKWLQPQg",
+    "name": "Kozmic Cones",
+    "categories": "Ice Cream & Frozen Yogurt, Fast Food, Burgers",
+    "latitude": 19.72389,
+    "longitude": -155.09058,
+    "display_address": "317 Waianuenue Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "TG7niYnBeDdek2FRSm1Qwg",
+    "name": "Hilo Siam Thai Restaurant",
+    "categories": "Thai",
+    "latitude": 19.7230911,
+    "longitude": -155.0855408,
+    "display_address": "70 Mamo St, Hilo, HI 96720"
+  },
+  {
+    "id": "DEzDQfbUx5W8Mr-sufkGaQ",
+    "name": "Hilo Rice Noodle Soup Restaurant",
+    "categories": "Vietnamese, Chinese, Noodles",
+    "latitude": 19.6900343,
+    "longitude": -155.0696407,
+    "display_address": "1990 Kinoole St, Hilo, HI 96720"
+  },
+  {
+    "id": "ual2csnAt02ciuTJ_iOmEQ",
+    "name": "Restaurant Miwa",
+    "categories": "Japanese, Sushi Bars",
+    "latitude": 19.7105421047085,
+    "longitude": -155.075502215939,
+    "display_address": "1261 Kilauea Ave, Ste 230, Hilo, HI 96720"
+  },
+  {
+    "id": "5ncV75q76aaSh8CO2YkICA",
+    "name": "Lava Thai Food",
+    "categories": "Food Stands, Noodles, Thai",
+    "latitude": 19.615565780776446,
+    "longitude": -155.03719116624282,
+    "display_address": "Keaau, HI 96749"
+  },
+  {
+    "id": "srChYntN8tYPH5rc4uteIw",
+    "name": "Aloydee's Thai Food",
+    "categories": "Thai",
+    "latitude": 19.723577,
+    "longitude": -155.085052,
+    "display_address": "330 Kamehameha Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "MMNxLPMUSaSvslBhFzjxfA",
+    "name": "Lions Den",
+    "categories": "Diners, Bakeries, Farmers Market",
+    "latitude": 19.51045,
+    "longitude": -154.95995,
+    "display_address": "15-2579 Keaau-Pahoa Rd, P\u0101hoa, HI 96778"
+  },
+  {
+    "id": "no3RbZFCD6xm4LJcp337MQ",
+    "name": "Lee's Chop Suey",
+    "categories": "Hawaiian",
+    "latitude": 19.70605,
+    "longitude": -155.07642,
+    "display_address": "53 W Lanikaula St, Hilo, HI 96720"
+  },
+  {
+    "id": "oeA-m1gCny5on-R_DQoBhg",
+    "name": "Luquins 454",
+    "categories": "Mexican",
+    "latitude": 19.716009,
+    "longitude": -155.070666,
+    "display_address": "454 Manono St, Hilo, HI 96720"
   },
   {
     "id": "a4pstxOtKHP39FSfmo4cLQ",
@@ -1810,125 +1181,55 @@
     "categories": "Thai",
     "latitude": 19.50331611958041,
     "longitude": -154.95596992188,
-    "display_address": [
-      "15-2714 Pahoa Village Rd",
-      "Ste P1",
-      "Pahoa, HI 96778"
-    ]
+    "display_address": "15-2714 Pahoa Village Rd, Ste P1, Pahoa, HI 96778"
   },
   {
-    "id": "_vekC9ZLpjB28W-_c8jJ1A",
-    "name": "Wild Ginger Inn",
-    "categories": "Hotels, Hostels",
-    "latitude": 19.72931,
-    "longitude": -155.08898,
-    "display_address": [
-      "100 Puueo St",
-      "Hilo, HI 96720"
-    ]
+    "id": "EKsXsI9eFdr_NvG-iyGunQ",
+    "name": "Ocean Front Kitchen",
+    "categories": "Chinese",
+    "latitude": 19.726839,
+    "longitude": -155.056191,
+    "display_address": "555 Kalanianaole Ave, Ste A, Hilo, HI 96720"
   },
   {
-    "id": "mrgbfzZUskQMn7dZai4uig",
-    "name": "Aaron's Cottage",
+    "id": "jGW4vroPGj3ZvQgUL9nS1g",
+    "name": "SCP Hilo Hotel",
     "categories": "Hotels",
-    "latitude": 19.7348119,
-    "longitude": -155.0417451,
-    "display_address": [
-      "54 Keokea Lp",
-      "Hilo, HI 96720"
-    ]
+    "latitude": 19.72356,
+    "longitude": -155.06264,
+    "display_address": "126 Banyan Way, Hilo, HI 96720"
   },
   {
-    "id": "wagf6QJP1EH7C1HOPoUpnw",
-    "name": "The Tiki Turtle Cafe",
-    "categories": "Cafes, Juice Bars & Smoothies, Sandwiches",
-    "latitude": 19.71713348438074,
-    "longitude": -155.1102034178477,
-    "display_address": [
-      "1099 Waianuenue Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "Nz26Gg1GZYrkmXfawAOqiA",
+    "name": "Black Rock Cafe",
+    "categories": "Cafes",
+    "latitude": 19.49493,
+    "longitude": -154.948651,
+    "display_address": "15-2872 Pahoa Village Rd, Pahoa, HI 96778"
   },
   {
-    "id": "P-NDrVmV6_Sic3nSjUXtCg",
-    "name": "Pahoa Pharmacy",
-    "categories": "Pharmacy",
-    "latitude": 19.5048837,
-    "longitude": -154.9577068,
-    "display_address": [
-      "15-2660 Pahoa Village Rd",
-      "Pahoa Market Place",
-      "Pahoa, HI 96778"
-    ]
+    "id": "RgDUO5xFi7wMrK3Y1n2TVQ",
+    "name": "Island Naturals Market",
+    "categories": "Grocery",
+    "latitude": 19.4947571164229,
+    "longitude": -154.946436099708,
+    "display_address": "15-1850 Akeakamai Lp, Pahoa, HI 96778"
   },
   {
-    "id": "k3OGFosPYLCYdMIJF6-ZhQ",
-    "name": "Manono Mini Mart",
-    "categories": "Sandwiches",
-    "latitude": 19.7160148620605,
-    "longitude": -155.070449829102,
-    "display_address": [
-      "454 Manono St",
-      "Hilo, HI 96720"
-    ]
+    "id": "4TWT2ZnlkVYRaIxNrb_dfA",
+    "name": "Lava Tree Tropic Inn",
+    "categories": "Hotels",
+    "latitude": 19.5120973,
+    "longitude": -154.9026895,
+    "display_address": "14-3555 Puna Rd, Pahoa, HI 96778"
   },
   {
-    "id": "1c4BSLOqXF6p5ADLpDVCXg",
-    "name": "Hiro's Place",
-    "categories": "Hawaiian, Japanese, Filipino",
-    "latitude": 19.692655,
-    "longitude": -155.066482,
-    "display_address": [
-      "50 E Puainako St",
-      "Ste 108",
-      "KTA Super Stores - Puainako",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "1IWvYc2Rgjq52O3XzkTSVg",
-    "name": "Pe'epe'e Falls & Boiling Pots",
+    "id": "ODNKOqBG3nRkhKgrUpyUqQ",
+    "name": "Coconut Island",
     "categories": "Parks",
-    "latitude": 19.713306,
-    "longitude": -155.1304287,
-    "display_address": [
-      "Peepee Falls St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "-VYVzak4ZJmaAU3gEN93og",
-    "name": "Coco Cantina - Hilo",
-    "categories": "Mexican, Bars",
-    "latitude": 19.7215621,
-    "longitude": -155.0856272,
-    "display_address": [
-      "194 Kilauea Ave",
-      "Ste 105",
-      "Hilo, HI 96778"
-    ]
-  },
-  {
-    "id": "klw1B9LP1w0Y4m1LtxA8Pg",
-    "name": "Lava Shack",
-    "categories": "Dive Bars",
-    "latitude": 19.4939796182027,
-    "longitude": -154.945870824158,
-    "display_address": [
-      "15-2929 Pahoa Village Rd",
-      "P\u0101hoa, HI 96778"
-    ]
-  },
-  {
-    "id": "XqAmW3qL7dTWj_-rB_rmAg",
-    "name": "Indo Grindz",
-    "categories": "Food Trucks, Indonesian",
-    "latitude": 19.7257995,
-    "longitude": -155.0875046,
-    "display_address": [
-      "69 Waianuenue Ave",
-      "Hilo, HI 96720"
-    ]
+    "latitude": 19.729465,
+    "longitude": -155.068565,
+    "display_address": "77 Keliipio Pl, Hilo, HI 96720"
   },
   {
     "id": "0m2_uCFFo2ayftcMWQoSCA",
@@ -1936,44 +1237,39 @@
     "categories": "Vietnamese, Chinese",
     "latitude": 19.701475,
     "longitude": -155.063192,
-    "display_address": [
-      "315 Makaala St",
-      "Ste 110",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "315 Makaala St, Ste 110, Hilo, HI 96720"
   },
   {
-    "id": "oTuJBwZrswvstL6vJRLv7A",
-    "name": "Floral Mart Hawaii",
-    "categories": "Florists, Gift Shops, Delis",
-    "latitude": 19.7171591,
-    "longitude": -155.0842695,
-    "display_address": [
-      "738 Kinoole St",
-      "Hilo, HI 96720"
-    ]
+    "id": "_vekC9ZLpjB28W-_c8jJ1A",
+    "name": "Wild Ginger Inn",
+    "categories": "Hotels, Hostels",
+    "latitude": 19.72931,
+    "longitude": -155.08898,
+    "display_address": "100 Puueo St, Hilo, HI 96720"
   },
   {
-    "id": "O56_L6ZIXDazAH4YjvHdZA",
-    "name": "Verna's Drive In",
-    "categories": "Hawaiian",
-    "latitude": 19.72281,
-    "longitude": -155.06388,
-    "display_address": [
-      "1765 Kamehameha Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "mrgbfzZUskQMn7dZai4uig",
+    "name": "Aaron's Cottage",
+    "categories": "Hotels",
+    "latitude": 19.7348119,
+    "longitude": -155.0417451,
+    "display_address": "54 Keokea Lp, Hilo, HI 96720"
   },
   {
-    "id": "pYXMbQKzUmy2BbifBfUudA",
-    "name": "Fairway Grill",
-    "categories": "Breakfast & Brunch, American",
-    "latitude": 19.674726732895746,
-    "longitude": -155.0767811042587,
-    "display_address": [
-      "340 Haihai St",
-      "Hilo, HI 96720"
-    ]
+    "id": "fgUyDoDEQQHlL8BIYP5tKQ",
+    "name": "Si Si\u2019s Tacos",
+    "categories": "Tacos, Food Stands",
+    "latitude": 19.56085761879172,
+    "longitude": -154.9930356336244,
+    "display_address": "16-1664 Keaau-Pahoa Rd, Keaau, HI 96749"
+  },
+  {
+    "id": "ojM5HEnrHG4O6W_SpvbUAQ",
+    "name": "Kum Yo's Okazuya",
+    "categories": "Korean, Hawaiian",
+    "latitude": 19.7060317993164,
+    "longitude": -155.065475463867,
+    "display_address": "399 E Kawili St, Hilo, HI 96720"
   },
   {
     "id": "NQR1g7tGKFlXbPDmr9qNhQ",
@@ -1981,134 +1277,55 @@
     "categories": "Hawaiian, Vietnamese",
     "latitude": 19.71703,
     "longitude": -155.08419,
-    "display_address": [
-      "750 Kinoole St Hilo Hi 96720",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "750 Kinoole St Hilo Hi 96720, Hilo, HI 96720"
   },
   {
-    "id": "W6ErNHPeEvkfEYEB8N-OVA",
-    "name": "Kurtistown Cafe",
-    "categories": "Hawaiian, Barbeque, Burgers",
-    "latitude": 19.592985,
-    "longitude": -155.057269,
-    "display_address": [
-      "17-353 Volcano Rd",
-      "Kurtistown, HI 96760"
-    ]
+    "id": "-VYVzak4ZJmaAU3gEN93og",
+    "name": "Coco Cantina - Hilo",
+    "categories": "Mexican, Bars",
+    "latitude": 19.7215621,
+    "longitude": -155.0856272,
+    "display_address": "194 Kilauea Ave, Ste 105, Hilo, HI 96778"
   },
   {
-    "id": "2z7pqa9HsLJhkbzYMDQmwA",
-    "name": "Texas Island BBQ",
-    "categories": "Food Trucks, Barbeque",
-    "latitude": 19.605505250597748,
-    "longitude": -154.96104172269045,
-    "display_address": [
-      "15-1594 4th Ave",
-      "Keaau, HI 96749"
-    ]
+    "id": "_TurvdX1s0A0Nlbslr62Bg",
+    "name": "Duck Fat Food Truck",
+    "categories": "Food Trucks, American, Sandwiches",
+    "latitude": 19.673052809354292,
+    "longitude": -155.2227874111058,
+    "display_address": "Hilo, HI 96720"
   },
   {
-    "id": "F3a5xJzZU3U0jYCnBCZ_fw",
-    "name": "Zippy's Hilo",
-    "categories": "Diners, Fast Food, Comfort Food",
-    "latitude": 19.69719,
-    "longitude": -155.06342,
-    "display_address": [
-      "111 E Puainako St",
-      "Hilo, HI 96720"
-    ]
+    "id": "4w-86z58wrv_HR_VM5rnXQ",
+    "name": "Kandi's Drive Inn",
+    "categories": "Japanese, Hawaiian",
+    "latitude": 19.6847426,
+    "longitude": -155.0693995,
+    "display_address": "56 W Kawailani St, Hilo, HI 96720"
   },
   {
-    "id": "jb7rFF7Vof9lXzQ4iXpH7w",
-    "name": "Poi Balls Hawaii",
-    "categories": "Food Trucks, Hawaiian",
-    "latitude": 19.713710236503204,
-    "longitude": -155.06991392220704,
-    "display_address": [
-      "619 Manono St",
-      "Parking Lot",
-      "Hilo, HI 96720"
-    ]
+    "id": "n3m3AsvOcduu0cgdkF9EMg",
+    "name": "Lotus Garden Hilo",
+    "categories": "Hotels",
+    "latitude": 19.7223653,
+    "longitude": -155.0859654,
+    "display_address": "140 Kilauea Ave, Hilo, HI 96720"
   },
   {
-    "id": "MEkVl3BJJvO_tNB6ufACVg",
-    "name": "Lava Tree State Park",
+    "id": "O56_L6ZIXDazAH4YjvHdZA",
+    "name": "Verna's Drive In",
+    "categories": "Hawaiian",
+    "latitude": 19.72281,
+    "longitude": -155.06388,
+    "display_address": "1765 Kamehameha Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "fv1O-wKWYQhk5A1A69HFXQ",
+    "name": "Wailuku River State Park",
     "categories": "Parks",
-    "latitude": 19.4835770219629,
-    "longitude": -154.904355723595,
-    "display_address": [
-      "Pahoa, HI 96778"
-    ]
-  },
-  {
-    "id": "c-IT7FiuMwVJMPl3lJ6LBg",
-    "name": "Frankie's Pizza",
-    "categories": "Chicken Wings, Pizza",
-    "latitude": 19.5514279314318,
-    "longitude": -155.10686673224,
-    "display_address": [
-      "18 1314 Hwy 11",
-      "Mountain View, HI 96771"
-    ]
-  },
-  {
-    "id": "KbYEi2rdCHNyBjHlmpI0-w",
-    "name": "Piilani Kitchen",
-    "categories": "Sandwiches, Salad, Mexican",
-    "latitude": 19.8307,
-    "longitude": -155.09721,
-    "display_address": [
-      "28-1099 Old Mamalahoa Hwy",
-      "Onomea Country Market",
-      "Pepeekeo, HI 96783"
-    ]
-  },
-  {
-    "id": "l3DjACCZrXpuivIdRYYksg",
-    "name": "Malama Market",
-    "categories": "Grocery",
-    "latitude": 19.502303453621195,
-    "longitude": -154.95658906769748,
-    "display_address": [
-      "15-2714 Pahoa Village Rd",
-      "Unit A",
-      "Pahoa, HI 96778"
-    ]
-  },
-  {
-    "id": "re3r0KLTUo9xl3QbrA3fRg",
-    "name": "Kimura General Store",
-    "categories": "Grocery",
-    "latitude": 19.782697,
-    "longitude": -155.0923717,
-    "display_address": [
-      "27-289 Mill Rd",
-      "Papaikou, HI 96781"
-    ]
-  },
-  {
-    "id": "3AYUNDmqiFamXYI-ARyv-w",
-    "name": "Kohala Coffee",
-    "categories": "Coffee & Tea, Bagels, Sandwiches",
-    "latitude": 19.503050006821052,
-    "longitude": -154.95700104963964,
-    "display_address": [
-      "15-2714 Pahoa Village Rd",
-      "Ste P2",
-      "P\u0101hoa, HI 96778"
-    ]
-  },
-  {
-    "id": "26hMH2kx92blcNySuIGwRw",
-    "name": "Mr K's Recycle & Redemption Center",
-    "categories": "Recycling Center",
-    "latitude": 19.7165074,
-    "longitude": -155.0833209,
-    "display_address": [
-      "815 Kinoole St",
-      "Hilo, HI 96720"
-    ]
+    "latitude": 19.717954,
+    "longitude": -155.110627,
+    "display_address": "2-198 Rainbow Dr, Hilo, HI 96720"
   },
   {
     "id": "zbKKMV0TWCQSCvg1bwkDng",
@@ -2116,111 +1333,39 @@
     "categories": "Music Venues, Lounges",
     "latitude": 19.4937887697271,
     "longitude": -154.945199012014,
-    "display_address": [
-      "15-2950 Pahoa Village Rd",
-      "P\u0101hoa, HI 96778"
-    ]
+    "display_address": "15-2950 Pahoa Village Rd, P\u0101hoa, HI 96778"
   },
   {
-    "id": "IZTktZa4jDu8RyHJXvtlLQ",
-    "name": "Kalapana Lava Flow",
-    "categories": "Parks",
-    "latitude": 19.356037,
-    "longitude": -154.979743,
-    "display_address": [
-      "End of Route 130 Volcano National Park",
-      "Kalapana, HI 96778"
-    ]
+    "id": "c-IT7FiuMwVJMPl3lJ6LBg",
+    "name": "Frankie's Pizza",
+    "categories": "Chicken Wings, Pizza",
+    "latitude": 19.5514279314318,
+    "longitude": -155.10686673224,
+    "display_address": "18 1314 Hwy 11, Mountain View, HI 96771"
   },
   {
-    "id": "V0tIY3IGLS8hI926g7sYQw",
-    "name": "La Jefa Island Tacos",
-    "categories": "Food Trucks, Tacos",
-    "latitude": 19.560973,
-    "longitude": -154.993569,
-    "display_address": [
-      "16-1672 Keaau Pahoa Rd",
-      "Keaau, HI 96749"
-    ]
+    "id": "k3OGFosPYLCYdMIJF6-ZhQ",
+    "name": "Manono Mini Mart",
+    "categories": "Sandwiches",
+    "latitude": 19.7160148620605,
+    "longitude": -155.070449829102,
+    "display_address": "454 Manono St, Hilo, HI 96720"
   },
   {
-    "id": "1D2m2BUqOPLQ0WHUuqiGyg",
-    "name": "Margarita Village",
-    "categories": "Dive Bars, Karaoke, Barbeque",
-    "latitude": 19.7272605895996,
-    "longitude": -155.054061889648,
-    "display_address": [
-      "11 Silva St",
-      "Hilo, HI 96720"
-    ]
+    "id": "kBFNGd3GihBNORO3-ZG7Ig",
+    "name": "Sum Leung Chinese Kitchen",
+    "categories": "Chinese",
+    "latitude": 19.693594379666575,
+    "longitude": -155.06675369101822,
+    "display_address": "50 E Puainako St, Ste 106, Kta Puainako Shopping Ctr, Hilo, HI 96720"
   },
   {
-    "id": "kiR6TM6IV5PUQfkMuq3zAQ",
-    "name": "Waiholoku'i Garden",
-    "categories": "Grocery, Gift Shops, Fruits & Veggies",
-    "latitude": 19.504897604294353,
-    "longitude": -154.9577129872283,
-    "display_address": [
-      "15-2660 Pahoa Village Rd",
-      "Ste 201",
-      "P\u0101hoa, HI 96778"
-    ]
-  },
-  {
-    "id": "9CF8jy0B378jw4cvSC5u9g",
-    "name": "Taco Aina",
-    "categories": "Tacos, Food Trucks",
-    "latitude": 19.620281219482425,
-    "longitude": -155.036376953125,
-    "display_address": [
-      "Keaau, HI 96749"
-    ]
-  },
-  {
-    "id": "5qtiCF0WEdO2stJ5umRkwQ",
-    "name": "Lemongrass Restaurant",
-    "categories": "Vietnamese, Thai, Chinese",
-    "latitude": 19.62219722357633,
-    "longitude": -155.04081590294282,
-    "display_address": [
-      "16-586 Old Volcano Rd",
-      "Ste 103",
-      "Keaau, HI 96749"
-    ]
-  },
-  {
-    "id": "TZLogUU2qVHk7cj4NcAA5Q",
-    "name": "Hawaiian Shrimp Company",
-    "categories": "Hawaiian, Seafood",
-    "latitude": 19.7016496478494,
-    "longitude": -155.062866772055,
-    "display_address": [
-      "315 Makaala St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "_4hWdVBV4C7MaTiK8nDeSQ",
-    "name": "75 Degrees cafe",
-    "categories": "Sandwiches, Vietnamese",
-    "latitude": 19.71033,
-    "longitude": -155.07558,
-    "display_address": [
-      "1261 Kilauea Ave",
-      "Ste 221",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "Z2QnZLe57ZJ6eBbFFAQCkw",
-    "name": "Big Island Mexican Foods",
-    "categories": "Mexican",
-    "latitude": 19.6377314688564,
-    "longitude": -155.04428467515,
-    "display_address": [
-      "16-203 Wiliama Pl",
-      "Keaau, HI 96749"
-    ]
+    "id": "klw1B9LP1w0Y4m1LtxA8Pg",
+    "name": "Lava Shack",
+    "categories": "Dive Bars",
+    "latitude": 19.4939796182027,
+    "longitude": -154.945870824158,
+    "display_address": "15-2929 Pahoa Village Rd, P\u0101hoa, HI 96778"
   },
   {
     "id": "IUT6YTwqf8gO0ZYCrOC4Rg",
@@ -2228,212 +1373,63 @@
     "categories": "Sports Bars",
     "latitude": 19.71454632947158,
     "longitude": -155.0739652819722,
-    "display_address": [
-      "399 Hualani St",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "399 Hualani St, Hilo, HI 96720"
   },
   {
-    "id": "2s-svCM3YBu5Iu-6W4_yMA",
-    "name": "Mighty Sushi",
-    "categories": "Sushi Bars",
-    "latitude": 19.508546,
-    "longitude": -154.958946,
-    "display_address": [
-      "15-2660 Keaau Pahoa Rd",
-      "Pahoa Marketplace",
-      "Pahoa, HI 96778"
-    ]
+    "id": "SiDYHRTBAFsMJtG9fjwsOw",
+    "name": "Pete's Belly Bustazs",
+    "categories": "Burgers, Fast Food, Breakfast & Brunch",
+    "latitude": 19.71708,
+    "longitude": -155.09819,
+    "display_address": "82 Puuhonu Pl, Ste 104, Hilo, HI 96720"
   },
   {
-    "id": "to_U6MPgS0riQLhO35kOGg",
-    "name": "Nector Cafe",
-    "categories": "Ice Cream & Frozen Yogurt, Coffee & Tea, Cafes",
-    "latitude": 19.723844988545977,
-    "longitude": -155.08835780119912,
-    "display_address": [
-      "180 Kinoole St",
-      "Hilo, HI 96720"
-    ]
+    "id": "5qtiCF0WEdO2stJ5umRkwQ",
+    "name": "Lemongrass Restaurant",
+    "categories": "Vietnamese, Thai, Chinese",
+    "latitude": 19.62219722357633,
+    "longitude": -155.04081590294282,
+    "display_address": "16-586 Old Volcano Rd, Ste 103, Keaau, HI 96749"
   },
   {
-    "id": "SMBujP4FzwqyHlrzddQQYA",
-    "name": "MacKenzie State Park",
+    "id": "P-NDrVmV6_Sic3nSjUXtCg",
+    "name": "Pahoa Pharmacy",
+    "categories": "Pharmacy",
+    "latitude": 19.5048837,
+    "longitude": -154.9577068,
+    "display_address": "15-2660 Pahoa Village Rd, Pahoa Market Place, Pahoa, HI 96778"
+  },
+  {
+    "id": "wagf6QJP1EH7C1HOPoUpnw",
+    "name": "The Tiki Turtle Cafe",
+    "categories": "Cafes, Juice Bars & Smoothies, Sandwiches",
+    "latitude": 19.71713348438074,
+    "longitude": -155.1102034178477,
+    "display_address": "1099 Waianuenue Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "1IWvYc2Rgjq52O3XzkTSVg",
+    "name": "Pe'epe'e Falls & Boiling Pots",
     "categories": "Parks",
-    "latitude": 19.48116,
-    "longitude": -154.90204,
-    "display_address": [
-      "Hwy 132",
-      "Pohoiki, HI 96778"
-    ]
+    "latitude": 19.713306,
+    "longitude": -155.1304287,
+    "display_address": "Peepee Falls St, Hilo, HI 96720"
   },
   {
-    "id": "ipJG3wfw8C3-YePvjQesGA",
-    "name": "Amigos Taqueria",
-    "categories": "Mexican",
-    "latitude": 19.72374,
-    "longitude": -155.08686,
-    "display_address": [
-      "250 Keawe St",
-      "Hilo, HI 96720"
-    ]
+    "id": "XqAmW3qL7dTWj_-rB_rmAg",
+    "name": "Indo Grindz",
+    "categories": "Food Trucks, Indonesian",
+    "latitude": 19.7257995,
+    "longitude": -155.0875046,
+    "display_address": "69 Waianuenue Ave, Hilo, HI 96720"
   },
   {
-    "id": "T9HD6Ouqjd5D9vJZGq0FnQ",
-    "name": "Wailoa Grill",
-    "categories": "Fast Food, Sandwiches, Seafood",
-    "latitude": 19.723879,
-    "longitude": -155.070273,
-    "display_address": [
-      "93 Lihiwai St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "lImmjXFQknpo4mlXqijZeA",
-    "name": "Joann's Lounge",
-    "categories": "Lounges, Karaoke",
-    "latitude": 19.7216396,
-    "longitude": -155.0647125,
-    "display_address": [
-      "88 Kanoelehua Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "hfvapp5hM2hZM3lENLh3Gg",
-    "name": "The Hot Dog Guy",
-    "categories": "Hot Dogs, Food Stands, Burgers",
-    "latitude": 19.71732,
-    "longitude": -155.06502,
-    "display_address": [
-      "380 Kanoelehua Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "0kuqJDDkx1mvSlQERyQEOw",
-    "name": "Sunlight Cafe",
-    "categories": "Japanese",
-    "latitude": 19.710168838501,
-    "longitude": -155.07600402832,
-    "display_address": [
-      "1263 Kilauea Ave",
-      "Ste 280B",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "L7gNtvw-8Nkp7kDmENhFyQ",
-    "name": "Mister D's Grillwagon",
-    "categories": "Barbeque, Food Trucks",
-    "latitude": 19.7230146156158,
-    "longitude": -155.085106031413,
-    "display_address": [
-      "57 Mamo St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "Ll5ZvZzkIRw0FKI7sYw79w",
-    "name": "Foodland",
-    "categories": "Grocery, Fruits & Veggies, Seafood Markets",
-    "latitude": 19.6223430633545,
-    "longitude": -155.040420532227,
-    "display_address": [
-      "16-586 Old Volcano Rd",
-      "Ste 102",
-      "Keaau Shopping Ctr",
-      "Keaau, HI 96749"
-    ]
-  },
-  {
-    "id": "oZ-5vCfP0NBkQpzdWwaxnA",
-    "name": "No. 1 Chinese Barbeque",
-    "categories": "Chinese",
-    "latitude": 19.50504,
-    "longitude": -154.95806,
-    "display_address": [
-      "15-2660 Pahoa Village Rd",
-      "Pahoa, HI 96778"
-    ]
-  },
-  {
-    "id": "aK3BmX4MDVX0XeBARPuWwA",
-    "name": "Hot Dog On a Stick",
-    "categories": "Hot Dogs, American, Fast Food",
-    "latitude": 19.697686855961148,
-    "longitude": -155.06330053292834,
-    "display_address": [
-      "111 E Puainako St",
-      "Ste 428",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "EBX70U5tDLZNRkoaZ6JWsg",
-    "name": "Leung's Chop Suey House",
-    "categories": "Chinese",
-    "latitude": 19.70695,
-    "longitude": -155.06453,
-    "display_address": [
-      "530 E Lanikaula St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "h-AjnVXYlsYhhdg5AGNQig",
-    "name": "Wailoa River State Recreation Area",
-    "categories": "Parks",
-    "latitude": 19.71642,
-    "longitude": -155.06849,
-    "display_address": [
-      "Piilani St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "2Y9n0Vl7dBZdMoAwxecJrw",
-    "name": "Thai Smile",
-    "categories": "Thai, Food Trucks",
-    "latitude": 19.7178401947021,
-    "longitude": -155.087936401367,
-    "display_address": [
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "6ZU3nONFLURBW_ly5qj3wA",
-    "name": "Hilo Grinds",
-    "categories": "Hawaiian",
-    "latitude": 19.69050904942358,
-    "longitude": -155.07050867318796,
-    "display_address": [
-      "1990 Kinoole St",
-      "Ste 103",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "kqNicRyVxgl5kx6tVSaW1g",
-    "name": "Smokin Okies BBQ",
-    "categories": "Food Trucks, Barbeque, Southern",
-    "latitude": 19.55585,
-    "longitude": -154.89306,
-    "display_address": [
-      "P\u0101hoa, HI 96778"
-    ]
-  },
-  {
-    "id": "IjVoL0io4yzKinZbCzxPpw",
-    "name": "Kapoho Village Inn",
-    "categories": "Bed & Breakfast, Hotels",
-    "latitude": 19.50345,
-    "longitude": -154.84604,
-    "display_address": [
-      "14-4587 Kapoho Rd",
-      "Pahoa, HI 96778"
-    ]
+    "id": "1D2m2BUqOPLQ0WHUuqiGyg",
+    "name": "Margarita Village",
+    "categories": "Dive Bars, Karaoke, Barbeque",
+    "latitude": 19.7272605895996,
+    "longitude": -155.054061889648,
+    "display_address": "11 Silva St, Hilo, HI 96720"
   },
   {
     "id": "nEHnCHhnFFT-t1GmKTwuug",
@@ -2441,45 +1437,167 @@
     "categories": "Bars, Karaoke",
     "latitude": 19.71745,
     "longitude": -155.08483,
-    "display_address": [
-      "688 Kinoole St",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "688 Kinoole St, Hilo, HI 96720"
   },
   {
-    "id": "iOUjq6AoOph7rhEcXFg1UQ",
-    "name": "808 LOCAL FLAVAH",
-    "categories": "Hawaiian",
-    "latitude": 19.7236213,
-    "longitude": -155.0849898,
-    "display_address": [
-      "330 Kamehameha Ave",
-      "Ste 102",
-      "Hilo, HI 96720"
-    ]
+    "id": "1c4BSLOqXF6p5ADLpDVCXg",
+    "name": "Hiro's Place",
+    "categories": "Hawaiian, Japanese, Filipino",
+    "latitude": 19.692655,
+    "longitude": -155.066482,
+    "display_address": "50 E Puainako St, Ste 108, KTA Super Stores - Puainako, Hilo, HI 96720"
   },
   {
-    "id": "WDnm1fRrjsK9mMj9qieh_Q",
-    "name": "Genki Sushi",
-    "categories": "Sushi Bars, Conveyor Belt Sushi",
-    "latitude": 19.6990954476535,
-    "longitude": -155.064209660761,
-    "display_address": [
-      "111 E Puainako St",
-      "Hilo, HI 96720"
-    ]
+    "id": "2s-svCM3YBu5Iu-6W4_yMA",
+    "name": "Mighty Sushi",
+    "categories": "Sushi Bars",
+    "latitude": 19.508546,
+    "longitude": -154.958946,
+    "display_address": "15-2660 Keaau Pahoa Rd, Pahoa Marketplace, Pahoa, HI 96778"
   },
   {
-    "id": "qpED8Z60tq7E8yUDThWnKA",
-    "name": "Liliuokalani Park and Gardens",
+    "id": "pYXMbQKzUmy2BbifBfUudA",
+    "name": "Fairway Grill",
+    "categories": "Breakfast & Brunch, American",
+    "latitude": 19.674726732895746,
+    "longitude": -155.0767811042587,
+    "display_address": "340 Haihai St, Hilo, HI 96720"
+  },
+  {
+    "id": "oTuJBwZrswvstL6vJRLv7A",
+    "name": "Floral Mart Hawaii",
+    "categories": "Florists, Gift Shops, Delis",
+    "latitude": 19.7171591,
+    "longitude": -155.0842695,
+    "display_address": "738 Kinoole St, Hilo, HI 96720"
+  },
+  {
+    "id": "MEkVl3BJJvO_tNB6ufACVg",
+    "name": "Lava Tree State Park",
     "categories": "Parks",
-    "latitude": 19.72579608391994,
-    "longitude": -155.06944958120584,
-    "display_address": [
-      "189 Lihiwai St",
-      "Ste 151",
-      "Hilo, HI 96720"
-    ]
+    "latitude": 19.4835770219629,
+    "longitude": -154.904355723595,
+    "display_address": "Pahoa, HI 96778"
+  },
+  {
+    "id": "V0tIY3IGLS8hI926g7sYQw",
+    "name": "La Jefa Island Tacos",
+    "categories": "Food Trucks, Tacos",
+    "latitude": 19.560973,
+    "longitude": -154.993569,
+    "display_address": "16-1672 Keaau Pahoa Rd, Keaau, HI 96749"
+  },
+  {
+    "id": "W6ErNHPeEvkfEYEB8N-OVA",
+    "name": "Kurtistown Cafe",
+    "categories": "Hawaiian, Barbeque, Burgers",
+    "latitude": 19.592985,
+    "longitude": -155.057269,
+    "display_address": "17-353 Volcano Rd, Kurtistown, HI 96760"
+  },
+  {
+    "id": "ipJG3wfw8C3-YePvjQesGA",
+    "name": "Amigos Taqueria",
+    "categories": "Mexican",
+    "latitude": 19.72374,
+    "longitude": -155.08686,
+    "display_address": "250 Keawe St, Hilo, HI 96720"
+  },
+  {
+    "id": "jb7rFF7Vof9lXzQ4iXpH7w",
+    "name": "Poi Balls Hawaii",
+    "categories": "Food Trucks, Hawaiian",
+    "latitude": 19.713710236503204,
+    "longitude": -155.06991392220704,
+    "display_address": "619 Manono St, Parking Lot, Hilo, HI 96720"
+  },
+  {
+    "id": "oZ-5vCfP0NBkQpzdWwaxnA",
+    "name": "No. 1 Chinese Barbeque",
+    "categories": "Chinese",
+    "latitude": 19.50504,
+    "longitude": -154.95806,
+    "display_address": "15-2660 Pahoa Village Rd, Pahoa, HI 96778"
+  },
+  {
+    "id": "F3a5xJzZU3U0jYCnBCZ_fw",
+    "name": "Zippy's Hilo",
+    "categories": "Diners, Fast Food, Comfort Food",
+    "latitude": 19.69719,
+    "longitude": -155.06342,
+    "display_address": "111 E Puainako St, Hilo, HI 96720"
+  },
+  {
+    "id": "re3r0KLTUo9xl3QbrA3fRg",
+    "name": "Kimura General Store",
+    "categories": "Grocery",
+    "latitude": 19.782697,
+    "longitude": -155.0923717,
+    "display_address": "27-289 Mill Rd, Papaikou, HI 96781"
+  },
+  {
+    "id": "IZTktZa4jDu8RyHJXvtlLQ",
+    "name": "Kalapana Lava Flow",
+    "categories": "Parks",
+    "latitude": 19.356037,
+    "longitude": -154.979743,
+    "display_address": "End of Route 130 Volcano National Park, Kalapana, HI 96778"
+  },
+  {
+    "id": "TZLogUU2qVHk7cj4NcAA5Q",
+    "name": "Hawaiian Shrimp Company",
+    "categories": "Hawaiian, Seafood",
+    "latitude": 19.7016496478494,
+    "longitude": -155.062866772055,
+    "display_address": "315 Makaala St, Hilo, HI 96720"
+  },
+  {
+    "id": "aK3BmX4MDVX0XeBARPuWwA",
+    "name": "Hot Dog On a Stick",
+    "categories": "Hot Dogs, American, Fast Food",
+    "latitude": 19.697686855961148,
+    "longitude": -155.06330053292834,
+    "display_address": "111 E Puainako St, Ste 428, Hilo, HI 96720"
+  },
+  {
+    "id": "l3DjACCZrXpuivIdRYYksg",
+    "name": "Malama Market",
+    "categories": "Grocery",
+    "latitude": 19.502303453621195,
+    "longitude": -154.95658906769748,
+    "display_address": "15-2714 Pahoa Village Rd, Unit A, Pahoa, HI 96778"
+  },
+  {
+    "id": "3AYUNDmqiFamXYI-ARyv-w",
+    "name": "Kohala Coffee",
+    "categories": "Coffee & Tea, Bagels, Sandwiches",
+    "latitude": 19.503050006821052,
+    "longitude": -154.95700104963964,
+    "display_address": "15-2714 Pahoa Village Rd, Ste P2, P\u0101hoa, HI 96778"
+  },
+  {
+    "id": "9CF8jy0B378jw4cvSC5u9g",
+    "name": "Taco Aina",
+    "categories": "Tacos, Food Trucks",
+    "latitude": 19.620281219482425,
+    "longitude": -155.036376953125,
+    "display_address": "Keaau, HI 96749"
+  },
+  {
+    "id": "26hMH2kx92blcNySuIGwRw",
+    "name": "Mr K's Recycle & Redemption Center",
+    "categories": "Recycling Center",
+    "latitude": 19.7165074,
+    "longitude": -155.0833209,
+    "display_address": "815 Kinoole St, Hilo, HI 96720"
+  },
+  {
+    "id": "EBX70U5tDLZNRkoaZ6JWsg",
+    "name": "Leung's Chop Suey House",
+    "categories": "Chinese",
+    "latitude": 19.70695,
+    "longitude": -155.06453,
+    "display_address": "530 E Lanikaula St, Hilo, HI 96720"
   },
   {
     "id": "S1f4Fw4vCEFkGeXtEOzXOg",
@@ -2487,111 +1605,63 @@
     "categories": "Korean, Barbeque, Japanese",
     "latitude": 19.701575,
     "longitude": -155.062816,
-    "display_address": [
-      "315 E Makaala St",
-      "Ste 106",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "315 E Makaala St, Ste 106, Hilo, HI 96720"
   },
   {
-    "id": "ySkC8YOq-jjG5czwQDWjBQ",
-    "name": "Blane's Drive Inn",
-    "categories": "Hawaiian, Fast Food",
-    "latitude": 19.701668441222488,
-    "longitude": -155.0651911037979,
-    "display_address": [
-      "150 Wiwoole St",
-      "Hilo, HI 96720"
-    ]
+    "id": "2z7pqa9HsLJhkbzYMDQmwA",
+    "name": "Texas Island BBQ",
+    "categories": "Food Trucks, Barbeque",
+    "latitude": 19.605505250597748,
+    "longitude": -154.96104172269045,
+    "display_address": "15-1594 4th Ave, Keaau, HI 96749"
   },
   {
-    "id": "Fpd8SG3FnIJqM3q1GbMTmg",
-    "name": "Safeway",
-    "categories": "Grocery",
-    "latitude": 19.69945,
-    "longitude": -155.05939,
-    "display_address": [
-      "381 E Maka'ala St",
-      "Hilo, HI 96720"
-    ]
+    "id": "KbYEi2rdCHNyBjHlmpI0-w",
+    "name": "Piilani Kitchen",
+    "categories": "Sandwiches, Salad, Mexican",
+    "latitude": 19.8307,
+    "longitude": -155.09721,
+    "display_address": "28-1099 Old Mamalahoa Hwy, Onomea Country Market, Pepeekeo, HI 96783"
   },
   {
-    "id": "a2KNWH02vHUD4s5s81Vtug",
-    "name": "Hawaii BBQ Deli",
-    "categories": "Barbeque, Hawaiian, Seafood",
-    "latitude": 19.697003460560172,
-    "longitude": -155.064058851942,
-    "display_address": [
-      "111 E Puainako St",
-      "Unit 570",
-      "Hilo, HI 96720"
-    ]
+    "id": "0kuqJDDkx1mvSlQERyQEOw",
+    "name": "Sunlight Cafe",
+    "categories": "Japanese",
+    "latitude": 19.710168838501,
+    "longitude": -155.07600402832,
+    "display_address": "1263 Kilauea Ave, Ste 280B, Hilo, HI 96720"
   },
   {
-    "id": "jT36kQkOKDVDLazZmqfJtw",
-    "name": "KTA Super Stores - Downtown",
-    "categories": "Grocery",
-    "latitude": 19.72317,
-    "longitude": -155.08582,
-    "display_address": [
-      "321 Keawe St",
-      "Hilo, HI 96720"
-    ]
+    "id": "lImmjXFQknpo4mlXqijZeA",
+    "name": "Joann's Lounge",
+    "categories": "Lounges, Karaoke",
+    "latitude": 19.7216396,
+    "longitude": -155.0647125,
+    "display_address": "88 Kanoelehua Ave, Hilo, HI 96720"
   },
   {
-    "id": "W8-6e3-XRorzgE-W9JzOIw",
-    "name": "Hula Lounge Lobby Bar",
-    "categories": "Bars",
-    "latitude": 19.72962,
-    "longitude": -155.06499,
-    "display_address": [
-      "93 Banyan Dr",
-      "Hilo, HI 96720"
-    ]
+    "id": "Ll5ZvZzkIRw0FKI7sYw79w",
+    "name": "Foodland",
+    "categories": "Grocery, Fruits & Veggies, Seafood Markets",
+    "latitude": 19.6223430633545,
+    "longitude": -155.040420532227,
+    "display_address": "16-586 Old Volcano Rd, Ste 102, Keaau Shopping Ctr, Keaau, HI 96749"
   },
   {
-    "id": "KRtg-FtNbJjE7iFnBu7F4g",
-    "name": "Big Island Fusion",
-    "categories": "Food Trucks, Burgers, Asian Fusion",
-    "latitude": 19.7170240190292,
-    "longitude": -155.064796475353,
-    "display_address": [
-      "380 Kanoelehua Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "WDnm1fRrjsK9mMj9qieh_Q",
+    "name": "Genki Sushi",
+    "categories": "Sushi Bars, Conveyor Belt Sushi",
+    "latitude": 19.6990954476535,
+    "longitude": -155.064209660761,
+    "display_address": "111 E Puainako St, Hilo, HI 96720"
   },
   {
-    "id": "p12Q-zxfnor7e0PfXHLA2A",
-    "name": "Shakedown Treats",
-    "categories": "Pop-Up Restaurants, Burgers, Hot Dogs",
-    "latitude": 19.654218821153137,
-    "longitude": -155.0740426362909,
-    "display_address": [
-      "800 Stainback Hwy",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "2C8ydsgfDNgY3Flqcut2Pg",
-    "name": "Hilo Reeds Bay Hotel",
-    "categories": "Hotels",
-    "latitude": 19.727600060354163,
-    "longitude": -155.06306870030784,
-    "display_address": [
-      "175 Banyan Dr",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "IfE0yql974kIipXMVCngAA",
-    "name": "New China Restaurant",
-    "categories": "Chinese",
-    "latitude": 19.7188549041748,
-    "longitude": -155.081802368164,
-    "display_address": [
-      "510 Kilauea Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "SMBujP4FzwqyHlrzddQQYA",
+    "name": "MacKenzie State Park",
+    "categories": "Parks",
+    "latitude": 19.48116,
+    "longitude": -154.90204,
+    "display_address": "Hwy 132, Pohoiki, HI 96778"
   },
   {
     "id": "xES95y4kxy6Ha8IWQtRM5w",
@@ -2599,298 +1669,103 @@
     "categories": "Hawaiian, Sandwiches, New American",
     "latitude": 19.713337593008795,
     "longitude": -155.106330397104,
-    "display_address": [
-      "177 Kaumana St",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "177 Kaumana St, Hilo, HI 96720"
   },
   {
-    "id": "TzJI2HxN1XkbvA49FyHviA",
-    "name": "Panda Express",
-    "categories": "Chinese, Fast Food",
-    "latitude": 19.6987,
-    "longitude": -155.0609,
-    "display_address": [
-      "368 E. Makaala Street",
-      "Hilo, HI 96720"
-    ]
+    "id": "_4hWdVBV4C7MaTiK8nDeSQ",
+    "name": "75 Degrees cafe",
+    "categories": "Sandwiches, Vietnamese",
+    "latitude": 19.71033,
+    "longitude": -155.07558,
+    "display_address": "1261 Kilauea Ave, Ste 221, Hilo, HI 96720"
   },
   {
-    "id": "XmV0kiqxW03xt4lLgluCQQ",
-    "name": "Punana Leo",
-    "categories": "Preschools",
-    "latitude": 19.7166667,
-    "longitude": -155.1036111,
-    "display_address": [
-      "96 Pu\u2018uhonu Place",
-      "Hilo, HI 96720"
-    ]
+    "id": "hfvapp5hM2hZM3lENLh3Gg",
+    "name": "The Hot Dog Guy",
+    "categories": "Hot Dogs, Food Stands, Burgers",
+    "latitude": 19.71732,
+    "longitude": -155.06502,
+    "display_address": "380 Kanoelehua Ave, Hilo, HI 96720"
   },
   {
-    "id": "8hLZ0ngnj131ra2gcNpaqg",
-    "name": "Cheng's Chop Suey House",
-    "categories": "Asian Fusion, Chinese",
-    "latitude": 19.71724667,
-    "longitude": -155.08275167,
-    "display_address": [
-      "138 Hualalai St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "OGc8Nz8HMGtSHxdmU9GkkA",
-    "name": "Blane's drive inn",
-    "categories": "Desserts, Noodles",
-    "latitude": 19.55912591626665,
-    "longitude": -154.9937457808241,
-    "display_address": [
-      "127 Orchid Land Dr",
-      "Keaau, HI 96749"
-    ]
-  },
-  {
-    "id": "ecd54qyMuep8SI0jU6ZqkQ",
-    "name": "Shiigi Drug",
-    "categories": "Drugstores",
-    "latitude": 19.7209892,
-    "longitude": -155.0834961,
-    "display_address": [
-      "333 Kilauea Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "nzU3eBLgZq7CrweQK3Gw5w",
-    "name": "Peggy's Lounge",
-    "categories": "Hawaiian, Lounges",
-    "latitude": 19.7162082,
-    "longitude": -155.0673769,
-    "display_address": [
-      "760 Piilani St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "5Tz431TJtRQrAo1MMYjraA",
-    "name": "L&L Hawaiian Barbecue",
-    "categories": "Barbeque, Hawaiian",
-    "latitude": 19.502939383764407,
-    "longitude": -154.9565472930648,
-    "display_address": [
-      "15-2714 Pahoa Village Rd",
-      "Ste C-1",
-      "Pahoa, HI 96778"
-    ]
-  },
-  {
-    "id": "B4s3HYIo__lt8yZSuRKt1g",
-    "name": "Sack N Save",
-    "categories": "Grocery",
-    "latitude": 19.6921037,
-    "longitude": -155.0669464,
-    "display_address": [
-      "2100 Kanoelehua Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "YE4Z6SJWC2Xm4QSiCB9OTw",
-    "name": "Jack in the Box",
-    "categories": "Burgers, Fast Food, Tacos",
-    "latitude": 19.6925742934388,
-    "longitude": -155.066442489624,
-    "display_address": [
-      "50 E Puainako St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "7EvfBpA5AEi7ZO_UcFUGJA",
-    "name": "Na\u2019au",
-    "categories": "Hawaiian, Personal Chefs",
-    "latitude": 19.83159800275875,
-    "longitude": -155.10609498855374,
-    "display_address": [
-      "Pepeekeo, HI 96783"
-    ]
-  },
-  {
-    "id": "u7KxzL5PBR2rwzkXhA9Swg",
-    "name": "Taco Bell",
-    "categories": "Fast Food, Mexican",
-    "latitude": 19.694708,
-    "longitude": -155.067093,
-    "display_address": [
-      "2100 Kanoelehua Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "eCrhC3zl0O6mfkB4qtpEVA",
-    "name": "The Honey Hut",
-    "categories": "Food Trucks, Breakfast & Brunch",
-    "latitude": 19.86954583430312,
-    "longitude": -155.1124031536816,
-    "display_address": [
-      "Honomu, HI 96728"
-    ]
-  },
-  {
-    "id": "A0rYrw2jr0fjFGKq3T0xBQ",
-    "name": "Pizza Hut",
-    "categories": "Chicken Wings, Pizza, Fast Food",
-    "latitude": 19.621918526450617,
-    "longitude": -155.0407404576721,
-    "display_address": [
-      "16-586 Old Volcano Rd",
-      "Ste 1",
-      "Keaau, HI 96749"
-    ]
-  },
-  {
-    "id": "ASBXd8mjV3VokSYEmnoL6Q",
-    "name": "Leleiwi Beach Park",
-    "categories": "Parks, Swimming Pools, Beaches",
-    "latitude": 19.7343519247687,
-    "longitude": -155.015454283012,
-    "display_address": [
-      "2300 Kalanianaole Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "HgxMTFSRGAigi8yYhhPhwA",
-    "name": "Alibi Tavern",
+    "id": "W8-6e3-XRorzgE-W9JzOIw",
+    "name": "Hula Lounge Lobby Bar",
     "categories": "Bars",
-    "latitude": 19.621731,
-    "longitude": -155.039108,
-    "display_address": [
-      "16-566 Keaau-Pahoa Rd",
-      "Keaau, HI 96749"
-    ]
+    "latitude": 19.72962,
+    "longitude": -155.06499,
+    "display_address": "93 Banyan Dr, Hilo, HI 96720"
   },
   {
-    "id": "2ZhJ4Yv8ctwseLJVENlq8A",
-    "name": "Executive Networking Center",
-    "categories": "Shared Office Spaces",
-    "latitude": 19.71203,
-    "longitude": -155.079217,
-    "display_address": [
-      "77 Mohouli St",
-      "Ste 101",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "s_VKFZI-tamJUpTQjVZr0w",
-    "name": "Kaumana Drive Baptist Church",
-    "categories": "Child Care & Day Care, Preschools, Elementary Schools",
-    "latitude": 19.70873,
-    "longitude": -155.1105,
-    "display_address": [
-      "388 Kaumana Dr",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "5fz8izmX7qEZZg_WwFf9VQ",
-    "name": "Sack N Save",
-    "categories": "Grocery",
-    "latitude": 19.722844745218524,
-    "longitude": -155.088367669248,
-    "display_address": [
-      "250 Kinoole St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "YO14nJRmwfFjG2ieszseSw",
-    "name": "Plates Of Aloha",
-    "categories": "Food Trucks, Tacos",
-    "latitude": 20.0215814,
-    "longitude": -155.6694085,
-    "display_address": [
-      "65-1214 Lindsay Rd",
-      "Waimea, HI 96743"
-    ]
-  },
-  {
-    "id": "wBY_7l45eyq-P-kuGN8Bjw",
-    "name": "Ling's Chop Suey House",
+    "id": "IfE0yql974kIipXMVCngAA",
+    "name": "New China Restaurant",
     "categories": "Chinese",
-    "latitude": 19.691656,
-    "longitude": -155.067106,
-    "display_address": [
-      "2100 Kanoelehua Ave",
-      "Hilo, HI 96720"
-    ]
+    "latitude": 19.7188549041748,
+    "longitude": -155.081802368164,
+    "display_address": "510 Kilauea Ave, Hilo, HI 96720"
   },
   {
-    "id": "QI4gsj6k93d6pFFPE8w3ZA",
-    "name": "Da Beans Green",
-    "categories": "Cafes",
-    "latitude": 19.4937404,
-    "longitude": -154.9454773,
-    "display_address": [
-      "15-2942 Pahoa Village Rd",
-      "P\u0101hoa, HI 96778"
-    ]
+    "id": "L7gNtvw-8Nkp7kDmENhFyQ",
+    "name": "Mister D's Grillwagon",
+    "categories": "Barbeque, Food Trucks",
+    "latitude": 19.7230146156158,
+    "longitude": -155.085106031413,
+    "display_address": "57 Mamo St, Hilo, HI 96720"
   },
   {
-    "id": "Jlr2Zn6rbbXrrxZ2mL8oQQ",
-    "name": "St. Joseph School",
-    "categories": "Middle Schools & High Schools",
-    "latitude": 19.71358,
-    "longitude": -155.08429,
-    "display_address": [
-      "1000 Ululani St",
-      "Hilo, HI 96720"
-    ]
+    "id": "h-AjnVXYlsYhhdg5AGNQig",
+    "name": "Wailoa River State Recreation Area",
+    "categories": "Parks",
+    "latitude": 19.71642,
+    "longitude": -155.06849,
+    "display_address": "Piilani St, Hilo, HI 96720"
   },
   {
-    "id": "7HROvTr9PTVIsL1_NWRLMQ",
-    "name": "Affordable Catering & Okazuya",
-    "categories": "Caterers, Japanese, Breakfast & Brunch",
-    "latitude": 19.70673,
-    "longitude": -155.06677,
-    "display_address": [
-      "811 Laukapu St",
-      "Ste 1",
-      "Hilo, HI 96720"
-    ]
+    "id": "2Y9n0Vl7dBZdMoAwxecJrw",
+    "name": "Thai Smile",
+    "categories": "Thai, Food Trucks",
+    "latitude": 19.7178401947021,
+    "longitude": -155.087936401367,
+    "display_address": "Hilo, HI 96720"
   },
   {
-    "id": "Q9VLLFLjW8HZXyLRtqSyTQ",
-    "name": "The Well - New Hope Church",
-    "categories": "Acai Bowls, Coffee & Tea, Sandwiches",
-    "latitude": 19.669550710901056,
-    "longitude": -155.10785646736622,
-    "display_address": [
-      "840 Kupulau Rd",
-      "Hilo, HI 96720"
-    ]
+    "id": "a2KNWH02vHUD4s5s81Vtug",
+    "name": "Hawaii BBQ Deli",
+    "categories": "Barbeque, Hawaiian, Seafood",
+    "latitude": 19.697003460560172,
+    "longitude": -155.064058851942,
+    "display_address": "111 E Puainako St, Unit 570, Hilo, HI 96720"
   },
   {
-    "id": "CIdkV2H5mCXjwyikd1qEOw",
-    "name": "McDonald's",
-    "categories": "Fast Food, Burgers, Coffee & Tea",
-    "latitude": 19.6912097,
-    "longitude": -155.0663614,
-    "display_address": [
-      "2100 Kanoelehua Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "kiR6TM6IV5PUQfkMuq3zAQ",
+    "name": "Waiholoku'i Garden",
+    "categories": "Grocery, Gift Shops, Fruits & Veggies",
+    "latitude": 19.504897604294353,
+    "longitude": -154.9577129872283,
+    "display_address": "15-2660 Pahoa Village Rd, Ste 201, P\u0101hoa, HI 96778"
   },
   {
-    "id": "zAYfhdE_2MR5OCp9QSQU1g",
-    "name": "L&L Hawaiian Barbecue",
-    "categories": "Barbeque, Hawaiian",
-    "latitude": 19.72175,
-    "longitude": -155.08718,
-    "display_address": [
-      "348 Kinoole St",
-      "Hilo, HI 96720"
-    ]
+    "id": "to_U6MPgS0riQLhO35kOGg",
+    "name": "Nector Cafe",
+    "categories": "Ice Cream & Frozen Yogurt, Coffee & Tea, Cafes",
+    "latitude": 19.723844988545977,
+    "longitude": -155.08835780119912,
+    "display_address": "180 Kinoole St, Hilo, HI 96720"
+  },
+  {
+    "id": "IjVoL0io4yzKinZbCzxPpw",
+    "name": "Kapoho Village Inn",
+    "categories": "Bed & Breakfast, Hotels",
+    "latitude": 19.50345,
+    "longitude": -154.84604,
+    "display_address": "14-4587 Kapoho Rd, Pahoa, HI 96778"
+  },
+  {
+    "id": "qpED8Z60tq7E8yUDThWnKA",
+    "name": "Liliuokalani Park and Gardens",
+    "categories": "Parks",
+    "latitude": 19.72579608391994,
+    "longitude": -155.06944958120584,
+    "display_address": "189 Lihiwai St, Ste 151, Hilo, HI 96720"
   },
   {
     "id": "F3zD8CuIgKo5cPB3jnMaWg",
@@ -2898,32 +1773,111 @@
     "categories": "Pizza, Food Trucks",
     "latitude": 19.72449,
     "longitude": -155.06088,
-    "display_address": [
-      "213 Kalanianaole St",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "213 Kalanianaole St, Hilo, HI 96720"
   },
   {
-    "id": "rXXL_iT-6XVowj-kuNb_lA",
-    "name": "Karuna Foods",
-    "categories": "Food Stands, Vegan",
-    "latitude": 19.3613411524922,
-    "longitude": -154.971048688288,
-    "display_address": [
-      "12 Kalapana-Kapoho Rd",
-      "P\u0101hoa, HI 96778"
-    ]
+    "id": "kqNicRyVxgl5kx6tVSaW1g",
+    "name": "Smokin Okies BBQ",
+    "categories": "Food Trucks, Barbeque, Southern",
+    "latitude": 19.55585,
+    "longitude": -154.89306,
+    "display_address": "P\u0101hoa, HI 96778"
   },
   {
-    "id": "HTQO2HZyLKq7q5-VsZ-8jw",
-    "name": "Hilo Union School",
-    "categories": "Elementary Schools",
-    "latitude": 19.72330014042115,
-    "longitude": -155.0918167516485,
-    "display_address": [
-      "506 Waianuenue Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "ySkC8YOq-jjG5czwQDWjBQ",
+    "name": "Blane's Drive Inn",
+    "categories": "Hawaiian, Fast Food",
+    "latitude": 19.701668441222488,
+    "longitude": -155.0651911037979,
+    "display_address": "150 Wiwoole St, Hilo, HI 96720"
+  },
+  {
+    "id": "TzJI2HxN1XkbvA49FyHviA",
+    "name": "Panda Express",
+    "categories": "Chinese, Fast Food",
+    "latitude": 19.6987,
+    "longitude": -155.0609,
+    "display_address": "368 E. Makaala Street, Hilo, HI 96720"
+  },
+  {
+    "id": "5Tz431TJtRQrAo1MMYjraA",
+    "name": "L&L Hawaiian Barbecue",
+    "categories": "Barbeque, Hawaiian",
+    "latitude": 19.502939383764407,
+    "longitude": -154.9565472930648,
+    "display_address": "15-2714 Pahoa Village Rd, Ste C-1, Pahoa, HI 96778"
+  },
+  {
+    "id": "jT36kQkOKDVDLazZmqfJtw",
+    "name": "KTA Super Stores - Downtown",
+    "categories": "Grocery",
+    "latitude": 19.72317,
+    "longitude": -155.08582,
+    "display_address": "321 Keawe St, Hilo, HI 96720"
+  },
+  {
+    "id": "nzU3eBLgZq7CrweQK3Gw5w",
+    "name": "Peggy's Lounge",
+    "categories": "Hawaiian, Lounges",
+    "latitude": 19.7162082,
+    "longitude": -155.0673769,
+    "display_address": "760 Piilani St, Hilo, HI 96720"
+  },
+  {
+    "id": "Z2QnZLe57ZJ6eBbFFAQCkw",
+    "name": "Big Island Mexican Foods",
+    "categories": "Mexican",
+    "latitude": 19.6377314688564,
+    "longitude": -155.04428467515,
+    "display_address": "16-203 Wiliama Pl, Keaau, HI 96749"
+  },
+  {
+    "id": "2C8ydsgfDNgY3Flqcut2Pg",
+    "name": "Hilo Reeds Bay Hotel",
+    "categories": "Hotels",
+    "latitude": 19.727600060354163,
+    "longitude": -155.06306870030784,
+    "display_address": "175 Banyan Dr, Hilo, HI 96720"
+  },
+  {
+    "id": "wBY_7l45eyq-P-kuGN8Bjw",
+    "name": "Ling's Chop Suey House",
+    "categories": "Chinese",
+    "latitude": 19.691656,
+    "longitude": -155.067106,
+    "display_address": "2100 Kanoelehua Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "Fpd8SG3FnIJqM3q1GbMTmg",
+    "name": "Safeway",
+    "categories": "Grocery",
+    "latitude": 19.69945,
+    "longitude": -155.05939,
+    "display_address": "381 E Maka'ala St, Hilo, HI 96720"
+  },
+  {
+    "id": "YE4Z6SJWC2Xm4QSiCB9OTw",
+    "name": "Jack in the Box",
+    "categories": "Burgers, Fast Food, Tacos",
+    "latitude": 19.6925742934388,
+    "longitude": -155.066442489624,
+    "display_address": "50 E Puainako St, Hilo, HI 96720"
+  },
+  {
+    "id": "p12Q-zxfnor7e0PfXHLA2A",
+    "name": "Shakedown Treats",
+    "categories": "Pop-Up Restaurants, Burgers, Hot Dogs",
+    "latitude": 19.654218821153137,
+    "longitude": -155.0740426362909,
+    "display_address": "800 Stainback Hwy, Hilo, HI 96720"
+  },
+  {
+    "id": "8hLZ0ngnj131ra2gcNpaqg",
+    "name": "Cheng's Chop Suey House",
+    "categories": "Asian Fusion, Chinese",
+    "latitude": 19.71724667,
+    "longitude": -155.08275167,
+    "display_address": "138 Hualalai St, Hilo, HI 96720"
   },
   {
     "id": "VyZLfQkk2f6nMnkA1n1NNA",
@@ -2931,34 +1885,15 @@
     "categories": "Pizza, Chicken Wings",
     "latitude": 19.7116903442747,
     "longitude": -155.076371600846,
-    "display_address": [
-      "125 Kekuanaoa St",
-      "Ste 201",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "125 Kekuanaoa St, Ste 201, Hilo, HI 96720"
   },
   {
-    "id": "3uaFeHUYIQRmAEVUOw9p5A",
-    "name": "Amigos Cantina",
-    "categories": "Karaoke, Bars, Music Venues",
-    "latitude": 19.7237878,
-    "longitude": -155.0867954,
-    "display_address": [
-      "250 Keawe St",
-      "Ste C",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "-kBK8Udyll8BQxY8RPe9qw",
-    "name": "Waiakeawaena Elementary School",
-    "categories": "Elementary Schools, Middle Schools & High Schools",
-    "latitude": 19.683423,
-    "longitude": -155.068218,
-    "display_address": [
-      "2420 Kilauea Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "u7KxzL5PBR2rwzkXhA9Swg",
+    "name": "Taco Bell",
+    "categories": "Fast Food, Mexican",
+    "latitude": 19.694708,
+    "longitude": -155.067093,
+    "display_address": "2100 Kanoelehua Ave, Hilo, HI 96720"
   },
   {
     "id": "0EWIuPbZjywbr4gXJUBCwA",
@@ -2966,186 +1901,143 @@
     "categories": "Food Stands, Japanese Curry",
     "latitude": 19.693585,
     "longitude": -155.067002,
-    "display_address": [
-      "50 E Puainake St",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "50 E Puainake St, Hilo, HI 96720"
   },
   {
-    "id": "QVLs760HyHEPEnLnBMuD6A",
-    "name": "CVS Pharmacy",
-    "categories": "Pharmacy",
-    "latitude": 19.71451,
-    "longitude": -155.09669,
-    "display_address": [
-      "670 Ponahawai St",
-      "Ste 213",
-      "Hilo, HI 96720"
-    ]
+    "id": "A0rYrw2jr0fjFGKq3T0xBQ",
+    "name": "Pizza Hut",
+    "categories": "Chicken Wings, Pizza, Fast Food",
+    "latitude": 19.621918526450617,
+    "longitude": -155.0407404576721,
+    "display_address": "16-586 Old Volcano Rd, Ste 1, Keaau, HI 96749"
   },
   {
-    "id": "b3mfAWn0qDAdtHbwduWosg",
-    "name": "Kua O Ka La Public Charter School",
-    "categories": "Elementary Schools, Middle Schools & High Schools",
-    "latitude": 19.67282,
-    "longitude": -155.05403,
-    "display_address": [
-      "345 Makalika St",
-      "Hilo, HI 96720"
-    ]
+    "id": "KRtg-FtNbJjE7iFnBu7F4g",
+    "name": "Big Island Fusion",
+    "categories": "Food Trucks, Burgers, Asian Fusion",
+    "latitude": 19.7170240190292,
+    "longitude": -155.064796475353,
+    "display_address": "380 Kanoelehua Ave, Hilo, HI 96720"
   },
   {
-    "id": "A6_ekpeZnzgbt9hCQHGtFQ",
-    "name": "Center Plate",
-    "categories": "Diners",
-    "latitude": 19.714613,
-    "longitude": -155.039638,
-    "display_address": [
-      "2450 Kekuanaoa St",
-      "Hilo, HI 96720"
-    ]
+    "id": "6ZU3nONFLURBW_ly5qj3wA",
+    "name": "Hilo Grinds",
+    "categories": "Hawaiian",
+    "latitude": 19.69050904942358,
+    "longitude": -155.07050867318796,
+    "display_address": "1990 Kinoole St, Ste 103, Hilo, HI 96720"
   },
   {
-    "id": "y9PWCON-0SfEoxTYtMT8XQ",
-    "name": "Longs Drugs",
-    "categories": "Drugstores, Convenience Stores, Pharmacy",
-    "latitude": 19.719,
-    "longitude": -155.081,
-    "display_address": [
-      "555 Kilauea Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "HgxMTFSRGAigi8yYhhPhwA",
+    "name": "Alibi Tavern",
+    "categories": "Bars",
+    "latitude": 19.621731,
+    "longitude": -155.039108,
+    "display_address": "16-566 Keaau-Pahoa Rd, Keaau, HI 96749"
   },
   {
-    "id": "RBGDS7uvLxZSCgp3-i0ZzA",
-    "name": "Hawaiian Airlines Premier Club",
-    "categories": "Airport Lounges",
-    "latitude": 19.7152155444586,
-    "longitude": -155.039928525399,
-    "display_address": [
-      "2450 Kekuanaoa St",
-      "Hilo, HI 96720"
-    ]
+    "id": "XmV0kiqxW03xt4lLgluCQQ",
+    "name": "Punana Leo",
+    "categories": "Preschools",
+    "latitude": 19.7166667,
+    "longitude": -155.1036111,
+    "display_address": "96 Pu\u2018uhonu Place, Hilo, HI 96720"
   },
   {
-    "id": "XYNfRfKzqeEQfGdg_3aEWA",
-    "name": "Pizza Ala Slice",
-    "categories": "Pizza",
-    "latitude": 19.696983,
-    "longitude": -155.064099,
-    "display_address": [
-      "111 E Puainako St",
-      "Hilo, HI 96720"
-    ]
+    "id": "3uaFeHUYIQRmAEVUOw9p5A",
+    "name": "Amigos Cantina",
+    "categories": "Karaoke, Bars, Music Venues",
+    "latitude": 19.7237878,
+    "longitude": -155.0867954,
+    "display_address": "250 Keawe St, Ste C, Hilo, HI 96720"
   },
   {
-    "id": "_2rBthT1z5GSxhPpTo-ICw",
-    "name": "L&L Hawaiian Barbecue",
-    "categories": "Hawaiian, Barbeque",
-    "latitude": 19.62203,
-    "longitude": -155.04043,
-    "display_address": [
-      "16-586 Old Volcano Rd",
-      "Ste 104",
-      "Keaau, HI 96749"
-    ]
-  },
-  {
-    "id": "N7vnogo4f6QSJs8xeJ_pGg",
-    "name": "Waiakea High School",
-    "categories": "Middle Schools & High Schools",
-    "latitude": 19.7006353,
-    "longitude": -155.0775173,
-    "display_address": [
-      "155 W Kawili St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "bAU7ODtKIMYd0hhHdATw6w",
-    "name": "Longs Drugs",
-    "categories": "Drugstores, Convenience Stores, Pharmacy",
-    "latitude": 19.5041263,
-    "longitude": -154.9546139,
-    "display_address": [
-      "15-1454 Kahakai Blvd",
-      "Pahoa, HI 96778"
-    ]
-  },
-  {
-    "id": "jYNVA553CdsLLr0ZtfY7EQ",
-    "name": "SweetKine808",
-    "categories": "Food Stands, Comfort Food",
-    "latitude": 19.53575861219756,
-    "longitude": -155.15961059454216,
-    "display_address": [
-      "Mountain View, HI 96771"
-    ]
-  },
-  {
-    "id": "jzOQFKO7SjHGIJowOf7WaA",
-    "name": "Anuenue's Kitchen",
-    "categories": "Food Trucks, Hawaiian",
-    "latitude": 19.7002107640964,
-    "longitude": -155.08107433746,
-    "display_address": [
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "w62JTappDRc3rUSChm8Gsg",
-    "name": "Ryan's Towing",
-    "categories": "Towing, Recycling Center, Auto Parts & Supplies",
-    "latitude": 19.629695,
-    "longitude": -155.030567,
-    "display_address": [
-      "16-376 Railroad Ave",
-      "Keaau, HI 96749"
-    ]
-  },
-  {
-    "id": "mdp304REO5xuxXHo3yyDOw",
-    "name": "Hilo High School",
-    "categories": "Middle Schools & High Schools",
-    "latitude": 19.722016,
-    "longitude": -155.096429,
-    "display_address": [
-      "556 Waianuenue Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "BEedT8HFKI1dQgRL5zwU_A",
-    "name": "Hilo Bay Hotel",
-    "categories": "Hotels",
-    "latitude": 19.728549,
-    "longitude": -155.063854,
-    "display_address": [
-      "121 Banyan Dr",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "4bH2rOvRqK6--e19lzrj_g",
-    "name": "KTA Super Stores - Puainako Pharmacy",
-    "categories": "Pharmacy",
-    "latitude": 19.694111436135803,
-    "longitude": -155.06679400917997,
-    "display_address": [
-      "50 E Puainako St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "kIF5KDwlvcEJXsKcUucdmA",
-    "name": "Keaau Shell Food Mart",
+    "id": "B4s3HYIo__lt8yZSuRKt1g",
+    "name": "Sack N Save",
     "categories": "Grocery",
-    "latitude": 19.6233,
-    "longitude": -155.0387299,
-    "display_address": [
-      "16-0573 Old Volcano Rd",
-      "Keaau, HI 96749"
-    ]
+    "latitude": 19.6921037,
+    "longitude": -155.0669464,
+    "display_address": "2100 Kanoelehua Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "ecd54qyMuep8SI0jU6ZqkQ",
+    "name": "Shiigi Drug",
+    "categories": "Drugstores",
+    "latitude": 19.7209892,
+    "longitude": -155.0834961,
+    "display_address": "333 Kilauea Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "T9HD6Ouqjd5D9vJZGq0FnQ",
+    "name": "Wailoa Grill",
+    "categories": "Fast Food, Sandwiches, Seafood",
+    "latitude": 19.723879,
+    "longitude": -155.070273,
+    "display_address": "93 Lihiwai St, Hilo, HI 96720"
+  },
+  {
+    "id": "OGc8Nz8HMGtSHxdmU9GkkA",
+    "name": "Blane's drive inn",
+    "categories": "Desserts, Noodles",
+    "latitude": 19.55912591626665,
+    "longitude": -154.9937457808241,
+    "display_address": "127 Orchid Land Dr, Keaau, HI 96749"
+  },
+  {
+    "id": "iOUjq6AoOph7rhEcXFg1UQ",
+    "name": "808 LOCAL FLAVAH",
+    "categories": "Hawaiian",
+    "latitude": 19.7236213,
+    "longitude": -155.0849898,
+    "display_address": "330 Kamehameha Ave, Ste 102, Hilo, HI 96720"
+  },
+  {
+    "id": "ASBXd8mjV3VokSYEmnoL6Q",
+    "name": "Leleiwi Beach Park",
+    "categories": "Parks, Swimming Pools, Beaches",
+    "latitude": 19.7343519247687,
+    "longitude": -155.015454283012,
+    "display_address": "2300 Kalanianaole Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "YO14nJRmwfFjG2ieszseSw",
+    "name": "Plates Of Aloha",
+    "categories": "Food Trucks, Tacos",
+    "latitude": 20.0215814,
+    "longitude": -155.6694085,
+    "display_address": "65-1214 Lindsay Rd, Waimea, HI 96743"
+  },
+  {
+    "id": "7EvfBpA5AEi7ZO_UcFUGJA",
+    "name": "Na\u2019au",
+    "categories": "Hawaiian, Personal Chefs",
+    "latitude": 19.83159800275875,
+    "longitude": -155.10609498855374,
+    "display_address": "Pepeekeo, HI 96783"
+  },
+  {
+    "id": "eCrhC3zl0O6mfkB4qtpEVA",
+    "name": "The Honey Hut",
+    "categories": "Food Trucks, Breakfast & Brunch",
+    "latitude": 19.86954583430312,
+    "longitude": -155.1124031536816,
+    "display_address": "Honomu, HI 96728"
+  },
+  {
+    "id": "zAYfhdE_2MR5OCp9QSQU1g",
+    "name": "L&L Hawaiian Barbecue",
+    "categories": "Barbeque, Hawaiian",
+    "latitude": 19.72175,
+    "longitude": -155.08718,
+    "display_address": "348 Kinoole St, Hilo, HI 96720"
+  },
+  {
+    "id": "5fz8izmX7qEZZg_WwFf9VQ",
+    "name": "Sack N Save",
+    "categories": "Grocery",
+    "latitude": 19.722844745218524,
+    "longitude": -155.088367669248,
+    "display_address": "250 Kinoole St, Hilo, HI 96720"
   },
   {
     "id": "oNapA9Yj75PX5YFR9ZVrtQ",
@@ -3153,43 +2045,39 @@
     "categories": "Chicken Wings, Fast Food",
     "latitude": 19.502841625153614,
     "longitude": -154.95567676860128,
-    "display_address": [
-      "15-2714 Pahoa Village Rd",
-      "P\u0101hoa, HI 96778"
-    ]
+    "display_address": "15-2714 Pahoa Village Rd, P\u0101hoa, HI 96778"
   },
   {
-    "id": "gluH88CGuMJ3efSKGPuJYw",
-    "name": "E Komo Mai Diner Bar & Grill",
-    "categories": "Bars, Diners",
-    "latitude": 19.72215,
-    "longitude": -155.06709,
-    "display_address": [
-      "1550 Kamehameha Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "RBGDS7uvLxZSCgp3-i0ZzA",
+    "name": "Hawaiian Airlines Premier Club",
+    "categories": "Airport Lounges",
+    "latitude": 19.7152155444586,
+    "longitude": -155.039928525399,
+    "display_address": "2450 Kekuanaoa St, Hilo, HI 96720"
   },
   {
-    "id": "gEYtsWD4P-VjXskRe3NJ5Q",
+    "id": "CIdkV2H5mCXjwyikd1qEOw",
     "name": "McDonald's",
-    "categories": "Fast Food, Coffee & Tea, Burgers",
-    "latitude": 19.72321883584609,
-    "longitude": -155.0874119,
-    "display_address": [
-      "255 Kinoole St",
-      "Hilo, HI 96720"
-    ]
+    "categories": "Fast Food, Burgers, Coffee & Tea",
+    "latitude": 19.6912097,
+    "longitude": -155.0663614,
+    "display_address": "2100 Kanoelehua Ave, Hilo, HI 96720"
   },
   {
-    "id": "Pji-uluGjr6HZA5VNXf68Q",
-    "name": "Shaka Paka",
-    "categories": "Skate Parks",
-    "latitude": 19.7186191,
-    "longitude": -154.9961269,
-    "display_address": [
-      "Kapoho Coast Rd",
-      "Hilo, HI 96720"
-    ]
+    "id": "Jlr2Zn6rbbXrrxZ2mL8oQQ",
+    "name": "St. Joseph School",
+    "categories": "Middle Schools & High Schools",
+    "latitude": 19.71358,
+    "longitude": -155.08429,
+    "display_address": "1000 Ululani St, Hilo, HI 96720"
+  },
+  {
+    "id": "rXXL_iT-6XVowj-kuNb_lA",
+    "name": "Karuna Foods",
+    "categories": "Food Stands, Vegan",
+    "latitude": 19.3613411524922,
+    "longitude": -154.971048688288,
+    "display_address": "12 Kalapana-Kapoho Rd, P\u0101hoa, HI 96778"
   },
   {
     "id": "78pFuoC075DZvzgt94xcNg",
@@ -3197,220 +2085,15 @@
     "categories": "Barbeque, Hawaiian",
     "latitude": 19.69941,
     "longitude": -155.06513,
-    "display_address": [
-      "315 Makaala St",
-      "Ste 106-3",
-      "Waiakea Shopping Center",
-      "Waiakea, HI 96720"
-    ]
+    "display_address": "315 Makaala St, Ste 106-3, Waiakea Shopping Center, Waiakea, HI 96720"
   },
   {
-    "id": "AvUIHjKv1a6IpuphDZ01Ug",
-    "name": "Minit Stop",
-    "categories": "Convenience Stores, Chicken Wings, Fast Food",
-    "latitude": 19.69591966896939,
-    "longitude": -155.06643727319252,
-    "display_address": [
-      "26 Kekela St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "YQUEoApLvHUrE-mQTWW2yg",
-    "name": "Salti Gear Lemonade",
-    "categories": "Juice Bars & Smoothies, Food Stands",
-    "latitude": 19.71924,
-    "longitude": -155.08186,
-    "display_address": [
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "54KZwpL9fCxbA1f2yv939A",
-    "name": "Waiakea Elementary School",
-    "categories": "Elementary Schools",
-    "latitude": 19.6945337,
-    "longitude": -155.0746491,
-    "display_address": [
-      "180 W Puainako St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "1pcZMYgvVoYmkZPgR3qSDQ",
-    "name": "Hudies Hawaiian Kitchen",
-    "categories": "Hawaiian",
-    "latitude": 19.72582496809696,
-    "longitude": -155.0592983,
-    "display_address": [
-      "355 Kalanianaole Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "-uvGU-X14pVVIJhAbk5A3Q",
-    "name": "Business Services Hawaii",
-    "categories": "Recycling Center",
-    "latitude": 19.637246939187506,
-    "longitude": -155.04942397316916,
-    "display_address": [
-      "16-630 Kipimana St",
-      "Keaau, HI 96749"
-    ]
-  },
-  {
-    "id": "CuO1HcViG4b1SdKGy_s9WQ",
-    "name": "Maona Food Truck",
-    "categories": "Food Trucks, Burgers, Barbeque",
-    "latitude": 19.71664,
-    "longitude": -155.08526,
-    "display_address": [
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "8Edbccq7faeYID4bn21nRg",
-    "name": "McDonald's",
-    "categories": "Fast Food, Burgers, Coffee & Tea",
-    "latitude": 19.6220488202064,
-    "longitude": -155.039260983467,
-    "display_address": [
-      "16-565 Old Volcano Rd",
-      "Keaau, HI 96749"
-    ]
-  },
-  {
-    "id": "Y53ZsPBPrjWtWoI-msfEIg",
-    "name": "Hilo Intermediate School",
-    "categories": "Middle Schools & High Schools",
-    "latitude": 19.7202145689552,
-    "longitude": -155.095871106784,
-    "display_address": [
-      "587 Waianuenue Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "PPe4UvPAugKbFRBQULgWMw",
-    "name": "Kalakaua Park",
-    "categories": "Parks",
-    "latitude": 19.7250422173369,
-    "longitude": -155.088025748945,
-    "display_address": [
-      "136 Kalakaua St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "DRw2jXygsbaouNWLJ51kkQ",
-    "name": "CoMechee Iceshave",
-    "categories": "Hot Dogs, Shaved Ice, Food Trucks",
-    "latitude": 19.724547957758176,
-    "longitude": -155.06089002330802,
-    "display_address": [
-      "213 Kalanianaole St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "M5thrkmcK8GnvQZQbSu7Nw",
-    "name": "Crazy Grandmaz",
-    "categories": "Cocktail Bars",
-    "latitude": 19.71728,
-    "longitude": -155.08435,
-    "display_address": [
-      "718 Kinoole St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "7H_wsvAAHYfJiooLlq0_jg",
-    "name": "Kokoz",
-    "categories": "Food Trucks, Burgers, Acai Bowls",
-    "latitude": 19.721775230401622,
-    "longitude": -155.094101,
-    "display_address": [
-      "15 Laimana St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "KvPYObY6z8mpCmWwiYyHvA",
-    "name": "Laniakea Cafe",
-    "categories": "Cafes",
-    "latitude": 19.714766049975367,
-    "longitude": -155.03948068220885,
-    "display_address": [
-      "2350 Kekuanaoa St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "Y0s6C7D3NqakMnc6cmQLqQ",
-    "name": "Longs Drugs",
-    "categories": "Drugstores, Convenience Stores, Pharmacy",
-    "latitude": 19.69736898673304,
-    "longitude": -155.063334,
-    "display_address": [
-      "111 E Puainako St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "Uk6Uylff26dQtBK8TN5nBA",
-    "name": "Lincoln Park",
-    "categories": "Parks, Playgrounds",
-    "latitude": 19.721301346410772,
-    "longitude": -155.086395412648,
-    "display_address": [
-      "405 Kinoole St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "16eI5TOGJg58ysOYaKLjIw",
-    "name": "Pacific Biodiesel Technologies",
-    "categories": "Recycling Center",
-    "latitude": 19.581873,
-    "longitude": -155.032104,
-    "display_address": [
-      "16-240 Mikahala St",
-      "Keaau, HI 96749"
-    ]
-  },
-  {
-    "id": "tVKylpaR8asWGXWPPhO71A",
-    "name": "Domino\u2019s Pizza",
-    "categories": "Pizza, Sandwiches, Chicken Wings",
-    "latitude": 19.701358,
-    "longitude": -155.063457,
-    "display_address": [
-      "315 Makaala St",
-      "Ste 109",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "G_bZ525gKoyLjPGsD3VHwA",
-    "name": "Burger King",
-    "categories": "Fast Food, Burgers",
-    "latitude": 19.504168341273,
-    "longitude": -154.955040961503,
-    "display_address": [
-      "15-1450 Kahakai Blvd",
-      "Pahoa, HI 96778"
-    ]
-  },
-  {
-    "id": "YkArfWnGrXhM3hKkbVOt7A",
-    "name": "At The Beach With Friends Bed & Breakfast",
-    "categories": "Hotels, Bed & Breakfast",
-    "latitude": 19.7326729,
-    "longitude": -155.01631,
-    "display_address": [
-      "369 Nene St",
-      "Hilo, HI 96720"
-    ]
+    "id": "XYNfRfKzqeEQfGdg_3aEWA",
+    "name": "Pizza Ala Slice",
+    "categories": "Pizza",
+    "latitude": 19.696983,
+    "longitude": -155.064099,
+    "display_address": "111 E Puainako St, Hilo, HI 96720"
   },
   {
     "id": "JLxzUpCkeDAvEFImFq3wlg",
@@ -3418,33 +2101,15 @@
     "categories": "Juice Bars & Smoothies, Hawaiian, Filipino",
     "latitude": 19.6975398977595,
     "longitude": -155.063247547861,
-    "display_address": [
-      "111 E Puainako St",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "111 E Puainako St, Hilo, HI 96720"
   },
   {
-    "id": "JahVn4ShVuClUGtX6t2Opg",
-    "name": "Unko Charlie\u2019s Texas Style Barbeque",
-    "categories": "Barbeque, Food Stands",
-    "latitude": 19.5029091,
-    "longitude": -155.153675,
-    "display_address": [
-      "18-4144 Lehuanani St",
-      "Mountain View, HI 96771"
-    ]
-  },
-  {
-    "id": "HiUF4V-YQVOqSCIMNNB74w",
-    "name": "Bayshore Towers",
-    "categories": "Vacation Rentals, Apartments",
-    "latitude": 19.73161,
-    "longitude": -155.08848,
-    "display_address": [
-      "84 Pukihae St",
-      "Apt 305",
-      "Hilo, HI 96720"
-    ]
+    "id": "QI4gsj6k93d6pFFPE8w3ZA",
+    "name": "Da Beans Green",
+    "categories": "Cafes",
+    "latitude": 19.4937404,
+    "longitude": -154.9454773,
+    "display_address": "15-2942 Pahoa Village Rd, P\u0101hoa, HI 96778"
   },
   {
     "id": "bL3Ql46d83oCWpygAABR9g",
@@ -3452,20 +2117,143 @@
     "categories": "Fast Food, Chicken Wings, Chicken Shop",
     "latitude": 19.6954,
     "longitude": -155.06387,
-    "display_address": [
-      "111 E Puainako Rd",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "111 E Puainako Rd, Hilo, HI 96720"
   },
   {
-    "id": "5F9XE09l7PY941fulepPhQ",
-    "name": "Eastside Rubbish & Recycling",
-    "categories": "Recycling Center",
-    "latitude": 19.6209493062673,
-    "longitude": -155.041795746033,
-    "display_address": [
-      "Keaau, HI 96749"
-    ]
+    "id": "HTQO2HZyLKq7q5-VsZ-8jw",
+    "name": "Hilo Union School",
+    "categories": "Elementary Schools",
+    "latitude": 19.72330014042115,
+    "longitude": -155.0918167516485,
+    "display_address": "506 Waianuenue Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "y9PWCON-0SfEoxTYtMT8XQ",
+    "name": "Longs Drugs",
+    "categories": "Drugstores, Convenience Stores, Pharmacy",
+    "latitude": 19.719,
+    "longitude": -155.081,
+    "display_address": "555 Kilauea Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "A6_ekpeZnzgbt9hCQHGtFQ",
+    "name": "Center Plate",
+    "categories": "Diners",
+    "latitude": 19.714613,
+    "longitude": -155.039638,
+    "display_address": "2450 Kekuanaoa St, Hilo, HI 96720"
+  },
+  {
+    "id": "tVKylpaR8asWGXWPPhO71A",
+    "name": "Domino\u2019s Pizza",
+    "categories": "Pizza, Sandwiches, Chicken Wings",
+    "latitude": 19.701358,
+    "longitude": -155.063457,
+    "display_address": "315 Makaala St, Ste 109, Hilo, HI 96720"
+  },
+  {
+    "id": "N7vnogo4f6QSJs8xeJ_pGg",
+    "name": "Waiakea High School",
+    "categories": "Middle Schools & High Schools",
+    "latitude": 19.7006353,
+    "longitude": -155.0775173,
+    "display_address": "155 W Kawili St, Hilo, HI 96720"
+  },
+  {
+    "id": "bAU7ODtKIMYd0hhHdATw6w",
+    "name": "Longs Drugs",
+    "categories": "Drugstores, Convenience Stores, Pharmacy",
+    "latitude": 19.5041263,
+    "longitude": -154.9546139,
+    "display_address": "15-1454 Kahakai Blvd, Pahoa, HI 96778"
+  },
+  {
+    "id": "7H_wsvAAHYfJiooLlq0_jg",
+    "name": "Kokoz",
+    "categories": "Food Trucks, Burgers, Acai Bowls",
+    "latitude": 19.721775230401622,
+    "longitude": -155.094101,
+    "display_address": "15 Laimana St, Hilo, HI 96720"
+  },
+  {
+    "id": "_2rBthT1z5GSxhPpTo-ICw",
+    "name": "L&L Hawaiian Barbecue",
+    "categories": "Hawaiian, Barbeque",
+    "latitude": 19.62203,
+    "longitude": -155.04043,
+    "display_address": "16-586 Old Volcano Rd, Ste 104, Keaau, HI 96749"
+  },
+  {
+    "id": "-kBK8Udyll8BQxY8RPe9qw",
+    "name": "Waiakeawaena Elementary School",
+    "categories": "Elementary Schools, Middle Schools & High Schools",
+    "latitude": 19.683423,
+    "longitude": -155.068218,
+    "display_address": "2420 Kilauea Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "AvUIHjKv1a6IpuphDZ01Ug",
+    "name": "Minit Stop",
+    "categories": "Convenience Stores, Chicken Wings, Fast Food",
+    "latitude": 19.69591966896939,
+    "longitude": -155.06643727319252,
+    "display_address": "26 Kekela St, Hilo, HI 96720"
+  },
+  {
+    "id": "jzOQFKO7SjHGIJowOf7WaA",
+    "name": "Anuenue's Kitchen",
+    "categories": "Food Trucks, Hawaiian",
+    "latitude": 19.7002107640964,
+    "longitude": -155.08107433746,
+    "display_address": "Hilo, HI 96720"
+  },
+  {
+    "id": "b3mfAWn0qDAdtHbwduWosg",
+    "name": "Kua O Ka La Public Charter School",
+    "categories": "Elementary Schools, Middle Schools & High Schools",
+    "latitude": 19.67282,
+    "longitude": -155.05403,
+    "display_address": "345 Makalika St, Hilo, HI 96720"
+  },
+  {
+    "id": "w62JTappDRc3rUSChm8Gsg",
+    "name": "Ryan's Towing",
+    "categories": "Towing, Recycling Center, Auto Parts & Supplies",
+    "latitude": 19.629695,
+    "longitude": -155.030567,
+    "display_address": "16-376 Railroad Ave, Keaau, HI 96749"
+  },
+  {
+    "id": "gEYtsWD4P-VjXskRe3NJ5Q",
+    "name": "McDonald's",
+    "categories": "Fast Food, Coffee & Tea, Burgers",
+    "latitude": 19.72321883584609,
+    "longitude": -155.0874119,
+    "display_address": "255 Kinoole St, Hilo, HI 96720"
+  },
+  {
+    "id": "CuO1HcViG4b1SdKGy_s9WQ",
+    "name": "Maona Food Truck",
+    "categories": "Food Trucks, Burgers, Barbeque",
+    "latitude": 19.71664,
+    "longitude": -155.08526,
+    "display_address": "Hilo, HI 96720"
+  },
+  {
+    "id": "BEedT8HFKI1dQgRL5zwU_A",
+    "name": "Hilo Bay Hotel",
+    "categories": "Hotels",
+    "latitude": 19.728549,
+    "longitude": -155.063854,
+    "display_address": "121 Banyan Dr, Hilo, HI 96720"
+  },
+  {
+    "id": "mdp304REO5xuxXHo3yyDOw",
+    "name": "Hilo High School",
+    "categories": "Middle Schools & High Schools",
+    "latitude": 19.722016,
+    "longitude": -155.096429,
+    "display_address": "556 Waianuenue Ave, Hilo, HI 96720"
   },
   {
     "id": "3e18qjE5vpndDOIoU8FZxg",
@@ -3473,22 +2261,183 @@
     "categories": "Pizza, Chicken Wings, Sandwiches",
     "latitude": 19.502412147978298,
     "longitude": -154.9553956452826,
-    "display_address": [
-      "15-2714 Pahoa Village Rd",
-      "Ste I-1",
-      "Puna Kai Shopping Center",
-      "P\u0101hoa, HI 96778"
-    ]
+    "display_address": "15-2714 Pahoa Village Rd, Ste I-1, Puna Kai Shopping Center, P\u0101hoa, HI 96778"
   },
   {
-    "id": "iIZ2UrFznp9CuK2JV-NjlQ",
-    "name": "Triple Pine Pizza",
-    "categories": "Pizza, Food Trucks",
-    "latitude": 19.7178401947021,
-    "longitude": -155.087936401367,
-    "display_address": [
-      "Hilo, HI 96720"
-    ]
+    "id": "8Edbccq7faeYID4bn21nRg",
+    "name": "McDonald's",
+    "categories": "Fast Food, Burgers, Coffee & Tea",
+    "latitude": 19.6220488202064,
+    "longitude": -155.039260983467,
+    "display_address": "16-565 Old Volcano Rd, Keaau, HI 96749"
+  },
+  {
+    "id": "kIF5KDwlvcEJXsKcUucdmA",
+    "name": "Keaau Shell Food Mart",
+    "categories": "Grocery",
+    "latitude": 19.6233,
+    "longitude": -155.0387299,
+    "display_address": "16-0573 Old Volcano Rd, Keaau, HI 96749"
+  },
+  {
+    "id": "Q9VLLFLjW8HZXyLRtqSyTQ",
+    "name": "The Well - New Hope Church",
+    "categories": "Acai Bowls, Coffee & Tea, Sandwiches",
+    "latitude": 19.669550710901056,
+    "longitude": -155.10785646736622,
+    "display_address": "840 Kupulau Rd, Hilo, HI 96720"
+  },
+  {
+    "id": "7HROvTr9PTVIsL1_NWRLMQ",
+    "name": "Affordable Catering & Okazuya",
+    "categories": "Caterers, Japanese, Breakfast & Brunch",
+    "latitude": 19.70673,
+    "longitude": -155.06677,
+    "display_address": "811 Laukapu St, Ste 1, Hilo, HI 96720"
+  },
+  {
+    "id": "s_VKFZI-tamJUpTQjVZr0w",
+    "name": "Kaumana Drive Baptist Church",
+    "categories": "Child Care & Day Care, Preschools, Elementary Schools",
+    "latitude": 19.70873,
+    "longitude": -155.1105,
+    "display_address": "388 Kaumana Dr, Hilo, HI 96720"
+  },
+  {
+    "id": "jYNVA553CdsLLr0ZtfY7EQ",
+    "name": "SweetKine808",
+    "categories": "Food Stands, Comfort Food",
+    "latitude": 19.53575861219756,
+    "longitude": -155.15961059454216,
+    "display_address": "Mountain View, HI 96771"
+  },
+  {
+    "id": "2ZhJ4Yv8ctwseLJVENlq8A",
+    "name": "Executive Networking Center",
+    "categories": "Shared Office Spaces",
+    "latitude": 19.71203,
+    "longitude": -155.079217,
+    "display_address": "77 Mohouli St, Ste 101, Hilo, HI 96720"
+  },
+  {
+    "id": "54KZwpL9fCxbA1f2yv939A",
+    "name": "Waiakea Elementary School",
+    "categories": "Elementary Schools",
+    "latitude": 19.6945337,
+    "longitude": -155.0746491,
+    "display_address": "180 W Puainako St, Hilo, HI 96720"
+  },
+  {
+    "id": "1pcZMYgvVoYmkZPgR3qSDQ",
+    "name": "Hudies Hawaiian Kitchen",
+    "categories": "Hawaiian",
+    "latitude": 19.72582496809696,
+    "longitude": -155.0592983,
+    "display_address": "355 Kalanianaole Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "PPe4UvPAugKbFRBQULgWMw",
+    "name": "Kalakaua Park",
+    "categories": "Parks",
+    "latitude": 19.7250422173369,
+    "longitude": -155.088025748945,
+    "display_address": "136 Kalakaua St, Hilo, HI 96720"
+  },
+  {
+    "id": "Pji-uluGjr6HZA5VNXf68Q",
+    "name": "Shaka Paka",
+    "categories": "Skate Parks",
+    "latitude": 19.7186191,
+    "longitude": -154.9961269,
+    "display_address": "Kapoho Coast Rd, Hilo, HI 96720"
+  },
+  {
+    "id": "G_bZ525gKoyLjPGsD3VHwA",
+    "name": "Burger King",
+    "categories": "Fast Food, Burgers",
+    "latitude": 19.504168341273,
+    "longitude": -154.955040961503,
+    "display_address": "15-1450 Kahakai Blvd, Pahoa, HI 96778"
+  },
+  {
+    "id": "Y53ZsPBPrjWtWoI-msfEIg",
+    "name": "Hilo Intermediate School",
+    "categories": "Middle Schools & High Schools",
+    "latitude": 19.7202145689552,
+    "longitude": -155.095871106784,
+    "display_address": "587 Waianuenue Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "M5thrkmcK8GnvQZQbSu7Nw",
+    "name": "Crazy Grandmaz",
+    "categories": "Cocktail Bars",
+    "latitude": 19.71728,
+    "longitude": -155.08435,
+    "display_address": "718 Kinoole St, Hilo, HI 96720"
+  },
+  {
+    "id": "Uk6Uylff26dQtBK8TN5nBA",
+    "name": "Lincoln Park",
+    "categories": "Parks, Playgrounds",
+    "latitude": 19.721301346410772,
+    "longitude": -155.086395412648,
+    "display_address": "405 Kinoole St, Hilo, HI 96720"
+  },
+  {
+    "id": "Y0s6C7D3NqakMnc6cmQLqQ",
+    "name": "Longs Drugs",
+    "categories": "Drugstores, Convenience Stores, Pharmacy",
+    "latitude": 19.69736898673304,
+    "longitude": -155.063334,
+    "display_address": "111 E Puainako St, Hilo, HI 96720"
+  },
+  {
+    "id": "KvPYObY6z8mpCmWwiYyHvA",
+    "name": "Laniakea Cafe",
+    "categories": "Cafes",
+    "latitude": 19.714766049975367,
+    "longitude": -155.03948068220885,
+    "display_address": "2350 Kekuanaoa St, Hilo, HI 96720"
+  },
+  {
+    "id": "YQUEoApLvHUrE-mQTWW2yg",
+    "name": "Salti Gear Lemonade",
+    "categories": "Juice Bars & Smoothies, Food Stands",
+    "latitude": 19.71924,
+    "longitude": -155.08186,
+    "display_address": "Hilo, HI 96720"
+  },
+  {
+    "id": "gluH88CGuMJ3efSKGPuJYw",
+    "name": "E Komo Mai Diner Bar & Grill",
+    "categories": "Bars, Diners",
+    "latitude": 19.72215,
+    "longitude": -155.06709,
+    "display_address": "1550 Kamehameha Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "DRw2jXygsbaouNWLJ51kkQ",
+    "name": "CoMechee Iceshave",
+    "categories": "Hot Dogs, Shaved Ice, Food Trucks",
+    "latitude": 19.724547957758176,
+    "longitude": -155.06089002330802,
+    "display_address": "213 Kalanianaole St, Hilo, HI 96720"
+  },
+  {
+    "id": "YkArfWnGrXhM3hKkbVOt7A",
+    "name": "At The Beach With Friends Bed & Breakfast",
+    "categories": "Hotels, Bed & Breakfast",
+    "latitude": 19.7326729,
+    "longitude": -155.01631,
+    "display_address": "369 Nene St, Hilo, HI 96720"
+  },
+  {
+    "id": "QVLs760HyHEPEnLnBMuD6A",
+    "name": "CVS Pharmacy",
+    "categories": "Pharmacy",
+    "latitude": 19.71451,
+    "longitude": -155.09669,
+    "display_address": "670 Ponahawai St, Ste 213, Hilo, HI 96720"
   },
   {
     "id": "ndIc1bn6woAejG-78ORpmQ",
@@ -3496,379 +2445,7 @@
     "categories": "Parks",
     "latitude": 19.571797199639104,
     "longitude": -154.9576487568933,
-    "display_address": [
-      "15-1570 Maku'u Dr",
-      "Keaau, HI 96749"
-    ]
-  },
-  {
-    "id": "vRRy4Wv2mrJ9lu7TczCIbQ",
-    "name": "Subway",
-    "categories": "Sandwiches, Fast Food",
-    "latitude": 19.7216580059159,
-    "longitude": -155.0855018782,
-    "display_address": [
-      "194 Kilauea Ave",
-      "Unit 104",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "SYQGPMrQPNnOpo87rMq0Mw",
-    "name": "Minit Stop",
-    "categories": "Convenience Stores, Chicken Wings, Fast Food",
-    "latitude": 19.55908488265855,
-    "longitude": -154.993414,
-    "display_address": [
-      "16-119 Orchid Land Dr",
-      "Keaau, HI 96749"
-    ]
-  },
-  {
-    "id": "g4F4K1Pi_0D0uomRZ95lDQ",
-    "name": "Atlas Recycling Centers",
-    "categories": "Recycling Center",
-    "latitude": 19.70478,
-    "longitude": -155.06821,
-    "display_address": [
-      "30 Makaala St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "nFWFSqkOix-PQ65J9cZIIQ",
-    "name": "Kolekole Beach Park",
-    "categories": "Parks",
-    "latitude": 19.881929,
-    "longitude": -155.119404,
-    "display_address": [
-      "Makawao, HI 96768"
-    ]
-  },
-  {
-    "id": "dPasMEbrDV9IUZzoB3zu7A",
-    "name": "Subway",
-    "categories": "Sandwiches, Fast Food",
-    "latitude": 19.5050871772856,
-    "longitude": -154.957179086623,
-    "display_address": [
-      "15-2668 Keaau-pahoa Rd",
-      "Pahoa, HI 96778"
-    ]
-  },
-  {
-    "id": "PTvkQFKDxAykockQczzWDw",
-    "name": "University Palms",
-    "categories": "Apartments",
-    "latitude": 19.70398,
-    "longitude": -155.07886,
-    "display_address": [
-      "1377 Kapiolani St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "iOYE-2-fMX0Pg0f6yuG67A",
-    "name": "The Rainbow Retreat Center",
-    "categories": "Hotels, Bed & Breakfast, Guest Houses",
-    "latitude": 19.5076,
-    "longitude": -154.90186,
-    "display_address": [
-      "14-635 Seaview Dr",
-      "Pahoa, HI 96778"
-    ]
-  },
-  {
-    "id": "GCbWV15Df74mbQhgq9NPyQ",
-    "name": "Pu\u2019u \u2018\u014c\u2019\u014d Trail",
-    "categories": "Hiking, Parks",
-    "latitude": 19.71626,
-    "longitude": -155.10332,
-    "display_address": [
-      "23 State Rte 200",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "i-we02LtMRNH-ecTKk9MIw",
-    "name": "Uncle's Awa Club",
-    "categories": "Food Stands",
-    "latitude": 19.361125642965412,
-    "longitude": -154.9706520848218,
-    "display_address": [
-      "125038 Kalapana - Kapoho Rd",
-      "P\u0101hoa, HI 96778"
-    ]
-  },
-  {
-    "id": "ulfGl4tdbrH05xKzh5lnog",
-    "name": "Yum Yum Teriyaki",
-    "categories": "Korean",
-    "latitude": 19.6970909352346,
-    "longitude": -155.064054890282,
-    "display_address": [
-      "111 E Puainako St",
-      "Ste 568",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "gRFr18vKc4rY1S3dnjNnHA",
-    "name": "SeaView Taco Stand",
-    "categories": "Food Stands, Street Vendors",
-    "latitude": 19.40008,
-    "longitude": -154.91974,
-    "display_address": [
-      "12-106 Mapuana Ave",
-      "P\u0101hoa, HI 96778"
-    ]
-  },
-  {
-    "id": "Ki5M1BScG1KrD44FlT0Fvw",
-    "name": "CVS Pharmacy",
-    "categories": "Drugstores, Convenience Stores, Pharmacy",
-    "latitude": 19.623430627949062,
-    "longitude": -155.0391048339474,
-    "display_address": [
-      "16-529 Keaau-Pahoa Rd",
-      "Kea'au Shopping Center",
-      "Keaau, HI 96749"
-    ]
-  },
-  {
-    "id": "iEzyUF22gyoVWjP0gYzWgQ",
-    "name": "Kealoha Beach Park",
-    "categories": "Parks",
-    "latitude": 19.7351520340121,
-    "longitude": -155.033601628064,
-    "display_address": [
-      "1701 Kalanianaole Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "egdkfWABHqOMQ3yGvygJZg",
-    "name": "Walmart Pharmacy",
-    "categories": "Pharmacy",
-    "latitude": 19.700296,
-    "longitude": -155.061917,
-    "display_address": [
-      "325 E Makaala St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "7aHQvAG5HrJlF1ew-rjygg",
-    "name": "FoodSHARE",
-    "categories": "Asian Fusion",
-    "latitude": 19.88295,
-    "longitude": -155.12164,
-    "display_address": [
-      "Hakalau Veterans Park",
-      "Old Mamalahoa Hwy",
-      "Hakalau, HI 96710"
-    ]
-  },
-  {
-    "id": "HwVkxf5t0h00-3trp8f_NQ",
-    "name": "Minit Stop",
-    "categories": "Convenience Stores, Chicken Wings, Fast Food",
-    "latitude": 19.70962,
-    "longitude": -155.0646999,
-    "display_address": [
-      "763 Leilani St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "YsdgIdK0UOhkJoQz00UdWg",
-    "name": "Machado Acres Park",
-    "categories": "Parks",
-    "latitude": 19.67579398724363,
-    "longitude": -155.08726704088022,
-    "display_address": [
-      "1622 Keone St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "it0-JPFVklqz23ULUIxKFg",
-    "name": "Ginger & Turmeric: A Kamath's Kitchen",
-    "categories": "Food Delivery Services, Indian",
-    "latitude": 19.68857914146088,
-    "longitude": -155.08636595390172,
-    "display_address": [
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "yK8_1NW6AHX7HLFOh_4v8Q",
-    "name": "Aloha Wellness Inn",
-    "categories": "Hotels",
-    "latitude": 19.7220993,
-    "longitude": -155.0899811,
-    "display_address": [
-      "239 Haili St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "Xm4T6VrQlkQevAR1nvE8lw",
-    "name": "MEZA Mexican Tamales",
-    "categories": "Food Stands",
-    "latitude": 19.56551200114488,
-    "longitude": -154.9955936,
-    "display_address": [
-      "15-1603  Keaau Pahoa Rd",
-      "Keaau, HI 96749"
-    ]
-  },
-  {
-    "id": "b4OhKa-dVDXegwzCR1w0mg",
-    "name": "DA Phat Boxx Food Truck",
-    "categories": "Hawaiian, Food Trucks",
-    "latitude": 19.73708767875804,
-    "longitude": -155.0575408819828,
-    "display_address": [
-      "HI-92",
-      "Honolulu, HI 96819"
-    ]
-  },
-  {
-    "id": "XBURV_S-sJqtLdjJt3uq_g",
-    "name": "Burger King",
-    "categories": "Burgers, Fast Food",
-    "latitude": 19.698928572779927,
-    "longitude": -155.06067352821515,
-    "display_address": [
-      "368A E Makaala St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "4mzty6x9nL6rH4stkzHYHA",
-    "name": "Reeds Bay Beach Park",
-    "categories": "Parks, Beaches",
-    "latitude": 19.7251907587488,
-    "longitude": -155.060713291168,
-    "display_address": [
-      "251 Banyan Dr",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "eZYHrsDvqI9_hCrqt0Drag",
-    "name": "Subway",
-    "categories": "Sandwiches, Fast Food",
-    "latitude": 19.6901623,
-    "longitude": -155.0661941,
-    "display_address": [
-      "2100 D-1 Building D Kanoelehua Ave Space",
-      "Space D-1, Bldg D",
-      "Puainako Center",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "I6wcuE7ORTBIDiyxooY02Q",
-    "name": "Zan's Grindz",
-    "categories": "Pizza",
-    "latitude": 19.7060705,
-    "longitude": -155.0692177,
-    "display_address": [
-      "275 E Kawili St",
-      "In Hilo Brewing",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "KAax7Wx7CCJK8LU8MnWZFw",
-    "name": "Taco Bell",
-    "categories": "Fast Food, Mexican",
-    "latitude": 19.720742,
-    "longitude": -155.083997,
-    "display_address": [
-      "326 Kilauea Ave.",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "V9xFDwBGhe7lYnX_PDCm2A",
-    "name": "Panda Express",
-    "categories": "Chinese, Fast Food",
-    "latitude": 19.72018,
-    "longitude": -155.08343,
-    "display_address": [
-      "376 Kilauea Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "CJOMNPgPELFcHClQR0imAQ",
-    "name": "Kaiwiki park",
-    "categories": "Parks",
-    "latitude": 19.754199,
-    "longitude": -155.13992,
-    "display_address": [
-      "2391 Kaiwiki Rd",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "LqgQxTd--uY12TLmRN_8Eg",
-    "name": "Hilo Breakwater",
-    "categories": "Parks",
-    "latitude": 19.7327764094219,
-    "longitude": -155.051446929574,
-    "display_address": [
-      "1017 Kalanianaole Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "OwJMxmj6CpWgV18jq2pIAg",
-    "name": "McDonald's",
-    "categories": "Fast Food, Burgers, Coffee & Tea",
-    "latitude": 19.50288684792869,
-    "longitude": -154.95565337312456,
-    "display_address": [
-      "15-2714 Pahoa Village Rd",
-      "P\u0101hoa, HI 96778"
-    ]
-  },
-  {
-    "id": "a52KslJ5bWi3NrMhfZCNrg",
-    "name": "Subway",
-    "categories": "Sandwiches, Fast Food",
-    "latitude": 19.622353,
-    "longitude": -155.039635,
-    "display_address": [
-      "16-586 Old Volcano Rd P201 -203",
-      "P201 -203",
-      "Keaau, HI 96749"
-    ]
-  },
-  {
-    "id": "951mqBdxtymZ_uyPLgEm6A",
-    "name": "Lannan A G",
-    "categories": "Hotels, Bed & Breakfast",
-    "latitude": 19.7521266937256,
-    "longitude": -155.090087890625,
-    "display_address": [
-      "30 Kahoa St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "IEVm90Jma0hx72lmUTCsSA",
-    "name": "Hilo Beach House",
-    "categories": "Hotels",
-    "latitude": 19.73669,
-    "longitude": -155.03746,
-    "display_address": [
-      "23 Machida Ln",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "15-1570 Maku'u Dr, Keaau, HI 96749"
   },
   {
     "id": "Ojk7P8nawi76Fz9jwGcuEg",
@@ -3876,65 +2453,7 @@
     "categories": "Food Trucks, Waffles",
     "latitude": 19.7006939,
     "longitude": -155.0606425,
-    "display_address": [
-      "614 Kilauea Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "vUbYKJBFgUEHZhNjScROlQ",
-    "name": "Waiolena Beach Park",
-    "categories": "Parks",
-    "latitude": 19.733055183417,
-    "longitude": -155.017675867231,
-    "display_address": [
-      "2151-2323 Kalanianaole Ave",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "F8zYgrvcT4d7r8YjLNXI0w",
-    "name": "McDonald's",
-    "categories": "Fast Food, Burgers, Coffee & Tea",
-    "latitude": 19.69997,
-    "longitude": -155.06195,
-    "display_address": [
-      "325 E Makaala St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "otkCuKA7zUGDx7oNub_Krw",
-    "name": "Waiakea Lagoon View Apartments",
-    "categories": "Apartments",
-    "latitude": 19.7130336761475,
-    "longitude": -155.076141357422,
-    "display_address": [
-      "50 Maile St",
-      "Apt A33",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "2qdd5HpV7JQ9NTkJjJOEuA",
-    "name": "@islandwoodfired",
-    "categories": "Food Trucks, Pizza",
-    "latitude": 19.71924,
-    "longitude": -155.08186,
-    "display_address": [
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "pUFVZy-MwWrQPCi4COiKsg",
-    "name": "Kea'au High School",
-    "categories": "Middle Schools & High Schools",
-    "latitude": 19.61251556792016,
-    "longitude": -155.03194664920326,
-    "display_address": [
-      "16-725 Keaau-Pahoa Rd",
-      "Keaau, HI 96749"
-    ]
+    "display_address": "614 Kilauea Ave, Hilo, HI 96720"
   },
   {
     "id": "AbaR7a18zx904lq86K2PYQ",
@@ -3942,165 +2461,231 @@
     "categories": "Pizza, Chicken Wings",
     "latitude": 19.6378721,
     "longitude": -155.04536127474745,
-    "display_address": [
-      "16-574 Kipimana St",
-      "Keaau, HI 96749"
-    ]
+    "display_address": "16-574 Kipimana St, Keaau, HI 96749"
   },
   {
-    "id": "nh_oDQsLUr7Pv4nPNfbtOA",
-    "name": "Kea'au Recycling and Reuse Center",
-    "categories": "Thrift Stores, Recycling Center",
-    "latitude": 19.6063155024382,
-    "longitude": -155.023525568679,
-    "display_address": [
-      "Hwy 130",
-      "Keaau, HI 96749"
-    ]
+    "id": "dPasMEbrDV9IUZzoB3zu7A",
+    "name": "Subway",
+    "categories": "Sandwiches, Fast Food",
+    "latitude": 19.5050871772856,
+    "longitude": -154.957179086623,
+    "display_address": "15-2668 Keaau-pahoa Rd, Pahoa, HI 96778"
   },
   {
-    "id": "xyl1Wc8OI3Megkai_G5GkA",
-    "name": "Bayfront Park",
-    "categories": "Parks",
-    "latitude": 19.7229184018805,
-    "longitude": -155.074596405029,
-    "display_address": [
-      "1273 Kamehameha Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "-uvGU-X14pVVIJhAbk5A3Q",
+    "name": "Business Services Hawaii",
+    "categories": "Recycling Center",
+    "latitude": 19.637246939187506,
+    "longitude": -155.04942397316916,
+    "display_address": "16-630 Kipimana St, Keaau, HI 96749"
   },
   {
-    "id": "4-vHdImR4ucNLqloQ4dpKw",
-    "name": "Keaau Middle School",
-    "categories": "Middle Schools & High Schools",
-    "latitude": 19.621430882298142,
-    "longitude": -155.03767666157276,
-    "display_address": [
-      "16-565 Keaau-Pahoa Rd",
-      "Keaau, HI 96749"
-    ]
+    "id": "vRRy4Wv2mrJ9lu7TczCIbQ",
+    "name": "Subway",
+    "categories": "Sandwiches, Fast Food",
+    "latitude": 19.7216580059159,
+    "longitude": -155.0855018782,
+    "display_address": "194 Kilauea Ave, Unit 104, Hilo, HI 96720"
   },
   {
-    "id": "G2dFMQC2qmiAYvTiDfXVOg",
-    "name": "Pana'ewa Park",
-    "categories": "Parks",
-    "latitude": 19.69217,
-    "longitude": -155.061891,
-    "display_address": [
-      "100 Ohuohu St",
-      "Hilo, HI 96720"
-    ]
+    "id": "JahVn4ShVuClUGtX6t2Opg",
+    "name": "Unko Charlie\u2019s Texas Style Barbeque",
+    "categories": "Barbeque, Food Stands",
+    "latitude": 19.5029091,
+    "longitude": -155.153675,
+    "display_address": "18-4144 Lehuanani St, Mountain View, HI 96771"
   },
   {
-    "id": "87Xnyl_ZF8eSArOZ4IQHzQ",
-    "name": "Christian Liberty Academy",
-    "categories": "Religious Schools, Elementary Schools, Middle Schools & High Schools",
-    "latitude": 19.627859908094095,
-    "longitude": -155.02942807308435,
-    "display_address": [
-      "16-675 Milo St",
-      "Keaau, HI 96749"
-    ]
-  },
-  {
-    "id": "U6CmG2qhrauBCD5SaUtg5w",
-    "name": "Herbert C. Shipman Park",
-    "categories": "Parks, Playgrounds",
-    "latitude": 19.622094296274,
-    "longitude": -155.042753219604,
-    "display_address": [
-      "Highway 11",
-      "Keaau, HI 96749"
-    ]
-  },
-  {
-    "id": "7CC63Sl6Q6cgw2nPSy4g8g",
-    "name": "MacKenzie State Recreation Area",
-    "categories": "Parks",
-    "latitude": 19.4355703318083,
-    "longitude": -154.866919738972,
-    "display_address": [
-      "Hwy 137",
-      "Island of Hawai, HI 96778"
-    ]
-  },
-  {
-    "id": "961rk_ecWxP8FSZAtLBLag",
-    "name": "Waiakea Intermediate School",
-    "categories": "Middle Schools & High Schools",
-    "latitude": 19.69468391688574,
-    "longitude": -155.0769095,
-    "display_address": [
-      "200 W Puainako St",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "6L7jlLnrX2PSHqmaIB3foA",
+    "id": "Ki5M1BScG1KrD44FlT0Fvw",
     "name": "CVS Pharmacy",
-    "categories": "Drugstores",
-    "latitude": 19.504755,
-    "longitude": -154.955349,
-    "display_address": [
-      "15-1454 Kahakai Blvd",
-      "Pahoa, HI 96778"
-    ]
+    "categories": "Drugstores, Convenience Stores, Pharmacy",
+    "latitude": 19.623430627949062,
+    "longitude": -155.0391048339474,
+    "display_address": "16-529 Keaau-Pahoa Rd, Kea'au Shopping Center, Keaau, HI 96749"
   },
   {
-    "id": "LW_hDur9MV9_mJMGjhLEFw",
-    "name": "Colombian Snacks",
-    "categories": "Colombian, Empanadas, Street Vendors",
-    "latitude": 19.69393,
-    "longitude": -155.08128,
-    "display_address": [
-      "W Kawili St & W Puainako St",
-      "Hilo, HI 96720"
-    ]
+    "id": "ulfGl4tdbrH05xKzh5lnog",
+    "name": "Yum Yum Teriyaki",
+    "categories": "Korean",
+    "latitude": 19.6970909352346,
+    "longitude": -155.064054890282,
+    "display_address": "111 E Puainako St, Ste 568, Hilo, HI 96720"
   },
   {
-    "id": "FeFCeVpUiL80zKS0LjF6Fw",
-    "name": "University Heights Park",
+    "id": "nFWFSqkOix-PQ65J9cZIIQ",
+    "name": "Kolekole Beach Park",
     "categories": "Parks",
-    "latitude": 19.70554029675515,
-    "longitude": -155.06671604371545,
-    "display_address": [
-      "350 Kalili St",
-      "Hilo, HI 96720"
-    ]
+    "latitude": 19.881929,
+    "longitude": -155.119404,
+    "display_address": "Makawao, HI 96768"
   },
   {
-    "id": "ugPCtw_spMzqZsNxG5Vqhg",
-    "name": "Club Rose",
-    "categories": "Bars",
-    "latitude": 19.72036,
-    "longitude": -155.06459,
-    "display_address": [
-      "200 Kanoelehua Ave",
-      "Hilo, HI 96720"
-    ]
+    "id": "4bH2rOvRqK6--e19lzrj_g",
+    "name": "KTA Super Stores - Puainako Pharmacy",
+    "categories": "Pharmacy",
+    "latitude": 19.694111436135803,
+    "longitude": -155.06679400917997,
+    "display_address": "50 E Puainako St, Hilo, HI 96720"
   },
   {
-    "id": "GiAFOE5mXjOGJcMMgcEkJQ",
-    "name": "Pizza Hut",
-    "categories": "Chicken Wings, Fast Food, Pizza",
-    "latitude": 19.711943661468897,
-    "longitude": -155.06686310231532,
-    "display_address": [
-      "605 Laukapu St",
-      "Ste 103",
-      "Hilo, HI 96720"
-    ]
+    "id": "egdkfWABHqOMQ3yGvygJZg",
+    "name": "Walmart Pharmacy",
+    "categories": "Pharmacy",
+    "latitude": 19.700296,
+    "longitude": -155.061917,
+    "display_address": "325 E Makaala St, Hilo, HI 96720"
   },
   {
-    "id": "fNJQxTh_CZO6SAe81KxOYw",
-    "name": "Island Paradise Inn",
+    "id": "SYQGPMrQPNnOpo87rMq0Mw",
+    "name": "Minit Stop",
+    "categories": "Convenience Stores, Chicken Wings, Fast Food",
+    "latitude": 19.55908488265855,
+    "longitude": -154.993414,
+    "display_address": "16-119 Orchid Land Dr, Keaau, HI 96749"
+  },
+  {
+    "id": "eZYHrsDvqI9_hCrqt0Drag",
+    "name": "Subway",
+    "categories": "Sandwiches, Fast Food",
+    "latitude": 19.6901623,
+    "longitude": -155.0661941,
+    "display_address": "2100 D-1 Building D Kanoelehua Ave Space, Space D-1, Bldg D, Puainako Center, Hilo, HI 96720"
+  },
+  {
+    "id": "XBURV_S-sJqtLdjJt3uq_g",
+    "name": "Burger King",
+    "categories": "Burgers, Fast Food",
+    "latitude": 19.698928572779927,
+    "longitude": -155.06067352821515,
+    "display_address": "368A E Makaala St, Hilo, HI 96720"
+  },
+  {
+    "id": "iOYE-2-fMX0Pg0f6yuG67A",
+    "name": "The Rainbow Retreat Center",
+    "categories": "Hotels, Bed & Breakfast, Guest Houses",
+    "latitude": 19.5076,
+    "longitude": -154.90186,
+    "display_address": "14-635 Seaview Dr, Pahoa, HI 96778"
+  },
+  {
+    "id": "HwVkxf5t0h00-3trp8f_NQ",
+    "name": "Minit Stop",
+    "categories": "Convenience Stores, Chicken Wings, Fast Food",
+    "latitude": 19.70962,
+    "longitude": -155.0646999,
+    "display_address": "763 Leilani St, Hilo, HI 96720"
+  },
+  {
+    "id": "16eI5TOGJg58ysOYaKLjIw",
+    "name": "Pacific Biodiesel Technologies",
+    "categories": "Recycling Center",
+    "latitude": 19.581873,
+    "longitude": -155.032104,
+    "display_address": "16-240 Mikahala St, Keaau, HI 96749"
+  },
+  {
+    "id": "iEzyUF22gyoVWjP0gYzWgQ",
+    "name": "Kealoha Beach Park",
+    "categories": "Parks",
+    "latitude": 19.7351520340121,
+    "longitude": -155.033601628064,
+    "display_address": "1701 Kalanianaole Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "it0-JPFVklqz23ULUIxKFg",
+    "name": "Ginger & Turmeric: A Kamath's Kitchen",
+    "categories": "Food Delivery Services, Indian",
+    "latitude": 19.68857914146088,
+    "longitude": -155.08636595390172,
+    "display_address": "Hilo, HI 96720"
+  },
+  {
+    "id": "V9xFDwBGhe7lYnX_PDCm2A",
+    "name": "Panda Express",
+    "categories": "Chinese, Fast Food",
+    "latitude": 19.72018,
+    "longitude": -155.08343,
+    "display_address": "376 Kilauea Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "5F9XE09l7PY941fulepPhQ",
+    "name": "Eastside Rubbish & Recycling",
+    "categories": "Recycling Center",
+    "latitude": 19.6209493062673,
+    "longitude": -155.041795746033,
+    "display_address": "Keaau, HI 96749"
+  },
+  {
+    "id": "i-we02LtMRNH-ecTKk9MIw",
+    "name": "Uncle's Awa Club",
+    "categories": "Food Stands",
+    "latitude": 19.361125642965412,
+    "longitude": -154.9706520848218,
+    "display_address": "125038 Kalapana - Kapoho Rd, P\u0101hoa, HI 96778"
+  },
+  {
+    "id": "7aHQvAG5HrJlF1ew-rjygg",
+    "name": "FoodSHARE",
+    "categories": "Asian Fusion",
+    "latitude": 19.88295,
+    "longitude": -155.12164,
+    "display_address": "Hakalau Veterans Park, Old Mamalahoa Hwy, Hakalau, HI 96710"
+  },
+  {
+    "id": "KAax7Wx7CCJK8LU8MnWZFw",
+    "name": "Taco Bell",
+    "categories": "Fast Food, Mexican",
+    "latitude": 19.720742,
+    "longitude": -155.083997,
+    "display_address": "326 Kilauea Ave., Hilo, HI 96720"
+  },
+  {
+    "id": "yK8_1NW6AHX7HLFOh_4v8Q",
+    "name": "Aloha Wellness Inn",
     "categories": "Hotels",
-    "latitude": 19.49416,
-    "longitude": -154.94549,
-    "display_address": [
-      "15-2937 Pahoa Village Rd",
-      "Pahoa, HI 96778"
-    ]
+    "latitude": 19.7220993,
+    "longitude": -155.0899811,
+    "display_address": "239 Haili St, Hilo, HI 96720"
+  },
+  {
+    "id": "iIZ2UrFznp9CuK2JV-NjlQ",
+    "name": "Triple Pine Pizza",
+    "categories": "Pizza, Food Trucks",
+    "latitude": 19.7178401947021,
+    "longitude": -155.087936401367,
+    "display_address": "Hilo, HI 96720"
+  },
+  {
+    "id": "4mzty6x9nL6rH4stkzHYHA",
+    "name": "Reeds Bay Beach Park",
+    "categories": "Parks, Beaches",
+    "latitude": 19.7251907587488,
+    "longitude": -155.060713291168,
+    "display_address": "251 Banyan Dr, Hilo, HI 96720"
+  },
+  {
+    "id": "g4F4K1Pi_0D0uomRZ95lDQ",
+    "name": "Atlas Recycling Centers",
+    "categories": "Recycling Center",
+    "latitude": 19.70478,
+    "longitude": -155.06821,
+    "display_address": "30 Makaala St, Hilo, HI 96720"
+  },
+  {
+    "id": "GCbWV15Df74mbQhgq9NPyQ",
+    "name": "Pu\u2019u \u2018\u014c\u2019\u014d Trail",
+    "categories": "Hiking, Parks",
+    "latitude": 19.71626,
+    "longitude": -155.10332,
+    "display_address": "23 State Rte 200, Hilo, HI 96720"
+  },
+  {
+    "id": "a52KslJ5bWi3NrMhfZCNrg",
+    "name": "Subway",
+    "categories": "Sandwiches, Fast Food",
+    "latitude": 19.622353,
+    "longitude": -155.039635,
+    "display_address": "16-586 Old Volcano Rd P201 -203, P201 -203, Keaau, HI 96749"
   },
   {
     "id": "48HbDoyK37JS39xulFbuxQ",
@@ -4108,45 +2693,55 @@
     "categories": "Chicken Wings, Pizza, Fast Food",
     "latitude": 19.5025179,
     "longitude": -154.956325,
-    "display_address": [
-      "15-2714 Pahoa Village Rd",
-      "Bldg D Unit 4",
-      "Pahoa, HI 96778"
-    ]
+    "display_address": "15-2714 Pahoa Village Rd, Bldg D Unit 4, Pahoa, HI 96778"
   },
   {
-    "id": "2mLh_mxh0ZHncGmuB7eCRA",
-    "name": "Dairy Queen/Orange Julius Treat Ctr",
-    "categories": "Ice Cream & Frozen Yogurt, Fast Food, Burgers",
-    "latitude": 19.6954,
-    "longitude": -155.06387,
-    "display_address": [
-      "111 E Puainako St",
-      "Prince Kuhio Plaza (Hawa'i)",
-      "Hilo, HI 96720"
-    ]
+    "id": "Xm4T6VrQlkQevAR1nvE8lw",
+    "name": "MEZA Mexican Tamales",
+    "categories": "Food Stands",
+    "latitude": 19.56551200114488,
+    "longitude": -154.9955936,
+    "display_address": "15-1603  Keaau Pahoa Rd, Keaau, HI 96749"
   },
   {
-    "id": "3LEC3-1EQORCf8Xs-rB94A",
-    "name": "Pizza Hut",
-    "categories": "Pizza, Chicken Wings, Fast Food",
-    "latitude": 19.68438,
-    "longitude": -155.069717,
-    "display_address": [
-      "2200 Kinoole St",
-      "Hilo, HI 96720"
-    ]
+    "id": "951mqBdxtymZ_uyPLgEm6A",
+    "name": "Lannan A G",
+    "categories": "Hotels, Bed & Breakfast",
+    "latitude": 19.7521266937256,
+    "longitude": -155.090087890625,
+    "display_address": "30 Kahoa St, Hilo, HI 96720"
   },
   {
-    "id": "ZSGJaEZoCVwpAZr3_yVZ9g",
-    "name": "Hale Aloha Nazarene School",
-    "categories": "Religious Schools, Preschools, Child Care & Day Care",
-    "latitude": 19.67669,
-    "longitude": -155.10482,
-    "display_address": [
-      "595 Kupulau Rd",
-      "Hilo, HI 96720"
-    ]
+    "id": "PTvkQFKDxAykockQczzWDw",
+    "name": "University Palms",
+    "categories": "Apartments",
+    "latitude": 19.70398,
+    "longitude": -155.07886,
+    "display_address": "1377 Kapiolani St, Hilo, HI 96720"
+  },
+  {
+    "id": "gRFr18vKc4rY1S3dnjNnHA",
+    "name": "SeaView Taco Stand",
+    "categories": "Food Stands, Street Vendors",
+    "latitude": 19.40008,
+    "longitude": -154.91974,
+    "display_address": "12-106 Mapuana Ave, P\u0101hoa, HI 96778"
+  },
+  {
+    "id": "YsdgIdK0UOhkJoQz00UdWg",
+    "name": "Machado Acres Park",
+    "categories": "Parks",
+    "latitude": 19.67579398724363,
+    "longitude": -155.08726704088022,
+    "display_address": "1622 Keone St, Hilo, HI 96720"
+  },
+  {
+    "id": "LqgQxTd--uY12TLmRN_8Eg",
+    "name": "Hilo Breakwater",
+    "categories": "Parks",
+    "latitude": 19.7327764094219,
+    "longitude": -155.051446929574,
+    "display_address": "1017 Kalanianaole Ave, Hilo, HI 96720"
   },
   {
     "id": "K4MME3K11rQ0pcDHnay3Vw",
@@ -4154,21 +2749,231 @@
     "categories": "Thai, Filipino, Bubble Tea",
     "latitude": 19.70151248242401,
     "longitude": -155.06309896435206,
-    "display_address": [
-      "315 Makaala St",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "315 Makaala St, Hilo, HI 96720"
   },
   {
-    "id": "Zs6NVlmZ-egHw3l3mcRapA",
-    "name": "Hilo Val-Hala Apartments",
+    "id": "HiUF4V-YQVOqSCIMNNB74w",
+    "name": "Bayshore Towers",
+    "categories": "Vacation Rentals, Apartments",
+    "latitude": 19.73161,
+    "longitude": -155.08848,
+    "display_address": "84 Pukihae St, Apt 305, Hilo, HI 96720"
+  },
+  {
+    "id": "b4OhKa-dVDXegwzCR1w0mg",
+    "name": "DA Phat Boxx Food Truck",
+    "categories": "Hawaiian, Food Trucks",
+    "latitude": 19.73708767875804,
+    "longitude": -155.0575408819828,
+    "display_address": "HI-92, Honolulu, HI 96819"
+  },
+  {
+    "id": "otkCuKA7zUGDx7oNub_Krw",
+    "name": "Waiakea Lagoon View Apartments",
     "categories": "Apartments",
-    "latitude": 19.7300141,
-    "longitude": -155.0895967,
-    "display_address": [
-      "120 Puueo St",
-      "Hilo, HI 96720"
-    ]
+    "latitude": 19.7130336761475,
+    "longitude": -155.076141357422,
+    "display_address": "50 Maile St, Apt A33, Hilo, HI 96720"
+  },
+  {
+    "id": "vUbYKJBFgUEHZhNjScROlQ",
+    "name": "Waiolena Beach Park",
+    "categories": "Parks",
+    "latitude": 19.733055183417,
+    "longitude": -155.017675867231,
+    "display_address": "2151-2323 Kalanianaole Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "pUFVZy-MwWrQPCi4COiKsg",
+    "name": "Kea'au High School",
+    "categories": "Middle Schools & High Schools",
+    "latitude": 19.61251556792016,
+    "longitude": -155.03194664920326,
+    "display_address": "16-725 Keaau-Pahoa Rd, Keaau, HI 96749"
+  },
+  {
+    "id": "F8zYgrvcT4d7r8YjLNXI0w",
+    "name": "McDonald's",
+    "categories": "Fast Food, Burgers, Coffee & Tea",
+    "latitude": 19.69997,
+    "longitude": -155.06195,
+    "display_address": "325 E Makaala St, Hilo, HI 96720"
+  },
+  {
+    "id": "CJOMNPgPELFcHClQR0imAQ",
+    "name": "Kaiwiki park",
+    "categories": "Parks",
+    "latitude": 19.754199,
+    "longitude": -155.13992,
+    "display_address": "2391 Kaiwiki Rd, Hilo, HI 96720"
+  },
+  {
+    "id": "4-vHdImR4ucNLqloQ4dpKw",
+    "name": "Keaau Middle School",
+    "categories": "Middle Schools & High Schools",
+    "latitude": 19.621430882298142,
+    "longitude": -155.03767666157276,
+    "display_address": "16-565 Keaau-Pahoa Rd, Keaau, HI 96749"
+  },
+  {
+    "id": "IEVm90Jma0hx72lmUTCsSA",
+    "name": "Hilo Beach House",
+    "categories": "Hotels",
+    "latitude": 19.73669,
+    "longitude": -155.03746,
+    "display_address": "23 Machida Ln, Hilo, HI 96720"
+  },
+  {
+    "id": "xyl1Wc8OI3Megkai_G5GkA",
+    "name": "Bayfront Park",
+    "categories": "Parks",
+    "latitude": 19.7229184018805,
+    "longitude": -155.074596405029,
+    "display_address": "1273 Kamehameha Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "I6wcuE7ORTBIDiyxooY02Q",
+    "name": "Zan's Grindz",
+    "categories": "Pizza",
+    "latitude": 19.7060705,
+    "longitude": -155.0692177,
+    "display_address": "275 E Kawili St, In Hilo Brewing, Hilo, HI 96720"
+  },
+  {
+    "id": "2mLh_mxh0ZHncGmuB7eCRA",
+    "name": "Dairy Queen/Orange Julius Treat Ctr",
+    "categories": "Ice Cream & Frozen Yogurt, Fast Food, Burgers",
+    "latitude": 19.6954,
+    "longitude": -155.06387,
+    "display_address": "111 E Puainako St, Prince Kuhio Plaza (Hawa'i), Hilo, HI 96720"
+  },
+  {
+    "id": "87Xnyl_ZF8eSArOZ4IQHzQ",
+    "name": "Christian Liberty Academy",
+    "categories": "Religious Schools, Elementary Schools, Middle Schools & High Schools",
+    "latitude": 19.627859908094095,
+    "longitude": -155.02942807308435,
+    "display_address": "16-675 Milo St, Keaau, HI 96749"
+  },
+  {
+    "id": "6L7jlLnrX2PSHqmaIB3foA",
+    "name": "CVS Pharmacy",
+    "categories": "Drugstores",
+    "latitude": 19.504755,
+    "longitude": -154.955349,
+    "display_address": "15-1454 Kahakai Blvd, Pahoa, HI 96778"
+  },
+  {
+    "id": "OwJMxmj6CpWgV18jq2pIAg",
+    "name": "McDonald's",
+    "categories": "Fast Food, Burgers, Coffee & Tea",
+    "latitude": 19.50288684792869,
+    "longitude": -154.95565337312456,
+    "display_address": "15-2714 Pahoa Village Rd, P\u0101hoa, HI 96778"
+  },
+  {
+    "id": "G2dFMQC2qmiAYvTiDfXVOg",
+    "name": "Pana'ewa Park",
+    "categories": "Parks",
+    "latitude": 19.69217,
+    "longitude": -155.061891,
+    "display_address": "100 Ohuohu St, Hilo, HI 96720"
+  },
+  {
+    "id": "U6CmG2qhrauBCD5SaUtg5w",
+    "name": "Herbert C. Shipman Park",
+    "categories": "Parks, Playgrounds",
+    "latitude": 19.622094296274,
+    "longitude": -155.042753219604,
+    "display_address": "Highway 11, Keaau, HI 96749"
+  },
+  {
+    "id": "GiAFOE5mXjOGJcMMgcEkJQ",
+    "name": "Pizza Hut",
+    "categories": "Chicken Wings, Fast Food, Pizza",
+    "latitude": 19.711943661468897,
+    "longitude": -155.06686310231532,
+    "display_address": "605 Laukapu St, Ste 103, Hilo, HI 96720"
+  },
+  {
+    "id": "2qdd5HpV7JQ9NTkJjJOEuA",
+    "name": "@islandwoodfired",
+    "categories": "Food Trucks, Pizza",
+    "latitude": 19.71924,
+    "longitude": -155.08186,
+    "display_address": "Hilo, HI 96720"
+  },
+  {
+    "id": "nh_oDQsLUr7Pv4nPNfbtOA",
+    "name": "Kea'au Recycling and Reuse Center",
+    "categories": "Thrift Stores, Recycling Center",
+    "latitude": 19.6063155024382,
+    "longitude": -155.023525568679,
+    "display_address": "Hwy 130, Keaau, HI 96749"
+  },
+  {
+    "id": "7CC63Sl6Q6cgw2nPSy4g8g",
+    "name": "MacKenzie State Recreation Area",
+    "categories": "Parks",
+    "latitude": 19.4355703318083,
+    "longitude": -154.866919738972,
+    "display_address": "Hwy 137, Island of Hawai, HI 96778"
+  },
+  {
+    "id": "961rk_ecWxP8FSZAtLBLag",
+    "name": "Waiakea Intermediate School",
+    "categories": "Middle Schools & High Schools",
+    "latitude": 19.69468391688574,
+    "longitude": -155.0769095,
+    "display_address": "200 W Puainako St, Hilo, HI 96720"
+  },
+  {
+    "id": "ugPCtw_spMzqZsNxG5Vqhg",
+    "name": "Club Rose",
+    "categories": "Bars",
+    "latitude": 19.72036,
+    "longitude": -155.06459,
+    "display_address": "200 Kanoelehua Ave, Hilo, HI 96720"
+  },
+  {
+    "id": "fNJQxTh_CZO6SAe81KxOYw",
+    "name": "Island Paradise Inn",
+    "categories": "Hotels",
+    "latitude": 19.49416,
+    "longitude": -154.94549,
+    "display_address": "15-2937 Pahoa Village Rd, Pahoa, HI 96778"
+  },
+  {
+    "id": "LW_hDur9MV9_mJMGjhLEFw",
+    "name": "Colombian Snacks",
+    "categories": "Colombian, Empanadas, Street Vendors",
+    "latitude": 19.69393,
+    "longitude": -155.08128,
+    "display_address": "W Kawili St & W Puainako St, Hilo, HI 96720"
+  },
+  {
+    "id": "3LEC3-1EQORCf8Xs-rB94A",
+    "name": "Pizza Hut",
+    "categories": "Pizza, Chicken Wings, Fast Food",
+    "latitude": 19.68438,
+    "longitude": -155.069717,
+    "display_address": "2200 Kinoole St, Hilo, HI 96720"
+  },
+  {
+    "id": "FeFCeVpUiL80zKS0LjF6Fw",
+    "name": "University Heights Park",
+    "categories": "Parks",
+    "latitude": 19.70554029675515,
+    "longitude": -155.06671604371545,
+    "display_address": "350 Kalili St, Hilo, HI 96720"
+  },
+  {
+    "id": "ZSGJaEZoCVwpAZr3_yVZ9g",
+    "name": "Hale Aloha Nazarene School",
+    "categories": "Religious Schools, Preschools, Child Care & Day Care",
+    "latitude": 19.67669,
+    "longitude": -155.10482,
+    "display_address": "595 Kupulau Rd, Hilo, HI 96720"
   },
   {
     "id": "DIZQ5BJay0O4kMnxmcBt7A",
@@ -4176,34 +2981,7 @@
     "categories": "Condominiums",
     "latitude": 19.7133,
     "longitude": -155.07337,
-    "display_address": [
-      "400 Hualani St",
-      "Ste 291",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "hY4iCy_7G4Iu5Xi8UokLtQ",
-    "name": "Soontaree's Deli",
-    "categories": "Delis",
-    "latitude": 19.7174129486084,
-    "longitude": -155.076705932617,
-    "display_address": [
-      "101 Aupuni St",
-      "Ste 227A",
-      "Hilo, HI 96720"
-    ]
-  },
-  {
-    "id": "xT9fpNptk2_-elsM4um_jQ",
-    "name": "Ahualani Park",
-    "categories": "Parks",
-    "latitude": 19.6777939,
-    "longitude": -155.0967874,
-    "display_address": [
-      "1516 Kikaha St",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "400 Hualani St, Ste 291, Hilo, HI 96720"
   },
   {
     "id": "af5F-V9y-UqgqR_945ERyQ",
@@ -4211,10 +2989,7 @@
     "categories": "Condominiums",
     "latitude": 19.7258299,
     "longitude": -155.05929,
-    "display_address": [
-      "355 Kalanianaole Ave",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "355 Kalanianaole Ave, Hilo, HI 96720"
   },
   {
     "id": "tRhWcj1oDfAC-nk2-SvyjA",
@@ -4222,11 +2997,7 @@
     "categories": "Apartments",
     "latitude": 19.71609,
     "longitude": -155.08378,
-    "display_address": [
-      "816 Kinoole St",
-      "Apt 115",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "816 Kinoole St, Apt 115, Hilo, HI 96720"
   },
   {
     "id": "SOSHdqfCqDjXjPWoElBUPQ",
@@ -4234,10 +3005,23 @@
     "categories": "Apartments",
     "latitude": 19.6955,
     "longitude": -155.08247,
-    "display_address": [
-      "430 W Kawili St",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "430 W Kawili St, Hilo, HI 96720"
+  },
+  {
+    "id": "hY4iCy_7G4Iu5Xi8UokLtQ",
+    "name": "Soontaree's Deli",
+    "categories": "Delis",
+    "latitude": 19.7174129486084,
+    "longitude": -155.076705932617,
+    "display_address": "101 Aupuni St, Ste 227A, Hilo, HI 96720"
+  },
+  {
+    "id": "Zs6NVlmZ-egHw3l3mcRapA",
+    "name": "Hilo Val-Hala Apartments",
+    "categories": "Apartments",
+    "latitude": 19.7300141,
+    "longitude": -155.0895967,
+    "display_address": "120 Puueo St, Hilo, HI 96720"
   },
   {
     "id": "oXoB40E5DgRlV40vemG8ww",
@@ -4245,22 +3029,15 @@
     "categories": "Apartments",
     "latitude": 19.836736,
     "longitude": -155.104125,
-    "display_address": [
-      "28-2926 Kumula St",
-      "Apt U40",
-      "Pepeekeo, HI 96783"
-    ]
+    "display_address": "28-2926 Kumula St, Apt U40, Pepeekeo, HI 96783"
   },
   {
-    "id": "js4cVfjCVOVPyhhjcORsaQ",
-    "name": "Mo\u2019oheau Park",
+    "id": "xT9fpNptk2_-elsM4um_jQ",
+    "name": "Ahualani Park",
     "categories": "Parks",
-    "latitude": 19.7239427292272,
-    "longitude": -155.08423325082,
-    "display_address": [
-      "231 Kamehameha Ave",
-      "Hilo, HI 96720"
-    ]
+    "latitude": 19.6777939,
+    "longitude": -155.0967874,
+    "display_address": "1516 Kikaha St, Hilo, HI 96720"
   },
   {
     "id": "qnAcHoi9YcYo5FvsUh59Gw",
@@ -4268,10 +3045,15 @@
     "categories": "Seafood Markets, Grocery",
     "latitude": 19.6162,
     "longitude": -155.03279,
-    "display_address": [
-      "Keaau Shopping Ctr",
-      "Keaau, HI 96749"
-    ]
+    "display_address": "Keaau Shopping Ctr, Keaau, HI 96749"
+  },
+  {
+    "id": "js4cVfjCVOVPyhhjcORsaQ",
+    "name": "Mo\u2019oheau Park",
+    "categories": "Parks",
+    "latitude": 19.7239427292272,
+    "longitude": -155.08423325082,
+    "display_address": "231 Kamehameha Ave, Hilo, HI 96720"
   },
   {
     "id": "JtuGodQ_De_tb7jMS7bgvw",
@@ -4279,9 +3061,6 @@
     "categories": "Food Trucks, Pizza",
     "latitude": 19.712087,
     "longitude": -155.076354,
-    "display_address": [
-      "1177 Kilauea Ave",
-      "Hilo, HI 96720"
-    ]
+    "display_address": "1177 Kilauea Ave, Hilo, HI 96720"
   }
 ]

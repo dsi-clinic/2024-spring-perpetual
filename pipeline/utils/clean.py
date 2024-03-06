@@ -16,7 +16,7 @@ gplaces_df = json_to_dataframe(gplaces_json_path)
 yelp_df = json_to_dataframe(yelp_json_path)
 
 # Combine the DataFrames
-combined_df = pd.merge(gplaces_df, yelp_df, how='outer')
+combined_df = pd.concat([gplaces_df, yelp_df])
 
 # Save the combined DataFrame to a CSV file
 combined_csv_path = 'data/poi/hilo_google_yelp_combined.csv'

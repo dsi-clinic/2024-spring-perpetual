@@ -270,9 +270,9 @@ class YelpClient(IPlacesProvider):
                         )
                         cleaned_poi["latitude"] = poi.get("coordinates")["latitude"]
                         cleaned_poi["longitude"] = poi.get("coordinates")["longitude"]
-                        cleaned_poi["display_address"] = poi.get("location")[
+                        cleaned_poi["display_address"] = ', '.join(poi.get("location")[
                             "display_address"
-                        ]
+                        ])
                         cleaned_pois.append(cleaned_poi)
 
                 # back to original code in dev, except instead of adding the cell_pois returned
