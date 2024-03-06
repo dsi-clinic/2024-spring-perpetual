@@ -166,3 +166,6 @@ cython_debug/
 
 # Visual Studio Code
 .vscode/
+
+# Cached OSMNX files
+cache/

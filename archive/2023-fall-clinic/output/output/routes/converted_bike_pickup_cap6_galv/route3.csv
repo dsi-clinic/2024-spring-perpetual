@@ -1,8 +1,0 @@
-Original_Index,Unnamed: 0,Name,Longitude,Latitude,Daily_Pickup_Totes,Weekly_Dropoff_Totes,user_ratings_total,category,rating,weekly_high,weekly_low,best_weekly_estimate,Address,geometry,Adoption,Adoption Guess,Visited ,Influence,location_type,pickup_type,id,Bike Aggregation Point,Cumulative_Distance,Truck_Load
-23,72,La Estacion Restaurant,-94.794797,29.3015187,0,1,442.0,restaurant,4.3,175.0,25.0,175.0,"2428 Avenue H, Galveston",POINT (-94.794797 29.3015187),Skeptical,Med,No,Low,indoor,Bike_Aggregate,,,0,0
-7,16,Galveston College,-94.8084945,29.2840785,1,1,65.0,university,4.4,20.0,20.0,20.0,"4015 Avenue Q, Galveston",POINT (-94.8084945 29.2840785),Curious,High,No,High,indoor,Bike_Converted,,72.0,3504,1
-50,202,,-94.8070897627476,29.284031380957845,1,0,,,,,,,,,,,,,outdoor,Bike,2010.0,72.0,3763,2
-8,19,Mr. C's Dugout @Galveston College,-94.807822,29.284711,1,1,2.0,restaurant,3.0,,,93.75,"Student Center, 4015 Avenue Q, Galveston",POINT (-94.807822 29.284711),Curious,High,No,High,indoor,Bike_Converted,,72.0,4012,3
-24,76,Shrimp 'N Stuff Downtown,-94.7958306,29.3013951,2,1,1785.0,restaurant,4.5,1400.0,200.0,1400.0,"2506 Avenue H, Galveston",POINT (-94.7958306 29.3013951),Skeptical,Med,No,Low,indoor,Bike_Converted,,72.0,7136,5
-41,178,,-94.79578217640906,29.30090513320724,1,0,,,,,,,,,,,,,outdoor,Bike,1007.0,72.0,7259,6
-23,72,La Estacion Restaurant,-94.794797,29.3015187,0,1,442.0,restaurant,4.3,175.0,25.0,175.0,"2428 Avenue H, Galveston",POINT (-94.794797 29.3015187),Skeptical,Med,No,Low,indoor,Bike_Aggregate,,,7371,6

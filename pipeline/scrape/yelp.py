@@ -15,10 +15,7 @@ from shapely import MultiPolygon, Polygon
 
 # Application imports
 from pipeline.scrape.common import IPlacesProvider
-from pipeline.utils.geometry import (
-    BoundingBox,
-    convert_meters_to_degrees,
-)
+from pipeline.utils.geometry import BoundingBox, convert_meters_to_degrees
 
 
 class YelpPOICategories(Enum):
@@ -29,6 +26,7 @@ class YelpPOICategories(Enum):
     RESTAURANT = "restaurants"
 
     # Potential Outdoor Points
+    AIRPORTS = "airports"
     APARTMENTS = "apartments"
     BIKE_SHARING_HUB = "bikesharing"
     BUS_STATION = "busstations"
@@ -38,14 +36,18 @@ class YelpPOICategories(Enum):
     GROCERY = "grocery"
     HOTELS = "hotels"
     JUNIOR_OR_SENIOR_HIGH_SCHOOL = "highschools"
+    LIBRARIES = "libraries"
+    MEDICAL_CENTERS = "medcenters"
     METRO_STATION = "metrostations"
     OFFICE = "sharedofficespaces"
     PARK = "parks"
+    POST_OFFICES = "postoffices"
     PHARMACY = "pharmacy"
     PRESCHOOL = "preschools"
     RECYCLING_CENTER = "recyclingcenter"
     SHARED_LIVING = "housingcooperatives"
     TRAIN_STATIONS = "trainstations"
+    ZOOS = "zoos"
 
 
 class YelpClient(IPlacesProvider):
@@ -241,7 +243,8 @@ class YelpClient(IPlacesProvider):
         for cell in cells:
             if cell.intersects_with(geo):
                 cell_pois, cell_errs = self.find_places_in_bounding_box(
-                    box=cell, search_radius=YelpClient.MAX_SEARCH_RADIUS_IN_METERS
+                    box=cell,
+                    search_radius=YelpClient.MAX_SEARCH_RADIUS_IN_METERS,
                 )
                 pois.extend(cell_pois)
                 errors.extend(cell_errs)

@@ -15,10 +15,7 @@ from shapely import MultiPolygon, Polygon
 
 # Application imports
 from pipeline.scrape.common import IPlacesProvider
-from pipeline.utils.geometry import (
-    BoundingBox,
-    convert_meters_to_degrees,
-)
+from pipeline.utils.geometry import BoundingBox, convert_meters_to_degrees
 
 
 class GooglePOITypes(Enum):

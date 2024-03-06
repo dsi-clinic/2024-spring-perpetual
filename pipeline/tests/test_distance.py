@@ -6,7 +6,6 @@ from typing import List
 
 # Third-party imports
 import pytest
-
 # Appliction imports
 from pipeline.distance.mapbox import (
     MapboxApiClient,

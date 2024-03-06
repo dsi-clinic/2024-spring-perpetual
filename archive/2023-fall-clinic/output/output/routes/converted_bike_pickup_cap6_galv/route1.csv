@@ -1,9 +1,0 @@
-Original_Index,Unnamed: 0,Name,Longitude,Latitude,Daily_Pickup_Totes,Weekly_Dropoff_Totes,user_ratings_total,category,rating,weekly_high,weekly_low,best_weekly_estimate,Address,geometry,Adoption,Adoption Guess,Visited ,Influence,location_type,pickup_type,id,Bike Aggregation Point,Cumulative_Distance,Truck_Load
-23,72,La Estacion Restaurant,-94.794797,29.3015187,0,1,442.0,restaurant,4.3,175.0,25.0,175.0,"2428 Avenue H, Galveston",POINT (-94.794797 29.3015187),Skeptical,Med,No,Low,indoor,Bike_Aggregate,,,0,0
-25,89,Black Pearl Oyster Bar,-94.7940474,29.3054649,1,1,2224.0,restaurant,4.4,105.0,15.0,105.0,"327 23rd Street, Galveston",POINT (-94.7940474 29.3054649),Skeptical,Med,No,Low,indoor,Bike_Converted,,72.0,596,1
-15,59,Vintage Crown Michelada Bar & Taqueria,-94.7944665,29.3065367,1,1,207.0,bar,4.6,,,140.625,"215 23rd Street, Galveston",POINT (-94.7944665 29.3065367),Skeptical,Med,No,Low,indoor,Bike_Converted,,72.0,795,2
-39,173,,-94.79468452427888,29.30753393564195,1,0,,,,,,,,,,,,,outdoor,Bike,1002.0,72.0,943,3
-30,142,Stuttgarden Tavern,-94.7947919,29.3077483,1,1,2179.0,bar,4.2,,,468.75,"111 23rd Street, Galveston",POINT (-94.7947919 29.3077483),Skeptical,Med,Yes,High,indoor,Bike_Converted,,72.0,979,4
-16,61,Fisherman's Wharf,-94.7936367,29.3089314,1,1,5747.0,restaurant,4.4,700.0,140.0,700.0,"2200 Harborside Drive, Galveston",POINT (-94.7936367 29.3089314),Skeptical,Med,No,High,indoor,Bike_Converted,,72.0,1168,5
-40,176,,-94.79850319363544,29.308164157460592,1,0,,,,,,,,,,,,,outdoor,Bike,1005.0,72.0,1822,6
-23,72,La Estacion Restaurant,-94.794797,29.3015187,0,1,442.0,restaurant,4.3,175.0,25.0,175.0,"2428 Avenue H, Galveston",POINT (-94.794797 29.3015187),Skeptical,Med,No,Low,indoor,Bike_Aggregate,,,3527,6
