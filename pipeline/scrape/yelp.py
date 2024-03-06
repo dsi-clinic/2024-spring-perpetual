@@ -15,10 +15,7 @@ from shapely import MultiPolygon, Polygon
 
 # Application imports
 from pipeline.scrape.common import IPlacesProvider
-from pipeline.utils.geometry import (
-    BoundingBox,
-    convert_meters_to_degrees,
-)
+from pipeline.utils.geometry import BoundingBox, convert_meters_to_degrees
 
 
 class YelpPOICategories(Enum):
@@ -29,6 +26,7 @@ class YelpPOICategories(Enum):
     RESTAURANT = "restaurants"
 
     # Potential Outdoor Points
+    AIRPORTS = "airports"
     APARTMENTS = "apartments"
     BIKE_SHARING_HUB = "bikesharing"
     BUS_STATION = "busstations"
@@ -38,14 +36,18 @@ class YelpPOICategories(Enum):
     GROCERY = "grocery"
     HOTELS = "hotels"
     JUNIOR_OR_SENIOR_HIGH_SCHOOL = "highschools"
+    LIBRARIES = "libraries"
+    MEDICAL_CENTERS = "medcenters"
     METRO_STATION = "metrostations"
     OFFICE = "sharedofficespaces"
     PARK = "parks"
+    POST_OFFICES = "postoffices"
     PHARMACY = "pharmacy"
     PRESCHOOL = "preschools"
     RECYCLING_CENTER = "recyclingcenter"
     SHARED_LIVING = "housingcooperatives"
     TRAIN_STATIONS = "trainstations"
+    ZOOS = "zoos"
 
 
 class YelpClient(IPlacesProvider):
@@ -90,7 +92,7 @@ class YelpClient(IPlacesProvider):
 
     def find_places_in_bounding_box(
         self, box: BoundingBox, search_radius: float
-    ) -> Tuple[Dict, Dict]:
+    ) -> Tuple[List[Dict], List[Dict]]:
         """Locates all POIs within the bounding box.
 
         Args:
@@ -100,7 +102,9 @@ class YelpClient(IPlacesProvider):
                 meters to the larger of degrees longitude and latitude.
 
         Returns:
-            (`dict`, `dict`): A two-item tuple consisting of the POIs and errors.
+            ((`list` of `dict`, `list` of `dict`,)): A two-item tuple
+                consisting of the list of retrieved places and a list
+                of any errors that occurred, respectively.
         """
         # Initialize request URL and static params
         url = "https://api.yelp.com/v3/businesses/search"
@@ -170,7 +174,9 @@ class YelpClient(IPlacesProvider):
             page_idx += 1
             time.sleep(0.5)
 
-    def find_places_in_geography(self, geo: Union[Polygon, MultiPolygon]) -> List[Dict]:
+    def find_places_in_geography(
+        self, geo: Union[Polygon, MultiPolygon]
+    ) -> Tuple[List[Dict], List[Dict]]:
         """Locates all POIs with a review within the given geography.
         The Fusion API permits searching for POIs within a radius around
         a given point. Therefore, data is extracted by dividing the
@@ -214,7 +220,9 @@ class YelpClient(IPlacesProvider):
             geo (`Polygon` or `MultiPolygon`): The boundary.
 
         Returns:
-            (`list` of `dict`): The list of places.
+            ((`list` of `dict`, `list` of `dict`,)): A two-item tuple
+                consisting of the list of retrieved places and a list
+                of any errors that occurred, respectively.
         """
         # Calculate bounding box for geography
         bbox: BoundingBox = BoundingBox.from_polygon(geo)
@@ -270,9 +278,9 @@ class YelpClient(IPlacesProvider):
                         )
                         cleaned_poi["latitude"] = poi.get("coordinates")["latitude"]
                         cleaned_poi["longitude"] = poi.get("coordinates")["longitude"]
-                        cleaned_poi["display_address"] = ', '.join(poi.get("location")[
-                            "display_address"
-                        ])
+                        cleaned_poi["display_address"] = ", ".join(
+                            poi.get("location")["display_address"]
+                        )
                         cleaned_pois.append(cleaned_poi)
 
                 # back to original code in dev, except instead of adding the cell_pois returned
@@ -281,5 +289,3 @@ class YelpClient(IPlacesProvider):
                 errors.extend(cell_errs)
 
         return pois, errors
-
-    

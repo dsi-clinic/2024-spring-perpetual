@@ -39,5 +39,7 @@ class IPlacesProviderFactory:
             raise RuntimeError(
                 "Requested a points of interest provider that "
                 f'has not been registered, "{e}". Expected one of '
-                ", ".join(f'"{k}"' for k in IPlacesProviderFactory._REGISTRY.keys())
+                ", ".join(
+                    f'"{k}"' for k in IPlacesProviderFactory._REGISTRY.keys()
+                )
             ) from None
