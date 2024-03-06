@@ -2,8 +2,15 @@
 
 This folder contains python scripts (executable from command-line).
 
-## Usage
-To run the entire pipeline, run `python3 main.py`.
+### Running the Pipeline
+Ensure that Docker Desktop has been installed [https://docs.docker.com/engine/install/].
+Install Visual Studio Code with the Dev Container extension [https://code.visualstudio.com/].
+Create API tokens for ...[provide links] and add to new .env file as [...].
+Build and run Dev Container by running `make run-interactive` in command-line.
+After the container has started, open a new terminal and run the command `python3 pipeline/main.py -h` to find out how to the command-line options for running the pipeline.
+Then, run `python3 pipeline/main.py -p [provider name] -s [solver name] [city name]` to execute the pipeline.
+
+### Running Individual Files
 Complete these steps to run individual files in the pipeline:
 1. Create an input folder or place input files (.csv dataframes and distance
 matrices) into an appropriate folder in `data/` (like `data/galveston_inputs/`).
