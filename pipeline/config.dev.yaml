@@ -2,6 +2,12 @@
 stages:
   places:
     use_cached: true
+  classifications:
+    use_cached: true
+    output_fpath: "galveston_inputs/indoor_outdoor_pts_galv.csv"
+  distances:
+    use_cached: true
+    output_fpath: "galveston_inputs/indoor_outdoor_distances_galv.csv"
   routes:
     experiments:
       pickups_only:

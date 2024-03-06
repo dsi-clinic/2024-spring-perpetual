@@ -4,7 +4,7 @@
 # Standard library imports
 import logging
 import os
-from typing import Dict, List, Union
+from typing import Dict, List, Tuple, Union
 
 # Application imports
 from pipeline.scrape.common import IPlacesProvider
@@ -39,7 +39,9 @@ class BingMapsClient(IPlacesProvider):
                 f'Missing expected environment variable "{e}".'
             ) from None
 
-    def find_places_in_geography(self, geo: Union[Polygon, MultiPolygon]) -> List[Dict]:
+    def find_places_in_geography(
+        self, geo: Union[Polygon, MultiPolygon]
+    ) -> Tuple[List[Dict], List[Dict]]:
         """Locates all POIs within the given geography.
 
         Documentation:
@@ -49,6 +51,8 @@ class BingMapsClient(IPlacesProvider):
             geo (`Polygon` or `MultiPolygon`): The boundary.
 
         Returns:
-            (`list` of `dict`): The places.
+            ((`list` of `dict`, `list` of `dict`,)): A two-item tuple
+                consisting of the list of retrieved places and a list
+                of any errors that occurred, respectively.
         """
         pass

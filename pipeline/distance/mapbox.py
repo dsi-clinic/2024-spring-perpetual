@@ -10,6 +10,7 @@ from typing import List
 # Third-party imports
 import requests
 import tqdm
+
 # Application imports
 from pipeline.utils.geometry import WGS84Coordinate
 from pydantic import BaseModel
@@ -106,9 +107,7 @@ class MapboxApiClient:
             for j in range(0, len(coords), batch_size):
                 # Compose request
                 batch = [coords[i]] + coords[j : j + batch_size]
-                coord_str = ";".join(
-                    f"{coord.lon},{coord.lat}" for coord in batch
-                )
+                coord_str = ";".join(f"{coord.lon},{coord.lat}" for coord in batch)
                 dest_indices = ";".join(str(i) for i in range(1, len(batch)))
                 url = (
                     f"https://api.mapbox.com/directions-matrix/v1/"

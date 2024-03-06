@@ -15,7 +15,7 @@ import yaml
 # Application imports
 from pipeline.constants import CITY_BOUNDARIES_DIR, OUTPUT_DIR, PIPELINE_DIR, POI_DIR
 from pipeline.routes.common import ParameterSweep
-from pipeline.routes.google_or import GoogleORToolsClient
+from pipeline.routes.factory import IRoutingClientFactory
 from pipeline.routes.visualize import route_to_plain_text, visualize_routes
 from pipeline.scrape import IPlacesProviderFactory
 from pipeline.utils.logger import LoggerFactory, logging
@@ -102,6 +102,72 @@ def fetch_poi(
     return places
 
 
+def classify_poi(
+    places: List[Dict], output_fpath: str, use_cached: bool, logger: logging.Logger
+) -> pd.DataFrame:
+    """`Joins points of interest (POIs) across datasets, dedupes them,
+    and then takes a subset of POIs as as indoor and outdoor bins using
+    a rule-based algorithm.
+
+    Args:
+        places (`list` of `dict`): The list of scraped places.
+
+        output_fname (`str`): The relative file path within the data
+            directory where the labeled bins should be saved.
+
+        use_cached (`bool`): A boolean indicating whether a previously
+            generated set of labeled bins should be loaded and returned
+            instead, if such a dataset exists.
+
+        logger (`logging.Logger`): An instance of a standard logger.
+
+    Returns:
+        (`pd.DataFrame`): The labeled bin locations.
+    """
+    # Attempt to read labeled bins from cached file
+    if use_cached:
+        try:
+            with storage.open_file(output_fpath, "r") as f:
+                return pd.read_csv(f)
+        except FileNotFoundError:
+            pass
+
+    # Implement cleaning and labeling process if output file not found
+    raise NotImplementedError()
+
+
+def compute_distance_matrix(
+    bins_df: pd.DataFrame, output_fpath: str, use_cached: bool, logger: logging.Logger
+) -> pd.DataFrame:
+    """Calculates the distance between each pair of bin locations.
+
+    Args:
+        bins_df (`pd.DataFrame`): The DataFrame of indoor and outdoor bins.
+
+        output_fname (`str`): The relative file path within the data
+            directory where the distance matrix should be saved.
+
+        use_cached (`bool`): A boolean indicating whether a previously
+            generated distance matrix should be loaded and returned
+            instead, if such a dataset exists.
+
+        logger (`logging.Logger`): An instance of a standard logger.
+
+    Returns:
+        (`pd.DataFrame`): The distance matrix.
+    """
+    # Attempt to read distance matrix from cached file if indicated
+    if use_cached:
+        try:
+            with storage.open_file(output_fpath, "r") as f:
+                return pd.read_csv(f)
+        except FileNotFoundError:
+            pass
+
+    # Compute distances if output file not found
+    raise NotImplementedError()
+
+
 def compute_routes(
     city: str,
     boundary: Union[MultiPolygon, Polygon],
@@ -113,14 +179,50 @@ def compute_routes(
     route_colors: List[str],
     storage: IDataStore,
     logger: logging.Logger,
-):
-    """ """
+) -> None:
+    """Computes routes for a given set of locations.
+
+    Raises:
+        `RuntimeError` if an invalid solver name is given.
+
+    Args:
+        city (`str`): The name of the city for which routes
+            are being calculated.
+
+        solver (`str`): The name of the route optimization solver.
+
+        locations_df (`pd.DataFrame`): The locations to use for routing.
+
+        distances_df (`pd.DataFrame`): The matrix of distances between
+            each pair of locations in `locations_df`.
+
+        pickups_sweep (`ParameterSweep`): The set of parameters to use
+            for pickup route simulations.
+
+        combo_params (`ParameterSweep`): The set of parameters to use
+            for combined pickup/drop off route simulations.
+
+        route_colors (`list` of `str`): The set of colors to use when
+            generating the output maps.
+
+        storage (`IDataStore`): A client for reading and writing to
+            a local or cloud-based data store.
+
+        logger (`logging.Logger`): An instance of a standard logger.
+
+    Returns:
+        `None`
+    """
     # Initialize route optimization client
-    client = GoogleORToolsClient()
+    logger.info(f"Initializing {solver} routing client.")
+    client = IRoutingClientFactory.create(solver, logger)
 
     # Define output folder to store results of parameter sweep experiment
     exp_name = "_".join(combo_sweep.name.lower().split())
     exp_dir = f"{OUTPUT_DIR}/{exp_name}"
+
+    # Initialize list to hold summary stats
+    stats = []
 
     # Iterate through combinations of parameters for "pickups-only" simulations
     for pickup_params in pickups_sweep.yield_simulation_params():
@@ -136,7 +238,7 @@ def compute_routes(
             sim_dir = f"{exp_dir}/{sim_started_utc.strftime('%Y%m%d%H%M%S')}"
 
             # Execute with selected parameters
-            logger.info("Executing next simulation.")
+            logger.info("Executing new simulation.")
             routes_df = client.solve_bidirectional_cvrp(
                 locations_df, distances_df, pickup_params, combo_params
             )
@@ -178,25 +280,43 @@ def compute_routes(
             with storage.open_file(f"{sim_dir}/routes.csv", "w") as f:
                 routes_df.to_csv(f, index=False)
 
-            # Visualize each route using plaintext
+            # Visualize each route using plaintext and capture stats
             route_strs = []
             grouped = routes_df.groupby("Route")
+            sim_results = []
             for key in grouped.groups:
                 grp_df = grouped.get_group(key)
                 route_strs.append(route_to_plain_text(key, grp_df))
+                sim_results.append(
+                    {
+                        "Route Name": key,
+                        "Pickup Demands": grp_df["Daily_Pickup_Totes"].sum(),
+                        "Dropoff Demands": grp_df["Weekly_Dropoff_Totes"].sum(),
+                        "Cumulative Distances": grp_df.iloc[-1]["Cumulative_Distance"],
+                    }
+                )
+            stats.append({"Simulation": metadata, "Results": sim_started_utc})
 
-            # Write result to text file
+            # Write visualization to text file
+            logger.info("Writing route visualization to text file.")
             with storage.open_file(f"{sim_dir}/routes.txt", "w") as f:
                 f.write("\n\n".join(route_strs))
 
             # Visualize routes as map
+            logger.info("Building interactive maps from routes.")
             maps = visualize_routes(routes_df, boundary, route_colors)
 
             # Write results to HTML file
+            logger.info("Saving maps as HTML files.")
             for name, map_obj in maps:
                 with storage.open_file(f"{sim_dir}/{name}.html", "w") as f:
                     map_str = map_obj.get_root().render()
                     f.write(map_str)
+
+        # Write summary stats to file to use for sensitivity analysis
+        logger.info("All simulations complete. Writing summary stats to JSON file.")
+        with storage.open_file(f"{exp_dir}/summary_stats.json", "w") as f:
+            json.dump(stats, f, indent=2)
 
 
 def main(
@@ -205,10 +325,19 @@ def main(
     storage: IDataStore,
     logger: logging.Logger,
 ) -> None:
-    """Fetches points of interest to use as indoor and outdoor
-    points of collection and distribution.
+    """Fetches points of interest for a given city, labels a subset of those
+    points as indoor and outdoor bins for foodware collection and distribution,
+    and then calculates an optimal set of routes to visit the bins using
+    one or more simulations. Writes the results (maps and DataFrames) to file.
 
     Args:
+        args (`argparse.Namespace`): The command line arguments.
+
+        config (`dict`): Configuration for the current development environment.
+
+        storage (`IDataStore`): A client for reading and writing to
+            a local or cloud-based data store.
+
         logger (`logging.Logger`): An instance of a standard logger.
 
     Returns:
@@ -257,16 +386,23 @@ def main(
     )
 
     # Classify points of interest as indoor and outdoor bin locations
-    with storage.open_file("galveston_inputs/indoor_outdoor_pts_galv.csv", "r") as f:
-        locations_df = pd.read_csv(f)
-    with storage.open_file(
-        "galveston_inputs/indoor_outdoor_distances_galv.csv", "r"
-    ) as f:
-        distances_df = pd.read_csv(f)
+    logger.info("Classifying points of interest as indoor and outdoor bins.")
+    classify_stage = config["stages"]["classifications"]
+    bins_df = classify_poi(
+        places, classify_poi["output_fpath"], classify_stage["use_cached"], logger
+    )
+    logger.info(f"{len(bins_df)} bins identified.")
 
     # Create distance matrix for every unique pair of locations
+    logger.info("Computing distances between each pair of indoor and outdoor bins.")
+    distance_stage = config["stages"]["distances"]
+    distances_df = classify_poi(
+        bins_df, distance_stage["output_fpath"], distance_stage["use_cached"], logger
+    )
+    logger.info("Distance matrix created successfully.")
 
     # Run route simulation for locations and visualize results
+    logger.info("Computing optimal collection and distribution routes among bins.")
     routes_stage = config["stages"]["routes"]
     sim_config = routes_stage["experiments"]
     viz_config = routes_stage["visualizations"]
@@ -276,7 +412,7 @@ def main(
         args.city,
         polygon,
         args.solver,
-        locations_df,
+        bins_df,
         distances_df,
         pickups_sweep,
         combo_sweep,
@@ -284,6 +420,9 @@ def main(
         storage,
         logger,
     )
+
+    # Log end of process
+    logger.info("Pipeline execution completed successfully.")
 
 
 if __name__ == "__main__":

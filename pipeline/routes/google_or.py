@@ -158,7 +158,7 @@ class GoogleORToolsClient(IRoutingClient):
         # Define cost of each arc
         routing.SetArcCostEvaluatorOfAllVehicles(transit_callback_index)
 
-        # Add Capacity constraint.
+        # Add capacity constraint
         def demand_callback(from_index):
             """Returns the demand of the node."""
             from_node = manager.IndexToNode(from_index)
@@ -173,7 +173,7 @@ class GoogleORToolsClient(IRoutingClient):
             name="Capacity",
         )
 
-        # Setting first solution heuristic.
+        # Setting first solution heuristic
         search_parameters = pywrapcp.DefaultRoutingSearchParameters()
         search_parameters.first_solution_strategy = (
             routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC
@@ -183,10 +183,10 @@ class GoogleORToolsClient(IRoutingClient):
         )
         search_parameters.time_limit.FromSeconds(num_seconds)
 
-        # Solve the problem.
+        # Solve the problem
         solution = routing.SolveWithParameters(search_parameters)
 
-        # Return solution.
+        # Return solution
         if not solution:
             return
 
@@ -247,7 +247,7 @@ class GoogleORToolsClient(IRoutingClient):
             pickup_params.num_vehicles,
             pickup_params.vehicle_capacity,
             pickup_params.runtime,
-            pickup_params.place_capacity_column,
+            pickup_params.demand_column,
         )
 
         # Return if no solution
@@ -315,7 +315,7 @@ class GoogleORToolsClient(IRoutingClient):
                 combo_params.num_vehicles,
                 combo_params.vehicle_capacity,
                 combo_params.runtime,
-                combo_params.place_capacity_column,
+                combo_params.demand_column,
             )
 
             # Continue to next route if no solution exists
