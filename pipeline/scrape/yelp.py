@@ -231,7 +231,9 @@ class YelpClient(IPlacesProvider):
         max_side_meters = (2**0.5) * YelpClient.MAX_SEARCH_RADIUS_IN_METERS
 
         # Use heuristic to convert length from meters to degrees at box's lower latitude
-        deg_lat, deg_lon = convert_meters_to_degrees(max_side_meters, bbox.bottom_left)
+        deg_lat, deg_lon = convert_meters_to_degrees(
+            max_side_meters, bbox.bottom_left
+        )
 
         # Take minimum value as side length (meters convert differently to lat and lon,
         # and we want to avoid going over max radius)

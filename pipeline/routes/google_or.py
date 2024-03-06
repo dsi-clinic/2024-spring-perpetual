@@ -135,7 +135,9 @@ class GoogleORToolsClient(IRoutingClient):
         data["distance_matrix"] = distances_df.to_numpy().astype(int)
         data["demands"] = locations_df[demand_col].astype(int).tolist()
         data["num_vehicles"] = num_vehicles
-        data["vehicle_capacities"] = [vehicle_capacity for _ in range(num_vehicles)]
+        data["vehicle_capacities"] = [
+            vehicle_capacity for _ in range(num_vehicles)
+        ]
         data["depot"] = 0
 
         # Create the routing index manager
@@ -153,7 +155,9 @@ class GoogleORToolsClient(IRoutingClient):
             to_node = manager.IndexToNode(to_index)
             return data["distance_matrix"][from_node][to_node]
 
-        transit_callback_index = routing.RegisterTransitCallback(distance_callback)
+        transit_callback_index = routing.RegisterTransitCallback(
+            distance_callback
+        )
 
         # Define cost of each arc
         routing.SetArcCostEvaluatorOfAllVehicles(transit_callback_index)
@@ -164,7 +168,9 @@ class GoogleORToolsClient(IRoutingClient):
             from_node = manager.IndexToNode(from_index)
             return data["demands"][from_node]
 
-        demand_callback_index = routing.RegisterUnaryTransitCallback(demand_callback)
+        demand_callback_index = routing.RegisterUnaryTransitCallback(
+            demand_callback
+        )
         routing.AddDimensionWithVehicleCapacity(
             evaluator_index=demand_callback_index,
             slack_max=0,
@@ -206,7 +212,9 @@ class GoogleORToolsClient(IRoutingClient):
             route_df = route_df.reset_index()
             route_df = route_df.rename(columns={"index": "Original_Index"})
             route_df = route_df.drop(columns=["level_0"], errors="ignore")
-            all_df = route_df if all_df is None else pd.concat([all_df, route_df])
+            all_df = (
+                route_df if all_df is None else pd.concat([all_df, route_df])
+            )
 
         return all_df
 
@@ -276,8 +284,12 @@ class GoogleORToolsClient(IRoutingClient):
             ] + pickup_locs_df["Daily_Pickup_Totes"].tolist()[1:]
 
             # Add locations with dropoffs as new dropoff sites and set capacities
-            dropoff_locs_df = pickup_locs_df.copy().query("`Weekly_Dropoff_Totes` > 0")
-            dropoff_locs_df["Capacity"] = dropoff_locs_df["Weekly_Dropoff_Totes"] * -1
+            dropoff_locs_df = pickup_locs_df.copy().query(
+                "`Weekly_Dropoff_Totes` > 0"
+            )
+            dropoff_locs_df["Capacity"] = (
+                dropoff_locs_df["Weekly_Dropoff_Totes"] * -1
+            )
 
             # Combine pickup and dropoff locations into final DataFrame
             combined_locs_df = pd.concat([pickup_locs_df, dropoff_locs_df])
@@ -297,13 +309,20 @@ class GoogleORToolsClient(IRoutingClient):
                 [str(i) for i in pickup_idx]
             ]
             combined_dist_df = pd.concat(
-                [combined_dist_df, combined_dist_df.iloc[:, -num_dropoff_sites:]],
+                [
+                    combined_dist_df,
+                    combined_dist_df.iloc[:, -num_dropoff_sites:],
+                ],
                 axis=1,
             )
 
             # Reset distance matrix column names and index
-            combined_dist_df.columns = [i for i in range(len(combined_dist_df.columns))]
-            combined_dist_df = combined_dist_df.reset_index().drop(columns="index")
+            combined_dist_df.columns = [
+                i for i in range(len(combined_dist_df.columns))
+            ]
+            combined_dist_df = combined_dist_df.reset_index().drop(
+                columns="index"
+            )
 
             # Reset location index
             combined_locs_df = combined_locs_df.reset_index()

@@ -123,7 +123,8 @@ class TomTomSearchClient(IPlacesProvider):
                     str(float(d)) for d in box.top_left.to_list(as_lat_lon=True)
                 ),
                 "btmRight": ",".join(
-                    str(float(d)) for d in box.bottom_right.to_list(as_lat_lon=True)
+                    str(float(d))
+                    for d in box.bottom_right.to_list(as_lat_lon=True)
                 ),
             }
             headers = {"Accept": "application/json", "Accept-Encoding": "gzip"}
