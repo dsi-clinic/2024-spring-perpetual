@@ -6,6 +6,11 @@ from pipeline.utils.cfg_parser import read_ini
 
 
 def combine_dropoffs_pickups():
+    
+    '''
+    3. With outputs from segment_pickup_loops.py, duplicate rows so that pickup
+    and dropoff demands can be combined into one column
+    '''
 
     # read config for combining dropoffs and pickups
     cfg = read_ini(

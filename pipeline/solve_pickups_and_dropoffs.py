@@ -7,6 +7,12 @@ from pipeline.utils.google_cvrp import solve_and_save
 
 def solve_pickups_and_dropoffs():
 
+    '''
+    4. With outputs from combine_dropoffs_pickups.py, run CVRP to solve for new
+    routes (simultaneous pickups and dropoffs) within the pickup loops obtained
+    from 1. solve_pickups_only
+    '''
+
     # read config for combining dropoffs and pickups
     cfg = read_ini(
         "../pipeline/utils/config_inputs.ini", "solve.pickups_and_dropoffs"

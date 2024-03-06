@@ -4,6 +4,10 @@ from pipeline.utils.google_cvrp import solve_and_save
 
 def solve_pickups_only():
 
+    '''
+    1. Run Google ORTools CVRP solver to solve for optimized pickup routes
+    '''
+
     # read cfg
     cfg = read_ini("../pipeline/utils/config_inputs.ini", "solve.pickups_only")
 

@@ -7,6 +7,11 @@ from pipeline.utils.cfg_parser import read_ini
 
 def segment_pickup_loops():
 
+    '''
+    2. With outputs from solve_pickups_only.py, subset truth dataframe and
+    distance matrices before for running CVRP solver for pickups AND dropoffs
+    '''
+
     # read config for finding intra-route distances
     cfg = read_ini(
         "../pipeline/utils/config_inputs.ini", "segment.pickup_loops"
