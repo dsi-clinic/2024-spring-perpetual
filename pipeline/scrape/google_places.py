@@ -272,7 +272,7 @@ class GooglePlacesClient(IPlacesProvider):
         # Locate POIs within each cell if it contains any part of geography
         pois = []
         errors = []
-        seen_ids = set() # To track and avoid duplicates
+        seen_ids = {0} # To track and avoid duplicates
 
         for batch in category_batches:
             for cell in cells:
