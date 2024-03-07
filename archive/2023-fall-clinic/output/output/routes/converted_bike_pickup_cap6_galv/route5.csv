@@ -1,6 +1,0 @@
-Original_Index,Unnamed: 0,Name,Longitude,Latitude,Daily_Pickup_Totes,Weekly_Dropoff_Totes,user_ratings_total,category,rating,weekly_high,weekly_low,best_weekly_estimate,Address,geometry,Adoption,Adoption Guess,Visited ,Influence,location_type,pickup_type,id,Bike Aggregation Point,Cumulative_Distance,Truck_Load
-23,72,La Estacion Restaurant,-94.794797,29.3015187,0,1,442.0,restaurant,4.3,175.0,25.0,175.0,"2428 Avenue H, Galveston",POINT (-94.794797 29.3015187),Skeptical,Med,No,Low,indoor,Bike_Aggregate,,,0,0
-6,13,Sugar & Rye,-94.7944536,29.3031184,1,1,128.0,restaurant,4.8,35.0,70.0,35.0,"2401 Church Street, Galveston",POINT (-94.7944536 29.3031184),Curious,High,No,Low,indoor,Bike_Converted,,72.0,276,1
-51,208,,-94.79228185255494,29.30149614872541,1,0,,,,,,,,,,,,,outdoor,Bike_Converted,2016.0,72.0,637,2
-42,179,,-94.7932658871674,29.301064005835528,1,0,,,,,,,,,,,,,outdoor,Bike,1008.0,72.0,742,3
-23,72,La Estacion Restaurant,-94.794797,29.3015187,0,1,442.0,restaurant,4.3,175.0,25.0,175.0,"2428 Avenue H, Galveston",POINT (-94.794797 29.3015187),Skeptical,Med,No,Low,indoor,Bike_Aggregate,,,950,3

@@ -91,7 +91,7 @@ class TomTomSearchClient(IPlacesProvider):
 
     def find_places_in_bounding_box(
         self, box: BoundingBox, categories: List[str]
-    ) -> Tuple[Dict, Dict]:
+    ) -> Tuple[List[Dict], List[Dict]]:
         """Locates all POIs within the bounding box.
 
         Args:
@@ -100,7 +100,9 @@ class TomTomSearchClient(IPlacesProvider):
             categories (`list` of `str`): The categories to search by.
 
         Returns:
-            (`dict`, `dict`): A two-item tuple consisting of the POIs and errors.
+            ((`list` of `dict`, `list` of `dict`,)): A two-item tuple
+                consisting of the list of retrieved places and a list
+                of any errors that occurred, respectively.
         """
         # Initialize request URL and static params
         url = "https://api.tomtom.com/search/2/poiSearch/.json"
@@ -121,7 +123,8 @@ class TomTomSearchClient(IPlacesProvider):
                     str(float(d)) for d in box.top_left.to_list(as_lat_lon=True)
                 ),
                 "btmRight": ",".join(
-                    str(float(d)) for d in box.bottom_right.to_list(as_lat_lon=True)
+                    str(float(d))
+                    for d in box.bottom_right.to_list(as_lat_lon=True)
                 ),
             }
             headers = {"Accept": "application/json", "Accept-Encoding": "gzip"}
@@ -158,25 +161,25 @@ class TomTomSearchClient(IPlacesProvider):
             # Otherwise, iterate page index and add delay before next request
             page_idx += 1
 
-    def find_places_in_geography(self, geo: Union[Polygon, MultiPolygon]) -> List[Dict]:
+    def find_places_in_geography(
+        self, geo: Union[Polygon, MultiPolygon]
+    ) -> Tuple[List[Dict], List[Dict]]:
         """Queries the TomTom Points of Interest Search API for
         locations within a geography boundary. To accomplish this,
         a bounding box for the geography is calculated and then
         split into many smaller boxes, each of which submitted to
-        the API as a data query. At present, the number of boxes
-        searched is equal to the maximum number of search requests
-        that can be submitted simultaneously through the TomTom
-        Asynchronous Batch API.
+        the API as a data query.
 
         Documentation:
-        - ["Asynchronous Batch Submission | POST Body Fields | Query"](https://developer.tomtom.com/batch-search-api/documentation/asynchronous-batch-submission#post-body-fields)
         - ["Points of Interest Search"](https://developer.tomtom.com/search-api/documentation/search-service/points-of-interest-search)
 
         Args:
             geo (`Polygon` or `MultiPolygon`): The boundary.
 
         Returns:
-            (`list` of `dict`): The places.
+            ((`list` of `dict`, `list` of `dict`,)): A two-item tuple
+                consisting of the list of retrieved places and a list
+                of any errors that occurred, respectively.
         """
         # Calculate bounding box for geography
         bbox: BoundingBox = BoundingBox.from_polygon(geo)

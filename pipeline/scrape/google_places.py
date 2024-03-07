@@ -15,10 +15,7 @@ from shapely import MultiPolygon, Polygon
 
 # Application imports
 from pipeline.scrape.common import IPlacesProvider
-from pipeline.utils.geometry import (
-    BoundingBox,
-    convert_meters_to_degrees,
-)
+from pipeline.utils.geometry import BoundingBox, convert_meters_to_degrees
 
 
 class GooglePOITypes(Enum):
@@ -116,7 +113,7 @@ class GooglePlacesClient(IPlacesProvider):
 
     def find_places_in_bounding_box(
         self, box: BoundingBox, categories: List[str], search_radius: float
-    ) -> Tuple[Dict, Dict]:
+    ) -> Tuple[List[Dict], List[Dict]]:
         """Locates all POIs within the given area and categories.
         The area is further divided into a grid of quadrants if
         more results are available within the area than can be
@@ -131,7 +128,9 @@ class GooglePlacesClient(IPlacesProvider):
                 meters to the larger of degrees longitude and latitude.
 
         Returns:
-            (`dict`, `dict`): A two-item tuple consisting of the POIs and errors.
+            ((`list` of `dict`, `list` of `dict`,)): A two-item tuple
+                consisting of the list of retrieved places and a list
+                of any errors that occurred, respectively.
         """
         # Initialize request URL
         url = "https://places.googleapis.com/v1/places:searchNearby"
@@ -180,7 +179,10 @@ class GooglePlacesClient(IPlacesProvider):
 
         # Otherwise, if number of POIs returned equals max,
         # split box and recursively issue HTTP requests
-        if len(data["places"]) == GooglePlacesClient.MAX_NUM_RESULTS_PER_REQUEST:
+        if (
+            len(data["places"])
+            == GooglePlacesClient.MAX_NUM_RESULTS_PER_REQUEST
+        ):
             pois = []
             errors = []
             sub_cells = box.split_along_axes(x_into=2, y_into=2)
@@ -195,7 +197,9 @@ class GooglePlacesClient(IPlacesProvider):
         # Otherwise, extract business data from response body JSON
         return data["places"], []
 
-    def find_places_in_geography(self, geo: Union[Polygon, MultiPolygon]) -> List[Dict]:
+    def find_places_in_geography(
+        self, geo: Union[Polygon, MultiPolygon]
+    ) -> Tuple[List[Dict], List[Dict]]:
         """Locates all POIs with a review within the given geography.
         The Google Places API permits searching for POIs within a radius around
         a given point. Therefore, data is extracted by dividing the
@@ -240,16 +244,22 @@ class GooglePlacesClient(IPlacesProvider):
             geo (`Polygon` or `MultiPolygon`): The boundary.
 
         Returns:
-            (`list` of `dict`): The list of places.
+            ((`list` of `dict`, `list` of `dict`,)): A two-item tuple
+                consisting of the list of retrieved places and a list
+                of any errors that occurred, respectively.
         """
         # Calculate bounding box for geography
         bbox: BoundingBox = BoundingBox.from_polygon(geo)
 
         # Calculate length of square circumscribed by circle with the max search radius
-        max_side_meters = (2**0.5) * GooglePlacesClient.MAX_SEARCH_RADIUS_IN_METERS
+        max_side_meters = (
+            2**0.5
+        ) * GooglePlacesClient.MAX_SEARCH_RADIUS_IN_METERS
 
         # Use heuristic to convert length from meters to degrees at box's lower latitude
-        deg_lat, deg_lon = convert_meters_to_degrees(max_side_meters, bbox.bottom_left)
+        deg_lat, deg_lon = convert_meters_to_degrees(
+            max_side_meters, bbox.bottom_left
+        )
 
         # Take minimum value as side length (meters convert differently to
         # lat and lon, and we want to avoid going over max radius)

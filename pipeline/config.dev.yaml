@@ -2,4 +2,63 @@
 stages:
   places:
     use_cached: true
+  classifications:
+    use_cached: true
+    output_fpath: "galveston_inputs/indoor_outdoor_pts_galv.csv"
+  distances:
+    use_cached: true
+    output_fpath: "galveston_inputs/indoor_outdoor_distances_galv.csv"
+  routes:
+    experiments:
+      pickups_only:
+        name: "Pickups Only"
+        place_capacity_column: "Daily_Pickup_Totes"
+        num_vehicles:
+          min: 3
+          max: 3
+          step: 1
+        vehicle_capacity:
+          min: 120
+          max: 120
+          step: 5
+        simulation_runtime:
+          min: 7200
+          max: 7200
+          step: 300 
+      pickups_and_dropoffs:
+        name: "Combined Pickups and Dropoffs"
+        place_capacity_column: "Capacity"
+        num_vehicles:
+          min: 1
+          max: 1
+          step: 1
+        vehicle_capacity:
+          min: 1200
+          max: 1200
+          step: 300
+        simulation_runtime:
+          min: 60
+          max: 60
+          step: 60
+    visualizations:
+      colors:
+        - blue
+        - red
+        - green
+        - orange
+        - purple
+        - darkblue
+        - pink
+        - white
+        - darkred
+        - lightgreen
+        - lightgray
+        - gray
+        - lightred
+        - black
+        - cadetblue
+        - darkgreen
+        - beige
+        - darkpurple
+        - lightblue
 ...
