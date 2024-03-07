@@ -163,3 +163,9 @@ cython_debug/
 
 # macOS
 .DS_Store
+
+# Visual Studio Code
+.vscode/
+
+# Cached OSMNX files
+cache/

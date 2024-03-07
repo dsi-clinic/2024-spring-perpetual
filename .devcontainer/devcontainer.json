@@ -23,14 +23,14 @@
                 },
                 "isort.args": [
                     "--profile", "black",
-                    "--line_length", "80",
+                    "--line_length", "88",
                     "--multi_line_output", "3",
                     "--include_trailing_comma", "true",
                     "force_grid_wrap", "0",
                     "--use_parentheses", "true"
                 ],
                 "flake8.args": [
-                    "--max-line-length", "80",
+                    "--max-line-length", "88",
                     "--extend-ignore", "E203"    
                 ]
             },
@@ -47,7 +47,9 @@
         }
     },
 	"runArgs": [
-		"--shm-size=16gb"
+		"--shm-size=16gb",
+        "--env-file",
+        ".env"
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [9000],
