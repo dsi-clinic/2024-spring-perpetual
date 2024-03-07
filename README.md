@@ -10,7 +10,7 @@ Perpetual is a non-profit organization that partners with municipal governments,
 
 To achieve this vision, Perpetual is designing systems where customers can borrow reusable containers, cups, and utensils from anywhere they would normally purchase food and drinks (e.g., restaurants, bars, and food trucks). The customers then return that foodware to one of many outdoor collection bins.  Finally, a fleet of trucks and bicycles visits these FUEs and outdoor bins on a schedule to drop off clean foodware and/or pick up dirty foodware for washing at a local _depot_. To date, Galveston, Texas; Hilo/Hawaii County, Hawaii; Ann Arbor, Michigan; and Savannah, Georgia, have begun collaborating with Perpetual to design systems for their locales.
 
-### Problem Statement
+## Problem Statement
 
 Designing a city-wide, reusable foodware system presents many challenges. Which outdoor bin locations are most likely to reach the greatest number of customers? How should vehicles pick up and drop off foodware at FUEs with varying demands to minimize total distance traveled, and therefore, cost and environmental impact? And finally, how can this model be easily scaled to multiple cities?
 
@@ -18,7 +18,7 @@ The University of Chicago Data Science Institute is tackling this problem by cre
 
 This repository contains the code for the pipeline in progress. Datasets for the four partner cities are also available for testing.
 
-### Setup
+## Setup
 
 1. **Docker.** Ensure that [Docker Desktop](https://docs.docker.com/engine/install/) has been installed on your local machine.
 
@@ -34,7 +34,7 @@ This repository contains the code for the pipeline in progress. Datasets for the
 
 7. **Mapbox Access Token.** Create a Mapbox account if you don't already have one and then visit your Access Tokens page to generate a JSON Web Token (JWT). (Instructions can be found [here](https://docs.mapbox.com/help/getting-started/access-tokens/).). Once you have your token, copy and paste it into the `.env` file as `MAPBOX_ACCESS_TOKEN=<token>`.
 
-### Running the Pipeline
+## Running the Pipeline
 
 1. Reopen the repository in VS Code after installing the Dev Containers extension.  A small modal window will pop up and prompt you to reopen the window in a container due to the presence of a `.devcontainer/devcontainer.json` file.  Select yes and then wait for the Dev Container to finish building.
 
@@ -42,27 +42,27 @@ This repository contains the code for the pipeline in progress. Datasets for the
 
 3. After executing the command, the pipeline will fetch POIs from the providers, perform initial cleaning, and then use those points to run multiple simulations according to the parameters listed in `pipeline/config.dev.yaml`. Result files are saved in an `outputs` directory and include maps of individual and all routes, route data in CSV format, plain text visualization of the routes, and JSON metadata on the simulation run.
 
-### WIP
+## WIP
 
 The POI cleaning, standardization, and indoor/outdoor bin classification steps are still incomplete. For now, cached files with indoor and outdoor bin locations are loaded within `pipeline/main.py` and used as inputs for routing. The sensitivity analysis is also incomplete, although the summary stats that are collected could be used to begin creating one.
 
 A preliminary cleaning script has been written by Data Clinic students and saved under `pipeline/utils/clean.py`. To use it, add the paths to all the scraped POI JSON files into pipeline/utls/clean.py and then run `python3 pipeline/utils/clean.py`. This will take all the json files, and combine them into one standardized and formatted CSV file, which could be incorporated into the pipeline at a later stage.
 
-### Organization
+## File Directory
 
 - `data`: Inputs and outputs for the pipeline. For more information, consult the README in the folder.
 - `notebooks`: Jupyter notebooks to step through implemented routing algorithms.
 - `pipeline`: Data pipeline to fetch, standardize, de-dupe, classify, and route points of interest in order to simulate a reusable foodware system.
 
-### Contributors
+## Contributors
 
-#### Mentor
+### Mentor
 Launa Greer
 
-#### TA
+### TA
 Sarah Walker
 
-#### Students
+### Students
 - Jessica Cibrian
 - Huanlin Dai
 - Lydia Lo
