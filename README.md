@@ -2,7 +2,7 @@
 
 ### Background
 
-Perpetual is a non-profit organization that partners with municipal governments, zero-waste organizations, business leagues, community groups, and other stakeholders to reduce consumption of single-use disposables. Eliminating waste in turn conserves resources, minimizes pollution, and slashes the cost of foodware and solid waste management.
+Perpetual is a non-profit organization that partners with municipal governments, zero-waste organizations, business leagues, community groups, and other stakeholders to reduce consumption of single-use disposables. Eliminating such waste will conserve resources, minimize pollution, and slash the cost of foodware and solid waste management for cities and local businesses.
 
 To achieve this vision, Perpetual is designing systems where customers can borrow reusable containers, cups, and utensils from anywhere they would normally purchase food and drinks, such as restaurants, bars, and food trucks (i.e., _Foodware Service Entities (FSEs)_, _Foodware Using Establishments (FUEs)_, or _indoor points_) and then return that foodware to one of many outdoor collection bins (i.e., _outdoor points_).  A fleet of trucks and bicycles would visit these FUEs and outdoor bins on a schedule to drop off clean foodware and/or pick up dirty foodware for washing at a local _depot_.
 
