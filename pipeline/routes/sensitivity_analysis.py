@@ -1,3 +1,6 @@
+"""Sensitivity analysis.
+"""
+
 import pandas as pd
 import numpy as np
 
@@ -27,7 +30,7 @@ def sensitivity_analysis(route_dir):
     }
 
     # for each route, fill dictionary with summary information and estimates
-    total_pickup_tote = 0
+    total_pickup_totes = 0
     total_pickup_cups = 0
     total_dropoff_totes = 0
     total_dropoff_cups = 0

@@ -32,4 +32,4 @@ def test_mapbox_make_distance_matrix(coords: List[WGS84Coordinate]) -> None:
     """
     client = MapboxApiClient()
     profile = MapboxRoutingProfile(name=MapboxRouteEnum.DRIVING)
-    matrix = client.make_distance_matrix(coords, profile)
+    client.make_distance_matrix(coords, profile)

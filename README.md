@@ -2,18 +2,21 @@
 
 ![A screenshot of an interactive map of routes for Galveston, Texas.](/data/img/galveston_map.png)
 
-_FIGURE 1. A map of optimal routes to serve the city of Galveston, Texas. Created from a dataset of participating FUEs and their expected volume of foodware use._
+_FIGURE 1. A map of optimal routes to serve the city of Galveston, Texas. Created from a dataset of participating Foodware Using Establishments, or FUEs, and their expected volume of foodware use._
 
 ### Background
 
-Perpetual is a non-profit organization that partners with municipal governments, zero-waste organizations, business leagues, community groups, and other stakeholders to reduce consumption of single-use disposables. Eliminating such waste will conserve resources, minimize pollution, and slash the cost of foodware and solid waste management for cities and local businesses.
+Perpetual is a non-profit organization that partners with municipal governments, zero-waste organizations, business leagues, community groups, and other stakeholders to reduce consumption of single-use disposables. Eliminating such waste conserves resources, minimizes pollution, and slashes the cost of foodware purchase and solid waste management for cities and local businesses.
 
-To achieve this vision, Perpetual is designing systems where customers can borrow reusable containers, cups, and utensils from anywhere they would normally purchase food and drinks, such as restaurants, bars, and food trucks (i.e., _Foodware Service Entities (FSEs)_, _Foodware Using Establishments (FUEs)_, or _indoor points_) and then return that foodware to one of many outdoor collection bins (i.e., _outdoor points_).  A fleet of trucks and bicycles would visit these FUEs and outdoor bins on a schedule to drop off clean foodware and/or pick up dirty foodware for washing at a local _depot_.
+To achieve this vision, Perpetual is designing systems where customers can borrow reusable containers, cups, and utensils from anywhere they would normally purchase food and drinks (e.g., restaurants, bars, and food trucks). The customers then return that foodware to one of many outdoor collection bins.  Finally, a fleet of trucks and bicycles visits these FUEs and outdoor bins on a schedule to drop off clean foodware and/or pick up dirty foodware for washing at a local _depot_. To date, Galveston, Texas; Hilo/Hawaii County, Hawaii; Ann Arbor, Michigan; and Savannah, Georgia, have begun collaborating with Perpetual to design systems for their locales.
 
-However, designing a city-wide, reusable foodware system presents many challenges. Which outdoor bin locations are most likely to reach the greatest number of customers? How should vehicles pick up and drop off foodware at FUEs with varying demands to minimize total distance traveled, and thus, cost and environmental impact? And finally, how can this model be easily reproduced across, and scaled to, multiple cities?
+## Problem Statement
 
-The University of Chicago Data Science Institute has attempted to tackle this problem by creating a pipeline to (1) fetch points of interest (POI) like restaurants, big box grocery stores, and parks from third-party APIs; (2) label them as potential indoor and outdoor points; and (3) then, using configurable estimates for FUE demand, vehicle carrying capacity, and number of vehicles, generate a set of foodware pickup and dropoff routes for the bins that can be shared with Perpetual as interactive maps. Finally, (4) a sensitivity analysis of the routes is performed to better understand how different parameters affect total distance traveled per truck and per cup. To date, Galveston, Texas; Hilo/Hawaii County, Hawaii; Ann Arbor, Michigan; and Savannah, Georgia, have begun collaborating with Perpetual to design systems for their locales, so datasets for those cities are available in the repository for pipeline testing.
+Designing a city-wide, reusable foodware system presents many challenges. Which outdoor bin locations are most likely to reach the greatest number of customers? How should vehicles pick up and drop off foodware at FUEs with varying demands to minimize total distance traveled, and therefore, cost and environmental impact? And finally, how can this model be easily scaled to multiple cities?
 
+The University of Chicago Data Science Institute is tackling this problem by creating a pipeline to (1) fetch points of interest (POI) like restaurants, big box grocery stores, and parks from third-party APIs; (2) label them as potential indoor and outdoor points; and (3) then, using configurable estimates for FUE demand, vehicle carrying capacity, and number of vehicles, generate a set of foodware pickup and dropoff routes for the bins that can be shared with Perpetual as interactive maps. Finally, (4) a sensitivity analysis of the routes is performed to better understand how different parameters affect total distance traveled per truck and per cup.
+
+This repository contains the code for the pipeline in progress. Datasets for the four partner cities are also available for testing.
 
 ### Setup
 

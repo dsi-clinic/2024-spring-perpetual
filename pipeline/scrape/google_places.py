@@ -179,10 +179,7 @@ class GooglePlacesClient(IPlacesProvider):
 
         # Otherwise, if number of POIs returned equals max,
         # split box and recursively issue HTTP requests
-        if (
-            len(data["places"])
-            == GooglePlacesClient.MAX_NUM_RESULTS_PER_REQUEST
-        ):
+        if len(data["places"]) == GooglePlacesClient.MAX_NUM_RESULTS_PER_REQUEST:
             pois = []
             errors = []
             sub_cells = box.split_along_axes(x_into=2, y_into=2)
@@ -252,14 +249,10 @@ class GooglePlacesClient(IPlacesProvider):
         bbox: BoundingBox = BoundingBox.from_polygon(geo)
 
         # Calculate length of square circumscribed by circle with the max search radius
-        max_side_meters = (
-            2**0.5
-        ) * GooglePlacesClient.MAX_SEARCH_RADIUS_IN_METERS
+        max_side_meters = (2**0.5) * GooglePlacesClient.MAX_SEARCH_RADIUS_IN_METERS
 
         # Use heuristic to convert length from meters to degrees at box's lower latitude
-        deg_lat, deg_lon = convert_meters_to_degrees(
-            max_side_meters, bbox.bottom_left
-        )
+        deg_lat, deg_lon = convert_meters_to_degrees(max_side_meters, bbox.bottom_left)
 
         # Take minimum value as side length (meters convert differently to
         # lat and lon, and we want to avoid going over max radius)
@@ -282,7 +275,7 @@ class GooglePlacesClient(IPlacesProvider):
         # Locate POIs within each cell if it contains any part of geography
         pois = []
         errors = []
-        seen_ids = {0} # To track and avoid duplicates
+        seen_ids = {0}  # To track and avoid duplicates
 
         for batch in category_batches:
             for cell in cells:
@@ -295,21 +288,20 @@ class GooglePlacesClient(IPlacesProvider):
 
                     # Process and filter POIs before adding to output
                     for poi in cell_pois:
-                        poi_id = poi['id']
+                        poi_id = poi["id"]
 
                         # Check if POI ID is a duplicate
                         if poi_id not in seen_ids:
                             seen_ids.add(poi_id)
                             clean_poi = {
-                                'id': poi_id,
-                                'name': poi['displayName']['text'],
-                                'categories': ', '.join(poi['types']),
-                                'longitude': poi['location']['longitude'],
-                                'latitude': poi['location']['latitude'],
-                                'display_address': poi['formattedAddress']
+                                "id": poi_id,
+                                "name": poi["displayName"]["text"],
+                                "categories": ", ".join(poi["types"]),
+                                "longitude": poi["location"]["longitude"],
+                                "latitude": poi["location"]["latitude"],
+                                "display_address": poi["formattedAddress"],
                             }
                             pois.append(clean_poi)
-
 
                     errors.extend(cell_errors)
 

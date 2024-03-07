@@ -73,9 +73,7 @@ def fetch_poi(
                 logger.info("Attempting to load places from cached file.")
                 with storage.open_file(provider_poi_fpath, "r") as f:
                     provider_places = json.load(f)
-                logger.info(
-                    f"{len(provider_places)} place(s) from {provider} found."
-                )
+                logger.info(f"{len(provider_places)} place(s) from {provider} found.")
                 places.extend(provider_places)
                 continue
             except FileNotFoundError:
@@ -85,9 +83,7 @@ def fetch_poi(
         # Find places using provider
         logger.info(f"Requesting POI data from {provider}.")
         client = IPlacesProviderFactory.create(provider, logger)
-        provider_places, provider_errors = client.find_places_in_geography(
-            polygon
-        )
+        provider_places, provider_errors = client.find_places_in_geography(polygon)
         logger.info(
             f"{len(provider_places)} place(s) from {provider} "
             f"found and {len(provider_errors)} error(s) encountered."
@@ -257,9 +253,7 @@ def compute_routes(
             routes_df = client.solve_bidirectional_cvrp(
                 locations_df, distances_df, pickup_params, combo_params
             )
-            num_routes = (
-                0 if routes_df is None else len(routes_df["Route"].unique())
-            )
+            num_routes = 0 if routes_df is None else len(routes_df["Route"].unique())
             logger.info(f"Simulation complete. {num_routes} route(s) found.")
 
             # Define simulation metadata
@@ -335,9 +329,7 @@ def compute_routes(
                     f.write(map_str)
 
         # Write summary stats to file to use for sensitivity analysis
-        logger.info(
-            "All simulations complete. Writing summary stats to JSON file."
-        )
+        logger.info("All simulations complete. Writing summary stats to JSON file.")
         with storage.open_file(f"{exp_dir}/summary_stats.json", "w") as f:
             json.dump(stats, f, indent=2)
 
@@ -431,9 +423,7 @@ def main(
     logger.info("Distance matrix created successfully.")
 
     # Run route simulation for locations and visualize results
-    logger.info(
-        "Computing optimal collection and distribution routes among bins."
-    )
+    logger.info("Computing optimal collection and distribution routes among bins.")
     routes_stage = config["stages"]["routes"]
     sim_config = routes_stage["experiments"]
     viz_config = routes_stage["visualizations"]
