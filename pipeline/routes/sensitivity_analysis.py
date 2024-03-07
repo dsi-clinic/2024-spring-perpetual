@@ -1,39 +1,70 @@
-import fnmatch
-import json
-import os
-
-import numpy as np
 import pandas as pd
+import numpy as np
 
 
-def sensitivity_analysis(config):
+def sensitivity_analysis(route_dir):
+    """
+    Given a directory with a single csv with all routes,
+    summarize number of routes, pickup/dropoff demands, and
+    distance traveled.
 
-    cfg = config["sensitivity_analysis"]
-    route_path = cfg["route_path"]  # "../data/outputs/routes/pickups_only/"
-    num_routes = 0
+    inputs:
+        'route_dir' : str
+            Path to directory with route csv in it
+    """
+
+    route_path = route_dir + "routes.csv"
+    routes = pd.read_csv(route_path)
+
+    # set up storage dictionary for return DataFrame/csv
     res_dict = {
-        "Num_Vehicles": cfg["???"],
-        "Vehicle_Capacity": cfg["???"],
         "Route_Names": [],
         "Pickup_Demands": [],
+        "Pickup_Estimated_Cups": [],
         "Dropoff_Demands": [],
+        "Dropoff_Estimated_Cups": [],
         "Cumulative_Distances": [],
     }
-    for filename in fnmatch.filter(next(os.walk(route_path))[2], "route*.csv"):
-        num_routes += 1
-        filepath = os.path.join(route_path, filename)
-        if os.path.isfile(filepath):
-            print(f"""solve_pickups_and_dropoffs :: detected {filename}""")
-            name = filename[:-4]
-            df = pd.read_csv(filepath)
-            # last_line = pd.DataFrame(df.iloc[-1]).T
-            res_dict["Route_Names"].append(name)
-            res_dict["Pickup_Demands"].append(
-                str(np.sum(df["Daily_Pickup_Totes"]))
-            )
-            res_dict["Dropoff_Demands"].append(
-                str(np.sum(df["Weekly_Dropoff_Totes"]))
-            )
-            res_dict["Cumulative_Distances"].append(
-                str(df.iloc[-1]["Cumulative_Distance"])
-            )
+
+    # for each route, fill dictionary with summary information and estimates
+    total_pickup_tote = 0
+    total_pickup_cups = 0
+    total_dropoff_totes = 0
+    total_dropoff_cups = 0
+    total_dist_trav = 0
+
+    grouped = routes.groupby(by="Route")
+    for route_name in grouped.groups:
+        df = grouped.get_group(route_name)
+        res_dict["Route_Names"].append(route_name)
+        pickup_demand_total = np.sum(df["Daily_Pickup_Totes"])
+        res_dict["Pickup_Demands"].append(pickup_demand_total)
+        res_dict["Pickup_Estimated_Cups"].append(50 * pickup_demand_total)
+        dropoff_demand_total = np.sum(df["Weekly_Dropoff_Totes"])
+        res_dict["Dropoff_Demands"].append(dropoff_demand_total)
+        res_dict["Dropoff_Estimated_Cups"].append(250 * pickup_demand_total)
+        distance_total = df.iloc[-1]["Cumulative_Distance"]
+        res_dict["Cumulative_Distances"].append(distance_total)
+
+        total_pickup_totes += pickup_demand_total
+        total_pickup_cups += 50 * pickup_demand_total
+        total_dropoff_totes += dropoff_demand_total
+        total_dropoff_cups += 250 * dropoff_demand_total
+        total_dist_trav += distance_total
+
+    # save totals
+    res_dict["Route_Names"].append("Totals")
+    res_dict["Pickup_Demands"].append(total_pickup_totes)
+    res_dict["Pickup_Estimated_Cups"].append(total_pickup_cups)
+    res_dict["Dropoff_Demands"].append(total_dropoff_totes)
+    res_dict["Dropoff_Estimated_Cups"].append(total_dropoff_cups)
+    res_dict["Cumulative_Distances"].append(total_dist_trav)
+
+    # save dataframe
+    pd.DataFrame(res_dict).to_csv(route_dir + "sensitivity_analysis.csv")
+
+
+if __name__ == "__main__":
+    res_dict = sensitivity_analysis(
+        "../../data/output/combined_pickups_and_dropoffs/20240306070855/"
+    )

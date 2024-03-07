@@ -10,9 +10,10 @@ from typing import List
 # Third-party imports
 import requests
 import tqdm
+from pydantic import BaseModel
+
 # Application imports
 from pipeline.utils.geometry import WGS84Coordinate
-from pydantic import BaseModel
 
 
 class MapboxRouteEnum(Enum):
@@ -62,7 +63,7 @@ class MapboxApiClient:
             `None`
         """
         try:
-            self._api_key = os.environ["MAPBOX_API_KEY"]
+            self._api_key = os.environ["MAPBOX_ACCESS_TOKEN"]
         except KeyError as e:
             raise RuntimeError(
                 "Failed to initialize MapboxApiClient."

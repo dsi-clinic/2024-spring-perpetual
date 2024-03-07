@@ -1,34 +1,72 @@
 # pipeline
 
-This folder contains python scripts (executable from command-line).
+### Overview
 
-## Usage
-To run the entire pipeline, run `python3 main.py`.
-Complete these steps to run individual files in the pipeline:
-1. Create an input folder or place input files (.csv dataframes and distance
-matrices) into an appropriate folder in `data/` (like `data/galveston_inputs/`).
-2. edit `pipeline/yaml/config_inputs.yml` (in older versions,
-`pipeline/utils/config_inputs.ini`) to include file paths for your data,
-desired output locations/filenames, and CVRP solver parameters.
-3. execute `python3 [name_of_file]` in command-line to run desired files.
+This directory contains a pipeline under development that will—
 
-### pipeline/utils/
-This directory contains files with various functions used across multiple files.
-`cfg_parser.py`: contains functions for parsing configs
-`filter_df.py`: contains functions for filtering dataframes and distance matrices
-`geometry.py`: ???
-`google_cvrp.py`: contains functions for solving the CVRP problem
-`logger.py`: ???
-`storage.py`: ???
+1. Fetch points of interest (POI) like restaurants, big box grocery stores, and parks from third-party APIs and web scrapes.
 
-### CVRP Solver
-These files in `pipeline/`, in order of execution, are involved with solving the CVRP.
-- `solve_pickups_only.py` solves for pickup-only routes vehicles can take
-- `segment_pickup_loops.py` subsets dataframe and distance matrices by pickup route
-- `combine_dropoffs_pickups.py` duplicates rows to combine pickup/dropoff demands in one column
-- `solve_pickups_and_dropoffs.py` solves for pickup-and-dropoff routes within pickup loops
-- `visualize_routes.py` visualizes routes in desired folder
+2. Clean and standardize the POIs and then de-dupe them by performing record linkage.
 
-### Pipeline Inputs and Outputs
-Input data should be placed in the `data` folder.
-Outputs will be generated and saved in the `data/outputs` folder.
+3. Label the POIs as potential indoor or outdoor points using a rule-based algorithm.
+
+4. Run repeated simulations with different parameters to generate sets of optimal pickup and dropoff routes through the points.
+
+5. Generate a sensitivity analysis of the routes to understand how total distance traveled per vehicle and per cup vary with the parameter values.
+
+### Running the Pipeline
+
+The pipeline is executable from the `main.py` script. Please refer to the main README for instructions. Input data should be placed in the `data` folder. Outputs will be generated and saved in the `data/outputs` folder.
+
+### File Organization
+
+#### `pipeline/`
+
+Scripts and configuration.
+
+- `main.py`: The entry point for the pipeline, which can be used to run it end-to-end.
+- `constants.py`: Constants used throughout the pipeline.
+- `config.dev.yaml`: Contains route simulation parameters and options to load cached data to avoid unnecesary API calls and computation.
+
+#### `pipeline/distance/`
+
+Contains files related to computing distances and travel durations between geographic locations.
+
+- `mapbox.py`: Utilities for computing distances between coordinates using the Mapbox Navigation API.
+
+#### `pipeline/routes`
+
+Contains modules used to calculate, visualize, and analyze foodware pickup and dropoff routes.
+
+- `common.py`: Defines interfaces and common classes for running routing simulations.
+- `factory.py`: Module used to generate routing solver clients using a factory design pattern.
+- `google_or.py`: Route optimization algorithms provided by Google OR-Tools [https://developers.google.com/optimization].
+- `gurobi.py`: Route optimization algorithms provided by Gurobi Optomizer [https://www.gurobi.com/downloads/end-user-license-agreement-academic/].
+- `visualize.py`: Utilities for plotting routes on a map and representing a route in plain text.
+
+#### `pipeline/scrape/`
+
+Contains modules that call external APIs for points of interest (POI) like restaurants, schools, and parks. The fetched records will be labeled as indoor and outdoor collection bins for foodware in a future pipeline script. 
+
+- `bing.py`: Contains skeleton file for possible integration of Bing Maps API.
+- `common.py`: Defines interfaces and common classes for scraping points of interest.
+- `factory.py`: Module used to generate API clients using a factory design pattern.
+- `google_places.py`: Provides access to geographic locations using the Google Places API.
+- `tomtom.py`: Provides access to geographic locations using the TomTom Search API.
+- `yelp.py`: Provides access to geographic locations using the Yelp Fusion API.
+
+#### `pipeline/tests/`
+
+Contains unit tests, implemented with `pytest`, for pipeline modules.
+
+- `test_distance.py`: Tests the creation of distance matrices.
+- `test_geometry.py`: Tests bounding box and coordinate functions.
+
+#### `pipeline/utils/`
+
+Contains utilities used across the entire pipeline.
+
+- `geometry.py`: Provides helper functions and classes related to geometries.
+- `logger.py`: Provides customized loggers for use across the application.
+- `storage.py`: Utilities for reading and writing files across data stores.
+- `clean.py`: Cleans scraped info and transforms from json to csv format.
