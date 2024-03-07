@@ -6,6 +6,7 @@ import math
 
 # Third-party imports
 import pytest
+
 # Appliction imports
 from pipeline.utils.geometry import BoundingBox
 
