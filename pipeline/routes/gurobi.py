@@ -6,7 +6,7 @@ from typing import List, Tuple
 
 # Third-party imports
 import pandas as pd
-from gurobipy import Model, GRB, quicksum
+from gurobipy import GRB, Model, quicksum
 
 # Application imports
 from pipeline.routes.common import IRoutingClient, SimulationParams
@@ -137,7 +137,9 @@ class GurobiClient(IRoutingClient):
         mdl.addConstrs(quicksum(x[i, j] for j in V if j != i) == 1 for i in N)
         mdl.addConstrs(quicksum(x[i, j] for i in V if i != j) == 1 for j in N)
         mdl.addConstrs(
-            (x[i, j] == 1) >> (u[i] + q[j] == u[j]) for i, j in A if i != 0 and j != 0
+            (x[i, j] == 1) >> (u[i] + q[j] == u[j])
+            for i, j in A
+            if i != 0 and j != 0
         )
 
         # Add constraints to ensure that each location's load is not negative

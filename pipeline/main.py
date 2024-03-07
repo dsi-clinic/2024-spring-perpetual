@@ -11,17 +11,22 @@ from typing import Dict, List, Union
 # Third-party imports
 import pandas as pd
 import yaml
+from shapely import MultiPolygon, Polygon
+from shapely.geometry import shape
 
 # Application imports
-from pipeline.constants import CITY_BOUNDARIES_DIR, OUTPUT_DIR, PIPELINE_DIR, POI_DIR
+from pipeline.constants import (
+    CITY_BOUNDARIES_DIR,
+    OUTPUT_DIR,
+    PIPELINE_DIR,
+    POI_DIR,
+)
 from pipeline.routes.common import ParameterSweep
 from pipeline.routes.factory import IRoutingClientFactory
 from pipeline.routes.visualize import route_to_plain_text, visualize_routes
 from pipeline.scrape import IPlacesProviderFactory
 from pipeline.utils.logger import LoggerFactory, logging
 from pipeline.utils.storage import IDataStore, IDataStoreFactory
-from shapely import MultiPolygon, Polygon
-from shapely.geometry import shape
 
 
 def fetch_poi(
@@ -68,7 +73,9 @@ def fetch_poi(
                 logger.info("Attempting to load places from cached file.")
                 with storage.open_file(provider_poi_fpath, "r") as f:
                     provider_places = json.load(f)
-                logger.info(f"{len(provider_places)} place(s) from {provider} found.")
+                logger.info(
+                    f"{len(provider_places)} place(s) from {provider} found."
+                )
                 places.extend(provider_places)
                 continue
             except FileNotFoundError:
@@ -78,7 +85,9 @@ def fetch_poi(
         # Find places using provider
         logger.info(f"Requesting POI data from {provider}.")
         client = IPlacesProviderFactory.create(provider, logger)
-        provider_places, provider_errors = client.find_places_in_geography(polygon)
+        provider_places, provider_errors = client.find_places_in_geography(
+            polygon
+        )
         logger.info(
             f"{len(provider_places)} place(s) from {provider} "
             f"found and {len(provider_errors)} error(s) encountered."
@@ -103,7 +112,10 @@ def fetch_poi(
 
 
 def classify_poi(
-    places: List[Dict], output_fpath: str, use_cached: bool, logger: logging.Logger
+    places: List[Dict],
+    output_fpath: str,
+    use_cached: bool,
+    logger: logging.Logger,
 ) -> pd.DataFrame:
     """`Joins points of interest (POIs) across datasets, dedupes them,
     and then takes a subset of POIs as as indoor and outdoor bins using
@@ -137,7 +149,10 @@ def classify_poi(
 
 
 def compute_distance_matrix(
-    bins_df: pd.DataFrame, output_fpath: str, use_cached: bool, logger: logging.Logger
+    bins_df: pd.DataFrame,
+    output_fpath: str,
+    use_cached: bool,
+    logger: logging.Logger,
 ) -> pd.DataFrame:
     """Calculates the distance between each pair of bin locations.
 
@@ -242,7 +257,9 @@ def compute_routes(
             routes_df = client.solve_bidirectional_cvrp(
                 locations_df, distances_df, pickup_params, combo_params
             )
-            num_routes = 0 if routes_df is None else len(routes_df["Route"].unique())
+            num_routes = (
+                0 if routes_df is None else len(routes_df["Route"].unique())
+            )
             logger.info(f"Simulation complete. {num_routes} route(s) found.")
 
             # Define simulation metadata
@@ -318,7 +335,9 @@ def compute_routes(
                     f.write(map_str)
 
         # Write summary stats to file to use for sensitivity analysis
-        logger.info("All simulations complete. Writing summary stats to JSON file.")
+        logger.info(
+            "All simulations complete. Writing summary stats to JSON file."
+        )
         with storage.open_file(f"{exp_dir}/summary_stats.json", "w") as f:
             json.dump(stats, f, indent=2)
 
@@ -393,7 +412,10 @@ def main(
     logger.info("Classifying points of interest as indoor and outdoor bins.")
     classify_stage = config["stages"]["classifications"]
     bins_df = classify_poi(
-        places, classify_stage["output_fpath"], classify_stage["use_cached"], logger
+        places,
+        classify_stage["output_fpath"],
+        classify_stage["use_cached"],
+        logger,
     )
     logger.info(f"{len(bins_df)} bins identified.")
 
@@ -401,12 +423,17 @@ def main(
     logger.info("Computing distances between each pair of bins.")
     distance_stage = config["stages"]["distances"]
     distances_df = compute_distance_matrix(
-        bins_df, distance_stage["output_fpath"], distance_stage["use_cached"], logger
+        bins_df,
+        distance_stage["output_fpath"],
+        distance_stage["use_cached"],
+        logger,
     )
     logger.info("Distance matrix created successfully.")
 
     # Run route simulation for locations and visualize results
-    logger.info("Computing optimal collection and distribution routes among bins.")
+    logger.info(
+        "Computing optimal collection and distribution routes among bins."
+    )
     routes_stage = config["stages"]["routes"]
     sim_config = routes_stage["experiments"]
     viz_config = routes_stage["visualizations"]

@@ -4,9 +4,9 @@
 
 This directory contains a pipeline under development that will—
 
-1. Fetch points of interest (POI) like restaurants, big box grocery stores, and parks from third-party APIs.
+1. Fetch points of interest (POI) like restaurants, big box grocery stores, and parks from third-party APIs and web scrapes.
 
-2. Clean, standardize, and de-dupe the POIs using record linkage.
+2. Clean and standardize the POIs and then de-dupe them by performing record linkage.
 
 3. Label the POIs as potential indoor or outdoor points using a rule-based algorithm.
 
@@ -14,9 +14,11 @@ This directory contains a pipeline under development that will—
 
 5. Generate a sensitivity analysis of the routes to understand how total distance traveled per vehicle and per cup vary with the parameter values.
 
-The pipeline is executable from a `main.py` script. Please refer to the main README for instructions. Input data should be placed in the `data` folder. Outputs will be generated and saved in the `data/outputs` folder.
+### Running the Pipeline
 
-### Organization
+The pipeline is executable from the `main.py` script. Please refer to the main README for instructions. Input data should be placed in the `data` folder. Outputs will be generated and saved in the `data/outputs` folder.
+
+### File Organization
 
 #### `pipeline/`
 

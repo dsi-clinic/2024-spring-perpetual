@@ -6,11 +6,11 @@ import logging
 import os
 from typing import Dict, List, Tuple, Union
 
-# Application imports
-from pipeline.scrape.common import IPlacesProvider
-
 # Third-party imports
 from shapely import MultiPolygon, Polygon
+
+# Application imports
+from pipeline.scrape.common import IPlacesProvider
 
 
 class BingMapsClient(IPlacesProvider):

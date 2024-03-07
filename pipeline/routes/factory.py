@@ -35,5 +35,7 @@ class IRoutingClientFactory:
             raise RuntimeError(
                 "Requested a routing optimizer that "
                 f'has not been registered, "{e}". Expected one of '
-                ", ".join(f'"{k}"' for k in IRoutingClientFactory._REGISTRY.keys())
+                ", ".join(
+                    f'"{k}"' for k in IRoutingClientFactory._REGISTRY.keys()
+                )
             ) from None

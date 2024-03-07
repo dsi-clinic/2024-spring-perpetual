@@ -26,7 +26,9 @@ def route_to_plain_text(route_id: str, route_df: pd.DataFrame) -> str:
     """
     route_legs = []
     for _, row in route_df.sort_values(by="Route Stop Number").iterrows():
-        route_legs.append(f"Node({row['Original_Index']}) Load({row['Truck_Load']})")
+        route_legs.append(
+            f"Node({row['Original_Index']}) Load({row['Truck_Load']})"
+        )
 
     plan_output = [f"Route #{route_id}:"]
     plan_output.append(
@@ -97,20 +99,26 @@ def calc_routes(
     routes = []
     for i in range(len(route_data) - 1):
         start_node = ox.nearest_nodes(
-            graph, route_data.iloc[i]["Longitude"], route_data.iloc[i]["Latitude"]
+            graph,
+            route_data.iloc[i]["Longitude"],
+            route_data.iloc[i]["Latitude"],
         )
         end_node = ox.nearest_nodes(
             graph,
             route_data.iloc[i + 1]["Longitude"],
             route_data.iloc[i + 1]["Latitude"],
         )
-        routes.append(nx.shortest_path(graph, start_node, end_node, weight="length"))
+        routes.append(
+            nx.shortest_path(graph, start_node, end_node, weight="length")
+        )
 
     # Convert the OSMnx routes to latitude/longitude coordinates
     final_route = []
     for route in routes:
         for point in route:
-            final_route.append((graph.nodes[point]["y"], graph.nodes[point]["x"]))
+            final_route.append(
+                (graph.nodes[point]["y"], graph.nodes[point]["x"])
+            )
 
     return final_route
 
@@ -164,7 +172,9 @@ def add_markers(map: folium.Map, route_data: pd.DataFrame, color: str) -> None:
 
 
 def visualize_routes(
-    routes_df: pd.DataFrame, boundary: Union[MultiPolygon, Polygon], colors: List[str]
+    routes_df: pd.DataFrame,
+    boundary: Union[MultiPolygon, Polygon],
+    colors: List[str],
 ) -> List[Tuple[str, folium.Map]]:
     """Plots each route in the DataFrame on a separate map and then creates
     a composite map containing all routes. Uses the package Folium for plotting

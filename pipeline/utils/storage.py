@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Iterator, Optional, Union
 
 from constants import DATA_DIR
+
 # Application imports
 from pipeline.constants import DATA_DIR
 
