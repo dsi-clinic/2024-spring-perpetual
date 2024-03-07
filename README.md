@@ -10,7 +10,7 @@ Perpetual is a non-profit organization that partners with municipal governments,
 
 To achieve this vision, Perpetual is designing systems where customers can borrow reusable containers, cups, and utensils from anywhere they would normally purchase food and drinks (e.g., restaurants, bars, and food trucks). The customers then return that foodware to one of many outdoor collection bins.  Finally, a fleet of trucks and bicycles visits these FUEs and outdoor bins on a schedule to drop off clean foodware and/or pick up dirty foodware for washing at a local _depot_. To date, Galveston, Texas; Hilo/Hawaii County, Hawaii; Ann Arbor, Michigan; and Savannah, Georgia, have begun collaborating with Perpetual to design systems for their locales.
 
-## Problem Statement
+### Problem Statement
 
 Designing a city-wide, reusable foodware system presents many challenges. Which outdoor bin locations are most likely to reach the greatest number of customers? How should vehicles pick up and drop off foodware at FUEs with varying demands to minimize total distance traveled, and therefore, cost and environmental impact? And finally, how can this model be easily scaled to multiple cities?
 
