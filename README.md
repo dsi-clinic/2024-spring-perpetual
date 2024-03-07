@@ -15,7 +15,6 @@ However, designing a city-wide, reusable foodware system presents many challenge
 The University of Chicago Data Science Institute has attempted to tackle this problem by creating a pipeline to (1) fetch points of interest (POI) like restaurants, big box grocery stores, and parks from third-party APIs; (2) label them as potential indoor and outdoor points; and (3) then, using configurable estimates for FUE demand, vehicle carrying capacity, and number of vehicles, generate a set of foodware pickup and dropoff routes for the bins that can be shared with Perpetual as interactive maps. Finally, (4) a sensitivity analysis of the routes is performed to better understand how different parameters affect total distance traveled per truck and per cup. To date, Galveston, Texas; Hilo/Hawaii County, Hawaii; Ann Arbor, Michigan; and Savannah, Georgia, have begun collaborating with Perpetual to design systems for their locales, so datasets for those cities are available in the repository for pipeline testing.
 
 
-
 ### Setup
 
 1. **Docker.** Ensure that [Docker Desktop](https://docs.docker.com/engine/install/) has been installed on your local machine.

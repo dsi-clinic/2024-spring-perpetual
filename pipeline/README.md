@@ -40,8 +40,10 @@ Contains modules used to calculate, visualize, and analyze foodware pickup and d
 
 - `common.py`: Defines interfaces and common classes for running routing simulations.
 - `factory.py`: Module used to generate routing solver clients using a factory design pattern.
-- `google_or.py`: Route optimization algorithms provided by Google OR-Tools [https://developers.google.com/optimization].
-- `gurobi.py`: Route optimization algorithms provided by Gurobi Optomizer [https://www.gurobi.com/downloads/end-user-license-agreement-academic/].
+- `google_or.py`: Route optimization algorithms provided by (Google OR-Tools)[https://developers.google.com/optimization].
+- `gurobi.py`: Route optimization algorithms provided by (Gurobi Optomizer)[https://www.gurobi.com/downloads/end-user-license-agreement-academic/].
+- `gurobi_visual_prepare.py`: Deprecated file. Adds additional location information to Gurobi routing simulation outputs.
+- `sensitivity_analysis`: Runs a sensitivity analysis on simulation output files.
 - `visualize.py`: Utilities for plotting routes on a map and representing a route in plain text.
 
 #### `pipeline/scrape/`
