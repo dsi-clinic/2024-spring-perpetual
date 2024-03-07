@@ -4,7 +4,7 @@
 
 _FIGURE 1. A map of optimal routes to serve the city of Galveston, Texas. Created from a dataset of participating Foodware Using Establishments, or FUEs, and their expected volume of foodware use._
 
-### Background
+## Background
 
 Perpetual is a non-profit organization that partners with municipal governments, zero-waste organizations, business leagues, community groups, and other stakeholders to reduce consumption of single-use disposables. Eliminating such waste conserves resources, minimizes pollution, and slashes the cost of foodware purchase and solid waste management for cities and local businesses.
 
