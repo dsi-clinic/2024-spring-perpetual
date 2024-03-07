@@ -250,11 +250,44 @@ class YelpClient(IPlacesProvider):
         errors = []
         for cell in cells:
             if cell.intersects_with(geo):
+                # get the pois and errors list created by the
+                # find_places_in_bounding_box function
                 cell_pois, cell_errs = self.find_places_in_bounding_box(
-                    box=cell,
-                    search_radius=YelpClient.MAX_SEARCH_RADIUS_IN_METERS,
+                    box=cell, search_radius=YelpClient.MAX_SEARCH_RADIUS_IN_METERS
                 )
-                pois.extend(cell_pois)
+
+                # Code for de-duping and restructuring POI dictionary
+                unique_ids = set()
+                unique_pois = []
+                # I removed the new errors list and use the cell_errs list made by find_places_in_bounding_box
+                cleaned_pois = []
+                for poi in cell_pois:
+                    id = poi.get("id")
+                    if id not in unique_ids:
+                        unique_ids.add(id)
+                        unique_pois.append(poi)
+                    else:
+                        cell_errs.append("Duplicate ID found: {}".format(id))
+                # Renaming varoables in original json for easy integration with other scrape files in clean.py
+                for poi in unique_pois:
+                    cleaned_poi = {}
+                    closed = poi.get("is_closed")
+                    if not closed:
+                        cleaned_poi["id"] = poi.get("id")
+                        cleaned_poi["name"] = poi.get("name")
+                        cleaned_poi["categories"] = ", ".join(
+                            [category["title"] for category in poi["categories"]]
+                        )
+                        cleaned_poi["latitude"] = poi.get("coordinates")["latitude"]
+                        cleaned_poi["longitude"] = poi.get("coordinates")["longitude"]
+                        cleaned_poi["display_address"] = ", ".join(
+                            poi.get("location")["display_address"]
+                        )
+                        cleaned_pois.append(cleaned_poi)
+
+                # back to original code in dev, except instead of adding the cell_pois returned
+                # by the find_places_in_bounding_box, I add the newly cleaned pois
+                pois.extend(cleaned_pois)
                 errors.extend(cell_errs)
 
         return pois, errors

@@ -476,6 +476,7 @@ if __name__ == "__main__":
             "--providers",
             nargs="+",
             choices=["bing", "google", "tomtom", "yelp"],
+            default=["yelp"],
         )
         parser.add_argument(
             "-s", "--solver", choices=["google", "gurobi"], default="google"

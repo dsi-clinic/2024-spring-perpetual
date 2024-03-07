@@ -63,7 +63,7 @@ class MapboxApiClient:
             `None`
         """
         try:
-            self._api_key = os.environ["MAPBOX_API_KEY"]
+            self._api_key = os.environ["MAPBOX_ACCESS_TOKEN"]
         except KeyError as e:
             raise RuntimeError(
                 "Failed to initialize MapboxApiClient."
