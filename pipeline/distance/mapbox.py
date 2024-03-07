@@ -63,7 +63,7 @@ class MapboxApiClient:
             `None`
         """
         try:
-            self._api_key = os.environ["MAPBOX_API_KEY"]
+            self._api_key = os.environ["MAPBOX_ACCESS_TOKEN"]
         except KeyError as e:
             raise RuntimeError(
                 "Failed to initialize MapboxApiClient."
@@ -107,7 +107,9 @@ class MapboxApiClient:
             for j in range(0, len(coords), batch_size):
                 # Compose request
                 batch = [coords[i]] + coords[j : j + batch_size]
-                coord_str = ";".join(f"{coord.lon},{coord.lat}" for coord in batch)
+                coord_str = ";".join(
+                    f"{coord.lon},{coord.lat}" for coord in batch
+                )
                 dest_indices = ";".join(str(i) for i in range(1, len(batch)))
                 url = (
                     f"https://api.mapbox.com/directions-matrix/v1/"

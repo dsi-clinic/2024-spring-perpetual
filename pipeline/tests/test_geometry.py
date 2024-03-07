@@ -6,7 +6,6 @@ import math
 
 # Third-party imports
 import pytest
-from shapely import box
 
 # Appliction imports
 from pipeline.utils.geometry import BoundingBox
@@ -16,7 +15,17 @@ from pipeline.utils.geometry import BoundingBox
     "test_name,min_x,max_x,min_y,max_y,x_split,y_split,expected_width,expected_height",
     [
         ("Unit Square - 10 Slices", 0.0, 1.0, 0.0, 1.0, 10, 1, 0.1, 1.0),
-        ("Shifted Unit Square - 10 Slices", -1.0, 0.0, -1.0, 0.0, 10, 1, 0.1, 1.0),
+        (
+            "Shifted Unit Square - 10 Slices",
+            -1.0,
+            0.0,
+            -1.0,
+            0.0,
+            10,
+            1,
+            0.1,
+            1.0,
+        ),
     ],
 )
 def test_create_bbox_subdivisions_rectangles_success(

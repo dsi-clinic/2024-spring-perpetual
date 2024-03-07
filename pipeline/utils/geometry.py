@@ -3,12 +3,12 @@
 
 # Standard library imports
 import math
-from decimal import Context, Decimal, ROUND_HALF_UP
+from decimal import ROUND_HALF_UP, Context, Decimal
 from typing import List, Tuple, Union
 
 # Third-party imports
 from pydantic import BaseModel, Field, model_validator
-from shapely import box, intersects, MultiPolygon, Polygon
+from shapely import MultiPolygon, Polygon, box, intersects
 
 
 class WGS84Coordinate(BaseModel):
@@ -92,7 +92,9 @@ class BoundingBox(BaseModel):
         return self.max_y - self.min_y
 
     @classmethod
-    def from_polygon(cls, polygon: Union[MultiPolygon, Polygon]) -> "BoundingBox":
+    def from_polygon(
+        cls, polygon: Union[MultiPolygon, Polygon]
+    ) -> "BoundingBox":
         """Creates a new `BoundingBox` instance from the
         minimum bounding region of a polygon.
 
@@ -128,7 +130,10 @@ class BoundingBox(BaseModel):
             (`bool`): `True` if there is an intersection and `False` otherwise.s
         """
         shapely_repr = box(
-            float(self.min_x), float(self.min_y), float(self.max_x), float(self.max_y)
+            float(self.min_x),
+            float(self.min_y),
+            float(self.max_x),
+            float(self.max_y),
         )
         return intersects(polygon, shapely_repr)
 
@@ -187,7 +192,9 @@ class BoundingBox(BaseModel):
 
         return slices
 
-    def split_into_squares(self, size_in_degrees: Decimal) -> List["BoundingBox"]:
+    def split_into_squares(
+        self, size_in_degrees: Decimal
+    ) -> List["BoundingBox"]:
         """Splits the bounding box into squares of the given size in degrees.
         If the bounding box cannot be divided into squares, its dimensions
         are extended until the operation is possible.
@@ -216,7 +223,9 @@ class BoundingBox(BaseModel):
         longest_side = max(self.width, self.height)
         max_x = self.min_x + longest_side
         max_y = self.min_y + longest_side
-        bbox = BoundingBox(min_x=self.min_x, max_x=max_x, min_y=self.min_y, max_y=max_y)
+        bbox = BoundingBox(
+            min_x=self.min_x, max_x=max_x, min_y=self.min_y, max_y=max_y
+        )
 
         # Determine number of rows/columns necessary for sub-squares of equal size
         dim = math.ceil(bbox.height / size_in_degrees)

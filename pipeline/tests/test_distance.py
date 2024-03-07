@@ -27,7 +27,9 @@ def coords():
 
 
 def test_mapbox_make_distance_matrix(coords: List[WGS84Coordinate]) -> None:
-    """Confirms that `make_distance_matrix` does not raise an exception with standard input."""
+    """Confirms that `make_distance_matrix` does not
+    raise an exception with standard input.
+    """
     client = MapboxApiClient()
     profile = MapboxRoutingProfile(name=MapboxRouteEnum.DRIVING)
     matrix = client.make_distance_matrix(coords, profile)

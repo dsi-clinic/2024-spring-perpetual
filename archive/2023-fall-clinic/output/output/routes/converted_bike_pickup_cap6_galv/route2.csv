@@ -1,9 +1,0 @@
-Original_Index,Unnamed: 0,Name,Longitude,Latitude,Daily_Pickup_Totes,Weekly_Dropoff_Totes,user_ratings_total,category,rating,weekly_high,weekly_low,best_weekly_estimate,Address,geometry,Adoption,Adoption Guess,Visited ,Influence,location_type,pickup_type,id,Bike Aggregation Point,Cumulative_Distance,Truck_Load
-23,72,La Estacion Restaurant,-94.794797,29.3015187,0,1,442.0,restaurant,4.3,175.0,25.0,175.0,"2428 Avenue H, Galveston",POINT (-94.794797 29.3015187),Skeptical,Med,No,Low,indoor,Bike_Aggregate,,,0,0
-20,67,Shark Shack,-94.7957083,29.3069439,1,1,1607.0,bar,4.6,210.0,30.0,210.0,"2402 The Strand, Galveston",POINT (-94.7957083 29.3069439),Skeptical,Med,No,Med,indoor,Bike_Converted,,72.0,692,1
-18,64,Tsunami Tequila Emporium,-94.7951202,29.3072052,1,1,165.0,bar,4.1,0.0,0.0,140.625,"2314 The Strand, Galveston",POINT (-94.7951202 29.3072052),Skeptical,Med,No,High,indoor,Bike_Converted,,72.0,754,2
-34,153,Yaga's Cafe,-94.7949518,29.3071481,1,1,1708.0,bar,4.4,250.0,150.0,250.0,"2314 The Strand, Galveston",POINT (-94.7949518 29.3071481),Skeptical,Med,Yes,High,indoor,Bike_Converted,,72.0,767,3
-48,187,,-94.79448543312456,29.30708461014236,1,0,,,,,,,,,,,,,outdoor,Bike,1016.0,72.0,808,4
-17,62,Axecade,-94.7941601,29.3070637,1,1,113.0,restaurant,4.8,2100.0,300.0,2100.0,"2217 Strand St Second Floor 217, 2217 The Strand Suite 217, Galveston",POINT (-94.7941601 29.3070637),Skeptical,Med,No,Low,indoor,Bike_Converted,,72.0,837,5
-33,150,The Garden Thai Cuisine,-94.7940546,29.3065697,1,1,146.0,restaurant,4.5,210.0,30.0,210.0,"216 23rd Street, Galveston",POINT (-94.7940546 29.3065697),Skeptical,Med,Yes,Low,indoor,Bike_Converted,,72.0,891,6
-23,72,La Estacion Restaurant,-94.794797,29.3015187,0,1,442.0,restaurant,4.3,175.0,25.0,175.0,"2428 Avenue H, Galveston",POINT (-94.794797 29.3015187),Skeptical,Med,No,Low,indoor,Bike_Aggregate,,,1673,6
