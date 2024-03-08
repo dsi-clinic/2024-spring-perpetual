@@ -1,0 +1,9 @@
+Original_Index,Name,Longitude,Latitude,Daily_Pickup_Totes,Weekly_Dropoff_Totes,user_ratings_total,category,rating,weekly_high,weekly_low,best_weekly_estimate,Address,geometry,Adoption,Adoption Guess,Visited ,Influence,location_type,pickup_type,id,Capacity,Cumulative_Distance,Truck_Load
+0,Moody Gardens,-94.8523,29.2736,0,0,,,,,,,,,,,,,depot,Truck,,4,0,4
+4,Cajun Greek,-94.8316408,29.2769392,1,1,999.0,restaurant,4.0,50.0,25.0,50.0,"2226 61st St Galveston, TX 77551",POINT (-94.8316408 29.2769392),Curious,High,Yes,Med,indoor,Truck,,-1,2976,3
+1,Cajun Greek,-94.8316408,29.2769392,1,1,999.0,restaurant,4.0,50.0,25.0,50.0,"2226 61st St Galveston, TX 77551",POINT (-94.8316408 29.2769392),Curious,High,Yes,Med,indoor,Truck,,1,2976,4
+5,Galveston College Charlie Thomas Family Applied Technology Center,-94.8567631,29.2876496,3,2,9.0,university,5.0,0.0,0.0,1875.0,"7626 Broadway Street, Galveston",POINT (-94.8567631 29.2876496),Skeptical,High,No,Med,indoor,Truck,,-2,6307,2
+2,Galveston College Charlie Thomas Family Applied Technology Center,-94.8567631,29.2876496,3,2,9.0,university,5.0,0.0,0.0,1875.0,"7626 Broadway Street, Galveston",POINT (-94.8567631 29.2876496),Skeptical,High,No,Med,indoor,Truck,,3,6307,5
+6,Galveston Country club,-94.8627,29.28896,1,1,88.0,restaurant,4.5,500.0,100.0,500.0,"14888 Stewart rd Galveston, TX 77554",POINT (-94.8627 29.28896),Curious,High,Yes,Med,indoor,Truck,,-1,7461,4
+3,Galveston Country club,-94.8627,29.28896,1,1,88.0,restaurant,4.5,500.0,100.0,500.0,"14888 Stewart rd Galveston, TX 77554",POINT (-94.8627 29.28896),Curious,High,Yes,Med,indoor,Truck,,1,7461,5
+0,Moody Gardens,-94.8523,29.2736,0,0,,,,,,,,,,,,,depot,Truck,,4,14882,5
