@@ -14,7 +14,7 @@ import requests
 from shapely import MultiPolygon, Polygon
 
 # Application imports
-from pipeline.scrape.common import IPlacesProvider
+from pipeline.scrape.common import IPlacesProvider, Place, PlacesSearchResult
 from pipeline.utils.geometry import BoundingBox, convert_meters_to_degrees
 
 
@@ -69,6 +69,14 @@ class GooglePlacesBasicSKUFields(Enum):
     TYPES = "places.types"
 
 
+class GooglePlacesBusinessStatus(Enum):
+    """Enumerates potential statuses for a business."""
+
+    CLOSED_PERMANENTLY = "CLOSED_PERMANENTLY"
+    CLOSED_TEMPORARILY = "CLOSED_TEMPORARILY"
+    OPERATIONAL = "OPERATIONAL"
+
+
 class GooglePlacesClient(IPlacesProvider):
     """A simple wrapper for the Google Places API (New)."""
 
@@ -110,6 +118,25 @@ class GooglePlacesClient(IPlacesProvider):
                 "Failed to initialize GooglePlacesClient."
                 f'Missing expected environment variable "{e}".'
             ) from None
+
+    def map_place(self, place: Dict) -> Place:
+        """Maps a place fetched from a data source to a standard representation.
+
+        Args:
+            place (`dict`): The place.
+
+        Returns:
+            (`Place`): The standardized place.
+        """
+        id = place["id"]
+        name = place["displayName"]["text"]
+        categories = "|".join(place["types"])
+        lat, lon = place["location"].values()
+        address = place["formattedAddress"]
+        is_closed = place["businessStatus"] != GooglePlacesBusinessStatus.OPERATIONAL
+        source = "google"
+
+        return Place(id, name, categories, lat, lon, address, is_closed, source)
 
     def find_places_in_bounding_box(
         self, box: BoundingBox, categories: List[str], search_radius: float
@@ -241,9 +268,9 @@ class GooglePlacesClient(IPlacesProvider):
             geo (`Polygon` or `MultiPolygon`): The boundary.
 
         Returns:
-            ((`list` of `dict`, `list` of `dict`,)): A two-item tuple
-                consisting of the list of retrieved places and a list
-                of any errors that occurred, respectively.
+            (`PlacesResult`): The result of the geography query. Contains
+                a raw list of retrieved places, a list of cleaned places,
+                and a list of any errors that occurred.
         """
         # Calculate bounding box for geography
         bbox: BoundingBox = BoundingBox.from_polygon(geo)
@@ -275,8 +302,6 @@ class GooglePlacesClient(IPlacesProvider):
         # Locate POIs within each cell if it contains any part of geography
         pois = []
         errors = []
-        seen_ids = {0}  # To track and avoid duplicates
-
         for batch in category_batches:
             for cell in cells:
                 if cell.intersects_with(geo):
@@ -285,24 +310,10 @@ class GooglePlacesClient(IPlacesProvider):
                         categories=batch,
                         search_radius=GooglePlacesClient.MAX_SEARCH_RADIUS_IN_METERS,
                     )
-
-                    # Process and filter POIs before adding to output
-                    for poi in cell_pois:
-                        poi_id = poi["id"]
-
-                        # Check if POI ID is a duplicate
-                        if poi_id not in seen_ids:
-                            seen_ids.add(poi_id)
-                            clean_poi = {
-                                "id": poi_id,
-                                "name": poi["displayName"]["text"],
-                                "categories": ", ".join(poi["types"]),
-                                "longitude": poi["location"]["longitude"],
-                                "latitude": poi["location"]["latitude"],
-                                "display_address": poi["formattedAddress"],
-                            }
-                            pois.append(clean_poi)
-
+                    pois.append(cell_pois)
                     errors.extend(cell_errors)
 
-        return pois, errors
+        # Clean POIs
+        cleaned_pois = self.clean_places(pois, geo)
+
+        return PlacesSearchResult(pois, cleaned_pois, errors)
