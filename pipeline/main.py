@@ -64,14 +64,15 @@ def fetch_poi(
     places = []
     for provider in providers:
         # Define relative path to output POI file within data directory
-        provider_poi_fpath = f"{POI_DIR}/{city}_{provider}.json"
+        provider_poi_clean_fpath = f"{POI_DIR}/{city}_{provider}_clean.json"
+        provider_poi_raw_fpath = f"{POI_DIR}/{city}_{provider}_raw.json"
         provider_err_fpath = f"{POI_DIR}/{city}_{provider}_errors.json"
 
         # Attempt to load places from cache, if specified
         if use_cached:
             try:
                 logger.info("Attempting to load places from cached file.")
-                with storage.open_file(provider_poi_fpath, "r") as f:
+                with storage.open_file(provider_poi_clean_fpath, "r") as f:
                     provider_places = json.load(f)
                 logger.info(f"{len(provider_places)} place(s) from {provider} found.")
                 places.extend(provider_places)
@@ -83,26 +84,33 @@ def fetch_poi(
         # Find places using provider
         logger.info(f"Requesting POI data from {provider}.")
         client = IPlacesProviderFactory.create(provider, logger)
-        provider_places, provider_errors = client.find_places_in_geography(polygon)
+        result = client.find_places_in_geography(polygon)
         logger.info(
-            f"{len(provider_places)} place(s) from {provider} "
-            f"found and {len(provider_errors)} error(s) encountered."
+            f"{len(result.raw)} place(s) from {provider} "
+            f"found, with {len(result.clean)} remaining after "
+            f"cleaning. {len(result.errors)} error(s) encountered."
         )
 
-        # Cache results to file, if any exist
-        if provider_places:
-            logger.info("Write provider POIs to file.")
-            with storage.open_file(provider_poi_fpath, "w") as f:
-                json.dump(provider_places, f, indent=2)
+        # Cache raw places to file, if any exist
+        if result.raw:
+            logger.info("Write raw provider POIs to file.")
+            with storage.open_file(provider_poi_raw_fpath, "w") as f:
+                json.dump(result.raw, f, indent=2)
+
+        # Cache cleaned places to file, if any exist
+        if result.clean:
+            logger.info("Write cleaned provider POIs to file.")
+            with storage.open_file(provider_poi_clean_fpath, "w") as f:
+                json.dump(result.clean, f, indent=2)
 
         # Persist errors for later inspection, if any exist
-        if provider_errors:
+        if result.errors:
             logger.info("Writing provider HTTP request errors to file.")
             with storage.open_file(provider_err_fpath, "w") as f:
-                json.dump(provider_errors, f, indent=2)
+                json.dump(result.errors, f, indent=2)
 
         # Add places to aggregated list
-        places.extend(provider_places)
+        places.extend(result.clean)
 
     return places
 

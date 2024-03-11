@@ -14,7 +14,7 @@ import requests
 from shapely import MultiPolygon, Polygon
 
 # Application imports
-from pipeline.scrape.common import IPlacesProvider
+from pipeline.scrape.common import IPlacesProvider, Place, PlacesSearchResult
 from pipeline.utils.geometry import BoundingBox, convert_meters_to_degrees
 
 
@@ -89,6 +89,25 @@ class YelpClient(IPlacesProvider):
                 "Failed to initialize YelpClient."
                 f'Missing expected environment variable "{e}".'
             ) from None
+
+    def map_place(self, place: Dict) -> Place:
+        """Maps a place fetched from a data source to a standard representation.
+
+        Args:
+            place (`dict`): The place.
+
+        Returns:
+            (`Place`): The standardized place.
+        """
+        id = place["id"]
+        name = place["name"]
+        categories = "|".join(c["title"] for c in place["categories"])
+        lat, lon = place["coordinates"].values()
+        address = ", ".join(place["location"]["display_address"])
+        is_closed = place["is_closed"]
+        source = "yelp"
+
+        return Place(id, name, categories, lat, lon, address, is_closed, source)
 
     def find_places_in_bounding_box(
         self, box: BoundingBox, search_radius: float
@@ -176,7 +195,7 @@ class YelpClient(IPlacesProvider):
 
     def find_places_in_geography(
         self, geo: Union[Polygon, MultiPolygon]
-    ) -> Tuple[List[Dict], List[Dict]]:
+    ) -> PlacesSearchResult:
         """Locates all POIs with a review within the given geography.
         The Fusion API permits searching for POIs within a radius around
         a given point. Therefore, data is extracted by dividing the
@@ -220,9 +239,9 @@ class YelpClient(IPlacesProvider):
             geo (`Polygon` or `MultiPolygon`): The boundary.
 
         Returns:
-            ((`list` of `dict`, `list` of `dict`,)): A two-item tuple
-                consisting of the list of retrieved places and a list
-                of any errors that occurred, respectively.
+            (`PlacesResult`): The result of the geography query. Contains
+                a raw list of retrieved places, a list of cleaned places,
+                and a list of any errors that occurred.
         """
         # Calculate bounding box for geography
         bbox: BoundingBox = BoundingBox.from_polygon(geo)
@@ -231,9 +250,7 @@ class YelpClient(IPlacesProvider):
         max_side_meters = (2**0.5) * YelpClient.MAX_SEARCH_RADIUS_IN_METERS
 
         # Use heuristic to convert length from meters to degrees at box's lower latitude
-        deg_lat, deg_lon = convert_meters_to_degrees(
-            max_side_meters, bbox.bottom_left
-        )
+        deg_lat, deg_lon = convert_meters_to_degrees(max_side_meters, bbox.bottom_left)
 
         # Take minimum value as side length (meters convert differently to lat and lon,
         # and we want to avoid going over max radius)
@@ -250,44 +267,13 @@ class YelpClient(IPlacesProvider):
         errors = []
         for cell in cells:
             if cell.intersects_with(geo):
-                # get the pois and errors list created by the
-                # find_places_in_bounding_box function
                 cell_pois, cell_errs = self.find_places_in_bounding_box(
                     box=cell, search_radius=YelpClient.MAX_SEARCH_RADIUS_IN_METERS
                 )
-
-                # Code for de-duping and restructuring POI dictionary
-                unique_ids = set()
-                unique_pois = []
-                # I removed the new errors list and use the cell_errs list made by find_places_in_bounding_box
-                cleaned_pois = []
-                for poi in cell_pois:
-                    id = poi.get("id")
-                    if id not in unique_ids:
-                        unique_ids.add(id)
-                        unique_pois.append(poi)
-                    else:
-                        cell_errs.append("Duplicate ID found: {}".format(id))
-                # Renaming varoables in original json for easy integration with other scrape files in clean.py
-                for poi in unique_pois:
-                    cleaned_poi = {}
-                    closed = poi.get("is_closed")
-                    if not closed:
-                        cleaned_poi["id"] = poi.get("id")
-                        cleaned_poi["name"] = poi.get("name")
-                        cleaned_poi["categories"] = ", ".join(
-                            [category["title"] for category in poi["categories"]]
-                        )
-                        cleaned_poi["latitude"] = poi.get("coordinates")["latitude"]
-                        cleaned_poi["longitude"] = poi.get("coordinates")["longitude"]
-                        cleaned_poi["display_address"] = ", ".join(
-                            poi.get("location")["display_address"]
-                        )
-                        cleaned_pois.append(cleaned_poi)
-
-                # back to original code in dev, except instead of adding the cell_pois returned
-                # by the find_places_in_bounding_box, I add the newly cleaned pois
-                pois.extend(cleaned_pois)
+                pois.extend(cell_pois)
                 errors.extend(cell_errs)
 
-        return pois, errors
+        # Clean POIs
+        cleaned_pois = self.clean_places(pois, geo)
+
+        return PlacesSearchResult(pois, cleaned_pois, errors)

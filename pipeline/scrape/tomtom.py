@@ -13,7 +13,7 @@ import requests
 from shapely import MultiPolygon, Polygon
 
 # Application imports
-from pipeline.scrape.common import IPlacesProvider
+from pipeline.scrape.common import IPlacesProvider, Place, PlacesSearchResult
 from pipeline.utils.geometry import BoundingBox
 
 
@@ -89,6 +89,25 @@ class TomTomSearchClient(IPlacesProvider):
                 f'Missing expected environment variable "{e}".'
             ) from None
 
+    def map_place(self, place: Dict) -> Place:
+        """Maps a place fetched from a data source to a standard representation.
+
+        Args:
+            place (`dict`): The place.
+
+        Returns:
+            (`Place`): The standardized place.
+        """
+        id = place["id"]
+        name = place["poi"]["name"]
+        categories = "|".join(place["poi"]["categories"])
+        lat, lon = place["position"].values()
+        address = place["address"]["freeformAddress"]
+        is_closed = False
+        source = "tomtom"
+
+        return Place(id, name, categories, lat, lon, address, is_closed, source)
+
     def find_places_in_bounding_box(
         self, box: BoundingBox, categories: List[str]
     ) -> Tuple[List[Dict], List[Dict]]:
@@ -123,8 +142,7 @@ class TomTomSearchClient(IPlacesProvider):
                     str(float(d)) for d in box.top_left.to_list(as_lat_lon=True)
                 ),
                 "btmRight": ",".join(
-                    str(float(d))
-                    for d in box.bottom_right.to_list(as_lat_lon=True)
+                    str(float(d)) for d in box.bottom_right.to_list(as_lat_lon=True)
                 ),
             }
             headers = {"Accept": "application/json", "Accept-Encoding": "gzip"}
@@ -163,9 +181,9 @@ class TomTomSearchClient(IPlacesProvider):
 
     def find_places_in_geography(
         self, geo: Union[Polygon, MultiPolygon]
-    ) -> Tuple[List[Dict], List[Dict]]:
+    ) -> PlacesSearchResult:
         """Queries the TomTom Points of Interest Search API for
-        locations within a geography boundary. To accomplish this,
+        locations within a geographic boundary. To accomplish this,
         a bounding box for the geography is calculated and then
         split into many smaller boxes, each of which submitted to
         the API as a data query.
@@ -177,9 +195,9 @@ class TomTomSearchClient(IPlacesProvider):
             geo (`Polygon` or `MultiPolygon`): The boundary.
 
         Returns:
-            ((`list` of `dict`, `list` of `dict`,)): A two-item tuple
-                consisting of the list of retrieved places and a list
-                of any errors that occurred, respectively.
+            (`PlacesResult`): The result of the geography query. Contains
+                a raw list of retrieved places, a list of cleaned places,
+                and a list of any errors that occurred.
         """
         # Calculate bounding box for geography
         bbox: BoundingBox = BoundingBox.from_polygon(geo)
@@ -208,4 +226,7 @@ class TomTomSearchClient(IPlacesProvider):
                     pois.extend(cell_pois)
                     errors.extend(cell_errors)
 
-        return pois, errors
+        # Clean POIs
+        cleaned_pois = self.clean_places(pois, geo)
+
+        return PlacesSearchResult(pois, cleaned_pois, errors)
