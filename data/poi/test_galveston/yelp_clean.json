@@ -1,0 +1,4462 @@
+[
+  {
+    "id": "eHpghRIIoGCVRgDkVPvRow",
+    "name": "Katie's Seafood House",
+    "categories": "Seafood",
+    "lat": 29.3099957170129,
+    "lon": -94.791303136162,
+    "address": "2000 Wharf Rd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "5VFyU5iQyeQl2fxmvazAtA",
+    "name": "BLVD Seafood",
+    "categories": "New American|Seafood|Steakhouses",
+    "lat": 29.2862,
+    "lon": -94.793595,
+    "address": "28th St & Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "nmcX0ROS8FG1xiJ1oiA_Cg",
+    "name": "Shark Shack Beach Bar & Grill",
+    "categories": "Seafood|Burgers|American",
+    "lat": 29.30708,
+    "lon": -94.79586,
+    "address": "2402 Strand St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Zstd5-vKwTPXTyPgAPh9zQ",
+    "name": "Number 13 Prime Steak and Seafood",
+    "categories": "Steakhouses",
+    "lat": 29.28501,
+    "lon": -94.85752,
+    "address": "7809 Broadway St, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Ji_8DCUgZ1pQiOv00nFA9w",
+    "name": "Hearsay on the Strand",
+    "categories": "American|Cocktail Bars|Salad",
+    "lat": 29.30703,
+    "lon": -94.79604,
+    "address": "2410 Strand St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "bwSE9zAawyRncHekCm-UUA",
+    "name": "Shrimp N Stuff Downtown",
+    "categories": "Seafood|American",
+    "lat": 29.301393,
+    "lon": -94.795824,
+    "address": "2506 Ball St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "nzuJVbhQOuo7ZdIeRAar9g",
+    "name": "Coastal Grill",
+    "categories": "American|Seafood",
+    "lat": 29.30816,
+    "lon": -94.78946,
+    "address": "1827 Strand St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "2vfwJ49t_SpWKjpneFO-WQ",
+    "name": "Rudy & Paco\u2019s Restaurant and Bar",
+    "categories": "Latin American|Seafood|Cocktail Bars",
+    "lat": 29.30534387689029,
+    "lon": -94.7910732,
+    "address": "2028 Post Office St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "TdGB_fLwkChsAA90v6_pjg",
+    "name": "Vargas Cut & Catch",
+    "categories": "Steakhouses|Seafood",
+    "lat": 29.3052732185774,
+    "lon": -94.7914723165612,
+    "address": "2102 Postoffice St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "IJZBvbRV0YrPjAHvnO0V4w",
+    "name": "Mama Teresa's Flying Pizza & Italian Restaurant",
+    "categories": "Pizza|Italian|Desserts",
+    "lat": 29.3052785524393,
+    "lon": -94.7913808914826,
+    "address": "416 Moody Ave, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "3JbnrO0O1HSbIf6kunlXaw",
+    "name": "Vida Agave",
+    "categories": "Tacos|Cocktail Bars|New Mexican Cuisine",
+    "lat": 29.301863,
+    "lon": -94.795501,
+    "address": "711 25th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "YAASmrPYP5Hp31kqadx__w",
+    "name": "Cajun Greek",
+    "categories": "Cajun/Creole|Greek|Seafood",
+    "lat": 29.2769392,
+    "lon": -94.8316408,
+    "address": "2226 61st St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "2SUWaYZC35bNcKVrO4_6cQ",
+    "name": "Fisherman's Wharf",
+    "categories": "Seafood|Sandwiches",
+    "lat": 29.3089314,
+    "lon": -94.7936367,
+    "address": "2200 Harborside Dr, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Xv-TTMFZ_g_Y_SRj1qYLqg",
+    "name": "Riondo's Ristorante",
+    "categories": "Italian|Seafood|Bars",
+    "lat": 29.3068670516215,
+    "lon": -94.7955949606667,
+    "address": "2328 Strand Ave, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "F4-GC6__htkWSpA31HtDkQ",
+    "name": "Miller's Seawall Grill",
+    "categories": "Seafood|Southern|Diners",
+    "lat": 29.2932179,
+    "lon": -94.7843747,
+    "address": "1824 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "lGsT5eXJdY4RJURapgRXkQ",
+    "name": "Shearn's Seafood and Prime Steaks",
+    "categories": "Seafood|Steakhouses",
+    "lat": 29.270826769182,
+    "lon": -94.8504638671875,
+    "address": "7 Hope Blvd, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "CyhcrbaQ4Wjbud9rd9HJnQ",
+    "name": "Shrimp N Stuff",
+    "categories": "Seafood",
+    "lat": 29.2888943,
+    "lon": -94.80842897760402,
+    "address": "3901 Ave O, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "THVYxWbabynodZTj4TjAMQ",
+    "name": "Huli Huli Hut",
+    "categories": "American|Hawaiian|Seafood",
+    "lat": 29.3072842,
+    "lon": -94.7892567,
+    "address": "312 19th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "rpUE3VPNUVrXNVOTSPiEyw",
+    "name": "Trattoria La Vigna",
+    "categories": "Italian|Seafood",
+    "lat": 29.3058713,
+    "lon": -94.7901672,
+    "address": "412 20th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "doSYFMDc3somcL4YKQb2FA",
+    "name": "Gypsy Joynt",
+    "categories": "Cafes|Southern|Sandwiches",
+    "lat": 29.274172387748465,
+    "lon": -94.83164758225018,
+    "address": "6105 Stewart Rd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "tTTivhR07xy4MZtB8FKraQ",
+    "name": "Little Daddy's Gumbo Bar - Galveston",
+    "categories": "Cajun/Creole|Seafood|Bars",
+    "lat": 29.3050232,
+    "lon": -94.7915118,
+    "address": "2107 Postoffice St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "8X4avBybSvVMNvWIfjzX9w",
+    "name": "Mario's Seawall Italian & Pizzeria",
+    "categories": "Italian|Pizza|Seafood",
+    "lat": 29.304274,
+    "lon": -94.773166,
+    "address": "628 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "cvc9GBL32cTVe7NtkLW87g",
+    "name": "Grotto Ristorante",
+    "categories": "Italian|Pizza",
+    "lat": 29.272606,
+    "lon": -94.818427,
+    "address": "5222 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "EeTCtBKNl43ngE5auaexSg",
+    "name": "Saltgrass Steak House",
+    "categories": "Steakhouses|Seafood|American",
+    "lat": 29.2960378,
+    "lon": -94.7808645665646,
+    "address": "1502 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "ngfKzzzN3IUtVLLwLi1sNQ",
+    "name": "Viet Cajun",
+    "categories": "Seafood|Cajun/Creole|Vietnamese",
+    "lat": 29.25173,
+    "lon": -94.85317,
+    "address": "8910 Seawall Blvd, Ste E, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "v3S9XDPpWHdZndsm6ranAA",
+    "name": "Leo's Cajun Corner",
+    "categories": "Cajun/Creole",
+    "lat": 29.2968673706055,
+    "lon": -94.8025512695312,
+    "address": "3201 Broadway St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "nW9yHXOT8SRkunQXXclUBQ",
+    "name": "Taquilo's",
+    "categories": "Mexican|Tex-Mex",
+    "lat": 29.30489,
+    "lon": -94.7914,
+    "address": "2101 Postoffice St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "8s-m6_O9ks6c3RzacnsjUQ",
+    "name": "The Sunflower Bakery & Cafe",
+    "categories": "Bakeries|New American|Delis",
+    "lat": 29.306983,
+    "lon": -94.782876,
+    "address": "512 14th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "fCNQbfX7wHfpRucphSDurg",
+    "name": "The Saltwater Grill",
+    "categories": "Seafood|American|Asian Fusion",
+    "lat": 29.30503,
+    "lon": -94.79066,
+    "address": "2017 Postoffice St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "1mlk_XimNhO2xP7l0WxaQg",
+    "name": "Cafe Canela Restaurant",
+    "categories": "Mexican",
+    "lat": 29.274433418865296,
+    "lon": -94.83082848613772,
+    "address": "6105 Stewart Rd, ste C, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "mVNscBfQIxaA2iIBSUlxIA",
+    "name": "The Gumbo Diner",
+    "categories": "Seafood|Burgers|Cajun/Creole",
+    "lat": 29.28111,
+    "lon": -94.80186,
+    "address": "3602 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "PqSmRM-O1DL_GWyAl0g1yg",
+    "name": "The Steakhouse",
+    "categories": "Steakhouses|Wine Bars|Seafood",
+    "lat": 29.272365,
+    "lon": -94.818467,
+    "address": "5222 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Z4Xn2YoDPZ1xf2fn6Dz-LQ",
+    "name": "Gaido's",
+    "categories": "Seafood|Desserts|Fish & Chips",
+    "lat": 29.27948789348167,
+    "lon": -94.80448558758808,
+    "address": "3900 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "qxUm2-yTafUaArBXwWOSig",
+    "name": "Lil' Buffalo Grille",
+    "categories": "Breakfast & Brunch|American",
+    "lat": 29.261107475744403,
+    "lon": -94.87064057468164,
+    "address": "13 Evia Main, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "iBR1jdU_5v0isiAue9b7jA",
+    "name": "Daiquiri Time Out",
+    "categories": "Cocktail Bars",
+    "lat": 29.30410502973,
+    "lon": -94.7986911982298,
+    "address": "2701 Market St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "yETihf0c4nVWWXMhQgd2UA",
+    "name": "Yamato Japanese Restaurant",
+    "categories": "Japanese|Seafood|Asian Fusion",
+    "lat": 29.278232,
+    "lon": -94.831656,
+    "address": "2104 61st St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "rojRQ-vF38bPB1tipkR6IQ",
+    "name": "MAC-IES",
+    "categories": "Burgers",
+    "lat": 29.298884,
+    "lon": -94.791364,
+    "address": "1110 23rd St Patio, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "WS0EtXC_GyI5Czcs9zWucQ",
+    "name": "Leon's World's Finest BBQ",
+    "categories": "Barbeque",
+    "lat": 29.29022044472176,
+    "lon": -94.8283999,
+    "address": "5427 Broadway St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "awO186DRIiEursJ6568GkQ",
+    "name": "The Garden Thai Cuisine",
+    "categories": "Thai|Breakfast & Brunch|Salad",
+    "lat": 29.30699398034637,
+    "lon": -94.79402961187724,
+    "address": "216 23rd Street Rear, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "PvI0V-3LZFarpja5mwd9Rg",
+    "name": "Maceo Spice & Import Company",
+    "categories": "Specialty Food|Coffee & Tea|Delis",
+    "lat": 29.3041821,
+    "lon": -94.7985695,
+    "address": "2706 Market St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "8zdPEZsyhVHBae7v6llb4g",
+    "name": "Soul 2 Soul Cafe",
+    "categories": "Southern|Soul Food",
+    "lat": 29.29116398,
+    "lon": -94.82656443,
+    "address": "5300 Broadway Ave J, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "SNhS8A_m5Wk6ddZ08A-zyw",
+    "name": "ShyKatZ Cafe Deli & Bakery",
+    "categories": "Delis|Breakfast & Brunch|Bakeries",
+    "lat": 29.300574,
+    "lon": -94.783256,
+    "address": "1528 Ave L, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "3uOeEesjaYxFE2Q4TXyrTw",
+    "name": "Old Moon Deli",
+    "categories": "Delis|Sandwiches|Kombucha",
+    "lat": 29.3052413364477,
+    "lon": -94.7936500790458,
+    "address": "408 23rd St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "-xUkgMCoN2-nG_ugKC2RUA",
+    "name": "Los Patrones",
+    "categories": "Tex-Mex|Mexican",
+    "lat": 29.29188137221802,
+    "lon": -94.82201358220902,
+    "address": "4901 Broadway Ave, Ste J, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "IdUNzCARAOj-FjSIxPAlUg",
+    "name": "Landry's Prime Seafood & Steaks",
+    "categories": "Seafood|American|Steakhouses",
+    "lat": 29.270735202849,
+    "lon": -94.8202316880881,
+    "address": "5310 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "ZZb-e0Qga8uLSp3kB-muwA",
+    "name": "Lolo Kai",
+    "categories": "New American|Juice Bars & Smoothies|Sandwiches",
+    "lat": 29.3039331182865,
+    "lon": -94.7931518936132,
+    "address": "528 23rd St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "srTloTaTv-Vw7PdIjmNqrQ",
+    "name": "Seawall Coffee Company",
+    "categories": "Coffee & Tea|Breakfast & Brunch|Sandwiches",
+    "lat": 29.24463872509604,
+    "lon": -94.8678233612548,
+    "address": "3802 Cove View Blvd, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "BpRuwc3K_RDPEzORN4JMkQ",
+    "name": "Papa's Pizza",
+    "categories": "Pizza",
+    "lat": 29.2765,
+    "lon": -94.80952,
+    "address": "4400 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "oB4jWe7pd4CRK6IvB60Npw",
+    "name": "Yaga's Caf\u00e9 and Bar",
+    "categories": "Bars|Burgers|Pizza",
+    "lat": 29.30729,
+    "lon": -94.79508,
+    "address": "2314 Strand St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "67wBLK-9jLvxlbGeEFsqFw",
+    "name": "Sugar and Rye",
+    "categories": "Breakfast & Brunch|Bars|American",
+    "lat": 29.303137,
+    "lon": -94.794427,
+    "address": "2401 Church St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "mjLm_ylAGeirT9bYooEumA",
+    "name": "Leeland House",
+    "categories": "Restaurants",
+    "lat": 29.303881072339593,
+    "lon": -94.7988487780094,
+    "address": "2711 Market St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "3P2KUAH4uVf5OXdZntAU2g",
+    "name": "Shuck\u2019s Tavern & Oyster Bar",
+    "categories": "Bars|Seafood",
+    "lat": 29.3056334010386,
+    "lon": -94.79115254395305,
+    "address": "414 21st St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "75sAHhv9zGiVhiLeax_oeQ",
+    "name": "Vintage Crown - Michelada Bar",
+    "categories": "Beer, Wine & Spirits|Mexican|Specialty Food",
+    "lat": 29.306550048800887,
+    "lon": -94.7944662,
+    "address": "215 23rd St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "In_2A7XBMTWCWDxg2SMuug",
+    "name": "The Spot",
+    "categories": "Burgers|Seafood|New American",
+    "lat": 29.2834577295221,
+    "lon": -94.7982117525133,
+    "address": "3204 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "WML8ICMg_heLXNqnn6B0JQ",
+    "name": "Kritikos Grill",
+    "categories": "American|Greek|Seafood",
+    "lat": 29.273495016114182,
+    "lon": -94.81565133191256,
+    "address": "4908 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Ub5Q1UUgRkiuRWEa4VZZrA",
+    "name": "The Black Pearl Oyster Bar",
+    "categories": "Seafood|Steakhouses|Sandwiches",
+    "lat": 29.305484171613152,
+    "lon": -94.79404472157668,
+    "address": "327 23rd St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "as7VvwJkPkl5GZDvt-CgLQ",
+    "name": "Willie G's Seafood & Steaks",
+    "categories": "Seafood|Steakhouses",
+    "lat": 29.309303,
+    "lon": -94.792803,
+    "address": "2100 Harborside, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "R_chB0qZRoTz4hs-pl-ppw",
+    "name": "Jimmy's on the Pier",
+    "categories": "Seafood|Southern|Burgers",
+    "lat": 29.25064,
+    "lon": -94.85324,
+    "address": "9001 Seawall Blvd, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "EuqXz_MlWt1lu6t5PP-bGw",
+    "name": "Pho Tai",
+    "categories": "Vietnamese",
+    "lat": 29.29590067384617,
+    "lon": -94.8091384217194,
+    "address": "3728 Broadway, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "oxKepiR0j31RPOL9KcNwdQ",
+    "name": "Bronco Burritos",
+    "categories": "Mexican|Breakfast & Brunch|Latin American",
+    "lat": 29.291792,
+    "lon": -94.8224,
+    "address": "4917 Broadway St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "QSzPOwSWVCuEs3MOYAmXuw",
+    "name": "Eatcetera",
+    "categories": "Sandwiches|Salad|Soup",
+    "lat": 29.304513801149,
+    "lon": -94.7958194859452,
+    "address": "408 25th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "C4dQLeweVAez_gVuk9A60g",
+    "name": "Seahorse Grill",
+    "categories": "Pizza|Burgers|American",
+    "lat": 29.24448719077595,
+    "lon": -94.86803805979804,
+    "address": "3802 Cove View Blvd, Ste C, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "hxo7TwsAmFx4r2HrmjK00Q",
+    "name": "Brick House Tavern + Tap",
+    "categories": "Bars|Burgers|American",
+    "lat": 29.2817539,
+    "lon": -94.8011578,
+    "address": "3502A Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "6dttUEV9xz1pW9MiVG56rQ",
+    "name": "Fish Tales",
+    "categories": "Seafood|American",
+    "lat": 29.2882774006893,
+    "lon": -94.7908591479063,
+    "address": "2502 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "3_4sGTxFMcRU6AgAqLDF6w",
+    "name": "Salsas Mexican Restaurant",
+    "categories": "Mexican|Seafood|Bars",
+    "lat": 29.275553880415536,
+    "lon": -94.81182000078296,
+    "address": "4604 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "7nBlnJjGO90Ud44LVn0MmA",
+    "name": "Good Dough",
+    "categories": "Bakeries|Breakfast & Brunch|Donuts",
+    "lat": 29.29061189999999,
+    "lon": -94.808531,
+    "address": "1506 39th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "AApYCPV5gVz1ybuYg9D4vg",
+    "name": "Nick's Kitchen and Beach Bar",
+    "categories": "Seafood|Bars",
+    "lat": 29.2797917,
+    "lon": -94.8040028,
+    "address": "3802 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "bveWfTTaVFU5EOSgITpZWg",
+    "name": "Cooper\u2019s Landing",
+    "categories": "Seafood|Steakhouses|Cocktail Bars",
+    "lat": 29.240731380679215,
+    "lon": -94.87803728607228,
+    "address": "11150 Termini-San Luis Pass Rd, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "NcyuINf-pnJI9HySp-c2Ag",
+    "name": "Mosquito Cafe",
+    "categories": "Breakfast & Brunch|American",
+    "lat": 29.305703,
+    "lon": -94.78256,
+    "address": "628 14th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "ib_ZUV7hqPicNluE6b46Ww",
+    "name": "Doc Holliday's Roadhouse",
+    "categories": "Desserts|Steakhouses|Burgers",
+    "lat": 29.267398,
+    "lon": -94.825786,
+    "address": "6010 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "-lV2oZyL8qkIHymRYrU47A",
+    "name": "Mercadito Y Taqueria",
+    "categories": "Mexican",
+    "lat": 29.29602,
+    "lon": -94.80967,
+    "address": "3802 Broadway Ave J, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "V9ZUiA37TY8LnK0DZw6vfQ",
+    "name": "Darlene's Shrimp Shack",
+    "categories": "Seafood|Food Trucks",
+    "lat": 29.281213760376,
+    "lon": -94.8343124389648,
+    "address": "1727 61st St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "orOUr63jUYFBVlV7Z8Ek-g",
+    "name": "Gonzalo\u2019s American Bistro",
+    "categories": "Coffee & Tea|Italian|American",
+    "lat": 29.30909049361168,
+    "lon": -94.7778060299454,
+    "address": "415 9th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "a2hdPjNsIrcXia7vxQiwDA",
+    "name": "Mario's Ristorante",
+    "categories": "Italian|Pizza",
+    "lat": 29.27708,
+    "lon": -94.8315,
+    "address": "2202 61st St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "ldf5kv1-FOK7CNqCOWlKpA",
+    "name": "Playground Patio Bar & Grill",
+    "categories": "Sports Bars|Burgers|Music Venues",
+    "lat": 29.30666,
+    "lon": -94.79524,
+    "address": "2325 Strand St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "cx6jCe5wjkV3dTKnhaK84g",
+    "name": "Rainforest Cafe",
+    "categories": "American|Themed Cafes",
+    "lat": 29.27075306734197,
+    "lon": -94.820207208395,
+    "address": "5310 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "o8qXRdnSvcYHdTNdPh79tQ",
+    "name": "Hubcap Grill",
+    "categories": "Burgers|Cocktail Bars|Beer Bar",
+    "lat": 29.307618,
+    "lon": -94.791627,
+    "address": "2021 The Strand, Ste 3, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "KU2zGZcKpajunrrOGSNKJg",
+    "name": "Sapori Ristorante",
+    "categories": "Italian",
+    "lat": 29.25922,
+    "lon": -94.84119,
+    "address": "7611 Stewart Rd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "_8fki2KWGJ2DpBM63lO5ow",
+    "name": "Pennie's Tex Mex Take Out",
+    "categories": "Tex-Mex|Barbeque|Mexican",
+    "lat": 29.289136153504565,
+    "lon": -94.8059739828522,
+    "address": "1713 37th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "TrIk_PxhmE68oHQJuWUnmw",
+    "name": "Koop's BBQ Kitchen & Catering",
+    "categories": "Barbeque|Food Trucks|Comfort Food",
+    "lat": 29.293170891534057,
+    "lon": -94.81733590364456,
+    "address": "4501 Broadway Ave J, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "F50RV3AasZrkrpx9J7fH6w",
+    "name": "Cordray Drug Store",
+    "categories": "Ice Cream & Frozen Yogurt|Sandwiches",
+    "lat": 29.293314,
+    "lon": -94.8095633,
+    "address": "3827 Ave L, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "dnDEfdkxUE7eBXtzcqe6lQ",
+    "name": "Axecade",
+    "categories": "Bars|Axe Throwing|Arcades",
+    "lat": 29.3070918513432,
+    "lon": -94.79411167506642,
+    "address": "2217 The Strand, Fl 2, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "txdTLErIMlfkiI3ShVqFxQ",
+    "name": "Benno's Cajun Seafood Restaurant",
+    "categories": "Cajun/Creole|Seafood",
+    "lat": 29.2981736,
+    "lon": -94.7783148,
+    "address": "1212 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "War6npX93m0RdqWTvuganQ",
+    "name": "Sharky's Tavern",
+    "categories": "Pizza|Music Venues|Sports Bars",
+    "lat": 29.30383,
+    "lon": -94.79523,
+    "address": "504 25th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "QxSPCvefxh1xN_FJ0BIkdA",
+    "name": "Brewchachos Tacos & Cantina",
+    "categories": "Bars|Mexican",
+    "lat": 29.307904818296684,
+    "lon": -94.7925997,
+    "address": "2110 Strand St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "LQCj3NbtSPS80lNGOYpA-Q",
+    "name": "Gino's Italian Restaurant",
+    "categories": "Italian",
+    "lat": 29.2730365885301,
+    "lon": -94.8306729052795,
+    "address": "6124 Stewart Rd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "cFh7PcdWa1Oduz3F36peYA",
+    "name": "Original Mexican Cafe",
+    "categories": "Mexican",
+    "lat": 29.3079128265381,
+    "lon": -94.7836151123047,
+    "address": "1401 Market St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "1SL-7ltWWQ4ljxmP85lOIA",
+    "name": "Star Drug Store",
+    "categories": "Diners",
+    "lat": 29.3042984008789,
+    "lon": -94.7930374145508,
+    "address": "510 23rd St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "4bqufOt3ymBjtqywUDkllw",
+    "name": "The Tremont House",
+    "categories": "Hotels",
+    "lat": 29.3062114,
+    "lon": -94.7948092,
+    "address": "2300 Ship's Mechanic Row, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "JcIxEz4gR2rKYIBTPs8QAw",
+    "name": "Chilangos Brothers Taco Shop",
+    "categories": "Tacos",
+    "lat": 29.308334,
+    "lon": -94.770698,
+    "address": "708 Holiday Dr, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "0qos4vQA3D6qhBGojecGTA",
+    "name": "23rd Street Station Piano Bar",
+    "categories": "Piano Bars|Cocktail Bars|Music Venues",
+    "lat": 29.293703,
+    "lon": -94.789471,
+    "address": "1706 23rd St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "8s9LkWiqSA_7ZiIcS_274Q",
+    "name": "Bubba Gump Shrimp",
+    "categories": "American|Seafood|Southern",
+    "lat": 29.28785,
+    "lon": -94.790157,
+    "address": "2501 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "V6FkIt2phj0EZOj-wzkOxA",
+    "name": "Galvez Bar & Grill",
+    "categories": "Seafood|Bars|Steakhouses",
+    "lat": 29.292511,
+    "lon": -94.785849,
+    "address": "2024 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "zJ643oN_Zll_a3oM6IxUFg",
+    "name": "Galveston Bagel Company",
+    "categories": "Breakfast & Brunch|Bagels|Salad",
+    "lat": 29.2989235,
+    "lon": -94.7913704,
+    "address": "1110 23rd St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "qoyfT4bl7jtmgbUsc5t8nA",
+    "name": "Pirate Island Bar And Grill",
+    "categories": "Sports Bars|Vietnamese|Breakfast & Brunch",
+    "lat": 29.303115,
+    "lon": -94.774152,
+    "address": "728 Seawall Blvd, Ste A, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "4oSsyKIR1fi1Ugf-1_JZjA",
+    "name": "Market Station",
+    "categories": "Bars",
+    "lat": 29.305567,
+    "lon": -94.794304,
+    "address": "2310 Market St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "arLI7yjgHWx0OOYpktTH9g",
+    "name": "Float Pool & Patio Bar",
+    "categories": "Bars|Swimming Pools|Mexican",
+    "lat": 29.28591,
+    "lon": -94.79438,
+    "address": "2828 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "ez5Xmb8AkCP7QrUkSIUIhw",
+    "name": "Texas Pit Stop BBQ - Galveston",
+    "categories": "Barbeque",
+    "lat": 29.263709,
+    "lon": -94.8317621,
+    "address": "6612 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "7_b43DuQc733eZxIVXEFVg",
+    "name": "Hotel Lucine",
+    "categories": "Coffee & Tea|Breakfast & Brunch|Cocktail Bars",
+    "lat": 29.30058095439483,
+    "lon": -94.77626078613676,
+    "address": "1002 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "uv4jac65j3tydASRCjnhIQ",
+    "name": "The San Luis Resort, Spa and Conference Center",
+    "categories": "Hotels|Venues & Event Spaces",
+    "lat": 29.2725405448168,
+    "lon": -94.8182391380657,
+    "address": "5222 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "SIrXsBrbJ9GaGU-0uWtqwQ",
+    "name": "Brews Brothers",
+    "categories": "Beer Bar|Gastropubs",
+    "lat": 29.3068695,
+    "lon": -94.7958603,
+    "address": "2404 Strand, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "9KGSwLvJEHorgqbPXOQBlQ",
+    "name": "Tortuga Mexican Kitchen",
+    "categories": "Mexican|Tex-Mex",
+    "lat": 29.273734386411125,
+    "lon": -94.8156141370288,
+    "address": "4910 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "P_jltXIsITAE6fApAQSqPQ",
+    "name": "Sky Bar Steak and Sushi",
+    "categories": "Sushi Bars|Asian Fusion",
+    "lat": 29.3049212,
+    "lon": -94.7914706,
+    "address": "2105 Postoffice St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "wu0V1Rulmv3DKFjcYog3ew",
+    "name": "The Proletariat",
+    "categories": "Bars|Coffee & Tea|Art Galleries",
+    "lat": 29.30524,
+    "lon": -94.79347,
+    "address": "2221 Market St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "xHFMCLsLHKGiO_NqPzCTlA",
+    "name": "Suki Poke By The Sea",
+    "categories": "Poke|Japanese|Bubble Tea",
+    "lat": 29.31061173871223,
+    "lon": -94.7729650464446,
+    "address": "427 Market St, Unit H, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "IuT0j_Yv-sac4VdEt90pfA",
+    "name": "Stuttgarden Tavern",
+    "categories": "Sports Bars|German|Beer Gardens",
+    "lat": 29.30774831,
+    "lon": -94.79479195,
+    "address": "111 23rd St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "PINQHlqZX0QcaZknEI7rOg",
+    "name": "Pho 20",
+    "categories": "Vietnamese",
+    "lat": 29.300266,
+    "lon": -94.789795,
+    "address": "2101 Broadway St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "RaNNaOLMRN3LXZCd8slUXw",
+    "name": "Honduras Food",
+    "categories": "Latin American|Fast Food",
+    "lat": 29.2958377,
+    "lon": -94.8090758,
+    "address": "3726 Broadway St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "jIvLcvF3PzRXmbP4QxHPTg",
+    "name": "Blake's Bistro",
+    "categories": "American|Breakfast & Brunch|Tacos",
+    "lat": 29.27254011753384,
+    "lon": -94.8182919630244,
+    "address": "5222 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "KlO9XnLgBtF4tP-xKtd5Vg",
+    "name": "Aceituno\u2019s Mexican Restaurant",
+    "categories": "Mexican|Salad|Breakfast & Brunch",
+    "lat": 29.29838,
+    "lon": -94.79697,
+    "address": "2709 Broadway St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "qDB9q6ODcThgIqxz19i0Vw",
+    "name": "Hospitality Health ER",
+    "categories": "Emergency Rooms|Walk-in Clinics",
+    "lat": 29.2771892658994,
+    "lon": -94.8080021626494,
+    "address": "4222 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "RLvDO7gCRs7ehRRioLezdA",
+    "name": "Sonny's Place",
+    "categories": "New American|Burgers|Seafood",
+    "lat": 29.2993278,
+    "lon": -94.7865387,
+    "address": "1206 19th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "tpFo7tXuTXqg2ldh4uP6RA",
+    "name": "Mr taco",
+    "categories": "Mexican",
+    "lat": 29.277806,
+    "lon": -94.8072762787342,
+    "address": "4112 Seawall Blvd, seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "QP9QxiocoiBwMpFOaFS1uw",
+    "name": "Toujouse Bar",
+    "categories": "Lounges",
+    "lat": 29.30635,
+    "lon": -94.7948399,
+    "address": "2300 Ships Mechanic Row, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "YGlThtjccXuTmzK3uj0JjQ",
+    "name": "Bubba's at Tiki",
+    "categories": "American|Sports Bars",
+    "lat": 29.30352,
+    "lon": -94.90013,
+    "address": "110 Gulf Fwy, Tiki Island, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "KzCrNj6Ece3iGYIPe_W76Q",
+    "name": "Press Box",
+    "categories": "Sports Bars|American",
+    "lat": 29.3039665222168,
+    "lon": -94.7947235107422,
+    "address": "2401 Post Office St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "1Acw-BInbaPo7Jxo17JllQ",
+    "name": "Island Pier Club",
+    "categories": "Bars|Pool Halls|Karaoke",
+    "lat": 29.2957568758996,
+    "lon": -94.7832081466913,
+    "address": "1702 Ave O, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "1_lROr8NMYwOMLWwpRgMLg",
+    "name": "Bamb\u00fa Mexican Grill",
+    "categories": "Mexican|Breakfast & Brunch",
+    "lat": 29.297759777982023,
+    "lon": -94.79098981534156,
+    "address": "1220 23rd St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "WhaLLf_UFiJhC9dZDVsJMQ",
+    "name": "Joe's Crab Shack",
+    "categories": "Seafood|American",
+    "lat": 29.2815703,
+    "lon": -94.8014887,
+    "address": "3502 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "OiUwHxHGXrPFeMK8mHzEHg",
+    "name": "Old Oleander\u00ae",
+    "categories": "Wine Bars|Delis|Tapas/Small Plates",
+    "lat": 29.308095,
+    "lon": -94.791574,
+    "address": "2016 The Strand, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "7tQrgc8f9IOhprqZwYftrw",
+    "name": "Jack's Pub",
+    "categories": "American|Pubs",
+    "lat": 29.304267,
+    "lon": -94.794449,
+    "address": "2406 Post Office St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "wxXaooL0SO7lNKQPfC_pGg",
+    "name": "Naked Iguana Brewery",
+    "categories": "Beer Bar|Breweries",
+    "lat": 29.308681,
+    "lon": -94.789711,
+    "address": "1828 Strand, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "YUrGjc2c3CVtw_mrp570sg",
+    "name": "Bucks Bar",
+    "categories": "Bars",
+    "lat": 29.3047866821289,
+    "lon": -94.7952117919922,
+    "address": "2409 Market St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "YMsAJU3UmquG4Uprn82uQg",
+    "name": "Los Lazos",
+    "categories": "Mexican|Tex-Mex",
+    "lat": 29.27466,
+    "lon": -94.8339,
+    "address": "6316 Stewart Rd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Dc-WfP5pKmpaIuPhtt9GMA",
+    "name": "Galveston Island Cigar Lounge",
+    "categories": "Cigar Bars|Tobacco Shops",
+    "lat": 29.280505,
+    "lon": -94.833994,
+    "address": "1813 61st St, Ste 104, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "UW_otHW9Dg-4A28wW3XI4A",
+    "name": "Taqueria Flores",
+    "categories": "Mexican|Food Trucks",
+    "lat": 29.297801,
+    "lon": -94.802686,
+    "address": "3202 Broadway Avenue J, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "ku1yhVUWbICVAsPh0x9KXA",
+    "name": "Beerfoot Beach Bar",
+    "categories": "Beer Bar|Sports Bars|Whiskey Bars",
+    "lat": 29.28638,
+    "lon": -94.79425,
+    "address": "2816 Ave R 1/2, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "J2me2s4dk1SdrRSGkTGHUQ",
+    "name": "The Poop Deck Club",
+    "categories": "Sports Bars",
+    "lat": 29.2852,
+    "lon": -94.7955099,
+    "address": "2928 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "_cv6IsENn18PPcXp0Ey0Gg",
+    "name": "Nopalera Grill Galveston",
+    "categories": "Mexican|Breakfast & Brunch|Tex-Mex",
+    "lat": 29.29155,
+    "lon": -94.82299,
+    "address": "5001 Broadway St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "WyxpwHHf0CFUgQg7SrhN_Q",
+    "name": "Courtyard by Marriott Galveston Island",
+    "categories": "Hotels",
+    "lat": 29.24785,
+    "lon": -94.86023,
+    "address": "9550 Seawall Blvd, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "-57OyPpmpR2wpN1YczeTLw",
+    "name": "The Schaefer Haus",
+    "categories": "Hotels",
+    "lat": 29.30597,
+    "lon": -94.78704,
+    "address": "1711 Post Office St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "YVJL8wfDeH8iW1UH_yjLOg",
+    "name": "Longboard Pool Bar",
+    "categories": "Chicken Wings|New American|Bars",
+    "lat": 29.294462,
+    "lon": -94.782873,
+    "address": "1702 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "qpcDGV1g89LNCo2-6duPEA",
+    "name": "Mel's Blueplate Express",
+    "categories": "Seafood|Salad|Sandwiches",
+    "lat": 29.260756,
+    "lon": -94.840035,
+    "address": "7428 Stewart Rd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "U5zW8z78O2sfakXrKFQSoQ",
+    "name": "Russo's New York Pizzeria",
+    "categories": "Italian|Pizza",
+    "lat": 29.30664628363368,
+    "lon": -94.77212877746264,
+    "address": "500 Seawall Blvd, Ste 300, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "mZsiycjf8h6jKrYOjCkCZA",
+    "name": "The Alibi Bar",
+    "categories": "Bars",
+    "lat": 29.30333484202451,
+    "lon": -94.79407424292492,
+    "address": "2325 Church St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "UcH6BWuA18SF7GiRH8LEyA",
+    "name": "IHOP",
+    "categories": "Breakfast & Brunch|American|Burgers",
+    "lat": 29.27119,
+    "lon": -94.81943,
+    "address": "5224 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "eNlkRaaV9AD4ZzK7I0tEYw",
+    "name": "Rooftop Bar Galveston",
+    "categories": "Cocktail Bars|Beer Bar|Salad",
+    "lat": 29.30620203982136,
+    "lon": -94.79481456503328,
+    "address": "2300 Ship Mechanic Row St, The Tremont House, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "3wJKwTQmmHzRlBBGAy93XA",
+    "name": "Marina Bar & Grill",
+    "categories": "American|Seafood",
+    "lat": 29.317882,
+    "lon": -94.777486,
+    "address": "715 N Holiday Dr, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "MMCrhPk0R4Jua4kB-RHw8Q",
+    "name": "Queen's Bar-B-Que",
+    "categories": "Barbeque",
+    "lat": 29.2835741490126,
+    "lon": -94.8005405813456,
+    "address": "3428 Ave S, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "BlpJJ6gDsW3q_YzDKYKqSg",
+    "name": "Rum Shack",
+    "categories": "Bars|Tacos",
+    "lat": 29.2835960388184,
+    "lon": -94.7980728149414,
+    "address": "3204 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "e9nVjc-aGjHvKRRWMQ-tTA",
+    "name": "America's Kitchen",
+    "categories": "Breakfast & Brunch|American|Buffets",
+    "lat": 29.3140751,
+    "lon": -94.7755439,
+    "address": "500 Harborside Dr, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "ZiptZxm_bIX1aaAK3NNGlg",
+    "name": "Rosenberg Library",
+    "categories": "Libraries",
+    "lat": 29.301215729518415,
+    "lon": -94.79341731611636,
+    "address": "2310 Sealy St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "vArjKrbW2trMCi2KLQ6fgw",
+    "name": "La Mixteca Mexican Restaurant & Seafood",
+    "categories": "Mexican",
+    "lat": 29.30787,
+    "lon": -94.78913,
+    "address": "1818 Mechanic St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "k4JGVLpLZpuu9QIT57EwAQ",
+    "name": "Sound Bar",
+    "categories": "Karaoke|Bars",
+    "lat": 29.3056373596191,
+    "lon": -94.7955703735352,
+    "address": "2411 Mechanic St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "mNqB_rDU6LOoZtwQv86m6w",
+    "name": "Cafe in the Park",
+    "categories": "American|Breakfast & Brunch",
+    "lat": 29.2730724079183,
+    "lon": -94.8508969682617,
+    "address": "7 Hope Blvd, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "WbULFmoXgAD6WoLZQE97-g",
+    "name": "MarMo Cafe & Lounge",
+    "categories": "Coffee & Tea|Cocktail Bars|Sandwiches",
+    "lat": 29.305598,
+    "lon": -94.792123,
+    "address": "2121 Market St, MarMo Plaza, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "XPUpl3d4FxC153Pc4Bs5xA",
+    "name": "Tipsy Turtle Seaside Bar & Grill",
+    "categories": "Bars|American",
+    "lat": 29.227571,
+    "lon": -94.896047,
+    "address": "11745 Termini-San Luis Pass Rd, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "2XZCteXEujYMdIZkdw8SNA",
+    "name": "China Sea",
+    "categories": "Chinese",
+    "lat": 29.29406,
+    "lon": -94.81641,
+    "address": "4402 Broadway St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "HXT_ETHSCkSp512bNtCo3w",
+    "name": "Rice & Curry Cuisine",
+    "categories": "Pakistani|Indian|Halal",
+    "lat": 29.3074561454712,
+    "lon": -94.7743830084801,
+    "address": "712 7th Street, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "bz_yVtFVc-krh_G0D3HH1Q",
+    "name": "Blum & Co.",
+    "categories": "American|Sandwiches",
+    "lat": 29.306198,
+    "lon": -94.794838,
+    "address": "2300 Mechanic St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "wA008_IRO7AvZJ5mJOcUvg",
+    "name": "Allens Kitchen And Grill",
+    "categories": "Southern",
+    "lat": 29.2983699869308,
+    "lon": -94.8091400787234,
+    "address": "3701 Winnie St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "ISpDDmyW6JCI8U8V1_DJew",
+    "name": "Henry's Mexican Restaurant",
+    "categories": "Mexican|Seafood|Burgers",
+    "lat": 29.2979831695557,
+    "lon": -94.7985000610352,
+    "address": "2823 Broadway St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "e4pJTVUVYCd4pHIH9phHGg",
+    "name": "Gizmo Bar",
+    "categories": "Lounges",
+    "lat": 29.2893944,
+    "lon": -94.7920074,
+    "address": "2102 26th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "bAeKNFOjntyiK7MBIn7gcA",
+    "name": "Apache Mexican Cuisine",
+    "categories": "Mexican",
+    "lat": 29.3050594329834,
+    "lon": -94.7901153564453,
+    "address": "511 20th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "taoFZOCs-UBcCaVmAWK62g",
+    "name": "Joe's Seafood",
+    "categories": "Seafood",
+    "lat": 29.2961483001709,
+    "lon": -94.8084411621094,
+    "address": "3702 Broadway St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "n6kmZ1es3J327smoxmmIoQ",
+    "name": "Hilton Galveston Island Resort",
+    "categories": "Hotels",
+    "lat": 29.270714461595,
+    "lon": -94.82137799263,
+    "address": "5400 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "AoTh7sQPjRHyXB2At8Ylxw",
+    "name": "Golden Corral Buffet & Grill",
+    "categories": "American|Buffets|Southern",
+    "lat": 29.266223,
+    "lon": -94.828269,
+    "address": "6200 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "eOllYTLomFMIhEfYVmhBzQ",
+    "name": "Daiquiris To Go On Broadway",
+    "categories": "Drive-Thru Bars",
+    "lat": 29.2946497,
+    "lon": -94.8118193,
+    "address": "4028 Broadway Ave J, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "YpqBNnEMsdLyB86UkokEsw",
+    "name": "Gaido's Seaside Inn",
+    "categories": "Hotels",
+    "lat": 29.28041199540635,
+    "lon": -94.80411571352316,
+    "address": "3700 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "lgrNM9mVJAVCEsrYGe21-g",
+    "name": "Taqueria El Jardin Tropical",
+    "categories": "Mexican",
+    "lat": 29.295215794451384,
+    "lon": -94.80934127358438,
+    "address": "3801 Broadway St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "_0q-me7LpLDxkUVqNsr2Qw",
+    "name": "Lupita Texmex Restaurant",
+    "categories": "Tex-Mex",
+    "lat": 29.28166052681139,
+    "lon": -94.81301492883554,
+    "address": "2314 45th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "EeDU5rHMKpk4VGlmbyeUyg",
+    "name": "Waffle House - Galveston",
+    "categories": "Diners|Breakfast & Brunch|American",
+    "lat": 29.26832334870573,
+    "lon": -94.82769747774324,
+    "address": "2825 1/2 61st St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "E12-pH6ISRwppD9LzA-pcg",
+    "name": "Los Primos Cafe",
+    "categories": "Mexican",
+    "lat": 29.2727249,
+    "lon": -94.837071,
+    "address": "6701 Stewart Rd, Ste 1, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "AIBce8U36C4dAIgfbNPifA",
+    "name": "Old Quarter Acoustic Caf\u00e9",
+    "categories": "Music Venues|Bars",
+    "lat": 29.304414068753857,
+    "lon": -94.78992143298198,
+    "address": "413 20th, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Jvbn2Sb4FM6rG0LC8FKZOQ",
+    "name": "Diana's Bartique On The Strand",
+    "categories": "Music Venues|Bars|Women's Clothing",
+    "lat": 29.306510932636517,
+    "lon": -94.79643311351538,
+    "address": "2425 The Strand, Ste 100, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "zuwIEOJ9cvVlSxgIw0IWKw",
+    "name": "La Estacion",
+    "categories": "Mexican",
+    "lat": 29.3015270233154,
+    "lon": -94.7946929931641,
+    "address": "2428 Ball St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "ULfLxWgsvOnzZyQ6EnwHSw",
+    "name": "Tin Cup's Caddyshack",
+    "categories": "Sports Bars|Golf",
+    "lat": 29.25345,
+    "lon": -94.85661,
+    "address": "9020 Stewart Rd, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "NXvPoBHdCL9efrHiFbD07g",
+    "name": "Casa Del Mar Beachfront Suites",
+    "categories": "Hotels|Vacation Rentals",
+    "lat": 29.2669039750771,
+    "lon": -94.8270681862183,
+    "address": "6102 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "09HjHUf_VCe2QBAEWnPptw",
+    "name": "Happy Buddha",
+    "categories": "Chinese",
+    "lat": 29.26796,
+    "lon": -94.82765,
+    "address": "2827 61st St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "ftsIY3wddy0qfStp_CcrOg",
+    "name": "Gorditas Mexico",
+    "categories": "Mexican",
+    "lat": 29.30358,
+    "lon": -94.77374,
+    "address": "712 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "K7CR4MNMMHqjUvsnCguGog",
+    "name": "Grand Galvez",
+    "categories": "Hotels|Health Retreats|Venues & Event Spaces",
+    "lat": 29.292679,
+    "lon": -94.786065,
+    "address": "2024 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "yHXAKBkAmUMRH2S9rEXP4A",
+    "name": "Hooters",
+    "categories": "Sports Bars|American|Chicken Wings",
+    "lat": 29.2797,
+    "lon": -94.83244,
+    "address": "6028 Heards Ln, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "uJDOUmcSHBPQpQR8i9anmA",
+    "name": "Tequila Rock Kitchen & Cantina",
+    "categories": "Mexican",
+    "lat": 29.307044513837184,
+    "lon": -94.79596270712368,
+    "address": "2408 Strand St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "TjfBj6HOben59e1yMKA5EA",
+    "name": "Envy Dance Club",
+    "categories": "Dance Clubs|Lounges",
+    "lat": 29.30646050676402,
+    "lon": -94.796021,
+    "address": "2413 Strand St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "QGFMarIror7uxvg6otmozQ",
+    "name": "Robert's Lafitte",
+    "categories": "Gay Bars",
+    "lat": 29.28959,
+    "lon": -94.79118,
+    "address": "2501 Ave Q, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "GrOzY1uDuDQb0RTFS0uRNw",
+    "name": "The Albatross",
+    "categories": "Dive Bars|Pubs",
+    "lat": 29.301981,
+    "lon": -94.790314,
+    "address": "815 21st St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "ob63TXvCteSjHYeVIx7fuA",
+    "name": "El Jefe Mexican Food",
+    "categories": "Mexican",
+    "lat": 29.2951775,
+    "lon": -94.8093608,
+    "address": "3801 Broadway Ave J, Unit -B, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "gfbPTnrnfFJIYQN3N8KTTA",
+    "name": "El Nopalito's",
+    "categories": "Mexican|Tex-Mex",
+    "lat": 29.297445,
+    "lon": -94.814607,
+    "address": "614 42nd St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "31S9GniyTs9FQFh0kCaMwQ",
+    "name": "Harbor House Hotel & Marina at Pier 21",
+    "categories": "Hotels",
+    "lat": 29.309555703888844,
+    "lon": -94.79249992241238,
+    "address": "No 28 Pier 21, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "bbqrvnQyKE0bdL5PXVZqfg",
+    "name": "Lucky Lounge",
+    "categories": "Lounges",
+    "lat": 29.3016426,
+    "lon": -94.775449,
+    "address": "904 Avenue M, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "e2pvAKB17uWYMba53ZmJ3Q",
+    "name": "Galveston Pocket Park 2",
+    "categories": "Parks|Beaches",
+    "lat": 29.22704,
+    "lon": -94.89644,
+    "address": "11745 FM 3005, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Ml2I4FOYeqfCrQB0vNFT-g",
+    "name": "Dawn Donut",
+    "categories": "Donuts|Breakfast & Brunch",
+    "lat": 29.308386725124933,
+    "lon": -94.77080941190164,
+    "address": "706 Holiday Dr, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "KnbsNgJBuCb3rOs64TKoiA",
+    "name": "Island Time Beach Bar & Grill",
+    "categories": "Bars|American",
+    "lat": 29.284228,
+    "lon": -94.797122,
+    "address": "3102 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "zjB053r25MoEoKaeJ1JJmw",
+    "name": "Golden Rooster Taqueria",
+    "categories": "Mexican|Food Trucks",
+    "lat": 29.2972,
+    "lon": -94.80448,
+    "address": "3324 Broadway Avenue J, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "PLu0375vHCuhv073hIno0w",
+    "name": "Midtown Tavern",
+    "categories": "Pubs",
+    "lat": 29.2769122665077,
+    "lon": -94.8284272716748,
+    "address": "5806 Stewart Rd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "km0BvuQmzZrIyNe6Q_cEXA",
+    "name": "El Gusto Del Pueblo",
+    "categories": "Mexican",
+    "lat": 29.29607,
+    "lon": -94.80873,
+    "address": "3714 Broadway St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "bTUdjNuBwE5mLDM8BPmOFg",
+    "name": "DoubleTree by Hilton Hotel Galveston Beach",
+    "categories": "Hotels",
+    "lat": 29.2945606762101,
+    "lon": -94.7832450270653,
+    "address": "1702 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "ir1LyqHNHT7tArA75LF6JQ",
+    "name": "Arney\u2019s Bayside Grill",
+    "categories": "Burgers|Food Trucks|Seafood",
+    "lat": 29.178744,
+    "lon": -94.982415,
+    "address": "17200 Termini-San Luis Pass Rd, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "mxtnWi_5S9GCepc8jm9Fjg",
+    "name": "Tsunami",
+    "categories": "Sports Bars|Pizza|Cocktail Bars",
+    "lat": 29.30729,
+    "lon": -94.79508,
+    "address": "2314 Strand St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "-NxIwWxfDVUOnTQWTi9x5A",
+    "name": "Seawall Cuisine",
+    "categories": "Sushi Bars|Chinese|Noodles",
+    "lat": 29.306702955414885,
+    "lon": -94.7723202306609,
+    "address": "500 Seawall Blvd, Ste 220, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "GzvFYVTR4sTr49AoTZ7XBA",
+    "name": "El Jardin Restaurant",
+    "categories": "Mexican|Breakfast & Brunch",
+    "lat": 29.30445,
+    "lon": -94.79495,
+    "address": "413 24th St, Galvaston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "S9mHAF8LYmyXztymCm0DQw",
+    "name": "The Fancy",
+    "categories": "French",
+    "lat": 29.3005728194515,
+    "lon": -94.7762582078576,
+    "address": "1002 Seawall Blvd, Hotel Lucine, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "jJoCnmB0MjOPYuQFChj7wg",
+    "name": "H2O Pool + Bar",
+    "categories": "Bars|Resorts",
+    "lat": 29.2723853,
+    "lon": -94.817417,
+    "address": "5222 Seawall Blvd, Inside the San Luis Resort, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "9fnlwYzfY1MgnedU3NtQnQ",
+    "name": "The Victorian Condominiums",
+    "categories": "Condominiums",
+    "lat": 29.26564627909634,
+    "lon": -94.82908185327564,
+    "address": "6300 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "r0HEZS6l9Tk1Zb3OepaOmQ",
+    "name": "Southbound Bar",
+    "categories": "Bars",
+    "lat": 29.2807028,
+    "lon": -94.8105667,
+    "address": "4301 Ave S, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "R_YZJNvSvg_Z1jc5HGAq7w",
+    "name": "Mr. Taco Downtown",
+    "categories": "Mexican",
+    "lat": 29.308397,
+    "lon": -94.790935,
+    "address": "120 20th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "klZw0w4AhI98KNP20Wh0bA",
+    "name": "Moody Gardens Hotel",
+    "categories": "Hotels",
+    "lat": 29.27327625441869,
+    "lon": -94.84914613203594,
+    "address": "7 Hope Blvd, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Qi-5eAmBwac16UAvmaNIeQ",
+    "name": "Tea'ze Daiquiri Lounge To-Go",
+    "categories": "Lounges|Drive-Thru Bars",
+    "lat": 29.2778471,
+    "lon": -94.807002,
+    "address": "4110 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "8Xa7F_c2IbiuUU4rMkyYJQ",
+    "name": "Inn At The WaterPark",
+    "categories": "Hotels",
+    "lat": 29.2668515571573,
+    "lon": -94.8499930441803,
+    "address": "2525 Jones Dr, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "ahYfnhJqQ1N6KWI5Zh70EQ",
+    "name": "KFC",
+    "categories": "Fast Food|Chicken Wings|Chicken Shop",
+    "lat": 29.298152,
+    "lon": -94.798013,
+    "address": "2801 Broadway St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "UcluAohoowKw37acBHpQ0A",
+    "name": "Kabab Shack & Grill",
+    "categories": "Afghan|Halal|Mediterranean",
+    "lat": 29.30907,
+    "lon": -94.78977,
+    "address": "112A 19th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "zvvEJGnDeVKOMzsyeSzdUw",
+    "name": "Woody's Bar",
+    "categories": "Dive Bars",
+    "lat": 29.238427,
+    "lon": -94.876953,
+    "address": "11149 Termini-San Luis Pass Rd, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "aHzfef97MwDzVlHVGPXmUg",
+    "name": "Village by the Sea",
+    "categories": "Apartments",
+    "lat": 29.2679412748871,
+    "lon": -94.8316294249924,
+    "address": "6424 Central City Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "VZlkh_XdfEFEUkWQ8wVYzQ",
+    "name": "El Rey Mexican Restaurant",
+    "categories": "Mexican",
+    "lat": 29.290184,
+    "lon": -94.808862,
+    "address": "1519 39th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "aKGBIfg-er1AEGqNiiPMWA",
+    "name": "Four Points by Sheraton Galveston",
+    "categories": "Hotels|Venues & Event Spaces",
+    "lat": 29.2894934,
+    "lon": -94.7891855,
+    "address": "2300 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Ic1VXSVpExprq9dStTD7bQ",
+    "name": "Wingstop",
+    "categories": "Chicken Wings",
+    "lat": 29.2893436769425,
+    "lon": -94.83961509914428,
+    "address": "6202 Broadway St, Ste B, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "pgiWXSKWyk9zxzZBPKnJRQ",
+    "name": "SpringHill Suites by Marriott Galveston Island",
+    "categories": "Hotels",
+    "lat": 29.28783703667692,
+    "lon": -94.84044377297678,
+    "address": "6303 Broadway St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "tDtVOutgDAq4YvxS8jjDsA",
+    "name": "Beachcomber Inn Galveston",
+    "categories": "Hotels",
+    "lat": 29.268448,
+    "lon": -94.8282884,
+    "address": "2825 61st St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "wGzomDH9cNPZSuiAakZ6Yw",
+    "name": "Tiki Bar",
+    "categories": "New American|Tiki Bars",
+    "lat": 29.2835743,
+    "lon": -94.797928,
+    "address": "3204 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "ux-emc3QqLDw-uPrQ8O3Vw",
+    "name": "Royal Caribbean International Cruise Terminal 10",
+    "categories": "Airport Terminals",
+    "lat": 29.31559283888563,
+    "lon": -94.78262568086042,
+    "address": "1028 Harborside Dr, Pier 10, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "tq4HCT9xrirYl4yJpml6UQ",
+    "name": "3 Doors Down Bar",
+    "categories": "Wine Bars|Cocktail Bars",
+    "lat": 29.3084117,
+    "lon": -94.790873,
+    "address": "102 20th St, Ste A, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "6YmQCVPmT_T_bNoQY1ScXw",
+    "name": "Best Western Plus Galveston Suites",
+    "categories": "Hotels",
+    "lat": 29.2538627141128,
+    "lon": -94.8495929539285,
+    "address": "8502 Seawall Blvd, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "BWU3C3Z7EpD7ya_WJa2Ktg",
+    "name": "Chili's",
+    "categories": "Tex-Mex|Bars|American",
+    "lat": 29.3059095573445,
+    "lon": -94.7720347968353,
+    "address": "500 Seawall Blvd, Ste 100, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "h0RLsvCRR3xFeRBVAYob6w",
+    "name": "B. Jiggers Lounge",
+    "categories": "Bars|American",
+    "lat": 29.2725013,
+    "lon": -94.8166683,
+    "address": "5002 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "erlFIL7dIByEgYZldcohKQ",
+    "name": "Holiday Inn Resort Galveston-On The Beach",
+    "categories": "Hotels",
+    "lat": 29.272727,
+    "lon": -94.816695,
+    "address": "5002 Seawall Boulevard, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "hCVVrs1L-kBsc4fwy6MRgg",
+    "name": "Motel 6",
+    "categories": "Hotels",
+    "lat": 29.288148,
+    "lon": -94.854831,
+    "address": "7404 Ave J, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "849qDWlKxlLnU-dpBh6J5w",
+    "name": "Affinity Urgent Care - Galveston",
+    "categories": "Family Practice|Urgent Care|Medical Centers",
+    "lat": 29.2707996,
+    "lon": -94.8279877,
+    "address": "2808 61st St, Ste 200, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "i7hDIhk_24RWPTzsMzGdjw",
+    "name": "Kroger Food Stores",
+    "categories": "Grocery",
+    "lat": 29.269039,
+    "lon": -94.824403,
+    "address": "5730 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "PlD7Nbvst6i1fIohUp_Rzg",
+    "name": "Captain Ceviche",
+    "categories": "Sushi Bars|Food Trucks|Tacos",
+    "lat": 29.27565723698663,
+    "lon": -94.8318319,
+    "address": "6102 Stewart Rd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "E0cUauUxWqFBiq1ZEMAFtQ",
+    "name": "Island Spot Hookah Bar and Grill",
+    "categories": "Hookah Bars",
+    "lat": 29.287315142549133,
+    "lon": -94.8376992,
+    "address": "1017 61st St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "eJncmLKSvoMsiNlXaF3RFQ",
+    "name": "Palisade Palms",
+    "categories": "Condominiums",
+    "lat": 29.315133,
+    "lon": -94.753957,
+    "address": "801 E Beach Dr, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "GC9qz5OUdKJwZynZyIBNGA",
+    "name": "Galveston Inn & Suites",
+    "categories": "Hotels",
+    "lat": 29.28891,
+    "lon": -94.85239,
+    "address": "7220 Broadway St, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "pZDMkZCD3c2R2H-MbyiUig",
+    "name": "Bubba\u2019s Beach Bar",
+    "categories": "Bars",
+    "lat": 29.30166,
+    "lon": -94.77568,
+    "address": "916 Avenue M, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "9WXst9Gh4X8cZK1TJd9pbg",
+    "name": "La Quinta Inn by Wyndham Galveston East Beach",
+    "categories": "Hotels",
+    "lat": 29.297028,
+    "lon": -94.780304,
+    "address": "1402 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "87h4AT6Npx2TrpVA02ukTw",
+    "name": "Squeeze",
+    "categories": "Bars",
+    "lat": 29.2835743,
+    "lon": -94.797928,
+    "address": "3204 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "kM2lS-sEv3RuN050Hk1Z1A",
+    "name": "Best Western Plus Seawall Inn & Suites by the Beach",
+    "categories": "Hotels",
+    "lat": 29.3111696,
+    "lon": -94.767907,
+    "address": "102 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "lBtX7326HMLlWyiomliIqA",
+    "name": "Holiday Inn Club Vacations Galveston Beach Resort",
+    "categories": "Hotels",
+    "lat": 29.2283980849753,
+    "lon": -94.8961501,
+    "address": "11743 Termini San Luis Pass Rd, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Rmh9_KZiWtImFjZxIqXFlA",
+    "name": "Howard Johnson by Wyndham Galveston",
+    "categories": "Hotels",
+    "lat": 29.28805,
+    "lon": -94.86412,
+    "address": "8216 Harbor Side Drive, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "zHi7Gb8JVIW55vDwytKoNg",
+    "name": "Lindale Park",
+    "categories": "Parks|Playgrounds",
+    "lat": 29.3169830742243,
+    "lon": -94.7719835843618,
+    "address": "400 Marine Dr, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "2Q0IFMOYeXg0w5qKTzuNxg",
+    "name": "Quality Inn & Suites Beachfront",
+    "categories": "Hotels",
+    "lat": 29.268006,
+    "lon": -94.825967,
+    "address": "5924 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "LcGFTB0VnogB_HNQWBi1iA",
+    "name": "Beachfront Palms Hotel",
+    "categories": "Hotels",
+    "lat": 29.2683465283751,
+    "lon": -94.825041439787,
+    "address": "5914 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "y5G73rBnhR3Ut12fR7rmfA",
+    "name": "Sleep Inn",
+    "categories": "Hotels",
+    "lat": 29.2896178103162,
+    "lon": -94.8452959092621,
+    "address": "6628 Broadway St, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "9ceVQhgmWeObiCjnyycZig",
+    "name": "Whataburger",
+    "categories": "Burgers|Fast Food",
+    "lat": 29.27463420774535,
+    "lon": -94.83211220666848,
+    "address": "6327 Stewart Rd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "yQmWs81wWE2CowYFBK72xw",
+    "name": "Home2 Suites by Hilton Galveston",
+    "categories": "Hotels",
+    "lat": 29.277013744312292,
+    "lon": -94.80899732717018,
+    "address": "4302 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "QNKCPn1noHWvB3_oI_c5Kg",
+    "name": "Country Inns & Suites By Carlson",
+    "categories": "Hotels",
+    "lat": 29.28634,
+    "lon": -94.79438,
+    "address": "2818 Avenue R 1/2, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "43wlKJaY1qOKQWJnd-SUCg",
+    "name": "Baymont by Wyndham Galveston",
+    "categories": "Hotels",
+    "lat": 29.26778,
+    "lon": -94.82895,
+    "address": "2826 63rd Street, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "HTWPPTmWJecBUxHtcHS9qg",
+    "name": "Island Bay Resort",
+    "categories": "Apartments",
+    "lat": 29.270559,
+    "lon": -94.844655,
+    "address": "7400 Jones Dr, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "OXtURcF7uHqTfCvxu4JNIg",
+    "name": "O'malley's Stage Door Pub",
+    "categories": "Bars",
+    "lat": 29.30541,
+    "lon": -94.79093,
+    "address": "2022 Post Office St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "6zyzlb2Bdrc9SMcxlUaPBA",
+    "name": "Sideyard",
+    "categories": "Bars",
+    "lat": 29.2835446447134,
+    "lon": -94.7978094220161,
+    "address": "3204 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "tBCL7hc8Rfk_bQO5t6-wzg",
+    "name": "Murphy's Irish Pub",
+    "categories": "Pubs",
+    "lat": 29.3072605,
+    "lon": -94.7932969,
+    "address": "213 22nd St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "FuFxW0C26vW4TvaF-vpeTw",
+    "name": "Holiday Inn Express & Suites Galveston West-Seawall",
+    "categories": "Hotels|Venues & Event Spaces",
+    "lat": 29.2532405853271,
+    "lon": -94.8508148193359,
+    "address": "8628 Seawall Blvd, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "8FkaY5KtBiHjPZhHPfaxqQ",
+    "name": "SEA BEAN Coffee Cafe",
+    "categories": "Cafes|Coffee & Tea",
+    "lat": 29.2506218,
+    "lon": -94.8532271,
+    "address": "9001 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "5YBz4XUdH5o67JZ1fgsHmA",
+    "name": "Rodeway Inn",
+    "categories": "Hotels",
+    "lat": 29.287537,
+    "lon": -94.838315,
+    "address": "6107 Broadway St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "aB5I-Bl5XBE-SsYzokj0Jg",
+    "name": "Taco Cabana",
+    "categories": "Mexican",
+    "lat": 29.27079,
+    "lon": -94.82903,
+    "address": "2729 61st St., Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "fKfebdi_K9dekztpRJbUWA",
+    "name": "Days Inn & Suites by Wyndham Galveston West/Seawall",
+    "categories": "Hotels",
+    "lat": 29.2544416,
+    "lon": -94.85213869750667,
+    "address": "8712 Seawall Blvd, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "c6UMjBA7mS73F0rvpSr-hQ",
+    "name": "Recycling Center Galveston Texas",
+    "categories": "Recycling Center",
+    "lat": 29.29026,
+    "lon": -94.83668,
+    "address": "702 61st St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "0I5qe5VO-sS5hcyuhCWVog",
+    "name": "Hampton Inn & Suites Galveston",
+    "categories": "Hotels",
+    "lat": 29.2661986584847,
+    "lon": -94.8310768604279,
+    "address": "6431 Central City Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "4Eicp7_L2U5-zX23VfKEdQ",
+    "name": "Candlewood Suites Galveston",
+    "categories": "Hotels|Venues & Event Spaces",
+    "lat": 29.2899232,
+    "lon": -94.8379076434462,
+    "address": "808 61st St, Ste C, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "bIfBV3QtNbK45GCy33VF-A",
+    "name": "Comfort Inn & Suites Beachfront",
+    "categories": "Hotels",
+    "lat": 29.266316,
+    "lon": -94.828926,
+    "address": "6302 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "PyVJ4HZZwj0s1rW8Qe5VAA",
+    "name": "Scholes International Airport - Galveston",
+    "categories": "Airport Terminals",
+    "lat": 29.269621,
+    "lon": -94.854744,
+    "address": "2115 Terminal Dr, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "MHjb3x-oPgSCgp2MmTZ_Lg",
+    "name": "The Old Galveston Club",
+    "categories": "Bars",
+    "lat": 29.30541,
+    "lon": -94.79102,
+    "address": "418 21st St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "rvOkO2ngglSfbJ5PQwTLNA",
+    "name": "Schlotzsky's",
+    "categories": "Sandwiches|Delis|Pizza",
+    "lat": 29.271950458451116,
+    "lon": -94.82970544309312,
+    "address": "2705 61st St, Ste H, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "lwCpQDj8U5NVnKGWJKAAUQ",
+    "name": "Walmart Supercenter",
+    "categories": "Department Stores|Grocery",
+    "lat": 29.26516121454466,
+    "lon": -94.83294550392915,
+    "address": "6702 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "5wzc4_kBy5uOpQ4J56e6nA",
+    "name": "Conex Coffee Plus",
+    "categories": "Grocery|Accessories|Coffee Roasteries",
+    "lat": 29.3055464,
+    "lon": -94.7960647,
+    "address": "302 25th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "C5nxlDcZu6UgXp3D9-BzTA",
+    "name": "Randalls",
+    "categories": "Grocery",
+    "lat": 29.26941,
+    "lon": -94.82945,
+    "address": "2931 Central City Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "5ezBpxce2vsqeWW_Vna1cA",
+    "name": "TownePlace Suites by Marriott Galveston Island",
+    "categories": "Hotels",
+    "lat": 29.248716,
+    "lon": -94.860592,
+    "address": "9540 Seawall Boulevard, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "AtwsYSNJyF3grAaC5kKcxQ",
+    "name": "Holiday Inn Express & Suites Galveston Beach",
+    "categories": "Hotels|Venues & Event Spaces",
+    "lat": 29.28356,
+    "lon": -94.79858,
+    "address": "3228 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "_gPDW6EoN_bD5NLAoVjmJw",
+    "name": "Ellington Airport EFD",
+    "categories": "Airports",
+    "lat": 29.2931584252953,
+    "lon": -94.7711419931967,
+    "address": "510 Ellington Field, Houston, TX 77034",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "miMpOkar8uN8Qz_jWEiKdw",
+    "name": "Galveston Physical Medicine",
+    "categories": "Chiropractors|Medical Centers",
+    "lat": 29.27275,
+    "lon": -94.82877,
+    "address": "2724 61st St, Ste 5, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "alrFLdFl-S7Wo7rLT-IoUQ",
+    "name": "Dollar General",
+    "categories": "Discount Store|Grocery",
+    "lat": 29.271384,
+    "lon": -94.83905,
+    "address": "2415 69TH ST STE B, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "EBiLAOXlJwCdx5GLAKkwNQ",
+    "name": "Jetty",
+    "categories": "American|Tapas/Small Plates",
+    "lat": 29.27279,
+    "lon": -94.81661,
+    "address": "5002 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "KW3Lqz_2APNxp3n1pp4dGQ",
+    "name": "Old Strand Emporium",
+    "categories": "Delis|Ice Cream & Frozen Yogurt|Beer, Wine & Spirits",
+    "lat": 29.30818,
+    "lon": -94.79173,
+    "address": "2016 Strand St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Glnm_e76Ra_E4FZQJVhp_w",
+    "name": "Peking Buffet",
+    "categories": "Chinese|Buffets|Asian Fusion",
+    "lat": 29.26892,
+    "lon": -94.82852,
+    "address": "6125 Central City Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "gcs3hrg1yiNbHiUI-6u6_A",
+    "name": "Domino's Pizza",
+    "categories": "Pizza|Chicken Wings|Sandwiches",
+    "lat": 29.30092,
+    "lon": -94.7902299,
+    "address": "2108 Broadway Ave J, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "wMESGqTVuGgn4n5DDYXujQ",
+    "name": "CVS Pharmacy",
+    "categories": "Drugstores|Pharmacy|Convenience Stores",
+    "lat": 29.29067,
+    "lon": -94.84033,
+    "address": "6128 Broadway St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Mgkmc3SzPx3KDVGZ8xncbg",
+    "name": "Club of the Isle Apartments",
+    "categories": "Apartments",
+    "lat": 29.24649,
+    "lon": -94.86885,
+    "address": "3433 Cove View Blvd, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "PNa88rVRH3e_dAr6Po3_HA",
+    "name": "La Quinta Inn & Suites By Wyndham",
+    "categories": "Hotels|Venues & Event Spaces",
+    "lat": 29.2664078400125,
+    "lon": -94.8286653422033,
+    "address": "2901 63rd Rear St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "YvwazsswRJtrO3QLMbUNnA",
+    "name": "Mob Bar",
+    "categories": "Cocktail Bars|Speakeasies",
+    "lat": 29.30557,
+    "lon": -94.79789,
+    "address": "201 26th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "-Gv_XlLeyImj-E2L0nNwEg",
+    "name": "Red Roof Inn Galveston - Beachfront/Convention Ctr",
+    "categories": "Hotels",
+    "lat": 29.2676125,
+    "lon": -94.8247299,
+    "address": "5914 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "1tp7ZtYM7C2zRKfSfq2xuA",
+    "name": "Taco Bell",
+    "categories": "Mexican|Fast Food",
+    "lat": 29.28956,
+    "lon": -94.831,
+    "address": "5701 Broadway, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "wHSQkmmk3D2MC2eivgKSrg",
+    "name": "The Garden Restuarant At Moody Gardens",
+    "categories": "American|Seafood",
+    "lat": 29.2760448292325,
+    "lon": -94.852215542788,
+    "address": "7 Hope Blvd, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "AOFQOYiacAVTcFf11gEvKQ",
+    "name": "Mom's Farm to Table",
+    "categories": "Farmers Market|Grocery",
+    "lat": 29.3076985138231,
+    "lon": -94.7806878760457,
+    "address": "1127 Postoffice St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "F9R3l7OHxcPz-f6JR-FsVg",
+    "name": "Domino's Pizza",
+    "categories": "Pizza|Chicken Wings|Sandwiches",
+    "lat": 29.27189,
+    "lon": -94.829769,
+    "address": "2705 61st St, Ste E, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "9dc6hzTf2oH3mE3-HhTv1A",
+    "name": "KFC",
+    "categories": "Fast Food|Chicken Wings|Chicken Shop",
+    "lat": 29.27654,
+    "lon": -94.832018,
+    "address": "2227 61st St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Fq1QIgfTKod2HuOTPt9OTw",
+    "name": "Mariner Inn",
+    "categories": "Hotels",
+    "lat": 29.2952041625977,
+    "lon": -94.7820892333984,
+    "address": "1602 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "qPx24-SrdniuC6ZNQhZAnw",
+    "name": "Jack in the Box",
+    "categories": "Fast Food|Burgers|Tacos",
+    "lat": 29.2920772,
+    "lon": -94.8237678408623,
+    "address": "5028 Broadway, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "bshRFbEEmDBS5V2BK6N5lA",
+    "name": "Schlotzsky's",
+    "categories": "Sandwiches|Delis|Pizza",
+    "lat": 29.30641925485932,
+    "lon": -94.7718117754631,
+    "address": "500 Seawall Blvd, Ste 410, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "ahHThoCX96U5k-pfwuGJUg",
+    "name": "Dizzy Dorado",
+    "categories": "Cocktail Bars",
+    "lat": 29.244618,
+    "lon": -94.867832,
+    "address": "3802 Cove View Blvd, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "SKCyjR1mnKbN7fxvYf28UQ",
+    "name": "Jack in the Box",
+    "categories": "Fast Food|Burgers|Tacos",
+    "lat": 29.2760699922856,
+    "lon": -94.8318077623844,
+    "address": "2300 61st St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "aQ7fn-N4GYdOFWvf_T6wjw",
+    "name": "Britton's Bistro",
+    "categories": "American",
+    "lat": 29.3131588001007,
+    "lon": -94.8189222054326,
+    "address": "Seawolf Park Blvd, Galveston, TX",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "nSXkVzw-97HLSWqB-v1VYg",
+    "name": "Homewood Suites by Hilton Galveston",
+    "categories": "Hotels",
+    "lat": 29.3102692,
+    "lon": -94.7687115,
+    "address": "110 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "9DF1NQWJ0a9JPk_tzNpjXQ",
+    "name": "Broadway Drug Store",
+    "categories": "Pharmacy",
+    "lat": 29.3006668,
+    "lon": -94.7888338,
+    "address": "2027 Broadway St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "pV35DLh0NizqpVspk1F4wA",
+    "name": "Lakeside At Campeche",
+    "categories": "Apartments",
+    "lat": 29.3013479,
+    "lon": -94.7976958,
+    "address": "3102 Cove View Blvd, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "DoV4Pe57A_0SrcrBwBBCwQ",
+    "name": "The Oasis Kitchen",
+    "categories": "Caribbean|Breakfast & Brunch|Food Trucks",
+    "lat": 29.312015,
+    "lon": -94.781093,
+    "address": "1102 Harborside Dr, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "lOy0MhAE9-VJWFBfZHUaRw",
+    "name": "Papa Johns Pizza",
+    "categories": "Pizza|Chicken Wings|Fast Food",
+    "lat": 29.26390806766584,
+    "lon": -94.8317631143408,
+    "address": "6600 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "zMJ-2htUpl4xl5gcjT_pQA",
+    "name": "Galveston Artillery Club",
+    "categories": "Seafood|Social Clubs|Bars",
+    "lat": 29.2917957305908,
+    "lon": -94.7997283935547,
+    "address": "3102 Ave O, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "ajh8nq9JztwjMS85PBTwHA",
+    "name": "Segundo Coffee Lab ",
+    "categories": "Coffee & Tea|Empanadas|Breakfast & Brunch",
+    "lat": 29.298937190968623,
+    "lon": -94.791377,
+    "address": "1110 Tremont St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "rQPghVQjZiDfBe_kF3zh0w",
+    "name": "Super 8 by Wyndham Galveston",
+    "categories": "Hotels",
+    "lat": 29.26828,
+    "lon": -94.82782,
+    "address": "2825 1/2 B 61st Street, 61st Street and Seawall, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "r0zTrNwGMUzC0POO0nKdBg",
+    "name": "Home2 Suites by Hilton Galveston",
+    "categories": "Hotels",
+    "lat": 29.277014559517365,
+    "lon": -94.80899663180648,
+    "address": "4302 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "TzyCCW7D-u4BHXc3NS6ytw",
+    "name": "Whataburger",
+    "categories": "Fast Food|Burgers",
+    "lat": 29.3091625,
+    "lon": -94.77360509622376,
+    "address": "528 University Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "J5bk7l7eRy8whTX4_0d1uw",
+    "name": "Patrick's Bar",
+    "categories": "Sports Bars",
+    "lat": 29.30649,
+    "lon": -94.79593,
+    "address": "2411 Strand St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "J6oHeLbcbty9K3yX5TAmDw",
+    "name": "Molly's Pub",
+    "categories": "Pubs",
+    "lat": 29.3051221,
+    "lon": -94.7906756,
+    "address": "2013 Post Office St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "EUKbV-Ua_ODpWj56nx0ECw",
+    "name": "Union Public House Galveston",
+    "categories": "Bars",
+    "lat": 29.308443,
+    "lon": -94.790931,
+    "address": "114 20th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "kEfllllsuAPXkydlwaENUg",
+    "name": "Comfort Suites",
+    "categories": "Hotels",
+    "lat": 29.2532888,
+    "lon": -94.8532104,
+    "address": "3606 89th St, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "13UR4qt8rVvoHJcUmG034Q",
+    "name": "Seaside Village",
+    "categories": "Apartments",
+    "lat": 29.2739841,
+    "lon": -94.81607,
+    "address": "4925 Fort Crockett Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "OrCYk--yqabtg9zlyl3G2g",
+    "name": "The Oceanfront Loft Apartments",
+    "categories": "Apartments",
+    "lat": 29.25783697979636,
+    "lon": -94.84304138525782,
+    "address": "7820 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "gjxIthhttJ5W3Nwk22XM5A",
+    "name": "Wendy's",
+    "categories": "Fast Food|Burgers",
+    "lat": 29.28968,
+    "lon": -94.78946,
+    "address": "2328 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "TYsi4SYrkmLiGtPP5LE10g",
+    "name": "Bar 43",
+    "categories": "Pool Halls|Wine Bars|Sports Bars",
+    "lat": 29.2809684,
+    "lon": -94.8108363,
+    "address": "4302 Ave S, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "qk1P3HUpU7UTjtlLTtU7KQ",
+    "name": "Sonic Drive-In",
+    "categories": "Fast Food|Burgers|Ice Cream & Frozen Yogurt",
+    "lat": 29.2643767,
+    "lon": -94.8309176,
+    "address": "6502 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "UYZcfmitEERfHci-T--4eg",
+    "name": "Odyssey Academy",
+    "categories": "Elementary Schools|Middle Schools & High Schools",
+    "lat": 29.275561038525897,
+    "lon": -94.82959120261296,
+    "address": "2412 61st St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "toLDn7mcH1OkiYW6t95rwg",
+    "name": "Fruit Party Island",
+    "categories": "Ice Cream & Frozen Yogurt|Juice Bars & Smoothies|Mexican",
+    "lat": 29.2935460446157,
+    "lon": -94.8182267323136,
+    "address": "4528 Broadway, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "4JqC-kwrZgpZERwR8qK61Q",
+    "name": "Parc at Marina Landing",
+    "categories": "Apartments",
+    "lat": 29.27627155247497,
+    "lon": -94.84685689146669,
+    "address": "7302 Heards Ln, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "l6C9U9C2CqWiAuH-zdlR6w",
+    "name": "Sonic Drive-In",
+    "categories": "Burgers|Fast Food|Ice Cream & Frozen Yogurt",
+    "lat": 29.2906869,
+    "lon": -94.8247089,
+    "address": "5127 Broadway St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "YfHAg2Rov1U2vXuCM7BHHw",
+    "name": "Scottish Inns",
+    "categories": "Hotels",
+    "lat": 29.32602,
+    "lon": -94.771809,
+    "address": "928 North Ferry Road, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "1EMQexTR_sNFXm2Ftym_kQ",
+    "name": "Seawall Bar",
+    "categories": "Bars",
+    "lat": 29.276947,
+    "lon": -94.80949,
+    "address": "4302 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "yrlrPsMHk2PWKnv2NMxDew",
+    "name": "Fruity Party Island",
+    "categories": "Food Court",
+    "lat": 29.293591,
+    "lon": -94.818185,
+    "address": "4528 Broadway, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "5cCT9M0KA30c97WCkBjSAw",
+    "name": "The Galley",
+    "categories": "Bars|Tex-Mex",
+    "lat": 29.318473,
+    "lon": -94.815028,
+    "address": "602 Seawolf Pkwy, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "jV9oWLmIuTBbBqddVA66DQ",
+    "name": "St Vincent's Hope Clinic",
+    "categories": "Medical Centers",
+    "lat": 29.302668,
+    "lon": -94.799629,
+    "address": "2817 Post Office St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "0yD1VPtXdUqwxevUZCBwXA",
+    "name": "La Quinta",
+    "categories": "Hotels",
+    "lat": 29.28772,
+    "lon": -94.83993,
+    "address": "1002 63rd Rear St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "K2w1xxY555UHI4NGFFX2ow",
+    "name": "Popeyes Louisiana Kitchen",
+    "categories": "Fast Food|Chicken Wings",
+    "lat": 29.26788,
+    "lon": -94.82646,
+    "address": "2904 61st St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "JrHEKxV5Km9CSriJ4V9t6A",
+    "name": "The Palm Breeze",
+    "categories": "Apartments",
+    "lat": 29.302,
+    "lon": -94.778,
+    "address": "1108 Ave L, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "m6ARqQwKS5axvN88SmXqPg",
+    "name": "Old Cellar Bar",
+    "categories": "Bars",
+    "lat": 29.3051221,
+    "lon": -94.7906756,
+    "address": "2013 Post Office St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "nRUQj7LDoG3vEv4AjP4jaw",
+    "name": "Galveston West Beach Hotel",
+    "categories": "Hotels",
+    "lat": 29.253201,
+    "lon": -94.8513749,
+    "address": "8710 Seawall Blvd, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "mNqH-VdDwJvn4VUuwKJ_-Q",
+    "name": "DJ's Kitchen",
+    "categories": "Salad|Fish & Chips|Burgers",
+    "lat": 29.295495,
+    "lon": -94.807532,
+    "address": "3627 Broadway, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "_RkHTqVtwD2gftq3-QtSQA",
+    "name": "Villa Marina Apartments",
+    "categories": "Apartments",
+    "lat": 29.31448,
+    "lon": -94.771216,
+    "address": "210 Strand St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "YOjKOv9lWdbO7T9-lKku4Q",
+    "name": "Refresqueria Mexico",
+    "categories": "Mexican|Shaved Ice",
+    "lat": 29.3031135906102,
+    "lon": -94.7740373387933,
+    "address": "724 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "yMQ6hX1LgEyyrEtvYhMB5g",
+    "name": "Ophelia\u2019s",
+    "categories": "Soul Food|American",
+    "lat": 29.303089,
+    "lon": -94.803262,
+    "address": "3104 Market St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "KLKpp-ae72dbdfE09i8ChA",
+    "name": "El Sazon Katracho",
+    "categories": "Honduran",
+    "lat": 29.292429,
+    "lon": -94.809227,
+    "address": "1302 39th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Sxqz5NdRnELEKZoSs5MGVA",
+    "name": "Red Roof PLUS+ Galveston - Beachfront",
+    "categories": "Hotels",
+    "lat": 29.2793885,
+    "lon": -94.8058594,
+    "address": "3924 Avenue U, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "TZXvt6_GbMhYropC2tm5Iw",
+    "name": "Burger King",
+    "categories": "Fast Food|Burgers",
+    "lat": 29.2889733521398,
+    "lon": -94.8328404128551,
+    "address": "5815 Broadway St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "m3b8PftcCQHNaowvhYdg9w",
+    "name": "McDonald's",
+    "categories": "Fast Food|Burgers|Coffee & Tea",
+    "lat": 29.3050795017937,
+    "lon": -94.7715492546558,
+    "address": "517 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "CInsLerfr22xndhZ7OBZiA",
+    "name": "Arlan's Markets",
+    "categories": "Grocery",
+    "lat": 29.31024,
+    "lon": -94.7736199,
+    "address": "513 Market St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "dU4Rtm7ja4JCvu5PybeoPw",
+    "name": "Castaways Poolside Experience",
+    "categories": "Breakfast & Brunch",
+    "lat": 29.247826266998473,
+    "lon": -94.860207,
+    "address": "9550 Seawall Blvd, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Ix_rt4po7npwkOhi-F1mZQ",
+    "name": "Chick-fil-A",
+    "categories": "Fast Food|Chicken Shop|Salad",
+    "lat": 29.288736,
+    "lon": -94.790329,
+    "address": "2501 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "i2PuDGUxnnkJB070zsldLg",
+    "name": "Popeyes Louisiana Kitchen",
+    "categories": "Fast Food|Chicken Wings",
+    "lat": 29.2974501,
+    "lon": -94.8007654,
+    "address": "3027 Broadway St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "aG2rhUntp8mqGd0noJMgQg",
+    "name": "US Post Office",
+    "categories": "Post Offices",
+    "lat": 29.29025,
+    "lon": -94.83308,
+    "address": "5826 Broadway, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "teXG4cGbCTolomA2zKGm3A",
+    "name": "Baymont Hotel & Suites - Galveston",
+    "categories": "Hotels",
+    "lat": 29.26774282865417,
+    "lon": -94.829201375899,
+    "address": "61ST St And Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "7Q7BCjWx_ap54LM7kpb2Yw",
+    "name": "Salvitas Urban Eatery",
+    "categories": "Salvadoran",
+    "lat": 29.3083103,
+    "lon": -94.7707009,
+    "address": "708 Holiday Dr, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "LUJAUPKpytiLtosanU4_JA",
+    "name": "Schreiber Park",
+    "categories": "Parks|Playgrounds",
+    "lat": 29.2597454041243,
+    "lon": -94.8495257645845,
+    "address": "3134 83rd St, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "wcJszD-oq2C224LHB90-Vg",
+    "name": "McDonald's",
+    "categories": "Fast Food|Burgers|Coffee & Tea",
+    "lat": 29.2674799501405,
+    "lon": -94.8264102,
+    "address": "2912 61st St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "_AWVYcNp1kIQfd5S-MU0xA",
+    "name": "Gloria's Lounge",
+    "categories": "Sports Bars",
+    "lat": 29.281382,
+    "lon": -94.8091866821051,
+    "address": "4126 Ave S, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "pY8rmyME1De5KSiQ456hsw",
+    "name": "Limon Paradise",
+    "categories": "Mexican",
+    "lat": 29.2778343,
+    "lon": -94.8070248,
+    "address": "4112 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "WQHC2UyG1EGNyQ5MWNCzGw",
+    "name": "Walgreens",
+    "categories": "Cosmetics & Beauty Supply|Drugstores|Convenience Stores",
+    "lat": 29.3079026,
+    "lon": -94.7706349008331,
+    "address": "308 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Z9rTUNCq8jozE6rw0WqTAg",
+    "name": "McDonald's",
+    "categories": "Fast Food|Burgers|Coffee & Tea",
+    "lat": 29.2909067856539,
+    "lon": -94.8258116841316,
+    "address": "5223 Broadway Ave, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "WD92LDCIqHTAe2tWNTzrWA",
+    "name": "Little Caesars",
+    "categories": "Pizza|Chicken Wings",
+    "lat": 29.27111950545564,
+    "lon": -94.8282885,
+    "address": "2806 61st St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "2fFqRO49wAchg0FcFqCwEw",
+    "name": "Jimmy John's",
+    "categories": "Sandwiches|Fast Food|Delis",
+    "lat": 29.308388,
+    "lon": -94.792863,
+    "address": "102-B Kempner St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "R00dwkwGECuuwR9v2jxbXw",
+    "name": "Tru By Hilton",
+    "categories": "Hotels",
+    "lat": 29.27709392251181,
+    "lon": -94.8089532564104,
+    "address": "4302 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "in6o9ynXyu8Dt5rhkLXXRQ",
+    "name": "Silver Spot Saloon",
+    "categories": "Cocktail Bars|Music Venues|Pool Halls",
+    "lat": 29.2782648248119,
+    "lon": -94.8209213465452,
+    "address": "5202 Ave S, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "kGdqUY65UINui3rHUejfyA",
+    "name": "Pizza Hut",
+    "categories": "Pizza|Chicken Wings|Fast Food",
+    "lat": 29.273731,
+    "lon": -94.815633,
+    "address": "4908C Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "lAK1qO1g_kg1zMLXRj6OEw",
+    "name": "Drunken Monkeyz",
+    "categories": "Sports Bars",
+    "lat": 29.307884,
+    "lon": -94.790611,
+    "address": "202 20th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Xd1KYyjEjE6ZUQmdlmY-UQ",
+    "name": "Southside Pharmacy 8 - Galveston",
+    "categories": "Drugstores",
+    "lat": 29.3024673461914,
+    "lon": -94.7931060791016,
+    "address": "707 23rd St, Ste B, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "-5Fc97SvMxwxvL5wchwlQA",
+    "name": "Walgreens",
+    "categories": "Cosmetics & Beauty Supply|Drugstores|Convenience Stores",
+    "lat": 29.274969,
+    "lon": -94.8313075,
+    "address": "2501 61st St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "eoqNTfEfMXDxoTebK4-5Hg",
+    "name": "El Pinoy Restaurante & Groceries",
+    "categories": "Filipino",
+    "lat": 29.3083515167236,
+    "lon": -94.7925491333008,
+    "address": "101-21ST St, Ste 4, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "ZnefeHs4DE7iGD5jYJGANg",
+    "name": "Crockett Park",
+    "categories": "Parks",
+    "lat": 29.2772116260936,
+    "lon": -94.8216842306912,
+    "address": "2601 53rd S, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "z3mHm-wqsgkMOEpoi0rEbQ",
+    "name": "Dawn by the Beach",
+    "categories": "Apartments",
+    "lat": 29.262197347033297,
+    "lon": -94.83519744362908,
+    "address": "7000 Seawall Blvd Ofc, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "r6cVa1Nk5g2BnY30NTO3Fw",
+    "name": "Tideway",
+    "categories": "Medical Centers",
+    "lat": 29.26649,
+    "lon": -94.83208,
+    "address": "6444 Central City Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "UhOyGgK1nJxrWy_IE51u9g",
+    "name": "First Presbyterian Church",
+    "categories": "Preschools|Churches",
+    "lat": 29.3046895,
+    "lon": -94.7887285,
+    "address": "1903 Church St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "lHm4glp7Zi_I49ykcmHjPg",
+    "name": "Knights Inn Galveston",
+    "categories": "Hotels",
+    "lat": 29.28495,
+    "lon": -94.79612,
+    "address": "3008 Seawall Blvd., Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "aelZwowk_fn0HAt7gW0F5w",
+    "name": "Titos Chow Down",
+    "categories": "Food Trucks|Mexican",
+    "lat": 29.284215,
+    "lon": -94.797074,
+    "address": "3102 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "bMVzzeVEYhFey3wiCXlRrQ",
+    "name": "Subway",
+    "categories": "Sandwiches|Fast Food",
+    "lat": 29.2736229771926,
+    "lon": -94.8154952089475,
+    "address": "4908 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "hNyj7WdiHnDeSaCx9zXV_A",
+    "name": "Panda Express",
+    "categories": "Fast Food|Chinese",
+    "lat": 29.275499,
+    "lon": -94.830558,
+    "address": "6027 Stewart Rd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "rhDoP-AssXlC_yX7mZ4SoQ",
+    "name": "Diamonds Steakhouse",
+    "categories": "Steakhouses",
+    "lat": 29.308269,
+    "lon": -94.7974812,
+    "address": "2502 Harborside Dr, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "9MHNP2jyeLfjFr9LTNj-jA",
+    "name": "Rosenberg Motel",
+    "categories": "Hotels",
+    "lat": 29.28997,
+    "lon": -94.79139,
+    "address": "2027 25th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "WpUfT067vyrW6q7KTmpX4Q",
+    "name": "Tortilleria La Bendicion De Dios",
+    "categories": "Salvadoran",
+    "lat": 29.296402645258908,
+    "lon": -94.80799190234238,
+    "address": "914 37th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "e4ewKCvDeNGDmy48XUwqrQ",
+    "name": "Carelton Courtyard Apartments",
+    "categories": "Apartments",
+    "lat": 29.31216,
+    "lon": -94.77044,
+    "address": "215 Market St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "0Skv66SNkazTXM63c775bg",
+    "name": "Captain's Landing Apartments",
+    "categories": "Apartments",
+    "lat": 29.268228,
+    "lon": -94.835521,
+    "address": "3102 69th Street, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "eHyrZlRT1-FcbE-geZDSXg",
+    "name": "Oppe Elementary School",
+    "categories": "Elementary Schools",
+    "lat": 29.26301865906799,
+    "lon": -94.84999815474768,
+    "address": "2915 81st St, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "_50KNkeG96eD4Hs06JJjrQ",
+    "name": "Broadwater Apartments",
+    "categories": "Apartments",
+    "lat": 29.26754054809067,
+    "lon": -94.8314763378254,
+    "address": "6315 Central City Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "TP88bwyUkgDHt1A2DYUThw",
+    "name": "Clarion Pointe",
+    "categories": "Hotels",
+    "lat": 29.29022,
+    "lon": -94.78891,
+    "address": "2300 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "_suQmpj-d25Qip02MtLV6w",
+    "name": "Trinity Episcopal School",
+    "categories": "Elementary Schools|Preschools|Middle Schools & High Schools",
+    "lat": 29.3025655299425,
+    "lon": -94.792742729187,
+    "address": "720 23rd St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "cvHCEH4-_U3A9sVhbTzmLA",
+    "name": "CVS Pharmacy",
+    "categories": "Drugstores|Pharmacy|Convenience Stores",
+    "lat": 29.276238,
+    "lon": -94.830757,
+    "address": "2326 61st St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "fRMNZKmXHJ7uVcrY7SxIJQ",
+    "name": "Residents At West Beach Apartments",
+    "categories": "Apartments",
+    "lat": 29.265955562277412,
+    "lon": -94.83478879290888,
+    "address": "3222 69th St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "iMlz3l9eWybbN8-J3iv38g",
+    "name": "Kempner park",
+    "categories": "Landmarks & Historical Buildings|Parks",
+    "lat": 29.29353921260619,
+    "lon": -94.79543497219106,
+    "address": "2704 Avenue O, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "vdJdQNWeeAHSiMpwmC_Dig",
+    "name": "Hemingway's",
+    "categories": "Bars",
+    "lat": 29.3017292,
+    "lon": -94.7754288,
+    "address": "904 Ave M, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "9lcKuuLLEMLIwQucYmB7ZQ",
+    "name": "It'z Nacho Bizness",
+    "categories": "Food Trucks|Tex-Mex",
+    "lat": 29.2927296536051,
+    "lon": -94.819210767746,
+    "address": "1002 47th St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Vw-bcdmWfPBzcNu5TL2pWQ",
+    "name": "Campeche Cove",
+    "categories": "Apartments",
+    "lat": 29.2472284,
+    "lon": -94.8692303,
+    "address": "3428 Cove View Blvd, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "faffvo5lYeHIuWtvSaDK4Q",
+    "name": "Wright Cuney Park and Recreation Center",
+    "categories": "Parks|Playgrounds|Recreation Centers",
+    "lat": 29.2970766,
+    "lon": -94.8131007127774,
+    "address": "718 41st St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "gR3CIhLsTYyrD6I73-bwhg",
+    "name": "The Park at Cedar Lawn",
+    "categories": "Apartments",
+    "lat": 29.29024,
+    "lon": -94.81466,
+    "address": "4400 Ave N, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "hiKiucu5F8IW2nMP65vyKw",
+    "name": "Nolans Child Care Center",
+    "categories": "Child Care & Day Care|Preschools",
+    "lat": 29.298258,
+    "lon": -94.802443,
+    "address": "902 32nd St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "HQ0-dc3xQBElapSIc7peMQ",
+    "name": "Shriners Hospitals for Children",
+    "categories": "Hospitals|Doctors|Medical Centers",
+    "lat": 29.3096818,
+    "lon": -94.7768544,
+    "address": "815 Market Street, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "qz6BTTVdZOAoNffyKUxyFA",
+    "name": "Menard Park",
+    "categories": "Parks|Playgrounds",
+    "lat": 29.2870738456856,
+    "lon": -94.793840092087,
+    "address": "2222 28th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "OwRVmGr3gbGkiMP8rFojDg",
+    "name": "Kroger Pharmacy",
+    "categories": "Pharmacy",
+    "lat": 29.268737668136836,
+    "lon": -94.82411517984936,
+    "address": "5730 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "np5YsR5VjaJ_5hOvYjahtw",
+    "name": "University Apartments",
+    "categories": "Apartments",
+    "lat": 29.31799015707681,
+    "lon": -94.81410931077912,
+    "address": "602 Seawolf Pkwy, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "1YW8BduPPQ-RDY-_xBATfg",
+    "name": "US Post Office",
+    "categories": "Post Offices",
+    "lat": 29.3033666416586,
+    "lon": -94.7934091870997,
+    "address": "601 Tremont St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "LCMDxi2CdsJaqGIFWly5FA",
+    "name": "Motel 6",
+    "categories": "Hotels",
+    "lat": 29.2686386108398,
+    "lon": -94.8301010131836,
+    "address": "6311 Central City Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Z_EnY0BcHDf1hiL_RQZLkQ",
+    "name": "Galveston Island Tacos",
+    "categories": "Food Trucks|Tacos",
+    "lat": 29.3077347988819,
+    "lon": -94.7923123686992,
+    "address": "2108 Strand, Hendley green park, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "pRCNd_NqtO4liQLSOU2l6w",
+    "name": "Ashton Place Apartments",
+    "categories": "Apartments",
+    "lat": 29.26593,
+    "lon": -94.83637,
+    "address": "3219 69th St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "lhFWfxv9_YXKUR5DQr89JQ",
+    "name": "Marchi Travel Service",
+    "categories": "Travel Services|Hotels|Transportation",
+    "lat": 29.2727919,
+    "lon": -94.8289586,
+    "address": "2724 61st St, Ste 4, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "49VjouKp7P7bQBDcjAPcKQ",
+    "name": "Islander East Condominium",
+    "categories": "Hotels",
+    "lat": 29.3144817352295,
+    "lon": -94.7563552856445,
+    "address": "415 E Beach St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "rO-8RYFM5wgAQaRJHT56qA",
+    "name": "Villas on the Strand",
+    "categories": "Apartments",
+    "lat": 29.309519,
+    "lon": -94.7861192,
+    "address": "1524 Strand St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "2o0qOUc8j6V7nx6yo3wu5Q",
+    "name": "Island Health Center",
+    "categories": "Chiropractors|Walk-in Clinics|Weight Loss Centers",
+    "lat": 29.2757164393078,
+    "lon": -94.8126131965768,
+    "address": "4623 Fort Crockett Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "u3jVeXFjzUKoIWTxLqDSVA",
+    "name": "La Michoacana",
+    "categories": "Grocery|Meat Shops",
+    "lat": 29.2966,
+    "lon": -94.80372,
+    "address": "3301 Broadway Avenue J, Ste B, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "GhJzwhlaPwP9-g_aWqA-Aw",
+    "name": "Redfish Pool Bar",
+    "categories": "Bars|Swimming Pools",
+    "lat": 29.28050967,
+    "lon": -94.80416317,
+    "address": "3800 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "1Zx0uhSmirVgBmkY5ralog",
+    "name": "2101 Church Street",
+    "categories": "Apartments",
+    "lat": 29.304009331294623,
+    "lon": -94.791089,
+    "address": "2101 Church St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "j4STRDggGkih7-FAvIBU7Q",
+    "name": "East End Pre-School & Kindergarten",
+    "categories": "Elementary Schools|Preschools",
+    "lat": 29.3046895,
+    "lon": -94.7887285,
+    "address": "1903 Church St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "tem66k5Q2EUKCRb_V5o3lg",
+    "name": "Moody Early Childhood Center",
+    "categories": "Preschools",
+    "lat": 29.2995777130127,
+    "lon": -94.7880401611328,
+    "address": "1110 21st Ste, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "3mMAMbxRzSUFY1W45LlIiA",
+    "name": "Corner Pocket Bar",
+    "categories": "Sports Bars|Pool Halls",
+    "lat": 29.277846700905975,
+    "lon": -94.8216662024248,
+    "address": "5227 Ave S, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Db3TapMqOkJyrkVZ9hPbjQ",
+    "name": "Pelican & The Shark",
+    "categories": "Cocktail Bars|Dive Bars",
+    "lat": 29.26499563168095,
+    "lon": -94.8252473136444,
+    "address": "6101 Seawall Blvd, Ste 3, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "gAQ0uj25RzseBwOwcQ_1Vg",
+    "name": "Casa Caribe Apartments",
+    "categories": "Apartments",
+    "lat": 29.311064,
+    "lon": -94.76891,
+    "address": "515 1st St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "9jf_CEImH94X0p-kT4NUdw",
+    "name": "Seascape Condominium Rentals",
+    "categories": "Hotels|Property Management|Travel Services",
+    "lat": 29.2418632507324,
+    "lon": -94.8712844848633,
+    "address": "10811 San Luis Pass Rd, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "4JV0KuaV-MbtbOhkB3LqLw",
+    "name": "Rosario\u2019s Flying Pizza And Pub",
+    "categories": "Pizza",
+    "lat": 29.30746081033734,
+    "lon": -94.79289800412492,
+    "address": "2121 The Strand, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "X8HWaHu0wfhloa2NDFBdOg",
+    "name": "Walmart Pharmacy",
+    "categories": "Pharmacy",
+    "lat": 29.26481,
+    "lon": -94.83273,
+    "address": "6702 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Ct9ysjTcuXN4AXF7dwzuIA",
+    "name": "Lee and Joe Jamail Bay Park",
+    "categories": "Parks",
+    "lat": 29.2827607,
+    "lon": -94.8345254,
+    "address": "1600 61st St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "J4VnX5i2lmoR_uSjZSQlyw",
+    "name": "Captain's Landing",
+    "categories": "American",
+    "lat": 29.3159563866628,
+    "lon": -94.8178551190202,
+    "address": "200 Seawolf Pkwy, TAMUG, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "jLvHW_xMByid_O4fyrExkw",
+    "name": "Beachtree Motel",
+    "categories": "Hotels",
+    "lat": 29.2845535,
+    "lon": -94.7971268,
+    "address": "3126 Ave S, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "VqGOMYakOegiW80MJJjjDQ",
+    "name": "Bob's Grocery",
+    "categories": "Grocery",
+    "lat": 29.3047752,
+    "lon": -94.791209,
+    "address": "509 21st St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "e6DNQwQQ12702PaARJJTpA",
+    "name": "Subway",
+    "categories": "Sandwiches|Fast Food",
+    "lat": 29.2764403089912,
+    "lon": -94.8310272263167,
+    "address": "2302-A 61st St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "pOiBYrM10SbQwTGn0rE0dQ",
+    "name": "Karina\u2019s Asian Mart",
+    "categories": "Grocery",
+    "lat": 29.2775,
+    "lon": -94.83252,
+    "address": "2115 61st St, Ste 104, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "b5jeS0CvPIMXO4CdzV4BUw",
+    "name": "Beachfront Condo Rentals",
+    "categories": "Condominiums",
+    "lat": 29.2664002131837,
+    "lon": -94.8275611129877,
+    "address": "Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Mofw4lh13loqy3GCTm_5og",
+    "name": "Subway",
+    "categories": "Sandwiches|Fast Food",
+    "lat": 29.29885340490673,
+    "lon": -94.79488080777504,
+    "address": "2521 Broadway, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "XXLa5hlSr0sR-u14xm1Z1g",
+    "name": "The Burger Den",
+    "categories": "Food Delivery Services|Burgers|American",
+    "lat": 29.29662,
+    "lon": -94.78027,
+    "address": "1410 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "c2m17sHiy_OYPn6aJT7xgw",
+    "name": "Safari Beach Company",
+    "categories": "Bars",
+    "lat": 29.3017,
+    "lon": -94.77556,
+    "address": "910 Avenue M, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "19UQ7qyIt3XEB6VhTOQ51w",
+    "name": "The Meltdown",
+    "categories": "Food Delivery Services|Sandwiches",
+    "lat": 29.29661493887133,
+    "lon": -94.7805334,
+    "address": "1410 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "6b6EM_dI8uqqiapsHH1SeQ",
+    "name": "Days Inn",
+    "categories": "Hotels",
+    "lat": 29.28756,
+    "lon": -94.83836,
+    "address": "6107 Broadway St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "MSIKWlZMxECuMOfhpS8ldw",
+    "name": "Sweet Home Alabama",
+    "categories": "Bars",
+    "lat": 29.2769540724025,
+    "lon": -94.8284573480487,
+    "address": "5806 Stewart Rd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Qgd4KCAa6YrogNAX_QH53g",
+    "name": "Island Inn",
+    "categories": "Hotels",
+    "lat": 29.26837265633668,
+    "lon": -94.8297657974326,
+    "address": "6311 Central City Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Y9XF01LL8lsiJF3hSzXWBg",
+    "name": "La Pura Sabrosura Cuisine",
+    "categories": "Food Trucks|Mexican",
+    "lat": 29.1415503,
+    "lon": -95.0405446,
+    "address": "21510 San Luis Pass Rd, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "densv6whAR-nrv2m5dMYHA",
+    "name": "Randalls Pharmacy",
+    "categories": "Pharmacy|Drugstores",
+    "lat": 29.26941,
+    "lon": -94.82945,
+    "address": "2931 Central City Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "vCt6vZZiWMnt8GTFgVaJ9w",
+    "name": "Hard Times & Misery Saloon",
+    "categories": "Bars",
+    "lat": 29.2809382452295,
+    "lon": -94.8106321644174,
+    "address": "4302 Ave S, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "X5uatWtvKLeJtfZ7M_Q-2w",
+    "name": "Republic Services Galveston County Transfer Station",
+    "categories": "Recycling Center|Dumpster Rental",
+    "lat": 29.297728,
+    "lon": -94.832074,
+    "address": "5515 Harborside Dr, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "ULHYxFc1x04SKWzUjX6gsg",
+    "name": "Subway",
+    "categories": "Sandwiches|Fast Food",
+    "lat": 29.30642580065573,
+    "lon": -94.77184428094468,
+    "address": "5902-A Broadway, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "mWhiSNkb649Uh92IQONU-A",
+    "name": "By The Sea Condominiums",
+    "categories": "Condominiums",
+    "lat": 29.26087,
+    "lon": -94.83691,
+    "address": "7310 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "_GN4raySRk942IGmLgWWiQ",
+    "name": "Harbor View Inn",
+    "categories": "Hotels",
+    "lat": 29.32589,
+    "lon": -94.77171,
+    "address": "928 Ferry Rd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "yuNC_CAoGx8oh0r9Ldko5A",
+    "name": "The Cedars at Carver Park",
+    "categories": "Apartments",
+    "lat": 29.299654,
+    "lon": -94.800037,
+    "address": "2915 Ball St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "gk9GSSdCXRyvXLuB9-xyGg",
+    "name": "Subway",
+    "categories": "Sandwiches|Fast Food",
+    "lat": 29.306383711015144,
+    "lon": -94.77188343718224,
+    "address": "500 Seawall, Ste 400, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "aNX6i3kqLU6eTJMYmdiZ8A",
+    "name": "Circle K",
+    "categories": "Gas Stations|Convenience Stores|Fast Food",
+    "lat": 29.27912,
+    "lon": -94.83326,
+    "address": "1927 61st St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "cfgAvc3ByFLo4Aq5t0ktzA",
+    "name": "circle k",
+    "categories": "Convenience Stores|Gas Stations|Fast Food",
+    "lat": 29.30522,
+    "lon": -94.77352,
+    "address": "628 Broadway Avenue J, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "-Ccm8dkpOkpeC9-56dNViw",
+    "name": "Vision Galveston - Shield Park",
+    "categories": "Basketball Courts|Parks",
+    "lat": 29.3055949,
+    "lon": -94.7921797,
+    "address": "2121 Market St, Ste 109, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "zEDm4zagu9NUfsII6tDLoA",
+    "name": "Dr Jackie Cole West End Dog Recreation Area",
+    "categories": "Dog Parks",
+    "lat": 29.309788715215568,
+    "lon": -94.77750662912908,
+    "address": "Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "94R-lg6WZCM7TOnYsBGSVw",
+    "name": "Ocean Inn",
+    "categories": "Hotels",
+    "lat": 29.2847820743725,
+    "lon": -94.7967054929762,
+    "address": "3028 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "eI0nwRFbA5kgcqYMV4xG1g",
+    "name": "Surf Motel",
+    "categories": "Hotels",
+    "lat": 29.3016,
+    "lon": -94.77595,
+    "address": "928 Avenue M, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "oH201DbEbcDSKjOG4RUa0Q",
+    "name": "Circle K",
+    "categories": "Convenience Stores|Fast Food|Gas Stations",
+    "lat": 29.262681,
+    "lon": -94.834392,
+    "address": "6902 Seawall Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "1lAwgyj5irK8tv7wZRJBhQ",
+    "name": "Driftwood Apartments",
+    "categories": "Apartments",
+    "lat": 29.2633285522461,
+    "lon": -94.8364181518555,
+    "address": "7019 Lasker Dr, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "VPFXtrNO-aJzjQxMumQb0A",
+    "name": "Gulfwind Apartments",
+    "categories": "Apartments",
+    "lat": 29.25824,
+    "lon": -94.84571,
+    "address": "8020 Stewart Rd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "aoeWO3H2C9soturR_Xhjtw",
+    "name": "Ball High School Trade Cottage",
+    "categories": "Elementary Schools|Middle Schools & High Schools",
+    "lat": 29.28872,
+    "lon": -94.81041,
+    "address": "4028 Avenue O, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "otFxKLRhWtTYSf4TOTNyjQ",
+    "name": "Jones Park",
+    "categories": "Playgrounds|Parks",
+    "lat": 29.2721904155014,
+    "lon": -94.84080612743752,
+    "address": "2226 71st St, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "EseHLXBGIucla7cWqrk2AQ",
+    "name": "Pancake Restaurant",
+    "categories": "American",
+    "lat": 29.312556758523,
+    "lon": -94.7741121053696,
+    "address": "500 Strand St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Fo5Z5Onq-F1iUeBRYhrmhA",
+    "name": "By the Sea Condominiums",
+    "categories": "Condominiums",
+    "lat": 29.260868,
+    "lon": -94.838233,
+    "address": "7310 Seawall Blvd, Apt 505, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "oxhez6-47HepdqI48Qjt9g",
+    "name": "The Fishbowl",
+    "categories": "Sports Bars",
+    "lat": 29.3065186,
+    "lon": -94.7958794,
+    "address": "2411B The Strand, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "lbVNGCC2i5wvZP2YeF6TCA",
+    "name": "Commodore On The Beach",
+    "categories": "Hotels",
+    "lat": 29.2923103,
+    "lon": -94.8068621,
+    "address": "37th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "eQYi3IjToJsnyteEIYouKA",
+    "name": "Pelican Island Groceries",
+    "categories": "Grocery",
+    "lat": 29.318415965798582,
+    "lon": -94.81542471352694,
+    "address": "602 Seawolf Pkwy, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Yi4nvEthjIoYmI44lJP1VQ",
+    "name": "Western Fried Chicken",
+    "categories": "Fast Food",
+    "lat": 29.3073982,
+    "lon": -94.7928357,
+    "address": "2121 Strand, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "X3InqmLgqZyFaxa9kz-ixA",
+    "name": "Gus Allen Dog Parks",
+    "categories": "Dog Parks",
+    "lat": 29.3024019,
+    "lon": -94.79870896994056,
+    "address": "2800 Church St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "0A14mNh4C5qzfIGvYKQKNQ",
+    "name": "The Palms At Cove View",
+    "categories": "Apartments|Condominiums|Vacation Rentals",
+    "lat": 29.24675,
+    "lon": -94.86751,
+    "address": "3506 Cove View Blvd, Galveston, TX 77554",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "sn5WbiuZ7Nh2jY_t-KtMhA",
+    "name": "La Palmita",
+    "categories": "Mexican",
+    "lat": 29.3098544153852,
+    "lon": -94.7842454411257,
+    "address": "1400-1498 Ave B, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "7-AHLJZCcIMwBWncg4KCSQ",
+    "name": "Crossroads Cafe",
+    "categories": "Sandwiches",
+    "lat": 29.30875,
+    "lon": -94.77644,
+    "address": "801 Post Office St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "fiZO1JulSL-ioiKQ43W3pw",
+    "name": "Motel 9",
+    "categories": "Hotels",
+    "lat": 29.30078,
+    "lon": -94.77634,
+    "address": "1002 Seawall Blvd, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "utM9YzA1rVa_FUQyal6FCg",
+    "name": "Edge Social Bar",
+    "categories": "Bars",
+    "lat": 29.30703,
+    "lon": -94.79604,
+    "address": "2410 Strand St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "JCV5y8-XNJyJoaMXbqP5BA",
+    "name": "Island Health Center",
+    "categories": "Medical Centers",
+    "lat": 29.27619963521521,
+    "lon": -94.8133640043461,
+    "address": "4623 Fort Crockett Blvd, Galveston, TX 77551",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "nBM4_N5-X4G2ttGOjxEjeg",
+    "name": "A & M Grocery Store",
+    "categories": "Grocery",
+    "lat": 29.2928581237793,
+    "lon": -94.8092880249023,
+    "address": "1228 39th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "Vtwndvh4SkQf3EXUC_Wu_Q",
+    "name": "Betty Head Oleander Garden Park",
+    "categories": "Parks",
+    "lat": 29.300150064029573,
+    "lon": -94.79681148692552,
+    "address": "2624 Sealy Ave, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "g09MtWtTq6PgiyAVZtYcsw",
+    "name": "Mi Mamacita's",
+    "categories": "Mexican",
+    "lat": 29.301839708350776,
+    "lon": -94.7955162688409,
+    "address": "711 25th St, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "NQVH-Z6ECAtYqu5K_n-wOw",
+    "name": "Joe's Cafeteria",
+    "categories": "Fast Food|Burgers",
+    "lat": 29.3109397888184,
+    "lon": -94.7746810913086,
+    "address": "2134 Lee Hage Jamail Student Ctr, UTMB, Galveston, TX 77555",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "KXH0jFrM1XbqSoa37AX6Rw",
+    "name": "Jack Johnson Park",
+    "categories": "Parks",
+    "lat": 29.296082573035108,
+    "lon": -94.7943122295664,
+    "address": "26th St & Avenue M, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "c4GmOBoKy5Dw6IfSFptJHg",
+    "name": "Sandpiper Cove Apts",
+    "categories": "Apartments",
+    "lat": 29.298261,
+    "lon": -94.812004,
+    "address": "3916 Winnie St Ofc, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  },
+  {
+    "id": "_WFMHwW1y3LSIsMsnPfXLQ",
+    "name": "Surfside Motel",
+    "categories": "Hotels",
+    "lat": 29.284553,
+    "lon": -94.7971256,
+    "address": "3126 Ave S, Galveston, TX 77550",
+    "is_closed": false,
+    "source": "yelp"
+  }
+]

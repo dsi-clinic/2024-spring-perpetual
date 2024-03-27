@@ -1,0 +1,53 @@
+version: "3.4"
+services:
+  # POSTGIS
+  postgis:
+    image: postgis/postgis:13-3.3
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  # BACKEND
+  backend:
+    restart: "no"
+    environment:
+      - DJANGO_SECRET_KEY=local
+      - ENV=DEV
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST=postgis
+      - POSTGRES_CHECK_TIMEOUT=120
+    build:
+      context: backend
+    volumes:
+      - ./backend:/backend
+      - ./data:/data
+    depends_on:
+      - postgis
+      - pgadmin
+    profiles:
+      - backend
+    env_file:
+      - .env
+
+  # PGADMIN DATABASE GUI
+  pgadmin:
+    depends_on:
+      - postgis
+    image: dpage/pgadmin4
+    platform: ${DOCKER_PLATFORM}
+    environment:
+      - COMPOSE_HTTP_TIMEOUT=300
+      - PGADMIN_DEFAULT_EMAIL=admin@pgadmin.com
+      - PGADMIN_DEFAULT_PASSWORD=p@sssw0rd!123
+      - PGADMIN_LISTEN_PORT=443
+      - PGADMIN_CONFIG_SERVER_MODE=False
+      - PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED=False
+    ports:
+      - "443:443"
+    volumes:
+      - ./server.local.json:/pgadmin4/servers.json
