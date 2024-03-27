@@ -1,0 +1,1929 @@
+[
+  {
+    "id": "ChIJcROz_crOj4AR3blv_XtAWJM",
+    "types": [
+      "shopping_mall",
+      "point_of_interest",
+      "establishment"
+    ],
+    "formattedAddress": "447 Great Mall Dr, Milpitas, CA 95035, USA",
+    "addressComponents": [
+      {
+        "longText": "447",
+        "shortText": "447",
+        "types": [
+          "street_number"
+        ],
+        "languageCode": "en-US"
+      },
+      {
+        "longText": "Great Mall Drive",
+        "shortText": "Great Mall Dr",
+        "types": [
+          "route"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Milpitas",
+        "shortText": "Milpitas",
+        "types": [
+          "locality",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Santa Clara County",
+        "shortText": "Santa Clara County",
+        "types": [
+          "administrative_area_level_2",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "California",
+        "shortText": "CA",
+        "types": [
+          "administrative_area_level_1",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "United States",
+        "shortText": "US",
+        "types": [
+          "country",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "95035",
+        "shortText": "95035",
+        "types": [
+          "postal_code"
+        ],
+        "languageCode": "en-US"
+      }
+    ],
+    "location": {
+      "latitude": 37.415738,
+      "longitude": -121.897412
+    },
+    "businessStatus": "OPERATIONAL",
+    "displayName": {
+      "text": "Great Mall",
+      "languageCode": "en"
+    },
+    "primaryTypeDisplayName": {
+      "text": "Shopping Mall",
+      "languageCode": "en-US"
+    },
+    "primaryType": "shopping_mall",
+    "shortFormattedAddress": "447 Great Mall Dr, Milpitas"
+  },
+  {
+    "id": "ChIJq-Dg-zt444kRuM2iph02c00",
+    "types": [
+      "shopping_mall",
+      "point_of_interest",
+      "establishment"
+    ],
+    "formattedAddress": "2774 Livermore Outlets Dr, Livermore, CA 94551, USA",
+    "addressComponents": [
+      {
+        "longText": "2774",
+        "shortText": "2774",
+        "types": [
+          "street_number"
+        ],
+        "languageCode": "en-US"
+      },
+      {
+        "longText": "Livermore Outlets Drive",
+        "shortText": "Livermore Outlets Dr",
+        "types": [
+          "route"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Livermore",
+        "shortText": "Livermore",
+        "types": [
+          "locality",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Alameda County",
+        "shortText": "Alameda County",
+        "types": [
+          "administrative_area_level_2",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "California",
+        "shortText": "CA",
+        "types": [
+          "administrative_area_level_1",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "United States",
+        "shortText": "US",
+        "types": [
+          "country",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "94551",
+        "shortText": "94551",
+        "types": [
+          "postal_code"
+        ],
+        "languageCode": "en-US"
+      }
+    ],
+    "location": {
+      "latitude": 37.6987272,
+      "longitude": -121.84404810000001
+    },
+    "businessStatus": "OPERATIONAL",
+    "displayName": {
+      "text": "San Francisco Premium Outlets",
+      "languageCode": "en"
+    },
+    "primaryTypeDisplayName": {
+      "text": "Shopping Mall",
+      "languageCode": "en-US"
+    },
+    "primaryType": "shopping_mall",
+    "shortFormattedAddress": "2774 Livermore Outlets Dr, Livermore"
+  },
+  {
+    "id": "ChIJqeO8JtzIj4AR-EJ3nWnWqAs",
+    "types": [
+      "department_store",
+      "hardware_store",
+      "grocery_store",
+      "bakery",
+      "electronics_store",
+      "sporting_goods_store",
+      "furniture_store",
+      "home_improvement_store",
+      "food",
+      "home_goods_store",
+      "clothing_store",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "formattedAddress": "301 Ranch Dr, Milpitas, CA 95035, USA",
+    "addressComponents": [
+      {
+        "longText": "301",
+        "shortText": "301",
+        "types": [
+          "street_number"
+        ],
+        "languageCode": "en-US"
+      },
+      {
+        "longText": "Ranch Drive",
+        "shortText": "Ranch Dr",
+        "types": [
+          "route"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Alviso",
+        "shortText": "Alviso",
+        "types": [
+          "neighborhood",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Milpitas",
+        "shortText": "Milpitas",
+        "types": [
+          "locality",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Santa Clara County",
+        "shortText": "Santa Clara County",
+        "types": [
+          "administrative_area_level_2",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "California",
+        "shortText": "CA",
+        "types": [
+          "administrative_area_level_1",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "United States",
+        "shortText": "US",
+        "types": [
+          "country",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "95035",
+        "shortText": "95035",
+        "types": [
+          "postal_code"
+        ],
+        "languageCode": "en-US"
+      }
+    ],
+    "location": {
+      "latitude": 37.4313384,
+      "longitude": -121.92116700000001
+    },
+    "businessStatus": "OPERATIONAL",
+    "displayName": {
+      "text": "Walmart Supercenter",
+      "languageCode": "en"
+    },
+    "primaryTypeDisplayName": {
+      "text": "Department Store",
+      "languageCode": "en-US"
+    },
+    "primaryType": "department_store",
+    "shortFormattedAddress": "301 Ranch Dr, Milpitas"
+  },
+  {
+    "id": "ChIJU8UslLbJj4ARFdF6yKlXPJ8",
+    "types": [
+      "restaurant",
+      "golf_course",
+      "sports_complex",
+      "american_restaurant",
+      "bar",
+      "athletic_field",
+      "event_venue",
+      "food",
+      "health",
+      "point_of_interest",
+      "establishment"
+    ],
+    "formattedAddress": "10 Topgolf Dr, San Jose, CA 95002, USA",
+    "addressComponents": [
+      {
+        "longText": "10",
+        "shortText": "10",
+        "types": [
+          "street_number"
+        ],
+        "languageCode": "en-US"
+      },
+      {
+        "longText": "Topgolf Drive",
+        "shortText": "Topgolf Dr",
+        "types": [
+          "route"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Alviso",
+        "shortText": "Alviso",
+        "types": [
+          "neighborhood",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "San Jose",
+        "shortText": "San Jose",
+        "types": [
+          "locality",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Santa Clara County",
+        "shortText": "Santa Clara County",
+        "types": [
+          "administrative_area_level_2",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "California",
+        "shortText": "CA",
+        "types": [
+          "administrative_area_level_1",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "United States",
+        "shortText": "US",
+        "types": [
+          "country",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "95002",
+        "shortText": "95002",
+        "types": [
+          "postal_code"
+        ],
+        "languageCode": "en-US"
+      }
+    ],
+    "location": {
+      "latitude": 37.4231191,
+      "longitude": -121.9697688
+    },
+    "businessStatus": "OPERATIONAL",
+    "displayName": {
+      "text": "Topgolf",
+      "languageCode": "en"
+    },
+    "primaryTypeDisplayName": {
+      "text": "Restaurant",
+      "languageCode": "en-US"
+    },
+    "primaryType": "restaurant",
+    "shortFormattedAddress": "10 Topgolf Dr, San Jose"
+  },
+  {
+    "id": "ChIJ8a1Xx6ruj4ARTJoUvy-uNtg",
+    "types": [
+      "subway_station",
+      "transit_station",
+      "point_of_interest",
+      "establishment"
+    ],
+    "formattedAddress": "5801 Owens Dr, Pleasanton, CA 94588, USA",
+    "addressComponents": [
+      {
+        "longText": "5801",
+        "shortText": "5801",
+        "types": [
+          "street_number"
+        ],
+        "languageCode": "en-US"
+      },
+      {
+        "longText": "Owens Drive",
+        "shortText": "Owens Dr",
+        "types": [
+          "route"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Pleasanton",
+        "shortText": "Pleasanton",
+        "types": [
+          "locality",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Alameda County",
+        "shortText": "Alameda County",
+        "types": [
+          "administrative_area_level_2",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "California",
+        "shortText": "CA",
+        "types": [
+          "administrative_area_level_1",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "United States",
+        "shortText": "US",
+        "types": [
+          "country",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "94588",
+        "shortText": "94588",
+        "types": [
+          "postal_code"
+        ],
+        "languageCode": "en-US"
+      }
+    ],
+    "location": {
+      "latitude": 37.701647699999995,
+      "longitude": -121.8992171
+    },
+    "businessStatus": "OPERATIONAL",
+    "displayName": {
+      "text": "Dublin / Pleasanton BART Station",
+      "languageCode": "en"
+    },
+    "primaryTypeDisplayName": {
+      "text": "Subway Station",
+      "languageCode": "en-US"
+    },
+    "primaryType": "subway_station",
+    "shortFormattedAddress": "5801 Owens Dr, Pleasanton"
+  },
+  {
+    "id": "ChIJu_fXpLDOj4ARpJbud7MNGec",
+    "types": [
+      "transit_station",
+      "train_station",
+      "subway_station",
+      "point_of_interest",
+      "establishment"
+    ],
+    "formattedAddress": "1755 S Milpitas Blvd, Milpitas, CA 95035, USA",
+    "addressComponents": [
+      {
+        "longText": "1755",
+        "shortText": "1755",
+        "types": [
+          "street_number"
+        ],
+        "languageCode": "en-US"
+      },
+      {
+        "longText": "South Milpitas Boulevard",
+        "shortText": "S Milpitas Blvd",
+        "types": [
+          "route"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Milpitas",
+        "shortText": "Milpitas",
+        "types": [
+          "locality",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Santa Clara County",
+        "shortText": "Santa Clara County",
+        "types": [
+          "administrative_area_level_2",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "California",
+        "shortText": "CA",
+        "types": [
+          "administrative_area_level_1",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "United States",
+        "shortText": "US",
+        "types": [
+          "country",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "95035",
+        "shortText": "95035",
+        "types": [
+          "postal_code"
+        ],
+        "languageCode": "en-US"
+      }
+    ],
+    "location": {
+      "latitude": 37.4102758,
+      "longitude": -121.89108159999999
+    },
+    "businessStatus": "OPERATIONAL",
+    "displayName": {
+      "text": "Milpitas",
+      "languageCode": "en"
+    },
+    "primaryTypeDisplayName": {
+      "text": "Transit Stop",
+      "languageCode": "en-US"
+    },
+    "primaryType": "transit_station",
+    "shortFormattedAddress": "1755 S Milpitas Blvd, Milpitas"
+  },
+  {
+    "id": "ChIJWZA4OfXrj4ARiBChLXIk2CI",
+    "types": [
+      "shopping_mall",
+      "point_of_interest",
+      "establishment"
+    ],
+    "formattedAddress": "1 Stoneridge Mall Rd, Pleasanton, CA 94588, USA",
+    "addressComponents": [
+      {
+        "longText": "1",
+        "shortText": "1",
+        "types": [
+          "street_number"
+        ],
+        "languageCode": "en-US"
+      },
+      {
+        "longText": "Stoneridge Mall Road",
+        "shortText": "Stoneridge Mall Rd",
+        "types": [
+          "route"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Pleasanton",
+        "shortText": "Pleasanton",
+        "types": [
+          "locality",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Alameda County",
+        "shortText": "Alameda County",
+        "types": [
+          "administrative_area_level_2",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "California",
+        "shortText": "CA",
+        "types": [
+          "administrative_area_level_1",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "United States",
+        "shortText": "US",
+        "types": [
+          "country",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "94588",
+        "shortText": "94588",
+        "types": [
+          "postal_code"
+        ],
+        "languageCode": "en-US"
+      }
+    ],
+    "location": {
+      "latitude": 37.6950463,
+      "longitude": -121.9285357
+    },
+    "businessStatus": "OPERATIONAL",
+    "displayName": {
+      "text": "Stoneridge Shopping Center",
+      "languageCode": "en"
+    },
+    "primaryTypeDisplayName": {
+      "text": "Shopping Mall",
+      "languageCode": "en-US"
+    },
+    "primaryType": "shopping_mall",
+    "shortFormattedAddress": "1 Stoneridge Mall Rd, Pleasanton"
+  },
+  {
+    "id": "ChIJAyXRV2GVj4ARC7TZ7ImkEXo",
+    "types": [
+      "subway_station",
+      "transit_station",
+      "point_of_interest",
+      "establishment"
+    ],
+    "formattedAddress": "2000 Bart Way, Fremont, CA 94536, USA",
+    "addressComponents": [
+      {
+        "longText": "2000",
+        "shortText": "2000",
+        "types": [
+          "street_number"
+        ],
+        "languageCode": "en-US"
+      },
+      {
+        "longText": "Bart Way",
+        "shortText": "Bart Way",
+        "types": [
+          "route"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Central District",
+        "shortText": "Central District",
+        "types": [
+          "neighborhood",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Fremont",
+        "shortText": "Fremont",
+        "types": [
+          "locality",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Alameda County",
+        "shortText": "Alameda County",
+        "types": [
+          "administrative_area_level_2",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "California",
+        "shortText": "CA",
+        "types": [
+          "administrative_area_level_1",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "United States",
+        "shortText": "US",
+        "types": [
+          "country",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "94536",
+        "shortText": "94536",
+        "types": [
+          "postal_code"
+        ],
+        "languageCode": "en-US"
+      }
+    ],
+    "location": {
+      "latitude": 37.557465,
+      "longitude": -121.976608
+    },
+    "businessStatus": "OPERATIONAL",
+    "displayName": {
+      "text": "Fremont",
+      "languageCode": "en"
+    },
+    "primaryTypeDisplayName": {
+      "text": "Subway Station",
+      "languageCode": "en-US"
+    },
+    "primaryType": "subway_station",
+    "shortFormattedAddress": "2000 Bart Way, Fremont"
+  },
+  {
+    "id": "ChIJhStxf5zpj4ARqenWFim62SM",
+    "types": [
+      "golf_course",
+      "sports_complex",
+      "athletic_field",
+      "event_venue",
+      "point_of_interest",
+      "establishment"
+    ],
+    "formattedAddress": "2005 Valley Ave Gate 8, Pleasanton, CA 94566, USA",
+    "addressComponents": [
+      {
+        "longText": "Gate 8",
+        "shortText": "Gate 8",
+        "types": [
+          "subpremise"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "2005",
+        "shortText": "2005",
+        "types": [
+          "street_number"
+        ],
+        "languageCode": "en-US"
+      },
+      {
+        "longText": "Valley Avenue",
+        "shortText": "Valley Ave",
+        "types": [
+          "route"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Pleasanton",
+        "shortText": "Pleasanton",
+        "types": [
+          "locality",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Alameda County",
+        "shortText": "Alameda County",
+        "types": [
+          "administrative_area_level_2",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "California",
+        "shortText": "CA",
+        "types": [
+          "administrative_area_level_1",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "United States",
+        "shortText": "US",
+        "types": [
+          "country",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "94566",
+        "shortText": "94566",
+        "types": [
+          "postal_code"
+        ],
+        "languageCode": "en-US"
+      }
+    ],
+    "location": {
+      "latitude": 37.660049699999995,
+      "longitude": -121.89685480000001
+    },
+    "businessStatus": "OPERATIONAL",
+    "displayName": {
+      "text": "Alameda County Fairgrounds",
+      "languageCode": "en"
+    },
+    "primaryTypeDisplayName": {
+      "text": "Event Venue",
+      "languageCode": "en-US"
+    },
+    "primaryType": "event_venue",
+    "shortFormattedAddress": "2005 Valley Ave Gate 8, Pleasanton"
+  },
+  {
+    "id": "ChIJNxMrsYXAj4ARfuq-gplU-00",
+    "types": [
+      "grocery_store",
+      "supermarket",
+      "liquor_store",
+      "market",
+      "food",
+      "health",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "formattedAddress": "3111 Mowry Ave, Fremont, CA 94538, USA",
+    "addressComponents": [
+      {
+        "longText": "3111",
+        "shortText": "3111",
+        "types": [
+          "street_number"
+        ],
+        "languageCode": "en-US"
+      },
+      {
+        "longText": "Mowry Avenue",
+        "shortText": "Mowry Ave",
+        "types": [
+          "route"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Centerville",
+        "shortText": "Centerville",
+        "types": [
+          "neighborhood",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Fremont",
+        "shortText": "Fremont",
+        "types": [
+          "locality",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Alameda County",
+        "shortText": "Alameda County",
+        "types": [
+          "administrative_area_level_2",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "California",
+        "shortText": "CA",
+        "types": [
+          "administrative_area_level_1",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "United States",
+        "shortText": "US",
+        "types": [
+          "country",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "94538",
+        "shortText": "94538",
+        "types": [
+          "postal_code"
+        ],
+        "languageCode": "en-US"
+      }
+    ],
+    "location": {
+      "latitude": 37.5549521,
+      "longitude": -121.98525589999998
+    },
+    "businessStatus": "OPERATIONAL",
+    "displayName": {
+      "text": "Whole Foods Market",
+      "languageCode": "en"
+    },
+    "primaryTypeDisplayName": {
+      "text": "Grocery Store",
+      "languageCode": "en-US"
+    },
+    "primaryType": "grocery_store",
+    "shortFormattedAddress": "3111 Mowry Ave, Fremont"
+  },
+  {
+    "id": "ChIJISA860npj4ARrICilYrg-BY",
+    "types": [
+      "department_store",
+      "hardware_store",
+      "grocery_store",
+      "electronics_store",
+      "sporting_goods_store",
+      "furniture_store",
+      "home_improvement_store",
+      "food",
+      "home_goods_store",
+      "clothing_store",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "formattedAddress": "4501 Rosewood Dr, Pleasanton, CA 94588, USA",
+    "addressComponents": [
+      {
+        "longText": "4501",
+        "shortText": "4501",
+        "types": [
+          "street_number"
+        ],
+        "languageCode": "en-US"
+      },
+      {
+        "longText": "Rosewood Drive",
+        "shortText": "Rosewood Dr",
+        "types": [
+          "route"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Pleasanton",
+        "shortText": "Pleasanton",
+        "types": [
+          "locality",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Alameda County",
+        "shortText": "Alameda County",
+        "types": [
+          "administrative_area_level_2",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "California",
+        "shortText": "CA",
+        "types": [
+          "administrative_area_level_1",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "United States",
+        "shortText": "US",
+        "types": [
+          "country",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "94588",
+        "shortText": "94588",
+        "types": [
+          "postal_code"
+        ],
+        "languageCode": "en-US"
+      }
+    ],
+    "location": {
+      "latitude": 37.6982996,
+      "longitude": -121.88739590000002
+    },
+    "businessStatus": "OPERATIONAL",
+    "displayName": {
+      "text": "Walmart",
+      "languageCode": "en"
+    },
+    "primaryTypeDisplayName": {
+      "text": "Department Store",
+      "languageCode": "en-US"
+    },
+    "primaryType": "department_store",
+    "shortFormattedAddress": "4501 Rosewood Dr, Pleasanton"
+  },
+  {
+    "id": "ChIJ33dpeVbPj4ARVdSHMxfh5Ds",
+    "types": [
+      "grocery_store",
+      "supermarket",
+      "liquor_store",
+      "market",
+      "food",
+      "health",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "formattedAddress": "1306 Great Mall Pkwy, Milpitas, CA 95035, USA",
+    "addressComponents": [
+      {
+        "longText": "1306",
+        "shortText": "1306",
+        "types": [
+          "street_number"
+        ],
+        "languageCode": "en-US"
+      },
+      {
+        "longText": "Great Mall Parkway",
+        "shortText": "Great Mall Pkwy",
+        "types": [
+          "route"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Milpitas",
+        "shortText": "Milpitas",
+        "types": [
+          "locality",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Santa Clara County",
+        "shortText": "Santa Clara County",
+        "types": [
+          "administrative_area_level_2",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "California",
+        "shortText": "CA",
+        "types": [
+          "administrative_area_level_1",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "United States",
+        "shortText": "US",
+        "types": [
+          "country",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "95035",
+        "shortText": "95035",
+        "types": [
+          "postal_code"
+        ],
+        "languageCode": "en-US"
+      }
+    ],
+    "location": {
+      "latitude": 37.4125543,
+      "longitude": -121.89979779999999
+    },
+    "businessStatus": "OPERATIONAL",
+    "displayName": {
+      "text": "Trader Joe's",
+      "languageCode": "en"
+    },
+    "primaryTypeDisplayName": {
+      "text": "Grocery Store",
+      "languageCode": "en-US"
+    },
+    "primaryType": "grocery_store",
+    "shortFormattedAddress": "1306 Great Mall Pkwy, Milpitas"
+  },
+  {
+    "id": "ChIJWzGYMc-Vj4ARbhulPHkR4r4",
+    "types": [
+      "department_store",
+      "hardware_store",
+      "grocery_store",
+      "electronics_store",
+      "sporting_goods_store",
+      "furniture_store",
+      "home_improvement_store",
+      "food",
+      "home_goods_store",
+      "clothing_store",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "formattedAddress": "30600 Dyer St, Union City, CA 94587, USA",
+    "addressComponents": [
+      {
+        "longText": "30600",
+        "shortText": "30600",
+        "types": [
+          "street_number"
+        ],
+        "languageCode": "en-US"
+      },
+      {
+        "longText": "Dyer Street",
+        "shortText": "Dyer St",
+        "types": [
+          "route"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Union City",
+        "shortText": "Union City",
+        "types": [
+          "locality",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Alameda County",
+        "shortText": "Alameda County",
+        "types": [
+          "administrative_area_level_2",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "California",
+        "shortText": "CA",
+        "types": [
+          "administrative_area_level_1",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "United States",
+        "shortText": "US",
+        "types": [
+          "country",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "94587",
+        "shortText": "94587",
+        "types": [
+          "postal_code"
+        ],
+        "languageCode": "en-US"
+      }
+    ],
+    "location": {
+      "latitude": 37.6047976,
+      "longitude": -122.0672323
+    },
+    "businessStatus": "OPERATIONAL",
+    "displayName": {
+      "text": "Walmart",
+      "languageCode": "en"
+    },
+    "primaryTypeDisplayName": {
+      "text": "Department Store",
+      "languageCode": "en-US"
+    },
+    "primaryType": "department_store",
+    "shortFormattedAddress": "30600 Dyer St, Union City"
+  },
+  {
+    "id": "ChIJJyKtBVPHj4AR78nnFx_9oZE",
+    "types": [
+      "department_store",
+      "hardware_store",
+      "grocery_store",
+      "electronics_store",
+      "sporting_goods_store",
+      "furniture_store",
+      "home_improvement_store",
+      "food",
+      "home_goods_store",
+      "clothing_store",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "formattedAddress": "40580 Albrae St, Fremont, CA 94538, USA",
+    "addressComponents": [
+      {
+        "longText": "40580",
+        "shortText": "40580",
+        "types": [
+          "street_number"
+        ],
+        "languageCode": "en-US"
+      },
+      {
+        "longText": "Albrae Street",
+        "shortText": "Albrae St",
+        "types": [
+          "route"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Baylands",
+        "shortText": "Baylands",
+        "types": [
+          "neighborhood",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Fremont",
+        "shortText": "Fremont",
+        "types": [
+          "locality",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Alameda County",
+        "shortText": "Alameda County",
+        "types": [
+          "administrative_area_level_2",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "California",
+        "shortText": "CA",
+        "types": [
+          "administrative_area_level_1",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "United States",
+        "shortText": "US",
+        "types": [
+          "country",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "94538",
+        "shortText": "94538",
+        "types": [
+          "postal_code"
+        ],
+        "languageCode": "en-US"
+      }
+    ],
+    "location": {
+      "latitude": 37.520184799999996,
+      "longitude": -121.98552249999999
+    },
+    "businessStatus": "OPERATIONAL",
+    "displayName": {
+      "text": "Walmart",
+      "languageCode": "en"
+    },
+    "primaryTypeDisplayName": {
+      "text": "Department Store",
+      "languageCode": "en-US"
+    },
+    "primaryType": "department_store",
+    "shortFormattedAddress": "40580 Albrae St, Fremont"
+  },
+  {
+    "id": "ChIJKUdSthfIj4ARrf3yOILpb8c",
+    "types": [
+      "park",
+      "hiking_area",
+      "tourist_attraction",
+      "point_of_interest",
+      "establishment"
+    ],
+    "formattedAddress": "1195 Hope St, Alviso, CA 95002, USA",
+    "addressComponents": [
+      {
+        "longText": "1195",
+        "shortText": "1195",
+        "types": [
+          "street_number"
+        ],
+        "languageCode": "en-US"
+      },
+      {
+        "longText": "Hope Street",
+        "shortText": "Hope St",
+        "types": [
+          "route"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Alviso",
+        "shortText": "Alviso",
+        "types": [
+          "neighborhood",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "San Jose",
+        "shortText": "San Jose",
+        "types": [
+          "locality",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Santa Clara County",
+        "shortText": "Santa Clara County",
+        "types": [
+          "administrative_area_level_2",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "California",
+        "shortText": "CA",
+        "types": [
+          "administrative_area_level_1",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "United States",
+        "shortText": "US",
+        "types": [
+          "country",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "95002",
+        "shortText": "95002",
+        "types": [
+          "postal_code"
+        ],
+        "languageCode": "en-US"
+      }
+    ],
+    "location": {
+      "latitude": 37.4304232,
+      "longitude": -121.97947819999999
+    },
+    "businessStatus": "OPERATIONAL",
+    "displayName": {
+      "text": "Alviso Marina County Park",
+      "languageCode": "en"
+    },
+    "primaryTypeDisplayName": {
+      "text": "Park",
+      "languageCode": "en-US"
+    },
+    "primaryType": "park",
+    "shortFormattedAddress": "1195 Hope St, Alviso"
+  },
+  {
+    "id": "ChIJB6nTySbJj4ARxJnc-v4ZJoo",
+    "types": [
+      "supermarket",
+      "grocery_store",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "formattedAddress": "Milpitas Square, 338 Barber Ln, Milpitas, CA 95035, USA",
+    "addressComponents": [
+      {
+        "longText": "Milpitas Square",
+        "shortText": "Milpitas Square",
+        "types": [
+          "point_of_interest",
+          "establishment"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "338",
+        "shortText": "338",
+        "types": [
+          "street_number"
+        ],
+        "languageCode": "en-US"
+      },
+      {
+        "longText": "Barber Lane",
+        "shortText": "Barber Ln",
+        "types": [
+          "route"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Coyote Creek North",
+        "shortText": "Coyote Creek North",
+        "types": [
+          "neighborhood",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Milpitas",
+        "shortText": "Milpitas",
+        "types": [
+          "locality",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Santa Clara County",
+        "shortText": "Santa Clara County",
+        "types": [
+          "administrative_area_level_2",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "California",
+        "shortText": "CA",
+        "types": [
+          "administrative_area_level_1",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "United States",
+        "shortText": "US",
+        "types": [
+          "country",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "95035",
+        "shortText": "95035",
+        "types": [
+          "postal_code"
+        ],
+        "languageCode": "en-US"
+      }
+    ],
+    "location": {
+      "latitude": 37.42286,
+      "longitude": -121.91695
+    },
+    "businessStatus": "OPERATIONAL",
+    "displayName": {
+      "text": "99 Ranch Market",
+      "languageCode": "en"
+    },
+    "primaryTypeDisplayName": {
+      "text": "Grocery Store",
+      "languageCode": "en-US"
+    },
+    "primaryType": "grocery_store",
+    "shortFormattedAddress": "Milpitas Square, 338 Barber Ln #101, Milpitas"
+  },
+  {
+    "id": "ChIJl8w4ZEvpj4AR96jUNf7rAsQ",
+    "types": [
+      "movie_theater",
+      "point_of_interest",
+      "establishment"
+    ],
+    "formattedAddress": "5000 Dublin Blvd, Dublin, CA 94568, USA",
+    "addressComponents": [
+      {
+        "longText": "5000",
+        "shortText": "5000",
+        "types": [
+          "street_number"
+        ],
+        "languageCode": "en-US"
+      },
+      {
+        "longText": "Dublin Boulevard",
+        "shortText": "Dublin Blvd",
+        "types": [
+          "route"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Dublin",
+        "shortText": "Dublin",
+        "types": [
+          "locality",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Alameda County",
+        "shortText": "Alameda County",
+        "types": [
+          "administrative_area_level_2",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "California",
+        "shortText": "CA",
+        "types": [
+          "administrative_area_level_1",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "United States",
+        "shortText": "US",
+        "types": [
+          "country",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "94568",
+        "shortText": "94568",
+        "types": [
+          "postal_code"
+        ],
+        "languageCode": "en-US"
+      }
+    ],
+    "location": {
+      "latitude": 37.70312,
+      "longitude": -121.88530999999998
+    },
+    "businessStatus": "OPERATIONAL",
+    "displayName": {
+      "text": "Regal Hacienda Crossings",
+      "languageCode": "en"
+    },
+    "primaryTypeDisplayName": {
+      "text": "Movie Theater",
+      "languageCode": "en-US"
+    },
+    "primaryType": "movie_theater",
+    "shortFormattedAddress": "5000 Dublin Blvd, Dublin"
+  },
+  {
+    "id": "ChIJySzhJrHBj4ARuoGRW-PlLpA",
+    "types": [
+      "grocery_store",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "formattedAddress": "41081 Fremont Blvd, Fremont, CA 94538, USA",
+    "addressComponents": [
+      {
+        "longText": "41081",
+        "shortText": "41081",
+        "types": [
+          "street_number"
+        ],
+        "languageCode": "en-US"
+      },
+      {
+        "longText": "Fremont Boulevard",
+        "shortText": "Fremont Blvd",
+        "types": [
+          "route"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Irvington",
+        "shortText": "Irvington",
+        "types": [
+          "neighborhood",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Fremont",
+        "shortText": "Fremont",
+        "types": [
+          "locality",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Alameda County",
+        "shortText": "Alameda County",
+        "types": [
+          "administrative_area_level_2",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "California",
+        "shortText": "CA",
+        "types": [
+          "administrative_area_level_1",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "United States",
+        "shortText": "US",
+        "types": [
+          "country",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "94538",
+        "shortText": "94538",
+        "types": [
+          "postal_code"
+        ],
+        "languageCode": "en-US"
+      },
+      {
+        "longText": "1422",
+        "shortText": "1422",
+        "types": [
+          "postal_code_suffix"
+        ],
+        "languageCode": "en-US"
+      }
+    ],
+    "location": {
+      "latitude": 37.5318037,
+      "longitude": -121.9596646
+    },
+    "businessStatus": "OPERATIONAL",
+    "displayName": {
+      "text": "Apni Mandi Farmers Market",
+      "languageCode": "en"
+    },
+    "primaryTypeDisplayName": {
+      "text": "Grocery Store",
+      "languageCode": "en-US"
+    },
+    "primaryType": "grocery_store",
+    "shortFormattedAddress": "41081 Fremont Blvd, Fremont"
+  },
+  {
+    "id": "ChIJ41ntlMaVj4ARndbC_tyjSNc",
+    "types": [
+      "steak_house",
+      "american_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "formattedAddress": "32115 Union Landing Blvd, Union City, CA 94587, USA",
+    "addressComponents": [
+      {
+        "longText": "32115",
+        "shortText": "32115",
+        "types": [
+          "street_number"
+        ],
+        "languageCode": "en-US"
+      },
+      {
+        "longText": "Union Landing Boulevard",
+        "shortText": "Union Landing Blvd",
+        "types": [
+          "route"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Union City",
+        "shortText": "Union City",
+        "types": [
+          "locality",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Alameda County",
+        "shortText": "Alameda County",
+        "types": [
+          "administrative_area_level_2",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "California",
+        "shortText": "CA",
+        "types": [
+          "administrative_area_level_1",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "United States",
+        "shortText": "US",
+        "types": [
+          "country",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "94587",
+        "shortText": "94587",
+        "types": [
+          "postal_code"
+        ],
+        "languageCode": "en-US"
+      }
+    ],
+    "location": {
+      "latitude": 37.6014159,
+      "longitude": -122.06722119999999
+    },
+    "businessStatus": "OPERATIONAL",
+    "displayName": {
+      "text": "Texas Roadhouse",
+      "languageCode": "en"
+    },
+    "primaryTypeDisplayName": {
+      "text": "Steak House",
+      "languageCode": "en-US"
+    },
+    "primaryType": "steak_house",
+    "shortFormattedAddress": "32115 Union Landing Blvd, Union City"
+  },
+  {
+    "id": "ChIJEQMOPJLAj4ARfBCK_DyEt2k",
+    "types": [
+      "hospital",
+      "health",
+      "point_of_interest",
+      "establishment"
+    ],
+    "formattedAddress": "39400 Paseo Padre Pkwy, Fremont, CA 94538, USA",
+    "addressComponents": [
+      {
+        "longText": "39400",
+        "shortText": "39400",
+        "types": [
+          "street_number"
+        ],
+        "languageCode": "en-US"
+      },
+      {
+        "longText": "Paseo Padre Parkway",
+        "shortText": "Paseo Padre Pkwy",
+        "types": [
+          "route"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Central District",
+        "shortText": "Central District",
+        "types": [
+          "neighborhood",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Fremont",
+        "shortText": "Fremont",
+        "types": [
+          "locality",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "Alameda County",
+        "shortText": "Alameda County",
+        "types": [
+          "administrative_area_level_2",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "California",
+        "shortText": "CA",
+        "types": [
+          "administrative_area_level_1",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "United States",
+        "shortText": "US",
+        "types": [
+          "country",
+          "political"
+        ],
+        "languageCode": "en"
+      },
+      {
+        "longText": "94538",
+        "shortText": "94538",
+        "types": [
+          "postal_code"
+        ],
+        "languageCode": "en-US"
+      }
+    ],
+    "location": {
+      "latitude": 37.5526637,
+      "longitude": -121.97514369999999
+    },
+    "businessStatus": "OPERATIONAL",
+    "displayName": {
+      "text": "Kaiser Permanente Fremont Medical Center",
+      "languageCode": "en"
+    },
+    "primaryTypeDisplayName": {
+      "text": "Hospital",
+      "languageCode": "en-US"
+    },
+    "primaryType": "hospital",
+    "shortFormattedAddress": "39400 Paseo Padre Pkwy, Fremont",
+    "subDestinations": [
+      {
+        "name": "places/ChIJEQMOPJLAj4ARfMN31W2trWk",
+        "id": "ChIJEQMOPJLAj4ARfMN31W2trWk"
+      },
+      {
+        "name": "places/ChIJIzu_MpLAj4AR8moWtMV3DnE",
+        "id": "ChIJIzu_MpLAj4AR8moWtMV3DnE"
+      },
+      {
+        "name": "places/ChIJIzu_MpLAj4ARSaow_FW-YFA",
+        "id": "ChIJIzu_MpLAj4ARSaow_FW-YFA"
+      },
+      {
+        "name": "places/ChIJIzu_MpLAj4AR482YwIxHvws",
+        "id": "ChIJIzu_MpLAj4AR482YwIxHvws"
+      },
+      {
+        "name": "places/ChIJ-euKi5HAj4AR2UeqYyfgri4",
+        "id": "ChIJ-euKi5HAj4AR2UeqYyfgri4"
+      }
+    ]
+  }
+]

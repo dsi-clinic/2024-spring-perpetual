@@ -1,0 +1,492 @@
+[
+  {
+    "__type": "SearchResult:http://schemas.microsoft.com/search/local/ws/rest/v1",
+    "name": "Pho Nam",
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        37.36991501,
+        -122.04237366
+      ]
+    },
+    "Address": {
+      "addressLine": "844 W El Camino Real",
+      "adminDistrict": "CA",
+      "countryRegion": "US",
+      "formattedAddress": "844 W El Camino Real, Sunnyvale, CA, 94087",
+      "locality": "Sunnyvale",
+      "postalCode": "94087"
+    },
+    "PhoneNumber": "(408) 737-1086",
+    "Website": "https://sunnyvalecivicsquare.com/tenant/pho-nam-restaurant/",
+    "entityType": "Restaurant",
+    "geocodePoints": [
+      {
+        "type": "Point",
+        "coordinates": [
+          37.36994171,
+          -122.04252625
+        ],
+        "calculationMethod": "Rooftop",
+        "usageTypes": [
+          "Display"
+        ]
+      }
+    ]
+  },
+  {
+    "__type": "SearchResult:http://schemas.microsoft.com/search/local/ws/rest/v1",
+    "name": "Adamson's French Dip",
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        37.36989975,
+        -122.04164124
+      ]
+    },
+    "Address": {
+      "addressLine": "806 W El Camino Real",
+      "adminDistrict": "CA",
+      "countryRegion": "US",
+      "formattedAddress": "806 W El Camino Real, Sunnyvale, CA, 94087",
+      "locality": "Sunnyvale",
+      "postalCode": "94087"
+    },
+    "PhoneNumber": "(408) 830-9024",
+    "Website": "https://www.adamsonsfrenchdip.com/",
+    "entityType": "Restaurant",
+    "geocodePoints": [
+      {
+        "type": "Point",
+        "coordinates": [
+          37.36990356,
+          -122.04164886
+        ],
+        "calculationMethod": "Rooftop",
+        "usageTypes": [
+          "Display"
+        ]
+      }
+    ]
+  },
+  {
+    "__type": "SearchResult:http://schemas.microsoft.com/search/local/ws/rest/v1",
+    "name": "Dim Sum King",
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        37.36942673,
+        -122.04242706
+      ]
+    },
+    "Address": {
+      "addressLine": "824 W El Camino Real",
+      "adminDistrict": "CA",
+      "countryRegion": "US",
+      "formattedAddress": "824 W El Camino Real, Sunnyvale, CA, 94087",
+      "locality": "Sunnyvale",
+      "postalCode": "94087"
+    },
+    "PhoneNumber": "(408) 739-1551",
+    "Website": "https://dimsumkingnow.com/",
+    "entityType": "Restaurant",
+    "geocodePoints": [
+      {
+        "type": "Point",
+        "coordinates": [
+          37.36931992,
+          -122.04243469
+        ],
+        "calculationMethod": "Rooftop",
+        "usageTypes": [
+          "Display"
+        ]
+      }
+    ]
+  },
+  {
+    "__type": "SearchResult:http://schemas.microsoft.com/search/local/ws/rest/v1",
+    "name": "HANAMARU",
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        37.37205124,
+        -122.05739594
+      ]
+    },
+    "Address": {
+      "addressLine": "675 S Bernardo Ave",
+      "adminDistrict": "CA",
+      "countryRegion": "US",
+      "formattedAddress": "675 S Bernardo Ave, Sunnyvale, CA, 94087",
+      "locality": "Sunnyvale",
+      "postalCode": "94087"
+    },
+    "PhoneNumber": "(408) 524-5353",
+    "Website": "https://www.gohanamaru.com/",
+    "entityType": "Restaurant",
+    "geocodePoints": [
+      {
+        "type": "Point",
+        "coordinates": [
+          37.37189102,
+          -122.05752563
+        ],
+        "calculationMethod": "Rooftop",
+        "usageTypes": [
+          "Display"
+        ]
+      }
+    ]
+  },
+  {
+    "__type": "SearchResult:http://schemas.microsoft.com/search/local/ws/rest/v1",
+    "name": "Five Guys",
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        37.36664581,
+        -122.0320282
+      ]
+    },
+    "Address": {
+      "addressLine": "116 E. El Camino Real",
+      "adminDistrict": "CA",
+      "countryRegion": "US",
+      "formattedAddress": "116 E. El Camino Real, Sunnyvale, CA, 94085",
+      "locality": "Sunnyvale",
+      "postalCode": "94085"
+    },
+    "PhoneNumber": "(408) 830-9100",
+    "Website": "https://restaurants.fiveguys.com/116-e-el-camino-real",
+    "entityType": "Restaurant",
+    "geocodePoints": [
+      {
+        "type": "Point",
+        "coordinates": [
+          37.36664581,
+          -122.0320282
+        ],
+        "calculationMethod": "Rooftop",
+        "usageTypes": [
+          "Display"
+        ]
+      }
+    ]
+  },
+  {
+    "__type": "SearchResult:http://schemas.microsoft.com/search/local/ws/rest/v1",
+    "name": "Shah Restaurant",
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        37.37121582,
+        -122.04779053
+      ]
+    },
+    "Address": {
+      "addressLine": "962 W El Camino Real",
+      "adminDistrict": "CA",
+      "countryRegion": "US",
+      "formattedAddress": "962 W El Camino Real, Sunnyvale, CA, 94087",
+      "locality": "Sunnyvale",
+      "postalCode": "94087"
+    },
+    "PhoneNumber": "(408) 542-9450",
+    "Website": "https://www.shanrestaurant.com/",
+    "entityType": "Restaurant",
+    "geocodePoints": [
+      {
+        "type": "Point",
+        "coordinates": [
+          37.37112045,
+          -122.04716492
+        ],
+        "calculationMethod": "Rooftop",
+        "usageTypes": [
+          "Display"
+        ]
+      }
+    ]
+  },
+  {
+    "__type": "SearchResult:http://schemas.microsoft.com/search/local/ws/rest/v1",
+    "name": "SARAVANAA BHAVAN",
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        37.35089111,
+        -122.05105591
+      ]
+    },
+    "Address": {
+      "addressLine": "1305 S Mary Ave",
+      "adminDistrict": "CA",
+      "countryRegion": "US",
+      "formattedAddress": "1305 S Mary Ave, Sunnyvale, CA, 94087",
+      "locality": "Sunnyvale",
+      "postalCode": "94087"
+    },
+    "PhoneNumber": "(408) 616-7755",
+    "Website": "https://saravanaabhavan.us/",
+    "entityType": "Restaurant",
+    "geocodePoints": [
+      {
+        "type": "Point",
+        "coordinates": [
+          37.350914,
+          -122.05088043
+        ],
+        "calculationMethod": "Rooftop",
+        "usageTypes": [
+          "Display"
+        ]
+      }
+    ]
+  },
+  {
+    "__type": "SearchResult:http://schemas.microsoft.com/search/local/ws/rest/v1",
+    "name": "Madras Cafe",
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        37.37415314,
+        -122.05502319
+      ]
+    },
+    "Address": {
+      "addressLine": "1177 W El Camino Real",
+      "adminDistrict": "CA",
+      "countryRegion": "US",
+      "formattedAddress": "1177 W El Camino Real, Sunnyvale, CA, 94087",
+      "locality": "Sunnyvale",
+      "postalCode": "94087"
+    },
+    "PhoneNumber": "(408) 737-2323",
+    "Website": "http://madrascafe.us/",
+    "entityType": "Restaurant",
+    "geocodePoints": [
+      {
+        "type": "Point",
+        "coordinates": [
+          37.37431335,
+          -122.05499268
+        ],
+        "calculationMethod": "Rooftop",
+        "usageTypes": [
+          "Display"
+        ]
+      }
+    ]
+  },
+  {
+    "__type": "SearchResult:http://schemas.microsoft.com/search/local/ws/rest/v1",
+    "name": "Bonchon",
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        37.36228943,
+        -122.02734375
+      ]
+    },
+    "Address": {
+      "addressLine": "572 E El Camino Real",
+      "adminDistrict": "CA",
+      "countryRegion": "US",
+      "formattedAddress": "572 E El Camino Real, Sunnyvale, CA, 94087",
+      "locality": "Sunnyvale",
+      "postalCode": "94087"
+    },
+    "PhoneNumber": "(408) 720-8689",
+    "Website": "https://locations.bonchon.com/ll/US/CA/Sunnyvale/572-E-_-El-Camino-Real",
+    "entityType": "Restaurant",
+    "geocodePoints": [
+      {
+        "type": "Point",
+        "coordinates": [
+          37.36228943,
+          -122.02734375
+        ],
+        "calculationMethod": "Rooftop",
+        "usageTypes": [
+          "Display"
+        ]
+      }
+    ]
+  },
+  {
+    "__type": "SearchResult:http://schemas.microsoft.com/search/local/ws/rest/v1",
+    "name": "The Habit Burger Grill",
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        37.36772537,
+        -122.03302765
+      ]
+    },
+    "Address": {
+      "addressLine": "146 W El Camino Real",
+      "adminDistrict": "CA",
+      "countryRegion": "US",
+      "formattedAddress": "146 W El Camino Real, Sunnyvale, CA, 94087",
+      "locality": "Sunnyvale",
+      "postalCode": "94087"
+    },
+    "PhoneNumber": "(408) 774-9015",
+    "Website": "https://order.habitburger.com/store/52/category",
+    "entityType": "Restaurant",
+    "geocodePoints": [
+      {
+        "type": "Point",
+        "coordinates": [
+          37.367836,
+          -122.03314209
+        ],
+        "calculationMethod": "Rooftop",
+        "usageTypes": [
+          "Display"
+        ]
+      }
+    ]
+  },
+  {
+    "__type": "SearchResult:http://schemas.microsoft.com/search/local/ws/rest/v1",
+    "name": "Nothing Bundt Cakes",
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        37.37158966,
+        -122.045784
+      ]
+    },
+    "Address": {
+      "addressLine": "939 W El Camino Real",
+      "adminDistrict": "CA",
+      "countryRegion": "US",
+      "formattedAddress": "939 W El Camino Real, Sunnyvale, CA, 94087",
+      "locality": "Sunnyvale",
+      "postalCode": "94087"
+    },
+    "PhoneNumber": "(408) 749-7000",
+    "Website": "https://www.nothingbundtcakes.com/all-products/?bakery=27",
+    "entityType": "Restaurant",
+    "geocodePoints": [
+      {
+        "type": "Point",
+        "coordinates": [
+          37.37174225,
+          -122.04573059
+        ],
+        "calculationMethod": "Rooftop",
+        "usageTypes": [
+          "Display"
+        ]
+      }
+    ]
+  },
+  {
+    "__type": "SearchResult:http://schemas.microsoft.com/search/local/ws/rest/v1",
+    "name": "Sugar Butter Flour",
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        37.37212753,
+        -122.05760956
+      ]
+    },
+    "Address": {
+      "addressLine": "669 S Bernardo Ave",
+      "adminDistrict": "CA",
+      "countryRegion": "US",
+      "formattedAddress": "669 S Bernardo Ave, Sunnyvale, CA, 94087",
+      "locality": "Sunnyvale",
+      "postalCode": "94087"
+    },
+    "PhoneNumber": "(408) 732-8597",
+    "Website": "http://sugarbutterflour.com/contact-us",
+    "entityType": "Restaurant",
+    "geocodePoints": [
+      {
+        "type": "Point",
+        "coordinates": [
+          37.37197495,
+          -122.05775452
+        ],
+        "calculationMethod": "Rooftop",
+        "usageTypes": [
+          "Display"
+        ]
+      }
+    ]
+  },
+  {
+    "__type": "SearchResult:http://schemas.microsoft.com/search/local/ws/rest/v1",
+    "name": "dishdash",
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        37.37601089,
+        -122.02928162
+      ]
+    },
+    "Address": {
+      "addressLine": "190 S Murphy Ave",
+      "adminDistrict": "CA",
+      "countryRegion": "US",
+      "formattedAddress": "190 S Murphy Ave, Sunnyvale, CA, 94086",
+      "locality": "Sunnyvale",
+      "postalCode": "94086"
+    },
+    "PhoneNumber": "(408) 774-1889",
+    "Website": "https://www.dishdash.com/location/dishdash-sunnyvale/",
+    "entityType": "Restaurant",
+    "geocodePoints": [
+      {
+        "type": "Point",
+        "coordinates": [
+          37.37614059,
+          -122.03010559
+        ],
+        "calculationMethod": "Rooftop",
+        "usageTypes": [
+          "Display"
+        ]
+      }
+    ]
+  },
+  {
+    "__type": "SearchResult:http://schemas.microsoft.com/search/local/ws/rest/v1",
+    "name": "Satkar Indian Food",
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        37.3751297,
+        -122.05780792
+      ]
+    },
+    "Address": {
+      "addressLine": "1253 W El Camino Real Ste E",
+      "adminDistrict": "CA",
+      "countryRegion": "US",
+      "formattedAddress": "1253 W El Camino Real Ste E, Sunnyvale, CA, 94087",
+      "locality": "Sunnyvale",
+      "postalCode": "94087"
+    },
+    "PhoneNumber": "(650) 390-0776",
+    "Website": "https://satkarindiancuisines.com/",
+    "entityType": "Restaurant",
+    "geocodePoints": [
+      {
+        "type": "Point",
+        "coordinates": [
+          37.37520218,
+          -122.05797577
+        ],
+        "calculationMethod": "Rooftop",
+        "usageTypes": [
+          "Display"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,31 @@
+# Core
+typing-extensions
+
+# Configuration
+pyyaml
+
+# Validation
+pydantic
+
+# Data Manipulation
+pandas
+geopandas
+shapely
+
+# Django
+psycopg2-binary
+django
+django-configurations
+django-cors-headers
+django-geo
+
+# Google Cloud
+google
+google-cloud
+google-cloud-storage
+
+# Mapbox
+mapbox
+
+# WebDriver
+selenium

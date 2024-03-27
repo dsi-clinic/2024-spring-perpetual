@@ -1,0 +1,18 @@
+[
+  {
+    "params": {
+      "radius": 2500,
+      "categories": "bars,restaurants,arts,airports,apartments,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,zoos",
+      "longitude": -122.0149545,
+      "latitude": 37.4473205,
+      "limit": 50,
+      "offset": 1000
+    },
+    "error": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "description": "Too many results requested, limit+offset must be <= 1000."
+      }
+    }
+  }
+]

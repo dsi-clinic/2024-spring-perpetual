@@ -1,0 +1,1010 @@
+[
+  {
+    "params": {
+      "radius": 625,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.2229825,
+      "latitude": 40.6272445,
+      "limit": 50,
+      "offset": 1000
+    },
+    "error": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "description": "Too many results requested, limit+offset must be <= 1000."
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 625,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.2229825,
+      "latitude": 40.6352075,
+      "limit": 50,
+      "offset": 1000
+    },
+    "error": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "description": "Too many results requested, limit+offset must be <= 1000."
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 625,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.2150195,
+      "latitude": 40.6192815,
+      "limit": 50,
+      "offset": 1000
+    },
+    "error": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "description": "Too many results requested, limit+offset must be <= 1000."
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 625,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.2150195,
+      "latitude": 40.6272445,
+      "limit": 50,
+      "offset": 1000
+    },
+    "error": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "description": "Too many results requested, limit+offset must be <= 1000."
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 625,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.2150195,
+      "latitude": 40.6352075,
+      "limit": 50,
+      "offset": 500
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 625,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.2150195,
+      "latitude": 40.6431705,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 625,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.2150195,
+      "latitude": 40.6511335,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 625,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.2150195,
+      "latitude": 40.6590965,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 625,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.2150195,
+      "latitude": 40.6670595,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 625,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.2150195,
+      "latitude": 40.6750225,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.24289,
+      "latitude": 40.7108555,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.24289,
+      "latitude": 40.7745585,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.24289,
+      "latitude": 40.838262,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.24289,
+      "latitude": 40.9019655,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.24289,
+      "latitude": 40.9656685,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.1791865,
+      "latitude": 40.5197455,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.1791865,
+      "latitude": 40.5834485,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.1791865,
+      "latitude": 40.647152,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.1791865,
+      "latitude": 40.7108555,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.1791865,
+      "latitude": 40.7745585,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.1791865,
+      "latitude": 40.838262,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.1791865,
+      "latitude": 40.9019655,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.1791865,
+      "latitude": 40.9656685,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.1154835,
+      "latitude": 40.5197455,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.1154835,
+      "latitude": 40.5834485,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.1154835,
+      "latitude": 40.647152,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.1154835,
+      "latitude": 40.7108555,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.1154835,
+      "latitude": 40.7745585,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.1154835,
+      "latitude": 40.838262,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.1154835,
+      "latitude": 40.9019655,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.1154835,
+      "latitude": 40.9656685,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.05178,
+      "latitude": 40.5197455,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.05178,
+      "latitude": 40.5834485,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.05178,
+      "latitude": 40.647152,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.05178,
+      "latitude": 40.7108555,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.05178,
+      "latitude": 40.7745585,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.05178,
+      "latitude": 40.838262,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.05178,
+      "latitude": 40.9019655,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -74.05178,
+      "latitude": 40.9656685,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -73.9880765,
+      "latitude": 40.5197455,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -73.9880765,
+      "latitude": 40.5834485,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -73.9880765,
+      "latitude": 40.647152,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -73.9880765,
+      "latitude": 40.7108555,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -73.9880765,
+      "latitude": 40.7745585,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -73.9880765,
+      "latitude": 40.838262,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -73.9880765,
+      "latitude": 40.9019655,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -73.9880765,
+      "latitude": 40.9656685,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -73.924373,
+      "latitude": 40.5197455,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -73.924373,
+      "latitude": 40.5834485,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -73.924373,
+      "latitude": 40.647152,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -73.924373,
+      "latitude": 40.7108555,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -73.924373,
+      "latitude": 40.7745585,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -73.924373,
+      "latitude": 40.838262,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -73.924373,
+      "latitude": 40.9019655,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -73.924373,
+      "latitude": 40.9656685,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -73.8606695,
+      "latitude": 40.5197455,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -73.8606695,
+      "latitude": 40.5834485,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -73.8606695,
+      "latitude": 40.647152,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -73.8606695,
+      "latitude": 40.7108555,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -73.8606695,
+      "latitude": 40.7745585,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -73.8606695,
+      "latitude": 40.838262,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -73.8606695,
+      "latitude": 40.9019655,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  },
+  {
+    "params": {
+      "radius": 5000,
+      "categories": "bars,restaurants,arts,airports,apartments,civiccenter,communitycenters,collegeuniv,condominiums,drugstores,elementaryschools,grocery,hospitals,hotels,highschools,libraries,medcenters,sharedofficespaces,parks,postoffices,pharmacy,preschools,recyclingcenter,resorts,housingcooperatives,trainstations,zoos",
+      "longitude": -73.8606695,
+      "latitude": 40.9656685,
+      "limit": 50,
+      "offset": 0
+    },
+    "error": {
+      "error": {
+        "code": "ACCESS_LIMIT_REACHED",
+        "description": "You've reached the access limit for this client. See instructions for requesting a higher access limit at https://docs.developer.yelp.com/docs/fusion-rate-limiting"
+      }
+    }
+  }
+]
