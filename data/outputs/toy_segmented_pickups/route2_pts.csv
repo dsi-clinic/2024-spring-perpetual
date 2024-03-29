@@ -1,9 +1,0 @@
-Name,Longitude,Latitude,Daily_Pickup_Totes,Weekly_Dropoff_Totes,user_ratings_total,category,rating,weekly_high,weekly_low,best_weekly_estimate,Address,geometry,Adoption,Adoption Guess,Visited ,Influence,location_type,pickup_type,id
-Moody Gardens,-94.8523,29.2736,0,0,,,,,,,,,,,,,depot,Truck,
-BLVD Seafood (all of Yagas Entertainment),-94.7939604,29.2865539,1,1,2158.0,restaurant,4.5,400,105.0,400,"2804 Avenue R 1/2, Galveston",POINT (-94.7939604 29.2865539),Skeptical,High,No,High,indoor,Truck,
-Porch Cafe,-94.7501916,29.3195806,1,1,332.0,restaurant,4.1,300,,100,"1625 East Beach Drive #2A, Galveston",POINT (-94.7501916 29.3195806),Curious,High,No,Low,indoor,Truck,
-Mosquito Cafe,-94.7825488,29.3057145,1,1,2625.0,restaurant,4.4,300,150.0,300,"628 14th Street, Galveston",POINT (-94.7825488 29.3057145),Fan,High,Yes,High,indoor,Truck,
-The Sunflower Bakery & Cafe,-94.7829794,29.3070498,1,1,3947.0,cafe,4.6,350,350.0,350,"512 14th Street, Galveston",POINT (-94.7829794 29.3070498),Skeptical,High,Yes,High,indoor,Truck,
-Shykatz,-94.7832253,29.3005619,2,1,930.0,cafe,4.6,800,500.0,800,"1528 Avenue L, Galveston",POINT (-94.7832253 29.3005619),Curious,High,Yes,Med,indoor,Truck,
-Gaido's,-94.8045,29.2796255,1,1,5568.0,restaurant,4.4,140,0.0,140,"3828 Seawall Boulevard, Galveston",POINT (-94.8045 29.2796255),Curious,High,Yes,High,indoor,Truck,
-Sugar Bean,-94.8704183,29.2610286,1,1,476.0,cafe,4.7,200,50.0,200,"11 Evia Main, Galveston",POINT (-94.8704183 29.2610286),Curious,High,No,High,indoor,Truck,

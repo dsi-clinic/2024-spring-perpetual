@@ -1,0 +1,58 @@
+# Development tools
+flake8
+black
+pre-commit
+tqdm
+
+# Core
+typing-extensions
+
+# Configuration
+pyyaml
+
+# Data Wrangling
+requests
+googlemaps
+
+# Data Modeling
+pydantic
+
+# Data Manipulation
+pandas
+geopandas
+shapely
+geodatasets
+scikit-learn
+
+# Django
+psycopg2-binary
+django
+django-configurations
+django-cors-headers
+django-geo
+
+# Google Cloud
+google
+google-cloud
+google-cloud-storage
+
+# Mapbox
+mapbox
+
+# WebDriver
+selenium
+
+# Route Optimization
+ortools
+gurobipy
+
+# Visualization
+matplotlib
+contextily
+folium
+polyline
+osmnx
+networkx
+
+# testing
+pytest
