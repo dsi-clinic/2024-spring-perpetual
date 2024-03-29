@@ -212,14 +212,8 @@ class BingMapsClient(IPlacesProvider):
                 cell_pois, cell_errors = self.find_places_in_bounding_box(cell)
                 pois.extend(cell_pois)
                 errors.extend(cell_errors)
-                print(len(pois), "place(s) fetched.")
             if pois:
                 break
-
-        import json
-
-        with open("bing_test.json", "w") as f:
-            json.dump(pois, f, indent=2)
 
         # Clean POIs
         cleaned_pois = self.clean_places(pois, geo)

@@ -30,10 +30,10 @@ class YelpPOICategories(Enum):
     ART = "arts"
     AIRPORT = "airports"
     APARTMENT = "apartments"
-    # BIKE_SHARING_HUB = "bikesharing"
-    # BUS_STATION = "busstations"
-    # CIVIC_CENTER = "civiccenter"
-    # COMMUNITY_CENTER = "communitycenters"
+    BIKE_SHARING_HUB = "bikesharing"
+    BUS_STATION = "busstations"
+    CIVIC_CENTER = "civiccenter"
+    COMMUNITY_CENTER = "communitycenters"
     COLLEGE_OR_UNIVERSITY = "collegeuniv"
     CONDO = "condominiums"
     DRUGSTORE = "drugstores"
@@ -44,16 +44,16 @@ class YelpPOICategories(Enum):
     JUNIOR_OR_SENIOR_HIGH_SCHOOL = "highschools"
     LIBRARY = "libraries"
     MEDICAL_CENTER = "medcenters"
-    # METRO_STATION = "metrostations"
+    METRO_STATION = "metrostations"
     OFFICE = "sharedofficespaces"
     PARK = "parks"
-    # POST_OFFICE = "postoffices"
+    POST_OFFICE = "postoffices"
     PHARMACY = "pharmacy"
     PRESCHOOL = "preschools"
     RECYCLING_CENTER = "recyclingcenter"
     RESORT = "resorts"
     SHARED_LIVING = "housingcooperatives"
-    # TRAIN_STATION = "trainstations"
+    TRAIN_STATION = "trainstations"
     ZOO = "zoos"
 
 
@@ -284,11 +284,6 @@ class YelpClient(IPlacesProvider):
                 )
                 pois.extend(cell_pois)
                 errors.extend(cell_errs)
-
-        import json
-
-        with open("test_yelp.json", "w") as f:
-            json.dump(pois, f, indent=2)
 
         # Clean POIs
         cleaned_pois = self.clean_places(pois, geo)

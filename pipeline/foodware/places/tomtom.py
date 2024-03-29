@@ -268,11 +268,6 @@ class TomTomSearchClient(IPlacesProvider):
                     pois.extend(cell_pois)
                     errors.extend(cell_errors)
 
-        import json
-
-        with open("test.json", "w") as f:
-            json.dump(pois, f, indent=2)
-
         # Clean POIs
         cleaned_pois = self.clean_places(pois, geo)
 
