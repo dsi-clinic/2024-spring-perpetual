@@ -111,3 +111,4 @@ Note the id of the container containing the pipeline (here, `a3df6682203a`). The
 - `data`: Inputs and outputs for the pipeline. For more information, consult the README in the folder.
 - `notebooks`: Jupyter notebooks to step through routing algorithms and points of interest classification strategies.
 - `pipeline`: Data pipeline to fetch, standardize, de-dupe, classify, and route points of interest in order to simulate a reusable foodware system.
+- `web`: Experimental web application that will be used to run pipeline. WIP.
