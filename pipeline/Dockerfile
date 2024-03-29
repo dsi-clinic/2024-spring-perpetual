@@ -19,7 +19,7 @@ RUN apt update -y && apt upgrade -y && \
         python3-pip
 
 # Set working directory in container
-WORKDIR /perpetual
+WORKDIR /perpetual/pipeline
 
 # Install requirements based on declared environment
 COPY requirements.txt .
