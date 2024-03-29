@@ -353,26 +353,18 @@ class GooglePlacesClient(IPlacesProvider):
         )
 
         # Locate POIs within each cell if it contains any part of geography
-        try:
-            pois = []
-            errors = []
-            for batch in category_batches:
-                for cell in cells:
-                    if cell.intersects_with(geo):
-                        cell_pois, cell_errors = self.find_places_in_bounding_box(
-                            box=cell,
-                            categories=batch,
-                            search_radius=GooglePlacesClient.MAX_SEARCH_RADIUS_IN_METERS,
-                        )
-                        pois.extend(cell_pois)
-                        errors.extend(cell_errors)
-                        print(len(pois), "places fetched.")
-        except Exception as e:
-            import json
-
-            with open("test_google.json", "w") as f:
-                json.dump(pois, f, indent=2)
-            raise e
+        pois = []
+        errors = []
+        for batch in category_batches:
+            for cell in cells:
+                if cell.intersects_with(geo):
+                    cell_pois, cell_errors = self.find_places_in_bounding_box(
+                        box=cell,
+                        categories=batch,
+                        search_radius=GooglePlacesClient.MAX_SEARCH_RADIUS_IN_METERS,
+                    )
+                    pois.extend(cell_pois)
+                    errors.extend(cell_errors)
 
         # Clean POIs
         cleaned_pois = self.clean_places(pois, geo)
