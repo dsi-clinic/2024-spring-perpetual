@@ -3,6 +3,7 @@
 
 # Standard library imports
 import json
+import os
 
 # Third-party imports
 from django.conf import settings
@@ -184,19 +185,23 @@ class Command(BaseCommand):
         bins = filter(places, crosswalk)
         self._logger.info(f"{len(bins)} bin(s) successfully identified.")
 
-        # Add places to new Padlet map
-        self._logger.info("Instantiating new Padlet client.")
-        padlet_client = PadletClient(self._logger)
+        # Parse Padlet flag from environment variables
+        make_padlet = os.getenv("PADLET_SHOULD_GENERATE", "false").lower() == "true"
 
-        # Add places to new Padlet map
-        self._logger.info("Creating new Padlet map and adding places as markers.")
-        board = padlet_client.add_board_with_posts(bins)
-        url = board["data"]["attributes"]["webUrl"]["live"]
-        self._logger.info(f'Successfully created new Padlet map at "{url}".')
+        # If flag set to true, create new Padlet map of places
+        if make_padlet:
 
-        # Log successful completion
-        self._logger.info(
-            f"Location fetch completed successfully. {len(bins)} "
-            "bin(s) mapped on Padlet platform."
-        )
+            # Log into Padlet
+            self._logger.info("Instantiating new Padlet client.")
+            padlet_client = PadletClient(self._logger)
+
+            # Add places to new Padlet map
+            self._logger.info("Creating new Padlet map and adding places as markers.")
+            board = padlet_client.add_board_with_posts(bins)
+            url = board["data"]["attributes"]["webUrl"]["live"]
+            self._logger.info(f'Successfully created new Padlet map at "{url}".')
+            self._logger.info(f"{len(bins)} bin(s) mapped on Padlet platform.")
+
+        # Log successful completion and end process
+        self._logger.info("Process completed successfully.")
         exit(0)

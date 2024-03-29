@@ -10,8 +10,8 @@ services:
     ports:
       - "5432:5432"
 
-  # BACKEND
-  backend:
+  # PIPELINE
+  pipeline:
     restart: "no"
     environment:
       - DJANGO_SECRET_KEY=local
@@ -22,15 +22,13 @@ services:
       - POSTGRES_HOST=postgis
       - POSTGRES_CHECK_TIMEOUT=120
     build:
-      context: backend
+      context: pipeline
     volumes:
-      - ./backend:/backend
-      - ./data:/data
+      - ./pipeline:/perpetual/pipeline
+      - ./data:/perpetual/data
     depends_on:
       - postgis
       - pgadmin
-    profiles:
-      - backend
     env_file:
       - .env
 

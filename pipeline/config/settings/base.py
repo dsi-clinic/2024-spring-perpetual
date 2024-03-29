@@ -15,7 +15,7 @@ class BaseConfig(Configuration):
 
     # File paths
     BASE_DIR = Path(__file__).parents[3]
-    PROJECT_DIR = BASE_DIR / "backend"
+    PROJECT_DIR = BASE_DIR / "pipeline"
     DATA_DIR = BASE_DIR / "data"
     POI_DIR = DATA_DIR / "poi"
     CATEGORIES_DIR = DATA_DIR / "categories"
