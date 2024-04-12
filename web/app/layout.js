@@ -1,7 +1,8 @@
-import { Inter } from "next/font/google";
-import { UserProvider } from '@auth0/nextjs-auth0/client';
+import { Inter, Pavanam } from "next/font/google";
 import { Suspense } from "react";
 import "./globals.css";
+import Nav from '../components/nav';
+import Providers from "./providers";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -12,16 +13,17 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
-      <UserProvider>
         <body className={inter.className}>
-          <div className="fixed h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-cyan-100" />
-          <main className="flex min-h-screen w-full flex-col items-center justify-center py-32">
-            {children}
-          </main>
+          <Providers>
+            <Nav />
+            <main className="flex flex-col min-h-screen w-full flex-col items-center justify-center py-32 px-8">
+              {children}
+            </main>
+          </Providers>              
         </body>
-      </UserProvider>
     </html>
   );
 }
