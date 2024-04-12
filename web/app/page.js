@@ -1,9 +1,10 @@
 import Image from "next/image";
 
+
 export default function Home() {
   return (
     <>
-      <div className="z-10 w-full max-w-xl px-5 xl:px-0 flex flex-col justify-center items-center">
+      <div className="bg-gradient-to-br from-indigo-50 via-white to-cyan-100 z-10 flex-grow max-w-xl px-5 xl:px-0 flex flex-col justify-center items-center">
         <h1
           className="animate-fade-up bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent drop-shadow-sm [text-wrap:balance] md:text-7xl md:leading-[5rem] p-1"
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
