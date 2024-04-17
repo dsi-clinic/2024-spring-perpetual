@@ -63,6 +63,6 @@ def dbscan_clustering(data, eps=300, min_samples=10, plot=False):
 
 
 if __name__ == "__main__":
-    data = pd.read_csv("notebooks/utils/foot-traffic/hilo_processed.csv")
+    data = pd.read_parquet("notebooks/utils/foot-traffic/hilo_full_patterns.parquet")
     data_cleaned = data.dropna(subset=['longitude', 'latitude'])
     dbscan_clustering(data_cleaned)

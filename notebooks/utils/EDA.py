@@ -94,6 +94,9 @@ def plot_hexbin(data_df, gridsize=50, zoom=12):
 # Example command line input:
 # plot_hexbin(dataset, gridsize=50, zoom=12)
 
+if __name__ == "__main__":
+    main()
+
 
 def plot_stdev_ellipse(data_df, show_plot=True, save_plot=False, filename='ellipse_plot.png'):
     """
