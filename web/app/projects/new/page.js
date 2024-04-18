@@ -13,6 +13,10 @@ export default function ProjectFormPage() {
     name: yup.string().required("Name is a required field.").min(1).max(255),
     description: yup.string().max(1000),
     geography: yup.string().required("Must enter at least one geography."),
+    categories: yup.array(yup.string()),
+    maxNumBins: yup.number().required().min(1),
+    minBinDistance: yup.number().required().min(1),
+    providers: yup.array(yup.string()),
   });
 
   const {
@@ -26,6 +30,25 @@ export default function ProjectFormPage() {
       name: "",
       description: "",
       geography: "",
+      categories: [
+        "k12",
+        "universities",
+        "residential",
+        "hotels",
+        "offices",
+        "parksrecreation",
+        "groceries",
+        "pharmacies",
+        "libraries",
+        "medical",
+        "recycling",
+        "airports",
+        "busterminals",
+        "trainstations",
+      ],
+      maxNumBins: 300,
+      minBinDistance: 25,
+      providers: ["google", "tomtom", "tripadvisor", "yelp"],
     },
   });
 
@@ -89,6 +112,11 @@ export default function ProjectFormPage() {
             />
           )}
         />
+        <h3 className="text-slate-600 text-lg font-bold tracking-[-0.02em]">Geographic Extent</h3>
+        <p className="text-foreground-500">
+          Search for a municipality, census-designated place, or county by name and then edit its geographic boundary if
+          needed.
+        </p>
         <Controller
           name="geography"
           control={control}
@@ -96,8 +124,7 @@ export default function ProjectFormPage() {
             <Input
               isInvalid={!!errors?.geography}
               type="search"
-              label="Geographic Extent"
-              placeholder="Search for a municipality, county, or other geography and edit boundary as necessary"
+              placeholder="Example: Hilo, Hawaii"
               errorMessage={errors?.geography?.message}
               size="lg"
               variant="underlined"
@@ -116,21 +143,108 @@ export default function ProjectFormPage() {
           style={{ width: "100%", height: 400 }}
           mapStyle={style}
         />
-        <h3 className="text-slate-600 text-lg font-bold tracking-[-0.02em]">Initial Bin Placements</h3>
+        <h3 className="text-slate-600 text-lg font-bold tracking-[-0.02em]">Initial Outdoor Bin Placement</h3>
+        <p className="text-foreground-500">
+          In addition to foodware using establishments, what types of locations should receive outdoor bins?
+        </p>
         <Controller
           name="categories"
           control={control}
           render={({ field }) => (
-            <CheckboxGroup label="Select Categories" defaultValue={["hotel", "residential"]} {...field}>
-              <div className="grid gap-2">
-                <p className="italic">Education</p>
-                <Checkbox value="k12">Preschools</Checkbox>
-                <Checkbox value="k12">K-12 Schools</Checkbox>
-                <Checkbox value="universities">Colleges and Universities</Checkbox>
-                <Checkbox value="residential">Large Residential Dwellings</Checkbox>
-                <Checkbox value="hotel">Large Hotels</Checkbox>
-                <Checkbox value="">San Francisco</Checkbox>
+            <CheckboxGroup label="" {...field}>
+              <div className="grid grid-cols-2 items-start">
+                <div className="grid gap-2">
+                  <p className="font-bold">Education</p>
+                  <Checkbox value="preschools">Daycares and Preschools</Checkbox>
+                  <Checkbox value="k12">K-12 Schools</Checkbox>
+                  <Checkbox value="universities">Colleges and Universities</Checkbox>
+                  <Spacer y={1} />
+                  <p className="font-bold">Lodging</p>
+                  <Checkbox value="residential">Large Residential Dwellings</Checkbox>
+                  <Checkbox value="hotels">Large Hotels</Checkbox>
+                  <Spacer y={1} />
+                  <p className="font-bold">Workplaces</p>
+                  <Checkbox value="offices">Office Complexes</Checkbox>
+                  <Spacer y={1} />
+                  <p className="font-bold">Attractions</p>
+                  <Checkbox value="casinos">Casinos</Checkbox>
+                  <Checkbox value="movies">Movie Theaters</Checkbox>
+                  <Checkbox value="museums">Museums</Checkbox>
+                  <Checkbox value="stadiums">Stadiums</Checkbox>
+                  <Checkbox value="parksrecreation">Parks and Recreation</Checkbox>
+                  <Checkbox value="zoos">Zoos</Checkbox>
+                </div>
+                <div className="grid gap-2">
+                  <p className="font-bold">Shopping</p>
+                  <Checkbox value="groceries">Big Box Groceries</Checkbox>
+                  <Checkbox value="pharmacies">Pharmacies</Checkbox>
+                  <Spacer y={1} />
+                  <p className="font-bold">Transportation</p>
+                  <Checkbox value="airports">Airports</Checkbox>
+                  <Checkbox value="busterminals">Bus Terminals</Checkbox>
+                  <Checkbox value="trainstations">Train Stations</Checkbox>
+                  <Spacer y={1} />
+                  <p className="font-bold">Services</p>
+                  <Checkbox value="medical">Hospitals and Medical Centers</Checkbox>
+                  <Checkbox value="libraries">Libraries</Checkbox>
+                  <Checkbox value="postoffice">Post Offices</Checkbox>
+                  <Checkbox value="mailboxes">Mail Dropboxes</Checkbox>
+                  <Checkbox value="recycling">Recycling Dropoff Sites</Checkbox>
+                </div>
               </div>
+            </CheckboxGroup>
+          )}
+        />
+        <p className="text-foreground-500">
+          What is the maximum number of outdoor bins that should be returned for the initial map?{" "}
+        </p>
+        <Controller
+          name="maxNumBins"
+          control={control}
+          render={({ field }) => (
+            <Input
+              isInvalid={!!errors?.maxNumBins}
+              type="number"
+              label=""
+              errorMessage={errors?.maxNumBins?.message}
+              size="lg"
+              variant="underlined"
+              min={1}
+              {...field}
+            />
+          )}
+        />
+        <p className="text-foreground-500">
+          What is the minimum distance in meters that should exist between each bin?{" "}
+        </p>
+        <Controller
+          name="minBinDistance"
+          control={control}
+          render={({ field }) => (
+            <Input
+              isInvalid={!!errors?.minBinDistance}
+              type="number"
+              label=""
+              errorMessage={errors?.minBinDistance?.message}
+              size="lg"
+              variant="underlined"
+              min={1}
+              {...field}
+            />
+          )}
+        />
+        <p className="text-foreground-500">
+          <span className="font-bold">(Advanced)</span> What providers should be used to fetch the location data?
+        </p>
+        <Controller
+          name="providers"
+          control={control}
+          render={({ field }) => (
+            <CheckboxGroup label="" {...field}>
+              <Checkbox value="google">Google</Checkbox>
+              <Checkbox value="tomtom">TomTom</Checkbox>
+              <Checkbox value="tripadvisor">TripAdvisor</Checkbox>
+              <Checkbox value="yelp">Yelp</Checkbox>
             </CheckboxGroup>
           )}
         />
