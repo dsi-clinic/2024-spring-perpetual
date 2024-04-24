@@ -72,6 +72,9 @@ def summarize_clusters(gdf):
     # Filter out the noise points
     clusters = gdf[gdf['cluster'] != -1]
 
+    if clusters.empty:
+        return pd.DataFrame(columns=['cluster_label', 'num_points', 'geometry'])
+
     # Group by cluster label
     grouped = clusters.groupby('cluster')
 
@@ -103,28 +106,25 @@ def plot_cluster_centroids(cluster_summary_df):
     # Create a plot
     fig, ax = plt.subplots(figsize=(10, 8))
 
+    # Adjust marker size based on the number of points, ensuring visibility
+    marker_sizes = gdf['num_points'] / gdf['num_points'].max() * 100  # Scale marker size
+
     # Plot each centroid
-    gdf.plot(ax=ax, color='blue', markersize=gdf['num_points']/10, alpha=0.6)  # Adjust marker size by number of points
+    gdf.plot(ax=ax, color='blue', markersize=marker_sizes, alpha=0.6)
 
     # Annotate the centroid with the number of points in the cluster
     for idx, row in gdf.iterrows():
-        ax.text(row.geometry.x, row.geometry.y, f' {row["num_points"]}', fontsize=8, ha='left')
+        ax.text(row.geometry.x, row.geometry.y, f'{row["num_points"]}', fontsize=8, ha='left')
 
     # Add a basemap
     ctx.add_basemap(ax, crs=gdf.crs.to_string(), source=ctx.providers.CartoDB.Positron)
 
     # Set plot parameters
     ax.set_title('Cluster Centroids with Number of Points')
-    ax.axis('off')  # Turn off axis for better visual appearance
+    ax.axis('off') 
 
     plt.show()
 
-# group by for labels, discard clusters --> new df
-# new function to restructure dataframe
-# each row is a cluster (columns: num_points, cluster label, geometry)
-# plot cluster centroids using new df (also number of points in each cluster, visualize diff
-# change opacity etc, add noise if not too many points)
-# save this algorithm output to look at
 
 def plot_clusters(summary_df, filename):
     gdf = gpd.GeoDataFrame(summary_df, geometry='geometry', crs="EPSG:4326")
@@ -140,10 +140,6 @@ def plot_clusters(summary_df, filename):
 
     # Manually setting zoom level
     ctx.add_basemap(ax, source=ctx.providers.CartoDB.Positron, zoom=10)
-    
-    # Optionally setting spatial limits
-    ax.set_xlim([gdf.geometry.bounds.minx.min(), gdf.geometry.bounds.maxx.max()])
-    ax.set_ylim([gdf.geometry.bounds.miny.min(), gdf.geometry.bounds.maxy.max()])
 
     plt.savefig(filename)
     plt.show()
@@ -171,17 +167,17 @@ if __name__ == "__main__":
     # Perform clustering
     clustered_gdf = perform_hdbscan(data, min_cluster_size=100, min_samples=20, filename='hilo_fall_clusters.geojson', save_output=False)
 
-    # Summarize the clusters
+    # Restructure dataset and get centroids
     cluster_summary = summarize_clusters(clustered_gdf)
+    print(cluster_summary)
 
-    # Plot the cluster centroids
-    plot_clusters(cluster_summary, "clusters.png")
+     # Plot the cluster centroids 
+     # Currently only shows an empty graph
+    plot_cluster_centroids(cluster_summary)
 
-    #eps = 500
-    #min_samples = 20
-    #gdf = perform_dbscan(data_cleaned, eps, min_samples)
-    #filename = f'hilo_dbscan_eps{eps}_min{min_samples}.png'
-    #plot_clusters(gdf, eps, min_samples, filename)
+    # Plot the clusters and save - doesn't work
+    # plot_clusters(cluster_summary, "hilo_fall.png")
+
     # Not functioning yet - plots a variety of graphs
     #eps_range= [500, 1000, 2000, 3000]
     #num_batches = 5
