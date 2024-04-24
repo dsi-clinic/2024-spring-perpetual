@@ -26,7 +26,7 @@ export default function Nav() {
       </NavbarBrand>
       <NavbarContent justify="right">
         <NavbarItem>
-          <Link color="primary" href="#" aria-current="page">
+          <Link color="primary" href="/projects" aria-current="page">
             Dashboard
           </Link>
         </NavbarItem>

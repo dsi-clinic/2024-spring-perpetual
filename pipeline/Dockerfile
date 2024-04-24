@@ -23,7 +23,8 @@ WORKDIR /perpetual/pipeline
 
 # Install requirements based on declared environment
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir -r requirements.txt --default-timeout=100
 
 # Copy remaining application code to container
 COPY . .

@@ -23,6 +23,7 @@ geopandas
 shapely
 geodatasets
 scikit-learn
+pyarrow
 
 # Django
 psycopg2-binary
@@ -30,6 +31,7 @@ django
 django-configurations
 django-cors-headers
 django-geo
+django-q2
 
 # Google Cloud
 google

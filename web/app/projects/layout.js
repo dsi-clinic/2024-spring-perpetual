@@ -8,7 +8,7 @@ export default function ProjectsLayout({ children }) {
   return (
     <div className="flex flex-col">
       <Nav />
-      <main className="flex flex-col self-center justify-center items-center py-32 px-8 w-full">{children}</main>
+      <main className="flex flex-col self-center justify-center items-center py-16 px-8 w-full">{children}</main>
     </div>
   );
 }
