@@ -7,6 +7,7 @@ from pointpats import centrography
 import contextily as ctx
 import pandas as pd
 import argparse
+import matplotlib.pyplot as plt
 
 def process_parquet(dataset):
     """
@@ -26,9 +27,6 @@ def process_parquet(dataset):
     
     return expanded_df
 
-
-import matplotlib.pyplot as plt
-import contextily
 
 def plot_hexbin(data_df, gridsize=50, zoom=12):
     """
@@ -53,7 +51,7 @@ def plot_hexbin(data_df, gridsize=50, zoom=12):
     )
 
     # Add basemap
-    contextily.add_basemap(ax, crs='EPSG:4326', source=contextily.providers.CartoDB.Positron, zoom=zoom)
+    ctx.add_basemap(ax, crs='EPSG:4326', source=ctx.providers.CartoDB.Positron, zoom=zoom)
 
     # Add a color bar to show the scale
     plt.colorbar(hxb)
