@@ -15,7 +15,7 @@ from common.logger import LoggerFactory
 from common.storage import IDataStoreFactory
 from foodware.classification.label import filter
 from foodware.mapping.padlet import PadletClient
-from foodware.models import FoodwareModel
+from foodware.models import FoodwareProject
 from foodware.places import IPlacesProviderFactory
 
 
@@ -50,8 +50,8 @@ class Command(BaseCommand):
         super().__init__(*args, **kwargs)
 
     def add_arguments(self, parser: CommandParser) -> None:
-        """Requires the argument `model`, which refers to a unique identifier
-        for the foodware model. Also provides an option, `--providers` (`-p`),
+        """Requires the argument `project`, which refers to a unique identifier
+        for the foodware project. Also provides an option, `--providers` (`-p`),
         to fetch location data from one or more selected sources. Valid
         choices include:
 
@@ -70,7 +70,7 @@ class Command(BaseCommand):
         Returns:
             `None`
         """
-        parser.add_argument("model")
+        parser.add_argument("project")
         parser.add_argument(
             "-p",
             "--providers",
@@ -91,19 +91,19 @@ class Command(BaseCommand):
         Returns:
             `None`
         """
-        # Fetch model corresponding to id
+        # Fetch project corresponding to id
         try:
-            model_name = options["model"]
-            self._logger.info(f'Fetching foodware model "{model_name}".')
-            model = FoodwareModel.objects.get(name=model_name)
-        except FoodwareModel.DoesNotExist:
-            self._logger.error(f'No model found with name "{model_name}".')
+            project_id = options["project"]
+            self._logger.info(f'Fetching foodware project "{project_id}".')
+            project = FoodwareProject.objects.get(id=project_id)
+        except FoodwareProject.DoesNotExist:
+            self._logger.error(f'No model found with id "{project_id}".')
             exit(1)
 
-        # Parse model's geographic boundary into Shapely object
+        # Parse project's geographic boundary into Shapely object
         try:
             self._logger.info("Parsing model geography boundary.")
-            polygon = wkt.loads(model.boundary.wkt)
+            polygon = wkt.loads(project.locale.geometry.wkt)
         except AttributeError as e:
             self._logger.error(
                 f'Unable to convert model boundary to Shapely object. "{e}".'
@@ -117,7 +117,7 @@ class Command(BaseCommand):
         for provider in options["providers"]:
 
             # Define relative paths to output POI files within data directory
-            model_fpath = f"{settings.POI_DIR}/{model_name}"
+            model_fpath = f"{settings.POI_DIR}/{project_id}"
             provider_poi_clean_fpath = f"{model_fpath}/{provider}_clean.json"
             provider_poi_raw_fpath = f"{model_fpath}/{provider}_raw.json"
             provider_err_fpath = f"{model_fpath}/{provider}_errors.json"
