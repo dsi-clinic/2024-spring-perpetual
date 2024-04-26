@@ -274,7 +274,7 @@ class GooglePlacesClient(IPlacesProvider):
         # Otherwise, extract business data from response body JSON
         return data["places"], []
 
-    def find_places_in_geography(
+    def nearby_search(
         self, geo: Union[Polygon, MultiPolygon]
     ) -> Tuple[List[Dict], List[Dict]]:
         """Locates all POIs with a review within the given geography.

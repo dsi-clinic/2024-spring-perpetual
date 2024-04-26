@@ -56,6 +56,10 @@ class Place:
     """A link to more information about the place.
     """
 
+    notes: Optional[str] = None
+    """Additional information to include about the location
+    """
+
 
 @dataclass
 class PlacesSearchResult:
@@ -90,16 +94,35 @@ class IPlacesProvider(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def find_places_in_geography(
-        self, geo: Union[Polygon, MultiPolygon]
+    def text_search(
+        self, query: str, restriction: Optional[Union[Polygon, MultiPolygon]] = None
     ) -> PlacesSearchResult:
+        """Searches for one or more places using a query string
+        and an optional geography to confine the search area.
+        Implementation varies by provider.
+
+        Args:
+            query (`str`): The search phrase
+                (e.g., "KEN'S HOUSE OF PANCAKES, 1730 KAMEHAMEHA AVE, HILO, HI").
+
+            geo (`Polygon` or `MultiPolygon`): The search boundary. Defaults to `None`.
+
+        Returns:
+            (`PlacesSearchResult`): The result of the geography query. Contains
+                a raw list of retrieved places, a list of cleaned places,
+                and a list of any errors that occurred.
+        """
+        raise NotImplementedError
+
+    @abstractmethod
+    def nearby_search(self, geo: Union[Polygon, MultiPolygon]) -> PlacesSearchResult:
         """Locates all POIs within the given geography.
 
         Args:
             geo (`Polygon` or `MultiPolygon`): The boundary.
 
         Returns:
-            (`PlacesResult`): The result of the geography query. Contains
+            (`PlacesSearchResult`): The result of the geography query. Contains
                 a raw list of retrieved places, a list of cleaned places,
                 and a list of any errors that occurred.
         """
