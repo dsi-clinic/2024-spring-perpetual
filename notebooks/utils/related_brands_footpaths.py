@@ -7,18 +7,18 @@ import webbrowser
 import os
 import requests
 import itertools
+import polyline
 
-# Function to create a df for top businesses with highest visit counts and their top 2 related brands
+
+# Function to create a df for top businesses with highest visit counts and their top related brands
 def find_top_businesses_with_related_brands(data):
-    # Step 1: Identify the top ~20 businesses by visit counts
-    # Now using 'safegraph_place_id' to ensure unique identification of places
     top_visited = data.sort_values(by='raw_visit_counts', ascending=False).drop_duplicates(subset='safegraph_place_id')
     top_visited = top_visited.head(10)
     
     # Initialize a list to hold the result
     results = []
 
-    # Step 2: For each of the top businesses, find the top related brand based on visit counts
+    # For each of the top 10 businesses, find the top related brand based on visit counts
     for index, business in top_visited.iterrows():
         # Parse the JSON data in the 'related_same_day_brand' column
         try:
@@ -33,7 +33,7 @@ def find_top_businesses_with_related_brands(data):
             # Find the matching business entry for the related brand using 'location_name'
             related_brand_info = data[data['location_name'] == row['Brand']].iloc[0]
             result = {
-                'Safegraph Place ID': business['safegraph_place_id'],  # Include safegraph_place_id
+                'Safegraph Place ID': business['safegraph_place_id'],  
                 'Main Business': business['location_name'],
                 'Main Latitude': business['latitude'],
                 'Main Longitude': business['longitude'],
@@ -48,14 +48,13 @@ def find_top_businesses_with_related_brands(data):
 
 # Create a base map
 def generate_base_map(default_location=[37.77, -122.41], default_zoom_start=12):
-    base_map = folium.Map(location=default_location, control_scale=True, zoom_start=default_zoom_start)
-    return base_map
+    return folium.Map(location=default_location, control_scale=True, zoom_start=default_zoom_start)
 
-# Function to add markers to the map
+
+# Add points to map
 def add_points_to_map(df, map_obj):
-    """Adds markers to the folium map for main businesses and their related brands."""
+    # Adding markers for main businesses
     for _, row in df.iterrows():
-        # Adding markers for main businesses
         if pd.notna(row['Main Latitude']) and pd.notna(row['Main Longitude']):
             folium.Marker(
                 location=[row['Main Latitude'], row['Main Longitude']],
@@ -70,42 +69,39 @@ def add_points_to_map(df, map_obj):
                 popup=f"Related Brand: {row['Related Brand']}",
                 icon=folium.Icon(color='blue')  # Blue for related brands
             ).add_to(map_obj)
-    
-    return map_obj
 
 
-def compute_fastest_foot_routes(df, travel_mode='foot'):
+# Compute fastest foot routes
+def compute_fastest_foot_routes(df):
     routes = []
-    osrm_url = f"http://router.project-osrm.org/route/v1/{travel_mode}/"
+    osrm_url = "http://router.project-osrm.org/route/v1/foot/"
 
     for index, row in df.iterrows():
-        request_url = f"{osrm_url}{row['Main Longitude']},{row['Main Latitude']};{row['Related Brand Longitude']},{row['Related Brand Latitude']}?overview=full&geometries=geojson"
+        if pd.notna(row['Main Latitude']) and pd.notna(row['Main Longitude']) and pd.notna(row['Related Brand Latitude']) and pd.notna(row['Related Brand Longitude']):
+            request_url = f"{osrm_url}{row['Main Longitude']},{row['Main Latitude']};{row['Related Brand Longitude']},{row['Related Brand Latitude']}?overview=full"  # 'full' for complete route geometry
+            try:
+                response = requests.get(request_url)
+                response.raise_for_status()
+                route_data = response.json()
 
-        try:
-            response = requests.get(request_url)
-            response.raise_for_status()
-
-            route_data = response.json()
-            print("API Response:", route_data)  # Debug: Print API response to check data
-
-            if route_data['routes']:
-                first_route = route_data['routes'][0]
-                if 'geometry' in first_route:
+                if 'routes' in route_data and route_data['routes']:
+                    first_route = route_data['routes'][0]
+                    geometry = first_route.get('geometry')  # This is often an encoded polyline
+                    decoded_geometry = polyline.decode(geometry)  # Decoding the polyline to a list of (lat, lon) tuples
+                    
                     route_info = {
                         'Main Business': row['Main Business'],
                         'Related Brand': row['Related Brand'],
                         'Distance': first_route['distance'],
                         'Duration': first_route['duration'],
-                        'Geometry': first_route['geometry']
+                        'Geometry': decoded_geometry  # Store the decoded geometry
                     }
                     routes.append(route_info)
                 else:
-                    print(f"No geometry data for route from {row['Main Business']} to {row['Related Brand']}")
-            else:
-                print(f"No routes found for {row['Main Business']} to {row['Related Brand']}")
-        except requests.RequestException as e:
-            print(f"Request failed: {e}")
-
+                    print(f"No route found for {row['Main Business']} to {row['Related Brand']}")
+            except requests.RequestException as e:
+                print(f"Request failed: {e}")
+    
     return pd.DataFrame(routes)
 
 
@@ -115,9 +111,9 @@ def plot_routes_on_map(df_routes):
     
     # Create the base map
     if not df_routes.empty:
-        first_lat = df_routes.iloc[0]['Geometry']['coordinates'][0][1]
-        first_lon = df_routes.iloc[0]['Geometry']['coordinates'][0][0]
-        map = folium.Map(location=[first_lat, first_lon], zoom_start=12)
+        first_lat = df_routes.iloc[0]['Geometry'][0][0]
+        first_lon = df_routes.iloc[0]['Geometry'][0][1]
+        map_obj = folium.Map(location=[first_lat, first_lon], zoom_start=12)
         
         # Add a legend to the map
         legend_html = '''
@@ -129,91 +125,67 @@ def plot_routes_on_map(df_routes):
                       &nbsp; Related Brand &nbsp; <i class="fa fa-map-marker fa-2x" style="color:blue"></i>
         </div>
         '''
-        map.get_root().html.add_child(folium.Element(legend_html))
+        map_obj.get_root().html.add_child(folium.Element(legend_html))
 
         # Add the routes to the map
         for index, row in df_routes.iterrows():
-            route_color = next(colors)  # Get a color from the cycle
+            route_color = next(colors) 
             popup_text = f"Route from {row['Main Business']} to {row['Related Brand']}"
             route_line = folium.PolyLine(
-                locations=[(lat, lon) for lon, lat in row['Geometry']['coordinates']],
+                locations=row['Geometry'],
                 weight=5,
                 color=route_color,
                 popup=folium.Popup(popup_text, parse_html=True)  # Add popup to the route
-            ).add_to(map)
+            ).add_to(map_obj)
 
             # Add markers for the start (main business) and end (related brand) points
             folium.Marker(
-                location=[row['Geometry']['coordinates'][0][1], row['Geometry']['coordinates'][0][0]],
-                popup=f"{row['Main Business']}",
+                location=[row['Geometry'][0][0], row['Geometry'][0][1]],
+                popup=f"Main Business: {row['Main Business']}",
                 icon=folium.Icon(color='red')
-            ).add_to(map)
+            ).add_to(map_obj)
 
             folium.Marker(
-                location=[row['Geometry']['coordinates'][-1][1], row['Geometry']['coordinates'][-1][0]],
-                popup=f"{row['Related Brand']}",
+                location=[row['Geometry'][-1][0], row['Geometry'][-1][1]],
+                popup=f"Related Brand: {row['Related Brand']}",
                 icon=folium.Icon(color='blue')
-            ).add_to(map)
+            ).add_to(map_obj)
 
-        return map
+        return map_obj
     else:
         print("No routes to display.")
         return None
 
 
 if __name__ == "__main__":
-    # Load data
+    # Example usage of the functions
+    # Load your dataset
     data = pd.read_parquet("data/foot-traffic/hilo_full_patterns.parquet")
 
-    # Find top businesses and their related brands
+    # Find top businesses and related brands
     top_businesses_related_brands = find_top_businesses_with_related_brands(data)
 
-    # Print the resulting DataFrame to verify correct loading and processing
-    print(top_businesses_related_brands)
+    # Generate a base map centered on the average location of the main businesses
+    if not top_businesses_related_brands.empty:
+        map_obj = generate_base_map([top_businesses_related_brands['Main Latitude'].mean(), top_businesses_related_brands['Main Longitude'].mean()])
+        add_points_to_map(top_businesses_related_brands, map_obj)
+        map_obj.save("map.html")
 
-    # Generate a base map centered around the average location from the data
-    #default_location = [top_businesses_related_brands['Main Latitude'].mean(), top_businesses_related_brands['Main Longitude'].mean()]
-    #map = generate_base_map(default_location=default_location, default_zoom_start=12)
-
-    # Add points to the map for both main businesses and related brands
-    #map = add_points_to_map(top_businesses_related_brands, map)
-
-    # Define the directory to save the map (for just the points)
-    #save_directory = "data/foot-traffic/plots"
-    #if not os.path.exists(save_directory):
-        #os.makedirs(save_directory)  # Create the directory if it does not exist
-
-    # Define the file path (for just the points)
-    #map_file_path = os.path.join(save_directory, 'related_brands_hilo.html')
-
-    # Call the function to compute routes
-    df_routes = compute_fastest_foot_routes(top_businesses_related_brands)
-
-    # Plot the routes on the map
-    map = plot_routes_on_map(df_routes)
-
-    # Define the directory to save the map
-    save_directory = "data/foot-traffic/plots"
-    if not os.path.exists(save_directory):
-        os.makedirs(save_directory)  # Create the directory if it does not exist
-
-    # Define the file path
-    map_file_path = os.path.join(save_directory, 'hilo_related_brands_footpaths.html')
-
-    # Save the map
-    if map is not None:
-        map.save(map_file_path)
-        # Open the saved map in the default web browser
-        webbrowser.open('file://' + os.path.realpath(map_file_path))
-    else:
-        print("Map could not be generated.")
+    # Compute fastest routes
+    routes = compute_fastest_foot_routes(top_businesses_related_brands)
     
-    # Optionally save the map with points (no foot paths)
-    #map.save(map_file_path)
+    # Define the path where the map should be saved
+    save_path = "data/foot-traffic/plots/routes_map.html"
 
-    # Automatically open the saved map with points (no foot paths) in the default web browser
-    # webbrowser.open('file://' + os.path.realpath(map_file_path))
+    # Ensure the directory exists
+    os.makedirs(os.path.dirname(save_path), exist_ok=True)
 
-
-    
-    
+    # Plot routes on map and save to HTML
+    if not routes.empty:
+        route_map = plot_routes_on_map(routes)
+        if route_map is not None:
+            full_path = os.path.abspath(save_path)  # Get the absolute path of the file
+            route_map.save(full_path)  # Save the map as an HTML file
+            print(f"Route map saved successfully. You can view it by opening this file in a web browser: {full_path}")
+        else:
+            print("Failed to create routes map.")
