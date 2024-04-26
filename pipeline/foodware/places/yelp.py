@@ -205,9 +205,7 @@ class YelpClient(IPlacesProvider):
             page_idx += 1
             time.sleep(0.5)
 
-    def find_places_in_geography(
-        self, geo: Union[Polygon, MultiPolygon]
-    ) -> PlacesSearchResult:
+    def nearby_search(self, geo: Union[Polygon, MultiPolygon]) -> PlacesSearchResult:
         """Locates all POIs with a review within the given geography.
         The Fusion API permits searching for POIs within a radius around
         a given point. Therefore, data is extracted by dividing the

@@ -140,7 +140,7 @@ class Command(BaseCommand):
             # Find places using provider
             self._logger.info(f"Requesting POI data from {provider} within boundary.")
             client = IPlacesProviderFactory.create(provider, self._logger)
-            result = client.find_places_in_geography(polygon)
+            result = client.nearby_search(polygon)
             self._logger.info(
                 f"{len(result.raw)} place(s) from {provider} "
                 f"found, with {len(result.clean)} remaining after "
