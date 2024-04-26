@@ -23,6 +23,7 @@ def process_parquet(dataset):
                        'raw_visit_counts', 'raw_visitor_counts', 'related_same_day_brand', 'date_range_start']
     df_subset = dataset[columns_to_keep].copy()
     df_subset['raw_visit_counts'] = pd.to_numeric(df_subset['raw_visit_counts'], errors='coerce').fillna(0).astype(int)
+    df_subset = df_subset.reset_index(drop=True)
     expanded_df = df_subset.loc[df_subset.index.repeat(df_subset['raw_visit_counts'])].reset_index(drop=True)
     
     return expanded_df
@@ -156,6 +157,18 @@ def main():
         season_df.to_csv(f"{args.output_path}_{season_name}.csv", index=False)  # Correctly reference season_name and season_df
 
     print("Data split into seasons and saved.")
+
+
+def split_into_months(df):
+    """
+    Takes a city foot traffic dataframe and splits it into 12 dataframes,
+    one for each month of the year.
+    """
+    df['month'] = df['date_range_start'].str[5:7].astype("Int64")  # Extract month from the date
+    months = {}
+    for month in range(1, 13):
+        months[month] = df[df['month'] == month]
+    return months
 
 
 if __name__ == "__main__":

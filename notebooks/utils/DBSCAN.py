@@ -1,5 +1,6 @@
 # Import necessary libraries
 import pandas as pd
+import numpy as np
 import geopandas as gpd
 import matplotlib.pyplot as plt
 from sklearn.cluster import DBSCAN
@@ -7,7 +8,7 @@ import utm
 import hdbscan
 import os
 import contextily as ctx
-import numpy as np
+
 
 def perform_hdbscan(data, min_cluster_size, min_samples, filename, save_output=True):
     """
@@ -26,7 +27,7 @@ def perform_hdbscan(data, min_cluster_size, min_samples, filename, save_output=T
 
     # Clean and sample dataset
     data = data.dropna(subset=['longitude', 'latitude'])
-    data = data.sample(n=100000, random_state=42)  # Sample 100,000 points randomly
+    #data = data.sample(n=100000, random_state=42)  # Sample 100,000 points randomly
 
     # Convert DataFrame to GeoDataFrame with longitude and latitude
     gdf = gpd.GeoDataFrame(
@@ -55,13 +56,13 @@ def perform_hdbscan(data, min_cluster_size, min_samples, filename, save_output=T
         # Save output to GeoJSON
         gdf.to_file(save_path, driver='GeoJSON')
 
-    return gdf
+    return gdf, utm_crs
 
 
 def summarize_clusters(gdf):
     """
     Summarizes the clusters in a GeoDataFrame that includes a 'cluster' label column.
-    
+
     Parameters:
     - gdf (gpd.GeoDataFrame): GeoDataFrame with a 'cluster' column where -1 indicates noise.
     
@@ -89,7 +90,8 @@ def summarize_clusters(gdf):
 
     return summary_df
 
-def plot_cluster_centroids(cluster_summary_df):
+
+def plot_cluster_centroids(cluster_summary_df, utm_crs):
     """
     Plots the centroids of clusters on a map, annotating each centroid with the number of points in the cluster,
     and overlays this on a basemap for geographical context.
@@ -97,9 +99,14 @@ def plot_cluster_centroids(cluster_summary_df):
     Parameters:
     - cluster_summary_df (pd.DataFrame): DataFrame with columns 'cluster_label', 'num_points', and 'geometry' (centroids).
     """
-    # Convert the DataFrame to a GeoDataFrame
-    gdf = gpd.GeoDataFrame(cluster_summary_df, geometry='geometry', crs="EPSG:4326")
     
+    # Assuming the centroid geometries are in latitude and longitude
+    gdf = gpd.GeoDataFrame(cluster_summary_df, geometry='geometry', crs=utm_crs)
+
+    # Check and handle NaNs or infinite values
+    if gdf.isna().any().any():
+        gdf.dropna(inplace=True)  # Drop NaNs
+
     # Convert CRS to EPSG:3857 for contextily
     gdf = gdf.to_crs(epsg=3857)
 
@@ -116,8 +123,12 @@ def plot_cluster_centroids(cluster_summary_df):
     for idx, row in gdf.iterrows():
         ax.text(row.geometry.x, row.geometry.y, f'{row["num_points"]}', fontsize=8, ha='left')
 
-    # Add a basemap
-    ctx.add_basemap(ax, crs=gdf.crs.to_string(), source=ctx.providers.CartoDB.Positron)
+    # Add a basemap with adjusted zoom if needed
+    try:
+        ctx.add_basemap(ax, crs=gdf.crs.to_string(), source=ctx.providers.CartoDB.Positron)
+    except ValueError:
+        # Handle potential ValueError if zoom level is too high
+        ctx.add_basemap(ax, crs=gdf.crs.to_string(), source=ctx.providers.CartoDB.Positron, zoom=12)  # A more reasonable, fixed zoom level
 
     # Set plot parameters
     ax.set_title('Cluster Centroids with Number of Points')
@@ -126,59 +137,5 @@ def plot_cluster_centroids(cluster_summary_df):
     plt.show()
 
 
-def plot_clusters(summary_df, filename):
-    gdf = gpd.GeoDataFrame(summary_df, geometry='geometry', crs="EPSG:4326")
-    gdf = gdf.to_crs(epsg=3857)
-
-    # Filtering out non-finite values
-    gdf = gdf[gdf['geometry'].x.notnull() & gdf['geometry'].y.notnull()]
-    gdf = gdf[(gdf['geometry'].x != np.inf) & (gdf['geometry'].x != -np.inf)]
-    gdf = gdf[(gdf['geometry'].y != np.inf) & (gdf['geometry'].y != -np.inf)]
-
-    fig, ax = plt.subplots(1, figsize=(10, 8))
-    gdf.plot(ax=ax, markersize=5, color='blue')  # Adjust marker size appropriately
-
-    # Manually setting zoom level
-    ctx.add_basemap(ax, source=ctx.providers.CartoDB.Positron, zoom=10)
-
-    plt.savefig(filename)
-    plt.show()
-
-
-# Example usage (assuming 'summary_df' is already computed and available):
-# plot_clusters(summary_df, 'cluster_centroids.png')
-
-def batch_cluster_and_plot(data, eps_range, num_batches):
-    """
-    Execute clustering and plotting for various eps and min_samples values.
-    """
-    batch_size = max(int(len(data) * 0.01), 1)
-    min_samples_range = range(batch_size, batch_size * (num_batches + 1), batch_size)
-
-    for eps in eps_range:
-        for min_samples in min_samples_range:
-            gdf = perform_hdbscan(data, eps, min_samples)
-            plot_path = f'hilo_dbscan_eps{eps}_min{min_samples}.png'
-            plot_clusters(gdf, eps, min_samples, plot_path)
-
 if __name__ == "__main__":
-    data = pd.read_csv("data/foot-traffic/output/hilo_seasonal_fall.csv")
-
-    # Perform clustering
-    clustered_gdf = perform_hdbscan(data, min_cluster_size=100, min_samples=20, filename='hilo_fall_clusters.geojson', save_output=False)
-
-    # Restructure dataset and get centroids
-    cluster_summary = summarize_clusters(clustered_gdf)
-    print(cluster_summary)
-
-     # Plot the cluster centroids 
-     # Currently only shows an empty graph
-    plot_cluster_centroids(cluster_summary)
-
-    # Plot the clusters and save - doesn't work
-    # plot_clusters(cluster_summary, "hilo_fall.png")
-
-    # Not functioning yet - plots a variety of graphs
-    #eps_range= [500, 1000, 2000, 3000]
-    #num_batches = 5
-    #batch_cluster_and_plot(data_cleaned, eps_range, num_batches)
+    main()
