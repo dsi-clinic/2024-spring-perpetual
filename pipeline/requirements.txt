@@ -23,6 +23,7 @@ geopandas
 shapely
 geodatasets
 scikit-learn
+haversine
 
 # Django
 psycopg2-binary
@@ -40,6 +41,7 @@ google-cloud-storage
 mapbox
 
 # WebDriver
+webdriver_manager
 selenium
 
 # Route Optimization
