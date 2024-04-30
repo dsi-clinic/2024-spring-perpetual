@@ -46,7 +46,7 @@ logger.addHandler(handler)
 # sys.path.append(str(Path(__file__).resolve().parents[1]))
 # Common imports are copied from the pipeline/common directory
 # import common.geometry as geomtry
-from common.geometry import BoundingBox # , convert_meters_to_degrees, convert_degrees_to_meters
+from common.geometry import BoundingBox, convert_meters_to_degrees #, convert_degrees_to_meters
 from common.logger import LoggerFactory
 from utils.common import PlacesSearchResult
 # data_path = Path(__file__).resolve().parents[2] / "data"
@@ -78,9 +78,10 @@ API_TRIP_NEARBY_SEARCH = "https://api.content.tripadvisor.com/api/v1/location/ne
 TRIP_HOTEL_SEARCH = "https://www.tripadvisor.com/Hotel_Review-g"
 # https://www.tripadvisor.com/Hotel_Review-g60583-d113098-Reviews-SCP_Hilo_Hotel-Hilo_Island_of_Hawaii_Hawaii.html
 BASE_URL = "https://www.tripadvisor.com"
-MAX_NUM_RESULTS_PER_REQUEST = 10
-MAX_SEARCH_RADIUS: float = 50_000 # In meters
-SEARCH_RADIUS_UNIT: str = "m"
+MAX_NUM_RESULTS_PER_REQUEST = 5
+MAX_SEARCH_RADIUS_METERS: float = 50_000
+MAX_SEARCH_RADIUS_MILES: float = 31.0686
+SEARCH_RADIUS_UNIT: str = "mi" # mi is miles, m is meters
 HAVERSINE_UNIT_METERS: str = Unit.METERS
 HAVERSINE_UNIT_DEGREES: str = Unit.DEGREES
 SECONDS_DELAY_PER_REQUEST: float = 0.5
@@ -115,9 +116,9 @@ class TripadvisorCity:
         self.hotel_info_lst = []
         self.count = 0
         self.failed_urls = []
-        # self._api_key = TRIPADVISOR_API_KEY
+        self._api_key = TRIPADVISOR_API_KEY
         # self._api_key = TRIPADVISOR_API_KEY_SEC
-        self._api_key = TRIPADVISOR_API_KEY_THIRD
+        # self._api_key = TRIPADVISOR_API_KEY_THIRD
         self._logger = LoggerFactory.get(__name__)
         self._max_num_results_per_request = MAX_NUM_RESULTS_PER_REQUEST
         self.miss_roomnum_log = None
@@ -419,6 +420,10 @@ class TripadvisorCity:
         return max(top_width, bottom_width, right_height, left_height)
     
     
+    def meters_to_miles(meters):
+        return meters / 1609.34
+    
+    
     def box_search_radius(self, box: BoundingBox):
         """_summary_
 
@@ -577,21 +582,33 @@ class TripadvisorCity:
         filtered_data, deduped_filtered_data = self.api_hotel_info(data)
         # Otherwise, if number of POIs returned equals max,
         # split box and recursively issue HTTP requests
-        if len(filtered_data) == MAX_NUM_RESULTS_PER_REQUEST:
+        ############################################################    
+        plot = [box.to_shapely()]
+        plot.append(self.geo)
+        # for cell in cells:
+        #     plot.append(cell.to_shapely())
+        plot.append(Point(box.center.lon, box.center.lat))
+        plot_gdf = gpd.GeoDataFrame(geometry=plot)
+        plot_gdf.plot(facecolor="none", edgecolor="black")
+        plt.savefig("plot.png")
+        ############################################################
+        if len(filtered_data) >= MAX_NUM_RESULTS_PER_REQUEST:
             pois = []
             pois_deduped = []
             errors = []
             sub_cells = box.split_along_axes(x_into=2, y_into=2)
-            ############################################################    
+            # ############################################################    
             plot = [cell.to_shapely() for cell in sub_cells]
             plot.append(box.to_shapely())
             plot.append(self.geo)
+            plot.append(Point(box.center.lon, box.center.lat))
+            plot.extend([Point(cell.center.lon, cell.center.lat) for cell in sub_cells])
             # for cell in cells:
             #     plot.append(cell.to_shapely())
             plot_gdf = gpd.GeoDataFrame(geometry=plot)
             plot_gdf.plot(facecolor="none", edgecolor="black")
             plt.savefig("plot.png")
-            ############################################################
+            # ############################################################
             for sub in sub_cells:
                 sub_hotels, sub_deduped_hotels, sub_errs = self.find_places_in_bounding_box(
                     sub, search_radius / 2
@@ -666,22 +683,26 @@ class TripadvisorCity:
         # return bbox
 
         # raise ValueError("This is a test")
-        box_radius_meters = self.box_search_radius(bbox)
-        if box_radius_meters > MAX_SEARCH_RADIUS:
-            box_radius_meters = MAX_SEARCH_RADIUS
+        ##############################################
+        # box_radius_meters = self.box_search_radius(bbox)
         # print(f"Box radius in meters: {box_radius_meters}")
-        box_side_degrees = self.box_side_size(bbox)
+        # if box_radius_meters > MAX_SEARCH_RADIUS:
+        #     box_radius_meters = MAX_SEARCH_RADIUS
+        # print(f"Box radius in meters: {box_radius_meters}")
+        # box_side_degrees = self.box_side_size(bbox)
+        ##############################################
         # raise ValueError("This is a test")
         
         # # Calculate length of square circumscribed by circle with the max search radius
-        # max_side_meters = (2**0.5) * MAX_SEARCH_RADIUS
+        box_side_meters = (2**0.5) * MAX_SEARCH_RADIUS_METERS
+        print(f"Box side in meters: {box_side_meters}")
 
         # # Use heuristic to convert length from meters to degrees at box's lower latitude
-        # deg_lat, deg_lon = convert_meters_to_degrees(max_side_meters, bbox.bottom_left)
+        deg_lat, deg_lon = convert_meters_to_degrees(box_side_meters, bbox.bottom_left)
 
         # # Take minimum value as side length (meters convert differently to
         # # lat and lon, and we want to avoid going over max radius)
-        # max_side_degrees = min(deg_lat, deg_lon)
+        box_side_degrees = min(deg_lat, deg_lon)
 
         # Divide box into grid of cells of approximately equal length and width
         # NOTE: Small size differences may exist due to rounding.
@@ -718,7 +739,7 @@ class TripadvisorCity:
             if cell.intersects_with(geo):
                 cell_pois, cell_deduped_pois, cell_errors = self.find_places_in_bounding_box(
                     box=cell,
-                    search_radius=box_radius_meters,
+                    search_radius=MAX_SEARCH_RADIUS_MILES,
                 )
                 hotel_lst.extend(cell_pois)
                 deduped_hotel_lst.extend(cell_deduped_pois)
@@ -1081,6 +1102,6 @@ def get_room_number(incomplete_hotel_lst, crwl_method):
 
 
 if __name__ == "__main__":
-    Hilo = TripadvisorCity("Hilo", "selenium")
+    Hilo = TripadvisorCity("Jersey City", "selenium")
     Hilo.find_places_in_geography(Hilo.geo)
     
