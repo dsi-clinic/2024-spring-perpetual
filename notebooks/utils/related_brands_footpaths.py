@@ -39,12 +39,13 @@ def find_top_businesses_with_related_brands(data):
                 'Main Longitude': business['longitude'],
                 'Related Brand': row['Brand'],
                 'Related Brand Latitude': related_brand_info['latitude'],
-                'Related Brand Longitude': related_brand_info['longitude']
+                'Related Brand Longitude': related_brand_info['longitude'],
+                'Related Brand Correlation': row['Count']
             }
             results.append(result)
     
     return pd.DataFrame(results)
-
+# make the # of top businesses to find a parameter
 
 # Create a base map
 def generate_base_map(default_location=[37.77, -122.41], default_zoom_start=12):
@@ -118,11 +119,13 @@ def plot_routes_on_map(df_routes):
         # Add a legend to the map
         legend_html = '''
         <div style="position: fixed; 
-                    bottom: 50px; left: 50px; width: 150px; height: 90px; 
+                    bottom: 50px; left: 50px; width: 170px; height: 140px; 
                     border:2px solid grey; z-index:9999; font-size:14px;
                     ">&nbsp; <b>Legend</b> <br>
                       &nbsp; Main Business &nbsp; <i class="fa fa-map-marker fa-2x" style="color:red"></i><br>
-                      &nbsp; Related Brand &nbsp; <i class="fa fa-map-marker fa-2x" style="color:blue"></i>
+                      &nbsp; Related Brand &nbsp; <i class="fa fa-map-marker fa-2x" style="color:blue"></i><br>
+                      &nbsp; Routes weighted <br>
+                      &nbsp; by correlation number
         </div>
         '''
         map_obj.get_root().html.add_child(folium.Element(legend_html))
@@ -131,10 +134,16 @@ def plot_routes_on_map(df_routes):
         for index, row in df_routes.iterrows():
             route_color = next(colors) 
             popup_text = f"Route from {row['Main Business']} to {row['Related Brand']}"
+            
+             # Calculate the opacity based on the related brand correlation integer
+            correlation_int = row.get('Related Brand Count', 1)  # Default to 1 if not present
+            opacity = min(max(correlation_int / 10, 0.3), 1.0)  # Scale between 0.3 and 1.0
+            
             route_line = folium.PolyLine(
                 locations=row['Geometry'],
                 weight=5,
                 color=route_color,
+                opacity=opacity,
                 popup=folium.Popup(popup_text, parse_html=True)  # Add popup to the route
             ).add_to(map_obj)
 
@@ -155,6 +164,8 @@ def plot_routes_on_map(df_routes):
     else:
         print("No routes to display.")
         return None
+# add save path and open in web browser using full path
+# specify name of graph
 
 
 if __name__ == "__main__":
@@ -169,13 +180,14 @@ if __name__ == "__main__":
     if not top_businesses_related_brands.empty:
         map_obj = generate_base_map([top_businesses_related_brands['Main Latitude'].mean(), top_businesses_related_brands['Main Longitude'].mean()])
         add_points_to_map(top_businesses_related_brands, map_obj)
-        map_obj.save("map.html")
+        # is this necessary? remove if not
+        map_obj.save("map.html") 
 
     # Compute fastest routes
     routes = compute_fastest_foot_routes(top_businesses_related_brands)
     
     # Define the path where the map should be saved
-    save_path = "data/foot-traffic/plots/routes_map.html"
+    save_path = "data/foot-traffic/plots/new_routes_map.html"
 
     # Ensure the directory exists
     os.makedirs(os.path.dirname(save_path), exist_ok=True)
@@ -189,3 +201,4 @@ if __name__ == "__main__":
             print(f"Route map saved successfully. You can view it by opening this file in a web browser: {full_path}")
         else:
             print("Failed to create routes map.")
+

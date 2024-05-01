@@ -27,7 +27,8 @@ def process_parquet(dataset):
     expanded_df = df_subset.loc[df_subset.index.repeat(df_subset['raw_visit_counts'])].reset_index(drop=True)
     
     return expanded_df
-
+# add save path
+# specify file name
 
 def plot_hexbin(data_df, gridsize=50, zoom=12):
     """
@@ -65,6 +66,8 @@ def plot_hexbin(data_df, gridsize=50, zoom=12):
 
 # Example command line input:
 # plot_hexbin(dataset, gridsize=50, zoom=12)
+# add optional save path
+# specify file name
 
 
 def plot_stdev_ellipse(data_df, show_plot=True, save_plot=False, filename='ellipse_plot.png'):
@@ -120,43 +123,8 @@ def plot_stdev_ellipse(data_df, show_plot=True, save_plot=False, filename='ellip
 
 # Example command line input:
 # plot_stdev_ellipse(path_to_dataset, show_plot=True, save_plot=True, filename='ellipse_plot.png')
-
-def split_into_seasons(df):
-    """
-    Takes a city foot traffic dataframe and splits it into 4 dataframes
-    (one for each season of the year)
-    """
-    df['month'] = df['date_range_start'].str[5:7].astype("Int64")
-    df_winter = df[df['month'] < 4]
-    df_spring = df[(df['month'] > 3) & (df['month'] < 7 )]
-    df_summer = df[(df['month'] > 6) & (df['month'] < 10 )]
-    df_fall = df[df['month'] > 9]
-    return df_winter, df_spring, df_summer, df_fall
-
-
-def main():
-    parser = argparse.ArgumentParser(description="Process data or split into seasons.")
-    parser.add_argument("action", choices=['process', 'split'], help="Action to perform: 'process' or 'split'")
-    parser.add_argument("input_path", type=str, help="Path to the input file")
-    parser.add_argument("output_path", type=str, help="Path to the output file", nargs='?')
-    
-    args = parser.parse_args()
-
-    if args.action == 'process':
-        raw_dataset = pd.read_parquet(args.input_path)
-        processed_df = process_parquet(raw_dataset)
-        processed_df.to_csv(args.output_path, index=False)
-        print(f"Processed dataset saved to {args.output_path}")
-    elif args.action == 'split':
-        df = pd.read_csv(args.input_path)
-        df_winter, df_spring, df_summer, df_fall = split_into_seasons(df)  # Capture the returned DataFrames
-        seasons = [df_winter, df_spring, df_summer, df_fall]
-        season_names = ['winter', 'spring', 'summer', 'fall']
-
-    for season_df, season_name in zip(seasons, season_names):
-        season_df.to_csv(f"{args.output_path}_{season_name}.csv", index=False)  # Correctly reference season_name and season_df
-
-    print("Data split into seasons and saved.")
+# add save path
+# specify file name
 
 
 def split_into_months(df):
@@ -169,7 +137,8 @@ def split_into_months(df):
     for month in range(1, 13):
         months[month] = df[df['month'] == month]
     return months
-
+# add save path
+# specify file name
 
 if __name__ == "__main__":
     main()
