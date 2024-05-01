@@ -1,4 +1,3 @@
-# from seleniumwire import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup as soup
 from selenium.webdriver.chrome.options import Options
@@ -9,27 +8,19 @@ import os
 import urllib.parse
 import random
 import requests
-import math
 from decimal import Decimal
 from typing import Dict, List, Tuple, Union
-from pprint import pprint
 from dotenv import load_dotenv
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 import json
 from pathlib import Path
 import time 
 import logging
 import sys
-import haversine as hs
-from haversine import Unit
 from shapely import MultiPolygon, Polygon, box, Point
 import geopandas as gpd
-# import matplotlib.pyplot as plt
 from matplotlib import pyplot as plt
 
 logging.basicConfig(level=logging.INFO, filename='trip_hotels.log', filemode='w', 
@@ -42,57 +33,46 @@ formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(messag
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 
+
 ### Custom imports ###
-# sys.path.append(str(Path(__file__).resolve().parents[1]))
-# Common imports are copied from the pipeline/common directory
-# import common.geometry as geomtry
 from common.geometry import BoundingBox, convert_meters_to_degrees #, convert_degrees_to_meters
 from common.logger import LoggerFactory
 from utils.common import PlacesSearchResult
-# data_path = Path(__file__).resolve().parents[2] / "data"
-
-
 from Smartproxy_residential.extension import proxies
+
 
 ### Constants ###
 ENV_PATH = Path(__file__).resolve().parents[1] / ".env"
-# ENV_PATH = Path(__file__).resolve().parents[2] / ".env"
 load_dotenv(dotenv_path=ENV_PATH)
-# print(ENV_PATH)
 TRIPADVISOR_API_KEY = os.getenv('TRIPADVISOR_API_KEY')
 TRIPADVISOR_API_KEY_SEC = os.getenv('TRIPADVISOR_API_KEY_SEC')
 TRIPADVISOR_API_KEY_THIRD = os.getenv('TRIPADVISOR_API_KEY_THIRD')  
-# print(TRIPADVISOR_API_KEY)
-# print(TRIPADVISOR_API_KEY_SEC)
 SP_WEBCRAWL_USER = os.getenv('SP_WEBCRAWL_USER')
-# print(SP_WEBCRAWL_USER)
 SP_WEBCRAWL_PAS = os.getenv('SP_WEBCRAWL_PAS')
-# print(SP_WEBCRAWL_PAS)
 SP_RESI_USER = os.getenv('SP_RESI_USER')
 SP_RESI_PAS = os.getenv('SP_RESI_PAS')
 PROXY_HOST = 'us.smartproxy.com'
 PROXY_PORT = '10000'
 TRIP_HOTELLST_URL = "https://www.tripadvisor.com/Hotels-g"
 API_TRIP_LOC_SEARCH = "https://api.content.tripadvisor.com/api/v1/location/search?"
-API_TRIP_NEARBY_SEARCH = "https://api.content.tripadvisor.com/api/v1/location/nearby_search?" # latLong=19.7071%2C-155.0816&key=32E24EF8375842D99E9369D814E4221C&category=hotels&radius=1000&radiusUnit=meters&language=en"
+API_TRIP_NEARBY_SEARCH = "https://api.content.tripadvisor.com/api/v1/location/nearby_search?"
 TRIP_HOTEL_SEARCH = "https://www.tripadvisor.com/Hotel_Review-g"
-# https://www.tripadvisor.com/Hotel_Review-g60583-d113098-Reviews-SCP_Hilo_Hotel-Hilo_Island_of_Hawaii_Hawaii.html
 BASE_URL = "https://www.tripadvisor.com"
-MAX_NUM_RESULTS_PER_REQUEST = 5
+MAX_NUM_RESULTS_PER_REQUEST = 10
 MAX_SEARCH_RADIUS_METERS: float = 50_000
 MAX_SEARCH_RADIUS_MILES: float = 31.0686
 SEARCH_RADIUS_UNIT: str = "mi" # mi is miles, m is meters
-HAVERSINE_UNIT_METERS: str = Unit.METERS
-HAVERSINE_UNIT_DEGREES: str = Unit.DEGREES
 SECONDS_DELAY_PER_REQUEST: float = 0.5
 BOUNDARIES_DATA_PATH = Path(__file__).resolve().parents[1] / "data" / "boundaries"
 MAX_API_CALLS = 10
-TRIP_NEARBY_LOC_KEYS = ["location_id", "name", "distance"] # also need dict["address_obj"]["address_string"]
+TRIP_NEARBY_LOC_KEYS = ["location_id", "name", "distance"] # also need dict["address_obj"]["address_string"] and dict["address_obj"]["city"]
 TRIP_LOC_RESPONSE_KEYS = ["web_url", "latitude", "longitude", "rating", "num_reviews", "price_level"]
 
 
 ### Global Variables ###
 global_location_id_lst = []
+global_hotel_lst = []
+global_filtered_hotel_lst = []
 global_counter = 0
 
 
@@ -156,152 +136,29 @@ class TripadvisorCity:
         return city_geojson
     
     
-    def create_outer_bounding_box(self):
-        """Extracts the multipolygon from the city's geojson file.
-        
-        Args:
-        
-        Returns:
-        """
-        coordinates = self.city_geojson['features'][0]['geometry']['coordinates']
-        type_of_polygon = self.city_geojson['features'][0]['geometry']['type']
-        
-        if type_of_polygon == "Polygon":
-            city_boundary_outline = Polygon(coordinates[0])
-        elif type_of_polygon == "MultiPolygon":
-            polygons = [Polygon(poly) for poly in coordinates[0]]
-            city_boundary_outline = MultiPolygon(polygons)
-        
-        min_x, min_y, max_x, max_y = city_boundary_outline.bounds
-        
-        return BoundingBox(min_x=min_x, max_x=max_x, min_y=min_y, max_y=max_y)
-    
-    
     def build_tripadvisor_nearby_api(self, lat_long: str, radius: int, radius_unit: str):
         """This method builds the URL for the Tripadvisor API call to search for
         hotels near a given latitude and longitude.
 
         Args:
-            _description_
+            lat_long (`str`): The latitude and longitude of the location.
+            radius (`int`): The radius to search for hotels, the unit should be
+                in miles as they API has a bug with meters.
+            radius_unit (`str`): The unit of the radius.
         Returns:
-            _type_: _description_
+            api_call_params (`str`): The api call in string format.
         """
-        # latLong=19.7071%2C-155.0816&key=32E24EF8375842D99E9369D814E4221C&category=hotels&radius=1000&radiusUnit=meters&language=en"
         api_call_params = f"latLong={lat_long}&key={self._api_key}&category=hotels&radius={radius}&radiusUnit={radius_unit}&language=en"
         return API_TRIP_NEARBY_SEARCH + api_call_params
-    
-    
-    def pull_hotel_info(api_response):
-        """Pulls the hotel data from the API response.
 
-        Args:
-            _description_
 
-        Returns:
-            _type_: _description_
-        """
-        hotel_lst = api_response.json()["data"]
-    
-    
-    # def find_places_in_bounding_box(
-    #     self, box: BoundingBox, search_radius: int
-    # ):
-    #     """Locates all POIs within the bounding box.
-
-    #     Args:
-    #         box (`BoundingBox`): The bounding box.
-
-    #         search_radius (`int`): The search radius, converted from
-    #             meters to the larger of degrees longitude and latitude
-    #             and rounded up to the nearest whole number.
-
-    #     Returns:
-    #         ((`list` of `dict`, `list` of `dict`,)): A two-item tuple
-    #             consisting of the list of retrieved places and a list
-    #             of any errors that occurred, respectively.
-    #     """
-    #     limit = self._max_num_results_per_request
-    #     hotel_lst = []
-    #     errors = []
-        
-    #     while True:
-    #         url = self.build_tripadvisor_nearby_api(
-    #             f"{float(box.center.lat)},{float(box.center.lon)}", 
-    #             math.ceil(search_radius), limit
-    #         )
-    #         headers = {"accept": "application/json"}
-    #         response = requests.get(url, headers=headers)
-    #         data = response.json()["data"]
-    #         reponse_hotel_count = len(data)
-            
-    #         if reponse_hotel_count >= limit:
-    #             sub_cells = box.split_along_axes(x_into=2, y_into=2)
-    #             for sub in sub_cells:
-    #                 sub_hotels, sub_errs = self.find_places_in_bounding_box(
-    #                     sub, search_radius / 2
-    #                 )
-    #                 hotel_lst.extend(sub_hotels)
-    #                 errors.extend(sub_errs)
-    #             return hotel_lst, errors
-            
-    #         elif reponse_hotel_count >= 1:
-    #             hotel_lst.extend(data)  
-        
-        
-    # # def find_places_in_city(self, city_bouding_box: BoundingBox, 
-    # #             search_radius: int
-    # # ):
-    # #     """_summary_
-
-    # #     Args:
-    # #         _description_
-
-    # #     Returns:
-    # #         _type_: _description_
-    # #     """
-    # #     radius = ((city_bouding_box.center.lat - city_bouding_box.min_x)**2 + 
-    # #             (city_bouding_box.center.lon - city_bouding_box.min_y)**2
-    # #     ).sqrt()
-    # #     search_radius = math.ceil(geomtry.convert_degrees_to_meters(radius))
-        
-    # #     incomplete_results = self.finding_places_in_bounding_box(city_bouding_box, 
-    # #             search_radius
-    # #     )
-        
-    # #     return incomplete_results
-        
-        
-    # def clean_find_places_in_city(self, response_hotel_lst):
-    #     """Takes the response from the find_places_in_city() method and cleans
-    #     the response by filtering out the hotels that are not in the city.
-
-    #     Args:
-    #         _description_
-
-    #     Returns:
-    #         _type_: _description_
-    #     """
-    #     incomplete_hotel_dict_lst = []
-        
-    #     for hotel_dict in response_hotel_lst:
-    #         hotel_city = hotel_dict["address_obj"]["city"]
-    #         if hotel_city.lower() == self.cityname:
-    #             incomplete_hotel_dict_lst.append(hotel_dict["location_id"],
-    #                     hotel_dict["name"], hotel_dict["address_obj"]["address_string"]
-    #             ) 
-        
-    #     # Still need to remove duplicates
-        
-    #     return incomplete_hotel_dict_lst
-
-    
     def hotel_api_call(self, hotel_location_id: int):
         """Calls the Tripadvisor API to search for the city and returns the JSON 
         response.
         
-        Args:
+        Args: hotel_location_id (`int`): The location id of the hotel.
         
-        Returns:
+        Returns: response.json() (`dict`): The JSON response from the API call.
         """
         url = f"https://api.content.tripadvisor.com/api/v1/location/{hotel_location_id}/details?key={self._api_key}&language=en&currency=USD"
         print(url)
@@ -313,47 +170,60 @@ class TripadvisorCity:
             return None
 
         return response.json() 
-    
-   
+
+
     def api_hotel_info(self, response_hotel_lst: List[Dict]):
         """Takes the cleaned incomplete hotel dictionary list from 
         the clean_find_places_in_city() method and calls the hotel API to gather
         additional information on the hotels, such as the web_url, rating, and
         number of reviews.
         
-        
-        Args:
+        Args: 
+            response_hotel_lst (`list` of `dict`): The data from the json 
+                response of the Tripadvisor Nearby Location Search API call.  
+                This is a list of hotel dictionaries with incomplete information.
         
         Returns:
-        """
-        boundary_hotel_lst = []
-        deduped_hotel_lst = []
+            deduped_hotel_lst (`list` of `dict`): The data from the json 
+                response of the Tripadvisor Nearby Location Search API call.  
+                Combined with the data from the Tripadvisor Location Details
+                API call for hotels within the city's boundaries.
         
+        """
+        # boundary_hotel_lst = []
+        deduped_hotel_lst = []
+    
         for hotel_dict in response_hotel_lst:
+            global global_location_id_lst
+            if hotel_dict["location_id"] in global_location_id_lst:
+                continue
             hotel_json = self.hotel_api_call(hotel_dict["location_id"])
             hotel_point = Point(hotel_json["longitude"], hotel_json["latitude"])
+            nearby_loc_dict = {k: hotel_dict.get(k, None) for k in TRIP_NEARBY_LOC_KEYS}
+            nearby_loc_dict["address_string"] = hotel_json["address_obj"]["address_string"]
+            nearby_loc_dict["city"] = hotel_json["address_obj"]["city"] 
+            loc_dict = {k: hotel_json.get(k, None) for k in TRIP_LOC_RESPONSE_KEYS}
+            combined_hotel_dict = {**nearby_loc_dict, **loc_dict}
+            # boundary_hotel_lst.append(combined_hotel_dict)
+            global global_hotel_lst
+            global_hotel_lst.append(combined_hotel_dict)
             if self.geo.contains(hotel_point):
-                nearby_loc_dict = {k: hotel_dict.get(k, None) for k in TRIP_NEARBY_LOC_KEYS}
-                nearby_loc_dict["address_string"] = hotel_json["address_obj"]["address_string"]
-                loc_dict = {k: hotel_json.get(k, None) for k in TRIP_LOC_RESPONSE_KEYS}
-                combined_hotel_dict = {**nearby_loc_dict, **loc_dict}
-                boundary_hotel_lst.append(combined_hotel_dict)
-                global global_location_id_lst
-                if hotel_dict["location_id"] not in global_location_id_lst:
-                    deduped_hotel_lst.append(combined_hotel_dict)
-                    global_location_id_lst.append(hotel_dict["location_id"])
+                deduped_hotel_lst.append(combined_hotel_dict)
+                global global_filtered_hotel_lst
+                global_filtered_hotel_lst.append(combined_hotel_dict)   
 
-        return boundary_hotel_lst, deduped_hotel_lst
-    
-    
+            global_location_id_lst.append(hotel_dict["location_id"])
+
+        return deduped_hotel_lst
+
+
     def city_geo(self):
-        """_summary_
-
-        Raises:
-            ValueError: _description_
+        """This method creates a shapely polygon or multipolygon object from 
+        the coordinates in the geojson file for the city.
 
         Returns:
-            _type_: _description_
+            polygon_s (`shapely.Polygon` or `shapely.MultiPolygon`): The 
+                polygon or multipolygon object for the city.
         """
         if self.geojson_type == "polygon":
             external_poly = self.geojson_coordinates[0]
@@ -380,99 +250,6 @@ class TripadvisorCity:
         return polygon_s
 
 
-    def box_side_size(self, box: BoundingBox):
-        """_summary_
-
-        Args:
-            box (BoundingBox): _description_
-
-        Returns:
-            _type_: _description_
-        """
-        
-        top_width = hs.haversine((box.top_left.lat, box.top_left.lon),
-                (box.top_right.lat, box.top_right.lon), 
-                unit=HAVERSINE_UNIT_DEGREES
-        )
-        bottom_width = hs.haversine((box.bottom_left.lat, box.bottom_left.lon),
-                (box.bottom_right.lat, box.bottom_right.lon), 
-                unit=HAVERSINE_UNIT_DEGREES
-        )
-        right_height = hs.haversine((box.top_right.lat, box.top_right.lon),
-                (box.bottom_right.lat, box.bottom_right.lon),
-                unit=HAVERSINE_UNIT_DEGREES
-        )
-        left_height = hs.haversine((box.top_left.lat, box.top_left.lon),
-                (box.bottom_left.lat, box.bottom_left.lon),
-                unit=HAVERSINE_UNIT_DEGREES
-        )
-        
-        
-        # print(f"Box top_left: {box.top_left}, Box top_right: {box.top_right}")
-        # print(f"Box bottom_left: {box.bottom_left}, Box bottom_right: {box.bottom_right}")
-        # top_width = hs.haversine(box.top_left, box.top_right, unit=HAVERSINE_UNIT)
-        # bottom_width = hs.haversine(box.bottom_left, box.bottom_right, unit=HAVERSINE_UNIT) 
-        # right_height = hs.haversine(box.top_right, box.bottom_right, unit=HAVERSINE_UNIT)
-        # left_height = hs.haversine(box.top_left, box.bottom_left, unit=HAVERSINE_UNIT)  
-
-        # print(f"Top width: {top_width}, Bottom width: {bottom_width}")
-        # print(f"Right height: {right_height}, Left height: {left_height}")
-        return max(top_width, bottom_width, right_height, left_height)
-    
-    
-    def meters_to_miles(meters):
-        return meters / 1609.34
-    
-    
-    def box_search_radius(self, box: BoundingBox):
-        """_summary_
-
-        Args:
-            box (BoundingBox): _description_
-
-        Returns:
-            _type_: _description_
-        """
-        radius_top_left = hs.haversine((box.center.lat, box.center.lon),
-                (box.top_left.lat, box.top_left.lon), 
-                unit=HAVERSINE_UNIT_METERS
-        )
-        radius_top_right = hs.haversine((box.center.lat, box.center.lon),
-                (box.top_right.lat, box.top_right.lon), 
-                unit=HAVERSINE_UNIT_METERS
-        )
-        radius_bottom_left = hs.haversine((box.center.lat, box.center.lon),
-                (box.bottom_left.lat, box.bottom_left.lon), 
-                unit=HAVERSINE_UNIT_METERS
-        )
-        radius_bottom_right = hs.haversine((box.center.lat, box.center.lon),
-                (box.bottom_right.lat, box.bottom_right.lon), 
-                unit=HAVERSINE_UNIT_METERS
-        )
-        
-        return max(radius_top_left, radius_top_right, radius_bottom_left, radius_bottom_right)
-        
-
-    # def remove_duplicates(self, hotel_lst: List[Dict]):
-    #     """_summary_
-
-    #     Args:
-    #         hotel_lst (List[Dict]): _description_
-
-    #     Returns:
-    #         _type_: _description_
-    #     """
-    #     unique_hotels = []
-    #     hotel_ids = set()
-        
-    #     for hotel in hotel_lst:
-    #         if hotel["location_id"] not in hotel_ids:
-    #             unique_hotels.append(hotel)
-    #             hotel_ids.add(hotel["location_id"])
-        
-    #     return unique_hotels
-
-
     def find_places_in_bounding_box(
         self, box: BoundingBox, search_radius: float
     ) -> Tuple[List[Dict], List[Dict]]:
@@ -494,53 +271,23 @@ class TripadvisorCity:
                 consisting of the list of retrieved places and a list
                 of any errors that occurred, respectively.
         """
-        # global counter
-        # counter += 1
-        # if counter >= MAX_API_CALLS:
-        #     print("Reached max calls")
-        #     return data, []
         
         api_params = {"latLong": f"{float(box.center.lat),float(box.center.lon)}",
                       "radius": search_radius,
                       "radiusUnit": SEARCH_RADIUS_UNIT
         }
         api_call_params = f"latLong={float(box.center.lat)},{float(box.center.lon)}&key={self._api_key}&category=hotels&radius={search_radius}&radiusUnit={SEARCH_RADIUS_UNIT}&language=en"
-        # api_call = API_TRIP_NEARBY_SEARCH + api_call_params
-        # Initialize request URL
-        # url = API_TRIP_NEARBY_SEARCH 
 
-        # # Build request params, body, and headers
-        # body = {
-        #     "maxResultCount": MAX_NUM_RESULTS_PER_REQUEST,
-        #     "locationRestriction": {
-        #         "circle": {
-        #             "center": {
-        #                 "latitude": float(box.center.lat),
-        #                 "longitude": float(box.center.lon),
-        #             },
-        #             "radius": search_radius,
-        #         }
-        #     },
-        # }
-        # params = {"key": self._api_key}
-        # headers = {
-        #     "X-Goog-FieldMask": ",".join(
-        #         str(e.value) for e in GooglePlacesBasicSKUFields
-        #     ),
-        # }
-
-        # Send POST request to the Google Places API
+        # Send request to the Tripadvisor API
         def send_request():
-            # api_call_params = f"latLong={float(box.center.lat),float(box.center.lon)}&key={self._api_key}&category=hotels&radius={search_radius}&radiusUnit={SEARCH_RADIUS_UNIT_METERS}&language=en"
-            
             url = API_TRIP_NEARBY_SEARCH + api_call_params
             headers = {"accept": "application/json"}
+            
             # print(api_params)
             print(url)
             # print(self._api_key)
             
             return requests.get(url, headers=headers)
-            # return requests.post(url, params=params, headers=headers, json=body)
 
         def retry(func, max_retries: int = 3):
             retries = 0
@@ -560,11 +307,10 @@ class TripadvisorCity:
         # Sleep and then parse JSON from response body
         try:
             time.sleep(SECONDS_DELAY_PER_REQUEST)
-            # print(r)
             data = r.json()["data"]
         except Exception as e:
             self._logger.error(f"Failed to parse reponse body JSON. {e}")
-            return [], [{"api_params": api_params, "error": str(e)}]
+            return [], [], [{"api_params": api_params, "error": str(e)}]
 
         # If error occurred, store information and exit processing for cell
         if not r.ok or "error" in data:
@@ -573,29 +319,25 @@ class TripadvisorCity:
                 f'Received a "{r.status_code}-{r.reason}" status code '
                 f'with the message "{r.text}".'
             )
-            return [], [{"api_params": api_params, "error": data}]
+            return [], [], [{"api_params": api_params, "error": data}]
 
         # Otherwise, if no data returned, return empty lists of POIs and errors
         if not data:
             self._logger.warning("No data found in response body.")
-            return [], []
-        filtered_data, deduped_filtered_data = self.api_hotel_info(data)
+            return [], [], []
+        deduped_filtered_data = self.api_hotel_info(data)
         # Otherwise, if number of POIs returned equals max,
         # split box and recursively issue HTTP requests
         ############################################################    
         plot = [box.to_shapely()]
         plot.append(self.geo)
-        # for cell in cells:
-        #     plot.append(cell.to_shapely())
         plot.append(Point(box.center.lon, box.center.lat))
         plot_gdf = gpd.GeoDataFrame(geometry=plot)
         plot_gdf.plot(facecolor="none", edgecolor="black")
         plt.savefig("plot.png")
         ############################################################
-        if len(filtered_data) >= MAX_NUM_RESULTS_PER_REQUEST:
-            pois = []
-            pois_deduped = []
-            errors = []
+        if len(data) >= MAX_NUM_RESULTS_PER_REQUEST:
+            pois, pois_deduped, errors = [], [], []
             sub_cells = box.split_along_axes(x_into=2, y_into=2)
             # ############################################################    
             plot = [cell.to_shapely() for cell in sub_cells]
@@ -610,21 +352,17 @@ class TripadvisorCity:
             plt.savefig("plot.png")
             # ############################################################
             for sub in sub_cells:
-                sub_hotels, sub_deduped_hotels, sub_errs = self.find_places_in_bounding_box(
-                    sub, search_radius / 2
-                )
-                pois.extend(sub_hotels)
-                pois_deduped.extend(sub_deduped_hotels)
-                errors.extend(sub_errs)
+                if sub.intersects_with(self.geo):
+                    sub_hotels, sub_deduped_hotels, sub_errs = self.find_places_in_bounding_box(
+                        sub, search_radius / 2
+                    )
+                    pois.extend(sub_hotels)
+                    pois_deduped.extend(sub_deduped_hotels)
+                    errors.extend(sub_errs)
             return pois, pois_deduped, errors
 
-        global global_counter
-        global_counter += 1
-        if global_counter >= MAX_API_CALLS:
-            print("Reached max calls")
-            return filtered_data, deduped_filtered_data, []
-        # Otherwise, extract business data from response body JSON
-        return filtered_data, deduped_filtered_data, []
+        return data, deduped_filtered_data, []
+
 
     def find_places_in_geography(
         self, geo: Union[Polygon, MultiPolygon]
@@ -667,7 +405,7 @@ class TripadvisorCity:
 
         Documentation:
             - ["Overview | Places API"](https://developers.google.com/maps/documentation/places/web-service/overview)
-            - ["Nearby Search"](https://developers.google.com/maps/documentation/places/web-service/search-nearby)
+            - ["Nearby Search"]
 
         Args:
             geo (`Polygon` or `MultiPolygon`): The boundary.
@@ -679,19 +417,6 @@ class TripadvisorCity:
         """
         # Calculate bounding box for geography
         bbox: BoundingBox = BoundingBox.from_polygon(geo)
-        # print(bbox)
-        # return bbox
-
-        # raise ValueError("This is a test")
-        ##############################################
-        # box_radius_meters = self.box_search_radius(bbox)
-        # print(f"Box radius in meters: {box_radius_meters}")
-        # if box_radius_meters > MAX_SEARCH_RADIUS:
-        #     box_radius_meters = MAX_SEARCH_RADIUS
-        # print(f"Box radius in meters: {box_radius_meters}")
-        # box_side_degrees = self.box_side_size(bbox)
-        ##############################################
-        # raise ValueError("This is a test")
         
         # # Calculate length of square circumscribed by circle with the max search radius
         box_side_meters = (2**0.5) * MAX_SEARCH_RADIUS_METERS
@@ -710,29 +435,8 @@ class TripadvisorCity:
             size_in_degrees=Decimal(str(box_side_degrees))
         )
 
-        # plot = [geo]
-        # for cell in cells:
-        #     plot.append(cell.to_shapely())
-        # plot_gdf = gpd.GeoDataFrame(geometry=plot)
-        # plot_gdf.plot(facecolor="none", edgecolor="black")
-        # plt.savefig("plot.png")
-        
-        
-            
-        
-        
-        # Batch categories to filter POIs in request
-        # categories = [str(e.value) for e in GooglePOITypes]
-        # batch_size = GooglePlacesClient.MAX_NUM_CATEGORIES_PER_REQUEST
-        # category_batches = (
-        #     categories[i : i + batch_size]
-        #     for i in range(0, len(GooglePOITypes), batch_size)
-        # )
-
         # Locate POIs within each cell if it contains any part of geography
-        hotel_lst = []
-        deduped_hotel_lst = []
-        errors = []
+        hotel_lst, deduped_hotel_lst, errors = [], [], []
         
         # for batch in category_batches:
         for cell in cells:
@@ -745,12 +449,21 @@ class TripadvisorCity:
                 deduped_hotel_lst.extend(cell_deduped_pois)
                 errors.extend(cell_errors)
 
-        # # Clean POIs
-        # cleaned_hotel_lst = self.clean_places(hotel_lst, geo)
-
         return PlacesSearchResult(hotel_lst, deduped_hotel_lst, errors)
 
     
+    def global_hotel_lists(self):
+        """This method returns the global hotel lists.
+
+        Returns:
+            (`PlacesResult`): The result of the geography query. Contains
+                a raw list of retrieved places, a list of cleaned places,
+                and a list of any errors that occurred.
+        """
+        global global_hotel_lst
+        global global_filtered_hotel_lst
+        
+        return PlacesSearchResult(global_hotel_lst, global_filtered_hotel_lst, [])
 
 
 
