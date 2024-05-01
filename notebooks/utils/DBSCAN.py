@@ -136,6 +136,8 @@ def plot_cluster_centroids(cluster_summary_df, utm_crs):
 
     plt.show()
 
+# add optional save 
+# specify file name
 
 if __name__ == "__main__":
     main()
