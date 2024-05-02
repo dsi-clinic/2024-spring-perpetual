@@ -7,7 +7,6 @@ from pointpats import centrography
 import contextily as ctx
 import pandas as pd
 import argparse
-import matplotlib.pyplot as plt
 import os
 
 
@@ -20,7 +19,10 @@ def process_parquet(dataset, output_file_name):
         output_file_name: The desired name for the output CSV file.
     
     Returns:
-        : None. Saves a new CSV file to the specified location.
+        None
+
+    Output:
+        CSV file: The processed data is saved as a CSV file to 'data/foot-traffic/output/{output_file_name}'.
     """
     columns_to_keep = ['placekey', 'location_name', 'latitude', 'longitude',
                        'raw_visit_counts', 'raw_visitor_counts', 'related_same_day_brand', 'date_range_start']
@@ -53,6 +55,12 @@ def plot_hexbin(data_df, gridsize=50, zoom=12, output_file_name=None):
         gridsize (int): The number of hexagons in the x-direction.
         zoom (int): Zoom level for the basemap.
         output_file_name (str): Optional; The name of the output file, saved to 'data/foot-traffic/output' if specified.
+    
+    Returns:
+        None or plt.Figure: Saves the plot to the specified path or displays it directly.
+    
+    Output:
+        PNG file: If an output file name is specified, the plot is saved as a PNG file to the specified path.
     """
     # Set up the figure and axis
     fig, ax = plt.subplots(figsize=(16, 12))
@@ -96,6 +104,12 @@ def plot_stdev_ellipse(data_df, output_file_name=None):
     Parameters:
         data_df (DataFrame): A pandas DataFrame containing 'longitude' and 'latitude' columns.
         output_file_name (str): Optional; The name of the output file, saved to 'data/foot-traffic/output' if specified.
+    
+    Returns:
+        None or plt.Figure: Saves the plot to the specified path or displays it directly.
+    
+    Output:
+        PNG file: If an output file name is specified, the plot is saved as a PNG file in the specified directory.
     """
     # Compute the mean and median centers
     mean_center = centrography.mean_center(data_df[["longitude", "latitude"]])
@@ -152,6 +166,12 @@ def split_into_months(df, city):
     Parameters:
         df (DataFrame): The input dataframe containing 'date_range_start'.
         city (str): The name of the city to use in the output file names.
+    
+    Returns:
+        list: A list of paths to the saved CSV files, one for each month's dataframe.
+    
+    Output:
+        CSV files: One file for each month's dataframe, saved to 'data/foot-traffic/output'.
     """
     # Extract month from the date
     df['month'] = df['date_range_start'].str[5:7].astype("Int64")
