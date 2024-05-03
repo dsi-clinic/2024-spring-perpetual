@@ -3,15 +3,11 @@ import json
 import pandas as pd
 import folium
 import webbrowser
-import os
 import requests
 import itertools
 import polyline
-
-
 import os
-import json
-import pandas as pd
+
 
 def find_top_businesses_with_related_brands(data, num_top_businesses=10, save=False, city=None):
     """
@@ -22,6 +18,12 @@ def find_top_businesses_with_related_brands(data, num_top_businesses=10, save=Fa
         num_top_businesses (int): The number of top businesses to consider.
         save (bool): Whether to save the output dataframe.
         city (str): The name of the city to include in the output file name.
+
+    Returns:
+        pd.DataFrame: A dataframe of the top businesses with related brands.
+
+    Output:
+        CSV file: If saving, the dataframe is saved to 'data/foot-traffic/output/{city}_top_{num_top_businesses}_and_related_brands.csv'.
     """
     # Find the top businesses
     top_visited = data.sort_values(by='raw_visit_counts', ascending=False).drop_duplicates(subset='safegraph_place_id')
@@ -80,6 +82,11 @@ def generate_base_map_with_points(df, default_location=[37.77, -122.41], default
                         'Main Longitude', 'Related Brand', 'Related Brand Latitude', 'Related Brand Longitude', and 'Related Brand Correlation'.
         default_location (list): Coordinates to center the base map.
         default_zoom_start (int): The initial zoom level for the map.
+    Returns:
+        folium.Map: A map object with markers for each business and its related brands.
+
+    Output:
+        None
     """
     # Create the base map
     map_obj = folium.Map(location=default_location, control_scale=True, zoom_start=default_zoom_start)
@@ -111,8 +118,11 @@ def compute_fastest_foot_routes(df):
         df (DataFrame): A dataframe containing 'Main Business', 'Main Latitude', 'Main Longitude', 'Related Brand', 
                         'Related Brand Latitude', and 'Related Brand Longitude'.
     
-    Returns:
-        A dataframe of routes, with columns 'Main Business', 'Related Brand', 'Distance', 'Duration', and 'Geometry'.
+   Returns:
+        pd.DataFrame: A dataframe of routes, with columns 'Main Business', 'Related Brand', 'Distance', 'Duration', and 'Geometry'.
+
+    Output:
+        None
     """
     routes = []
     osrm_url = "http://router.project-osrm.org/route/v1/foot/"
@@ -153,6 +163,12 @@ def plot_routes_on_map(df_routes, output_file_name=None):
     Parameters:
         df_routes (DataFrame): A dataframe containing routes information.
         output_file_name (str): Optional; The name of the output file, saved to 'data/foot-traffic/output'.
+    
+    Returns:
+        folium.Map: A map object displaying the routes and annotations.
+
+    Output:
+        HTML file: If saving, the map is saved to the specified path.
     """
     # Define a list of colors for different routes
     colors = itertools.cycle(['blue', 'green', 'red', 'purple', 'orange', 'darkblue', 'lightgreen', 'gray', 'black', 'pink'])
