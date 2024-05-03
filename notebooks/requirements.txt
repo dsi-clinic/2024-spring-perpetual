@@ -32,3 +32,14 @@ matplotlib~=3.8.0
 contextily~=1.4.0
 folium ~= 0.14.0
 polyline~= 1.4.0
+
+# foot traffic EDA
+seaborn~=0.13.2
+pysal~=24.1
+pointpats~=2.4.0
+hdbscan~=0.8.33
+
+dask~=2024.4.2
+fuzzywuzzy~=0.18.0
+scipy~=1.13.0
+utm~=0.7.0
