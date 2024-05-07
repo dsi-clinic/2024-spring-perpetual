@@ -34,7 +34,7 @@ logger.addHandler(handler)
 
 
 ### Custom imports ###
-from common.geometry import BoundingBox, convert_meters_to_degrees #, convert_degrees_to_meters
+from common.geometry import BoundingBox, convert_meters_to_degrees
 from common.logger import LoggerFactory
 from utils.common import PlacesSearchResult
 from Smartproxy_residential.extension import proxies
@@ -43,15 +43,15 @@ from Smartproxy_residential.extension import proxies
 ### Constants ###
 ENV_PATH = Path(__file__).resolve().parents[1] / ".env"
 load_dotenv(dotenv_path=ENV_PATH)
-TRIPADVISOR_API_KEY = os.getenv('TRIPADVISOR_API_KEY')
-TRIPADVISOR_API_KEY_SEC = os.getenv('TRIPADVISOR_API_KEY_SEC')
-TRIPADVISOR_API_KEY_THIRD = os.getenv('TRIPADVISOR_API_KEY_THIRD')  
-SP_WEBCRAWL_USER = os.getenv('SP_WEBCRAWL_USER')
-SP_WEBCRAWL_PAS = os.getenv('SP_WEBCRAWL_PAS')
-SP_RESI_USER = os.getenv('SP_RESI_USER')
-SP_RESI_PAS = os.getenv('SP_RESI_PAS')
-PROXY_HOST = 'us.smartproxy.com'
-PROXY_PORT = '10000'
+TRIPADVISOR_API_KEY = os.getenv("TRIPADVISOR_API_KEY")
+TRIPADVISOR_API_KEY_SEC = os.getenv("TRIPADVISOR_API_KEY_SEC")
+TRIPADVISOR_API_KEY_THIRD = os.getenv("TRIPADVISOR_API_KEY_THIRD")  
+SP_WEBCRAWL_USER = os.getenv("SP_WEBCRAWL_USER")
+SP_WEBCRAWL_PAS = os.getenv("SP_WEBCRAWL_PAS")
+SP_RESI_USER = os.getenv("SP_RESI_USER")
+SP_RESI_PAS = os.getenv("SP_RESI_PAS")
+PROXY_HOST = "us.smartproxy.com"
+PROXY_PORT = "10000"
 TRIP_HOTELLST_URL = "https://www.tripadvisor.com/Hotels-g"
 API_TRIP_LOC_SEARCH = "https://api.content.tripadvisor.com/api/v1/location/search?"
 API_TRIP_NEARBY_SEARCH = "https://api.content.tripadvisor.com/api/v1/location/nearby_search?"
