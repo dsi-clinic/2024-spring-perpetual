@@ -8,6 +8,15 @@ import fiona
 import pyarrow.parquet as pq
 from matplotlib.patches import Patch
 from pyproj import Proj, Transformer
+import requests
+import geopandas as gpd
+from dotenv import load_dotenv
+from pathlib import Path
+import os
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+### Load data from various sources
 
 def load_data(gdb_path, api_json_path, parquet_path):
     """
@@ -34,6 +43,63 @@ def load_data(gdb_path, api_json_path, parquet_path):
     foot_traffic_data['geometry'] = foot_traffic_data.apply(lambda row: Point(row['longitude'], row['latitude']), axis=1)
     geo_parquet_df = gpd.GeoDataFrame(foot_traffic_data, geometry='geometry')
     return gdf, gdf_api, geo_parquet_df
+
+### Data Pre-processing
+
+def convert_to_geodataframe(data, lon_col='longitude', lat_col='latitude', crs='EPSG:4326'):
+    """
+    Converts a list of dictionaries to a GeoDataFrame.
+
+    Parameters:
+    - data (list of dict): Data to convert, each dictionary represents a property.
+    - lon_col (str): Column name for longitude values.
+    - lat_col (str): Column name for latitude values.
+    - crs (str): Coordinate reference system to use for the GeoDataFrame.
+
+    Returns:
+    - gpd.GeoDataFrame: A GeoDataFrame containing the data with a geometry column.
+    """
+    df = pd.DataFrame(data)
+    gdf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df[lon_col], df[lat_col]), crs=crs)
+    return gdf
+
+
+def perform_spatial_join(gdf1, gdf2, how='inner', op='intersects'):
+    """
+    Performs a spatial join between two GeoDataFrames.
+
+    Parameters:
+    - gdf1 (gpd.GeoDataFrame): The first GeoDataFrame.
+    - gdf2 (gpd.GeoDataFrame): The second GeoDataFrame to join with the first.
+    - how (str): Type of join, 'left', 'right', 'inner' (default).
+    - op (str): Spatial operation to use, 'intersects' (default), 'contains', etc.
+
+    Returns:
+    - gpd.GeoDataFrame: The result of the spatial join.
+    """
+    return gpd.sjoin(gdf1, gdf2, how=how, op=op)
+
+
+
+def plot_geodataframes(gdfs, colors, labels):
+    """
+    Plots multiple GeoDataFrames.
+
+    Parameters:
+    - gdfs (list of gpd.GeoDataFrame): List of GeoDataFrames to plot.
+    - colors (list of str): Colors for each GeoDataFrame.
+    - labels (list of str): Labels for each GeoDataFrame in the legend.
+
+    Displays:
+    - A plot with all GeoDataFrames visualized.
+    """
+    fig, ax = plt.subplots(figsize=(10, 10))
+    for gdf, color, label in zip(gdfs, colors, labels):
+        gdf.plot(ax=ax, color=color, label=label)
+    plt.legend()
+    plt.show()
+
+# Data Analysis and Visualization
 
 def analyze_large_apartments(joined):
     """
