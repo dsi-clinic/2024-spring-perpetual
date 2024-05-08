@@ -1,0 +1,7 @@
+.maplibregl-popup-content {
+    background: rgb(241 245 249) !important;
+}
+
+.maplibregl-popup-close-button {
+    padding: 10px;
+}
