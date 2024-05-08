@@ -15,9 +15,11 @@ trap '[ $? -eq 1 ] && echo "Backend initialization failed."' EXIT
 # Parse command line arguments
 migrate=false
 use_uwsgi_server=false
+use_djangoq=false
 while [[ "$#" -gt 0 ]]; do
     case $1 in
         --migrate) migrate=true; shift ;;
+        --use_djangoq) use_djangoq=true; shift ;;
         --use_uwsgi_server) use_uwsgi_server=true; shift ;;
         *) echo "Unknown command line parameter received: $1"; exit 1 ;;
     esac
@@ -34,6 +36,13 @@ if $migrate ; then
 
     echo "Applying migrations to database."
     yes | ./manage.py migrate
+fi
+
+# Run Django Q server
+if $use_djangoq ; then
+    echo "Running Django Q cluster to handle tasks asynchronously."
+    ./manage.py createcachetable
+    ./manage.py qcluster
 fi
 
 # Run server
