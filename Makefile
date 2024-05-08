@@ -25,3 +25,8 @@ run-notebooks:
 		$(project_name)-notebooks jupyter lab \
 		--port=8888 --ip='*' --NotebookApp.token='' \
 		--NotebookApp.password='' --no-browser --allow-root
+
+run-full-stack:
+	cd $(current_abs_path) && \
+	. ./set_architecture.sh && \
+	docker compose --profile full-stack up --build
