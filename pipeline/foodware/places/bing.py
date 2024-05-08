@@ -177,7 +177,7 @@ class BingMapsClient(IPlacesProvider):
             # Otherwise, extract business data from request body JSON
             return data["resourceSets"][0]["resources"], []
 
-    def find_places_in_geography(
+    def run_nearby_search(
         self, geo: Union[Polygon, MultiPolygon]
     ) -> PlacesSearchResult:
         """Queries the Bing Maps Local Search API for locations

@@ -1,4 +1,6 @@
 version: "3.4"
+
+
 services:
   # POSTGIS
   postgis:
@@ -31,6 +33,32 @@ services:
       - pgadmin
     env_file:
       - .env
+    ports:
+      - "8080:8080"
+
+  # DJANGO-Q2
+  django-q2:
+    restart: "no"
+    environment:
+      - DJANGO_SECRET_KEY=local
+      - ENV=DEV
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST=postgis
+      - POSTGRES_CHECK_TIMEOUT=120
+    build:
+      context: pipeline
+    command: ["bash", "setup.sh", "--use_djangoq"]
+    volumes:
+      - ./pipeline:/perpetual/pipeline
+      - ./data:/perpetual/data
+    depends_on:
+      - pipeline
+    env_file:
+      - .env
+    profiles:
+      - full-stack
 
   # PGADMIN DATABASE GUI
   pgadmin:
@@ -49,3 +77,21 @@ services:
       - "443:443"
     volumes:
       - ./server.local.json:/pgadmin4/servers.json
+    logging:
+      driver: none
+
+  # WEB
+  web:
+    build:
+      context: web
+    depends_on:
+      - postgis
+    restart: always
+    ports:
+      - 3000:3000
+    volumes:
+      - ./web:/app
+      - /app/node_modules
+      - /app/.next
+    profiles:
+      - full-stack
