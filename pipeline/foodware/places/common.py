@@ -56,7 +56,7 @@ class Place:
     """A link to more information about the place.
     """
 
-    notes: Optional[str] = None
+    notes: Optional[str] = ""
     """Additional information to include about the location
     """
 
@@ -94,7 +94,7 @@ class IPlacesProvider(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def text_search(
+    def run_text_search(
         self, query: str, restriction: Optional[Union[Polygon, MultiPolygon]] = None
     ) -> PlacesSearchResult:
         """Searches for one or more places using a query string
@@ -115,7 +115,9 @@ class IPlacesProvider(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def nearby_search(self, geo: Union[Polygon, MultiPolygon]) -> PlacesSearchResult:
+    def run_nearby_search(
+        self, geo: Union[Polygon, MultiPolygon]
+    ) -> PlacesSearchResult:
         """Locates all POIs within the given geography.
 
         Args:

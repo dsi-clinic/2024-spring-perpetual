@@ -1,6 +1,6 @@
 "use client";
 
-import LocaleMap from "@/components/map";
+import { BinMap, LocaleMap } from "@/components/map";
 import { PencilIcon } from "@/components/pencil_icon";
 import { get } from "@/services/http";
 import { Spacer, Spinner } from "@nextui-org/react";
@@ -61,7 +61,12 @@ export default function ProjectPage({ params }) {
         {formatDate(project.last_updated_at_utc)}
       </p>
       <Spacer y={3} />
-      <LocaleMap boundary={project.boundary} />
+      {project.bins ? (
+        <BinMap boundary={project.boundary} bins={project.bins} />
+      ) : (
+        <LocaleMap boundary={project.boundary} />
+      )}
+      <Spacer y={3} />
     </div>
   );
 }

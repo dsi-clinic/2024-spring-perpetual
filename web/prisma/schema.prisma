@@ -88,6 +88,14 @@ model auth_user_user_permissions {
   @@index([user_id], map: "auth_user_user_permissions_user_id_a95ead1b")
 }
 
+model default_cache {
+  cache_key String   @id @db.VarChar(255)
+  value     String
+  expires   DateTime @db.Timestamptz(6)
+
+  @@index([expires], map: "default_cache_expires")
+}
+
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
 /// This model has constraints using non-default deferring rules and requires additional setup for migrations. Visit https://pris.ly/d/constraint-deferring for more info.
 model django_admin_log {
@@ -123,6 +131,49 @@ model django_migrations {
   applied DateTime @db.Timestamptz(6)
 }
 
+model django_q_ormq {
+  id      Int       @id @default(autoincrement())
+  key     String    @db.VarChar(100)
+  payload String
+  lock    DateTime? @db.Timestamptz(6)
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model django_q_schedule {
+  id                  Int       @id @default(autoincrement())
+  func                String    @db.VarChar(256)
+  hook                String?   @db.VarChar(256)
+  args                String?
+  kwargs              String?
+  schedule_type       String    @db.VarChar(2)
+  repeats             Int
+  next_run            DateTime? @db.Timestamptz(6)
+  task                String?   @db.VarChar(100)
+  name                String?   @db.VarChar(100)
+  minutes             Int?      @db.SmallInt
+  cron                String?   @db.VarChar(100)
+  cluster             String?   @db.VarChar(100)
+  intended_date_kwarg String?   @db.VarChar(100)
+}
+
+model django_q_task {
+  name          String   @db.VarChar(100)
+  func          String   @db.VarChar(256)
+  hook          String?  @db.VarChar(256)
+  args          String?
+  kwargs        String?
+  result        String?
+  started       DateTime @db.Timestamptz(6)
+  stopped       DateTime @db.Timestamptz(6)
+  success       Boolean
+  id            String   @id @db.VarChar(32)
+  group         String?  @db.VarChar(100)
+  attempt_count Int
+  cluster       String?  @db.VarChar(100)
+
+  @@index([id], map: "django_q_task_id_32882367_like")
+}
+
 model django_session {
   session_key  String   @id @db.VarChar(40)
   session_data String
@@ -141,9 +192,37 @@ model foodware_project {
   description          String?
   locale_id            Int
   locale               locale                 @relation(fields: [locale_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "foodware_project_locale_id_9e89f93e_fk_locale_id")
+  foodware_project_bin foodware_project_bin[]
   foodware_project_job foodware_project_job[]
+  poi_cache            poi_cache[]
 
   @@index([locale_id], map: "foodware_project_locale_id_9e89f93e")
+}
+
+/// This model has constraints using non-default deferring rules and requires additional setup for migrations. Visit https://pris.ly/d/constraint-deferring for more info.
+model foodware_project_bin {
+  id                  Int                     @id @default(autoincrement())
+  created_at_utc      DateTime                @db.Timestamptz(6)
+  last_updated_at_utc DateTime                @db.Timestamptz(6)
+  external_id         String                  @db.VarChar
+  classification      String                  @db.VarChar
+  name                String                  @db.VarChar
+  external_categories Json
+  formatted_address   String                  @db.VarChar
+  coords              Unsupported("geometry")
+  notes               String
+  project_id          Int
+  parent_category_id  Int
+  provider_id         Int
+  poi_parent_category poi_parent_category     @relation(fields: [parent_category_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "foodware_project_bin_parent_category_id_a5553b42_fk_poi_paren")
+  foodware_project    foodware_project        @relation(fields: [project_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "foodware_project_bin_project_id_5ceed39a_fk_foodware_project_id")
+  poi_provider        poi_provider            @relation(fields: [provider_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "foodware_project_bin_provider_id_ce63175c_fk_poi_provider_id")
+
+  @@unique([project_id, provider_id, external_id, name, formatted_address], map: "unique_foodware_project_bin")
+  @@index([coords], map: "foodware_project_bin_coords_40b2a9b5_id", type: Gist)
+  @@index([parent_category_id], map: "foodware_project_bin_parent_category_id_a5553b42")
+  @@index([project_id], map: "foodware_project_bin_project_id_5ceed39a")
+  @@index([provider_id], map: "foodware_project_bin_provider_id_ce63175c")
 }
 
 /// This model has constraints using non-default deferring rules and requires additional setup for migrations. Visit https://pris.ly/d/constraint-deferring for more info.
@@ -153,11 +232,11 @@ model foodware_project_job {
   last_updated_at_utc DateTime         @db.Timestamptz(6)
   type                String           @db.VarChar
   status              String           @db.VarChar
-  last_error          String
-  model_id            Int
-  foodware_project    foodware_project @relation(fields: [model_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "foodware_project_job_model_id_450c7227_fk_foodware_project_id")
+  last_error          Json
+  project_id          Int
+  foodware_project    foodware_project @relation(fields: [project_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "foodware_project_job_project_id_a8a2324b_fk_foodware_project_id")
 
-  @@index([model_id], map: "foodware_project_job_model_id_450c7227")
+  @@index([project_id], map: "foodware_project_job_project_id_a8a2324b")
 }
 
 model locale {
@@ -169,6 +248,55 @@ model locale {
 
   @@index([geometry], map: "locale_geometry_fb4c6944_id", type: Gist)
   @@index([name_vector], map: "name_vector_idx", type: Gin)
+}
+
+/// This model has constraints using non-default deferring rules and requires additional setup for migrations. Visit https://pris.ly/d/constraint-deferring for more info.
+model poi_cache {
+  id                  Int                 @id @default(autoincrement())
+  created_at_utc      DateTime            @db.Timestamptz(6)
+  last_updated_at_utc DateTime            @db.Timestamptz(6)
+  data                Json
+  project_id          Int
+  parent_category_id  Int
+  provider_id         Int
+  poi_parent_category poi_parent_category @relation(fields: [parent_category_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "poi_cache_parent_category_id_da8a16ff_fk_poi_parent_category_id")
+  foodware_project    foodware_project    @relation(fields: [project_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "poi_cache_project_id_590b2467_fk_foodware_project_id")
+  poi_provider        poi_provider        @relation(fields: [provider_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "poi_cache_provider_id_b8ffaf0c_fk_poi_provider_id")
+
+  @@unique([project_id, provider_id, parent_category_id], map: "unique_poi_cache_item")
+  @@index([parent_category_id], map: "poi_cache_parent_category_id_da8a16ff")
+  @@index([project_id], map: "poi_cache_project_id_590b2467")
+  @@index([provider_id], map: "poi_cache_provider_id_b8ffaf0c")
+}
+
+model poi_parent_category {
+  id                    Int                     @id @default(autoincrement())
+  name                  String                  @unique(map: "unique_poi_parent_category") @db.VarChar
+  foodware_project_bin  foodware_project_bin[]
+  poi_cache             poi_cache[]
+  poi_provider_category poi_provider_category[]
+}
+
+model poi_provider {
+  id                    Int                     @id @default(autoincrement())
+  name                  String                  @unique(map: "unique_poi_provider") @db.VarChar
+  foodware_project_bin  foodware_project_bin[]
+  poi_cache             poi_cache[]
+  poi_provider_category poi_provider_category[]
+}
+
+/// This model has constraints using non-default deferring rules and requires additional setup for migrations. Visit https://pris.ly/d/constraint-deferring for more info.
+model poi_provider_category {
+  id                  Int                 @id @default(autoincrement())
+  name                String              @db.VarChar
+  parent_id           Int
+  provider_id         Int
+  poi_parent_category poi_parent_category @relation(fields: [parent_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "poi_provider_categor_parent_id_348b21f3_fk_poi_paren")
+  poi_provider        poi_provider        @relation(fields: [provider_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "poi_provider_category_provider_id_27557081_fk_poi_provider_id")
+
+  @@unique([provider_id, name], map: "unique_poi_provider_category")
+  @@index([parent_id], map: "poi_provider_category_parent_id_348b21f3")
+  @@index([provider_id], map: "poi_provider_category_provider_id_27557081")
 }
 
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.

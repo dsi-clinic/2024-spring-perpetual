@@ -2,28 +2,30 @@
 """
 
 # Standard library imports
+from logging import Logger
 from typing import Dict, List, Union
 
 # Third-party imports
+import pandas as pd
 import geopandas as gpd
 from fuzzywuzzy import fuzz
 from shapely import MultiPolygon, Polygon
 
 # Application imports
-from foodware.places.common import IPlacesProvider
+from foodware.places.factory import IPlacesProvider, IPlacesProviderFactory
 
 
 class PlaceOrchestrator:
     """Orchestrates the retrieval of relevant POI using available providers."""
 
     def get_top_businesses(
+        self,
         infogroup_gdf: gpd.GeoDataFrame,
         locale_name: str,
         locale_boundary: Union[Polygon, MultiPolygon],
         infogroup_year: int,
         places_provider: IPlacesProvider,
         addr_threshold: int = 100,
-        name_threshold: int=90
     ) -> List[Dict]:
         """Extracts the top quartile of businesses by sales volume
         from an Infogroup (Data Axle) dataset. Then matches the
@@ -32,8 +34,8 @@ class PlaceOrchestrator:
         and address values to filter out businesses that have since closed.
 
         The library `fuzzywuzzy` is used to produce similarity scores between
-        pairs of strings. String edit distance is calculated using the 
-        shortest string of length N against all N-length substrings in 
+        pairs of strings. String edit distance is calculated using the
+        shortest string of length N against all N-length substrings in
         the larger string (i.e., a partial ratio).
 
         Args:
@@ -51,15 +53,10 @@ class PlaceOrchestrator:
             places_provider (`IPlacesProvider`): The provider used to fetch
                 current points of interest.
 
-            addr_threshold (`int`): The similarity score at which a 
+            addr_threshold (`int`): The similarity score at which a
                 provider POI street address "matches" a business street
-                address. Ranges from one to one hundred inclusive 
+                address. Ranges from one to one hundred inclusive
                 (i.e., `[1, 100]`). Defaults to 100.
-
-            name_threshold (`int`): The similarity score at which a 
-                provider POI name "matches" a business name.
-                Ranges from one to one hundred inclusive (i.e., 
-                `[1, 100]`). Defaults to 80.
 
         Returns:
             (`list` of `dict`): The bin locations.
@@ -71,10 +68,9 @@ class PlaceOrchestrator:
         sales_vol_threshold = gdf["SALES VOLUME (9) - LOCATION"].describe()["75%"]
 
         # Filter to top performing businesses and add rank as new column
-        top_biz_gdf = (gdf
-                       .query("`SALES VOLUME (9) - LOCATION` > @sales_vol_threshold")
-                       .sort_values(by="SALES VOLUME (9) - LOCATION", ascending=False)
-        )
+        top_biz_gdf = gdf.query(
+            "`SALES VOLUME (9) - LOCATION` > @sales_vol_threshold"
+        ).sort_values(by="SALES VOLUME (9) - LOCATION", ascending=False)
         top_biz_gdf["RANK"] = range(1, len(top_biz_gdf) + 1)
 
         # Call provider to fetch latest state of businesses
@@ -93,7 +89,7 @@ class PlaceOrchestrator:
             city = row["CITY"]
             state = row["STATE"]
             query = ", ".join([company, street_address, city, state])
-            results = places_provider.text_search(query, locale_boundary)
+            results = places_provider.run_text_search(query, locale_boundary)
 
             # Process results
             try:
@@ -110,35 +106,19 @@ class PlaceOrchestrator:
                 if addr_score < addr_threshold:
                     continue
 
-                # Otherwise, add notes to match
-                notes = (
+                # Otherwise, add notes to match and append to list of top businesss
+                best_match.notes = (
                     f"(Source: InfoGroup) In {infogroup_year}, this location "
                     f"housed the restaurant {company}, which had a business "
                     f"sales volume of {sales * 1000:,}. Among restaurants in "
                     f"the locale of {locale_name}, it ranked {rank} of "
-                    f"{len(gdf)} in sales volume."
+                    f"{len(gdf)} in sales volume. It is expected with {name_score} "
+                    "percent confidence that the same restaurant exists at this "
+                    "location. Please confirm for accuracy."
                 )
-                if name_score >= name_threshold:
-                    notes = (
-                        f"It is expected with {name_score} percent "
-                        "confidence that the same rstaurant"
-                    )
-                if addr_score >= addr_threshold:
-                    top_biz.append(best_match)
-
+                top_biz.append(best_match)
 
             except IndexError:
                 continue
 
-
-
-
-            # Popular Dining Location
-if no_match:
-    return None
-if top match has a different street address (using fuzzy match threshold):
-    return None
-else:
-    add verification flag?
-    calculate suspected name change.
-    return top match with explanation ("InfoGroup - In 2023, this location housed the restaurant (XXX), which had business sales of XXX in 2023--the Nth highest in the locale X. It is expected with XXX confidence that this location is still up-to-date/has changed.")
+        return top_biz

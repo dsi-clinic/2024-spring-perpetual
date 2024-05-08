@@ -221,7 +221,9 @@ class TomTomSearchClient(IPlacesProvider):
             # Otherwise, iterate page index and add delay before next request
             page_idx += 1
 
-    def nearby_search(self, geo: Union[Polygon, MultiPolygon]) -> PlacesSearchResult:
+    def run_nearby_search(
+        self, geo: Union[Polygon, MultiPolygon]
+    ) -> PlacesSearchResult:
         """Queries the TomTom Points of Interest Search API for
         locations within a geographic boundary. To accomplish this,
         a bounding box for the geography is calculated and then

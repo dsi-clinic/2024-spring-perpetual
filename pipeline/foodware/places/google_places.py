@@ -10,75 +10,13 @@ from enum import Enum
 from typing import Dict, List, Tuple, Union
 
 # Third-party imports
+import haversine as hs
 import requests
 from shapely import MultiPolygon, Polygon
 
 # Application imports
 from foodware.places.common import IPlacesProvider, Place, PlacesSearchResult
 from common.geometry import BoundingBox, convert_meters_to_degrees
-
-
-class GooglePOITypes(Enum):
-    """Enumerates all relevant categories for points of interest."""
-
-    # Potential Indoor Points
-    BAR = "bar"
-    CAFE = "cafe"
-    RESTAURANT = "restaurant"
-
-    # Potential Outdoor Points
-
-    # Education
-    SCHOOL = "school"
-    UNIVERSITY = "university"
-
-    # Entertainment
-    AMUSEMENT_CENTER = "amusement_center"
-    AMUSEMENT_PARK = "amusement_park"
-    AQUARIUM = "aquarium"
-    ART_GALLERY = "art_gallery"
-    BOWLING_ALLEY = "bowling_alley"
-    CASINO = "casino"
-    COMMUNITY_CENTER = "community_center"
-    CONVENTION_CENTER = "convention_center"
-    CULTURAL_CENTER = "cultural_center"
-    EVENT_VENUE = "event_venue"
-    MOVIE_THEATER = "movie_theater"
-    MUSEUM = "museum"
-    PARK = "park"
-    SPORTS_COMPLEX = "sports_complex"
-    STADIUM = "stadium"
-    SWIMMING_POOL = "swimming_pool"
-    THEATER = "performing_arts_theater"
-    TOURIST_ATTRACTION = "tourist_attraction"
-    ZOO = "zoo"
-
-    # Lodging
-    HOTEL = "hotel"
-
-    # Medical Services
-    HOSPITAL = "hospital"
-
-    # Public services
-    LIBRARY = "library"
-    POST_OFFICE = "post_office"
-
-    # Shopping
-    CONVENIENCE_STORE = "convenience_store"
-    DRUGSTORE = "drugstore"
-    GROCERY_STORE = "grocery_store"
-    MALL = "shopping_mall"
-    MARKET = "market"
-    PHARMACY = "pharmacy"
-    SUPERMARKET = "supermarket"
-
-    # Transportation
-    AIRPORT = "airport"
-    BUS_STATION = "bus_station"
-    LIGHT_RAIL_STATION = "light_rail_station"
-    SUBWAY_STATION = "subway_station"
-    TRAIN_STATION = "train_station"
-    TRANSIT_STATION = "transit_station"
 
 
 class GooglePlacesBasicSKUFields(Enum):
@@ -172,7 +110,11 @@ class GooglePlacesClient(IPlacesProvider):
         )
 
     def find_places_in_bounding_box(
-        self, box: BoundingBox, categories: List[str], search_radius: float
+        self,
+        original_geom,
+        box: BoundingBox,
+        categories: List[str],
+        search_radius: float,
     ) -> Tuple[List[Dict], List[Dict]]:
         """Locates all POIs within the given area and categories.
         The area is further divided into a grid of quadrants if
@@ -264,8 +206,10 @@ class GooglePlacesClient(IPlacesProvider):
             errors = []
             sub_cells = box.split_along_axes(x_into=2, y_into=2)
             for sub in sub_cells:
+                if not sub.intersects_with(original_geom):
+                    continue
                 sub_pois, sub_errs = self.find_places_in_bounding_box(
-                    sub, categories, search_radius / 2
+                    original_geom, sub, categories, search_radius / 2
                 )
                 pois.extend(sub_pois)
                 errors.extend(sub_errs)
@@ -274,8 +218,8 @@ class GooglePlacesClient(IPlacesProvider):
         # Otherwise, extract business data from response body JSON
         return data["places"], []
 
-    def nearby_search(
-        self, geo: Union[Polygon, MultiPolygon]
+    def run_nearby_search(
+        self, geo: Union[Polygon, MultiPolygon], categories: List[str]
     ) -> Tuple[List[Dict], List[Dict]]:
         """Locates all POIs with a review within the given geography.
         The Google Places API permits searching for POIs within a radius around
@@ -327,6 +271,7 @@ class GooglePlacesClient(IPlacesProvider):
         """
         # Calculate bounding box for geography
         bbox: BoundingBox = BoundingBox.from_polygon(geo)
+        self.geo = geo
 
         # Calculate length of square circumscribed by circle with the max search radius
         max_side_meters = (2**0.5) * GooglePlacesClient.MAX_SEARCH_RADIUS_IN_METERS
@@ -344,12 +289,19 @@ class GooglePlacesClient(IPlacesProvider):
             size_in_degrees=Decimal(str(max_side_degrees))
         )
 
+        # Determine initial search radius for cells
+        top_left_cell = cells[0]
+        center_pt = tuple(top_left_cell.center.to_list(coerce_to_float=True))
+        bottom_right_pt = tuple(
+            top_left_cell.bottom_right.to_list(coerce_to_float=True)
+        )
+        search_radius = hs.haversine(center_pt, bottom_right_pt, hs.Unit.METERS)
+
         # Batch categories to filter POIs in request
-        categories = [str(e.value) for e in GooglePOITypes]
         batch_size = GooglePlacesClient.MAX_NUM_CATEGORIES_PER_REQUEST
         category_batches = (
             categories[i : i + batch_size]
-            for i in range(0, len(GooglePOITypes), batch_size)
+            for i in range(0, len(categories), batch_size)
         )
 
         # Locate POIs within each cell if it contains any part of geography
@@ -359,14 +311,19 @@ class GooglePlacesClient(IPlacesProvider):
             for cell in cells:
                 if cell.intersects_with(geo):
                     cell_pois, cell_errors = self.find_places_in_bounding_box(
+                        original_geom=geo,
                         box=cell,
                         categories=batch,
-                        search_radius=GooglePlacesClient.MAX_SEARCH_RADIUS_IN_METERS,
+                        search_radius=search_radius,
                     )
                     pois.extend(cell_pois)
                     errors.extend(cell_errors)
 
-        # Clean POIs
         cleaned_pois = self.clean_places(pois, geo)
 
         return PlacesSearchResult(pois, cleaned_pois, errors)
+
+    def run_text_search(
+        self, query: str, restriction: Polygon | MultiPolygon | None = None
+    ) -> PlacesSearchResult:
+        return super().run_text_search(query, restriction)

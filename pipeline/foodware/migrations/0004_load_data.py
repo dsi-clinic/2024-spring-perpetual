@@ -8,26 +8,101 @@ import geopandas as gpd
 from django.db import migrations
 from django.conf import settings
 from django.contrib.gis.geos import GEOSGeometry
-from shapely.geometry import MultiPolygon, Polygon, shape
+from shapely.geometry import MultiPolygon, Polygon
 
 # Application imports
 from common.storage import IDataStoreFactory
-from foodware.models import Locale
 
 
-def callback(apps, schema_editor):
-    """Loads options for geographic boundaries into the database."""
+def _load_poi_providers(apps, storage):
+    """Loads POI providers into the database."""
+    # Read POI providers from file
+    try:
+        with storage.open_file(settings.POI_PROVIDERS_FPATH) as f:
+            poi_providers = json.load(f)
+    except FileNotFoundError:
+        raise RuntimeError(
+            f"Data load failed. Could not resolve the file path "
+            f'"{settings.POI_PROVIDERS_FPATH}" to find the '
+            "file in the configured data directory."
+        ) from None
 
-    # Initialize data store
-    storage = IDataStoreFactory.get()
+    # Fetch Django model from app registry
+    django_model = apps.get_model("foodware", "PoiProvider")
 
+    # Load providers into database table represented by model
+    created = []
+    for provider in poi_providers:
+        created.append(django_model.objects.create(name=provider))
+
+    return created
+
+
+def _load_poi_parent_categories(apps, storage):
+    """Loads POI parent categories into the database."""
+    # Read POI parent categories from file
+    try:
+        with storage.open_file(settings.POI_PARENT_CATEGORIES) as f:
+            poi_categories = json.load(f)
+    except FileNotFoundError:
+        raise RuntimeError(
+            f"Data load failed. Could not resolve the file path "
+            f'"{settings.POI_PARENT_CATEGORIES}" to find the '
+            "file in the configured data directory."
+        ) from None
+
+    # Fetch Django model from app registry
+    django_model = apps.get_model("foodware", "PoiParentCategory")
+
+    # Load categories into database table represented by model
+    created = []
+    for category in poi_categories:
+        created.append(django_model.objects.create(name=category))
+
+    return created
+
+
+def _load_poi_provider_categories(apps, storage, parent_cats, providers):
+    """Loads POI provider categories into the database."""
+    # Read POI provider categories from file
+    try:
+        with storage.open_file(settings.POI_PROVIDER_CATEGORIES) as f:
+            poi_categories = json.load(f)
+    except FileNotFoundError:
+        raise RuntimeError(
+            f"Data load failed. Could not resolve the file path "
+            f'"{settings.POI_PROVIDER_CATEGORIES}" to find the '
+            "file in the configured data directory."
+        ) from None
+
+    # Fetch Django model from app registry
+    django_model = apps.get_model("foodware", "PoiProviderCategory")
+
+    # Load categories into database table represented by model
+    created = []
+    parent_lookup = {c.name: c.id for c in parent_cats}
+    provider_lookup = {p.name: p.id for p in providers}
+    for category in poi_categories:
+        created.append(
+            django_model.objects.create(
+                parent_id=parent_lookup[category["parent"]],
+                provider_id=provider_lookup[category["provider"]],
+                name=category["name"],
+            )
+        )
+
+    return created
+
+
+def _load_locales(apps, storage):
+    """Loads locales into the appropriate database table."""
     # Read locales from file into GeoDataFrame
     try:
         with storage.open_file(settings.LOCALES_GEOPARQUET_FPATH, "rb") as f:
             locales_gdf = gpd.read_parquet(f)
     except FileNotFoundError:
         raise RuntimeError(
-            f"POI fetch failed. Could not resolve the file path "
+            f"Data load failed. Could not resolve the file path "
             f'"{settings.LOCALES_GEOPARQUET_FPATH}" to find the '
             "file in the configured data directory."
         ) from None
@@ -47,10 +122,32 @@ def callback(apps, schema_editor):
     django_model = apps.get_model("foodware", "Locale")
 
     # Load locales into database table represented by model
+    created = []
     for _, row in locales_gdf.iterrows():
-        django_model.objects.create(
-            name=row["name"], geometry=GEOSGeometry(row["geometry"].wkt)
+        created.append(
+            django_model.objects.create(
+                name=row["name"], geometry=GEOSGeometry(row["geometry"].wkt)
+            )
         )
+
+
+def callback(apps, schema_editor):
+    """Loads options for geographic boundaries into the database."""
+
+    # Initialize data store
+    storage = IDataStoreFactory.get()
+
+    # Load POI providers into databasee
+    poi_providers = _load_poi_providers(apps, storage)
+
+    # Load POI parent categories into database
+    poi_parent_cats = _load_poi_parent_categories(apps, storage)
+
+    # Load POI provider categories into database
+    _load_poi_provider_categories(apps, storage, poi_parent_cats, poi_providers)
+
+    # Load locales into database
+    _load_locales(apps, storage)
 
 
 class Migration(migrations.Migration):

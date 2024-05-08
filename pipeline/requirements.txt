@@ -24,6 +24,7 @@ shapely
 geodatasets
 scikit-learn
 pyarrow
+haversine
 
 # Django
 psycopg2-binary
