@@ -11,12 +11,12 @@ import prisma from "@/services/db";
 import { NextRequest, NextResponse } from "next/server";
 
 /**
- * Fetches a project by id.
+ * Fetches a project by id, along with its bins.
  *
  *  @param {NextRequest} - The HTTP request. Contains a geography id.
  */
 export async function GET(request, { params }) {
-  let { id } = params;
+  let id = parseInt(params.id);
   let results = await prisma.$queryRaw`
     SELECT
       proj.id,
@@ -29,7 +29,7 @@ export async function GET(request, { params }) {
       ST_ASGeoJSON(locale.geometry) AS boundary
     FROM foodware_project as proj
     JOIN locale ON proj.locale_id = locale.id
-    WHERE proj.id = ${parseInt(id)};
+    WHERE proj.id = ${id};
   `;
 
   if (!results.length) {
@@ -37,6 +37,26 @@ export async function GET(request, { params }) {
       status: 404,
     });
   }
+
+  let bins = await prisma.$queryRaw`
+    SELECT
+      bin.created_at_utc,
+      bin.id,
+      bin.project_id,
+      poi_provider.name AS provider_name,
+      poi_parent_category.name AS parent_category_name,
+      bin.external_id,
+      bin.classification,
+      bin.name,
+      bin.external_categories,
+      bin.formatted_address,
+      ST_ASGeoJSON(bin.coords) AS coords,
+      bin.notes
+    FROM foodware_project_bin as bin
+    JOIN poi_provider ON poi_provider.id = bin.provider_id
+    JOIN poi_parent_category ON poi_parent_category.id = bin.parent_category_id
+    WHERE bin.project_id = ${id};
+  `;
 
   let project = results[0];
   let parsedProject = {
@@ -51,6 +71,13 @@ export async function GET(request, { params }) {
       type: "FeatureCollection",
       features: [{ type: "Feature", geometry: JSON.parse(project["boundary"]) }],
     },
+    bins: bins.map((b) => {
+      return {
+        ...b,
+        external_categories: b["external_categories"].split("|"),
+        coords: JSON.parse(b["coords"]),
+      };
+    }),
   };
   return NextResponse.json(parsedProject);
 }

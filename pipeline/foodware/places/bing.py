@@ -177,7 +177,9 @@ class BingMapsClient(IPlacesProvider):
             # Otherwise, extract business data from request body JSON
             return data["resourceSets"][0]["resources"], []
 
-    def nearby_search(self, geo: Union[Polygon, MultiPolygon]) -> PlacesSearchResult:
+    def run_nearby_search(
+        self, geo: Union[Polygon, MultiPolygon]
+    ) -> PlacesSearchResult:
         """Queries the Bing Maps Local Search API for locations
         within a geographic boundary. To accomplish this, a bounding
         box for the geography is calculated and then split into

@@ -1,4 +1,6 @@
 version: "3.4"
+
+
 services:
   # POSTGIS
   postgis:
@@ -47,13 +49,12 @@ services:
       - POSTGRES_CHECK_TIMEOUT=120
     build:
       context: pipeline
-    command: ["bash", "setup.sh", "--migrate", "--use_djangoq"]
+    command: ["bash", "setup.sh", "--use_djangoq"]
     volumes:
       - ./pipeline:/perpetual/pipeline
       - ./data:/perpetual/data
     depends_on:
-      - postgis
-      - pgadmin
+      - pipeline
     env_file:
       - .env
     profiles:

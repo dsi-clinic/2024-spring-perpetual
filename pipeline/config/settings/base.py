@@ -13,17 +13,19 @@ from configurations import Configuration
 class BaseConfig(Configuration):
     """Defines configuration settings common across environments."""
 
-    # File paths
+    # Base directories
     BASE_DIR = Path(__file__).parents[3]
     PROJECT_DIR = BASE_DIR / "pipeline"
     DATA_DIR = BASE_DIR / "data"
-    POI_DIR = DATA_DIR / "poi"
-    CATEGORIES_DIR = DATA_DIR / "categories"
-    LOCALES_GEOPARQUET_FPATH = DATA_DIR / "locales.geoparquet"
-    CATEGORIES_CROSSWALK_JSON_FPATH = CATEGORIES_DIR / "category_crosswalk.json"
-    TEST_BOUNDARIES_DIR = DATA_DIR / "boundaries"
+    FIXTURES_DIR = DATA_DIR / "fixtures"
     STATIC_ROOT = os.path.join(PROJECT_DIR, "staticfiles")
     STATIC_URL = "/static/"
+
+    # Fixture file paths
+    POI_PROVIDERS_FPATH = FIXTURES_DIR / "poi_provider.json"
+    POI_PARENT_CATEGORIES = FIXTURES_DIR / "poi_parent_category.json"
+    POI_PROVIDER_CATEGORIES = FIXTURES_DIR / "poi_provider_category.json"
+    LOCALES_GEOPARQUET_FPATH = FIXTURES_DIR / "locales.geoparquet"
 
     # Default field for primary keys
     DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
