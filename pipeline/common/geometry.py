@@ -21,7 +21,9 @@ class WGS84Coordinate(BaseModel):
     """The longitude (i.e., x-coordinate).
     """
 
-    def to_list(self, as_lat_lon: bool = True) -> List[Decimal]:
+    def to_list(
+        self, as_lat_lon: bool = True, coerce_to_float: bool = False
+    ) -> List[Decimal]:
         """Converts the coordinate to a two-item list of decimals.
 
         Args:
@@ -29,10 +31,16 @@ class WGS84Coordinate(BaseModel):
                 list should be generated in "latitude, longitude"
                 order. Defaults to `True`.
 
+            coerce_to_float (`bool`): A boolean indicating whether
+                the latitude and longitude coordinates should be
+                converted to `float` values. Defaults to `False`.
+
         Returns:
-            (`list` of `float`): The x- and y- coordinates.
+            (`list` of `Decimal`): The x- and y- coordinates.
         """
-        return [self.lat, self.lon] if as_lat_lon else [self.lon, self.lat]
+        lat = float(str(self.lat)) if coerce_to_float else self.lat
+        lon = float(str(self.lon)) if coerce_to_float else self.lon
+        return [lat, lon] if as_lat_lon else [lon, lat]
 
 
 class BoundingBox(BaseModel):
@@ -243,6 +251,11 @@ class BoundingBox(BaseModel):
                 )
 
         return squares
+
+    def to_shapely(self):
+        return box(
+            float(self.min_x), float(self.min_y), float(self.max_x), float(self.max_y)
+        )
 
     @model_validator(mode="after")
     def validate_coords(self) -> None:
