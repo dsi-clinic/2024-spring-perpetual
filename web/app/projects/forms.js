@@ -1,6 +1,6 @@
 "use client";
 
-import LocaleMap from "@/components/map";
+import { LocaleMap } from "@/components/map";
 import { SearchIcon } from "@/components/search_icon";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Autocomplete, AutocompleteItem, Button, Input, Spacer, Textarea } from "@nextui-org/react";
