@@ -1,0 +1,20 @@
+ADDRESS_MAPPING = {
+    "STREET": "ST",
+    "ROAD": "RD",
+    "AVENUE": "AVE",
+    "BOULEVARD": "BLVD",
+    "LANE": "LN",
+    "DRIVE": "DR",
+    "COURT": "CT",
+    "NORTH": "N",
+    "SOUTH": "S",
+    "EAST": "E",
+    "WEST": "W",
+    "PLACE": "PL",
+    "SQUARE": "SQ",
+    "UNIT": "UNIT",
+    "APARTMENT": "APT",
+    "SUITE": "STE",
+    "FLOOR": "FL",
+    "BUILDING": "BLDG"
+}
