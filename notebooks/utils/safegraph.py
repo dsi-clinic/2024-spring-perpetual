@@ -11,6 +11,7 @@ from typing import List, Optional
 import contextily as cx
 import folium
 import geopandas as gpd
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import polyline
@@ -224,7 +225,7 @@ def get_top_locations_with_related_brands(
 
 
 def compute_fastest_routes(df: pd.DataFrame) -> pd.DataFrame:
-    """ """
+    """TODO: Fix algorithm for computing fastest route and update documentation."""
     routes = []
     osrm_url = "http://router.project-osrm.org/route/v1/foot/"
 
@@ -375,8 +376,6 @@ def plot_top_restaurants(df: pd.DataFrame) -> None:
     Returns:
         `None`
     """
-    import matplotlib.pyplot as plt
-
     # Filter data to include only restaurant establishments and sort values
     food_df = df[df["top_category"] == "Restaurants and Other Eating Places"]
     food_sorted_df = food_df.sort_values(by="raw_visit_counts", ascending=True)
