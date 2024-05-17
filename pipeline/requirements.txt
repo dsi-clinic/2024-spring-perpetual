@@ -13,6 +13,7 @@ pyyaml
 # Data Wrangling
 requests
 googlemaps
+geodatasets
 
 # Data Modeling
 pydantic
@@ -21,9 +22,8 @@ pydantic
 pandas
 geopandas
 shapely
-geodatasets
-scikit-learn
 pyarrow
+scikit-learn
 haversine
 
 # Django
@@ -43,6 +43,7 @@ google-cloud-storage
 mapbox
 
 # WebDriver
+webdriver_manager
 selenium
 
 # Route Optimization
