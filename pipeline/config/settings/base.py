@@ -13,16 +13,19 @@ from configurations import Configuration
 class BaseConfig(Configuration):
     """Defines configuration settings common across environments."""
 
-    # File paths
+    # Base directories
     BASE_DIR = Path(__file__).parents[3]
     PROJECT_DIR = BASE_DIR / "pipeline"
     DATA_DIR = BASE_DIR / "data"
-    POI_DIR = DATA_DIR / "poi"
-    CATEGORIES_DIR = DATA_DIR / "categories"
-    CATEGORIES_CROSSWALK_JSON_FPATH = CATEGORIES_DIR / "category_crosswalk.json"
-    TEST_BOUNDARIES_DIR = DATA_DIR / "boundaries"
+    FIXTURES_DIR = DATA_DIR / "fixtures"
     STATIC_ROOT = os.path.join(PROJECT_DIR, "staticfiles")
     STATIC_URL = "/static/"
+
+    # Fixture file paths
+    POI_PROVIDERS_FPATH = FIXTURES_DIR / "poi_provider.json"
+    POI_PARENT_CATEGORIES = FIXTURES_DIR / "poi_parent_category.json"
+    POI_PROVIDER_CATEGORIES = FIXTURES_DIR / "poi_provider_category.json"
+    LOCALES_GEOPARQUET_FPATH = FIXTURES_DIR / "locales.geoparquet"
 
     # Default field for primary keys
     DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
@@ -38,10 +41,24 @@ class BaseConfig(Configuration):
         "django.contrib.staticfiles",
         # Third party apps
         "corsheaders",
+        "django_q",
         # Your apps
         "common",
         "foodware",
     )
+
+    # https://django-q.readthedocs.io/en/latest/install.html
+    Q_CLUSTER = {
+        "name": "DjangORM",
+        "workers": 4,
+        "timeout": 90,
+        "retry": 120,
+        "queue_limit": 50,
+        "bulk": 10,
+        "orm": "default",
+        "max_attempts": 1,
+    }
+    SECRET_KEY = f"{os.getenv('POSTGRES_PASSWORD', '')}://postgres:postgres@postgis:5432/postgres?schema=public"
 
     # https://docs.djangoproject.com/en/2.0/topics/http/middleware/
     MIDDLEWARE = (
@@ -49,7 +66,7 @@ class BaseConfig(Configuration):
         "django.middleware.security.SecurityMiddleware",
         "django.contrib.sessions.middleware.SessionMiddleware",
         "django.middleware.common.CommonMiddleware",
-        "django.middleware.csrf.CsrfViewMiddleware",
+        # "django.middleware.csrf.CsrfViewMiddleware",
         "django.contrib.auth.middleware.AuthenticationMiddleware",
         "django.contrib.messages.middleware.MessageMiddleware",
         "django.middleware.clickjacking.XFrameOptionsMiddleware",
@@ -125,6 +142,14 @@ class BaseConfig(Configuration):
             "CONN_MAX_AGE": int(os.getenv("POSTGRES_CONN_MAX_AGE", 0)),
             "DISABLE_SERVER_SIDE_CURSORS": False,
             "OPTIONS": {"sslmode": "require"},
+        }
+    }
+
+    # Caching
+    CACHES = {
+        "default": {
+            "BACKEND": "django.core.cache.backends.db.DatabaseCache",
+            "LOCATION": "default_cache",
         }
     }
 
