@@ -96,7 +96,7 @@ class MapboxApiClient:
         """
         # Initialize variables
         matrix = []
-        batch_size = profile.max_coords
+        batch_size = profile.max_coords - 1
         seconds_delay = 60 / profile.max_requests_per_minute
 
         # Populate the matrix by iterating through every coordinate

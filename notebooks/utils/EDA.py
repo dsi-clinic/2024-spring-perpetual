@@ -26,11 +26,14 @@ def process_parquet(dataset, output_file_name):
     """
     columns_to_keep = ['placekey', 'location_name', 'latitude', 'longitude',
                        'raw_visit_counts', 'raw_visitor_counts', 'related_same_day_brand', 'date_range_start']
-    
+
+    # Ensure all necessary columns are present in the dataset
+    for col in columns_to_keep:
+        if col not in dataset.columns:
+            raise ValueError(f"Column '{col}' is missing from the dataset")
+
     df_subset = dataset[columns_to_keep].copy()
     df_subset['raw_visit_counts'] = pd.to_numeric(df_subset['raw_visit_counts'], errors='coerce').fillna(0).astype(int)
-    df_subset = df_subset.reset_index(drop=True)
-    
     expanded_df = df_subset.loc[df_subset.index.repeat(df_subset['raw_visit_counts'])].reset_index(drop=True)
     
     # Define the directory path for saving the output
@@ -190,4 +193,9 @@ def split_into_months(df, city):
 
 
 if __name__ == "__main__":
-    main()
+    # Correctly read the Parquet file into a DataFrame
+    data = pd.read_parquet('notebooks/hilo_full_patterns.parquet')
+    output_file_name = 'processed_hilo_data.csv'
+    
+    # Call the function with the DataFrame and output file name
+    process_parquet(data, output_file_name)

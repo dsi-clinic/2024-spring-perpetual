@@ -175,7 +175,7 @@ def plot_cluster_centroids(cluster_summary_df, utm_crs, output_file_name=None):
         # Add a legend to the map
         legend_html = '''
         <div style="position: fixed; 
-                    bottom: 50px; left: 50px; width: 180px; height: 160px; 
+                    bottom: 50px; left: 50px; width: 180px; height: 120px; 
                     border: 2px solid grey; z-index:9999; font-size:14px;
                     text-align: center; padding-top: 10px;">
                       <b>Legend</b><br>
@@ -210,4 +210,15 @@ def plot_cluster_centroids(cluster_summary_df, utm_crs, output_file_name=None):
 
 
 if __name__ == "__main__":
-    main()
+
+    # Perform clustering for January
+    data = pd.read_csv("data/foot-traffic/output/hilo_month_1.csv")
+    clustered_gdf, utm_crs = perform_hdbscan(data, min_cluster_size=50, min_samples=20)
+
+    # Restructure dataset and get centroids
+    cluster_summary = summarize_clusters(clustered_gdf)
+
+    # Plot cluster centroids
+    output_file_name = "hilo_HDBSCAN_jan"
+    plot_cluster_centroids(cluster_summary, utm_crs, output_file_name)
+
