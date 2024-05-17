@@ -26,7 +26,7 @@ class LocalConfig(BaseConfig):
 
     # Cross-origin requests
     # https://github.com/adamchainz/django-cors-headers
-    CORS_ORIGIN_ALLOW_ALL = True
+    CORS_ALLOW_ALL_ORIGINS = True
 
     DATABASES = {
         "default": {
