@@ -36,7 +36,7 @@ from .common.logger import LoggerFactory
 
 
 ### Constants ###
-ENV_PATH = Path(__file__).resolve().parents[1] / ".env"
+ENV_PATH = Path(__file__).resolve().parents[3] / ".env"
 load_dotenv(dotenv_path=ENV_PATH)
 TRIPADVISOR_API_KEY = os.getenv("TRIPADVISOR_API_KEY")
 TRIPADVISOR_API_KEY_SEC = os.getenv("TRIPADVISOR_API_KEY_SEC")
@@ -52,9 +52,9 @@ API_TRIP_LOC_SEARCH = "https://api.content.tripadvisor.com/api/v1/location/searc
 API_TRIP_NEARBY_SEARCH = "https://api.content.tripadvisor.com/api/v1/location/nearby_search?"
 TRIP_HOTEL_SEARCH = "https://www.tripadvisor.com/Hotel_Review-g"
 BASE_URL = "https://www.tripadvisor.com"
-TRIP_DATA_PATH = Path(__file__).resolve().parents[1] / "data" / "tripadvisor_data"
-BOUNDARIES_DATA_PATH = Path(__file__).resolve().parents[1] / "data" / "boundaries"
-TRIP_CRAWlED_DATA_PATH = Path(__file__).resolve().parents[1] / "data" / "tripadvisor_data" / "crawled_data"
+TRIP_DATA_PATH = Path(__file__).resolve().parents[3] / "data" / "tripadvisor_data"
+BOUNDARIES_DATA_PATH = Path(__file__).resolve().parents[3] / "data" / "boundaries"
+TRIP_CRAWlED_DATA_PATH = Path(__file__).resolve().parents[3] / "data" / "tripadvisor_data" / "crawled_data"
 TRIP_LOC_RESPONSE_KEYS = ["location_id", "name", "web_url", "latitude", "longitude", "rating", "num_reviews", "price_level"] # also need dict["address_obj"]["address_string"] and dict["address_obj"]["city"]
 
 
