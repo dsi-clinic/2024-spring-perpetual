@@ -134,6 +134,12 @@ def calculate_r_value(x, merged_df):
 
     # Define a function to assign region based on latitude and longitude
     def assign_region(row):
+        """
+        Function to assign region based on latitude and longitude.
+        Args:
+            row - row of a dataframe with latitude and longitude (DataFrame)
+        Returns: Assigns row to a geographic region (float)
+        """
         lat_region = int((row["latitude"] - min_lat) / lat_step) + 1
         long_region = int((row["longitude"] - min_long) / long_step) + 1
         return (lat_region - 1) * factor2 + long_region
@@ -217,6 +223,12 @@ def find_addresses(x, merged_df):
 
     # Define a function to assign region based on latitude and longitude
     def assign_region(row):
+        """
+        Function to assign region based on latitude and longitude.
+        Args:
+            row - row of a dataframe with latitude and longitude (DataFrame)
+        Returns: Assigns row to a geographic region (float)
+        """
         lat_region = int((row["latitude"] - min_lat) / lat_step) + 1
         long_region = int((row["longitude"] - min_long) / long_step) + 1
         return (lat_region - 1) * factor2 + long_region
@@ -330,18 +342,6 @@ def find_top_unique_business_addresses(
         radius_step - the step the radius will decrease by in each loop (float)
     Returns: Dataframe of top businesses (DataFrame)
     """
-    # Filter foot traffic data for the specified year
-    foot_df_year = filter_year(foot_df, year)
-
-    # Group foot traffic data by business location and sum up foot
-    # traffic counts
-    foot_traffic_by_business = (
-        foot_df_year.groupby(
-            ["location_name", "latitude", "longitude", "street_address"]
-        )["raw_visit_counts"]
-        .sum()
-        .reset_index()
-    )
 
     unique_businesses = set()
     radius_km = max_radius_km  # Starting radius

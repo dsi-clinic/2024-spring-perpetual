@@ -277,8 +277,8 @@ def compute_fastest_routes(df: pd.DataFrame) -> pd.DataFrame:
                     routes.append(route_info)
                 else:
                     print(
-                        f"No route found for {row['Main Business']}
-                        to {row['Related Brand']}"
+                        "No route found for" + 
+                        f"{row['Main Business']} to {row['Related Brand']}"
                     )
             except requests.RequestException as e:
                 print(f"Request failed: {e}")
@@ -552,11 +552,6 @@ def morph_and_visualize(df):
         .fillna(0)
         .astype(int)
     )
-
-    # Use repeat to expand the DataFrame
-    expanded_df = df_subset.loc[
-        df_subset.index.repeat(df_subset["raw_visit_counts"])
-    ].reset_index(drop=True)
 
     df_sorted = df.sort_values(by="raw_visit_counts", ascending=True)
     df_sorted.reset_index(drop=True, inplace=True)
