@@ -88,6 +88,7 @@ def _load_poi_provider_categories(apps, storage, parent_cats, providers):
                 parent_id=parent_lookup[category["parent"]],
                 provider_id=provider_lookup[category["provider"]],
                 name=category["name"],
+                active=category["active"],
             )
         )
 

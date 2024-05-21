@@ -220,18 +220,16 @@ class GooglePlacesClient(IPlacesProvider):
 
     def run_nearby_search(
         self, geo: Union[Polygon, MultiPolygon], categories: List[str]
-    ) -> Tuple[List[Dict], List[Dict]]:
-        """Locates all POIs with a review within the given geography.
-        The Google Places API permits searching for POIs within a radius around
-        a given point. Therefore, data is extracted by dividing the
-        geography's bounding box into cells of equal size and then searching
-        within the circular areas that circumscribe (i.e., perfectly enclose)
-        those cells.
+    ) -> PlacesSearchResult:
+        """Locates all POIs within the given geography. The Google Places API
+        permits searching for POIs within a radius around a given point. Therefore,
+        data is extracted by dividing the geography's bounding box into cells of
+        equal size and then searching within the circular areas that circumscribe
+        (i.e., perfectly enclose) those cells.
 
-        To circumscribe a cell, the circle must have a radius that is
-        one-half the length of the cell's diagonal (as derived from the
-        Pythagorean Theorem). Let `side` equal the length of a cell's side.
-        It follows that the radius is:
+        To circumscribe a cell, the circle must have a radius that is one-half the
+        length of the cell's diagonal (as derived from the Pythagorean Theorem).
+        Let `side` equal the length of a cell's side. It follows that the radius is:
 
         ```
         radius = (√2/2) * side
@@ -265,13 +263,12 @@ class GooglePlacesClient(IPlacesProvider):
             geo (`Polygon` or `MultiPolygon`): The boundary.
 
         Returns:
-            (`PlacesResult`): The result of the geography query. Contains
+            (`PlacesSearchResult`): The result of the geography query. Contains
                 a raw list of retrieved places, a list of cleaned places,
                 and a list of any errors that occurred.
         """
         # Calculate bounding box for geography
         bbox: BoundingBox = BoundingBox.from_polygon(geo)
-        self.geo = geo
 
         # Calculate length of square circumscribed by circle with the max search radius
         max_side_meters = (2**0.5) * GooglePlacesClient.MAX_SEARCH_RADIUS_IN_METERS
@@ -319,6 +316,7 @@ class GooglePlacesClient(IPlacesProvider):
                     pois.extend(cell_pois)
                     errors.extend(cell_errors)
 
+        # Clean places
         cleaned_pois = self.clean_places(pois, geo)
 
         return PlacesSearchResult(pois, cleaned_pois, errors)

@@ -85,7 +85,7 @@ export default function ProjectPage({ params }) {
       return sortDescriptor.direction === "descending" ? -cmp : cmp;
     });
 
-    setPages(sortedEligibleBins.length);
+    setPages(Math.round(sortedEligibleBins.length / recordsPerPage));
 
     const start = (page - 1) * recordsPerPage;
     const end = start + recordsPerPage;
