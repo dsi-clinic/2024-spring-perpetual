@@ -22,7 +22,7 @@ import warnings
 ### RELATIVE IMPORTS ###
 from utils.constants import ADDRESS_MAPPING, HOTEL_LR_DEPENDENT_VARIABLES
 from utils.constants import HOTEL_LR_INDEPENDENT_VARIABLES, HOTEL_LR_VARIABLES
-from utils.hotel_eda import tripadvisor_hotels_webcrawl as thw
+from utils import city_boundary_creation as cbc
 
 
 file_dir = os.path.dirname(os.path.abspath("__file__"))
@@ -106,14 +106,14 @@ def create_aggregated_foottraffic_df(patterns_df: pd.DataFrame):
     return foot_traffic_df
 
 
-def get_price_level_category(price_level):
-    """_summary_
+def get_price_level_category(price_level: str):
+    """Converts the price level to a categorical variable.
 
     Args:
-        price_level (_type_): _description_
+        price_level (str): _description_
 
     Returns:
-        _type_: _description_
+        int: Category of the price level.
     """
     if price_level == "$":
         return 0
@@ -127,14 +127,14 @@ def get_price_level_category(price_level):
         return np.nan
     
 
-def get_binary_room_category(number_of_rooms):
-    """_summary_
+def get_binary_room_category(number_of_rooms: int):
+    """Converts the number of rooms to a binary variable.
 
     Args:
-        number_of_rooms (_type_): _description_
+        number_of_rooms (int): Number of rooms in a lodging.
 
     Returns:
-        _type_: _description_
+        int: Category of the number of rooms.
     """
     if not number_of_rooms:
         return np.nan
@@ -147,13 +147,14 @@ def get_binary_room_category(number_of_rooms):
 
 
 def format_hotel_df(hotel_df: pd.DataFrame):
-    """_summary_
+    """Formats the hotel dataframe.
 
     Args:
-        hotel_df (pd.DataFrame): _description_
+        hotel_df (pd.DataFrame): The dataframe of hotel data.  Each row 
+            represents a hotel.
 
     Returns:
-        _type_: _description_
+        pd.DataFrame: The formatted hotel dataframe.
     """
     hotel_df.loc[:, "price_level_category"] = hotel_df.loc[:, "price_level"].apply(lambda price_level: get_price_level_category(price_level))
     hotel_df.loc[:, "large_hotel"] = hotel_df.loc[:, "number_of_rooms"].apply(lambda number_of_rooms: get_binary_room_category(number_of_rooms))
@@ -173,17 +174,23 @@ def plot_hotel_business_visitor(cityname: str,
                                 max_latitude: Optional[float] = None,
                                 scale_factor: float = 0.0000001,
 ):  
-    """_summary_
+    """Plots the hotels, businesses, and foot traffic data on a map.
     
     Args:
-        cityname (_type_): _description_
-        city_geo (_type_): _description_
-        hotel_business_visitor_df (_type_): _description_
-        min_longitude (_type_, optional): _description_. Defaults to None.
-        max_longitude (_type_, optional): _description_. Defaults to None.
-        min_latitude (_type_, optional): _description_. Defaults to None.
-        max_latitude (_type_, optional): _description_. Defaults to None.
-        scale_factor (float, optional): _description_. Defaults to 0.0000001.
+        cityname (str): The name of the city.
+        city_geo (Union[Polygon, MultiPolygon]): The boundary of the city.
+        hotel_business_visitor_df (pd.DataFrame)): The concated dataframe of 
+            hotel, business, and foot-traffic data.
+        min_longitude (float, optional): The min longitude for the plot. 
+            Defaults to None.
+        max_longitude (float, optional): The max longitude for the plot. 
+            Defaults to None.
+        min_latitude (float, optional): The min latitude for the plot. 
+            Defaults to None.
+        max_latitude (_type_, optional): The max latitude for the plot. 
+                Defaults to None.
+        scale_factor (float, optional): The scale of the buffers for the 
+            business and foot-traffic data. Defaults to 0.0000001.
     """
     hotel_business_visitor_df["raw_visitor_counts"] = pd.to_numeric(
             hotel_business_visitor_df["raw_visitor_counts"], errors='coerce'
@@ -220,7 +227,7 @@ def plot_hotel_business_visitor(cityname: str,
     visitor_patch = mpatches.Circle((0, 0), 0.1, color="red", alpha=0.3, label=f"Aggregated Raw Visitor Counts ({min_visitor_counts}-{max_visitor_counts})")
     sales_patch = mpatches.Circle((0, 0), 0.1, color="yellow", alpha=0.1, label=f"Sales Volume per Business ({min_sales_volume}-{max_sales_volume})")
     large_hotel_marker = Line2D([0], [0], marker="+", color="dodgerblue", label="Large Hotel (90 or more rooms)", linestyle="None")
-    small_hotel_marker = Line2D([0], [0], marker=".", color="dodgerblue", label="Small Hotel (Fewer than 90 rooms)", linestyle="None")
+    small_hotel_marker = Line2D([0], [0], marker=".", color="green", label="Small Hotel (Fewer than 90 rooms)", linestyle="None")
 
     visitor_scale_factor = scale_factor
     sales_scale_factor = scale_factor
@@ -245,9 +252,9 @@ def plot_hotel_business_visitor(cityname: str,
 
     for _, row in plot_gdf.dropna(subset=["location_id"]).iterrows():
         if row.get("number_of_rooms") >= 90:
-            ax.text(row.geometry.x, row.geometry.y, "+", color="dodgerblue", fontsize=15, ha="center", va="center", fontweight="bold")
+            ax.text(row.geometry.x, row.geometry.y, "+", color="dodgerblue", fontsize=17, ha="center", va="center", fontweight="bold")
         else:
-            ax.scatter(row.geometry.x, row.geometry.y, color="dodgerblue", s=13, zorder=3)
+            ax.scatter(row.geometry.x, row.geometry.y, color="green", s=15, zorder=3)
 
     ctx.add_basemap(ax, crs=plot_gdf.crs.to_string(), source=ctx.providers.CartoDB.Positron)
 
@@ -265,14 +272,15 @@ def plot_hotel_business_visitor(cityname: str,
 
 
 def standardize_address(address: str, mappings = ADDRESS_MAPPING):
-    """_summary_
+    """Uses the usaddress library to parse and standardize an address.
 
     Args:
-        address (str): _description_
-        mappings (Dict, optional): _description_. Defaults to ADDRESS_MAPPING.
+        address (str): An address to standardize.
+        mappings (Dict, optional): A dictionary used to abbreviate words like 
+            street, north, and road. Defaults to ADDRESS_MAPPING.
 
     Returns:
-        _type_: _description_
+        str: The standardized address.
     """
     address = address.upper().strip()
     parsed_address = usaddress.parse(address)
@@ -283,16 +291,21 @@ def standardize_address(address: str, mappings = ADDRESS_MAPPING):
 def combined_similarity(hotel_address, hotel_name, business_address, business_name, 
         address_weight=0.5, name_weight=0.5
 ):
-    """_summary_
+    """Finds the combined similarity score of the address and name of a hotel
+    and a business.
 
     Args:
-        hotel (_type_): _description_
-        business (_type_): _description_
-        address_weight (float, optional): _description_. Defaults to 0.5.
-        name_weight (float, optional): _description_. Defaults to 0.5.
+        hotel_address (str): The address of the hotel.
+        hotel_name (str): The name of the hotel.
+        business_address (str): The address of the business.
+        business_name (str): The name of the business.
+        address_weight (float, optional): The weight of the address in the 
+            similarity score. Defaults to 0.5.
+        name_weight (float, optional): The weight of the name in the similarity 
+            score. Defaults to 0.5.
 
     Returns:
-        _type_: _description_
+        float: The combined similarity score.
     """
     address_score = fuzz.partial_ratio(hotel_address, business_address)
     name_score = fuzz.partial_ratio(hotel_name, business_name)
@@ -300,27 +313,38 @@ def combined_similarity(hotel_address, hotel_name, business_address, business_na
     return combined_score
 
 
-def find_matching(hotel_df, business_df, hotel_name_column: str = "name", 
+def find_matching(hotel_df: pd.DataFrame, business_df: pd.DataFrame, 
+        hotel_name_column: str = "name", 
         hotel_address_column: str = "street1", 
         business_name_column: str = "name", 
         business_address_column: str = "street1",
         address_weight=0.5, name_weight=0.5, min_score=86
     ):
-    """_summary_
+    """Matches hotels to businesses based on the similarity of their address
+    and name.
 
     Args:
-        hotel_df (_type_): _description_
-        business_df (_type_): _description_
-        hotel_name_column (str, optional): _description_. Defaults to "name".
-        hotel_address_column (str, optional): _description_. Defaults to "street1".
-        business_name_column (str, optional): _description_. Defaults to "name".
-        business_address_column (str, optional): _description_. Defaults to "street1".
-        address_weight (float, optional): _description_. Defaults to 0.5.
-        name_weight (float, optional): _description_. Defaults to 0.5.
-        min_score (int, optional): _description_. Defaults to 86.
+        hotel_df (pd.DataFrame): The dataframe of hotel data.
+        business_df (pd.DataFrame): The dataframe of business data.
+        hotel_name_column (str, optional): The column name of the hotel name.
+            Defaults to "name".
+        hotel_address_column (str, optional): The column name of the hotel
+            address. Defaults to "street1".
+        business_name_column (str, optional): The column name of the business
+            name. Defaults to "name".
+        business_address_column (str, optional): The column name of the business
+            address. Defaults to "street1".
+        address_weight (float, optional): The weight of the address in the
+            similarity score. Defaults to 0.5.
+        name_weight (float, optional): The weight of the name in the similarity
+            score. Defaults to 0.5.
+        min_score (int, optional): The minimum similarity score for a match.
+            Defaults to 86.
+        
         
     Returns:
-        _type_: _description_
+        List: A list of tuples containing the indices of the matching hotels
+            and businesses.
     """
     indicies_lst = []
     
@@ -358,16 +382,21 @@ def find_matching(hotel_df, business_df, hotel_name_column: str = "name",
     return indicies_lst
 
 
-def merge_data(hotel_df, business_df, indices_lst):
-    """_summary_
+def merge_data(hotel_df: pd.DataFrame, business_df: pd.DataFrame, 
+        indices_lst: List
+    ):
+    """Merges the hotel and business dataframes based the indices list provided
+    from the fuzzy matching.
 
     Args:
-        hotel_df (_type_): _description_
-        business_df (_type_): _description_
-        indicies_lst (_type_): _description_
+        hotel_df (pd.DataFrame): The dataframe of hotel data.
+        business_df (pd.DataFrame): The dataframe of business data.
+        indices_lst (List): A list of tuples containing the indices of the
+            matching hotels and businesses.
 
     Returns:
-        _type_: _description_
+        Tuple of pd.DataFrame: The dataframe of only merged rows and the 
+            dataframe of all rows, merged or not.
     """
     merged_rows = []
     hotel_df_copy = hotel_df.copy()
@@ -396,14 +425,14 @@ def merge_data(hotel_df, business_df, indices_lst):
 
 
 def get_city_infogroup(cityname: str, state_abbrev: str):
-    """_summary_
+    """Gathers the infogroup data for a city.
 
     Args:
-        cityname (str): _description_
-        state_abbrev (str): _description_
+        cityname (str): The name of the city.
+        state_abbrev (str): The abbreviation of the state of the city.
 
     Returns:
-        _type_: _description_
+        pd.DataFrame: The infogroup data for the city.
     """
     cityname = cityname.upper().strip()
     state_abbrev = state_abbrev.upper().strip()
@@ -414,13 +443,13 @@ def get_city_infogroup(cityname: str, state_abbrev: str):
 
 
 def get_city_foot_traffic(cityname: str):
-    """_summary_
+    """Gathers the foot traffic data for a city.
 
     Args:
-        cityname (str): _description_
+        cityname (str): The name of the city.
 
     Returns:
-        _type_: _description_
+        pd.DataFrame: The foot traffic data for the city.
     """
     cityname = cityname.lower().replace(" ", "_").strip()
     foot_traffic_path = os.path.join(DATA_PATH, "foot-traffic", f"{cityname}_full_patterns.parquet")
@@ -431,14 +460,14 @@ def get_city_foot_traffic(cityname: str):
 
 
 def get_city_hotels(cityname: str, api_or_crawled: str):
-    """_summary_
+    """Gathers the hotel data for a city.
 
     Args:
-        cityname (str): _description_
-        api_or_crawled (str): _description_
+        cityname (str): The name of the city.
+        api_or_crawled (str): The source of the hotel data.
 
     Returns:
-        _type_: _description_
+        pd.DataFrame: The hotel data for the city.
     """
     cityname = cityname.lower().replace(" ", "_").strip()
     if api_or_crawled == "api":
@@ -452,29 +481,31 @@ def get_city_hotels(cityname: str, api_or_crawled: str):
 
 
 def get_city_geo(cityname: str):
-    """_summary_
+    """Gathers the spatially enabled data for the boundary of a city.
 
     Args:
-        cityname (str): _description_
+        cityname (str): The name of the city.
 
     Returns:
-        _type_: _description_
+        Union[Polygon, MultiPolygon]: The boundary of the city.
     """
     cityname = cityname.title().strip()
-    city_geo = thw.CityGeo(cityname).geo
+    city_geo = cbc.CityGeo(cityname).geo
     
     return city_geo
 
 
-def get_city_merged(hotel_df, business_df):
-    """_summary_
+def get_city_merged(hotel_df: pd.DataFrame, business_df: pd.DataFrame):
+    """Impletments the fuzzy matching and merging of the hotel and business 
+        data via partial ratios.
 
     Args:
-        hotel_df (_type_): _description_
-        business_df (_type_): _description_
+        hotel_df (pd.DataFrame): The dataframe of hotel data.
+        business_df (pd.DataFrame): The dataframe of business data.
 
     Returns:
-        _type_: _description_
+        tuple of pd.DataFrame: The dataframe of only merged rows and the
+            dataframe of all rows, merged or not.
     """
     city_indicies_lst = find_matching(hotel_df, business_df)
     city_merged_df, city_complete_df = merge_data(hotel_df, business_df, city_indicies_lst)
@@ -483,14 +514,14 @@ def get_city_merged(hotel_df, business_df):
 
 
 def get_city_data(cityname: str, state_abbrev: str):
-    """_summary_
+    """Gathers all the data for a city in a single dictionary.
 
     Args:
-        cityname (str): _description_
-        state_abbrev (str): _description_
+        cityname (str): The name of the city.
+        state_abbrev (str): The abbreviation of the state of the city.
 
     Returns:
-        _type_: _description_
+        Dict of pd.DataFrame: A dictionary of all the dataframes for the city.
     """
     city_df_dict = {}
     city_df_dict["business"] = get_city_infogroup(cityname, state_abbrev)
@@ -516,16 +547,18 @@ def get_city_data(cityname: str, state_abbrev: str):
     return city_df_dict
 
 
-def get_city_correlations(cityname, df_key, df):
-    """_summary_
+def get_city_correlations(cityname: str, df_key: str, df: pd.DataFrame):
+    """Gathers the correlations of the hotel data for a city in a heatmap which 
+        displays the correlations.
 
     Args:
-        cityname (_type_): _description_
-        df_key (_type_): _description_
-        df (_type_): _description_
+        cityname (str): The name of the city.
+        df_key (str): The key of the dataframe in the city dataframe dictionary.
+        df (pd.DataFrame): The dataframe of hotel data.
 
     Returns:
-        _type_: _description_
+        sns.heatmap: The heatmap of the correlations of the hotel and 
+            business data.
     """
     key_title = df_key.replace("_", " ").title()
     plt.figure(figsize=(16, 6))
@@ -540,15 +573,18 @@ def get_city_correlations(cityname, df_key, df):
     return heatmap
 
 
-def get_heatmaps(cityname, city_df_dict):
-    """_summary_
+def get_heatmaps(cityname: str, city_df_dict: Dict[str, pd.DataFrame]):
+    """Gathers the correlations of the hotel data for a city in heatmaps and a
+    returns a tuple of the heatmaps.
 
     Args:
-        cityname (_type_): _description_
-        city_df_dict (_type_): _description_
+        cityname (str): The name of the city.
+        city_df_dict (Dict[str, pd.DataFrame]): A dictionary of the dataframes
+            for the city.
 
     Returns:
-        _type_: _description_
+        tuple of sns.heatmap: A tuple of the heatmaps of the correlations of the
+            hotel and business data.
     """
     api_heatmap = get_city_correlations(cityname, "api_merged", 
             city_df_dict["api_merged"]
@@ -562,17 +598,21 @@ def get_heatmaps(cityname, city_df_dict):
     return api_heatmap, crawled_heatmap
 
 
-def get_city_linear_regression(cityname, df, api_or_crawled):
-    """_summary_
+def get_city_linear_regression(cityname: str, df: pd.DataFrame, 
+        api_or_crawled: str, combo_count: int = 4):
+    """Calculates and displays the linear regression of the hotel data for a
+    city.
 
     Args:
-        cityname (_type_): _description_
-        df (_type_): _description_
-        api_or_crawled (_type_): _description_
+        cityname (str): The name of the city.
+        df (pd.DataFrame): The dataframe of hotel data.
+        api_or_crawled (str): The source of the hotel data.
+        combo_count (int, optional): The number of combinations to calculate
     """
     df_copy = df.loc[:, HOTEL_LR_VARIABLES].copy()
     df_copy.dropna(inplace=True)
-    X = df.loc[:, HOTEL_LR_INDEPENDENT_VARIABLES]
+    HOTEL_INDEPENDENT_VARIABLES = [col for col in HOTEL_LR_INDEPENDENT_VARIABLES if col != "large_hotel"]
+    X = df.loc[:, HOTEL_INDEPENDENT_VARIABLES]
     Y = df.loc[:, HOTEL_LR_DEPENDENT_VARIABLES]
     for dependent in HOTEL_LR_DEPENDENT_VARIABLES:
         print("#"*100)
@@ -580,8 +620,8 @@ def get_city_linear_regression(cityname, df, api_or_crawled):
         print("#"*100)
         print("#"*100)
         y = df.loc[:, dependent]
-        for i in range(2, len(HOTEL_LR_INDEPENDENT_VARIABLES) + 1):
-            for combo in combinations(HOTEL_LR_INDEPENDENT_VARIABLES, i):
+        for i in range(combo_count, len(HOTEL_INDEPENDENT_VARIABLES) + 1):
+            for combo in combinations(HOTEL_INDEPENDENT_VARIABLES, i):
                 X = df_copy.loc[:, combo]
                 print(f"y: {y.head(1)}")
                 print(f"X: {X.head(1)}")
@@ -595,17 +635,19 @@ def get_city_linear_regression(cityname, df, api_or_crawled):
                     print("#"*100)  
                 
 
-def build_hotel_table(df_dict, city_lst, api_or_crawled, table_column_names_lst):
-    """_summary_
+def build_hotel_table(df_dict: dict[pd.DataFrame], city_lst: List, 
+        api_or_crawled: str, table_column_names_lst: List):
+    """Builds a table of hotel data for a list of cities.
 
     Args:
-        df_dict (_type_): _description_
-        city_lst (_type_): _description_
-        api_or_crawled (_type_): _description_
-        table_column_names_lst (_type_): _description_
+        df_dict (dict[pd.DataFrame]): A dictionary of the dataframes for the 
+            cities.
+        city_lst (List): A list of the city names.
+        api_or_crawled (str): The source of the hotel data.
+        table_column_names_lst (List): A list of the column names for the table.
 
     Returns:
-        _type_: _description_
+        pd.DataFrame: The table of hotel data for the cities.
     """
     hotel_table_lst = []
     hotel_table_df = pd.DataFrame()
@@ -633,17 +675,22 @@ def build_hotel_table(df_dict, city_lst, api_or_crawled, table_column_names_lst)
     return hotel_table_df
 
 
-def create_and_display_hotel_tables(df_dict, city_lst, api_table_column_names_lst, crawled_table_column_names_lst):
-    """_summary_
+def create_and_display_hotel_tables(df_dict: Dict, city_lst: List,
+        api_table_column_names_lst: List, crawled_table_column_names_lst: List
+    ):
+    """Creates and displays the API and Crawled hotel tables for a list of cities.
     
     Args:
-        df_dict (_type_): _description_
-        city_lst (_type_): _description_
-        api_table_column_names_lst (_type_): _description_
-        crawled_table_column_names_lst (_type_): _description_
+        df_dict (Dict[pd.DataFrame]): A dictionary of the dataframes for the 
+            cities.
+        city_lst (List): A list of the city names.
+        api_table_column_names_lst (List): A list of the column names for the 
+            API table.
+        crawled_table_column_names_lst (List): A list of the column names for 
+            the Crawled table.
     
     Returns:
-        _type_: _description_
+        Tuple of pd.DataFrame: A tuple of the API and Crawled hotel tables.
     """
     # Create and display API hotel table
     api_hotel_table_df = build_hotel_table(df_dict, city_lst, "api_hotels", api_table_column_names_lst)
