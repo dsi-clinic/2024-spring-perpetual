@@ -15,7 +15,6 @@ from spopt.locate import MCLP
 from pulp import PULP_CBC_CMD
 from scipy.spatial import cKDTree
 
-
 # Suppress warnings
 with warnings.catch_warnings():
     warnings.simplefilter("ignore")
@@ -69,6 +68,7 @@ def load_and_clean_data(api_data_path, foot_traffic_path, large_apartments_path,
 
     return hilo_all_gdf, foot, large_apartments_NJ
 
+
 def summarize_clusters(gdf):
     """
     Summarizes the clusters in a GeoDataFrame that includes a 'cluster' label column derived from K-means clustering.
@@ -109,6 +109,7 @@ def summarize_clusters(gdf):
 
     return summary_df
 
+
 def cluster_foot_traffic(foot_traffic_gdf, n_clusters=200):
     """
     Perform K-means clustering on foot traffic data.
@@ -134,6 +135,7 @@ def cluster_foot_traffic(foot_traffic_gdf, n_clusters=200):
 
     return foot_traffic_gdf
 
+
 def clean_coordinates(gdf):
     """
     Ensure all geometries are valid and finite.
@@ -150,14 +152,16 @@ def clean_coordinates(gdf):
     gdf = gdf[gdf['geometry'].apply(lambda geom: np.isfinite(geom.x) and np.isfinite(geom.y))]
     return gdf
 
-def calculate_cost_matrix(demand_gdf, supply_gdf, radius):
+
+def calculate_cost_matrix(demand_gdf, supply_gdf, radius=None, mapbox_access_token=None):
     """
-    Calculate the cost matrix for demand and supply points.
+    Calculate the cost matrix for demand and supply points, either using local computation or Mapbox API.
 
     Parameters:
     - demand_gdf (gpd.GeoDataFrame): GeoDataFrame of demand points.
     - supply_gdf (gpd.GeoDataFrame): GeoDataFrame of supply points.
-    - radius (float): Service radius.
+    - radius (float): Service radius for local computation (ignored if using Mapbox).
+    - mapbox_access_token (str): Mapbox access token for API usage (optional).
 
     Returns:
     - np.array: Cost matrix.
@@ -165,6 +169,9 @@ def calculate_cost_matrix(demand_gdf, supply_gdf, radius):
     demand_coords = np.array(list(demand_gdf.geometry.apply(lambda geom: (geom.x, geom.y))))
     supply_coords = np.array(list(supply_gdf.geometry.apply(lambda geom: (geom.x, geom.y))))
 
+    if mapbox_access_token:
+        return generate_mapbox_cost_matrix(demand_coords, supply_coords, mapbox_access_token)
+    
     tree = cKDTree(supply_coords)
     demand_indices = np.arange(len(demand_coords))
     supply_indices = [tree.query_ball_point(point, r=radius) for point in demand_coords]
@@ -175,131 +182,16 @@ def calculate_cost_matrix(demand_gdf, supply_gdf, radius):
 
     return cost_matrix
 
-def calculate_weights_and_cost_matrix(client_points, facility_points, service_radius):
-    """
-    Calculate the weights and cost matrix for the given client and facility points.
 
-    Parameters:
-    - client_points (gpd.GeoDataFrame): GeoDataFrame of client points with weights.
-    - facility_points (gpd.GeoDataFrame): GeoDataFrame of facility points.
-    - service_radius (float): Service radius.
-
-    Returns:
-    - np.array: Array of weights.
-    - np.array: Cost matrix.
-    """
-    weights = client_points['weights'].values
-    cost_matrix = calculate_cost_matrix(client_points, facility_points, service_radius)
-    return weights, cost_matrix
-
-def setup_and_solve_mclp(cost_matrix, weights, service_radius, p_facilities):
-    """
-    Set up and solve the Maximal Covering Location Problem (MCLP).
-
-    Parameters:
-    - cost_matrix (np.array): Cost matrix.
-    - weights (np.array): Weights for the demand points.
-    - service_radius (float): Service radius.
-    - p_facilities (int): Number of facilities to locate.
-
-    Returns:
-    - spopt.locate.coverage.MCLP: Solved MCLP model.
-    """
-    mclp = MCLP.from_cost_matrix(cost_matrix, weights, service_radius, p_facilities)
-    solver = PULP_CBC_CMD()
-    mclp.solve(solver)
-    return mclp
-
-def print_coverage_results(mclp):
-    """
-    Print the coverage results from the solved MCLP model.
-
-    Parameters:
-    - mclp (spopt.locate.coverage.MCLP): Solved MCLP model.
-    """
-    print(f"{mclp.perc_cov}% coverage is observed")
-
-def calculate_lattice_extent(client_points):
-    """
-    Calculate the extent of the lattice based on the client points.
-
-    Parameters:
-    - client_points (gpd.GeoDataFrame): GeoDataFrame of client points.
-
-    Returns:
-    - tuple: Extent of the lattice (minx, miny, maxx, maxy).
-    """
-    minx, miny, maxx, maxy = client_points.total_bounds
-    return minx, miny, maxx, maxy
-
-def create_network_with_lattice(minx, miny, maxx, maxy):
-    """
-    Create a network with a regular lattice centered around the extent.
-
-    Parameters:
-    - minx (float): Minimum x-coordinate.
-    - miny (float): Minimum y-coordinate.
-    - maxx (float): Maximum x-coordinate.
-    - maxy (float): Maximum y-coordinate.
-
-    Returns:
-    - spaghetti.Network: Created network with a regular lattice.
-    """
-    with warnings.catch_warnings():
-        warnings.simplefilter("ignore")
-        lattice = spaghetti.regular_lattice((minx, miny, maxx, maxy), 10, exterior=True)
-    ntw = spaghetti.Network(in_data=lattice)
-    return ntw
-
-def transform_to_common_crs(*geodfs, crs='EPSG:4326'):
-    """
-    Transform multiple GeoDataFrames to a common CRS.
-
-    Parameters:
-    - *geodfs: Variable length argument list of GeoDataFrames to transform.
-    - crs (str): Coordinate reference system to transform to.
-
-    Returns:
-    - list: List of transformed GeoDataFrames.
-    """
-    return [gdf.to_crs(crs) for gdf in geodfs]
-
-def snap_observations_to_network(ntw, client_points, facility_points):
-    """
-    Snap observations (client and facility points) to the network.
-
-    Parameters:
-    - ntw (spaghetti.Network): Network to snap observations to.
-    - client_points (gpd.GeoDataFrame): GeoDataFrame of client points.
-    - facility_points (gpd.GeoDataFrame): GeoDataFrame of facility points.
-
-    Returns:
-    - gpd.GeoDataFrame: Snapped client points.
-    - gpd.GeoDataFrame: Snapped facility points.
-    """
-    with warnings.catch_warnings():
-        warnings.simplefilter("ignore")
-        ntw.snapobservations(client_points, "clients", attribute=True)
-    clients_snapped = spaghetti.element_as_gdf(ntw, pp_name="clients", snapped=True)
-    clients_snapped.drop(columns=["id", "comp_label"], inplace=True)
-
-    with warnings.catch_warnings():
-        warnings.simplefilter("ignore")
-        ntw.snapobservations(facility_points, "facilities", attribute=True)
-    facilities_snapped = spaghetti.element_as_gdf(ntw, pp_name="facilities", snapped=True)
-    facilities_snapped.drop(columns=["id", "comp_label"], inplace=True)
-
-    return clients_snapped, facilities_snapped
-
-def generate_mapbox_cost_matrix(client_points, facility_points, max_coords=25, mapbox_access_token=None):
+def generate_mapbox_cost_matrix(demand_coords, supply_coords, mapbox_access_token, max_coords=25):
     """
     Generate the cost matrix using the Mapbox API.
 
     Parameters:
-    - client_points (gpd.GeoDataFrame): GeoDataFrame of client points.
-    - facility_points (gpd.GeoDataFrame): GeoDataFrame of facility points.
-    - max_coords (int): Maximum number of coordinates per API request.
+    - demand_coords (list): List of demand coordinates.
+    - supply_coords (list): List of supply coordinates.
     - mapbox_access_token (str): Mapbox access token.
+    - max_coords (int): Maximum number of coordinates per API request.
 
     Returns:
     - np.array: Cost matrix.
@@ -327,13 +219,10 @@ def generate_mapbox_cost_matrix(client_points, facility_points, max_coords=25, m
         
         return np.array(matrix_data['durations'])
 
-    demand_coords = [(point.x, point.y) for point in client_points.geometry]
-    facility_coords = [(point.x, point.y) for point in facility_points.geometry]
-
     client_chunks = list(chunk_coordinates(demand_coords, max_coords // 2))
-    facility_chunks = list(chunk_coordinates(facility_coords, max_coords // 2))
+    facility_chunks = list(chunk_coordinates(supply_coords, max_coords // 2))
 
-    cost_matrix = np.full((len(client_points), len(facility_points)), np.inf)
+    cost_matrix = np.full((len(demand_coords), len(supply_coords)), np.inf)
 
     for i, client_chunk in enumerate(client_chunks):
         for j, facility_chunk in enumerate(facility_chunks):
@@ -345,6 +234,100 @@ def generate_mapbox_cost_matrix(client_points, facility_points, max_coords=25, m
             cost_matrix[start_client_idx:start_client_idx + num_clients, start_facility_idx:start_facility_idx + num_facilities] = chunk_cost_matrix[:num_clients, num_clients:num_clients + num_facilities]
 
     return cost_matrix
+
+
+def calculate_weights_and_cost_matrix(client_points, facility_points, service_radius, mapbox_access_token=None):
+    """
+    Calculate the weights and cost matrix for the given client and facility points.
+
+    Parameters:
+    - client_points (gpd.GeoDataFrame): GeoDataFrame of client points with weights.
+    - facility_points (gpd.GeoDataFrame): GeoDataFrame of facility points.
+    - service_radius (float): Service radius.
+    - mapbox_access_token (str): Mapbox access token.
+
+    Returns:
+    - np.array: Array of weights.
+    - np.array: Cost matrix.
+    """
+    weights = client_points['weights'].values
+    cost_matrix = calculate_cost_matrix(client_points, facility_points, service_radius, mapbox_access_token)
+    return weights, cost_matrix
+
+
+def setup_and_solve_mclp(cost_matrix, weights, service_radius, p_facilities):
+    """
+    Set up and solve the Maximal Covering Location Problem (MCLP).
+
+    Parameters:
+    - cost_matrix (np.array): Cost matrix.
+    - weights (np.array): Weights for the demand points.
+    - service_radius (float): Service radius.
+    - p_facilities (int): Number of facilities to locate.
+
+    Returns:
+    - spopt.locate.coverage.MCLP: Solved MCLP model.
+    """
+    mclp = MCLP.from_cost_matrix(cost_matrix, weights, service_radius, p_facilities)
+    solver = PULP_CBC_CMD()
+    mclp.solve(solver)
+    return mclp
+
+
+def print_coverage_results(mclp):
+    """
+    Print the coverage results from the solved MCLP model.
+
+    Parameters:
+    - mclp (spopt.locate.coverage.MCLP): Solved MCLP model.
+    """
+    print(f"{mclp.perc_cov}% coverage is observed")
+
+
+def create_network_with_lattice(client_points, spacing=10):
+    """
+    Create a network with a regular lattice centered around the extent.
+
+    Parameters:
+    - client_points (gpd.GeoDataFrame): GeoDataFrame of client points.
+
+    Returns:
+    - spaghetti.Network: Created network with a regular lattice.
+    """
+    minx, miny, maxx, maxy = client_points.total_bounds
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        lattice = spaghetti.regular_lattice((minx, miny, maxx, maxy), spacing, exterior=True)
+    ntw = spaghetti.Network(in_data=lattice)
+    return ntw
+
+
+def snap_observations_to_network(ntw, client_points, facility_points):
+    """
+    Snap observations (client and facility points) to the network.
+
+    Parameters:
+    - ntw (spaghetti.Network): Network to snap observations to.
+    - client_points (gpd.GeoDataFrame): GeoDataFrame of client points.
+    - facility_points (gpd.GeoDataFrame): GeoDataFrame of facility points.
+
+    Returns:
+    - gpd.GeoDataFrame: Snapped client points.
+    - gpd.GeoDataFrame: Snapped facility points.
+    """
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        ntw.snapobservations(client_points, "clients", attribute=True)
+    clients_snapped = spaghetti.element_as_gdf(ntw, pp_name="clients", snapped=True)
+    clients_snapped.drop(columns=["id", "comp_label"], inplace=True)
+
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        ntw.snapobservations(facility_points, "facilities", attribute=True)
+    facilities_snapped = spaghetti.element_as_gdf(ntw, pp_name="facilities", snapped=True)
+    facilities_snapped.drop(columns=["id", "comp_label"], inplace=True)
+
+    return clients_snapped, facilities_snapped
 
 
 def visualize_results(client_points, facility_points, streets, mclp_result):
@@ -395,6 +378,7 @@ def perform_grid_search_on_service_radius(cost_matrix, weight_array, p_facilitie
         coverage_results.append((service_radius, mclp_from_cm.perc_cov))
 
     return coverage_results
+
 
 def visualize_folium_results(demand_coords, weight_array, facility_coords, mclp_result, output_file):
     """
@@ -453,78 +437,3 @@ def visualize_folium_results(demand_coords, weight_array, facility_coords, mclp_
 
     m.get_root().html.add_child(folium.Element(legend_html))
     m.save(output_file)
-
-def main():
-    # Load and clean data
-    api_data_path = ''
-    foot_traffic_path = ''
-    large_apartments_path = ''
-    small_apartments_path = ''
-
-    hilo_all_gdf, foot, large_apartments_NJ = load_and_clean_data(api_data_path, foot_traffic_path, large_apartments_path, small_apartments_path)
-
-    # Perform clustering
-    foot_traffic_gdf = gpd.GeoDataFrame(foot, geometry=gpd.points_from_xy(foot.longitude, foot.latitude))
-    foot_traffic_gdf.set_crs(large_apartments_NJ.crs, inplace=True)
-    foot_traffic_gdf = cluster_foot_traffic(foot_traffic_gdf)
-
-    # Summarize clusters
-    cluster_summary = summarize_clusters(foot_traffic_gdf)
-    cluster_summary['weights'] = cluster_summary['total_visit_counts'] / 100000
-
-    # Define parameters
-    CLIENT_COUNT = 200
-    FACILITY_COUNT = 125
-    SERVICE_RADIUS = 30
-    P_FACILITIES = 10
-
-    # Clean coordinates
-    client_points = clean_coordinates(cluster_summary[['geometry', 'weights']])
-    facility_points = clean_coordinates(large_apartments_NJ)[['geometry']]
-
-    # Calculate cost matrix
-    weights, cost_matrix = calculate_weights_and_cost_matrix(client_points, facility_points, SERVICE_RADIUS)
-
-    # Solve MCLP
-    mclp_result = setup_and_solve_mclp(cost_matrix, weights, SERVICE_RADIUS, P_FACILITIES)
-    print_coverage_results(mclp_result)
-
-    # Calculate lattice extent and create network
-    minx, miny, maxx, maxy = calculate_lattice_extent(client_points)
-    ntw = create_network_with_lattice(minx, miny, maxx, maxy)
-
-    # Snap observations to network
-    clients_snapped, facilities_snapped = snap_observations_to_network(ntw, client_points, facility_points)
-
-    # Visualize results
-    streets = spaghetti.element_as_gdf(ntw, arcs=True)
-    visualize_results(clients_snapped, facilities_snapped, streets, mclp_result)
-
-    # Load the environment variables from the .env file
-    ENV_PATH = Path(__file__).resolve().parents[3] / ".env"
-    load_dotenv(dotenv_path=ENV_PATH)
-
-    # Access the Mapbox API token
-    MAPBOX_ACCESS_TOKEN = os.getenv("MAPBOX_ACCESS_TOKEN")
-
-    # Generate Mapbox cost matrix
-    cost_matrix = generate_mapbox_cost_matrix(clients_snapped, facilities_snapped, mapbox_access_token=MAPBOX_ACCESS_TOKEN)
-
-    # Perform grid search on service radius
-    coverage_results = perform_grid_search_on_service_radius(cost_matrix, weights, P_FACILITIES)
-
-    # Print the coverage rates for each service radius
-    for service_radius, coverage in coverage_results:
-        print(f"Service Radius: {service_radius} units, Coverage: {coverage}%")
-
-    # Visualize the best result on a Folium map
-    best_service_radius, best_coverage = max(coverage_results, key=lambda x: x[1])
-    mclp_result = setup_and_solve_mclp(cost_matrix, weights, best_service_radius, P_FACILITIES)
-    demand_coords = [(point.x, point.y) for point in clients_snapped.geometry]
-    facility_coords = [(point.x, point.y) for point in facilities_snapped.geometry]
-    visualize_folium_results(demand_coords, weights, facility_coords, mclp_result, 'Hilo_All_apartments.html')
-
-    print(f"Best Service Radius: {best_service_radius} units, Coverage: {best_coverage}%")
-
-if __name__ == "__main__":
-    main()

@@ -211,6 +211,7 @@ model foodware_project_bin {
   formatted_address   String                  @db.VarChar
   coords              Unsupported("geometry")
   notes               String
+  features            Json?
   project_id          Int
   parent_category_id  Int
   provider_id         Int
@@ -289,6 +290,7 @@ model poi_provider {
 model poi_provider_category {
   id                  Int                 @id @default(autoincrement())
   name                String              @db.VarChar
+  active              Boolean
   parent_id           Int
   provider_id         Int
   poi_parent_category poi_parent_category @relation(fields: [parent_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "poi_provider_categor_parent_id_348b21f3_fk_poi_paren")

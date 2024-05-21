@@ -57,7 +57,11 @@ class Place:
     """
 
     notes: Optional[str] = ""
-    """Additional information to include about the location
+    """Additional information to include about the place.
+    """
+
+    features: Optional[Dict] = None
+    """Additional, provider-specific properties for the place.
     """
 
 
@@ -146,7 +150,7 @@ class IPlacesProvider(ABC):
         Returns:
             (`list` of `dict`): The cleaned places.
         """
-        ids = set()
+        visited_ids = set()
         cleaned = []
         for place in places:
 
@@ -155,7 +159,7 @@ class IPlacesProvider(ABC):
 
             # Filter out dupes and places outside bounds
             if (
-                (mapped.id in ids)
+                (mapped.id in visited_ids)
                 or (mapped.is_closed)
                 or (not geo.contains(Point(mapped.lon, mapped.lat)))
             ):
@@ -165,6 +169,6 @@ class IPlacesProvider(ABC):
             cleaned.append(vars(mapped))
 
             # Mark place as seen
-            ids.add(mapped.id)
+            visited_ids.add(mapped.id)
 
         return cleaned

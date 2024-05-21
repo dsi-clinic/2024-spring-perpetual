@@ -4,5 +4,6 @@ from foodware.places.factory import (
     IPlacesProvider,
     IPlacesProviderFactory,
     TomTomSearchClient,
+    TripadvisorClient,
     YelpClient,
 )

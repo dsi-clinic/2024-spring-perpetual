@@ -74,8 +74,8 @@ class Command(BaseCommand):
             "-p",
             "--providers",
             nargs="+",
-            choices=["bing", "google", "tomtom", "yelp"],
-            default=["google"],
+            choices=["bing", "google", "tomtom", "tripadvisor", "yelp"],
+            default=["google", "tripadvisor"],
         )
         parser.add_argument("-c", "--cached", action="store_true")
 
@@ -109,10 +109,12 @@ class Command(BaseCommand):
             )
             exit(1)
 
-        # Fetch points of interest (POI) within each boundary using given provider(s)
+        # Fetch POI within each boundary and category using given provider(s)
         cached_results = []
-        for category in (PoiParentCategory.Name.RESTAURANTS,):
-
+        for category in (
+            PoiParentCategory.Name.RESTAURANTS,
+            PoiParentCategory.Name.LODGING,
+        ):
             # Log start of process
             self._logger.info(
                 f'Received request to fetch points of interest related to "{category}".'
@@ -149,17 +151,25 @@ class Command(BaseCommand):
 
                 # If no data found, get provider POI categories under parent category
                 self._logger.info(
-                    "Requesting new POI categories related "
-                    f'to "{category}" from "{provider_name}".'
+                    f"Querying database for active POI categories related "
+                    f'to "{category}" from provider "{provider_name}".'
                 )
                 provider_categories = list(
                     PoiProviderCategory.objects.filter(
-                        parent=parent_cat, provider=provider
+                        parent=parent_cat, provider=provider, active=True
                     )
                     .values_list("name", flat=True)
                     .all()
                 )
                 self._logger.info(f"{len(provider_categories)} record(s) found.")
+
+                # Skip provider if it cannot service POI category request
+                if not provider_categories:
+                    self._logger.info(
+                        f'Provider "{provider_name}" cannot fetch '
+                        "this type of POI category. Skipping processing."
+                    )
+                    continue
 
                 # Perform nearby search for POIs
                 self._logger.info(
@@ -203,12 +213,13 @@ class Command(BaseCommand):
                         provider=cached.provider,
                         parent_category=cached.parent_category,
                         external_id=poi["id"],
-                        classification=FoodwareProjectBin.Classification.INDOOR,
+                        classification=FoodwareProjectBin.Classification.UNDETERMINED,
                         name=poi["name"],
                         external_categories=poi["aliases"],
                         formatted_address=poi["address"],
-                        coords=Point(poi["lon"], poi["lat"]),
+                        coords=Point(float(poi["lon"]), float(poi["lat"])),
                         notes=poi["notes"] or "",
+                        features=poi["features"],
                     )
                 )
 
