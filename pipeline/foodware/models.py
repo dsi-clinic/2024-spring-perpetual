@@ -58,6 +58,7 @@ class PoiProviderCategory(models.Model):
     parent = models.ForeignKey("PoiParentCategory", on_delete=models.CASCADE)
     provider = models.ForeignKey("PoiProvider", on_delete=models.CASCADE)
     name = models.CharField()
+    active = models.BooleanField(default=False)
 
     class Meta:
         db_table = "poi_provider_category"
@@ -137,12 +138,15 @@ class FoodwareProjectBin(TimestampedModel):
     provider = models.ForeignKey("PoiProvider", on_delete=models.CASCADE)
     parent_category = models.ForeignKey("PoiParentCategory", on_delete=models.CASCADE)
     external_id = models.CharField(blank=True, default="")
-    classification = models.CharField(choices=Classification)
+    classification = models.CharField(
+        choices=Classification, default=Classification.UNDETERMINED
+    )
     name = models.CharField(blank=True, default="")
     external_categories = models.JSONField()
     formatted_address = models.CharField(blank=True, default="")
     coords = PointField()
     notes = models.TextField(blank=True, default="")
+    features = models.JSONField(null=True)
 
     class Meta:
         db_table = "foodware_project_bin"

@@ -6,6 +6,7 @@ from foodware.places.bing import BingMapsClient
 from foodware.places.common import IPlacesProvider
 from foodware.places.google_places import GooglePlacesClient
 from foodware.places.tomtom import TomTomSearchClient
+from foodware.places.tripadvisor import TripadvisorClient
 from foodware.places.yelp import YelpClient
 from common.logger import logging
 
@@ -17,6 +18,7 @@ class IPlacesProviderFactory:
         "bing": BingMapsClient,
         "google": GooglePlacesClient,
         "tomtom": TomTomSearchClient,
+        "tripadvisor": TripadvisorClient,
         "yelp": YelpClient,
     }
 
