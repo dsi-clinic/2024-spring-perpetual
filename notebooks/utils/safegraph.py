@@ -5,7 +5,6 @@
 import itertools
 import json
 import os
-import webbrowser
 from typing import List, Optional
 
 # Third-party imports
@@ -118,16 +117,13 @@ def explode_dataset(df: pd.DataFrame) -> gpd.GeoDataFrame:
     # Assert that the number of rows is equal to the sum of raw visit counts
     assert len(expanded_df) == subset_df["raw_visit_counts"].sum()
 
-    # Check expanded_df for missing or infinite values and
-    # drop them if necessary
+    # Check expanded_df for missing or infinite values and drop if necessary
     expanded_df = expanded_df.dropna(subset=["longitude", "latitude"])
     expanded_df = expanded_df[
-        (expanded_df["longitude"] != np.inf)
-        & (expanded_df["latitude"] != np.inf)
+        (expanded_df["longitude"] != np.inf) & (expanded_df["latitude"] != np.inf)
     ]
     expanded_df = expanded_df[
-        (expanded_df["longitude"] != -np.inf)
-        & (expanded_df["latitude"] != -np.inf)
+        (expanded_df["longitude"] != -np.inf) & (expanded_df["latitude"] != -np.inf)
     ]
 
     # Convert to GeoDataFrame and set CRS
@@ -170,16 +166,41 @@ def get_top_location_categories(df: pd.DataFrame, n: int = 20) -> None:
         .reset_index(drop=True)
         .head(n)
     )
-    ranked_locations["raw_visit_counts"] = ranked_locations[
-        "raw_visit_counts"
-    ].apply(lambda c: f"{int(c):,}")
+    ranked_locations["raw_visit_counts"] = ranked_locations["raw_visit_counts"].apply(
+        lambda c: f"{int(c):,}"
+    )
     display(ranked_locations)
+
+
+def find_haversine_distance(lat1, lon1, lat2, lon2) -> float:
+    """
+    Calculates the great-circle distance between two points
+    on the Earth using their latitude and longitude.
+
+    Args:
+        lat1 (float): Latitude of the first point in degrees.
+        lon1 (float): Longitude of the first point in degrees.
+        lat2 (float): Latitude of the second point in degrees.
+        lon2 (float): Longitude of the second point in degrees.
+
+    Returns:
+        float: The distance between the two points in kilometers.
+    """
+    R = 6371.0  # Radius of the Earth in kilometers
+    lat1, lon1, lat2, lon2 = map(np.radians, [lat1, lon1, lat2, lon2])
+    dlat = lat2 - lat1
+    dlon = lon2 - lon1
+    a = np.sin(dlat / 2) ** 2 + np.cos(lat1) * np.cos(lat2) * np.sin(dlon / 2) ** 2
+    c = 2 * np.arctan2(np.sqrt(a), np.sqrt(1 - a))
+    distance = R * c
+    return distance
 
 
 def get_top_locations_with_related_brands(
     data: pd.DataFrame, n: int = 10
 ) -> pd.DataFrame:
-    """Fetches the top `N` locations in terms of visit counts,
+    """
+    Fetches the top `N` locations in terms of visit counts,
     along with their top related same-day brand.
 
     Args:
@@ -188,51 +209,63 @@ def get_top_locations_with_related_brands(
         n (`int`): The top `N` locations to pull.
 
     Returns:
-        `None`
+        pd.DataFrame: A DataFrame containing the top `N` locations
+        with the highest visit counts, along with the nearest
+        related same-day brand information.
     """
-    # Step 1: Identify the top N businesses by visit counts
-    # Now using 'safegraph_place_id' to ensure unique identification of places
+    # Find the top businesses
     top_visited = data.sort_values(
         by="raw_visit_counts", ascending=False
     ).drop_duplicates(subset="safegraph_place_id")
     top_visited = top_visited.head(n)
 
-    # Initialize a list to hold the result
     results = []
 
-    # Step 2: For each of the top 10 businesses,
-    # find the top related brand based on visit counts
-    for _, business in top_visited.iterrows():
-
-        # Parse the JSON data in the 'related_same_day_brand' column
+    for index, business in top_visited.iterrows():
+        # Parse the JSON data in 'related_same_day_brand'
         try:
             related_brands = json.loads(business["related_same_day_brand"])
         except json.JSONDecodeError:
             related_brands = {}
 
+        # Get highest correlation same day brand per high foot traffic business
         related_brands_df = pd.DataFrame(
             list(related_brands.items()), columns=["Brand", "Count"]
         )
-        top_related = related_brands_df.sort_values(
-            by="Count", ascending=False
-        ).head(1)
+        top_related = related_brands_df.sort_values(by="Count", ascending=False).head(1)
 
         for _, row in top_related.iterrows():
-            # Find the matching business entry
-            # for the related brand using 'location_name'
-            # This assumes that 'location_name' can still uniquely
-            # identify related brands for fetching latitude and longitude
-            related_brand_info = data[
-                data["location_name"] == row["Brand"]
-            ].iloc[0]
+            # Find all locations of the related brand
+            related_brand_locations = data[data["location_name"] == row["Brand"]]
+
+            related_brand_locations = related_brand_locations.copy()
+
+            # Calculate the distance to each related brand location
+            related_brand_locations.loc[:, "distance"] = related_brand_locations.apply(
+                lambda x: find_haversine_distance(
+                    business["latitude"],
+                    business["longitude"],
+                    x["latitude"],
+                    x["longitude"],
+                ),
+                axis=1,
+            )
+
+            # Find the nearest related brand location
+            nearest_related_brand = related_brand_locations.loc[
+                related_brand_locations["distance"].idxmin()
+            ]
+
             result = {
                 "Safegraph Place ID": business["safegraph_place_id"],
-                "Main Business": business["location_name"],
-                "Main Latitude": business["latitude"],
-                "Main Longitude": business["longitude"],
+                "High Traffic Location": business["location_name"],
+                "High Traffic Latitude": business["latitude"],
+                "High Traffic Longitude": business["longitude"],
                 "Related Brand": row["Brand"],
-                "Related Brand Latitude": related_brand_info["latitude"],
-                "Related Brand Longitude": related_brand_info["longitude"],
+                "Related Brand Latitude": nearest_related_brand["latitude"],
+                "Related Brand Longitude": nearest_related_brand["longitude"],
+                "Related Brand Correlation": row["Count"],
+                "Distance to Related Brand (km)": nearest_related_brand["distance"],
             }
             results.append(result)
 
@@ -240,45 +273,60 @@ def get_top_locations_with_related_brands(
 
 
 def compute_fastest_routes(df: pd.DataFrame) -> pd.DataFrame:
-    """TODO: Fix algorithm for computing fastest route and update documentation."""
+    """
+    Computes the fastest foot routes between high traffic locations
+    and related brand locations using Open Source Routing Machine (OSRM).
+
+    Args:
+        df (pd.DataFrame): DataFrame containing the latitude and longitude
+        of high traffic locations and related brand locations,
+        along with additional related brand information.
+
+    Returns:
+        pd.DataFrame: A DataFrame containing route information including
+        the high traffic location, related brand, correlation, distance,
+        duration, and route geometry.
+    """
     routes = []
     osrm_url = "http://router.project-osrm.org/route/v1/foot/"
 
     for _, row in df.iterrows():
         if (
-            pd.notna(row["Main Latitude"])
-            and pd.notna(row["Main Longitude"])
+            pd.notna(row["High Traffic Latitude"])
+            and pd.notna(row["High Traffic Longitude"])
             and pd.notna(row["Related Brand Latitude"])
             and pd.notna(row["Related Brand Longitude"])
         ):
-            request_url = f"{osrm_url}{row['Main Longitude']}, {row['Main Latitude']};{row['Related Brand Longitude']},{row['Related Brand Latitude']}?overview=full"
-            # 'full' for complete route geometry
+            request_url = (
+                f"{osrm_url}{row['High Traffic Longitude']},"
+                f"{row['High Traffic Latitude']};"
+                f"{row['Related Brand Longitude']},"
+                f"{row['Related Brand Latitude']}?overview=full"
+            )
             try:
                 response = requests.get(request_url)
                 response.raise_for_status()
+
                 route_data = response.json()
 
                 if "routes" in route_data and route_data["routes"]:
                     first_route = route_data["routes"][0]
-                    geometry = first_route.get(
-                        "geometry"
-                    )  # This is often an encoded polyline
-                    decoded_geometry = polyline.decode(
-                        geometry
-                    )  # Decoding the polyline to a list of (lat, lon) tuples
+                    geometry = first_route.get("geometry")
+                    decoded_geometry = polyline.decode(geometry)
 
                     route_info = {
-                        "Main Business": row["Main Business"],
+                        "High Traffic Location": row["High Traffic Location"],
                         "Related Brand": row["Related Brand"],
+                        "Related Brand Correlation": row["Related Brand Correlation"],
                         "Distance": first_route["distance"],
                         "Duration": first_route["duration"],
-                        "Geometry": decoded_geometry, # Store the decoded geometry
+                        "Geometry": decoded_geometry,
                     }
                     routes.append(route_info)
                 else:
                     print(
-                        "No route found for" + 
-                        f"{row['Main Business']} to {row['Related Brand']}"
+                        f"No route found for {row['High Traffic Location']} "
+                        f"to {row['Related Brand']}"
                     )
             except requests.RequestException as e:
                 print(f"Request failed: {e}")
@@ -290,7 +338,8 @@ def plot_routes(
     df_routes: pd.DataFrame,
     output_file_name: Optional[str] = None,
 ) -> None:
-    """Plots routes on a map, with an option to save
+    """
+    Plots routes on a map, with an option to save
     the map and open it in a web browser.
 
     Args:
@@ -301,7 +350,7 @@ def plot_routes(
             which case the map is rendered but not saved.
 
     Returns:
-        `None`
+        folium.Map: A map object displaying the routes and annotations.
     """
     # Define a list of colors for different routes
     colors = itertools.cycle(
@@ -319,75 +368,81 @@ def plot_routes(
         ]
     )
 
+    # Determine the range of correlation values
+    min_corr = df_routes["Related Brand Correlation"].min()
+    max_corr = df_routes["Related Brand Correlation"].max()
+
+    # Function to compute opacity based on correlation
+    def compute_opacity(correlation, min_corr, max_corr):
+        """
+        Compute the opacity for the route based on the correlation value.
+        Normalize the correlation value to a range of 0.3 to 1.0.
+        """
+        return 0.5 + (correlation - min_corr) / (max_corr - min_corr) * (1.0 - 0.5)
+
     # Create the base map
-    if df_routes.empty:
+    if not df_routes.empty:
+        first_lat = df_routes.iloc[0]["Geometry"][0][0]
+        first_lon = df_routes.iloc[0]["Geometry"][0][1]
+        map_obj = folium.Map(location=[first_lat, first_lon], zoom_start=12)
+
+        # Add a legend to the map
+        legend_html = """
+        <div style="position: fixed;
+                    bottom: 50px; left: 50px; width: 170px; height: 110px;
+                    border:2px solid grey; z-index:9999; font-size:12px;
+                    ">&nbsp; <b>Legend</b> <br>
+                      &nbsp; High Traffic Location &nbsp; 
+                      <i class="fa fa-map-marker fa-2x" style="color:red"></i><br>
+                      &nbsp; Related Brand &nbsp; 
+                      <i class="fa fa-map-marker fa-2x" style="color:blue"></i><br>
+                      &nbsp; Routes weighted <br>
+                      &nbsp; by correlation number
+        </div>
+        """
+        map_obj.get_root().html.add_child(folium.Element(legend_html))
+
+        # Add the routes to the map
+        for index, row in df_routes.iterrows():
+            route_color = next(colors)
+            popup_text = (
+                f"Route from {row['High Traffic Location']} to {row['Related Brand']}"
+            )
+
+            # Calculate the opacity based on the
+            # related brand correlation integer
+            correlation_int = row["Related Brand Correlation"]
+            opacity = compute_opacity(correlation_int, min_corr, max_corr)
+
+            folium.PolyLine(
+                locations=row["Geometry"],
+                weight=5,
+                color=route_color,
+                opacity=opacity,
+                popup=folium.Popup(popup_text, parse_html=True),
+            ).add_to(map_obj)
+
+            # Add markers for the start and end points
+            folium.Marker(
+                location=[row["Geometry"][0][0], row["Geometry"][0][1]],
+                popup=f"High Traffic Location: {row['High Traffic Location']}",
+                icon=folium.Icon(color="red"),
+            ).add_to(map_obj)
+
+            folium.Marker(
+                location=[row["Geometry"][-1][0], row["Geometry"][-1][1]],
+                popup=f"Related Brand: {row['Related Brand']}",
+                icon=folium.Icon(color="blue"),
+            ).add_to(map_obj)
+
+        if output_file_name:
+            map_obj.save(f"data/foot-traffic/output/{output_file_name}")
+            print(f"Map saved as data/foot-traffic/output/{output_file_name}")
+        else:
+            return map_obj
+    else:
         print("No routes to display.")
         return None
-
-    first_coord = df_routes.iloc[0]["Geometry"][0]
-    fmap = folium.Map(location=list(first_coord), zoom_start=12)
-
-    # Add a legend to the map
-    legend_html = """
-    <div style="position: fixed;
-                bottom: 50px; left: 50px; width: 150px; height: 90px;
-                border:2px solid grey; z-index:9999; font-size:14px;
-                ">&nbsp; <b>Legend</b> <br>
-                    &nbsp; Main Business &nbsp;
-                    <i class="fa fa-map-marker fa-2x" style="color:red"></i><br>
-                    &nbsp; Related Brand &nbsp;
-                    <i class="fa fa-map-marker fa-2x" style="color:blue"></i>
-    </div>
-    """
-    fmap.get_root().html.add_child(folium.Element(legend_html))
-
-    # Add the routes to the map
-    for _, row in df_routes.iterrows():
-        route_color = next(colors)  # Get a color from the cycle
-        popup_text = (
-            f"Route from {row['Main Business']} to {row['Related Brand']}"
-        )
-        folium.PolyLine(
-            locations=[(coord for coord in row["Geometry"])],
-            weight=5,
-            color=route_color,
-            popup=folium.Popup(
-                popup_text, parse_html=True
-            ),  # Add popup to the route
-        ).add_to(fmap)
-
-        # Add markers for the start (main business) and
-        # end (related brand) points
-        folium.Marker(
-            location=[*row["Geometry"][0]],
-            popup=f"{row['Main Business']}",
-            icon=folium.Icon(color="red"),
-        ).add_to(fmap)
-
-        folium.Marker(
-            location=[*row["Geometry"][-1]],
-            popup=f"{row['Related Brand']}",
-            icon=folium.Icon(color="blue"),
-        ).add_to(fmap)
-
-    # Save the map if specified
-    if output_file_name:
-        output_dir = f"{DATA_DIR}/foot-traffic/output"
-        os.makedirs(output_dir, exist_ok=True)
-        output_file_name = (
-            output_file_name
-            if output_file_name.endswith(".html")
-            else output_file_name + ".html"
-        )
-        output_file_path = os.path.join(output_dir, output_file_name)
-        fmap.save(output_file_path)
-        webbrowser.open(f"file://{os.path.abspath(output_file_path)}")
-    else:
-        temp_file_path = "/tmp/temp_map.html"
-        fmap.save(temp_file_path)
-        webbrowser.open(f"file://{os.path.abspath(temp_file_path)}")
-
-    display(fmap)
 
 
 def plot_top_restaurants(df: pd.DataFrame) -> None:
@@ -405,9 +460,7 @@ def plot_top_restaurants(df: pd.DataFrame) -> None:
     food_sorted_df = food_df.sort_values(by="raw_visit_counts", ascending=True)
     food_sorted_df.reset_index(drop=True, inplace=True)
     food_grpd_df = (
-        food_sorted_df.groupby(
-            by=["safegraph_place_id", "latitude", "longitude"]
-        )
+        food_sorted_df.groupby(by=["safegraph_place_id", "latitude", "longitude"])
         .agg({"raw_visit_counts": "sum"})
         .reset_index()
     )
@@ -623,18 +676,14 @@ def create_location_df(dataframe, location_name):
     location_filter = dataframe[dataframe["location_name"] == location_name]
 
     # Select only the relevant columns
-    location_df = location_filter[
-        ["location_name", "latitude", "longitude"]
-    ].copy()
+    location_df = location_filter[["location_name", "latitude", "longitude"]].copy()
 
     # Drop rows with NaN values in 'latitude' or 'longitude'
     location_df = location_df.dropna(subset=["latitude", "longitude"])
 
     # Drop duplicate rows based on 'latitude' and 'longitude'
     # to ensure unique locations
-    unique_location_df = location_df.drop_duplicates(
-        subset=["latitude", "longitude"]
-    )
+    unique_location_df = location_df.drop_duplicates(subset=["latitude", "longitude"])
 
     return unique_location_df
 
@@ -655,8 +704,7 @@ def top_x_businesses_and_related(df, x):
     top_visits = pd.DataFrame()
 
     # Get the names of the top x most visited businesses
-    top_business_names = df.sort_values(by="raw_visit_counts",
-                                        ascending=False)[
+    top_business_names = df.sort_values(by="raw_visit_counts", ascending=False)[
         "location_name"
     ].unique()[:x]
 
@@ -694,9 +742,7 @@ def top_x_businesses_and_related(df, x):
         ].apply(lambda x: json.loads(x) if x is not None else [])
 
         # Explode the DataFrame so each brand has its own row
-        all_related_brands = business_data.explode(
-            "related_same_day_brand_list"
-        )
+        all_related_brands = business_data.explode("related_same_day_brand_list")
 
         # Count the most common related same-day brand
         if not all_related_brands.empty:
@@ -727,9 +773,7 @@ def top_x_businesses_and_related(df, x):
     )
     gdf_related_brands = gpd.GeoDataFrame(
         top_related_df,
-        geometry=gpd.points_from_xy(
-            top_related_df.longitude, top_related_df.latitude
-        ),
+        geometry=gpd.points_from_xy(top_related_df.longitude, top_related_df.latitude),
     )
 
     # Set CRS to WGS84
@@ -750,15 +794,13 @@ def top_x_businesses_and_related(df, x):
     gdf.plot(ax=ax, color="blue", marker="o", label="Top Locations")
 
     # Plot related brands
-    gdf_related_brands.plot(
-        ax=ax, color="red", marker="x", label="Related Brands"
-    )
+    gdf_related_brands.plot(ax=ax, color="red", marker="x", label="Related Brands")
 
     # Add basemap
     cx.add_basemap(ax, source=cx.providers.CartoDB.Positron)
 
     # Add labels for top locations
-    for idx, row in gdf.iterrows():
+    for _, row in gdf.iterrows():
         name = row["location_name"]
         # Check if the name has already been labeled
         ax.text(
