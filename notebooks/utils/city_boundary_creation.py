@@ -19,6 +19,9 @@ BOUNDARIES_DATA_PATH = Path(__file__).resolve().parents[2] / "data" / "boundarie
 
 
 class CityGeo:
+    """This class is used to create a shapely polygon or multipolygon object for
+    a city from a geojson file.
+    """
     def __init__(self, cityname: str, 
                 boundaries_data_path: Path = BOUNDARIES_DATA_PATH
         ):

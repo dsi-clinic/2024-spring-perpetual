@@ -7,7 +7,7 @@ from matplotlib.lines import Line2D
 import contextily as ctx
 from typing import Union, Optional
 from shapely.geometry import Polygon, MultiPolygon
-from typing import Dict, Union, List
+from typing import Dict, List
 import numpy as np
 import usaddress
 from thefuzz import fuzz
@@ -221,7 +221,7 @@ def plot_hotel_business_visitor(cityname: str,
 
 
     fig, ax = plt.subplots(figsize=(10, 10))
-    boundary_plot = city_boundary.boundary.plot(ax=ax, color="black", linewidth=1, label=f"{cityname} Boundary")
+    boundary_plot = city_boundary.boundary.plot(ax=ax, color="black", linewidth=1, label=f"{cityname} Boundary") # This is used to plot the boundary of the city
 
     boundary_line = Line2D([0], [0], color="black", linewidth=1, label=f"{cityname} Boundary")
     visitor_patch = mpatches.Circle((0, 0), 0.1, color="red", alpha=0.3, label=f"Aggregated Raw Visitor Counts ({min_visitor_counts}-{max_visitor_counts})")
@@ -613,7 +613,6 @@ def get_city_linear_regression(cityname: str, df: pd.DataFrame,
     df_copy.dropna(inplace=True)
     HOTEL_INDEPENDENT_VARIABLES = [col for col in HOTEL_LR_INDEPENDENT_VARIABLES if col != "large_hotel"]
     X = df.loc[:, HOTEL_INDEPENDENT_VARIABLES]
-    Y = df.loc[:, HOTEL_LR_DEPENDENT_VARIABLES]
     for dependent in HOTEL_LR_DEPENDENT_VARIABLES:
         print("#"*100)
         print(f"{cityname.title()} {api_or_crawled.title()}: {dependent.replace('_', ' ').title()}")
