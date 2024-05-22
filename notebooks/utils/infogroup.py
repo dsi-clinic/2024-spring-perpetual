@@ -141,7 +141,16 @@ def load_infogroup_data(city: str, state: str) -> pd.DataFrame:
 def aggregate_stats_by_region(
     info_gdf: gpd.GeoDataFrame, safegraph_gdf: gpd.GeoDataFrame
 ) -> pd.DataFrame:
-    """ """
+    """Aggregates statistics by region.
+
+    Args:
+        info_gdf (`gpd.GeoDataFrame`): The business sales data.
+
+        safegraph_gdf (`gpd.GeoDataFrame`): The foot traffic data.
+
+    Returns:
+        (`pd.DataFrame`): The aggregated dataset.
+    """
     # Find minimum latitude and longitude across datasets
     info_minx, info_miny, info_maxx, info_maxy = info_gdf.total_bounds
     sgph_minx, sgph_miny, sgph_maxx, sgph_maxy = safegraph_gdf.total_bounds
@@ -158,7 +167,7 @@ def aggregate_stats_by_region(
     lat_step = lat_range / 5  # Since we want 5 regions along latitude
     lon_step = lon_range / 4  # Since we want 4 regions along longitude
 
-    # Define a function to assign region based on latitude and longitude
+    # Define local function to assign region based on latitude and longitude
     def assign_region(row: pd.Series) -> int:
         """Assigns a region number based on the Series' coordinates.
 
@@ -237,7 +246,15 @@ def aggregate_stats_by_region(
 
 
 def plot_region_stat_correlation(df: pd.DataFrame):
-    """ """
+    """Plots a scatterplot of sales volume against visit
+    counts with a line of best fit.
+
+    Args:
+        df (`pd.DataFrame): The data to plot.
+
+    Returns:
+        `None`
+    """
     # Calculate the linear regression line
     slope, intercept, r_value, _, _ = linregress(
         df["log_sales_volume"], df["log_raw_visit_counts"]
