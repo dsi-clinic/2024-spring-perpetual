@@ -44,7 +44,9 @@ class WGS84Coordinate(BaseModel):
 
 
 class BoundingBox(BaseModel):
-    """Simple data struture for a bounding box based on EPSG:4326 coordinates."""
+    """Simple data struture for a bounding box
+    based on EPSG:4326 coordinates.
+    """
 
     min_x: Decimal = Field(ge=-180, le=180)
     """The minimum longitude (i.e., x-coordinate).
@@ -100,7 +102,9 @@ class BoundingBox(BaseModel):
         return self.max_y - self.min_y
 
     @classmethod
-    def from_polygon(cls, polygon: Union[MultiPolygon, Polygon]) -> "BoundingBox":
+    def from_polygon(
+        cls, polygon: Union[MultiPolygon, Polygon]
+    ) -> "BoundingBox":
         """Creates a new `BoundingBox` instance from the
         minimum bounding region of a polygon.
 
@@ -198,7 +202,9 @@ class BoundingBox(BaseModel):
 
         return slices
 
-    def split_into_squares(self, size_in_degrees: Decimal) -> List["BoundingBox"]:
+    def split_into_squares(
+        self, size_in_degrees: Decimal
+    ) -> List["BoundingBox"]:
         """Splits the bounding box into squares of the given size in degrees.
         If the bounding box cannot be divided into squares, its dimensions
         are extended until the operation is possible.
@@ -227,7 +233,9 @@ class BoundingBox(BaseModel):
         longest_side = max(self.width, self.height)
         max_x = self.min_x + longest_side
         max_y = self.min_y + longest_side
-        bbox = BoundingBox(min_x=self.min_x, max_x=max_x, min_y=self.min_y, max_y=max_y)
+        bbox = BoundingBox(
+            min_x=self.min_x, max_x=max_x, min_y=self.min_y, max_y=max_y
+        )
 
         # Determine number of rows/columns necessary for sub-squares of equal size
         subcell_length = min(bbox.height, size_in_degrees)
@@ -254,7 +262,10 @@ class BoundingBox(BaseModel):
 
     def to_shapely(self):
         return box(
-            float(self.min_x), float(self.min_y), float(self.max_x), float(self.max_y)
+            float(self.min_x),
+            float(self.min_y),
+            float(self.max_x),
+            float(self.max_y),
         )
 
     @model_validator(mode="after")

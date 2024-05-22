@@ -15,7 +15,9 @@ from scipy.stats import linregress
 from .constants import INFOGROUP_2023_FPATH
 
 
-def get_infogroup_city_records(fpath: str, city: str, state: str) -> pd.DataFrame:
+def get_infogroup_city_records(
+    fpath: str, city: str, state: str
+) -> pd.DataFrame:
     """Opens the file and filters the data to include
     only records that match the given city and state.
     NOTE: There are instances of cities with the same
@@ -40,13 +42,11 @@ def get_infogroup_city_records(fpath: str, city: str, state: str) -> pd.DataFram
 
     # Open file
     with open(fpath, encoding="ISO-8859-1") as f:
-
         # Read header (first line)
         header = f.readline()
 
         # Process remaining lines in batches
         while True:
-
             # Get batch of lines with header
             lines = [header]
             for _ in range(10_000):
@@ -159,7 +159,15 @@ def aggregate_stats_by_region(
     lon_step = lon_range / 4  # Since we want 4 regions along longitude
 
     # Define a function to assign region based on latitude and longitude
-    def assign_region(row: pd.Series):
+    def assign_region(row: pd.Series) -> int:
+        """Assigns a region number based on the Series' coordinates.
+
+        Args:
+            row (`pd.Series`): The row.
+
+        Returns:
+            (`int`): The region number.
+        """
         lat_region = int((row["latitude"] - min_lat) / lat_step) + 1
         lon_region = int((row["longitude"] - min_lon) / lon_step) + 1
         return (lat_region - 1) * 4 + lon_region
@@ -173,7 +181,9 @@ def aggregate_stats_by_region(
         "geometry": "geometry",
     }
     info_regions_df = info_gdf.copy()[col_map.keys()].rename(columns=col_map)
-    info_regions_df["geographic_region"] = info_regions_df.apply(assign_region, axis=1)
+    info_regions_df["geographic_region"] = info_regions_df.apply(
+        assign_region, axis=1
+    )
     region_sales_df = (
         info_regions_df.groupby("geographic_region")
         .agg({"sales_volume": "sum"})
@@ -182,8 +192,16 @@ def aggregate_stats_by_region(
     )
 
     # Aggregate foot traffic by region
-    cols = ["location_name", "raw_visit_counts", "latitude", "longitude", "geometry"]
-    safegraph_regions_df = safegraph_gdf[cols].rename(columns={"location_name": "name"})
+    cols = [
+        "location_name",
+        "raw_visit_counts",
+        "latitude",
+        "longitude",
+        "geometry",
+    ]
+    safegraph_regions_df = safegraph_gdf[cols].rename(
+        columns={"location_name": "name"}
+    )
     safegraph_regions_df = safegraph_regions_df.query(
         "(latitude == latitude) & (longitude == longitude)"
     )
@@ -232,15 +250,21 @@ def plot_region_stat_correlation(df: pd.DataFrame):
     # Create a scatter plot with logarithmic transformation
     plt.figure(figsize=(8, 6))
     plt.scatter(
-        df["log_sales_volume"], df["log_raw_visit_counts"], color="blue", alpha=0.5
+        df["log_sales_volume"],
+        df["log_raw_visit_counts"],
+        color="blue",
+        alpha=0.5,
     )
 
     # Add the trendline
-    plt.plot(x_values, y_values, color="red", label=f"Trendline (r={r_value:.2f})")
+    plt.plot(
+        x_values, y_values, color="red", label=f"Trendline (r={r_value:.2f})"
+    )
 
     # Add labels and title
     plt.title(
-        "Correlation between Log Sales Volume and Log Visit Counts by Geographic Region"
+        "Correlation between Log Sales Volume and Log Visit Counts by"
+        " Geographic Region"
     )
     plt.xlabel("Log Sales Volume")
     plt.ylabel("Log Raw Visit Counts")

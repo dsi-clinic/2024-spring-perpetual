@@ -4,12 +4,11 @@
 # Standard library imports
 import json
 
-# Third-party imports
-from django_q.tasks import Task, async_task
-from django_q.models import OrmQ
 from django.http import JsonResponse
 from django.views import View
-
+from django_q.models import OrmQ
+# Third-party imports
+from django_q.tasks import Task, async_task
 # Application imports
 from foodware.models import FoodwareProjectJob
 
@@ -51,7 +50,8 @@ class FoodwareJobView(View):
             )
         else:
             return JsonResponse(
-                f'{base_err_msg} Received an unexpected job type, "{job_type}".',
+                f"{base_err_msg} Received an unexpected job type,"
+                f' "{job_type}".',
                 status=400,
                 safe=False,
             )

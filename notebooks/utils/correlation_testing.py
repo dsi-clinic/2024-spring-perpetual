@@ -20,7 +20,9 @@ from .safegraph import filter_by_year
 warnings.filterwarnings("ignore")
 
 
-def merge(business_df: pd.DataFrame, foot_df: pd.DataFrame, year: int) -> pd.DataFrame:
+def merge(
+    business_df: pd.DataFrame, foot_df: pd.DataFrame, year: int
+) -> pd.DataFrame:
     """Merges Infogroup business data and Safegraph foot traffic
     data for a particular year.
 
@@ -86,7 +88,9 @@ def calculate_r_value(x: int, merged_df: pd.DataFrame) -> float:
     long_range = max_long - min_long
 
     # Find factors of x
-    factors = [(i, x // i) for i in range(1, int(math.sqrt(x)) + 1) if x % i == 0]
+    factors = [
+        (i, x // i) for i in range(1, int(math.sqrt(x)) + 1) if x % i == 0
+    ]
     # Choose the factors that are closest to each other
     factor1, factor2 = min(factors, key=lambda f: abs(f[0] - f[1]))
     # Calculate latitude and longitude step sizes for x regions
@@ -175,7 +179,9 @@ def find_addresses(x: int, merged_df: pd.DataFrame) -> None:
     long_range = max_long - min_long
 
     # Find factors of x
-    factors = [(i, x // i) for i in range(1, int(math.sqrt(x)) + 1) if x % i == 0]
+    factors = [
+        (i, x // i) for i in range(1, int(math.sqrt(x)) + 1) if x % i == 0
+    ]
 
     # Choose the factors that are closest to each other
     factor1, factor2 = min(factors, key=lambda f: abs(f[0] - f[1]))
@@ -215,7 +221,10 @@ def find_addresses(x: int, merged_df: pd.DataFrame) -> None:
 
 
 def find_top_businesses(
-    business_df: pd.DataFrame, foot_df: pd.DataFrame, year: int, radius_km: float = 1.0
+    business_df: pd.DataFrame,
+    foot_df: pd.DataFrame,
+    year: int,
+    radius_km: float = 1.0,
 ) -> pd.DataFrame:
     """Finds the top businesses in the city based on foot traffic surrounding it.
 
@@ -261,10 +270,14 @@ def find_top_businesses(
         ).flatten()
 
         # Filter foot traffic locations within the specified radius
-        foot_traffic_within_radius = foot_traffic_by_business[distances <= radius_km]
+        foot_traffic_within_radius = foot_traffic_by_business[
+            distances <= radius_km
+        ]
 
         # Calculate total foot traffic in the area surrounding the business
-        total_foot_traffic = foot_traffic_within_radius["raw_visit_counts"].sum()
+        total_foot_traffic = foot_traffic_within_radius[
+            "raw_visit_counts"
+        ].sum()
 
         # Append the total foot traffic along with business
         # information to the list of top businesses

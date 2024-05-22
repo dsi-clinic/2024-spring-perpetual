@@ -120,10 +120,12 @@ def explode_dataset(df: pd.DataFrame) -> gpd.GeoDataFrame:
     # Check expanded_df for missing or infinite values and drop if necessary
     expanded_df = expanded_df.dropna(subset=["longitude", "latitude"])
     expanded_df = expanded_df[
-        (expanded_df["longitude"] != np.inf) & (expanded_df["latitude"] != np.inf)
+        (expanded_df["longitude"] != np.inf)
+        & (expanded_df["latitude"] != np.inf)
     ]
     expanded_df = expanded_df[
-        (expanded_df["longitude"] != -np.inf) & (expanded_df["latitude"] != -np.inf)
+        (expanded_df["longitude"] != -np.inf)
+        & (expanded_df["latitude"] != -np.inf)
     ]
 
     # Convert to GeoDataFrame and set CRS
@@ -166,9 +168,9 @@ def get_top_location_categories(df: pd.DataFrame, n: int = 20) -> None:
         .reset_index(drop=True)
         .head(n)
     )
-    ranked_locations["raw_visit_counts"] = ranked_locations["raw_visit_counts"].apply(
-        lambda c: f"{int(c):,}"
-    )
+    ranked_locations["raw_visit_counts"] = ranked_locations[
+        "raw_visit_counts"
+    ].apply(lambda c: f"{int(c):,}")
     display(ranked_locations)
 
 
@@ -186,13 +188,16 @@ def find_haversine_distance(lat1, lon1, lat2, lon2) -> float:
     Returns:
         float: The distance between the two points in kilometers.
     """
-    R = 6371.0  # Radius of the Earth in kilometers
+    radius = 6371.0  # Radius of the Earth in kilometers
     lat1, lon1, lat2, lon2 = map(np.radians, [lat1, lon1, lat2, lon2])
     dlat = lat2 - lat1
     dlon = lon2 - lon1
-    a = np.sin(dlat / 2) ** 2 + np.cos(lat1) * np.cos(lat2) * np.sin(dlon / 2) ** 2
+    a = (
+        np.sin(dlat / 2) ** 2
+        + np.cos(lat1) * np.cos(lat2) * np.sin(dlon / 2) ** 2
+    )
     c = 2 * np.arctan2(np.sqrt(a), np.sqrt(1 - a))
-    distance = R * c
+    distance = radius * c
     return distance
 
 
@@ -221,7 +226,7 @@ def get_top_locations_with_related_brands(
 
     results = []
 
-    for index, business in top_visited.iterrows():
+    for _, business in top_visited.iterrows():
         # Parse the JSON data in 'related_same_day_brand'
         try:
             related_brands = json.loads(business["related_same_day_brand"])
@@ -232,16 +237,22 @@ def get_top_locations_with_related_brands(
         related_brands_df = pd.DataFrame(
             list(related_brands.items()), columns=["Brand", "Count"]
         )
-        top_related = related_brands_df.sort_values(by="Count", ascending=False).head(1)
+        top_related = related_brands_df.sort_values(
+            by="Count", ascending=False
+        ).head(1)
 
         for _, row in top_related.iterrows():
             # Find all locations of the related brand
-            related_brand_locations = data[data["location_name"] == row["Brand"]]
+            related_brand_locations = data[
+                data["location_name"] == row["Brand"]
+            ]
 
             related_brand_locations = related_brand_locations.copy()
 
             # Calculate the distance to each related brand location
-            related_brand_locations.loc[:, "distance"] = related_brand_locations.apply(
+            related_brand_locations.loc[
+                :, "distance"
+            ] = related_brand_locations.apply(
                 lambda x: find_haversine_distance(
                     business["latitude"],
                     business["longitude"],
@@ -265,7 +276,9 @@ def get_top_locations_with_related_brands(
                 "Related Brand Latitude": nearest_related_brand["latitude"],
                 "Related Brand Longitude": nearest_related_brand["longitude"],
                 "Related Brand Correlation": row["Count"],
-                "Distance to Related Brand (km)": nearest_related_brand["distance"],
+                "Distance to Related Brand (km)": nearest_related_brand[
+                    "distance"
+                ],
             }
             results.append(result)
 
@@ -317,7 +330,9 @@ def compute_fastest_routes(df: pd.DataFrame) -> pd.DataFrame:
                     route_info = {
                         "High Traffic Location": row["High Traffic Location"],
                         "Related Brand": row["Related Brand"],
-                        "Related Brand Correlation": row["Related Brand Correlation"],
+                        "Related Brand Correlation": row[
+                            "Related Brand Correlation"
+                        ],
                         "Distance": first_route["distance"],
                         "Duration": first_route["duration"],
                         "Geometry": decoded_geometry,
@@ -378,7 +393,9 @@ def plot_routes(
         Compute the opacity for the route based on the correlation value.
         Normalize the correlation value to a range of 0.3 to 1.0.
         """
-        return 0.5 + (correlation - min_corr) / (max_corr - min_corr) * (1.0 - 0.5)
+        return 0.5 + (correlation - min_corr) / (max_corr - min_corr) * (
+            1.0 - 0.5
+        )
 
     # Create the base map
     if not df_routes.empty:
@@ -392,9 +409,9 @@ def plot_routes(
                     bottom: 50px; left: 50px; width: 170px; height: 110px;
                     border:2px solid grey; z-index:9999; font-size:12px;
                     ">&nbsp; <b>Legend</b> <br>
-                      &nbsp; High Traffic Location &nbsp; 
+                      &nbsp; High Traffic Location &nbsp;
                       <i class="fa fa-map-marker fa-2x" style="color:red"></i><br>
-                      &nbsp; Related Brand &nbsp; 
+                      &nbsp; Related Brand &nbsp;
                       <i class="fa fa-map-marker fa-2x" style="color:blue"></i><br>
                       &nbsp; Routes weighted <br>
                       &nbsp; by correlation number
@@ -406,7 +423,8 @@ def plot_routes(
         for index, row in df_routes.iterrows():
             route_color = next(colors)
             popup_text = (
-                f"Route from {row['High Traffic Location']} to {row['Related Brand']}"
+                f"Route from {row['High Traffic Location']} to"
+                f" {row['Related Brand']}"
             )
 
             # Calculate the opacity based on the
@@ -460,7 +478,9 @@ def plot_top_restaurants(df: pd.DataFrame) -> None:
     food_sorted_df = food_df.sort_values(by="raw_visit_counts", ascending=True)
     food_sorted_df.reset_index(drop=True, inplace=True)
     food_grpd_df = (
-        food_sorted_df.groupby(by=["safegraph_place_id", "latitude", "longitude"])
+        food_sorted_df.groupby(
+            by=["safegraph_place_id", "latitude", "longitude"]
+        )
         .agg({"raw_visit_counts": "sum"})
         .reset_index()
     )
@@ -676,14 +696,18 @@ def create_location_df(dataframe, location_name):
     location_filter = dataframe[dataframe["location_name"] == location_name]
 
     # Select only the relevant columns
-    location_df = location_filter[["location_name", "latitude", "longitude"]].copy()
+    location_df = location_filter[
+        ["location_name", "latitude", "longitude"]
+    ].copy()
 
     # Drop rows with NaN values in 'latitude' or 'longitude'
     location_df = location_df.dropna(subset=["latitude", "longitude"])
 
     # Drop duplicate rows based on 'latitude' and 'longitude'
     # to ensure unique locations
-    unique_location_df = location_df.drop_duplicates(subset=["latitude", "longitude"])
+    unique_location_df = location_df.drop_duplicates(
+        subset=["latitude", "longitude"]
+    )
 
     return unique_location_df
 
@@ -742,7 +766,9 @@ def top_x_businesses_and_related(df, x):
         ].apply(lambda x: json.loads(x) if x is not None else [])
 
         # Explode the DataFrame so each brand has its own row
-        all_related_brands = business_data.explode("related_same_day_brand_list")
+        all_related_brands = business_data.explode(
+            "related_same_day_brand_list"
+        )
 
         # Count the most common related same-day brand
         if not all_related_brands.empty:
@@ -773,7 +799,9 @@ def top_x_businesses_and_related(df, x):
     )
     gdf_related_brands = gpd.GeoDataFrame(
         top_related_df,
-        geometry=gpd.points_from_xy(top_related_df.longitude, top_related_df.latitude),
+        geometry=gpd.points_from_xy(
+            top_related_df.longitude, top_related_df.latitude
+        ),
     )
 
     # Set CRS to WGS84
@@ -794,7 +822,9 @@ def top_x_businesses_and_related(df, x):
     gdf.plot(ax=ax, color="blue", marker="o", label="Top Locations")
 
     # Plot related brands
-    gdf_related_brands.plot(ax=ax, color="red", marker="x", label="Related Brands")
+    gdf_related_brands.plot(
+        ax=ax, color="red", marker="x", label="Related Brands"
+    )
 
     # Add basemap
     cx.add_basemap(ax, source=cx.providers.CartoDB.Positron)
@@ -842,7 +872,9 @@ def aggregate_foot_traffic(patterns_df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         (`pd.DataFrame`): The grouped data.
     """
-    patterns_df.loc[:, "city"] = patterns_df.loc[:, "city"].str.lower().str.strip()
+    patterns_df.loc[:, "city"] = (
+        patterns_df.loc[:, "city"].str.lower().str.strip()
+    )
     patterns_df.loc[:, "year"] = (
         patterns_df.loc[:, "date_range_start"].str[0:4].astype("Int64")
     )
@@ -854,7 +886,9 @@ def aggregate_foot_traffic(patterns_df: pd.DataFrame) -> pd.DataFrame:
         foot_df.loc[:, "street_address"].str.upper().str.strip()
     )
     foot_traffic_df = (
-        foot_df.groupby(["location_name", "latitude", "longitude", "street_address"])
+        foot_df.groupby(
+            ["location_name", "latitude", "longitude", "street_address"]
+        )
         .agg({"raw_visit_counts": "sum", "raw_visitor_counts": "sum"})
         .reset_index()
     )

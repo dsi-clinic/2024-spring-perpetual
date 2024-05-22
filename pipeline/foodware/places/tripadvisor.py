@@ -11,12 +11,11 @@ from typing import Dict, List, Optional, Tuple, Union
 import haversine as hs
 import requests
 from bs4 import BeautifulSoup as soup
-from shapely import MultiPolygon, Polygon, Point
-
 # Application imports
 from common.geometry import BoundingBox
 from common.logger import logging
 from foodware.places.common import IPlacesProvider, Place, PlacesSearchResult
+from shapely import MultiPolygon, Point, Polygon
 
 
 class TripadvisorClient(IPlacesProvider):
@@ -30,9 +29,7 @@ class TripadvisorClient(IPlacesProvider):
     """The root URL of the Tripadvisor website.
     """
 
-    LOCATION_DETAILS_URL: str = (
-        "https://api.content.tripadvisor.com/api/v1/location/{location_id}/details"
-    )
+    LOCATION_DETAILS_URL: str = "https://api.content.tripadvisor.com/api/v1/location/{location_id}/details"
     """The base URL to use when searching for location details by id.
     """
 
@@ -48,7 +45,9 @@ class TripadvisorClient(IPlacesProvider):
     to "mi" for miles.
     """
 
-    TEXT_SEARCH_URL: str = "https://api.content.tripadvisor.com/api/v1/location/search"
+    TEXT_SEARCH_URL: str = (
+        "https://api.content.tripadvisor.com/api/v1/location/search"
+    )
     """The base URL to use when searching for locations using a text query.
     """
 
@@ -102,7 +101,6 @@ class TripadvisorClient(IPlacesProvider):
 
         # Process each raw place
         for place in places:
-
             # Extract id
             id = place["location_id"]
 
@@ -231,7 +229,9 @@ class TripadvisorClient(IPlacesProvider):
         html = r.json()["data"]["browserHtml"]
         s = soup(html, features="lxml")
         try:
-            room_count_div = s.find("div", text="NUMBER OF ROOMS").find_next("div")
+            room_count_div = s.find("div", text="NUMBER OF ROOMS").find_next(
+                "div"
+            )
             return int(room_count_div.text.strip())
         except:
             return None
@@ -270,7 +270,11 @@ class TripadvisorClient(IPlacesProvider):
         )
 
     def find_places_in_bounding_box(
-        self, original_geo, box: BoundingBox, category: str, search_radius: float
+        self,
+        original_geo,
+        box: BoundingBox,
+        category: str,
+        search_radius: float,
     ) -> Tuple[List[Dict], List[Dict]]:
         """Locates all POIs within the given area and categories.
         The area is further divided into a grid of quadrants if
@@ -369,7 +373,10 @@ class TripadvisorClient(IPlacesProvider):
 
         # Otherwise, if number of POIs returned equals max,
         # split box and recursively issue HTTP requests
-        if len(payload["data"]) >= TripadvisorClient.MAX_NUM_RESULTS_PER_REQUEST:
+        if (
+            len(payload["data"])
+            >= TripadvisorClient.MAX_NUM_RESULTS_PER_REQUEST
+        ):
             pois, errors = [], []
             sub_cells = box.split_along_axes(x_into=2, y_into=2)
             for sub in sub_cells:
@@ -429,7 +436,9 @@ class TripadvisorClient(IPlacesProvider):
         # Calculate radius of circle that circumscribes box, in miles
         top_left_pt = tuple(bbox.top_left.to_list(coerce_to_float=True))
         bottom_right_pt = tuple(bbox.bottom_right.to_list(coerce_to_float=True))
-        diagonal_length = hs.haversine(top_left_pt, bottom_right_pt, hs.Unit.MILES)
+        diagonal_length = hs.haversine(
+            top_left_pt, bottom_right_pt, hs.Unit.MILES
+        )
         search_radius = round(diagonal_length / 2)
 
         # Locate all POIs within bounding box for each specified category
@@ -557,7 +566,8 @@ class TripadvisorClient(IPlacesProvider):
             entity = "Hotels"
         else:
             raise ValueError(
-                "Only the hotels category is currently configured to be scraped."
+                "Only the hotels category is currently configured to be"
+                " scraped."
             )
         search_page_url = (
             f"{TripadvisorClient.ROOT_URL}/{entity}-g{location_id}-{name}"
@@ -575,7 +585,9 @@ class TripadvisorClient(IPlacesProvider):
         # Return search results
         return PlacesSearchResult(raw=[], clean=cleaned_locations, errors=[])
 
-    def scrape_results_pages(self, starting_url: str, category: str) -> List[int]:
+    def scrape_results_pages(
+        self, starting_url: str, category: str
+    ) -> List[int]:
         """Scrapes Tripadvisor results pages for a search query
         to retrieve a list of the results' location ids.
 
@@ -596,7 +608,8 @@ class TripadvisorClient(IPlacesProvider):
             entity = "hotel"
         else:
             raise ValueError(
-                "Only the hotels category is currently configured to be scraped."
+                "Only the hotels category is currently configured to be"
+                " scraped."
             )
 
         while True:
@@ -625,7 +638,9 @@ class TripadvisorClient(IPlacesProvider):
             s = soup(html, features="lxml")
 
             # Get links to all hotels
-            hotel_cards = s.find_all("div", {"data-automation": f"{entity}-card-title"})
+            hotel_cards = s.find_all(
+                "div", {"data-automation": f"{entity}-card-title"}
+            )
             for card in hotel_cards:
                 hotel_url = card.find("a")["href"]
                 location_id = hotel_url.split("-")[2].strip("d")

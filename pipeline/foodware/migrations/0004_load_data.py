@@ -5,13 +5,12 @@ import json
 
 # Third-party imports
 import geopandas as gpd
-from django.db import migrations
-from django.conf import settings
-from django.contrib.gis.geos import GEOSGeometry
-from shapely.geometry import MultiPolygon, Polygon
-
 # Application imports
 from common.storage import IDataStoreFactory
+from django.conf import settings
+from django.contrib.gis.geos import GEOSGeometry
+from django.db import migrations
+from shapely.geometry import MultiPolygon, Polygon
 
 
 def _load_poi_providers(apps, storage):
@@ -22,7 +21,7 @@ def _load_poi_providers(apps, storage):
             poi_providers = json.load(f)
     except FileNotFoundError:
         raise RuntimeError(
-            f"Data load failed. Could not resolve the file path "
+            "Data load failed. Could not resolve the file path "
             f'"{settings.POI_PROVIDERS_FPATH}" to find the '
             "file in the configured data directory."
         ) from None
@@ -46,7 +45,7 @@ def _load_poi_parent_categories(apps, storage):
             poi_categories = json.load(f)
     except FileNotFoundError:
         raise RuntimeError(
-            f"Data load failed. Could not resolve the file path "
+            "Data load failed. Could not resolve the file path "
             f'"{settings.POI_PARENT_CATEGORIES}" to find the '
             "file in the configured data directory."
         ) from None
@@ -70,7 +69,7 @@ def _load_poi_provider_categories(apps, storage, parent_cats, providers):
             poi_categories = json.load(f)
     except FileNotFoundError:
         raise RuntimeError(
-            f"Data load failed. Could not resolve the file path "
+            "Data load failed. Could not resolve the file path "
             f'"{settings.POI_PROVIDER_CATEGORIES}" to find the '
             "file in the configured data directory."
         ) from None
@@ -103,7 +102,7 @@ def _load_locales(apps, storage):
             locales_gdf = gpd.read_parquet(f)
     except FileNotFoundError:
         raise RuntimeError(
-            f"Data load failed. Could not resolve the file path "
+            "Data load failed. Could not resolve the file path "
             f'"{settings.LOCALES_GEOPARQUET_FPATH}" to find the '
             "file in the configured data directory."
         ) from None
@@ -113,7 +112,9 @@ def _load_locales(apps, storage):
         to_multi_polygon = lambda polygon: (
             MultiPolygon([polygon]) if isinstance(polygon, Polygon) else polygon
         )
-        locales_gdf["geometry"] = locales_gdf["geometry"].apply(to_multi_polygon)
+        locales_gdf["geometry"] = locales_gdf["geometry"].apply(
+            to_multi_polygon
+        )
     except (KeyError, IndexError, AttributeError):
         raise RuntimeError(
             "POI fetch failed. The input boundary is not valid GeoJSON."
@@ -152,7 +153,6 @@ def callback(apps, schema_editor):
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("foodware", "0003_install_trigram_ext"),
     ]

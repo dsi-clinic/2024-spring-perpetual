@@ -12,11 +12,10 @@ from typing import Dict, List, Tuple, Union
 
 # Third-party imports
 import requests
-from shapely import MultiPolygon, Polygon
-
+from common.geometry import BoundingBox, convert_meters_to_degrees
 # Application imports
 from foodware.places.common import IPlacesProvider, Place, PlacesSearchResult
-from common.geometry import BoundingBox, convert_meters_to_degrees
+from shapely import MultiPolygon, Polygon
 
 
 class YelpPOICategories(Enum):
@@ -117,7 +116,16 @@ class YelpClient(IPlacesProvider):
         url = place["url"]
 
         return Place(
-            id, name, categories, aliases, lat, lon, address, is_closed, source, url
+            id,
+            name,
+            categories,
+            aliases,
+            lat,
+            lon,
+            address,
+            is_closed,
+            source,
+            url,
         )
 
     def find_places_in_bounding_box(
@@ -262,7 +270,9 @@ class YelpClient(IPlacesProvider):
         max_side_meters = (2**0.5) * YelpClient.MAX_SEARCH_RADIUS_IN_METERS
 
         # Use heuristic to convert length from meters to degrees at box's lower latitude
-        deg_lat, deg_lon = convert_meters_to_degrees(max_side_meters, bbox.bottom_left)
+        deg_lat, deg_lon = convert_meters_to_degrees(
+            max_side_meters, bbox.bottom_left
+        )
 
         # Take minimum value as side length (meters convert differently to lat and lon,
         # and we want to avoid going over max radius)
@@ -280,7 +290,8 @@ class YelpClient(IPlacesProvider):
         for cell in cells:
             if cell.intersects_with(geo):
                 cell_pois, cell_errs = self.find_places_in_bounding_box(
-                    box=cell, search_radius=YelpClient.MAX_SEARCH_RADIUS_IN_METERS
+                    box=cell,
+                    search_radius=YelpClient.MAX_SEARCH_RADIUS_IN_METERS,
                 )
                 pois.extend(cell_pois)
                 errors.extend(cell_errs)

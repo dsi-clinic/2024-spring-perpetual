@@ -115,7 +115,9 @@ def draw_hexbins(
     )
 
     # Add basemap
-    ctx.add_basemap(ax, crs=gdf.crs, source=ctx.providers.CartoDB.Positron, zoom=zoom)
+    ctx.add_basemap(
+        ax, crs=gdf.crs, source=ctx.providers.CartoDB.Positron, zoom=zoom
+    )
 
     # Finalize mp colorbar and axes
     plt.colorbar(hxb)
@@ -260,7 +262,9 @@ def run_hdbscan(
 
     # Convert DataFrame to GeoDataFrame with longitude and latitude
     gdf = gpd.GeoDataFrame(
-        df, geometry=gpd.points_from_xy(df.longitude, df.latitude), crs="EPSG:4326"
+        df,
+        geometry=gpd.points_from_xy(df.longitude, df.latitude),
+        crs="EPSG:4326",
     )
 
     # Convert to UTM coordinates for accurate distance measurement
@@ -278,7 +282,6 @@ def run_hdbscan(
 
     # Save output if a file name is specified
     if output_file_name:
-
         # Define the directory for saving the file
         save_directory = f"{DATA_DIR}/foot-traffic/output"
         os.makedirs(save_directory, exist_ok=True)
@@ -384,8 +387,8 @@ def plot_clusters(
 
     # Add a legend to the map with better alignment and a visual circle marker example
     legend_html = """
-    <div style="position: fixed; 
-                bottom: 50px; left: 50px; width: 180px; height: 100px; 
+    <div style="position: fixed;
+                bottom: 50px; left: 50px; width: 180px; height: 100px;
                 border: 2px solid grey; z-index:9999; font-size:14px;
                 text-align: center; padding-top: 10px;">
                     <b>Legend</b><br>
@@ -401,7 +404,9 @@ def plot_clusters(
         os.makedirs(output_fpath, exist_ok=True)
 
         output_fpath = (
-            output_fpath if output_fpath.endswith(".html") else output_fpath + ".html"
+            output_fpath
+            if output_fpath.endswith(".html")
+            else output_fpath + ".html"
         )
         fmap.save(output_fpath)
         webbrowser.open(f"file://{os.path.abspath(output_fpath)}")

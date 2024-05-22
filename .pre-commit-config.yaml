@@ -15,7 +15,7 @@ repos:
     rev: 22.3.0
     hooks:
       - id: black
-        args: ["--line-length=80"]
+        args: ["--preview", "--line-length=80"]
 
   - repo: https://github.com/PyCQA/isort
     rev: 5.12.0

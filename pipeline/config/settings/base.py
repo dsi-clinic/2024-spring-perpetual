@@ -58,7 +58,9 @@ class BaseConfig(Configuration):
         "orm": "default",
         "max_attempts": 1,
     }
-    SECRET_KEY = f"{os.getenv('POSTGRES_PASSWORD', '')}://postgres:postgres@postgis:5432/postgres?schema=public"
+    SECRET_KEY = (
+        f"{os.getenv('POSTGRES_PASSWORD', '')}://postgres:postgres@postgis:5432/postgres?schema=public"
+    )
 
     # https://docs.djangoproject.com/en/2.0/topics/http/middleware/
     MIDDLEWARE = (
@@ -102,7 +104,9 @@ class BaseConfig(Configuration):
             "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
         },
         {
-            "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+            "NAME": (
+                "django.contrib.auth.password_validation.MinimumLengthValidator"
+            ),
         },
         {
             "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
@@ -163,7 +167,10 @@ class BaseConfig(Configuration):
                 "format": "[%(server_time)s] %(message)s",
             },
             "verbose": {
-                "format": "%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s"
+                "format": (
+                    "%(levelname)s %(asctime)s %(module)s %(process)d"
+                    " %(thread)d %(message)s"
+                )
             },
             "simple": {"format": "%(levelname)s %(message)s"},
         },

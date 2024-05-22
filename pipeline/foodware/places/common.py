@@ -28,7 +28,7 @@ class Place:
     """
 
     aliases: List[str]
-    """Category ids that have been assigned to the place 
+    """Category ids that have been assigned to the place
     (e.g., "restaurant", "school", "theater").
     """
 
@@ -99,7 +99,9 @@ class IPlacesProvider(ABC):
 
     @abstractmethod
     def run_text_search(
-        self, query: str, restriction: Optional[Union[Polygon, MultiPolygon]] = None
+        self,
+        query: str,
+        restriction: Optional[Union[Polygon, MultiPolygon]] = None,
     ) -> PlacesSearchResult:
         """Searches for one or more places using a query string
         and an optional geography to confine the search area.
@@ -153,7 +155,6 @@ class IPlacesProvider(ABC):
         visited_ids = set()
         cleaned = []
         for place in places:
-
             # Map place
             mapped = self.map_place(place)
 

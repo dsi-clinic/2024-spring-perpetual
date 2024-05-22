@@ -10,11 +10,10 @@ from typing import Dict, List, Tuple, Union
 
 # Third-party imports
 import requests
-from shapely import MultiPolygon, Polygon
-
+from common.geometry import BoundingBox
 # Application imports
 from foodware.places.common import IPlacesProvider, Place, PlacesSearchResult
-from common.geometry import BoundingBox
+from shapely import MultiPolygon, Polygon
 
 
 class TomTomPOICategories(Enum):
@@ -147,7 +146,16 @@ class TomTomSearchClient(IPlacesProvider):
         url = place["poi"].get("url")
 
         return Place(
-            id, name, categories, aliases, lat, lon, address, is_closed, source, url
+            id,
+            name,
+            categories,
+            aliases,
+            lat,
+            lon,
+            address,
+            is_closed,
+            source,
+            url,
         )
 
     def find_places_in_bounding_box(
@@ -184,7 +192,8 @@ class TomTomSearchClient(IPlacesProvider):
                     str(float(d)) for d in box.top_left.to_list(as_lat_lon=True)
                 ),
                 "btmRight": ",".join(
-                    str(float(d)) for d in box.bottom_right.to_list(as_lat_lon=True)
+                    str(float(d))
+                    for d in box.bottom_right.to_list(as_lat_lon=True)
                 ),
             }
             headers = {"Accept": "application/json", "Accept-Encoding": "gzip"}

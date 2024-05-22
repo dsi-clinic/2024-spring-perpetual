@@ -10,11 +10,17 @@ import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from IPython.display import display, HTML
+from IPython.display import HTML, display
 from sklearn.neighbors import BallTree
 
-
-FEMA_RELEVANT_COLS = ["BUILD_ID", "OCC_CLS", "PRIM_OCC", "HEIGHT", "SQFEET", "SQMETERS"]
+FEMA_RELEVANT_COLS = [
+    "BUILD_ID",
+    "OCC_CLS",
+    "PRIM_OCC",
+    "HEIGHT",
+    "SQFEET",
+    "SQMETERS",
+]
 
 
 def preview_dataset(df: pd.DataFrame, num_rows: int = 5) -> None:
@@ -87,7 +93,10 @@ def draw_building_size_plot(
     # Return if none found above threhold
     if len(large_buildings_gdf) == 0:
         display(
-            HTML(f"<b>No buildings found at or above threshold {size_threshold}.</b>")
+            HTML(
+                "<b>No buildings found at or above threshold"
+                f" {size_threshold}.</b>"
+            )
         )
         return
 
@@ -107,7 +116,9 @@ def draw_building_size_plot(
     )
 
     # Create custom patches
-    footprint_patch = mpatches.Patch(color="lightgrey", label="Building Footprints")
+    footprint_patch = mpatches.Patch(
+        color="lightgrey", label="Building Footprints"
+    )
     building_patch = mpatches.Patch(color="cyan", label="Large Buildings")
 
     # Add the custom patches to the legend
@@ -130,7 +141,9 @@ def draw_building_size_plot(
     display(plt.show())
 
 
-def buffer_geometry(series: gpd.GeoSeries, radius_in_meters: float) -> gpd.GeoSeries:
+def buffer_geometry(
+    series: gpd.GeoSeries, radius_in_meters: float
+) -> gpd.GeoSeries:
     """Draws a circular buffer around each element in a GeoSeries.
 
     Args:
@@ -146,7 +159,8 @@ def buffer_geometry(series: gpd.GeoSeries, radius_in_meters: float) -> gpd.GeoSe
     original_crs = temp.crs
     if not original_crs:
         raise ValueError(
-            "A CRS must be set to project the geometry series and calculate a buffer."
+            "A CRS must be set to project the geometry series and calculate a"
+            " buffer."
         )
 
     # Project series to UTM CRS to more accurately buffer geometry
@@ -193,14 +207,20 @@ def calculate_units(row: pd.Series) -> Optional[float]:
     average_area = average_unit_areas.get(building_type, None)
 
     # Proceed only if the average area is found and 'Squarefeet' is valid
-    if average_area is not None and "SQFEET" in row and row["SQFEET"] is not None:
+    if (
+        average_area is not None
+        and "SQFEET" in row
+        and row["SQFEET"] is not None
+    ):
         return row["SQFEET"] / average_area
 
     return None
 
 
 def get_nearest(
-    src_points: gpd.GeoDataFrame, candidates: gpd.GeoDataFrame, k_neighbors: int = 1
+    src_points: gpd.GeoDataFrame,
+    candidates: gpd.GeoDataFrame,
+    k_neighbors: int = 1,
 ) -> Tuple[int, int, float]:
     """
     Computes the nearest neighbors for the given source points
@@ -220,11 +240,15 @@ def get_nearest(
             the computed distance between them.
     """
     # Create a tree from the candidate coordinates
-    candidate_coords = np.array(list(zip(candidates.geometry.x, candidates.geometry.y)))
+    candidate_coords = np.array(
+        list(zip(candidates.geometry.x, candidates.geometry.y))
+    )
     tree = BallTree(candidate_coords, leaf_size=15, metric="haversine")
 
     # Query the tree for the nearest neighbors
-    src_coords = np.array(list(zip(src_points.geometry.x, src_points.geometry.y)))
+    src_coords = np.array(
+        list(zip(src_points.geometry.x, src_points.geometry.y))
+    )
     distances, indices = tree.query(src_coords, k=k_neighbors)
 
     results = [

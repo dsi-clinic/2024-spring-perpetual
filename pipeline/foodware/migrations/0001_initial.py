@@ -6,7 +6,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = []
@@ -48,7 +47,9 @@ class Migration(migrations.Migration):
                 ("name", models.CharField()),
                 (
                     "geometry",
-                    django.contrib.gis.db.models.fields.MultiPolygonField(srid=4326),
+                    django.contrib.gis.db.models.fields.MultiPolygonField(
+                        srid=4326
+                    ),
                 ),
             ],
             options={
@@ -160,7 +161,10 @@ class Migration(migrations.Migration):
                 ("name", models.CharField(blank=True, default="")),
                 ("external_categories", models.JSONField()),
                 ("formatted_address", models.CharField(blank=True, default="")),
-                ("coords", django.contrib.gis.db.models.fields.PointField(srid=4326)),
+                (
+                    "coords",
+                    django.contrib.gis.db.models.fields.PointField(srid=4326),
+                ),
                 ("notes", models.TextField(blank=True, default="")),
                 ("features", models.JSONField(null=True)),
                 (
@@ -221,13 +225,16 @@ class Migration(migrations.Migration):
         ),
         migrations.AddConstraint(
             model_name="locale",
-            constraint=models.UniqueConstraint(fields=("name",), name="unique_locale"),
+            constraint=models.UniqueConstraint(
+                fields=("name",), name="unique_locale"
+            ),
         ),
         migrations.AddField(
             model_name="foodwareproject",
             name="locale",
             field=models.ForeignKey(
-                on_delete=django.db.models.deletion.CASCADE, to="foodware.locale"
+                on_delete=django.db.models.deletion.CASCADE,
+                to="foodware.locale",
             ),
         ),
         migrations.AddField(
@@ -270,14 +277,16 @@ class Migration(migrations.Migration):
             model_name="poicache",
             name="provider",
             field=models.ForeignKey(
-                on_delete=django.db.models.deletion.CASCADE, to="foodware.poiprovider"
+                on_delete=django.db.models.deletion.CASCADE,
+                to="foodware.poiprovider",
             ),
         ),
         migrations.AddField(
             model_name="foodwareprojectbin",
             name="provider",
             field=models.ForeignKey(
-                on_delete=django.db.models.deletion.CASCADE, to="foodware.poiprovider"
+                on_delete=django.db.models.deletion.CASCADE,
+                to="foodware.poiprovider",
             ),
         ),
         migrations.AddField(
@@ -292,7 +301,8 @@ class Migration(migrations.Migration):
             model_name="poiprovidercategory",
             name="provider",
             field=models.ForeignKey(
-                on_delete=django.db.models.deletion.CASCADE, to="foodware.poiprovider"
+                on_delete=django.db.models.deletion.CASCADE,
+                to="foodware.poiprovider",
             ),
         ),
         migrations.AddConstraint(

@@ -1,4 +1,4 @@
-""" Classes and functions exclusively used for the analysis of Tripadvisor hotels. 
+""" Classes and functions exclusively used for the analysis of Tripadvisor hotels.
 """
 
 # Standard library imports
@@ -9,26 +9,25 @@ from typing import Dict, List, Optional, Tuple, Union
 # Third-party imports
 import contextily as ctx
 import geopandas as gpd
-import numpy as np
-import pandas as pd
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 import seaborn as sns
 import statsmodels.api as sm
 import usaddress
 from fuzzywuzzy import fuzz
 from IPython.display import display
-from pandas._libs.missing import NAType
 from matplotlib.axes import Axes
 from matplotlib.lines import Line2D
-from shapely.geometry import Polygon, MultiPolygon
+from pandas._libs.missing import NAType
+from shapely.geometry import MultiPolygon, Polygon
 
 # Application imports
 from .constants import BOUNDARIES_DIR, TRIPADVISOR_DIR
 from .infogroup import load_infogroup_data
 from .logger import LoggerFactory
 from .safegraph import load_foot_traffic
-
 
 # Define constants
 ADDRESS_MAPPING = {
@@ -51,7 +50,11 @@ ADDRESS_MAPPING = {
     "FLOOR": "FL",
     "BUILDING": "BLDG",
 }
-HOTEL_LR_DEPENDENT_VARIABLES = ["parent_sales_volume", "sales_volume", "employee_size"]
+HOTEL_LR_DEPENDENT_VARIABLES = [
+    "parent_sales_volume",
+    "sales_volume",
+    "employee_size",
+]
 HOTEL_LR_INDEPENDENT_VARIABLES = [
     "large_hotel",
     "number_of_rooms",
@@ -59,7 +62,9 @@ HOTEL_LR_INDEPENDENT_VARIABLES = [
     "price_level_category",
     "rating",
 ]
-HOTEL_LR_VARIABLES = HOTEL_LR_DEPENDENT_VARIABLES + HOTEL_LR_INDEPENDENT_VARIABLES
+HOTEL_LR_VARIABLES = (
+    HOTEL_LR_DEPENDENT_VARIABLES + HOTEL_LR_INDEPENDENT_VARIABLES
+)
 
 # Define logger
 logger = LoggerFactory.get("TRIPADVISOR LOG")
@@ -78,14 +83,13 @@ def get_price_level_category(price_level: str) -> Union[int, NAType]:
     """
     if price_level == "$":
         return 0
-    elif price_level == "$$":
+    if price_level == "$$":
         return 1
-    elif price_level == "$$$":
+    if price_level == "$$$":
         return 2
-    elif price_level == "$$$$":
+    if price_level == "$$$$":
         return 3
-    else:
-        return np.nan
+    return np.nan
 
 
 def get_binary_room_category(number_of_rooms: int) -> Union[int, NAType]:
@@ -120,14 +124,16 @@ def format_hotel_df(hotel_df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         (`pd.DataFrame`): The formatted DataFrame.
     """
-    hotel_df.loc[:, "price_level_category"] = hotel_df.loc[:, "price_level"].apply(
-        lambda price_level: get_price_level_category(price_level)
-    )
+    hotel_df.loc[:, "price_level_category"] = hotel_df.loc[
+        :, "price_level"
+    ].apply(get_price_level_category)
     hotel_df.loc[:, "large_hotel"] = hotel_df.loc[:, "number_of_rooms"].apply(
-        lambda number_of_rooms: get_binary_room_category(number_of_rooms)
+        get_binary_room_category
     )
     hotel_df.loc[:, "name"] = hotel_df.loc[:, "name"].str.upper().str.strip()
-    hotel_df.loc[:, "street1"] = hotel_df.loc[:, "street1"].str.upper().str.strip()
+    hotel_df.loc[:, "street1"] = (
+        hotel_df.loc[:, "street1"].str.upper().str.strip()
+    )
     hotel_df.loc[:, "city"] = hotel_df.loc[:, "city"].str.upper().str.strip()
 
     return hotel_df
@@ -178,8 +184,12 @@ def plot_hotel_business_visitor(
         hotel_business_visitor_df["sales_volume"], errors="coerce"
     )
 
-    max_visitor_counts = int(hotel_business_visitor_df["raw_visitor_counts"].max())
-    min_visitor_counts = int(hotel_business_visitor_df["raw_visitor_counts"].min())
+    max_visitor_counts = int(
+        hotel_business_visitor_df["raw_visitor_counts"].max()
+    )
+    min_visitor_counts = int(
+        hotel_business_visitor_df["raw_visitor_counts"].min()
+    )
     max_sales_volume = int(hotel_business_visitor_df["sales_volume"].max())
     min_sales_volume = int(hotel_business_visitor_df["sales_volume"].min())
 
@@ -188,7 +198,8 @@ def plot_hotel_business_visitor(
     plot_gdf = gpd.GeoDataFrame(
         hotel_business_visitor_df,
         geometry=gpd.points_from_xy(
-            hotel_business_visitor_df.longitude, hotel_business_visitor_df.latitude
+            hotel_business_visitor_df.longitude,
+            hotel_business_visitor_df.latitude,
         ),
         crs="EPSG:4326",
     )
@@ -213,14 +224,19 @@ def plot_hotel_business_visitor(
         0.1,
         color="red",
         alpha=0.3,
-        label=f"Aggregated Raw Visitor Counts ({min_visitor_counts}-{max_visitor_counts})",
+        label=(
+            "Aggregated Raw Visitor Counts"
+            f" ({min_visitor_counts}-{max_visitor_counts})"
+        ),
     )
     sales_patch = mpatches.Circle(
         (0, 0),
         0.1,
         color="yellow",
         alpha=0.1,
-        label=f"Sales Volume per Business ({min_sales_volume}-{max_sales_volume})",
+        label=(
+            f"Sales Volume per Business ({min_sales_volume}-{max_sales_volume})"
+        ),
     )
     large_hotel_marker = Line2D(
         [0],
@@ -252,7 +268,7 @@ def plot_hotel_business_visitor(
                     alpha=0.3,
                 )
             )
-        except TypeError as e:
+        except TypeError:
             continue
         try:
             ax.add_patch(
@@ -263,7 +279,7 @@ def plot_hotel_business_visitor(
                     alpha=0.1,
                 )
             )
-        except TypeError as e:
+        except TypeError:
             continue
 
     for _, row in plot_gdf.dropna(subset=["location_id"]).iterrows():
@@ -279,7 +295,9 @@ def plot_hotel_business_visitor(
                 fontweight="bold",
             )
         else:
-            ax.scatter(row.geometry.x, row.geometry.y, color="green", s=15, zorder=3)
+            ax.scatter(
+                row.geometry.x, row.geometry.y, color="green", s=15, zorder=3
+            )
 
     ctx.add_basemap(
         ax, crs=plot_gdf.crs.to_string(), source=ctx.providers.CartoDB.Positron
@@ -321,7 +339,9 @@ def standardize_address(
     """
     address = address.upper().strip()
     parsed_address = usaddress.parse(address)
-    standardized_address = [mappings.get(text, text) for text, _ in parsed_address]
+    standardized_address = [
+        mappings.get(text, text) for text, _ in parsed_address
+    ]
     return " ".join(standardized_address)
 
 
@@ -356,7 +376,9 @@ def combined_similarity(
     """
     address_score = fuzz.partial_ratio(hotel_address, business_address)
     name_score = fuzz.partial_ratio(hotel_name, business_name)
-    combined_score = (address_weight * address_score) + (name_weight * name_score)
+    combined_score = (address_weight * address_score) + (
+        name_weight * name_score
+    )
     return combined_score
 
 
@@ -419,7 +441,9 @@ def match_hotels_to_businesses(
                 continue
             if pd.isna(business[business_name_column]):
                 continue
-            business[business_address_column] = str(business[business_address_column])
+            business[business_address_column] = str(
+                business[business_address_column]
+            )
             if (
                 hotel[hotel_address_column][0:3]
                 == business[business_address_column][0:3]
@@ -442,9 +466,15 @@ def match_hotels_to_businesses(
                 )
                 if similarity_score > min_score:
                     logger.info(
-                        f"Hotel: {hotel[hotel_name_column]}, {hotel[hotel_address_column]} Business: {business[business_name_column]}, {business[business_address_column]} Similarity: {similarity_score}"
+                        f"Hotel: {hotel[hotel_name_column]}, "
+                        f"{hotel[hotel_address_column]} Business: "
+                        f"{business[business_name_column]}, "
+                        f"{business[business_address_column]} "
+                        f"Similarity: {similarity_score}"
                     )
-                    indicies_lst.append((hotel_index, business_index, similarity_score))
+                    indicies_lst.append(
+                        (hotel_index, business_index, similarity_score)
+                    )
                     break
 
     return indicies_lst
@@ -490,14 +520,16 @@ def merge_hotels_and_businesses(
 
     merged_df = pd.DataFrame(merged_rows)
 
-    hotel_df_copy.drop([hotel_index for hotel_index, _, _ in indices_lst], inplace=True)
+    hotel_df_copy.drop(
+        [hotel_index for hotel_index, _, _ in indices_lst], inplace=True
+    )
     business_df_copy.drop(
         [business_index for _, business_index, _ in indices_lst], inplace=True
     )
 
-    complete_df = pd.concat([merged_df, hotel_df, business_df], axis=0).reset_index(
-        drop=True
-    )
+    complete_df = pd.concat(
+        [merged_df, hotel_df, business_df], axis=0
+    ).reset_index(drop=True)
 
     return merged_df, complete_df
 
@@ -549,7 +581,9 @@ def get_city_geo(city: str) -> Union[MultiPolygon, Polygon]:
     return gpd.read_file(boundary_fpath).geometry.iloc[0]
 
 
-def get_city_merged(hotel_df: pd.DataFrame, business_df: pd.DataFrame) -> pd.DataFrame:
+def get_city_merged(
+    hotel_df: pd.DataFrame, business_df: pd.DataFrame
+) -> pd.DataFrame:
     """Implements the fuzzy matching and merging of
         the hotel and business data for a given
         city via string similarity partial ratios.
@@ -592,7 +626,10 @@ def get_city_data(city: str, state: str) -> Dict[str, pd.DataFrame]:
     city_df_dict["api_merged"], city_df_dict["api_complete"] = get_city_merged(
         city_df_dict["api_hotels"], city_df_dict["business"]
     )
-    city_df_dict["crawled_merged"], city_df_dict["crawled_complete"] = get_city_merged(
+    (
+        city_df_dict["crawled_merged"],
+        city_df_dict["crawled_complete"],
+    ) = get_city_merged(
         city_df_dict["crawled_hotels"], city_df_dict["business"]
     )
     city_df_dict["api_concat"] = pd.concat(
@@ -643,7 +680,9 @@ def get_city_correlations(city: str, df_key: str, df: pd.DataFrame) -> Axes:
     return heatmap
 
 
-def get_heatmaps(city: str, city_df_dict: Dict[str, pd.DataFrame]) -> Tuple[Axes, Axes]:
+def get_heatmaps(
+    city: str, city_df_dict: Dict[str, pd.DataFrame]
+) -> Tuple[Axes, Axes]:
     """Creates heatmaps of hotel data correlations for a city and then
     returns a tuple of the heatmaps.
 
@@ -658,12 +697,17 @@ def get_heatmaps(city: str, city_df_dict: Dict[str, pd.DataFrame]) -> Tuple[Axes
             tuple of the heatmaps of the correlations of the
             hotel and business data.
     """
-    api_heatmap = get_city_correlations(city, "api_merged", city_df_dict["api_merged"])
+    api_heatmap = get_city_correlations(
+        city, "api_merged", city_df_dict["api_merged"]
+    )
     print(f"The API Dataframe has {city_df_dict['api_merged'].shape[0]} rows")
     crawled_heatmap = get_city_correlations(
         city, "crawled_merged", city_df_dict["crawled_merged"]
     )
-    print(f"The Crawled Dataframe has {city_df_dict['crawled_merged'].shape[0]} rows")
+    print(
+        "The Crawled Dataframe has"
+        f" {city_df_dict['crawled_merged'].shape[0]} rows"
+    )
 
     return api_heatmap, crawled_heatmap
 
@@ -687,31 +731,32 @@ def get_city_linear_regression(
     """
     df_copy = df.loc[:, HOTEL_LR_VARIABLES].copy()
     df_copy.dropna(inplace=True)
-    HOTEL_INDEPENDENT_VARIABLES = [
+    hotel_independent_vars = [
         col for col in HOTEL_LR_INDEPENDENT_VARIABLES if col != "large_hotel"
     ]
-    X = df.loc[:, HOTEL_INDEPENDENT_VARIABLES]
+    temp_df = df.loc[:, hotel_independent_vars]
     for dependent in HOTEL_LR_DEPENDENT_VARIABLES:
         print("#" * 100)
         print(
-            f"{city.title()} {api_or_crawled.title()}: {dependent.replace('_', ' ').title()}"
+            f"{city.title()} {api_or_crawled.title()}:"
+            f" {dependent.replace('_', ' ').title()}"
         )
         print("#" * 100)
         print("#" * 100)
         y = df.loc[:, dependent]
-        for i in range(combo_count, len(HOTEL_INDEPENDENT_VARIABLES) + 1):
-            for combo in combinations(HOTEL_INDEPENDENT_VARIABLES, i):
-                X = df_copy.loc[:, combo]
+        for i in range(combo_count, len(hotel_independent_vars) + 1):
+            for combo in combinations(hotel_independent_vars, i):
+                temp_df = df_copy.loc[:, combo]
                 print(f"y: {y.head(1)}")
-                print(f"X: {X.head(1)}")
-                y, X = y.align(X, join="inner", axis=0)
-                X = sm.add_constant(X)
-                model = sm.OLS(y, X).fit()
+                print(f"X: {temp_df.head(1)}")
+                y, temp_df = y.align(temp_df, join="inner", axis=0)
+                temp_df = sm.add_constant(temp_df)
+                model = sm.OLS(y, temp_df).fit()
                 with warnings.catch_warnings():
                     warnings.filterwarnings(
                         "ignore", message="kurtosistest only valid for n>=20"
                     )
-                    model = sm.OLS(y, X).fit()
+                    model = sm.OLS(y, temp_df).fit()
                     print(model.summary())
                     print("#" * 100)
 
@@ -758,7 +803,9 @@ def build_hotel_table(
         num_hotels = city_df.shape[0]
         num_large_hotels = city_df.query("number_of_rooms >= 90").shape[0]
         num_small_hotels = city_df.query("number_of_rooms < 90").shape[0]
-        num_null_hotels = city_df.query("number_of_rooms != number_of_rooms").shape[0]
+        num_null_hotels = city_df.query(
+            "number_of_rooms != number_of_rooms"
+        ).shape[0]
         percent_large_hotels = (num_large_hotels / num_hotels) * 100
         percent_null_hotels = (num_null_hotels / num_hotels) * 100
 
@@ -774,9 +821,13 @@ def build_hotel_table(
             ]
         )
 
-    hotel_table_df = pd.DataFrame(hotel_table_lst, columns=table_column_names_lst)
+    hotel_table_df = pd.DataFrame(
+        hotel_table_lst, columns=table_column_names_lst
+    )
 
-    numeric_columns_lst = [col for col in table_column_names_lst if col != "City"]
+    numeric_columns_lst = [
+        col for col in table_column_names_lst if col != "City"
+    ]
     styled_table = hotel_table_df.style.background_gradient(
         cmap="Greens", subset=numeric_columns_lst
     )

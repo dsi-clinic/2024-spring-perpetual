@@ -1,22 +1,16 @@
 """Retrieves locations from one or more providers (e.g., Google Places, Yelp).
 """
 
+# Application imports
+from common.logger import LoggerFactory
 # Third-party imports
 from django.contrib.gis.geos import Point
 from django.core.management.base import BaseCommand, CommandParser
-from shapely import wkt
-
-# Application imports
-from common.logger import LoggerFactory
-from foodware.models import (
-    FoodwareProject,
-    FoodwareProjectBin,
-    PoiCache,
-    PoiParentCategory,
-    PoiProvider,
-    PoiProviderCategory,
-)
+from foodware.models import (FoodwareProject, FoodwareProjectBin, PoiCache,
+                             PoiParentCategory, PoiProvider,
+                             PoiProviderCategory)
 from foodware.places import IPlacesProvider, IPlacesProviderFactory
+from shapely import wkt
 
 
 class Command(BaseCommand):
@@ -30,7 +24,10 @@ class Command(BaseCommand):
     - https://docs.djangoproject.com/en/4.1/topics/settings/
     """
 
-    help = "Fetches, standardizes, and combines location data across multiple sources."
+    help = (
+        "Fetches, standardizes, and combines location data across multiple"
+        " sources."
+    )
     name = "Fetch Location Data"
 
     def __init__(self, *args, **kwargs) -> None:
@@ -117,19 +114,22 @@ class Command(BaseCommand):
         ):
             # Log start of process
             self._logger.info(
-                f'Received request to fetch points of interest related to "{category}".'
+                "Received request to fetch points of interest related to"
+                f' "{category}".'
             )
 
             # Get parent POI category by name from database
-            self._logger.info(f'Fetching "{category}" parent category from database.')
+            self._logger.info(
+                f'Fetching "{category}" parent category from database.'
+            )
             parent_cat = PoiParentCategory.objects.get(name=category)
 
             # Fetch POI from each provider
             for provider_name in options["providers"]:
-
                 # Get provider by name from database
                 self._logger.info(
-                    f'Fetching requested POI provider "{provider_name}" from database.'
+                    f'Fetching requested POI provider "{provider_name}" from'
+                    " database."
                 )
                 provider = PoiProvider.objects.get(name=provider_name)
 
@@ -151,7 +151,7 @@ class Command(BaseCommand):
 
                 # If no data found, get provider POI categories under parent category
                 self._logger.info(
-                    f"Querying database for active POI categories related "
+                    "Querying database for active POI categories related "
                     f'to "{category}" from provider "{provider_name}".'
                 )
                 provider_categories = list(
@@ -161,7 +161,9 @@ class Command(BaseCommand):
                     .values_list("name", flat=True)
                     .all()
                 )
-                self._logger.info(f"{len(provider_categories)} record(s) found.")
+                self._logger.info(
+                    f"{len(provider_categories)} record(s) found."
+                )
 
                 # Skip provider if it cannot service POI category request
                 if not provider_categories:
@@ -181,7 +183,8 @@ class Command(BaseCommand):
                 )
                 result = client.run_nearby_search(polygon, provider_categories)
                 self._logger.info(
-                    f"Found {len(result.clean)} POIs with {len(result.errors)} errors."
+                    f"Found {len(result.clean)} POIs with"
+                    f" {len(result.errors)} errors."
                 )
 
                 # Cache results
@@ -224,12 +227,15 @@ class Command(BaseCommand):
                 )
 
         # Bulk insert records into database
-        self._logger.info(f"Bulk inserting {len(bins)} record(s) into database.")
+        self._logger.info(
+            f"Bulk inserting {len(bins)} record(s) into database."
+        )
         created = FoodwareProjectBin.objects.bulk_create(
             bins, batch_size=1000, ignore_conflicts=True
         )
         self._logger.info(
-            f"{len(created)} record(s) successfully inserted or ignored on conflict."
+            f"{len(created)} record(s) successfully inserted or ignored on"
+            " conflict."
         )
 
         # Log successful completion and end process

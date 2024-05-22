@@ -12,11 +12,10 @@ from typing import Dict, List, Tuple, Union
 # Third-party imports
 import haversine as hs
 import requests
-from shapely import MultiPolygon, Polygon
-
+from common.geometry import BoundingBox, convert_meters_to_degrees
 # Application imports
 from foodware.places.common import IPlacesProvider, Place, PlacesSearchResult
-from common.geometry import BoundingBox, convert_meters_to_degrees
+from shapely import MultiPolygon, Polygon
 
 
 class GooglePlacesBasicSKUFields(Enum):
@@ -101,7 +100,8 @@ class GooglePlacesClient(IPlacesProvider):
         lat, lon = place["location"].values()
         address = place["formattedAddress"]
         is_closed = place.get("businessStatus") and (
-            place["businessStatus"] != GooglePlacesBusinessStatus.OPERATIONAL.value
+            place["businessStatus"]
+            != GooglePlacesBusinessStatus.OPERATIONAL.value
         )
         source = "google"
 
@@ -201,7 +201,10 @@ class GooglePlacesClient(IPlacesProvider):
 
         # Otherwise, if number of POIs returned equals max,
         # split box and recursively issue HTTP requests
-        if len(data["places"]) == GooglePlacesClient.MAX_NUM_RESULTS_PER_REQUEST:
+        if (
+            len(data["places"])
+            == GooglePlacesClient.MAX_NUM_RESULTS_PER_REQUEST
+        ):
             pois = []
             errors = []
             sub_cells = box.split_along_axes(x_into=2, y_into=2)
@@ -271,10 +274,14 @@ class GooglePlacesClient(IPlacesProvider):
         bbox: BoundingBox = BoundingBox.from_polygon(geo)
 
         # Calculate length of square circumscribed by circle with the max search radius
-        max_side_meters = (2**0.5) * GooglePlacesClient.MAX_SEARCH_RADIUS_IN_METERS
+        max_side_meters = (
+            2**0.5
+        ) * GooglePlacesClient.MAX_SEARCH_RADIUS_IN_METERS
 
         # Use heuristic to convert length from meters to degrees at box's lower latitude
-        deg_lat, deg_lon = convert_meters_to_degrees(max_side_meters, bbox.bottom_left)
+        deg_lat, deg_lon = convert_meters_to_degrees(
+            max_side_meters, bbox.bottom_left
+        )
 
         # Take minimum value as side length (meters convert differently to
         # lat and lon, and we want to avoid going over max radius)

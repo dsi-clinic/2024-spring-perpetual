@@ -9,9 +9,9 @@ from typing import List, Tuple
 # Third-party imports
 import folium
 import geopandas as gpd
-import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 import requests
 import spaghetti
 from numpy.typing import NDArray
@@ -20,7 +20,6 @@ from scipy.spatial import cKDTree
 from shapely.geometry import Point
 from sklearn.cluster import KMeans
 from spopt.locate import MCLP
-
 
 # Suppress warnings
 with warnings.catch_warnings():
@@ -60,27 +59,31 @@ def load_and_clean_data(
     """
     # Load API Data
     api_data = pd.read_json(api_data_path)
-    geometry = [Point(xy) for xy in zip(api_data["longitude"], api_data["latitude"])]
-    hilo_all_gdf = gpd.GeoDataFrame(api_data, geometry=geometry, crs="EPSG:4326")
+    geometry = [
+        Point(xy) for xy in zip(api_data["longitude"], api_data["latitude"])
+    ]
+    hilo_all_gdf = gpd.GeoDataFrame(
+        api_data, geometry=geometry, crs="EPSG:4326"
+    )
 
     # Load building foot-traffic data
     foot = pd.read_parquet(foot_traffic_path, engine="pyarrow")
 
-    large_apartments_NJ = gpd.read_file(large_apartments_path)
-    small_apartment_NJ = gpd.read_file(small_apartments_path)
+    large_apartments_nj = gpd.read_file(large_apartments_path)
+    small_apartment_nj = gpd.read_file(small_apartments_path)
 
     # Drop duplicates
-    large_apartments_NJ = large_apartments_NJ.drop_duplicates(
+    large_apartments_nj = large_apartments_nj.drop_duplicates(
         subset=["latitude", "longitude"]
     )
-    small_apartment_NJ = small_apartment_NJ.drop_duplicates(
+    small_apartment_nj = small_apartment_nj.drop_duplicates(
         subset=["latitude", "longitude"]
     )
 
     # Concatenate the two GeoDataFrames
-    large_apartments_NJ = pd.concat([large_apartments_NJ, small_apartment_NJ])
+    large_apartments_nj = pd.concat([large_apartments_nj, small_apartment_nj])
 
-    return hilo_all_gdf, foot, large_apartments_NJ
+    return hilo_all_gdf, foot, large_apartments_nj
 
 
 def summarize_clusters(gdf: gpd.GeoDataFrame) -> pd.DataFrame:
@@ -184,7 +187,9 @@ def clean_coordinates(gdf: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
 
     # Ensure all coordinates are finite
     gdf = gdf[
-        gdf["geometry"].apply(lambda geom: np.isfinite(geom.x) and np.isfinite(geom.y))
+        gdf["geometry"].apply(
+            lambda geom: np.isfinite(geom.x) and np.isfinite(geom.y)
+        )
     ]
     return gdf
 
@@ -226,10 +231,16 @@ def calculate_cost_matrix(
 
     tree = cKDTree(supply_coords)
     demand_indices = np.arange(len(demand_coords))
-    supply_indices = [tree.query_ball_point(point, r=radius) for point in demand_coords]
+    supply_indices = [
+        tree.query_ball_point(point, r=radius) for point in demand_coords
+    ]
 
-    cost_matrix = np.zeros((len(demand_indices), len(supply_coords)), dtype=bool)
-    for demand_idx, nearby_supply_indices in zip(demand_indices, supply_indices):
+    cost_matrix = np.zeros(
+        (len(demand_indices), len(supply_coords)), dtype=bool
+    )
+    for demand_idx, nearby_supply_indices in zip(
+        demand_indices, supply_indices
+    ):
         cost_matrix[demand_idx, nearby_supply_indices] = True
 
     return cost_matrix
@@ -261,10 +272,13 @@ def generate_mapbox_cost_matrix(
         all_coords = client_chunk + facility_chunk
         coord_str = ";".join([f"{lon},{lat}" for lon, lat in all_coords])
         url = f"https://api.mapbox.com/directions-matrix/v1/mapbox/driving/{coord_str}?annotations=duration&access_token={mapbox_access_token}"
-        response = requests.get(url)
+        response = requests.get(url, timeout=600)
 
         if response.status_code != 200:
-            print(f"Error: Received status code {response.status_code} from Mapbox API")
+            print(
+                f"Error: Received status code {response.status_code} from"
+                " Mapbox API"
+            )
             print(response.text)
             return np.full((len(client_chunk), len(facility_chunk)), np.inf)
 
@@ -324,7 +338,10 @@ def calculate_weights_and_cost_matrix(
 
 
 def setup_and_solve_mclp(
-    cost_matrix: NDArray, weights: NDArray, service_radius: float, p_facilities: int
+    cost_matrix: NDArray,
+    weights: NDArray,
+    service_radius: float,
+    p_facilities: int,
 ) -> MCLP:
     """Sets up and solves the Maximal Covering Location Problem (MCLP).
 
@@ -340,7 +357,9 @@ def setup_and_solve_mclp(
     Returns:
         (`spopt.locate.MCLP`): The solved MCLP model.
     """
-    mclp = MCLP.from_cost_matrix(cost_matrix, weights, service_radius, p_facilities)
+    mclp = MCLP.from_cost_matrix(
+        cost_matrix, weights, service_radius, p_facilities
+    )
     solver = PULP_CBC_CMD()
     mclp.solve(solver)
     return mclp
@@ -400,7 +419,9 @@ def snap_observations_to_network(
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
         ntw.snapobservations(client_points, "clients", attribute=True)
-    clients_snapped = spaghetti.element_as_gdf(ntw, pp_name="clients", snapped=True)
+    clients_snapped = spaghetti.element_as_gdf(
+        ntw, pp_name="clients", snapped=True
+    )
     clients_snapped.drop(columns=["id", "comp_label"], inplace=True)
 
     with warnings.catch_warnings():
@@ -418,7 +439,6 @@ def visualize_results(
     client_points: gpd.GeoDataFrame,
     facility_points: gpd.GeoDataFrame,
     streets: gpd.GeoDataFrame,
-    mclp_result: MCLP,
 ) -> None:
     """Visualize the results on a map.
 
@@ -429,12 +449,10 @@ def visualize_results(
 
         streets (`gpd.GeoDataFrame`): The GeoDataFrame of streets.
 
-        mclp_result (`spopt.locate.MCLP`): The solved MCLP model.
-
     Returns:
         `None`
     """
-    fig, ax = plt.subplots(figsize=(6, 6))
+    _, ax = plt.subplots(figsize=(6, 6))
     streets.plot(ax=ax, alpha=0.8, zorder=1, label="streets")
     facility_points.plot(
         ax=ax,
@@ -465,7 +483,9 @@ def perform_parameter_sweep_on_service_radius(
         (`list` of (`float`, `float`)): A list of two-item tuples, each
             containing the calculated service radius and coverage.
     """
-    service_radii = range(1, 500, 50)  # Adjust the range and step size as needed
+    service_radii = range(
+        1, 500, 50
+    )  # Adjust the range and step size as needed
     coverage_results = []
 
     for service_radius in service_radii:
@@ -511,8 +531,8 @@ def visualize_folium_results(
     Returns:
         `None`
     """
-    HILO_CENTER = [19.7074, -155.0885]
-    m = folium.Map(location=HILO_CENTER, zoom_start=13)
+    hilo_center = [19.7074, -155.0885]
+    m = folium.Map(location=hilo_center, zoom_start=13)
 
     covered_demand_indices = set()
     for facility_clients in mclp_result.fac2cli:
@@ -520,7 +540,9 @@ def visualize_folium_results(
             if cli_idx != -1:
                 covered_demand_indices.add(cli_idx)
 
-    for idx, ((lon, lat), weight) in enumerate(zip(demand_coords, weight_array)):
+    for idx, ((lon, lat), weight) in enumerate(
+        zip(demand_coords, weight_array)
+    ):
         color = "green" if idx in covered_demand_indices else "blue"
         folium.CircleMarker(
             location=[lat, lon],
@@ -545,8 +567,8 @@ def visualize_folium_results(
             ).add_to(m)
 
     legend_html = """
-         <div style="position: fixed; 
-                     bottom: 50px; left: 50px; width: 200px; height: 150px; 
+         <div style="position: fixed;
+                     bottom: 50px; left: 50px; width: 200px; height: 150px;
                      border:2px solid grey; z-index:9999; font-size:14px;
                      background-color:white; opacity: 0.85;">
          &nbsp; <i class="fa fa-map-marker fa-2x" style="color:green"></i>&nbsp; Covered Demand Point<br>

@@ -3,7 +3,6 @@
 
 # Application imports
 from common.models import TimestampedModel
-
 # Third-party imports
 from django.contrib.gis.db.models import MultiPolygonField, PointField
 from django.db import models
@@ -136,7 +135,9 @@ class FoodwareProjectBin(TimestampedModel):
 
     project = models.ForeignKey("FoodwareProject", on_delete=models.CASCADE)
     provider = models.ForeignKey("PoiProvider", on_delete=models.CASCADE)
-    parent_category = models.ForeignKey("PoiParentCategory", on_delete=models.CASCADE)
+    parent_category = models.ForeignKey(
+        "PoiParentCategory", on_delete=models.CASCADE
+    )
     external_id = models.CharField(blank=True, default="")
     classification = models.CharField(
         choices=Classification, default=Classification.UNDETERMINED
@@ -169,7 +170,9 @@ class PoiCache(TimestampedModel):
 
     project = models.ForeignKey("FoodwareProject", on_delete=models.CASCADE)
     provider = models.ForeignKey("PoiProvider", on_delete=models.CASCADE)
-    parent_category = models.ForeignKey("PoiParentCategory", on_delete=models.CASCADE)
+    parent_category = models.ForeignKey(
+        "PoiParentCategory", on_delete=models.CASCADE
+    )
     data = models.JSONField()
 
     class Meta:

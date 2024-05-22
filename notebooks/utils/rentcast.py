@@ -13,9 +13,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import requests
 import seaborn as sns
-from IPython.display import display, HTML
+from IPython.display import HTML, display
 from scourgify import normalize_address_record
-
 
 RENTCAST_RELEVANT_COLUMNS = [
     "id",
@@ -151,9 +150,17 @@ def parse_street_address(df: pd.DataFrame, address_col: str) -> pd.DataFrame:
 
     # Create new DataFrame with additional street address components
     copy = df.copy()
-    new_cols = ["address_line_1", "address_line_2", "city", "state", "postal_code"]
+    new_cols = [
+        "address_line_1",
+        "address_line_2",
+        "city",
+        "state",
+        "postal_code",
+    ]
     copy[new_cols] = copy[[address_col]].apply(
-        lambda r: _parse_street_address(r[address_col]), axis=1, result_type="expand"
+        lambda r: _parse_street_address(r[address_col]),
+        axis=1,
+        result_type="expand",
     )
 
     return copy
@@ -177,7 +184,9 @@ def view_against_yelp(rentcast_df: pd.DataFrame, yelp_df: pd.DataFrame) -> None:
     yelp_df[cols] = yelp_df[cols].astype(float)
     yelp_gdf = gpd.GeoDataFrame(
         yelp_df,
-        geometry=gpd.points_from_xy(x=yelp_df["Longitude"], y=yelp_df["Latitude"]),
+        geometry=gpd.points_from_xy(
+            x=yelp_df["Longitude"], y=yelp_df["Latitude"]
+        ),
         crs="EPSG:4326",
     )
     yelp_gdf = yelp_gdf[
@@ -185,7 +194,9 @@ def view_against_yelp(rentcast_df: pd.DataFrame, yelp_df: pd.DataFrame) -> None:
     ]
 
     # Transform Rentcast DataFrame
-    rentcast_df = rentcast_df.reset_index().rename(columns={"index": "rentcast_idx"})
+    rentcast_df = rentcast_df.reset_index().rename(
+        columns={"index": "rentcast_idx"}
+    )
     rentcast_df = rentcast_df.drop_duplicates(subset="address_line_1")
     rentcast_gdf = gpd.GeoDataFrame(
         rentcast_df,
@@ -212,7 +223,9 @@ def view_against_yelp(rentcast_df: pd.DataFrame, yelp_df: pd.DataFrame) -> None:
     yelp_gdf["matched"] = ~yelp_gdf.yelp_idx.isin(missing_indices)
 
     # Determine center point of apartments to determine initial map location
-    combined_gdf = pd.concat([rentcast_gdf[["geometry"]], yelp_gdf[["geometry"]]])
+    combined_gdf = pd.concat(
+        [rentcast_gdf[["geometry"]], yelp_gdf[["geometry"]]]
+    )
     original_crs = combined_gdf.crs
     utm_crs = combined_gdf.estimate_utm_crs()
     center_lon, center_lat = (
@@ -234,7 +247,9 @@ def view_against_yelp(rentcast_df: pd.DataFrame, yelp_df: pd.DataFrame) -> None:
 
     for _, row in yelp_gdf.iterrows():
         lon, lat = row.geometry.coords[:][0]
-        popup = folium.Popup(html=f"<b>{row['Subject']}</b><br/>{row['Location']}")
+        popup = folium.Popup(
+            html=f"<b>{row['Subject']}</b><br/>{row['Location']}"
+        )
         folium.CircleMarker(
             location=(lat, lon),
             radius=2,
@@ -246,7 +261,7 @@ def view_against_yelp(rentcast_df: pd.DataFrame, yelp_df: pd.DataFrame) -> None:
     # Create map legend
     legend_html = """'
         {% macro html(this, kwargs) %}
-        <div 
+        <div
             style="
                 background: white;
                 padding: 5px;

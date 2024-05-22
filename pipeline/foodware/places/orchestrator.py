@@ -5,14 +5,13 @@
 from logging import Logger
 from typing import Dict, List, Union
 
+import geopandas as gpd
 # Third-party imports
 import pandas as pd
-import geopandas as gpd
-from fuzzywuzzy import fuzz
-from shapely import MultiPolygon, Polygon
-
 # Application imports
 from foodware.places.factory import IPlacesProvider, IPlacesProviderFactory
+from fuzzywuzzy import fuzz
+from shapely import MultiPolygon, Polygon
 
 
 class PlaceOrchestrator:
@@ -65,7 +64,9 @@ class PlaceOrchestrator:
         gdf = gdf[infogroup_gdf.intersects(locale_boundary)]
 
         # Determine cutoff for top 25 percent of sales volume
-        sales_vol_threshold = gdf["SALES VOLUME (9) - LOCATION"].describe()["75%"]
+        sales_vol_threshold = gdf["SALES VOLUME (9) - LOCATION"].describe()[
+            "75%"
+        ]
 
         # Filter to top performing businesses and add rank as new column
         top_biz_gdf = gdf.query(
@@ -76,7 +77,6 @@ class PlaceOrchestrator:
         # Call provider to fetch latest state of businesses
         top_biz = []
         for _, row in top_biz_gdf.iterrows():
-
             # Skip business if company name was not recorded
             if not row["COMPANY"]:
                 continue
@@ -95,11 +95,15 @@ class PlaceOrchestrator:
             try:
                 # Parse best match (first result) if exists; otherwise continue
                 best_match = results.clean[0]
-                best_match_name = best_match.name.upper() if best_match.name else ""
+                best_match_name = (
+                    best_match.name.upper() if best_match.name else ""
+                )
                 best_match_address = best_match.address.split(",")[0].upper()
 
                 # Compute similarity scores between business and match fields
-                addr_score = fuzz.partial_ratio(street_address, best_match_address)
+                addr_score = fuzz.partial_ratio(
+                    street_address, best_match_address
+                )
                 name_score = fuzz.partial_ratio(company, best_match_name)
 
                 # Skip row if address match below threshold
@@ -108,13 +112,13 @@ class PlaceOrchestrator:
 
                 # Otherwise, add notes to match and append to list of top businesss
                 best_match.notes = (
-                    f"(Source: Infogroup) In {infogroup_year}, this location "
-                    f"housed the restaurant {company}, which had a business "
-                    f"sales volume of {sales * 1000:,}. Among restaurants in "
-                    f"the locale of {locale_name}, it ranked {rank} of "
-                    f"{len(gdf)} in sales volume. It is expected with {name_score} "
-                    "percent confidence that the same restaurant exists at this "
-                    "location. Please confirm for accuracy."
+                    f"(Source: Infogroup) In {infogroup_year}, this location"
+                    f" housed the restaurant {company}, which had a business"
+                    f" sales volume of {sales * 1000:,}. Among restaurants in"
+                    f" the locale of {locale_name}, it ranked {rank} of"
+                    f" {len(gdf)} in sales volume. It is expected with"
+                    f" {name_score} percent confidence that the same restaurant"
+                    " exists at this location. Please confirm for accuracy."
                 )
                 top_biz.append(best_match)
 
