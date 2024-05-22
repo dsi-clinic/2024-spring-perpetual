@@ -11,6 +11,7 @@ from typing import Dict, List, Tuple, Union
 # Third-party imports
 import requests
 from common.geometry import BoundingBox
+
 # Application imports
 from foodware.places.common import IPlacesProvider, Place, PlacesSearchResult
 from shapely import MultiPolygon, Polygon

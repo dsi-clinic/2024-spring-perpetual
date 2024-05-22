@@ -145,7 +145,7 @@ def parse_street_address(df: pd.DataFrame, address_col: str) -> pd.DataFrame:
         """
         try:
             return normalize_address_record(location).values()
-        except:
+        except Exception:
             return (None, None, None, None, None)
 
     # Create new DataFrame with additional street address components

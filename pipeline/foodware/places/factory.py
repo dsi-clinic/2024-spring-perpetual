@@ -2,6 +2,7 @@
 """
 
 from common.logger import logging
+
 # Application imports
 from foodware.places.bing import BingMapsClient
 from foodware.places.common import IPlacesProvider

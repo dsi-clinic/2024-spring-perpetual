@@ -2,14 +2,13 @@
 """
 
 # Standard library imports
-from logging import Logger
 from typing import Dict, List, Union
 
-import geopandas as gpd
 # Third-party imports
-import pandas as pd
+import geopandas as gpd
+
 # Application imports
-from foodware.places.factory import IPlacesProvider, IPlacesProviderFactory
+from foodware.places.factory import IPlacesProvider
 from fuzzywuzzy import fuzz
 from shapely import MultiPolygon, Polygon
 
@@ -61,7 +60,7 @@ class PlaceOrchestrator:
             (`list` of `dict`): The bin locations.
         """
         # Retain only businesses within boundary
-        gdf = gdf[infogroup_gdf.intersects(locale_boundary)]
+        gdf = infogroup_gdf[infogroup_gdf.intersects(locale_boundary)]
 
         # Determine cutoff for top 25 percent of sales volume
         sales_vol_threshold = gdf["SALES VOLUME (9) - LOCATION"].describe()[
@@ -69,9 +68,10 @@ class PlaceOrchestrator:
         ]
 
         # Filter to top performing businesses and add rank as new column
-        top_biz_gdf = gdf.query(
-            "`SALES VOLUME (9) - LOCATION` > @sales_vol_threshold"
-        ).sort_values(by="SALES VOLUME (9) - LOCATION", ascending=False)
+        query = gdf["SALES VOLUME (9) - LOCATION"] > sales_vol_threshold
+        top_biz_gdf = gdf[query].sort_values(
+            by="SALES VOLUME (9) - LOCATION", ascending=False
+        )
         top_biz_gdf["RANK"] = range(1, len(top_biz_gdf) + 1)
 
         # Call provider to fetch latest state of businesses
@@ -117,8 +117,9 @@ class PlaceOrchestrator:
                     f" sales volume of {sales * 1000:,}. Among restaurants in"
                     f" the locale of {locale_name}, it ranked {rank} of"
                     f" {len(gdf)} in sales volume. It is expected with"
-                    f" {name_score} percent confidence that the same restaurant"
-                    " exists at this location. Please confirm for accuracy."
+                    f" {name_score} percent confidence that the same"
+                    " restaurant exists at this location. Please confirm for"
+                    " accuracy."
                 )
                 top_biz.append(best_match)
 

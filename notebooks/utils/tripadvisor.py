@@ -410,23 +410,24 @@ def match_hotels_to_businesses(
         business_name_column (`str`, optional): The column name of the business
             name. Defaults to "name".
 
-        business_address_column (`str`, optional): The column name of the business
-            address. Defaults to "street1".
+        business_address_column (`str`, optional): The column name
+            of the business address. Defaults to "street1".
 
         address_weight (`float`, optional): The weight of the address in the
             similarity score. Defaults to 0.5.
 
-        name_weight (`float`, optional): The weight of the name in the similarity
-            score. Defaults to 0.5.
+        name_weight (`float`, optional): The weight of the name
+            in the similarity score. Defaults to 0.5.
 
-        min_score (`int`, optional): The minimum similarity score for a match.
-            Defaults to 86.
+        min_score (`int`, optional): The minimum similarity
+            score for a match. Defaults to 86.
 
     Returns:
-        (`list` of (`int`, `int`, `float`)): A list of three-item tuples containing
-            components of a matched hotel and business: (1) the index of the
-            hotel in its DataFrame, (2) the index of the business in its DataFrame,
-            and (3) the composite similarity score of the entities' names and addresses.
+        (`list` of (`int`, `int`, `float`)): A list of three-item
+            tuples containing components of a matched hotel and business:
+            (1) the index of the hotel in its DataFrame, (2) the index of
+            the business in its DataFrame, and (3) the composite similarity
+            score of the entities' names and addresses.
     """
     indicies_lst = []
 
@@ -568,7 +569,8 @@ def load_tripadvisor_hotels(city: str, source_type: str) -> pd.DataFrame:
 
 
 def get_city_geo(city: str) -> Union[MultiPolygon, Polygon]:
-    """Fetches a city's geographic boundary as a shapely `Polygon` or `MultiPolygon`.
+    """Fetches a city's geographic boundary as a
+    Shapely `Polygon` or `MultiPolygon`.
 
     Args:
         city (`str`): The name of the city.
@@ -842,7 +844,8 @@ def create_and_display_hotel_tables(
     api_table_column_names_lst: List[str],
     crawled_table_column_names_lst: List[str],
 ) -> Tuple[pd.DataFrame, pd.DataFrame]:
-    """Creates and displays the API and Crawled hotel tables for a list of cities.
+    """Creates and displays the API and
+    Crawled hotel tables for a list of cities.
 
     Args:
         df_dict (`dict`): A dictionary of the DataFrames for the cities.

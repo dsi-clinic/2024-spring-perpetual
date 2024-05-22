@@ -88,7 +88,8 @@ class BoundingBox(BaseModel):
     def center(self) -> WGS84Coordinate:
         """The center point of the bounding box."""
         return WGS84Coordinate(
-            lat=(self.min_y + self.max_y) / 2, lon=(self.min_x + self.max_x) / 2
+            lat=(self.min_y + self.max_y) / 2,
+            lon=(self.min_x + self.max_x) / 2,
         )
 
     @property

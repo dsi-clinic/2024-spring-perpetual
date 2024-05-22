@@ -13,6 +13,7 @@ from typing import Dict, List, Tuple, Union
 # Third-party imports
 import requests
 from common.geometry import BoundingBox, convert_meters_to_degrees
+
 # Application imports
 from foodware.places.common import IPlacesProvider, Place, PlacesSearchResult
 from shapely import MultiPolygon, Polygon

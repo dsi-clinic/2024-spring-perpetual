@@ -11,6 +11,7 @@ from typing import Dict, List, Optional, Tuple, Union
 import haversine as hs
 import requests
 from bs4 import BeautifulSoup as soup
+
 # Application imports
 from common.geometry import BoundingBox
 from common.logger import logging
@@ -233,7 +234,7 @@ class TripadvisorClient(IPlacesProvider):
                 "div"
             )
             return int(room_count_div.text.strip())
-        except:
+        except (AttributeError, ValueError):
             return None
 
     def map_place(self, place: Dict) -> Place:
@@ -367,7 +368,7 @@ class TripadvisorClient(IPlacesProvider):
             return [], [{"api_params": api_params, "error": payload}]
 
         # Otherwise, if no data returned, return empty lists of POIs and errors
-        if not "data" in payload:
+        if "data" not in payload:
             self._logger.warning("No data found in response body.")
             return [], []
 

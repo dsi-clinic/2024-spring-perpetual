@@ -1,10 +1,11 @@
-"""Functions for estimating optimal solutions to the Maximal Coverage Location Problem.
+"""Functions for estimating optimal solutions
+to the Maximal Coverage Location Problem.
 """
 
 # Standard library imports
 import os
 import warnings
-from typing import List, Tuple
+from typing import List, Optional, Tuple
 
 # Third-party imports
 import folium
@@ -53,9 +54,10 @@ def load_and_clean_data(
         small_apartments_path (`str`): Path to the small apartments data file.
 
     Returns:
-        ((`gpd.GeoDataFrame`, `gpd.GeoDataFrame`, `gpd.GeoDataFrame`)): A three-item
-            tuple consisting of the GeoDataFrame for all apartments, the GeoDataFrame
-            for foot traffic points, and the cleaned GeoDataFrame for large apartments.
+        ((`gpd.GeoDataFrame`, `gpd.GeoDataFrame`, `gpd.GeoDataFrame`)):
+            A three-item tuple consisting of the GeoDataFrame for all
+            apartments, the GeoDataFrame for foot traffic points, and
+            the cleaned GeoDataFrame for large apartments.
     """
     # Load API Data
     api_data = pd.read_json(api_data_path)
@@ -93,7 +95,8 @@ def summarize_clusters(gdf: gpd.GeoDataFrame) -> pd.DataFrame:
     as weights.
 
     Args:
-        gdf (`gpd.GeoDataFrame`): A GeoDataFrame with "latitude" and "longitude"
+        gdf (`gpd.GeoDataFrame`): A GeoDataFrame with "latitude" and
+        "longitude"
             columns for foot traffic points, a "cluster" column, and a
             "raw_visit_counts" column indicating the volume of visits.
 
@@ -247,21 +250,26 @@ def calculate_cost_matrix(
 
 
 def generate_mapbox_cost_matrix(
-    demand_coords, supply_coords, mapbox_access_token, max_coords=25
-):
+    demand_coords: List[Tuple[float, float]],
+    supply_coords: List[Tuple[float, float]],
+    mapbox_access_token: str,
+    max_coords: int = 25,
+) -> NDArray:
     """Generate the cost matrix using the Mapbox API.
 
     Args:
-        demand_coords (list): List of demand coordinates.
+        demand_coords (`list` of (`float`, flat`)):
+            The list of demand coordinates.
 
-        supply_coords (list): List of supply coordinates.
+        supply_coords (`list` of (`float`, flat`)):
+            The list of supply coordinates.
 
-        mapbox_access_token (str): Mapbox access token.
+        mapbox_access_token (`str`): The Mapbox access token.
 
-        max_coords (int): Maximum number of coordinates per API request.
+        max_coords (`int`): The maximum number of coordinates per API request.
 
     Returns:
-    - np.array: Cost matrix.
+        (`NDArray`): The cost matrix.
     """
 
     def chunk_coordinates(coords, chunk_size):
@@ -271,7 +279,11 @@ def generate_mapbox_cost_matrix(
     def get_cost_matrix(client_chunk, facility_chunk, mapbox_access_token):
         all_coords = client_chunk + facility_chunk
         coord_str = ";".join([f"{lon},{lat}" for lon, lat in all_coords])
-        url = f"https://api.mapbox.com/directions-matrix/v1/mapbox/driving/{coord_str}?annotations=duration&access_token={mapbox_access_token}"
+        url = (
+            "https://api.mapbox.com/directions-matrix/v1/mapbox/driving/"
+            f"{coord_str}?annotations=duration&access_token="
+            f"{mapbox_access_token}"
+        )
         response = requests.get(url, timeout=600)
 
         if response.status_code != 200:
@@ -315,16 +327,24 @@ def generate_mapbox_cost_matrix(
 
 
 def calculate_weights_and_cost_matrix(
-    client_points, facility_points, service_radius, mapbox_access_token=None
+    client_points: gpd.GeoDataFrame,
+    facility_points: gpd.GeoDataFrame,
+    service_radius: float,
+    mapbox_access_token: Optional[str] = None,
 ):
-    """
-    Calculate the weights and cost matrix for the given client and facility points.
+    """Calculate the weights and cost matrix for the given
+    client and facility points.
 
-    Parameters:
-    - client_points (gpd.GeoDataFrame): GeoDataFrame of client points with weights.
-    - facility_points (gpd.GeoDataFrame): GeoDataFrame of facility points.
-    - service_radius (float): Service radius.
-    - mapbox_access_token (str): Mapbox access token.
+    Args:
+        client_points (`gpd.GeoDataFrame`):
+            A GeoDataFrame of client points with weights.
+
+        facility_points (`gpd.GeoDataFrame`):
+            A GeoDataFrame of facility points.
+
+        service_radius (`float`): The service radius.
+
+        mapbox_access_token (`str`): The Mapbox access token.
 
     Returns:
     - np.array: Array of weights.
@@ -410,11 +430,13 @@ def snap_observations_to_network(
 
         client_points (`gpd.GeoDataFrame`): The GeoDataFrame of client points.
 
-        facility_points (`gpd.GeoDataFrame`): The GeoDataFrame of facility points.
+        facility_points (`gpd.GeoDataFrame`):
+            The GeoDataFrame of facility points.
 
     Returns:
-        ((`gpd.GeoDataFrame`, `gpd.GeoDataFrame`)): A two-item tuple consisting
-            of the snapped client points and the snapped facility points.
+        ((`gpd.GeoDataFrame`, `gpd.GeoDataFrame`)):
+            A two-item tuple consisting of the snapped client
+            points and the snapped facility points.
     """
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
@@ -443,11 +465,14 @@ def visualize_results(
     """Visualize the results on a map.
 
     Args:
-        client_points (`gpd.GeoDataFrame`): The GeoDataFrame of client points.
+        client_points (`gpd.GeoDataFrame`):
+            The GeoDataFrame of client points.
 
-        facility_points (`gpd.GeoDataFrame`): The GeoDataFrame of facility points.
+        facility_points (`gpd.GeoDataFrame`):
+            The GeoDataFrame of facility points.
 
-        streets (`gpd.GeoDataFrame`): The GeoDataFrame of streets.
+        streets (`gpd.GeoDataFrame`):
+            The GeoDataFrame of streets.
 
     Returns:
         `None`
@@ -470,7 +495,8 @@ def visualize_results(
 def perform_parameter_sweep_on_service_radius(
     cost_matrix: NDArray, weight_array: NDArray, p_facilities: int
 ) -> List[Tuple[float, float]]:
-    """Perform a parameter sweep of the service radius to find the best coverage.
+    """Performs a parameter sweep of the
+    service radius to find the best coverage.
 
     Args:
         cost_matrix (`NDArray`): The cost matrix.
@@ -571,9 +597,12 @@ def visualize_folium_results(
                      bottom: 50px; left: 50px; width: 200px; height: 150px;
                      border:2px solid grey; z-index:9999; font-size:14px;
                      background-color:white; opacity: 0.85;">
-         &nbsp; <i class="fa fa-map-marker fa-2x" style="color:green"></i>&nbsp; Covered Demand Point<br>
-         &nbsp; <i class="fa fa-map-marker fa-2x" style="color:blue"></i>&nbsp; Uncovered Demand Point<br>
-         &nbsp; <i class="fa fa-map-marker fa-2x" style="color:red"></i>&nbsp; Facility Location
+         &nbsp; <i class="fa fa-map-marker fa-2x" style="color:green">
+         </i>&nbsp; Covered Demand Point<br>
+         &nbsp; <i class="fa fa-map-marker fa-2x" style="color:blue">
+         </i>&nbsp; Uncovered Demand Point<br>
+         &nbsp; <i class="fa fa-map-marker fa-2x" style="color:red">
+         </i>&nbsp; Facility Location
          </div>
          """
 

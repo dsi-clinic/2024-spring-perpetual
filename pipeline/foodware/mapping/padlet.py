@@ -304,8 +304,8 @@ class PadletClient:
 
         # Attempt click with retries
         err_msg = (
-            f"Failed to click on the Padlet template to use as the basis of the"
-            f" map."
+            "Failed to click on the Padlet template to use "
+            "as the basis of the map."
         )
         self._retry_action(click_template, err_msg)
 
@@ -391,13 +391,12 @@ class PadletClient:
 
         # Parse ids of custom board sections (indoor and outdoor bins)
         self._logger.info("Parsing board metadata for section ids.")
-        indoor_section_id = None
         outdoor_section_id = None
         for obj in board_metadata["included"]:
             if obj["type"] != "section":
                 continue
             elif obj["attributes"]["title"] == self._indoor_bins_section:
-                indoor_section_id = obj["id"]
+                pass
             elif obj["attributes"]["title"] == self._outdoor_bins_section:
                 outdoor_section_id = obj["id"]
             else:

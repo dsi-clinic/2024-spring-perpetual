@@ -13,6 +13,7 @@ from typing import Dict, List, Tuple, Union
 import haversine as hs
 import requests
 from common.geometry import BoundingBox, convert_meters_to_degrees
+
 # Application imports
 from foodware.places.common import IPlacesProvider, Place, PlacesSearchResult
 from shapely import MultiPolygon, Polygon
@@ -54,7 +55,8 @@ class GooglePlacesClient(IPlacesProvider):
     """
 
     MAX_SEARCH_RADIUS_IN_METERS: float = 50_000
-    """The maximum size of the search radius in meters. Approximately equal to 31 miles.
+    """The maximum size of the search radius in meters.
+    Approximately equal to 31 miles.
     """
 
     SECONDS_DELAY_PER_REQUEST: float = 0.5
@@ -85,7 +87,8 @@ class GooglePlacesClient(IPlacesProvider):
             ) from None
 
     def map_place(self, place: Dict) -> Place:
-        """Maps a place fetched from a data source to a standard representation.
+        """Maps a place fetched from a data
+        source to a standard representation.
 
         Args:
             place (`dict`): The place.

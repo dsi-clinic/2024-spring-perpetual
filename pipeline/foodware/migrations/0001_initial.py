@@ -160,7 +160,10 @@ class Migration(migrations.Migration):
                 ),
                 ("name", models.CharField(blank=True, default="")),
                 ("external_categories", models.JSONField()),
-                ("formatted_address", models.CharField(blank=True, default="")),
+                (
+                    "formatted_address",
+                    models.CharField(blank=True, default=""),
+                ),
                 (
                     "coords",
                     django.contrib.gis.db.models.fields.PointField(srid=4326),
@@ -196,7 +199,10 @@ class Migration(migrations.Migration):
                 (
                     "type",
                     models.CharField(
-                        choices=[("Location", "Locations"), ("Route", "Routes")]
+                        choices=[
+                            ("Location", "Locations"),
+                            ("Route", "Routes"),
+                        ]
                     ),
                 ),
                 (
@@ -328,7 +334,8 @@ class Migration(migrations.Migration):
         migrations.AddConstraint(
             model_name="poiprovidercategory",
             constraint=models.UniqueConstraint(
-                fields=("provider", "name"), name="unique_poi_provider_category"
+                fields=("provider", "name"),
+                name="unique_poi_provider_category",
             ),
         ),
     ]

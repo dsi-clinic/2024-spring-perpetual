@@ -3,6 +3,7 @@
 
 # Application imports
 from common.models import TimestampedModel
+
 # Third-party imports
 from django.contrib.gis.db.models import MultiPolygonField, PointField
 from django.db import models

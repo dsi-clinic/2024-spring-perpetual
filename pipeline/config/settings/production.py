@@ -6,6 +6,7 @@ import os
 
 # Application improts
 from config.settings.base import BaseConfig
+
 # Third-party imports
 from corsheaders.defaults import default_headers
 

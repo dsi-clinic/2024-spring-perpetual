@@ -239,7 +239,8 @@ def run_hdbscan(
     directory "data/foot-traffic/output".
 
     Args:
-        data (`pd.DataFrame`): DataFrame containing the longitude and latitude columns.
+        data (`pd.DataFrame`): DataFrame containing the
+            longitude and latitude columns.
 
         min_cluster_size (`int`): The minimum size of clusters; no fewer than
             this number of points will form a cluster.
@@ -296,7 +297,8 @@ def run_hdbscan(
 
 
 def summarize_clusters(gdf: gpd.GeoDataFrame) -> pd.DataFrame:
-    """Summarizes the clusters in a GeoDataFrame that includes a "cluster" label column.
+    """Summarizes the clusters in a GeoDataFrame
+    that includes a "cluster" label column.
 
     Args:
         gdf (`gpd.GeoDataFrame`): A GeoDataFrame with a "cluster" column.
@@ -345,7 +347,7 @@ def plot_clusters(
         df (`pd.DataFrame`): A DataFrame with the columns "cluster_label",
             "num_points", and "geometry" (centroids).
 
-        utm_crs (`str`): The CRS of the clusters..
+        utm_crs (`str`): The CRS of the clusters.
 
         output_fpath (`str`): The path to the optional
             output file to write. Defaults to `None`, which
@@ -385,14 +387,16 @@ def plot_clusters(
             popup=f"Cluster {row['cluster_label']}: {row['num_points']} points",
         ).add_to(fmap)
 
-    # Add a legend to the map with better alignment and a visual circle marker example
+    # Add a legend to the map with better alignment
+    # and a visual circle marker example
     legend_html = """
     <div style="position: fixed;
                 bottom: 50px; left: 50px; width: 180px; height: 100px;
                 border: 2px solid grey; z-index:9999; font-size:14px;
                 text-align: center; padding-top: 10px;">
                     <b>Legend</b><br>
-                    Cluster Centroids <span style="color:blue;">&#11044;</span><br>
+                    Cluster Centroids
+                    <span style="color:blue;">&#11044;</span><br>
                     Circle markers are<br>
                     proportional in size<br>
     </div>

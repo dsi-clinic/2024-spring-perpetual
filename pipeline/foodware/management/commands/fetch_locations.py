@@ -3,12 +3,18 @@
 
 # Application imports
 from common.logger import LoggerFactory
+
 # Third-party imports
 from django.contrib.gis.geos import Point
 from django.core.management.base import BaseCommand, CommandParser
-from foodware.models import (FoodwareProject, FoodwareProjectBin, PoiCache,
-                             PoiParentCategory, PoiProvider,
-                             PoiProviderCategory)
+from foodware.models import (
+    FoodwareProject,
+    FoodwareProjectBin,
+    PoiCache,
+    PoiParentCategory,
+    PoiProvider,
+    PoiProviderCategory,
+)
 from foodware.places import IPlacesProvider, IPlacesProviderFactory
 from shapely import wkt
 

@@ -1,4 +1,5 @@
-"""Provides access to geographic locations using the Microsoft Bing Maps API.
+"""Provides access to geographic locations
+using the Microsoft Bing Maps API.
 """
 
 # Standard library imports
@@ -11,6 +12,7 @@ from typing import Dict, List, Tuple, Union
 # Third-party imports
 import requests
 from common.geometry import BoundingBox
+
 # Application imports
 from foodware.places.common import IPlacesProvider, Place, PlacesSearchResult
 from shapely import MultiPolygon, Polygon
@@ -210,7 +212,8 @@ class BingMapsClient(IPlacesProvider):
         # Calculate bounding box for geography
         bbox: BoundingBox = BoundingBox.from_polygon(geo)
 
-        # Divide geography into grid of cells corresponding to separate POI queries
+        # Divide geography into grid of cells
+        # corresponding to separate POI queries
         num_x, num_y = BingMapsClient.DEFAULT_SEARCH_GRID
         cells = bbox.split_along_axes(x_into=num_x, y_into=num_y)
 
