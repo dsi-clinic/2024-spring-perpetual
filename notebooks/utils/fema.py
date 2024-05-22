@@ -85,14 +85,14 @@ def draw_building_size_plot(
     )
 
     # Return if none found above threhold
-    if not len(large_buildings_gdf):
+    if len(large_buildings_gdf) == 0:
         display(
             HTML(f"<b>No buildings found at or above threshold {size_threshold}.</b>")
         )
         return
 
     # Otherwise, plot the building footprints
-    fig, ax = plt.subplots(figsize=(8, 8))
+    _, ax = plt.subplots(figsize=(8, 8))
     footprints_gdf.plot(
         ax=ax,
         color="lightgrey",
@@ -195,15 +195,16 @@ def calculate_units(row: pd.Series) -> Optional[float]:
     # Proceed only if the average area is found and 'Squarefeet' is valid
     if average_area is not None and "SQFEET" in row and row["SQFEET"] is not None:
         return row["SQFEET"] / average_area
-    else:
-        return None
+
+    return None
 
 
 def get_nearest(
     src_points: gpd.GeoDataFrame, candidates: gpd.GeoDataFrame, k_neighbors: int = 1
 ) -> Tuple[int, int, float]:
     """
-    Computes the nearest neighbors for the given source points from the candidate points using a spatial index.
+    Computes the nearest neighbors for the given source points
+    from the candidate points using a spatial index.
 
     Args:
         src_points (`gpd.GeoDataFrame`): Source points with geometries.
@@ -256,7 +257,7 @@ def plot_geospatial_data(
     Returns:
         `None`
     """
-    fig, ax = plt.subplots(figsize=(10, 10))
+    _, ax = plt.subplots(figsize=(10, 10))
 
     buildings_gdf.plot(ax=ax, color="blue", markersize=5, label="Buildings")
     apartments_gdf.plot(ax=ax, color="red", markersize=5, label="Apartments")

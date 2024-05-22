@@ -3,7 +3,7 @@
 
 # Standard library imports
 import os
-import pandas as pd
+import webbrowser
 from typing import Optional, Tuple
 
 # Third-party imports
@@ -11,9 +11,10 @@ import contextily as ctx
 import folium
 import geopandas as gpd
 import hdbscan
+import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 import seaborn as sns
-import webbrowser
 from IPython.display import display
 from matplotlib.patches import Ellipse
 from pointpats import centrography
@@ -100,8 +101,6 @@ def draw_hexbins(
     Returns:
         `None`
     """
-    import matplotlib.pyplot as plt
-
     # Initialize plot
     _, ax = plt.subplots(figsize=figsize)
 
@@ -184,8 +183,6 @@ def draw_standard_deviational_ellipse(
     Returns:
         `None`
     """
-    import matplotlib.pyplot as plt
-
     # Compute the axes and rotation
     major, minor, rotation = centrography.ellipse([(p.x, p.y) for p in points])
 

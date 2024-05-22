@@ -290,7 +290,7 @@ class TripadvisorClient(IPlacesProvider):
                 consisting of the list of retrieved places and a list
                 of any errors that occurred, respectively.
         """
-        # Define request paramters
+        # Define request parameters
         api_params = {
             "latLong": f"{float(box.center.lat)},{float(box.center.lon)}",
             "radius": search_radius,
@@ -546,7 +546,6 @@ class TripadvisorClient(IPlacesProvider):
             )
 
         # Otherwise, parse fields from top search result
-        breakpoint()
         top_result = payload["data"][0]
         location_id = top_result["location_id"]
         name = top_result["name"]

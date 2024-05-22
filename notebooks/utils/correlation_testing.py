@@ -1,7 +1,11 @@
-import io
+"""Functions to supplement Safegraph correlation tests.
+"""
+
+# Standard library imports
 import math
 import warnings
 
+# Third-party imports
 import contextily as cx
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -10,72 +14,27 @@ from matplotlib.lines import Line2D
 from scipy.spatial.distance import cdist
 from scipy.stats import linregress
 
+# Application imports
+from .safegraph import filter_by_year
+
 warnings.filterwarnings("ignore")
 
 
-def create_df(file_name, city, state):
-    """
-    Create a business dataframe based on business sales
-    data from a particular year
+def merge(business_df: pd.DataFrame, foot_df: pd.DataFrame, year: int) -> pd.DataFrame:
+    """Merges Infogroup business data and Safegraph foot traffic
+    data for a particular year.
+
     Args:
-        file_name - name of the file (str)
-        city - name of the city (str)
-        state - abbreviation for state (str)
-    Returns: business dataframe based on business sales data (DataFrame)
-    """
-    lines_left = True
-    with open(file_name, encoding="ISO-8859-1") as f:
-        header = f.readline()
-        whole_df = None
-        while True:
-            lines = [header]
-            for i in range(5000):
-                line = f.readline()
-                if not line:
-                    lines_left = False
-                    break
-                lines.append(line)
-            df = pd.read_csv(io.StringIO("\n".join(lines)))
-            df_filtered = df[(df["City"] == city) & (df["State"] == state)]
-            if len(df_filtered) > 0:
-                whole_df = (
-                    df_filtered
-                    if whole_df is None
-                    else pd.concat([whole_df, df_filtered])
-                )
-            if not lines_left:
-                return whole_df
+        business_df (`pd.DataFrame`): The Infogroup dataset.
 
+        foot_df (`pd.DataFrame`): The Safegraph dataset.
 
-def filter_year(foot_df, year):
-    """
-    Filters foot traffic dataset to a particular year
-    Args:
-        foot_df - foot traffic dataframe (DataFrame)
-    Returns: filtered foot traffic dataset (DataFrame)
-    """
-    foot_df["year"] = foot_df["date_range_start"].str[0:4].astype("Int64")
-    foot_df_year = foot_df[foot_df["year"] == year]
-    foot_df_year["location_name"] = [
-        x.upper() for x in list(foot_df_year["location_name"])
-    ]
-    foot_df_year["street_address"] = [
-        x.upper() for x in list(foot_df_year["street_address"])
-    ]
+        year (`int`): The year by which to filter.
 
-    return foot_df_year
-
-
-def merge(business_df, foot_df, year):
+    Returns:
+        (`pd.DataFrame`): The merged DataFrame.
     """
-    Merge business dataframe and foot traffic dataframe for a particular year
-    Args:
-        business_df - business dataframe (DataFrame)
-        foot_df - foot traffic dataframe (DataFrame)
-        year - the year (int)
-    Returns: Merged dataframe (DataFrame)
-    """
-    foot_df_year = filter_year(foot_df, year)
+    foot_df_year = filter_by_year(foot_df, year)
     foot_df_year_com = (
         foot_df_year.groupby(
             ["location_name", "latitude", "longitude", "street_address"]
@@ -105,14 +64,18 @@ def merge(business_df, foot_df, year):
     return merged_df
 
 
-def calculate_r_value(x, merged_df):
-    """
-    Calculates the r value (correlating business sales with foot traffic) for a
-    merged dataframe based on the amount of regions
+def calculate_r_value(x: int, merged_df: pd.DataFrame) -> float:
+    """Calculates the r value (correlating business sales with foot traffic)
+    for a merged DataFrame based on the numbers of regions.
+
     Args:
-        x - number of regions to split the city into (int)
-        merged_df - Merged dataframe of business and foot traffic (DataFrame)
-    Returns: correlation coefficient (float)
+        x (`int`): The number of regions to split the city into.
+
+        merged_df (`pd.DataFrame`): The merged DataFrame of
+            business and foot traffic.
+
+    Returns:
+        (`float`): The correlation coefficient.
     """
     min_lat = min(list(merged_df["latitude"]))
     min_long = min(list(merged_df["longitude"]))
@@ -123,9 +86,7 @@ def calculate_r_value(x, merged_df):
     long_range = max_long - min_long
 
     # Find factors of x
-    factors = [
-        (i, x // i) for i in range(1, int(math.sqrt(x)) + 1) if x % i == 0
-    ]
+    factors = [(i, x // i) for i in range(1, int(math.sqrt(x)) + 1) if x % i == 0]
     # Choose the factors that are closest to each other
     factor1, factor2 = min(factors, key=lambda f: abs(f[0] - f[1]))
     # Calculate latitude and longitude step sizes for x regions
@@ -162,13 +123,16 @@ def calculate_r_value(x, merged_df):
     return r_value
 
 
-def r_plot(merged_df):
-    """
-    Outputs a line plot that shows differing correlation values depending on
-    the amount of regions the city is split into
+def r_plot(merged_df: pd.DataFrame) -> None:
+    """Outputs a line plot that shows differing correlation values depending on
+    the amount of regions the city is split into.
+
     Args:
-        merged_df - Merged dataframe of business and foot traffic (DataFrame)
-    Returns: line plot correlation coefficient vs number of regions (float)
+        merged_df (`pd.DataFrame`): A merged DataFrame of
+            business and foot traffic.
+
+    Returns:
+        `None`
     """
     # Initialize lists to store x values and r_values
     x_values = list(range(1, 140))
@@ -188,14 +152,19 @@ def r_plot(merged_df):
     plt.show(block=True)
 
 
-def find_addresses(x, merged_df):
-    """
-    Find the address of the top business in every region based on the amount of
-    regions the city is split into
+def find_addresses(x: int, merged_df: pd.DataFrame) -> None:
+    """Find the address of the top business in every region
+    based on the number of regions the city is split into
+    and then prints those addresses.
+
     Args:
-        x - number of regions to split the city into (int)
-        merged_df - Merged dataframe of business and foot traffic (DataFrame)
-    Returns: Printing all addresses
+        x (`int`): The number of regions to split the city into.
+
+        merged_df (`pd.DataFrame`): The merged DataFrame of
+            business and foot traffic.
+
+    Returns:
+        `None`
     """
     min_lat = min(list(merged_df["latitude"]))
     min_long = min(list(merged_df["longitude"]))
@@ -206,9 +175,7 @@ def find_addresses(x, merged_df):
     long_range = max_long - min_long
 
     # Find factors of x
-    factors = [
-        (i, x // i) for i in range(1, int(math.sqrt(x)) + 1) if x % i == 0
-    ]
+    factors = [(i, x // i) for i in range(1, int(math.sqrt(x)) + 1) if x % i == 0]
 
     # Choose the factors that are closest to each other
     factor1, factor2 = min(factors, key=lambda f: abs(f[0] - f[1]))
@@ -247,20 +214,26 @@ def find_addresses(x, merged_df):
         print(f"Region {index}: {row['street_address']}")
 
 
-def find_top_businesses(business_df, foot_df, year, radius_km=1.0):
-    """
-    Find the top businesses in the city based on foot traffic
-    surrounding it
+def find_top_businesses(
+    business_df: pd.DataFrame, foot_df: pd.DataFrame, year: int, radius_km: float = 1.0
+) -> pd.DataFrame:
+    """Finds the top businesses in the city based on foot traffic surrounding it.
+
     Args:
-        business_df - business dataframe (DataFrame)
-        foot_df - foot traffic dataframe (DataFrame)
-        year - the year (int)
-        radius_km - the radius around each business where foot traffic is
-        calculated (float)
-    Returns: Dataframe of top businesses (DataFrame)
+        business_df (`pd.DataFrame`): The business DataFrame.
+
+        foot_df (`pd.DataFrame`): The foot traffic DataFrame.
+
+        year (`int`): The year.
+
+        radius_km (`float`): The radius around each business where
+            foot traffic is calculated.
+
+    Returns:
+        (`pd.DataFrame): The top businesses.
     """
     # Filter foot traffic data for the specified year
-    foot_df_year = filter_year(foot_df, year)
+    foot_df_year = filter_by_year(foot_df, year)
 
     # Group foot traffic data by business location and sum
     # up foot traffic counts
@@ -288,14 +261,10 @@ def find_top_businesses(business_df, foot_df, year, radius_km=1.0):
         ).flatten()
 
         # Filter foot traffic locations within the specified radius
-        foot_traffic_within_radius = foot_traffic_by_business[
-            distances <= radius_km
-        ]
+        foot_traffic_within_radius = foot_traffic_by_business[distances <= radius_km]
 
         # Calculate total foot traffic in the area surrounding the business
-        total_foot_traffic = foot_traffic_within_radius[
-            "raw_visit_counts"
-        ].sum()
+        total_foot_traffic = foot_traffic_within_radius["raw_visit_counts"].sum()
 
         # Append the total foot traffic along with business
         # information to the list of top businesses
@@ -316,33 +285,38 @@ def find_top_businesses(business_df, foot_df, year, radius_km=1.0):
     top_businesses_df = top_businesses_df.sort_values(
         by="Total Foot Traffic", ascending=False
     )
-
     return top_businesses_df
 
 
 def find_top_unique_business_addresses(
-    business_df,
-    foot_df,
-    year,
-    min_unique_businesses=100,
-    max_radius_km=1.0,
-    radius_step=0.1,
-):
-    """
-    Find the top x unique businesses in the city based on foot traffic
+    business_df: pd.DataFrame,
+    foot_df: pd.DataFrame,
+    year: int,
+    min_unique_businesses: int = 100,
+    max_radius_km: float = 1.0,
+    radius_step: float = 0.1,
+) -> pd.DataFrame:
+    """Finds the top x unique businesses in the city based on foot traffic
     surrounding it with x being min_unique_businesses.
-    Args:
-        business_df - business dataframe (DataFrame)
-        foot_df - foot traffic dataframe (DataFrame)
-        year - the year (int)
-        min_unique_businesses - minimum unique business locations
-        to output (int)
-        max_radius_km - the max radius around each business where foot traffic
-        is calculated (float)
-        radius_step - the step the radius will decrease by in each loop (float)
-    Returns: Dataframe of top businesses (DataFrame)
-    """
 
+    Args:
+        business_df (`pd.DataFrame`): The business DataFrame.
+
+        foot_df (`pd.DataFrame`): The foot traffic DataFrame.
+
+        year (`int`): The year.
+
+        min_unique_businesses (`int`): The minimum unique business
+            locations to output.
+
+        max_radius_km (`float`): The max radius around each business
+            where foot traffic is calculated.
+
+        radius_step (`float`): The step the radius will decrease by in each loop.
+
+    Returns:
+        (`pd.DataFrame`): The top businesses.
+    """
     unique_businesses = set()
     radius_km = max_radius_km  # Starting radius
 
@@ -369,13 +343,15 @@ def find_top_unique_business_addresses(
     ]["Address Line 1"].tolist()
 
 
-def morph_and_visualize_business(df):
-    """
-    Restructures a given dataset and outputs a visualization of business
-    locations in the city.
+def morph_and_visualize_business(df: pd.DataFrame) -> None:
+    """Restructures a given dataset and outputs a visualization
+    of business locations in the city.
+
     Args:
-        df - dataframe of business locations (DataFrame)
-    Returns: Visualization of business locations (plot)
+        df (`pd.DataFrame`): The business locations.
+
+    Returns:
+        `None`
     """
     # Make a subset of the dataset
     columns_to_keep = ["Latitude", "Longitude", "Total Foot Traffic"]

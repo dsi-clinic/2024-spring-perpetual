@@ -4,6 +4,13 @@
 
 _FIGURE 1. A map of optimal routes to serve the city of Galveston, Texas. Created from a dataset of participating Foodware Using Establishments, or FUEs, and their expected volume of foodware use._
 
+Student Team:
+- Anuj Agarwal
+- John Christenson
+- Kaiwen Dong
+- Lydia Lo
+- Sarah Walker (TA)
+
 ## Background
 
 Perpetual is a non-profit organization that partners with municipal governments, zero-waste organizations, business leagues, community groups, and other stakeholders to reduce consumption of single-use disposables. Eliminating such waste conserves resources, minimizes pollution, and slashes the cost of foodware purchase and solid waste management for cities and local businesses.
@@ -106,9 +113,13 @@ Note the id of the container containing the pipeline (here, `a3df6682203a`). The
 
 
 ## File Directory
-- `archive`: Last quarter's pipeline, used for reference. Will be consolidated into the remaining code base and removed by the end of the quarter.
+
+For detailed file descriptions, please visit the README within each section.
+
 - `assets`: Media from the project.
-- `data`: Inputs and outputs for the pipeline. For more information, consult the README in the folder.
+
 - `notebooks`: Jupyter notebooks to step through routing algorithms and points of interest classification strategies.
+
 - `pipeline`: Data pipeline to fetch, standardize, de-dupe, classify, and route points of interest in order to simulate a reusable foodware system.
-- `web`: Experimental web application that will be used to run pipeline. WIP.
+
+- `web`: Experimental Next.js web application used to test the pipeline. WIP.

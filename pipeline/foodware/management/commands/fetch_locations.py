@@ -134,20 +134,20 @@ class Command(BaseCommand):
                 provider = PoiProvider.objects.get(name=provider_name)
 
                 # Attempt to fetch data from cache
-                try:
-                    self._logger.info("Attempting to load POI from cache.")
-                    cached = PoiCache.objects.get(
-                        project=project,
-                        provider=provider,
-                        parent_category=parent_cat,
-                    )
-                    cached_results.append(cached)
-                    continue
-                except PoiCache.DoesNotExist:
-                    self._logger.info(
-                        "Cached data not found for project, provider, and category."
-                    )
-                    pass
+                # try:
+                #     self._logger.info("Attempting to load POI from cache.")
+                #     cached = PoiCache.objects.get(
+                #         project=project,
+                #         provider=provider,
+                #         parent_category=parent_cat,
+                #     )
+                #     cached_results.append(cached)
+                #     continue
+                # except PoiCache.DoesNotExist:
+                #     self._logger.info(
+                #         "Cached data not found for project, provider, and category."
+                #     )
+                #     pass
 
                 # If no data found, get provider POI categories under parent category
                 self._logger.info(

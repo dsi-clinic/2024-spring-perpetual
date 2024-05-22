@@ -76,7 +76,7 @@ def summarize_column_ranges(df: pd.DataFrame) -> None:
         `None`
     """
     # Numerical columns
-    display(HTML(f"<b>Basic Stats for Numerical Columns</b>"))
+    display(HTML("<b>Basic Stats for Numerical Columns</b>"))
     display(df[SAFEGRAPH_RELEVANT_COLUMNS].describe())
 
     # Datetimes
@@ -876,3 +876,26 @@ def load_foot_traffic(city: str) -> pd.DataFrame:
     foot_traffic_df = pd.read_parquet(foot_traffic_path)
     foot_traffic_df = aggregate_foot_traffic(foot_traffic_df)
     return foot_traffic_df
+
+
+def filter_by_year(df: pd.DataFrame, year: int) -> pd.DataFrame:
+    """Filters a Safegraph foot traffic dataset to a particular year.
+
+    Args:
+        df (`pd.DataFrame`): The foot traffic dataframe.
+
+        year (`int`): The year by which to filter.
+
+    Returns:
+        (`pd.DataFrame`): The filtered foot traffic dataset.
+    """
+    df["year"] = df["date_range_start"].str[0:4].astype("Int64")
+    foot_df_year = df[df["year"] == year]
+    foot_df_year["location_name"] = [
+        x.upper() for x in list(foot_df_year["location_name"])
+    ]
+    foot_df_year["street_address"] = [
+        x.upper() for x in list(foot_df_year["street_address"])
+    ]
+
+    return foot_df_year
