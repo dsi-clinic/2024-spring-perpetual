@@ -1,9 +1,8 @@
-"""Functions used to process and visualize InfoGroup business data.
+"""Functions used to process and visualize Infogroup business data.
 """
 
 # Standard library imports
 import io
-
 
 # Third-party imports
 import geopandas as gpd
@@ -12,8 +11,11 @@ import numpy as np
 import pandas as pd
 from scipy.stats import linregress
 
+# Application imports
+from .constants import INFOGROUP_2023_FPATH
 
-def get_city_records(fpath: str, city: str, state: str) -> pd.DataFrame:
+
+def get_infogroup_city_records(fpath: str, city: str, state: str) -> pd.DataFrame:
     """Opens the file and filters the data to include
     only records that match the given city and state.
     NOTE: There are instances of cities with the same
@@ -21,7 +23,7 @@ def get_city_records(fpath: str, city: str, state: str) -> pd.DataFrame:
     are needed to find the exact city of interest.
 
     Args:
-        fpath (`str`): The path to the InfoGroup data file.
+        fpath (`str`): The path to the Infogroup data file.
 
         city (`str`): The name of the city to fetch.
 
@@ -73,6 +75,67 @@ def get_city_records(fpath: str, city: str, state: str) -> pd.DataFrame:
             # If end of file reached, return final DataFrame
             if not lines_left:
                 return whole_df
+
+
+def format_infogroup_df(df: pd.DataFrame) -> pd.DataFrame:
+    """Subsets an Infogroup dataset to relevant columns,
+    renames those columns, drops duplicates, and resets
+    the index.
+
+    Args:
+        df (`pd.DataFrame`): The input Infogroup dataset.
+
+    Returns:
+        (`pd.DataFrame`): The formatted dataset.
+    """
+    df = df.loc[
+        :,
+        [
+            "COMPANY",
+            "CITY",
+            "ADDRESS LINE 1",
+            "LATITUDE",
+            "LONGITUDE",
+            "SALES VOLUME (9) - LOCATION",
+            "EMPLOYEE SIZE (5) - LOCATION",
+            "PARENT ACTUAL SALES VOLUME",
+        ],
+    ]
+    df = df.rename(
+        columns={
+            "ADDRESS LINE 1": "street1",
+            "CITY": "city",
+            "COMPANY": "name",
+            "LATITUDE": "latitude",
+            "LONGITUDE": "longitude",
+            "SALES VOLUME (9) - LOCATION": "sales_volume",
+            "EMPLOYEE SIZE (5) - LOCATION": "employee_size",
+            "PARENT ACTUAL SALES VOLUME": "parent_sales_volume",
+        }
+    )
+    df.drop_duplicates(inplace=True)
+    df = df.reset_index(drop=True)
+
+    return df
+
+
+def load_infogroup_data(city: str, state: str) -> pd.DataFrame:
+    """Loads and cleans Infogroup data for a city.
+
+    Args:
+        city (`str`): The name of the city to fetch.
+
+        state (`str`): The state that identifies the city.
+            Passed as a two-letter abbreviation.
+
+    Returns:
+        (`pd.DataFrame`): The Infogroup data for the city.
+    """
+    city = city.upper().strip()
+    state = state.upper().strip()
+    info_df = get_infogroup_city_records(INFOGROUP_2023_FPATH, city, state)
+    business_df = format_infogroup_df(info_df)
+    return business_df
 
 
 def aggregate_stats_by_region(

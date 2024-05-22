@@ -4,31 +4,14 @@
 # Standard library imports
 import pathlib
 
+# Directories
 BASE_DIR = pathlib.Path(__file__).parents[2]
 NOTEBOOKS_DIR = BASE_DIR / "notebooks"
 DATA_DIR = BASE_DIR / "data"
+BOUNDARIES_DIR = DATA_DIR / "boundaries"
+FOOT_TRAFFIC_DIR = DATA_DIR / "foot-traffic"
+INFOGROUP_DIR = DATA_DIR / "infogroup"
+TRIPADVISOR_DIR = DATA_DIR / "tripadvisor"
 
-ADDRESS_MAPPING = {
-    "STREET": "ST",
-    "ROAD": "RD",
-    "AVENUE": "AVE",
-    "BOULEVARD": "BLVD",
-    "LANE": "LN",
-    "DRIVE": "DR",
-    "COURT": "CT",
-    "NORTH": "N",
-    "SOUTH": "S",
-    "EAST": "E",
-    "WEST": "W",
-    "PLACE": "PL",
-    "SQUARE": "SQ",
-    "UNIT": "UNIT",
-    "APARTMENT": "APT",
-    "SUITE": "STE",
-    "FLOOR": "FL",
-    "BUILDING": "BLDG"
-}
-
-HOTEL_LR_DEPENDENT_VARIABLES = ["parent_sales_volume", "sales_volume", "employee_size"]
-HOTEL_LR_INDEPENDENT_VARIABLES = ["large_hotel", "number_of_rooms", "num_reviews", "price_level_category", "rating"]
-HOTEL_LR_VARIABLES = HOTEL_LR_DEPENDENT_VARIABLES + HOTEL_LR_INDEPENDENT_VARIABLES
+# File paths
+INFOGROUP_2023_FPATH = INFOGROUP_DIR / "2023_Business_Academic_QCQ.txt"

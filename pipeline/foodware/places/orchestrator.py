@@ -47,7 +47,7 @@ class PlaceOrchestrator:
             locale_boundary (`shapely.Polygon`|`shapely.MultiPolygon`): The
                 geographic boundary used to filter the business records.
 
-            infogroup_year (`int`): The publication year of the InfoGroup dataset.
+            infogroup_year (`int`): The publication year of the Infogroup dataset.
                 Used for informational display.
 
             places_provider (`IPlacesProvider`): The provider used to fetch
@@ -108,7 +108,7 @@ class PlaceOrchestrator:
 
                 # Otherwise, add notes to match and append to list of top businesss
                 best_match.notes = (
-                    f"(Source: InfoGroup) In {infogroup_year}, this location "
+                    f"(Source: Infogroup) In {infogroup_year}, this location "
                     f"housed the restaurant {company}, which had a business "
                     f"sales volume of {sales * 1000:,}. Among restaurants in "
                     f"the locale of {locale_name}, it ranked {rank} of "

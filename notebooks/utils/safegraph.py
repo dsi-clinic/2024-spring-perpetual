@@ -22,7 +22,7 @@ from IPython.display import display
 from matplotlib.lines import Line2D
 
 # Application imports
-from .constants import DATA_DIR
+from .constants import DATA_DIR, FOOT_TRAFFIC_DIR
 
 SAFEGRAPH_RELEVANT_COLUMNS = [
     "sub_category",
@@ -814,7 +814,7 @@ def top_x_businesses_and_related(df, x):
         )
 
     # Add labels for related brands, ensuring each name is shown only once
-    for idx, row in gdf_related_brands.iterrows():
+    for _, row in gdf_related_brands.iterrows():
         name = row["location_name"]
         # Only label if the name hasn't been labeled yet
         ax.text(
@@ -830,3 +830,49 @@ def top_x_businesses_and_related(df, x):
     ax.set_axis_off()
     plt.legend()
     plt.show(block=True)
+
+
+def aggregate_foot_traffic(patterns_df: pd.DataFrame) -> pd.DataFrame:
+    """Groups SafeGraph foot traffic patterns by location and then
+    totals raw visit counts for each location since the year 2018.
+
+    Args:
+        patterns_df (`pd.DataFrame`): The foot traffic dataset.
+
+    Returns:
+        (`pd.DataFrame`): The grouped data.
+    """
+    patterns_df.loc[:, "city"] = patterns_df.loc[:, "city"].str.lower().str.strip()
+    patterns_df.loc[:, "year"] = (
+        patterns_df.loc[:, "date_range_start"].str[0:4].astype("Int64")
+    )
+    foot_df = patterns_df.loc[(patterns_df.loc[:, "year"] >= 2018), :]
+    foot_df.loc[:, "location_name"] = (
+        foot_df.loc[:, "location_name"].str.upper().str.strip()
+    )
+    foot_df.loc[:, "street_address"] = (
+        foot_df.loc[:, "street_address"].str.upper().str.strip()
+    )
+    foot_traffic_df = (
+        foot_df.groupby(["location_name", "latitude", "longitude", "street_address"])
+        .agg({"raw_visit_counts": "sum", "raw_visitor_counts": "sum"})
+        .reset_index()
+    )
+
+    return foot_traffic_df
+
+
+def load_foot_traffic(city: str) -> pd.DataFrame:
+    """Loads and cleans Safegraph foot traffic data for a city by name.
+
+    Args:
+        city (`str`): The name of the city.
+
+    Returns:
+        (`pd.DataFrame`): The foot traffic data for the city.
+    """
+    city = city.lower().replace(" ", "_").strip()
+    foot_traffic_path = FOOT_TRAFFIC_DIR / f"{city}_full_patterns.parquet"
+    foot_traffic_df = pd.read_parquet(foot_traffic_path)
+    foot_traffic_df = aggregate_foot_traffic(foot_traffic_df)
+    return foot_traffic_df
