@@ -1,13 +1,15 @@
 """Factories used throughout the package.
 """
 
+from common.logger import logging
+
 # Application imports
 from foodware.places.bing import BingMapsClient
 from foodware.places.common import IPlacesProvider
 from foodware.places.google_places import GooglePlacesClient
 from foodware.places.tomtom import TomTomSearchClient
+from foodware.places.tripadvisor import TripadvisorClient
 from foodware.places.yelp import YelpClient
-from common.logger import logging
 
 
 class IPlacesProviderFactory:
@@ -17,6 +19,7 @@ class IPlacesProviderFactory:
         "bing": BingMapsClient,
         "google": GooglePlacesClient,
         "tomtom": TomTomSearchClient,
+        "tripadvisor": TripadvisorClient,
         "yelp": YelpClient,
     }
 
@@ -39,5 +42,7 @@ class IPlacesProviderFactory:
             raise RuntimeError(
                 "Requested a points of interest provider that "
                 f'has not been registered, "{e}". Expected one of '
-                ", ".join(f'"{k}"' for k in IPlacesProviderFactory._REGISTRY.keys())
+                ", ".join(
+                    f'"{k}"' for k in IPlacesProviderFactory._REGISTRY.keys()
+                )
             ) from None

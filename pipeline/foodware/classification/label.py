@@ -9,7 +9,9 @@ import pandas as pd
 
 
 def filter(
-    clean_places: List[Dict], crosswalk: Dict, random_seed: Optional[int] = 12345
+    clean_places: List[Dict],
+    crosswalk: Dict,
+    random_seed: Optional[int] = 12345,
 ) -> List[Dict]:
     """Filters a list of cleaned places to return only indoor and/or outdoor bins."""
     # Load cleaned places into DataFrame
@@ -37,14 +39,20 @@ def filter(
     df["mapped_alias"] = df.apply(map_categories, axis=1)
 
     # Define local function to filter by multiple standard categories
-    def get_by_category(aliases: List[str], whitelisted_aliases: List[str]) -> bool:
+    def get_by_category(
+        aliases: List[str], whitelisted_aliases: List[str]
+    ) -> bool:
         for alias in aliases:
             if alias in whitelisted_aliases:
                 return True
         return False
 
     # Identify FUEs
-    fues = df[df["mapped_alias"].apply(lambda lst: "foodwareUsingEstablishment" in lst)]
+    fues = df[
+        df["mapped_alias"].apply(
+            lambda lst: "foodwareUsingEstablishment" in lst
+        )
+    ]
 
     # Randomly select 25 percent of FUEs as bin locations
     fues_outdoor = fues.sample(frac=0.25, random_state=random_seed)
@@ -59,7 +67,9 @@ def filter(
         "shopping",
         "tranportation",
     ]
-    other_outdoor = df[df["mapped_alias"].apply(lambda lst: get_by_category(lst, cats))]
+    other_outdoor = df[
+        df["mapped_alias"].apply(lambda lst: get_by_category(lst, cats))
+    ]
 
     # Concatenate DataFrames and drop any duplicates
     all_outdoor = pd.concat([fues_outdoor, other_outdoor])

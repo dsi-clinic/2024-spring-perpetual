@@ -9,7 +9,6 @@ from time import sleep, time
 # Third-party imports
 import psycopg2
 
-
 # Configure logger
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -35,10 +34,12 @@ while time() - start_time < check_timeout:
         exit(0)
     except psycopg2.OperationalError:
         logger.info(
-            "Postgres isn't ready. Waiting for " f"{check_interval} " "second(s)..."
+            f"Postgres isn't ready. Waiting for {check_interval} second(s)..."
         )
         sleep(check_interval)
 
 # Log and exit with error
-logger.error("We could not connect to Postgres " f"within {check_timeout} second(s).")
+logger.error(
+    f"We could not connect to Postgres within {check_timeout} second(s)."
+)
 exit(1)

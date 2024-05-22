@@ -1,4 +1,5 @@
-"""Provides access to geographic locations using the Microsoft Bing Maps API.
+"""Provides access to geographic locations
+using the Microsoft Bing Maps API.
 """
 
 # Standard library imports
@@ -10,11 +11,11 @@ from typing import Dict, List, Tuple, Union
 
 # Third-party imports
 import requests
-from shapely import MultiPolygon, Polygon
+from common.geometry import BoundingBox
 
 # Application imports
 from foodware.places.common import IPlacesProvider, Place, PlacesSearchResult
-from common.geometry import BoundingBox
+from shapely import MultiPolygon, Polygon
 
 
 class BingPOICategories(Enum):
@@ -37,7 +38,8 @@ class BingMapsClient(IPlacesProvider):
         2,
         2,
     )
-    """The default number of cells to generate in a bounding box used for POI search.
+    """The default number of cells to generate in
+    a bounding box used for POI search.
     """
 
     SECONDS_DELAY_PER_RATE_LIMIT: float = 10
@@ -45,7 +47,8 @@ class BingMapsClient(IPlacesProvider):
     """
 
     SECONDS_DELAY_PER_REQUEST: float = 0.5
-    """The default number of seconds to wait in between successive calls to the API.
+    """The default number of seconds to wait in
+    between successive calls to the API.
     """
 
     MAX_NUM_QUERY_RESULTS: int = 25
@@ -104,7 +107,16 @@ class BingMapsClient(IPlacesProvider):
         url = place.get("Website")
 
         return Place(
-            id, name, categories, aliases, lat, lon, address, is_closed, source, url
+            id,
+            name,
+            categories,
+            aliases,
+            lat,
+            lon,
+            address,
+            is_closed,
+            source,
+            url,
         )
 
     def find_places_in_bounding_box(
@@ -177,7 +189,7 @@ class BingMapsClient(IPlacesProvider):
             # Otherwise, extract business data from request body JSON
             return data["resourceSets"][0]["resources"], []
 
-    def find_places_in_geography(
+    def run_nearby_search(
         self, geo: Union[Polygon, MultiPolygon]
     ) -> PlacesSearchResult:
         """Queries the Bing Maps Local Search API for locations
@@ -200,7 +212,8 @@ class BingMapsClient(IPlacesProvider):
         # Calculate bounding box for geography
         bbox: BoundingBox = BoundingBox.from_polygon(geo)
 
-        # Divide geography into grid of cells corresponding to separate POI queries
+        # Divide geography into grid of cells
+        # corresponding to separate POI queries
         num_x, num_y = BingMapsClient.DEFAULT_SEARCH_GRID
         cells = bbox.split_along_axes(x_into=num_x, y_into=num_y)
 

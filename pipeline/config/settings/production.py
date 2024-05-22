@@ -4,11 +4,11 @@
 # Standard library imports
 import os
 
-# Third-party imports
-from corsheaders.defaults import default_headers
-
 # Application improts
 from config.settings.base import BaseConfig
+
+# Third-party imports
+from corsheaders.defaults import default_headers
 
 
 class ProductionConfig(BaseConfig):
@@ -20,7 +20,9 @@ class ProductionConfig(BaseConfig):
 
     # Google Cloud Storage
     CLOUD_STORAGE_BUCKET = os.getenv("CLOUD_STORAGE_BUCKET", "")
-    GOOGLE_APPLICATION_CREDENTIALS = os.getenv("GOOGLE_APPLICATION_CREDENTIALS", "")
+    GOOGLE_APPLICATION_CREDENTIALS = os.getenv(
+        "GOOGLE_APPLICATION_CREDENTIALS", ""
+    )
 
     # Server
     INSTALLED_APPS += ("gunicorn",)

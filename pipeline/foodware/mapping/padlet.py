@@ -91,7 +91,9 @@ class PadletClient:
             `None`
         """
         # Launch browser and authenticate
-        self._logger.info(f'Launching new web browser at "{self._homepage_url}".')
+        self._logger.info(
+            f'Launching new web browser at "{self._homepage_url}".'
+        )
         self._launch_homepage()
 
         # Log into site using user name and password
@@ -116,7 +118,6 @@ class PadletClient:
         num_attempts = 0
 
         while num_attempts < self.MAX_ATTEMPTS_PAGE_RELOAD:
-
             # Initialize default options for headless Chrome WebDriver
             chromeOptions = webdriver.ChromeOptions()
             chromeOptions.add_argument("--headless")
@@ -156,7 +157,9 @@ class PadletClient:
             btn.click()
             time.sleep(self.DEFAULT_SECONDS_WAIT_PAGE_LOAD)
         except Exception as e:
-            raise RuntimeError(f"Failed to log into Padlet platform. {e}") from None
+            raise RuntimeError(
+                f"Failed to log into Padlet platform. {e}"
+            ) from None
 
         # Fill in user name input box on new page
         try:
@@ -167,7 +170,8 @@ class PadletClient:
             time.sleep(self.DEFAULT_SECONDS_WAIT_PAGE_ACTION)
         except Exception as e:
             raise RuntimeError(
-                f"Failed to give user name while logging into Padlet platform. {e}"
+                "Failed to give user name while logging into Padlet"
+                f" platform. {e}"
             ) from None
 
         # Click the continue button
@@ -192,7 +196,8 @@ class PadletClient:
             time.sleep(self.DEFAULT_SECONDS_WAIT_PAGE_ACTION)
         except Exception as e:
             raise RuntimeError(
-                f"Failed to give user password while logging into Padlet platform. {e}"
+                "Failed to give user password while logging into Padlet"
+                f" platform. {e}"
             )
 
         # Click the final "Log in" button
@@ -246,9 +251,10 @@ class PadletClient:
             except Exception as e:
                 # If failure occurs, log warning and wait for new page refresh
                 self._logger.warning(
-                    f"Warning - {error_msg} Refreshing page and retrying after "
-                    f"waiting for {self.DEFAULT_SECONDS_WAIT_PAGE_LOAD} second(s). "
-                    f"Error message: {e}."
+                    f"Warning - {error_msg} Refreshing page and retrying after"
+                    " waiting for"
+                    f" {self.DEFAULT_SECONDS_WAIT_PAGE_LOAD} second(s). Error"
+                    f" message: {e}."
                 )
                 self._browser.refresh()
                 time.sleep(self.DEFAULT_SECONDS_WAIT_PAGE_LOAD)
@@ -298,7 +304,8 @@ class PadletClient:
 
         # Attempt click with retries
         err_msg = (
-            f"Failed to click on the Padlet template to use as the basis of the map."
+            "Failed to click on the Padlet template to use "
+            "as the basis of the map."
         )
         self._retry_action(click_template, err_msg)
 
@@ -371,7 +378,9 @@ class PadletClient:
         self._initialize_browser()
 
         # Create new board from template
-        self._logger.info("Creating new Padlet board from pre-configured template.")
+        self._logger.info(
+            "Creating new Padlet board from pre-configured template."
+        )
         board_id = self.add_board()
         self._logger.info("Board successfully created.")
 
@@ -382,21 +391,21 @@ class PadletClient:
 
         # Parse ids of custom board sections (indoor and outdoor bins)
         self._logger.info("Parsing board metadata for section ids.")
-        indoor_section_id = None
         outdoor_section_id = None
         for obj in board_metadata["included"]:
             if obj["type"] != "section":
                 continue
             elif obj["attributes"]["title"] == self._indoor_bins_section:
-                indoor_section_id = obj["id"]
+                pass
             elif obj["attributes"]["title"] == self._outdoor_bins_section:
                 outdoor_section_id = obj["id"]
             else:
                 raise RuntimeError(
-                    f'An unexpected section, "{obj["attributes"]["title"]}", '
-                    "was encountered. Please confirm that only the sections "
-                    f'"{self._indoor_bins_section}" and "{self._outdoor_bins_section}"'
-                    "exist in the Padlet template."
+                    f'An unexpected section, "{obj["attributes"]["title"]}",'
+                    " was encountered. Please confirm that only the sections"
+                    f' "{self._indoor_bins_section}" and'
+                    f' "{self._outdoor_bins_section}"exist in the Padlet'
+                    " template."
                 )
 
         # Add posts to board one at a time, as permitted by API
@@ -404,7 +413,6 @@ class PadletClient:
             "Adding posts to board one at a time, as permitted through API."
         )
         for location in locations:
-
             # Add slight delay in between requests to avoid throttling
             time.sleep(self.SECONDS_DELAY_PER_REQUEST)
 
@@ -426,18 +434,23 @@ class PadletClient:
                             "locationName": location["address"],
                         },
                     },
-                    "relationships": {"section": {"data": {"id": outdoor_section_id}}},
+                    "relationships": {
+                        "section": {"data": {"id": outdoor_section_id}}
+                    },
                 }
             }
 
             # Add attachment object if location has url
             if location["url"]:
-
                 # Parse URL scheme
                 scheme = urlparse(location["url"]).scheme
 
                 # Assign default scheme if none found
-                url = f"https://{location['url']}" if not scheme else location["url"]
+                url = (
+                    f"https://{location['url']}"
+                    if not scheme
+                    else location["url"]
+                )
 
                 # Add attachment object
                 post["data"]["attributes"]["content"]["attachment"] = {

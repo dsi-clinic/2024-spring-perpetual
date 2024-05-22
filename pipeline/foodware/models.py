@@ -1,38 +1,104 @@
 """Models used across the application.
 """
 
+# Application imports
+from common.models import TimestampedModel
+
 # Third-party imports
 from django.contrib.gis.db.models import MultiPolygonField, PointField
 from django.db import models
 
 
-class TimestampedModel(models.Model):
-    """An abstract model used to record creation and update times."""
-
-    created_at_utc = models.DateTimeField(auto_now_add=True)
-    last_updated_at_utc = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        abstract = True
-
-
-class FoodwareModel(TimestampedModel):
-    """Represents a foodware collection and distribution system for a locale."""
+class PoiProvider(models.Model):
+    """Represents a points of interest (POI) provider."""
 
     name = models.CharField()
-    boundary = MultiPolygonField(null=True)
-    padlet_board_id = models.CharField(blank=True, default="")
-    padlet_board_url = models.URLField(blank=True, default="")
 
     class Meta:
-        db_table = "model"
+        db_table = "poi_provider"
         constraints = [
-            models.UniqueConstraint(name="unique_model_name", fields=["name"])
+            models.UniqueConstraint(
+                name="unique_poi_provider",
+                fields=["name"],
+            )
         ]
 
 
-class FoodwareModelJob(TimestampedModel):
-    """Represents a processing job for a foodware model."""
+class PoiParentCategory(models.Model):
+    """Represents a top-level points of interest (POI) category."""
+
+    class Name(models.TextChoices):
+        """Enumerates valid category names."""
+
+        ATTRACTIONS = "Attractions"
+        EDUCATION = "Education"
+        LODGING = "Lodging"
+        MEDICAL = "Medical"
+        PUBLIC_SERVICES = "Public Services"
+        RESTAURANTS = "Restaurants"
+        SHOPPING = "Shopping"
+        TRANSPORTATION = "Transportation"
+        WORKPLACES = "Workplaces"
+
+    name = models.CharField()
+
+    class Meta:
+        db_table = "poi_parent_category"
+        constraints = [
+            models.UniqueConstraint(
+                name="unique_poi_parent_category",
+                fields=["name"],
+            )
+        ]
+
+
+class PoiProviderCategory(models.Model):
+    """Represents a category used by a points of interest (POI) source."""
+
+    parent = models.ForeignKey("PoiParentCategory", on_delete=models.CASCADE)
+    provider = models.ForeignKey("PoiProvider", on_delete=models.CASCADE)
+    name = models.CharField()
+    active = models.BooleanField(default=False)
+
+    class Meta:
+        db_table = "poi_provider_category"
+        constraints = [
+            models.UniqueConstraint(
+                name="unique_poi_provider_category",
+                fields=["provider", "name"],
+            ),
+        ]
+
+
+class Locale(models.Model):
+    """Represents a potential locale for a foodware project."""
+
+    name = models.CharField()
+    geometry = MultiPolygonField()
+
+    class Meta:
+        db_table = "locale"
+        constraints = [
+            models.UniqueConstraint(
+                name="unique_locale",
+                fields=["name"],
+            )
+        ]
+
+
+class FoodwareProject(TimestampedModel):
+    """Represents a foodware collection and distribution project."""
+
+    name = models.CharField()
+    description = models.TextField(null=True)
+    locale = models.ForeignKey("Locale", on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = "foodware_project"
+
+
+class FoodwareProjectJob(TimestampedModel):
+    """Represents a processing job for a foodware project."""
 
     class JobType(models.TextChoices):
         """Enumerates the type of job workflow."""
@@ -48,57 +114,73 @@ class FoodwareModelJob(TimestampedModel):
         ERROR = "Error"
         SUCCESS = "Success"
 
-    model = models.ForeignKey("FoodwareModel", on_delete=models.CASCADE)
+    project = models.ForeignKey("FoodwareProject", on_delete=models.CASCADE)
     type = models.CharField(choices=JobType)
     status = models.CharField(choices=JobStatus)
-    created_at_utc = models.DateTimeField(auto_now_add=True)
-    last_updated_at_utc = models.DateTimeField(auto_now=True)
+    last_error = models.JSONField()
 
     class Meta:
-        db_table = "job"
+        db_table = "foodware_project_job"
 
 
-class FoodwareModelBin(TimestampedModel):
-    """Represents a bin used by the model for foodware collection or distribution."""
+class FoodwareProjectBin(TimestampedModel):
+    """Represents a bin location for foodware collection or distribution."""
 
-    class BinPurpose(models.TextChoices):
-        """Enumerates purposes for bins."""
+    class Classification(models.TextChoices):
+        """Enumerates bin types."""
 
-        INDOOR = "Indoor Point"
-        OUTDOOR = "Outdoor Point"
+        UNDETERMINED = "Undetermined"
+        INDOOR = "Indoor"
+        OUTDOOR = "Outdoor"
+        EXCLUDED = "Excluded"
 
-    class BinLocationCategory(models.TextChoices):
-        """Enumerates standardized categories of bin locations."""
-
-        COMMERCIAL_FOODSERVICE = "Commercial Foodservice"
-        COMMUNITY_CENTER = "Community Center"
-        LIBRARY = "Library"
-        LODGING = "Lodging"
-        MALLS_AND_SHOPPING_CENTERS = "Mall or Shopping Center"
-        MEDICAL_CENTER = "Medical Center"
-        OFFICE = "Office Space"
-        POST_OFFICE = "Post Office"
-        SCHOOL = "School"
-        RETAIL_FOOD_AND_DRUG = "Grocery Store, Drugstore, or Pharmacy"
-        TRANSPORTATION = "Transportation"
-        ZOO_OR_AQUARIUM = "Zoo or Aquarium"
-
-    model = models.ForeignKey("FoodwareModel", on_delete=models.CASCADE)
-    external_source = models.CharField()
+    project = models.ForeignKey("FoodwareProject", on_delete=models.CASCADE)
+    provider = models.ForeignKey("PoiProvider", on_delete=models.CASCADE)
+    parent_category = models.ForeignKey(
+        "PoiParentCategory", on_delete=models.CASCADE
+    )
     external_id = models.CharField(blank=True, default="")
-    external_name = models.CharField(blank=True, default="")
-    external_category = models.CharField()
+    classification = models.CharField(
+        choices=Classification, default=Classification.UNDETERMINED
+    )
     name = models.CharField(blank=True, default="")
-    category = models.CharField(choices=BinLocationCategory)
-    capacity = models.IntegerField(null=True)
+    external_categories = models.JSONField()
+    formatted_address = models.CharField(blank=True, default="")
     coords = PointField()
     notes = models.TextField(blank=True, default="")
+    features = models.JSONField(null=True)
 
     class Meta:
-        db_table = "location"
+        db_table = "foodware_project_bin"
         constraints = [
             models.UniqueConstraint(
-                name="unique_location",
-                fields=["model", "external_source", "external_id"],
+                name="unique_foodware_project_bin",
+                fields=[
+                    "project",
+                    "provider",
+                    "external_id",
+                    "name",
+                    "formatted_address",
+                ],
+            )
+        ]
+
+
+class PoiCache(TimestampedModel):
+    """Temporary cache for POI-related data."""
+
+    project = models.ForeignKey("FoodwareProject", on_delete=models.CASCADE)
+    provider = models.ForeignKey("PoiProvider", on_delete=models.CASCADE)
+    parent_category = models.ForeignKey(
+        "PoiParentCategory", on_delete=models.CASCADE
+    )
+    data = models.JSONField()
+
+    class Meta:
+        db_table = "poi_cache"
+        constraints = [
+            models.UniqueConstraint(
+                name="unique_poi_cache_item",
+                fields=["project", "provider", "parent_category"],
             )
         ]

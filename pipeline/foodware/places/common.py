@@ -28,7 +28,7 @@ class Place:
     """
 
     aliases: List[str]
-    """Category ids that have been assigned to the place 
+    """Category ids that have been assigned to the place
     (e.g., "restaurant", "school", "theater").
     """
 
@@ -54,6 +54,14 @@ class Place:
 
     url: Optional[str] = None
     """A link to more information about the place.
+    """
+
+    notes: Optional[str] = ""
+    """Additional information to include about the place.
+    """
+
+    features: Optional[Dict] = None
+    """Additional, provider-specific properties for the place.
     """
 
 
@@ -90,7 +98,30 @@ class IPlacesProvider(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def find_places_in_geography(
+    def run_text_search(
+        self,
+        query: str,
+        restriction: Optional[Union[Polygon, MultiPolygon]] = None,
+    ) -> PlacesSearchResult:
+        """Searches for one or more places using a query string
+        and an optional geography to confine the search area.
+        Implementation varies by provider.
+
+        Args:
+            query (`str`): The search phrase
+                (e.g., "KEN'S HOUSE OF PANCAKES, 1730 KAMEHAMEHA AVE, HILO, HI").
+
+            geo (`Polygon` or `MultiPolygon`): The search boundary. Defaults to `None`.
+
+        Returns:
+            (`PlacesSearchResult`): The result of the geography query. Contains
+                a raw list of retrieved places, a list of cleaned places,
+                and a list of any errors that occurred.
+        """
+        raise NotImplementedError
+
+    @abstractmethod
+    def run_nearby_search(
         self, geo: Union[Polygon, MultiPolygon]
     ) -> PlacesSearchResult:
         """Locates all POIs within the given geography.
@@ -99,7 +130,7 @@ class IPlacesProvider(ABC):
             geo (`Polygon` or `MultiPolygon`): The boundary.
 
         Returns:
-            (`PlacesResult`): The result of the geography query. Contains
+            (`PlacesSearchResult`): The result of the geography query. Contains
                 a raw list of retrieved places, a list of cleaned places,
                 and a list of any errors that occurred.
         """
@@ -121,16 +152,15 @@ class IPlacesProvider(ABC):
         Returns:
             (`list` of `dict`): The cleaned places.
         """
-        ids = set()
+        visited_ids = set()
         cleaned = []
         for place in places:
-
             # Map place
             mapped = self.map_place(place)
 
             # Filter out dupes and places outside bounds
             if (
-                (mapped.id in ids)
+                (mapped.id in visited_ids)
                 or (mapped.is_closed)
                 or (not geo.contains(Point(mapped.lon, mapped.lat)))
             ):
@@ -140,6 +170,6 @@ class IPlacesProvider(ABC):
             cleaned.append(vars(mapped))
 
             # Mark place as seen
-            ids.add(mapped.id)
+            visited_ids.add(mapped.id)
 
         return cleaned
